@@ -43,7 +43,7 @@ const CommandExample = () => {
           </CommandItem>
           <CommandItem disabled>
             <LuCalculator className="mr-2 size-4" />
-            <span>LuCalculator</span>
+            <span>Calculator</span>
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />
