@@ -1621,6 +1621,9 @@ importers:
 
   packages/storybook:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../core
       '@mijn-ui/react-theme':
         specifier: workspace:*
         version: link:../theme

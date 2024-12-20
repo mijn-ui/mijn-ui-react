@@ -37,10 +37,10 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
+    "@mijn-ui/react-core": "workspace:*",
     "@radix-ui/react-collapsible": "^1.1.2"
   },
   "peerDependencies": {
-    "@mijn-ui/react-core": "workspace:*",
     "react": "^19.0",
     "react-dom": "^19.0"
   },

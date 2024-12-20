@@ -13,6 +13,7 @@
     "chromatic": "npx chromatic --project-token=chpt_e58a37660285fbc -b build"
   },
   "dependencies": {
+    "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/react-theme": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

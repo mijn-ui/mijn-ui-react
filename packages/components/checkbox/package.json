@@ -37,13 +37,13 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
+    "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/shared-icons": "workspace:*",
     "@radix-ui/react-checkbox": "^1.1.3",
     "@mijn-ui/react-utilities": "workspace:*",
     "@mijn-ui/react-hooks": "workspace:*"
   },
   "peerDependencies": {
-    "@mijn-ui/react-core": "workspace:*",
     "react": "^19.0",
     "react-dom": "^19.0",
     "@mijn-ui/react-theme": ">=0.0.6"

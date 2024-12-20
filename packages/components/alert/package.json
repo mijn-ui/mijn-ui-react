@@ -39,12 +39,12 @@
     "tsup-config": "workspace:*"
   },
   "peerDependencies": {
-    "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/react-theme": ">=0.0.6",
     "react": "^19.0",
     "react-dom": "^19.0"
   },
   "dependencies": {
+    "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/react-utilities": "workspace:*",
     "@mijn-ui/react-hooks": "workspace:*"
   },

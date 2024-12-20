@@ -37,6 +37,7 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
+    "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/react-dialog": "workspace:*",
     "@mijn-ui/shared-icons": "workspace:*",
     "@mijn-ui/react-utilities": "workspace:*",
@@ -45,7 +46,6 @@
     "cmdk": "^1.0.4"
   },
   "peerDependencies": {
-    "@mijn-ui/react-core": "workspace:*",
     "react": "^19.0",
     "react-dom": "^19.0",
     "@mijn-ui/react-theme": ">=0.0.6"
