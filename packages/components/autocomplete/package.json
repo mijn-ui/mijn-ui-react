@@ -27,7 +27,6 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
-    "@mijn-ui/react-theme": "workspace:*",
     "@mijn-ui/react-dialog": "workspace:*",
     "@mijn-ui/react-button": "workspace:*",
     "@mijn-ui/react-scroll-area": "workspace:*",

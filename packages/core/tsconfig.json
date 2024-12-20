@@ -1,4 +1,7 @@
 {
   "extends": "tsconfig/react-library.json",
+  "compilerOptions": {
+    "allowJs": true
+  },
   "exclude": ["node_modules", "dist", "src/**/*.d.ts"]
 }

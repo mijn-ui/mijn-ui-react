@@ -27,7 +27,6 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
-    "@mijn-ui/react-theme": "workspace:*",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "@next/eslint-plugin-next": "^15.0.3",
