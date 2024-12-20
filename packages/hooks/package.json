@@ -38,6 +38,9 @@
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"
   },
+  "dependencies": {
+    "@mijn-ui/react-core": "workspace:*"
+  },
   "peerDependencies": {
     "react": "^19.0",
     "react-dom": "^19.0",
