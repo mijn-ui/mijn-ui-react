@@ -10,7 +10,7 @@
     "sb": "pnpm --filter @mijn-ui/storybook dev",
     "build:sb": "pnpm --filter @mijn-ui/storybook build",
     "start:sb": "pnpm --filter @mijn-ui/storybook start",
-    "clean": "turbo clean",
+    "clean": "turbo clean && rimraf ./node_modules/.cache/turbo",
     "clean:node-modules": "rimraf ./apps/**/node_modules && rimraf ./packages/**/**/node_modules && rimraf ./node_modules",
     "test": "turbo test",
     "lint": "turbo lint",

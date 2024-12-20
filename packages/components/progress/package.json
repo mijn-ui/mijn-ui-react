@@ -20,7 +20,7 @@
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf dist .turbo",
     "build": "tsup",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
