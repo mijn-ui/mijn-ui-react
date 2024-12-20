@@ -1,4 +1,4 @@
-export { cn } from "./cn"
+export { cn, clsx } from "./cn"
 export {
   type CreateContextOptions,
   type CreateContextReturn,
