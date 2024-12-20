@@ -1,7 +1,8 @@
 /* Adapted From NextUI ❤️ */
 
 import * as React from "react"
-import { tv, clsx } from "@mijn-ui/react-utilities"
+import { tv } from "tailwind-variants"
+import { clsx } from "@mijn-ui/react-utilities"
 
 import { mapPropsVariants } from "./map-props-variants"
 

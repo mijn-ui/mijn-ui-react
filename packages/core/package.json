@@ -36,6 +36,7 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
+    "tailwind-variants": "^0.3.0",
     "@mijn-ui/react-utilities": "workspace:*"
   },
   "peerDependencies": {

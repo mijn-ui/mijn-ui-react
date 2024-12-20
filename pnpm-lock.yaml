@@ -1559,6 +1559,9 @@ importers:
       react-dom:
         specifier: ^19.0
         version: 19.0.0(react@19.0.0)
+      tailwind-variants:
+        specifier: ^0.3.0
+        version: 0.3.0(tailwindcss@3.4.15)
     devDependencies:
       '@types/node':
         specifier: 22.9.0
@@ -1572,9 +1575,6 @@ importers:
       react:
         specifier: 19.0.0
         version: 19.0.0
-      tailwind-variants:
-        specifier: ^0.3.0
-        version: 0.3.0(tailwindcss@3.4.15)
       tsconfig:
         specifier: workspace:*
         version: link:../configs/ts-config
