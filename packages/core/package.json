@@ -30,6 +30,7 @@
     "react": "19.0.0",
     "@types/node": "22.9.0",
     "@types/react": "^19.0.0",
+    "tailwind-variants": "^0.3.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"

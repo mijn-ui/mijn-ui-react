@@ -1,6 +1,6 @@
 import { it, expect, describe } from "vitest"
 import { tv } from "tailwind-variants"
-import { createTVUnstyledSlots } from "../shared"
+import { createTVUnstyledSlots } from "../src/tv-unstyled-slots"
 
 describe("createTVUnstyledSlots", () => {
   const baseDefault = "rounded-md"

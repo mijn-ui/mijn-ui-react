@@ -1,7 +1,7 @@
 import { it, expect, describe } from "vitest"
 import { tv } from "tailwind-variants"
 import { renderHook } from "@testing-library/react"
-import { useTVUnstyled } from "../use-tv-unstyled"
+import { useTVUnstyled } from "../src/use-tv-unstyled"
 import { UnstyledProps } from "@mijn-ui/react-core"
 import { createContext } from "@mijn-ui/react-utilities"
 

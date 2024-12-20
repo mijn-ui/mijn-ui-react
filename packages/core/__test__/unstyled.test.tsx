@@ -1,5 +1,5 @@
 import { it, expect, describe } from "vitest"
-import { applyUnstyled } from "../shared"
+import { applyUnstyled } from "../src/unstyled"
 
 describe("applyUnstyled", () => {
   describe("if 'userClasses' are defined", () => {

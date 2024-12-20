@@ -33,6 +33,7 @@
     "eslint-config-custom": "workspace:*",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "@mijn-ui/react-utilities": "workspace:*",
     "tailwind-variants": "^0.3.0",
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"
