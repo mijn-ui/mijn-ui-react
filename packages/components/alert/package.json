@@ -27,6 +27,7 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/shared-icons": "workspace:*",
     "@next/eslint-plugin-next": "^15.0.3",
     "@types/react": "^19.0.0",
@@ -38,12 +39,12 @@
     "tsup-config": "workspace:*"
   },
   "peerDependencies": {
-    "@mijn-ui/react-theme": "workspace:*",
+    "@mijn-ui/react-theme": "^0.0.6",
+    "@mijn-ui/react-core": "^0.0.2",
     "react": "^19.0",
     "react-dom": "^19.0"
   },
   "dependencies": {
-    "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/react-utilities": "workspace:*",
     "@mijn-ui/react-hooks": "workspace:*"
   },

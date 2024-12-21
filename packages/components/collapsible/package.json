@@ -27,6 +27,7 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@mijn-ui/react-core": "workspace:*",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "@next/eslint-plugin-next": "^15.0.3",
@@ -37,7 +38,6 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "@mijn-ui/react-core": "workspace:*",
     "@radix-ui/react-collapsible": "^1.1.2"
   },
   "peerDependencies": {

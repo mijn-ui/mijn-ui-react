@@ -27,6 +27,7 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/react-dialog": "workspace:*",
     "@mijn-ui/react-button": "workspace:*",
     "@mijn-ui/react-scroll-area": "workspace:*",
@@ -41,7 +42,6 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/shared-icons": "workspace:*",
     "@mijn-ui/react-utilities": "workspace:*",
     "@mijn-ui/react-hooks": "workspace:*",
@@ -54,7 +54,8 @@
   "peerDependencies": {
     "react": "^19.0",
     "react-dom": "^19.0",
-    "@mijn-ui/react-theme": "workspace:*"
+    "@mijn-ui/react-theme": "^0.0.6",
+    "@mijn-ui/react-core": "^0.0.2"
   },
   "publishConfig": {
     "access": "public"

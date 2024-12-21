@@ -12,7 +12,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mijn-ui/mijn-ui-react.git",
-    "directory": "packages/utilities/src"
+    "directory": "packages/core/src"
   },
   "bugs": {
     "url": "https://github.com/mijn-ui/mijn-ui-react/issues"
