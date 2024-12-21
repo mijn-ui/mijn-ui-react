@@ -1,5 +1,14 @@
 # @mijn-ui-react/collapsible
 
+## 0.0.7
+
+### Patch Changes
+
+- ab36c61: extract core functionalities from utils.
+- Updated dependencies [d8a420b]
+- Updated dependencies [ab36c61]
+  - @mijn-ui/react-core@0.0.2
+
 ## 0.0.6
 
 ### Patch Changes
