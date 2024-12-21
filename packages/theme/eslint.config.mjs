@@ -1,3 +1,3 @@
-import next from "eslint-config-custom/next.js"
+import library from "eslint-config-custom/library"
 
-export default [...next]
+export default [...library]
