@@ -22,6 +22,7 @@
   "scripts": {
     "clean": "rimraf dist .turbo",
     "build": "tsup",
+    "test": "vitest",
     "lint": "eslint .",
     "types:check": "tsc --noEmit"
   },
