@@ -1,15 +1,6 @@
 import { cn } from "@mijn-ui/react-utilities"
 
 /**
- *
- * Type for components that can be unstyled.
- */
-
-export type UnstyledProps = {
-  unstyled?: boolean
-}
-
-/**
  * Conditionally applies CSS class names based on the `unstyled` flag.
  *
  * When the `unstyled` flag is `true`, only the `userClasses` are applied, effectively bypassing the default styles.
@@ -21,6 +12,7 @@ export type UnstyledProps = {
  *
  * @returns A string containing the combined class names or only the `userClasses` if `unstyled` is `true`. If no `userClasses` are provided, the default classes are returned.
  */
+
 export const applyUnstyled = (
   unstyled: boolean | undefined,
   defaultClasses: string,
