@@ -169,5 +169,5 @@ const alertStyles = tv({
 })
 
 export type AlertVariantProps = VariantProps<typeof alertStyles>
-export type AlertVariantSlots = keyof ReturnType<typeof alertStyles>
+export type AlertSlots = keyof ReturnType<typeof alertStyles>
 export { alertStyles }
