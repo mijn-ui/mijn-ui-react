@@ -3,5 +3,9 @@
   "version": "0.0.1",
   "type": "module",
   "private": true,
-  "license": "MIT"
+  "license": "MIT",
+  "exports": {
+    "./next": "./next.js",
+    "./library": "./library.js"
+  }
 }

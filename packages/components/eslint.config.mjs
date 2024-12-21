@@ -1,4 +1,4 @@
-import next from "eslint-config-custom/next.js"
+import next from "eslint-config-custom/next"
 
 export default [
   ...next,
