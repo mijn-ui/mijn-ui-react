@@ -289,8 +289,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -335,8 +335,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -378,8 +378,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -430,8 +430,8 @@ importers:
         specifier: workspace:*
         version: link:../skeleton
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -491,8 +491,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -531,8 +531,8 @@ importers:
   packages/components/badge:
     dependencies:
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -568,8 +568,8 @@ importers:
   packages/components/button:
     dependencies:
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -611,8 +611,8 @@ importers:
   packages/components/calendar:
     dependencies:
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -657,8 +657,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -697,8 +697,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -780,8 +780,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -838,8 +838,8 @@ importers:
         specifier: workspace:*
         version: link:../select
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -893,8 +893,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -936,8 +936,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -982,8 +982,8 @@ importers:
         specifier: workspace:*
         version: link:../label
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -1019,8 +1019,8 @@ importers:
   packages/components/label:
     dependencies:
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -1062,8 +1062,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -1105,8 +1105,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -1145,8 +1145,8 @@ importers:
   packages/components/progress:
     dependencies:
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -1188,8 +1188,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -1234,8 +1234,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -1277,8 +1277,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -1320,8 +1320,8 @@ importers:
   packages/components/separator:
     dependencies:
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -1360,8 +1360,8 @@ importers:
   packages/components/skeleton:
     dependencies:
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -1397,8 +1397,8 @@ importers:
   packages/components/switch:
     dependencies:
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -1440,8 +1440,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -1480,8 +1480,8 @@ importers:
         specifier: workspace:*
         version: link:../../hooks
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
@@ -1520,8 +1520,8 @@ importers:
   packages/components/textarea:
     dependencies:
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: ^0.0.7
+        version: 0.0.7(tailwindcss@3.4.15)
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -2508,8 +2508,8 @@ packages:
       '@types/react': '>=16'
       react: '>=16'
 
-  '@mijn-ui/react-theme@0.0.6':
-    resolution: {integrity: sha512-Y8ztUZFcoBc6EC/x2ocX9RVEBDvwKFXIMnkIGBDexbHTH8HXRb0oEpXqNb084QtuXcRoI2+BJ2VAkjsYnM5DHw==}
+  '@mijn-ui/react-theme@0.0.7':
+    resolution: {integrity: sha512-2LL9SPiWzabPPfyPaDLQC4DUl3wzHA/nuBGUI868n6VlOGVmLDOz+xZdvL860YyQ3fV1j9aOovYJZHpQy1yCEg==}
     peerDependencies:
       tailwindcss: '>=3.4.0'
 
@@ -7399,10 +7399,11 @@ snapshots:
       '@types/react': 18.3.17
       react: 18.3.1
 
-  '@mijn-ui/react-theme@0.0.6(tailwindcss@3.4.15)':
+  '@mijn-ui/react-theme@0.0.7(tailwindcss@3.4.15)':
     dependencies:
       tailwind-variants: 0.3.0(tailwindcss@3.4.15)
       tailwindcss: 3.4.15
+      tailwindcss-animate: 1.0.7(tailwindcss@3.4.15)
 
   '@next/bundle-analyzer@15.0.3':
     dependencies:
