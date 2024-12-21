@@ -15,4 +15,6 @@ const popoverStyles = tv({
 })
 
 export type PopoverlVariantProps = VariantProps<typeof popoverStyles>
+export type PopoverSlots = keyof ReturnType<typeof popoverStyles>
+
 export { popoverStyles }

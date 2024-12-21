@@ -20,4 +20,6 @@ const scrollAreaStyles = tv({
 })
 
 export type ScrollAreaVariantProps = VariantProps<typeof scrollAreaStyles>
+export type ScrollAreaSlots = keyof ReturnType<typeof scrollAreaStyles>
+
 export { scrollAreaStyles }

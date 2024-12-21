@@ -169,4 +169,6 @@ const badgeStyles = tv({
 })
 
 export type BadgeVariantsProps = VariantProps<typeof badgeStyles>
+export type BadgeSlots = keyof ReturnType<typeof badgeStyles>
+
 export { badgeStyles }

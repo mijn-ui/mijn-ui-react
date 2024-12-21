@@ -8,4 +8,6 @@ const progressStyles = tv({
 })
 
 export type ProgressVariantProps = VariantProps<typeof progressStyles>
+export type ProgressSlots = keyof ReturnType<typeof progressStyles>
+
 export { progressStyles }

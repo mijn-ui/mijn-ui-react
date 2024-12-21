@@ -57,4 +57,6 @@ const inputStyles = tv({
 })
 
 export type InputVariantProps = VariantProps<typeof inputStyles>
+export type InputSlots = keyof ReturnType<typeof inputStyles>
+
 export { inputStyles }

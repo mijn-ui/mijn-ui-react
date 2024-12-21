@@ -17,4 +17,6 @@ const separatorStyles = tv({
 })
 
 export type SeparatorVariantProps = VariantProps<typeof separatorStyles>
+export type SeparatorSlots = keyof ReturnType<typeof separatorStyles>
+
 export { separatorStyles }

@@ -25,4 +25,5 @@ const alertDialogStyles = tv({
 })
 
 export type AlertDialogVariantProps = VariantProps<typeof alertDialogStyles>
+export type AlertDialogSlots = keyof ReturnType<typeof alertDialogStyles>
 export { alertDialogStyles }

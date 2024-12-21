@@ -7,4 +7,6 @@ const skeletonStyles = tv({
 })
 
 export type SkeletonVariantProps = VariantProps<typeof skeletonStyles>
+export type SkeletonSlots = keyof ReturnType<typeof skeletonStyles>
+
 export { skeletonStyles }

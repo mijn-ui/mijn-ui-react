@@ -48,4 +48,5 @@ const paginationStyles = tv({
 })
 
 export type PaginationVariantProps = VariantProps<typeof paginationStyles>
+export type PaginationSlots = keyof ReturnType<typeof paginationStyles>
 export { paginationStyles }

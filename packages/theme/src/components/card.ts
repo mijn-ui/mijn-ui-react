@@ -12,4 +12,6 @@ const cardStyles = tv({
 })
 
 export type CardVariantProps = VariantProps<typeof cardStyles>
+export type CardVariantSlots = keyof ReturnType<typeof cardStyles>
+
 export { cardStyles }

@@ -28,4 +28,5 @@ const accordionStyles = tv({
 })
 
 export type AccordionVariantProps = VariantProps<typeof accordionStyles>
+export type AccordionSlots = keyof ReturnType<typeof accordionStyles>
 export { accordionStyles }

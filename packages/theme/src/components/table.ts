@@ -14,4 +14,6 @@ const tableStyles = tv({
 })
 
 export type TableVariantProps = VariantProps<typeof tableStyles>
+export type TableSlots = keyof ReturnType<typeof tableStyles>
+
 export { tableStyles }

@@ -10,4 +10,6 @@ const radioGroupStyles = tv({
 })
 
 export type RadioGroupVariantProps = VariantProps<typeof radioGroupStyles>
+export type RadioGroupSlots = keyof ReturnType<typeof radioGroupStyles>
+
 export { radioGroupStyles }

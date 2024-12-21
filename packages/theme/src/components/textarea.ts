@@ -7,4 +7,6 @@ const textareaStyles = tv({
 })
 
 export type TextAreaVariantProps = VariantProps<typeof textareaStyles>
+export type TextAreaSlots = keyof ReturnType<typeof textareaStyles>
+
 export { textareaStyles }

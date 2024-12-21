@@ -22,5 +22,6 @@ const commandStyles = tv({
 })
 
 export type CommandVariantProps = VariantProps<typeof commandStyles>
+export type CommandSlots = keyof ReturnType<typeof commandStyles>
 
 export { commandStyles }

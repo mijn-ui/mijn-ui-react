@@ -33,4 +33,7 @@ const avatarStyles = tv({
 
 export type AvatarVariantProps = VariantProps<typeof avatarStyles>
 export type AvatarGroupVariantProps = VariantProps<typeof avatarGroupStyles>
+export type AvatarGroupSlots = keyof ReturnType<typeof avatarGroupStyles>
+export type AvatarSlots = keyof ReturnType<typeof avatarStyles>
+
 export { avatarStyles, avatarGroupStyles }

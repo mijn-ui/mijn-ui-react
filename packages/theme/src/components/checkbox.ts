@@ -34,4 +34,6 @@ const checkboxStyles = tv({
 })
 
 export type CheckboxVariantProps = VariantProps<typeof checkboxStyles>
+export type CheckboxSlots = keyof ReturnType<typeof checkboxStyles>
+
 export { checkboxStyles }

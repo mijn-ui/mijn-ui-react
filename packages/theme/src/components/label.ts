@@ -7,4 +7,5 @@ const labelStyles = tv({
 })
 
 export type LabelVariantProps = VariantProps<typeof labelStyles>
+export type LabelSlots = keyof ReturnType<typeof labelStyles>
 export { labelStyles }

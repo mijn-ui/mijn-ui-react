@@ -24,4 +24,5 @@ const dialogStyles = tv({
 })
 
 export type DialogVariantProps = VariantProps<typeof dialogStyles>
+export type DialogSlots = keyof ReturnType<typeof dialogStyles>
 export { dialogStyles }

@@ -39,4 +39,5 @@ const calendarStyles = tv({
 })
 
 export type CalendarVariantProps = VariantProps<typeof calendarStyles>
+export type CalendarSlots = keyof ReturnType<typeof calendarStyles>
 export { calendarStyles }

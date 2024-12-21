@@ -15,4 +15,6 @@ const tabsStyles = tv({
 })
 
 export type TabsVariantProps = VariantProps<typeof tabsStyles>
+export type TabsSlots = keyof ReturnType<typeof tabsStyles>
+
 export { tabsStyles }

@@ -177,4 +177,5 @@ const buttonStyles = tv({
 })
 
 export type ButtonVariantProps = VariantProps<typeof buttonStyles>
+export type ButtonSlots = keyof ReturnType<typeof buttonStyles>
 export { buttonStyles }

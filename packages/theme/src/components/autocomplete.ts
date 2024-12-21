@@ -22,4 +22,5 @@ const autocompleteStyles = tv({
 })
 
 export type AutocompleteVariantProps = VariantProps<typeof autocompleteStyles>
+export type AutocompleteSlots = keyof ReturnType<typeof autocompleteStyles>
 export { autocompleteStyles }

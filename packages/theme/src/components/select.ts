@@ -50,4 +50,6 @@ const selectStyles = tv({
 })
 
 export type SelectVariantProps = VariantProps<typeof selectStyles>
+export type SelectSlots = keyof ReturnType<typeof selectStyles>
+
 export { selectStyles }

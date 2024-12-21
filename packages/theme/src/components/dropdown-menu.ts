@@ -67,4 +67,6 @@ const dropdownMenuStyles = tv({
 })
 
 export type DropdownMenuVariantProps = VariantProps<typeof dropdownMenuStyles>
+export type DropdownMenuSlots = keyof ReturnType<typeof dropdownMenuStyles>
+
 export { dropdownMenuStyles }
