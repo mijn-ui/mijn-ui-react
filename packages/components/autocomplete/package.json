@@ -54,7 +54,7 @@
   "peerDependencies": {
     "react": "^19.0",
     "react-dom": "^19.0",
-    "@mijn-ui/react-theme": ">=0.0.6"
+    "@mijn-ui/react-theme": ">=0.0.5"
   },
   "publishConfig": {
     "access": "public"
