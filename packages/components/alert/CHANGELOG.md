@@ -1,5 +1,18 @@
 # @mijn-ui-react/alert
 
+## 0.0.8
+
+### Patch Changes
+
+- ab36c61: extract core functionalities from utils.
+- Updated dependencies [d8a420b]
+- Updated dependencies [ab36c61]
+- Updated dependencies [82b681d]
+  - @mijn-ui/react-core@0.0.2
+  - @mijn-ui/react-utilities@0.0.8
+  - @mijn-ui/react-hooks@0.0.9
+  - @mijn-ui/react-theme@0.0.7
+
 ## 0.0.7
 
 ### Patch Changes
