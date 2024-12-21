@@ -1,5 +1,11 @@
 # @mijn-ui/react-core
 
+## 0.0.3
+
+### Patch Changes
+
+- f524463: Update peer dependendicies.
+
 ## 0.0.2
 
 ### Patch Changes
