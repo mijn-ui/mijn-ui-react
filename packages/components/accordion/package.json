@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^15.0.3",
-    "@mijn-ui/react-theme": "workspace:*",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "eslint-config-custom": "workspace:*",
@@ -45,7 +44,7 @@
     "@mijn-ui/react-hooks": "workspace:*"
   },
   "peerDependencies": {
-    "@mijn-ui/react-theme": ">=0.0.5",
+    "@mijn-ui/react-theme": "workspace:*",
     "react": "^19.0",
     "react-dom": "^19.0"
   },
