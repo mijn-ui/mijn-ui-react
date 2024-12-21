@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@mijn-ui/react-core": "workspace:*",
+    "@mijn-ui/react-theme": "workspace:*",
     "@mijn-ui/react-dialog": "workspace:*",
     "@mijn-ui/react-button": "workspace:*",
     "@mijn-ui/react-scroll-area": "workspace:*",

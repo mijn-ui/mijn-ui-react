@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@mijn-ui/react-core": "workspace:*",
+    "@mijn-ui/react-theme": "workspace:*",
     "@mijn-ui/shared-icons": "workspace:*",
     "@next/eslint-plugin-next": "^15.0.3",
     "@types/react": "^19.0.0",
