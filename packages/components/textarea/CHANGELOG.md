@@ -1,5 +1,15 @@
 # @mijn-ui-react/textarea
 
+## 0.0.8
+
+### Patch Changes
+
+- ab36c61: extract core functionalities from utils.
+- Updated dependencies [d8a420b]
+- Updated dependencies [ab36c61]
+  - @mijn-ui/react-core@0.0.2
+  - @mijn-ui/react-theme@0.0.7
+
 ## 0.0.7
 
 ### Patch Changes

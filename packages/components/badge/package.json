@@ -1,7 +1,7 @@
 {
   "name": "@mijn-ui/react-badge",
   "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "homepage": "https://mijn-ui.vercel.app",
   "license": "MIT",
   "type": "module",
@@ -43,7 +43,7 @@
   "peerDependencies": {
     "react": "^19.0",
     "react-dom": "^19.0",
-    "@mijn-ui/react-theme": ">=0.0.6"
+    "@mijn-ui/react-theme": ">=0.0.7"
   },
   "publishConfig": {
     "access": "public"

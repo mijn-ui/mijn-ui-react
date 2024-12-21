@@ -1,5 +1,11 @@
 # @mijn-ui/shared-icons
 
+## 0.0.3
+
+### Patch Changes
+
+- ab36c61: extract core functionalities from utils.
+
 ## 0.0.2
 
 ### Patch Changes

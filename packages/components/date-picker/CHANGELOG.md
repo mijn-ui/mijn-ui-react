@@ -1,5 +1,22 @@
 # @mijn-ui-react/date-picker
 
+## 0.0.10
+
+### Patch Changes
+
+- ab36c61: extract core functionalities from utils.
+- Updated dependencies [d8a420b]
+- Updated dependencies [ab36c61]
+- Updated dependencies [82b681d]
+  - @mijn-ui/react-core@0.0.2
+  - @mijn-ui/react-utilities@0.0.8
+  - @mijn-ui/shared-icons@0.0.3
+  - @mijn-ui/react-calendar@0.0.10
+  - @mijn-ui/react-popover@0.0.10
+  - @mijn-ui/react-button@0.0.10
+  - @mijn-ui/react-select@0.0.9
+  - @mijn-ui/react-theme@0.0.7
+
 ## 0.0.9
 
 ### Patch Changes
