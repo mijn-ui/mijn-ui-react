@@ -14,3 +14,10 @@ export type SlotsToClasses<S extends string> = {
 export type UnstyledProps = {
   unstyled?: boolean
 }
+
+/**
+ * Type for components that support unstyled functionality and slot-specific classes.
+ */
+export type UnstyledComponentWithSlots<S extends string> = UnstyledProps & {
+  classNames?: SlotsToClasses<S>
+}
