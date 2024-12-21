@@ -1,5 +1,12 @@
 # @mijn-ui-react/utilities
 
+## 0.0.8
+
+### Patch Changes
+
+- ab36c61: extract core functionalities from utils.
+- 82b681d: Add extend variants utility
+
 ## 0.0.7
 
 ### Patch Changes
