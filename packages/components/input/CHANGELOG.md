@@ -1,5 +1,14 @@
 # @mijn-ui-react/input
 
+## 0.0.9
+
+### Patch Changes
+
+- f524463: Update peer dependendicies.
+- Updated dependencies [f524463]
+  - @mijn-ui/react-label@0.0.9
+  - @mijn-ui/react-core@0.0.3
+
 ## 0.0.8
 
 ### Patch Changes

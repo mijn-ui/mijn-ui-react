@@ -1,5 +1,14 @@
 # @mijn-ui-react/select
 
+## 0.0.10
+
+### Patch Changes
+
+- f524463: Update peer dependendicies.
+- Updated dependencies [f524463]
+  - @mijn-ui/react-hooks@0.0.10
+  - @mijn-ui/react-core@0.0.3
+
 ## 0.0.9
 
 ### Patch Changes

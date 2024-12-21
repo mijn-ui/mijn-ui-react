@@ -1,5 +1,15 @@
 # @mijn-ui-react/command
 
+## 0.0.11
+
+### Patch Changes
+
+- f524463: Update peer dependendicies.
+- Updated dependencies [f524463]
+  - @mijn-ui/react-dialog@0.0.11
+  - @mijn-ui/react-hooks@0.0.10
+  - @mijn-ui/react-core@0.0.3
+
 ## 0.0.10
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @mijn-ui-react/button
 
+## 0.0.11
+
+### Patch Changes
+
+- f524463: Update peer dependendicies.
+- Updated dependencies [f524463]
+  - @mijn-ui/react-core@0.0.3
+
 ## 0.0.10
 
 ### Patch Changes
