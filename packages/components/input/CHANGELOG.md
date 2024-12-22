@@ -1,5 +1,15 @@
 # @mijn-ui-react/input
 
+## 0.0.10
+
+### Patch Changes
+
+- 696a2e3: Add classNames support.
+- Updated dependencies [d32f792]
+- Updated dependencies [696a2e3]
+  - @mijn-ui/react-theme@0.0.8
+  - @mijn-ui/react-label@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes

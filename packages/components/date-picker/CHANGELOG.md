@@ -1,5 +1,18 @@
 # @mijn-ui-react/date-picker
 
+## 0.0.12
+
+### Patch Changes
+
+- 696a2e3: Add classNames support.
+- Updated dependencies [d32f792]
+- Updated dependencies [696a2e3]
+  - @mijn-ui/react-theme@0.0.8
+  - @mijn-ui/react-calendar@0.0.12
+  - @mijn-ui/react-popover@0.0.12
+  - @mijn-ui/react-button@0.0.12
+  - @mijn-ui/react-select@0.0.11
+
 ## 0.0.11
 
 ### Patch Changes

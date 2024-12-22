@@ -1,7 +1,7 @@
 {
   "name": "@mijn-ui/react-alert",
   "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "homepage": "https://mijn-ui.vercel.app",
   "license": "MIT",
   "type": "module",
@@ -40,7 +40,7 @@
     "tsup-config": "workspace:*"
   },
   "peerDependencies": {
-    "@mijn-ui/react-theme": "^0.0.6",
+    "@mijn-ui/react-theme": "^0.0.8",
     "@mijn-ui/react-core": "^0.0.3",
     "react": "^19.0",
     "react-dom": "^19.0"

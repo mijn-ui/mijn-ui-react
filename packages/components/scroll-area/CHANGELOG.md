@@ -1,5 +1,14 @@
 # @mijn-ui-react/scroll-area
 
+## 0.0.10
+
+### Patch Changes
+
+- 696a2e3: Add classNames support.
+- Updated dependencies [d32f792]
+  - @mijn-ui/react-theme@0.0.8
+  - @mijn-ui/react-hooks@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes
