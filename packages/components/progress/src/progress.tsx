@@ -1,17 +1,20 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots, UnstyledProps } from "@mijn-ui/react-core"
+import {
+  createTVUnstyledSlots,
+  UnstyledComponentWithSlots,
+} from "@mijn-ui/react-core"
 import * as ProgressPrimitive from "@radix-ui/react-progress"
-import { progressStyles } from "@mijn-ui/react-theme"
+import { ProgressSlots, progressStyles } from "@mijn-ui/react-theme"
+import { cn } from "@mijn-ui/react-utilities"
 
-type ProgressProps = React.ComponentPropsWithRef<
-  typeof ProgressPrimitive.Root
-> &
-  UnstyledProps
+type ProgressProps = UnstyledComponentWithSlots<ProgressSlots> &
+  React.ComponentPropsWithRef<typeof ProgressPrimitive.Root>
 
 const Progress = ({
   className,
+  classNames,
   unstyled,
   value,
   ref,
@@ -22,11 +25,11 @@ const Progress = ({
   return (
     <ProgressPrimitive.Root
       ref={ref}
-      className={base({ className })}
+      className={base({ className: cn(classNames?.base, className) })}
       {...props}
     >
       <ProgressPrimitive.Indicator
-        className={indicator()}
+        className={indicator({ className: classNames?.indicator })}
         style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
       />
     </ProgressPrimitive.Root>
