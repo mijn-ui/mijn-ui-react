@@ -1,10 +1,10 @@
 "use client"
 
 import * as React from "react"
-import { createContext } from "@mijn-ui/react-utilities"
-import { UnstyledProps } from "@mijn-ui/react-core"
+import { createContext, cn } from "@mijn-ui/react-utilities"
+import { UnstyledComponentWithSlots, UnstyledProps } from "@mijn-ui/react-core"
 import * as RadixPopover from "@radix-ui/react-popover"
-import { popoverStyles } from "@mijn-ui/react-theme"
+import { popoverStyles, PopoverSlots } from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 const PopoverArrow = RadixPopover.Arrow
@@ -15,7 +15,9 @@ const PopoverAnchor = RadixPopover.Anchor
 /*                               PopoverContext                               */
 /* -------------------------------------------------------------------------- */
 
-type PopoverContextType = UnstyledProps & {
+type PopoverBaseProps = UnstyledComponentWithSlots<PopoverSlots>
+
+type PopoverContextType = PopoverBaseProps & {
   styles: ReturnType<typeof popoverStyles>
 }
 
@@ -32,7 +34,8 @@ const [PopoverProvider, usePopoverContext] = createContext<PopoverContextType>({
 
 const usePopoverStyles = (unstyledOverride?: boolean) => {
   const context = usePopoverContext()
-  return useTVUnstyled(context, unstyledOverride)
+  const unstyledSlots = useTVUnstyled(context, unstyledOverride)
+  return { ...unstyledSlots, classNames: context.classNames }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -40,13 +43,13 @@ const usePopoverStyles = (unstyledOverride?: boolean) => {
 /* -------------------------------------------------------------------------- */
 
 type PopoverProps = React.ComponentPropsWithoutRef<typeof RadixPopover.Root> &
-  UnstyledProps
+  PopoverBaseProps
 
-const Popover = ({ unstyled = false, ...props }: PopoverProps) => {
+const Popover = ({ unstyled = false, classNames, ...props }: PopoverProps) => {
   const styles = popoverStyles()
 
   return (
-    <PopoverProvider value={{ unstyled, styles }}>
+    <PopoverProvider value={{ unstyled, styles, classNames }}>
       <RadixPopover.Root {...props} />
     </PopoverProvider>
   )
@@ -66,9 +69,14 @@ const PopoverTrigger = ({
   className,
   ...props
 }: PopoverTriggerProps) => {
-  const { trigger } = usePopoverStyles(unstyled)
+  const { trigger, classNames } = usePopoverStyles(unstyled)
 
-  return <RadixPopover.Trigger className={trigger({ className })} {...props} />
+  return (
+    <RadixPopover.Trigger
+      className={trigger({ className: cn(classNames?.trigger, className) })}
+      {...props}
+    />
+  )
 }
 
 /* -------------------------------------------------------------------------- */
@@ -81,9 +89,14 @@ type PopoverCloseProps = React.ComponentPropsWithRef<
   UnstyledProps
 
 const PopoverClose = ({ unstyled, className, ...props }: PopoverCloseProps) => {
-  const { close } = usePopoverStyles(unstyled)
+  const { close, classNames } = usePopoverStyles(unstyled)
 
-  return <RadixPopover.Close className={close({ className })} {...props} />
+  return (
+    <RadixPopover.Close
+      className={close({ className: cn(classNames?.close, className) })}
+      {...props}
+    />
+  )
 }
 
 /* -------------------------------------------------------------------------- */
@@ -103,7 +116,7 @@ const PopoverContent = ({
   sideOffset = 4,
   ...props
 }: PopoverContentProps) => {
-  const { content } = usePopoverStyles(unstyled)
+  const { content, classNames } = usePopoverStyles(unstyled)
 
   return (
     <RadixPopover.Portal>
@@ -111,7 +124,7 @@ const PopoverContent = ({
         side={side}
         align={align}
         sideOffset={sideOffset}
-        className={content({ className })}
+        className={content({ className: cn(classNames?.content, className) })}
         {...props}
       />
     </RadixPopover.Portal>
