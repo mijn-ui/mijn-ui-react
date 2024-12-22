@@ -5,7 +5,8 @@ const scrollAreaStyles = tv({
     base: "relative overflow-hidden",
     viewport: "size-full rounded-[inherit]",
     scrollbar: "flex touch-none select-none transition-colors",
-    scrollThumb: "bg-main-border relative flex-1 rounded-full",
+    thumb: "bg-main-border relative flex-1 rounded-full",
+    corner: "",
   },
   variants: {
     orientation: {
