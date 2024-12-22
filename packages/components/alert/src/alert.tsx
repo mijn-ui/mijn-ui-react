@@ -2,15 +2,26 @@
 
 import * as React from "react"
 import { createContext } from "@mijn-ui/react-utilities"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-core"
-import { alertStyles, AlertVariantProps } from "@mijn-ui/react-theme"
+import {
+  createTVUnstyledSlots,
+  UnstyledComponentWithSlots,
+  UnstyledProps,
+} from "@mijn-ui/react-core"
+import {
+  AlertSlots,
+  alertStyles,
+  AlertVariantProps,
+} from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
+import { cn } from "@mijn-ui/react-utilities"
 
 /* -------------------------------------------------------------------------- */
 /*                              AlertContext                                  */
 /* -------------------------------------------------------------------------- */
 
-type AlertContextType = UnstyledProps & {
+type AlertBaseProps = UnstyledComponentWithSlots<AlertSlots>
+
+type AlertContextType = AlertBaseProps & {
   styles: ReturnType<typeof alertStyles>
 }
 
@@ -27,7 +38,8 @@ const [AlertProvider, useAlertContext] = createContext<AlertContextType>({
 
 const useAlertStyles = (unstyledOverride?: boolean) => {
   const context = useAlertContext()
-  return useTVUnstyled(context, unstyledOverride)
+  const unstyledSlots = useTVUnstyled(context, unstyledOverride)
+  return { ...unstyledSlots, classNames: context.classNames }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -36,21 +48,23 @@ const useAlertStyles = (unstyledOverride?: boolean) => {
 
 export type AlertProps = React.ComponentProps<"div"> &
   AlertVariantProps &
-  UnstyledProps
+  AlertBaseProps
 
 const Alert = ({
   variant,
   color,
   unstyled = false,
   className,
+  classNames,
   ...props
 }: AlertProps) => {
   const styles = alertStyles({ variant, color })
+  const { base } = createTVUnstyledSlots({ base: styles.base }, unstyled)
 
   return (
-    <AlertProvider value={{ styles, unstyled }}>
+    <AlertProvider value={{ styles, unstyled, classNames }}>
       <div
-        className={applyUnstyled(unstyled, styles.base({ className }))}
+        className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
     </AlertProvider>
@@ -64,9 +78,16 @@ const Alert = ({
 type AlertIconProps = React.ComponentProps<"span"> & UnstyledProps
 
 const AlertIcon = ({ unstyled, className, ...props }: AlertIconProps) => {
-  const { iconWrapper } = useAlertStyles(unstyled)
+  const { iconWrapper, classNames } = useAlertStyles(unstyled)
 
-  return <span className={iconWrapper({ className })} {...props} />
+  return (
+    <span
+      className={iconWrapper({
+        className: cn(classNames?.iconWrapper, className),
+      })}
+      {...props}
+    />
+  )
 }
 
 /* -------------------------------------------------------------------------- */
@@ -76,9 +97,14 @@ const AlertIcon = ({ unstyled, className, ...props }: AlertIconProps) => {
 type AlertTitle = React.ComponentProps<"h5"> & UnstyledProps
 
 const AlertTitle = ({ unstyled, className, ...props }: AlertTitle) => {
-  const { title } = useAlertStyles(unstyled)
+  const { title, classNames } = useAlertStyles(unstyled)
 
-  return <h5 className={title({ className })} {...props} />
+  return (
+    <h5
+      className={title({ className: cn(classNames?.title, className) })}
+      {...props}
+    />
+  )
 }
 
 /* -------------------------------------------------------------------------- */
@@ -92,9 +118,16 @@ const AlertDescription = ({
   className,
   ...props
 }: AlertDescriptionProps) => {
-  const { description } = useAlertStyles(unstyled)
+  const { description, classNames } = useAlertStyles(unstyled)
 
-  return <p className={description({ className })} {...props} />
+  return (
+    <p
+      className={description({
+        className: cn(classNames?.description, className),
+      })}
+      {...props}
+    />
+  )
 }
 
 export { Alert, AlertDescription, AlertIcon, alertStyles, AlertTitle }
