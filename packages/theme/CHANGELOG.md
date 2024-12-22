@@ -1,5 +1,11 @@
 # @mijn-ui/react-theme
 
+## 0.0.8
+
+### Patch Changes
+
+- d32f792: Add more slots and types
+
 ## 0.0.7
 
 ### Patch Changes

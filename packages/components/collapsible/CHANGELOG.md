@@ -1,5 +1,11 @@
 # @mijn-ui-react/collapsible
 
+## 0.0.9
+
+### Patch Changes
+
+- 696a2e3: Add classNames support.
+
 ## 0.0.8
 
 ### Patch Changes
