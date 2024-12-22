@@ -1,18 +1,24 @@
 "use client"
 
 import * as React from "react"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-core"
+import {
+  createTVUnstyledSlots,
+  UnstyledComponentWithSlots,
+  UnstyledProps,
+} from "@mijn-ui/react-core"
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
 import { CircleIcon } from "@mijn-ui/shared-icons"
-import { radioGroupStyles } from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+import { radioGroupStyles, RadioGroupSlots } from "@mijn-ui/react-theme"
+import { createContext, cn } from "@mijn-ui/react-utilities"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 /* -------------------------------------------------------------------------- */
 /*                              RadioGroupContext                             */
 /* -------------------------------------------------------------------------- */
 
-type RadioGroupContextType = UnstyledProps & {
+type RadioGroupBaseProps = UnstyledComponentWithSlots<RadioGroupSlots>
+
+type RadioGroupContextType = RadioGroupBaseProps & {
   styles: ReturnType<typeof radioGroupStyles>
 }
 
@@ -30,7 +36,8 @@ const [RadioGroupProvider, useRadioGroupContext] =
 
 const useRadioGroupStyles = (unstyledOverride?: boolean) => {
   const context = useRadioGroupContext()
-  return useTVUnstyled(context, unstyledOverride)
+  const unstyledSlots = useTVUnstyled(context, unstyledOverride)
+  return { ...unstyledSlots, classNames: context.classNames }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -40,15 +47,21 @@ const useRadioGroupStyles = (unstyledOverride?: boolean) => {
 type RadioGroupProps = React.ComponentPropsWithRef<
   typeof RadioGroupPrimitive.Root
 > &
-  UnstyledProps
+  RadioGroupBaseProps
 
-const RadioGroup = ({ unstyled, className, ...props }: RadioGroupProps) => {
+const RadioGroup = ({
+  unstyled,
+  className,
+  classNames,
+  ...props
+}: RadioGroupProps) => {
   const styles = radioGroupStyles()
+  const { base } = createTVUnstyledSlots({ base: styles.base }, unstyled)
 
   return (
-    <RadioGroupProvider value={{ unstyled, styles }}>
+    <RadioGroupProvider value={{ unstyled, styles, classNames }}>
       <RadioGroupPrimitive.Root
-        className={applyUnstyled(unstyled, styles.base({ className }))}
+        className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
     </RadioGroupProvider>
@@ -69,12 +82,17 @@ const RadioGroupItem = ({
   className,
   ...props
 }: RadioGroupItemProps) => {
-  const { item, indicator, icon } = useRadioGroupStyles(unstyled)
+  const { item, indicator, icon, classNames } = useRadioGroupStyles(unstyled)
 
   return (
-    <RadioGroupPrimitive.Item className={item({ className })} {...props}>
-      <RadioGroupPrimitive.Indicator className={indicator()}>
-        <CircleIcon className={icon()} />
+    <RadioGroupPrimitive.Item
+      className={item({ className: cn(classNames?.item, className) })}
+      {...props}
+    >
+      <RadioGroupPrimitive.Indicator
+        className={indicator({ className: classNames?.indicator })}
+      >
+        <CircleIcon className={icon({ className: classNames?.icon })} />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   )
