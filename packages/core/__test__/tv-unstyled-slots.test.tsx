@@ -3,71 +3,87 @@ import { tv } from "tailwind-variants"
 import { createTVUnstyledSlots } from "../src/tv-unstyled-slots"
 
 describe("createTVUnstyledSlots", () => {
-  const baseDefault = "rounded-md"
-  const iconDefault = "p-4"
-  const indicatorDefault = "border-solid"
-
-  const colorClasses = {
-    primary: "bg-primary",
-    secondary: "bg-secondary",
-    accent: "bg-accent",
+  // Constants for default classes
+  const DEFAULT_CLASSES = {
+    base: "rounded-md",
+    icon: "p-4",
+    indicator: "border-solid",
   }
 
-  const sizeClasses = {
-    sm: "size-4",
-    md: "size-5",
-    lg: "size-6",
+  // Constants for variants
+  const VARIANTS = {
+    color: {
+      primary: "bg-primary",
+      secondary: "bg-secondary",
+      accent: "bg-accent",
+    },
+    size: {
+      sm: "size-4",
+      md: "size-5",
+      lg: "size-6",
+    },
   }
 
-  const userClass = "user-classes"
+  const DEFAULT_VARIANTS = {
+    color: "primary",
+    size: "md",
+  } as const
+
+  const USER_CLASS = "user-classes"
+
+  const verifyClassNames = (
+    slotFns: ReturnType<typeof createTVUnstyledSlots>,
+    expectedClasses: Record<string, string>,
+  ) => {
+    Object.entries(expectedClasses).forEach(([slot, expectedClass]) => {
+      expect(slotFns[slot]({ className: USER_CLASS })).toBe(expectedClass)
+    })
+  }
 
   describe("if variant slots are explicitly defined", () => {
     const componentStyles = tv({
       slots: {
-        base: baseDefault,
-        icon: iconDefault,
-        indicator: indicatorDefault,
+        base: DEFAULT_CLASSES.base,
+        icon: DEFAULT_CLASSES.icon,
+        indicator: DEFAULT_CLASSES.indicator,
       },
       variants: {
         color: {
           primary: {
-            base: colorClasses.primary,
-            icon: colorClasses.primary,
-            indicator: colorClasses.primary,
+            base: VARIANTS.color.primary,
+            icon: VARIANTS.color.primary,
+            indicator: VARIANTS.color.primary,
           },
           secondary: {
-            base: colorClasses.secondary,
-            icon: colorClasses.secondary,
-            indicator: colorClasses.secondary,
+            base: VARIANTS.color.secondary,
+            icon: VARIANTS.color.secondary,
+            indicator: VARIANTS.color.secondary,
           },
           accent: {
-            base: colorClasses.accent,
-            icon: colorClasses.accent,
-            indicator: colorClasses.accent,
+            base: VARIANTS.color.accent,
+            icon: VARIANTS.color.accent,
+            indicator: VARIANTS.color.accent,
           },
         },
         size: {
           sm: {
-            base: sizeClasses.sm,
-            icon: sizeClasses.sm,
-            indicator: sizeClasses.sm,
+            base: VARIANTS.size.sm,
+            icon: VARIANTS.size.sm,
+            indicator: VARIANTS.size.sm,
           },
           md: {
-            base: sizeClasses.md,
-            icon: sizeClasses.md,
-            indicator: sizeClasses.md,
+            base: VARIANTS.size.md,
+            icon: VARIANTS.size.md,
+            indicator: VARIANTS.size.md,
           },
           lg: {
-            base: sizeClasses.lg,
-            icon: sizeClasses.lg,
-            indicator: sizeClasses.lg,
+            base: VARIANTS.size.lg,
+            icon: VARIANTS.size.lg,
+            indicator: VARIANTS.size.lg,
           },
         },
       },
-      defaultVariants: {
-        color: "primary",
-        size: "md",
-      },
+      defaultVariants: DEFAULT_VARIANTS,
     })
 
     const styles = componentStyles({
@@ -76,53 +92,38 @@ describe("createTVUnstyledSlots", () => {
     })
 
     it("should return default & user classes if unstyled is false", () => {
-      const { base, indicator, icon } = createTVUnstyledSlots(styles, false)
-
-      expect(base({ className: userClass })).toBe(
-        `${baseDefault} ${colorClasses.secondary} ${sizeClasses.lg} ${userClass}`,
-      )
-      expect(icon({ className: userClass })).toBe(
-        `${iconDefault} ${colorClasses.secondary} ${sizeClasses.lg} ${userClass}`,
-      )
-      expect(indicator({ className: userClass })).toBe(
-        `${indicatorDefault} ${colorClasses.secondary} ${sizeClasses.lg} ${userClass}`,
-      )
+      verifyClassNames(createTVUnstyledSlots(styles, false), {
+        base: `${DEFAULT_CLASSES.base} ${VARIANTS.color.secondary} ${VARIANTS.size.lg} ${USER_CLASS}`,
+        indicator: `${DEFAULT_CLASSES.indicator} ${VARIANTS.color.secondary} ${VARIANTS.size.lg} ${USER_CLASS}`,
+        icon: `${DEFAULT_CLASSES.icon} ${VARIANTS.color.secondary} ${VARIANTS.size.lg} ${USER_CLASS}`,
+      })
     })
 
     it("should return default & user classes if unstyled is undefined", () => {
-      const { base, indicator, icon } = createTVUnstyledSlots(styles, undefined)
-
-      expect(base({ className: userClass })).toBe(
-        `${baseDefault} ${colorClasses.secondary} ${sizeClasses.lg} ${userClass}`,
-      )
-      expect(icon({ className: userClass })).toBe(
-        `${iconDefault} ${colorClasses.secondary} ${sizeClasses.lg} ${userClass}`,
-      )
-      expect(indicator({ className: userClass })).toBe(
-        `${indicatorDefault} ${colorClasses.secondary} ${sizeClasses.lg} ${userClass}`,
-      )
+      verifyClassNames(createTVUnstyledSlots(styles), {
+        base: `${DEFAULT_CLASSES.base} ${VARIANTS.color.secondary} ${VARIANTS.size.lg} ${USER_CLASS}`,
+        indicator: `${DEFAULT_CLASSES.indicator} ${VARIANTS.color.secondary} ${VARIANTS.size.lg} ${USER_CLASS}`,
+        icon: `${DEFAULT_CLASSES.icon} ${VARIANTS.color.secondary} ${VARIANTS.size.lg} ${USER_CLASS}`,
+      })
     })
 
     it("should return user classes if unstyled is true", () => {
-      const { base, indicator, icon } = createTVUnstyledSlots(styles, true)
-
-      expect(base({ className: userClass })).toBe(userClass)
-      expect(icon({ className: userClass })).toBe(userClass)
-      expect(indicator({ className: userClass })).toBe(userClass)
+      verifyClassNames(createTVUnstyledSlots(styles, true), {
+        base: `${USER_CLASS}`,
+        indicator: `${USER_CLASS}`,
+        icon: `${USER_CLASS}`,
+      })
     })
   })
 
   describe("if variant slots are not explicitly defined", () => {
     const componentStyles = tv({
       slots: {
-        base: baseDefault,
-        icon: iconDefault,
-        indicator: indicatorDefault,
+        base: DEFAULT_CLASSES.base,
+        icon: DEFAULT_CLASSES.icon,
+        indicator: DEFAULT_CLASSES.indicator,
       },
-      variants: {
-        color: colorClasses,
-        size: sizeClasses,
-      },
+      variants: VARIANTS,
       defaultVariants: {
         color: "primary",
         size: "md",
@@ -135,35 +136,27 @@ describe("createTVUnstyledSlots", () => {
     })
 
     it("should return default & user classes if unstyled is false", () => {
-      const { base, indicator, icon } = createTVUnstyledSlots(styles, false)
-
-      expect(base({ className: userClass })).toBe(
-        `${baseDefault} ${colorClasses.secondary} ${sizeClasses.lg} ${userClass}`,
-      )
-      expect(icon({ className: userClass })).toBe(`${iconDefault} ${userClass}`)
-      expect(indicator({ className: userClass })).toBe(
-        `${indicatorDefault} ${userClass}`,
-      )
+      verifyClassNames(createTVUnstyledSlots(styles, false), {
+        base: `${DEFAULT_CLASSES.base} ${VARIANTS.color.secondary} ${VARIANTS.size.lg} ${USER_CLASS}`,
+        indicator: `${DEFAULT_CLASSES.indicator} ${USER_CLASS}`,
+        icon: `${DEFAULT_CLASSES.icon} ${USER_CLASS}`,
+      })
     })
 
     it("should return default & user classes if unstyled is undefined", () => {
-      const { base, indicator, icon } = createTVUnstyledSlots(styles, undefined)
-
-      expect(base({ className: userClass })).toBe(
-        `${baseDefault} ${colorClasses.secondary} ${sizeClasses.lg} ${userClass}`,
-      )
-      expect(icon({ className: userClass })).toBe(`${iconDefault} ${userClass}`)
-      expect(indicator({ className: userClass })).toBe(
-        `${indicatorDefault} ${userClass}`,
-      )
+      verifyClassNames(createTVUnstyledSlots(styles), {
+        base: `${DEFAULT_CLASSES.base} ${VARIANTS.color.secondary} ${VARIANTS.size.lg} ${USER_CLASS}`,
+        indicator: `${DEFAULT_CLASSES.indicator} ${USER_CLASS}`,
+        icon: `${DEFAULT_CLASSES.icon} ${USER_CLASS}`,
+      })
     })
 
     it("should return user classes if unstyled is true", () => {
-      const { base, indicator, icon } = createTVUnstyledSlots(styles, true)
-
-      expect(base({ className: userClass })).toBe(userClass)
-      expect(icon({ className: userClass })).toBe(userClass)
-      expect(indicator({ className: userClass })).toBe(userClass)
+      verifyClassNames(createTVUnstyledSlots(styles, true), {
+        base: `${USER_CLASS}`,
+        indicator: `${USER_CLASS}`,
+        icon: `${USER_CLASS}`,
+      })
     })
   })
 })
