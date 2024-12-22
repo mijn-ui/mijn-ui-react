@@ -1,17 +1,19 @@
 "use client"
 
 import * as React from "react"
-import { createContext } from "@mijn-ui/react-utilities"
-import { UnstyledProps } from "@mijn-ui/react-core"
+import { createContext, cn } from "@mijn-ui/react-utilities"
+import { UnstyledComponentWithSlots, UnstyledProps } from "@mijn-ui/react-core"
 import { EllipsisIcon } from "@mijn-ui/shared-icons"
-import { paginationStyles } from "@mijn-ui/react-theme"
+import { paginationStyles, PaginationSlots } from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 /* -------------------------------------------------------------------------- */
 /*                              PaginationContext                             */
 /* -------------------------------------------------------------------------- */
 
-type PaginationContextType = {
+type PaginationBaseProps = UnstyledComponentWithSlots<PaginationSlots>
+
+type PaginationContextType = PaginationBaseProps & {
   styles: ReturnType<typeof paginationStyles>
   paginationRange: number[]
   currentPage: number
@@ -20,7 +22,7 @@ type PaginationContextType = {
   setPage: (page: number) => void
   goToPreviousPage: () => void
   goToNextPage: () => void
-} & UnstyledProps
+}
 
 const [PaginationProvider, usePaginationContext] =
   createContext<PaginationContextType>({
@@ -92,7 +94,8 @@ const usePaginationRange = ({
 /* -------------------------------------------------------------------------- */
 const usePaginationStyles = (unstyledOverride?: boolean) => {
   const context = usePaginationContext()
-  return useTVUnstyled(context, unstyledOverride)
+  const unstyledSlots = useTVUnstyled(context, unstyledOverride)
+  return { ...unstyledSlots, classNames: context.classNames }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -105,7 +108,7 @@ type PaginationProps = {
   children: React.ReactNode
   currentPage?: number // Controlled state
   onChangePage?: (page: number) => void // Callback for controlled state
-} & UnstyledProps
+} & PaginationBaseProps
 
 const Pagination: React.FC<PaginationProps> = ({
   unstyled = false,
@@ -114,6 +117,7 @@ const Pagination: React.FC<PaginationProps> = ({
   children,
   currentPage: propsCurrentPage,
   onChangePage,
+  classNames,
 }) => {
   const [internalCurrentPage, setInternalCurrentPage] =
     React.useState<number>(1)
@@ -153,6 +157,7 @@ const Pagination: React.FC<PaginationProps> = ({
       value={{
         unstyled,
         styles,
+        classNames,
         paginationRange: paginationRange.range,
         prevEllipsisActive: paginationRange.prevEllipsisActive,
         nextEllipsisActive: paginationRange.nextEllipsisActive,
@@ -178,9 +183,14 @@ const PaginationContent = ({
   unstyled,
   ...props
 }: PaginationContentProps) => {
-  const { content } = usePaginationStyles(unstyled)
+  const { content, classNames } = usePaginationStyles(unstyled)
 
-  return <nav className={content({ className })} {...props} />
+  return (
+    <nav
+      className={content({ className: cn(classNames?.content, className) })}
+      {...props}
+    />
+  )
 }
 
 type PaginationListProps = React.ComponentProps<"ul"> & UnstyledProps
@@ -195,13 +205,21 @@ const PaginationList = ({
   ...props
 }: PaginationListProps) => {
   const { currentPage, setPage, paginationRange } = usePaginationContext()
-  const { list, item } = usePaginationStyles(unstyled)
+  const { list, item, classNames } = usePaginationStyles(unstyled)
 
   return (
-    <ul className={list({ className })} {...props}>
+    <ul
+      className={list({ className: cn(classNames?.list, className) })}
+      {...props}
+    >
       {paginationRange.map((page, index) => (
         <li key={index} onClick={() => setPage(page)}>
-          <button className={item({ active: currentPage === page })}>
+          <button
+            className={item({
+              active: currentPage === page,
+              className: classNames?.item,
+            })}
+          >
             {page}
           </button>
         </li>
@@ -223,12 +241,14 @@ const PaginationPreviousButton = ({
   ...props
 }: PaginationPreviousButtonProps) => {
   const { goToPreviousPage } = usePaginationContext()
-  const { previousBtn } = usePaginationStyles(unstyled)
+  const { previousBtn, classNames } = usePaginationStyles(unstyled)
 
   return (
     <button
       onClick={goToPreviousPage}
-      className={previousBtn({ className })}
+      className={previousBtn({
+        className: cn(classNames?.previousBtn, className),
+      })}
       {...props}
     />
   )
@@ -246,12 +266,12 @@ const PaginationNextButton = ({
   ...props
 }: PaginationNextButtonProps) => {
   const { goToNextPage } = usePaginationContext()
-  const { nextBtn } = usePaginationStyles(unstyled)
+  const { nextBtn, classNames } = usePaginationStyles(unstyled)
 
   return (
     <button
       onClick={goToNextPage}
-      className={nextBtn({ className })}
+      className={nextBtn({ className: cn(classNames?.nextBtn, className) })}
       {...props}
     />
   )
@@ -270,12 +290,18 @@ const PaginationPreviousEllipsis = ({
   ...props
 }: PaginationPreviousEllipsisProps) => {
   const { prevEllipsisActive } = usePaginationContext()
-  const { previousElipsis } = usePaginationStyles(unstyled)
+  const { previousElipsis, classNames } = usePaginationStyles(unstyled)
 
-  if (!prevEllipsisActive) return
+  if (!prevEllipsisActive) return null
 
   return (
-    <span aria-hidden className={previousElipsis({ className })} {...props}>
+    <span
+      aria-hidden
+      className={previousElipsis({
+        className: cn(classNames?.previousElipsis, className),
+      })}
+      {...props}
+    >
       <EllipsisIcon className="size-4" />
     </span>
   )
@@ -293,12 +319,18 @@ const PaginationNextEllipsis = ({
   ...props
 }: PaginationNextEllipsisProps) => {
   const { nextEllipsisActive } = usePaginationContext()
-  const { nextElipsis } = usePaginationStyles(unstyled)
+  const { nextElipsis, classNames } = usePaginationStyles(unstyled)
 
-  if (!nextEllipsisActive) return
+  if (!nextEllipsisActive) return null
 
   return (
-    <span aria-hidden className={nextElipsis({ className })} {...props}>
+    <span
+      aria-hidden
+      className={nextElipsis({
+        className: cn(classNames?.nextElipsis, className),
+      })}
+      {...props}
+    >
       <EllipsisIcon className="size-4" />
     </span>
   )
