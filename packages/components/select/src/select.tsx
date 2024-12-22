@@ -1,22 +1,24 @@
 "use client"
 
 import * as React from "react"
-import { createContext } from "@mijn-ui/react-utilities"
-import { UnstyledProps } from "@mijn-ui/react-core"
+import { cn, createContext } from "@mijn-ui/react-utilities"
+import { UnstyledComponentWithSlots, UnstyledProps } from "@mijn-ui/react-core"
 import * as SelectPrimitive from "@radix-ui/react-select"
 import {
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
 } from "@mijn-ui/shared-icons"
-import { selectStyles } from "@mijn-ui/react-theme"
+import { selectStyles, SelectSlots } from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 /* -------------------------------------------------------------------------- */
 /*                                SelectContext                               */
 /* -------------------------------------------------------------------------- */
 
-type SelectContextType = UnstyledProps & {
+type SelectBaseProps = UnstyledComponentWithSlots<SelectSlots>
+
+type SelectContextType = SelectBaseProps & {
   styles: ReturnType<typeof selectStyles>
 }
 
@@ -33,7 +35,8 @@ const [SelectProvider, useSelectContext] = createContext<SelectContextType>({
 
 const useSelectStyles = (unstyledOverride?: boolean) => {
   const context = useSelectContext()
-  return useTVUnstyled(context, unstyledOverride)
+  const unstyledSlots = useTVUnstyled(context, unstyledOverride)
+  return { ...unstyledSlots, classNames: context.classNames }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -45,13 +48,13 @@ const SelectGroup = SelectPrimitive.Group
 const SelectValue = SelectPrimitive.Value
 
 type SelectProps = React.ComponentProps<typeof SelectPrimitive.Root> &
-  UnstyledProps
+  SelectBaseProps
 
-const Select = ({ unstyled = false, ...props }: SelectProps) => {
+const Select = ({ classNames, unstyled = false, ...props }: SelectProps) => {
   const styles = selectStyles()
 
   return (
-    <SelectProvider value={{ unstyled, styles }}>
+    <SelectProvider value={{ unstyled, styles, classNames }}>
       <SelectPrimitive.Root {...props} />
     </SelectProvider>
   )
@@ -72,10 +75,15 @@ const SelectTrigger = ({
   children,
   ...props
 }: SelectTriggerProps) => {
-  const { trigger } = useSelectStyles(unstyled)
+  const { trigger, classNames } = useSelectStyles(unstyled)
 
   return (
-    <SelectPrimitive.Trigger className={trigger({ className })} {...props}>
+    <SelectPrimitive.Trigger
+      className={trigger({
+        className: cn(classNames?.trigger, className),
+      })}
+      {...props}
+    >
       {children}
       <SelectPrimitive.Icon asChild>
         <ChevronDownIcon />
@@ -98,11 +106,13 @@ const SelectScrollUpButton = ({
   className,
   ...props
 }: SelectScrollUpButtonProps) => {
-  const { scrollUpBtn } = useSelectStyles(unstyled)
+  const { scrollUpBtn, classNames } = useSelectStyles(unstyled)
 
   return (
     <SelectPrimitive.ScrollUpButton
-      className={scrollUpBtn({ className })}
+      className={scrollUpBtn({
+        className: cn(classNames?.scrollUpBtn, className),
+      })}
       {...props}
     >
       <ChevronUpIcon className="" />
@@ -124,11 +134,13 @@ const SelectScrollDownButton = ({
   className,
   ...props
 }: SelectScrollDownButtonProps) => {
-  const { scrollDownBtn } = useSelectStyles(unstyled)
+  const { scrollDownBtn, classNames } = useSelectStyles(unstyled)
 
   return (
     <SelectPrimitive.ScrollDownButton
-      className={scrollDownBtn({ className })}
+      className={scrollDownBtn({
+        className: cn(classNames?.scrollDownBtn, className),
+      })}
       {...props}
     >
       <ChevronDownIcon className="size-4" />
@@ -152,17 +164,25 @@ const SelectContent = ({
   position = "popper",
   ...props
 }: SelectContentProps) => {
-  const { content, viewport } = useSelectStyles(unstyled)
+  const { content, viewport, classNames } = useSelectStyles(unstyled)
 
   return (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
-        className={content({ position, className })}
+        className={content({
+          className: cn(classNames?.content, className),
+          position,
+        })}
         position={position}
         {...props}
       >
         <SelectScrollUpButton />
-        <SelectPrimitive.Viewport className={viewport({ position })}>
+        <SelectPrimitive.Viewport
+          className={viewport({
+            className: classNames?.viewport,
+            position,
+          })}
+        >
           {children}
         </SelectPrimitive.Viewport>
         <SelectScrollDownButton />
@@ -181,9 +201,16 @@ type SelectLabelProps = React.ComponentPropsWithRef<
   UnstyledProps
 
 const SelectLabel = ({ unstyled, className, ...props }: SelectLabelProps) => {
-  const { label } = useSelectStyles(unstyled)
+  const { label, classNames } = useSelectStyles(unstyled)
 
-  return <SelectPrimitive.Label className={label({ className })} {...props} />
+  return (
+    <SelectPrimitive.Label
+      className={label({
+        className: cn(classNames?.label, className),
+      })}
+      {...props}
+    />
+  )
 }
 
 /* -------------------------------------------------------------------------- */
@@ -201,13 +228,22 @@ const SelectItem = ({
   children,
   ...props
 }: SelectItemProps) => {
-  const { item, itemIndicator } = useSelectStyles(unstyled)
+  const { item, itemIndicator, classNames } = useSelectStyles(unstyled)
 
   return (
-    <SelectPrimitive.Item className={item({ className })} {...props}>
+    <SelectPrimitive.Item
+      className={item({
+        className: cn(classNames?.item, className),
+      })}
+      {...props}
+    >
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
 
-      <span className={itemIndicator()}>
+      <span
+        className={itemIndicator({
+          className: classNames?.itemIndicator,
+        })}
+      >
         <SelectPrimitive.ItemIndicator>
           <CheckIcon />
         </SelectPrimitive.ItemIndicator>
@@ -230,11 +266,13 @@ const SelectSeparator = ({
   className,
   ...props
 }: SelectSeparatorProps) => {
-  const { separator } = useSelectStyles(unstyled)
+  const { separator, classNames } = useSelectStyles(unstyled)
 
   return (
     <SelectPrimitive.Separator
-      className={separator({ className })}
+      className={separator({
+        className: cn(classNames?.separator, className),
+      })}
       {...props}
     />
   )
