@@ -130,4 +130,4 @@ const AlertDescription = ({
   )
 }
 
-export { Alert, AlertDescription, AlertIcon, alertStyles, AlertTitle }
+export { Alert, AlertDescription, AlertIcon, AlertTitle }

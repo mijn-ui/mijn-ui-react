@@ -185,5 +185,4 @@ export {
   AccordionItem,
   AccordionTrigger,
   useAccordionStyles,
-  accordionStyles,
 }
