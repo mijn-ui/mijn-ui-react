@@ -1,11 +1,11 @@
 "use client"
 
 import * as React from "react"
-import { createContext } from "@mijn-ui/react-utilities"
-import { UnstyledProps } from "@mijn-ui/react-core"
+import { cn, createContext } from "@mijn-ui/react-utilities"
+import { UnstyledComponentWithSlots, UnstyledProps } from "@mijn-ui/react-core"
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "@mijn-ui/shared-icons"
-import { dropdownMenuStyles } from "@mijn-ui/react-theme"
+import { dropdownMenuStyles, DropdownMenuSlots } from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 const DropdownMenuGroup = DropdownMenuPrimitive.Group
@@ -20,7 +20,9 @@ const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
 /*                             DropdownMenuContext                            */
 /* -------------------------------------------------------------------------- */
 
-type DropdownContextType = UnstyledProps & {
+type DropdownMenuBaseProps = UnstyledComponentWithSlots<DropdownMenuSlots>
+
+type DropdownContextType = DropdownMenuBaseProps & {
   styles: ReturnType<typeof dropdownMenuStyles>
 }
 
@@ -38,20 +40,26 @@ const [DropdownProvider, useDropdownContext] =
 
 const useDropdownStyles = (unstyledOverride?: boolean) => {
   const context = useDropdownContext()
-  return useTVUnstyled(context, unstyledOverride)
+  const unstyledSlots = useTVUnstyled(context, unstyledOverride)
+  return { ...unstyledSlots, classNames: context.classNames }
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                DropdownMenu                                */
 /* -------------------------------------------------------------------------- */
 
-type DropdownMenuProps = DropdownMenuPrimitive.DropdownMenuProps & UnstyledProps
+type DropdownMenuProps = DropdownMenuPrimitive.DropdownMenuProps &
+  DropdownMenuBaseProps
 
-const DropdownMenu = ({ unstyled = false, ...props }: DropdownMenuProps) => {
+const DropdownMenu = ({
+  classNames,
+  unstyled = false,
+  ...props
+}: DropdownMenuProps) => {
   const styles = dropdownMenuStyles()
 
   return (
-    <DropdownProvider value={{ unstyled, styles }}>
+    <DropdownProvider value={{ unstyled, styles, classNames }}>
       <DropdownMenuPrimitive.Root {...props} />
     </DropdownProvider>
   )
@@ -71,10 +79,12 @@ const DropdownMenuTrigger = ({
   className,
   ...props
 }: DropdownTriggerProps) => {
-  const { trigger } = useDropdownStyles(unstyled)
+  const { trigger, classNames } = useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.Trigger
-      className={trigger({ className })}
+      className={trigger({
+        className: cn(classNames?.trigger, className),
+      })}
       {...props}
     />
   )
@@ -98,15 +108,20 @@ const DropdownMenuSubTrigger = ({
   children,
   ...props
 }: DropdownMenuSubTriggerProps) => {
-  const { subTrigger } = useDropdownStyles(unstyled)
+  const { subTrigger, subTriggerIcon, classNames } = useDropdownStyles(unstyled)
 
   return (
     <DropdownMenuPrimitive.SubTrigger
-      className={subTrigger({ className, inset })}
+      className={subTrigger({
+        className: cn(classNames?.subTrigger, className),
+        inset,
+      })}
       {...props}
     >
       {children}
-      <ChevronRightIcon className="ml-auto" />
+      <ChevronRightIcon
+        className={subTriggerIcon({ className: classNames?.subTriggerIcon })}
+      />
     </DropdownMenuPrimitive.SubTrigger>
   )
 }
@@ -125,11 +140,13 @@ const DropdownMenuSubContent = ({
   className,
   ...props
 }: DropdownMenuSubContentProps) => {
-  const { subContent } = useDropdownStyles(unstyled)
+  const { subContent, classNames } = useDropdownStyles(unstyled)
 
   return (
     <DropdownMenuPrimitive.SubContent
-      className={subContent({ className })}
+      className={subContent({
+        className: cn(classNames?.subContent, className),
+      })}
       {...props}
     />
   )
@@ -150,12 +167,14 @@ const DropdownMenuContent = ({
   sideOffset = 4,
   ...props
 }: DropdownMenuContentProps) => {
-  const { content } = useDropdownStyles(unstyled)
+  const { content, classNames } = useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Content
         sideOffset={sideOffset}
-        className={content({ className })}
+        className={content({
+          className: cn(classNames?.content, className),
+        })}
         {...props}
       />
     </DropdownMenuPrimitive.Portal>
@@ -178,11 +197,14 @@ const DropdownMenuItem = ({
   inset,
   ...props
 }: DropdownMenuItemProps) => {
-  const { item } = useDropdownStyles(unstyled)
+  const { item, classNames } = useDropdownStyles(unstyled)
 
   return (
     <DropdownMenuPrimitive.Item
-      className={item({ className, inset })}
+      className={item({
+        className: cn(classNames?.item, className),
+        inset,
+      })}
       {...props}
     />
   )
@@ -204,17 +226,31 @@ const DropdownMenuCheckboxItem = ({
   checked,
   ...props
 }: DropdownMenuCheckboxItemProps) => {
-  const { checkboxItem, checkboxItemIconWrapper, checkboxItemIcon } =
-    useDropdownStyles(unstyled)
+  const {
+    checkboxItem,
+    checkboxItemIconWrapper,
+    checkboxItemIcon,
+    classNames,
+  } = useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.CheckboxItem
-      className={checkboxItem({ className })}
+      className={checkboxItem({
+        className: cn(classNames?.checkboxItem, className),
+      })}
       checked={checked}
       {...props}
     >
-      <span className={checkboxItemIconWrapper()}>
+      <span
+        className={checkboxItemIconWrapper({
+          className: classNames?.checkboxItemIconWrapper,
+        })}
+      >
         <DropdownMenuPrimitive.ItemIndicator>
-          <CheckIcon className={checkboxItemIcon()} />
+          <CheckIcon
+            className={checkboxItemIcon({
+              className: classNames?.checkboxItemIcon,
+            })}
+          />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -237,16 +273,26 @@ const DropdownMenuRadioItem = ({
   children,
   ...props
 }: DropdownMenuRadioItemProps) => {
-  const { radioItem, radioItemIconWrapper, radioItemIcon } =
+  const { radioItem, radioItemIconWrapper, radioItemIcon, classNames } =
     useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.RadioItem
-      className={radioItem({ className })}
+      className={radioItem({
+        className: cn(classNames?.radioItem, className),
+      })}
       {...props}
     >
-      <span className={radioItemIconWrapper()}>
+      <span
+        className={radioItemIconWrapper({
+          className: classNames?.radioItemIconWrapper,
+        })}
+      >
         <DropdownMenuPrimitive.ItemIndicator>
-          <CircleIcon className={radioItemIcon()} />
+          <CircleIcon
+            className={radioItemIcon({
+              className: classNames?.radioItemIcon,
+            })}
+          />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -269,10 +315,13 @@ const DropdownMenuLabel = ({
   inset,
   ...props
 }: DropdownMenuLabelProps) => {
-  const { label } = useDropdownStyles(unstyled)
+  const { label, classNames } = useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.Label
-      className={label({ className, inset })}
+      className={label({
+        className: cn(classNames?.label, className),
+        inset,
+      })}
       {...props}
     />
   )
@@ -292,11 +341,13 @@ const DropdownMenuSeparator = ({
   unstyled,
   ...props
 }: DropdownMenuSeparatorProps) => {
-  const { separator } = useDropdownStyles(unstyled)
+  const { separator, classNames } = useDropdownStyles(unstyled)
 
   return (
     <DropdownMenuPrimitive.Separator
-      className={separator({ className })}
+      className={separator({
+        className: cn(classNames?.separator, className),
+      })}
       {...props}
     />
   )
@@ -311,9 +362,16 @@ const DropdownMenuShortcut = ({
   unstyled,
   ...props
 }: React.HTMLAttributes<HTMLSpanElement> & UnstyledProps) => {
-  const { shortcut } = useDropdownStyles(unstyled)
+  const { shortcut, classNames } = useDropdownStyles(unstyled)
 
-  return <span className={shortcut({ className })} {...props} />
+  return (
+    <span
+      className={shortcut({
+        className: cn(classNames?.shortcut, className),
+      })}
+      {...props}
+    />
+  )
 }
 DropdownMenuShortcut.displayName = "DropdownMenuShortcut"
 
