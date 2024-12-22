@@ -3,16 +3,22 @@
 import * as React from "react"
 import * as TabsPrimitive from "@radix-ui/react-tabs"
 
-import { UnstyledProps } from "@mijn-ui/react-core"
-import { createContext } from "@mijn-ui/react-utilities"
-import { tabsStyles } from "@mijn-ui/react-theme"
+import {
+  UnstyledComponentWithSlots,
+  UnstyledProps,
+  createTVUnstyledSlots,
+} from "@mijn-ui/react-core"
+import { cn, createContext } from "@mijn-ui/react-utilities"
+import { tabsStyles, TabsSlots } from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 /* -------------------------------------------------------------------------- */
 /*                                 TabsContext                                */
 /* -------------------------------------------------------------------------- */
 
-type TabsContextType = UnstyledProps & { styles: ReturnType<typeof tabsStyles> }
+type TabsBaseProps = UnstyledComponentWithSlots<TabsSlots>
+
+type TabsContextType = TabsBaseProps & { styles: ReturnType<typeof tabsStyles> }
 
 const [TabsProvider, useTabsContext] = createContext<TabsContextType>({
   name: "TabsContext",
@@ -27,7 +33,8 @@ const [TabsProvider, useTabsContext] = createContext<TabsContextType>({
 
 const useTabsStyles = (unstyledOverride?: boolean) => {
   const context = useTabsContext()
-  return useTVUnstyled(context, unstyledOverride)
+  const unstyledSlots = useTVUnstyled(context, unstyledOverride)
+  return { ...unstyledSlots, classNames: context.classNames }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -35,14 +42,26 @@ const useTabsStyles = (unstyledOverride?: boolean) => {
 /* -------------------------------------------------------------------------- */
 
 type TabsProps = React.ComponentPropsWithRef<typeof TabsPrimitive.Root> &
-  UnstyledProps
+  TabsBaseProps
 
-const Tabs = ({ children, unstyled = false, ...props }: TabsProps) => {
+const Tabs = ({
+  children,
+  className,
+  classNames,
+  unstyled = false,
+  ...props
+}: TabsProps) => {
   const styles = tabsStyles()
+  const { base } = createTVUnstyledSlots({ base: styles.base }, unstyled)
 
   return (
-    <TabsProvider value={{ unstyled, styles }}>
-      <TabsPrimitive.Root {...props}>{children}</TabsPrimitive.Root>
+    <TabsProvider value={{ unstyled, styles, classNames }}>
+      <TabsPrimitive.Root
+        className={base({ className: cn(classNames?.base, className) })}
+        {...props}
+      >
+        {children}
+      </TabsPrimitive.Root>
     </TabsProvider>
   )
 }
@@ -55,9 +74,16 @@ type TabsListProps = React.ComponentPropsWithRef<typeof TabsPrimitive.List> &
   UnstyledProps
 
 const TabsList = ({ className, unstyled, ...props }: TabsListProps) => {
-  const { list } = useTabsStyles(unstyled)
+  const { list, classNames } = useTabsStyles(unstyled)
 
-  return <TabsPrimitive.List className={list({ className })} {...props} />
+  return (
+    <TabsPrimitive.List
+      className={list({
+        className: cn(classNames?.list, className),
+      })}
+      {...props}
+    />
+  )
 }
 
 /* -------------------------------------------------------------------------- */
@@ -70,9 +96,16 @@ type TabsTriggerProps = React.ComponentPropsWithRef<
   UnstyledProps
 
 const TabsTrigger = ({ className, unstyled, ...props }: TabsTriggerProps) => {
-  const { trigger } = useTabsStyles(unstyled)
+  const { trigger, classNames } = useTabsStyles(unstyled)
 
-  return <TabsPrimitive.Trigger className={trigger({ className })} {...props} />
+  return (
+    <TabsPrimitive.Trigger
+      className={trigger({
+        className: cn(classNames?.trigger, className),
+      })}
+      {...props}
+    />
+  )
 }
 
 /* -------------------------------------------------------------------------- */
@@ -85,9 +118,16 @@ type TabsContentProps = React.ComponentPropsWithRef<
   UnstyledProps
 
 const TabsContent = ({ className, unstyled, ...props }: TabsContentProps) => {
-  const { content } = useTabsStyles(unstyled)
+  const { content, classNames } = useTabsStyles(unstyled)
 
-  return <TabsPrimitive.Content className={content({ className })} {...props} />
+  return (
+    <TabsPrimitive.Content
+      className={content({
+        className: cn(classNames?.content, className),
+      })}
+      {...props}
+    />
+  )
 }
 
 export { Tabs, TabsList, TabsTrigger, TabsContent }
