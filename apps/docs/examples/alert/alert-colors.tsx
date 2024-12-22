@@ -5,7 +5,8 @@ import {
   AlertTitle,
 } from "@mijn-ui/react-alert"
 import { IoRocketOutline } from "react-icons/io5"
-import { LuCheckCircle, LuFileWarning } from "react-icons/lu"
+import { LuFileWarning } from "react-icons/lu"
+import { LiaCheckCircle } from "react-icons/lia"
 import { MdErrorOutline } from "react-icons/md"
 
 const AlertColors = () => {
@@ -14,7 +15,7 @@ const AlertColors = () => {
       {/* --------------------------------- Success -------------------------------- */}
       <Alert className="w-full max-w-lg" color="success">
         <AlertIcon>
-          <LuCheckCircle />
+          <LiaCheckCircle />
         </AlertIcon>
         <AlertTitle>Deployment Successful</AlertTitle>
         <AlertDescription>

@@ -6,7 +6,7 @@ import {
   TableHeaderCell,
   TableRow,
 } from "@mijn-ui/react-table"
-import { LuMoreHorizontal } from "react-icons/lu"
+import { LuEllipsis } from "react-icons/lu"
 
 const TableExample = () => {
   return (
@@ -49,7 +49,7 @@ const TableExample = () => {
             </TableCell>
 
             <TableCell>
-              <LuMoreHorizontal />
+              <LuEllipsis />
             </TableCell>
           </TableRow>
 
@@ -77,7 +77,7 @@ const TableExample = () => {
             </TableCell>
 
             <TableCell>
-              <LuMoreHorizontal />
+              <LuEllipsis />
             </TableCell>
           </TableRow>
 
@@ -107,7 +107,7 @@ const TableExample = () => {
             </TableCell>
 
             <TableCell>
-              <LuMoreHorizontal />
+              <LuEllipsis />
             </TableCell>
           </TableRow>
 
@@ -136,7 +136,7 @@ const TableExample = () => {
               </p>
             </TableCell>
             <TableCell>
-              <LuMoreHorizontal />
+              <LuEllipsis />
             </TableCell>
           </TableRow>
         </TableBody>

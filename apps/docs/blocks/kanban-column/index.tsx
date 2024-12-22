@@ -15,7 +15,7 @@ import {
   KanbanTitle,
 } from "./kanban-column"
 import { Button } from "@mijn-ui/react-button"
-import { LuMoreVertical, LuPlus } from "react-icons/lu"
+import { LuEllipsisVertical, LuPlus } from "react-icons/lu"
 
 // Default Kanban container data for initial state
 const DEFAULT_VALUE: KanbanContainerType[] = [
@@ -126,7 +126,7 @@ const KanbanExample = () => {
                 variant="text"
                 className="size-7 rounded-full text-muted-text hover:text-main-text"
               >
-                <LuMoreVertical />
+                <LuEllipsisVertical />
               </Button>
             </KanbanHeader>
             <KanbanContent container={container}>

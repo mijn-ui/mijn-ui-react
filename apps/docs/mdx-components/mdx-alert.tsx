@@ -6,7 +6,8 @@ import {
 } from "@mijn-ui/react-alert"
 import { AlertVariantProps } from "@mijn-ui/react-theme"
 import { cn } from "@mijn-ui/react-utilities"
-import { LuAlertCircle, LuBug } from "react-icons/lu"
+import { LuBug } from "react-icons/lu"
+import { CiCircleAlert } from "react-icons/ci"
 
 type AlertProps = {
   title: string
@@ -21,7 +22,7 @@ const Alert = ({
   color = "info",
   className,
 }: AlertProps) => {
-  const Icon = color === "danger" ? LuBug : LuAlertCircle
+  const Icon = color === "danger" ? LuBug : CiCircleAlert
 
   return (
     <MijnUIAlert
