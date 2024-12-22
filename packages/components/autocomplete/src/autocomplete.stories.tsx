@@ -104,6 +104,7 @@ const AutocompleteWithScrollArea = (args: AutocompleteProps) => {
     >
       <AutocompleteTrigger asChild>
         <Input
+          unstyled={args.unstyled}
           className="bg-surface"
           placeholder={"Search for a framework"}
           startIcon={<SearchIcon />}
@@ -147,6 +148,7 @@ const AutoCompleteWithDialog = (args: AutocompleteProps) => {
         >
           <AutocompleteTrigger asChild>
             <Input
+              unstyled={args.unstyled}
               className="bg-surface"
               placeholder={"Search for a framework"}
               endIcon={<ChevronDownIcon />}

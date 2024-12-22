@@ -1,5 +1,3 @@
-import { mijnUiPreset } from "@mijn-ui/react-theme"
-
 /**
  * This Tailwind config is used to enable code completion in the editor.
  * I am not quite sure why Tailwind autocomplete doesn't work, so I'm adding this as a workaround.
@@ -10,7 +8,6 @@ import { mijnUiPreset } from "@mijn-ui/react-theme"
 export default {
   darkMode: "class",
   content: ["./**/*.{js,jsx,ts,tsx}"],
-  presets: [mijnUiPreset],
   theme: {
     extend: {
       width: {

@@ -168,6 +168,34 @@ const AccordionUnstyled = (args: AccordionProps) => (
   </Accordion>
 )
 
+const AccordionCustomStyles = (args: AccordionProps) => {
+  return (
+    <Accordion {...args}>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Is it accessible</AccordionTrigger>
+        <AccordionContent>
+          Yes. It adheres to the WAI-ARIA design pattern.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Is it unstyled</AccordionTrigger>
+        <AccordionContent>
+          Yes, you can make the components unstyled by setting the{" "}
+          <span className="font-semibold">unstyled</span> prop to{" "}
+          <span className="font-semibold">true</span> on either a single
+          component or a parent component.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Is it animated?</AccordionTrigger>
+        <AccordionContent>
+          Yes! You can animate the Accordion with CSS or JavaScript.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  )
+}
+
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
@@ -217,6 +245,21 @@ export const MultipleExpand: Story = {
 
 export const CustomIcon: Story = {
   render: AccordionWithCustomIcons,
+}
+
+export const CustomStyles: Story = {
+  render: AccordionCustomStyles,
+  args: {
+    classNames: {
+      base: "md:w-xl w-60 rounded-2xl p-4 bg-gradient-to-tr from-primary/20 to-primary/50 dark:from-primary/10 dark:to-primary/30",
+      item: "border-none bg-white/50 dark:bg-white/20 my-2 backdrop-blur rounded-lg px-4",
+      contentWrapper: "",
+      content: "",
+      triggerWrapper: "",
+      trigger: "rounded-lg text-primary",
+      icon: "",
+    },
+  },
 }
 
 export const Unstyled: Story = {
