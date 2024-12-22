@@ -1,19 +1,28 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots, UnstyledProps } from "@mijn-ui/react-core"
+import {
+  createTVUnstyledSlots,
+  UnstyledComponentWithSlots,
+} from "@mijn-ui/react-core"
 import * as SwitchPrimitives from "@radix-ui/react-switch"
-import { switchStyles } from "@mijn-ui/react-theme"
+import { SwitchSlots, switchStyles } from "@mijn-ui/react-theme"
+import { cn } from "@mijn-ui/react-utilities"
 
-type SwitchProps = React.ComponentPropsWithRef<typeof SwitchPrimitives.Root> &
-  UnstyledProps
+type SwitchProps = UnstyledComponentWithSlots<SwitchSlots> &
+  React.ComponentPropsWithRef<typeof SwitchPrimitives.Root>
 
-const Switch = ({ className, unstyled, ...props }: SwitchProps) => {
+const Switch = ({ className, classNames, unstyled, ...props }: SwitchProps) => {
   const { base, thumb } = createTVUnstyledSlots(switchStyles(), unstyled)
 
   return (
-    <SwitchPrimitives.Root className={base({ className })} {...props}>
-      <SwitchPrimitives.Thumb className={thumb()} />
+    <SwitchPrimitives.Root
+      className={base({ className: cn(classNames?.base, className) })}
+      {...props}
+    >
+      <SwitchPrimitives.Thumb
+        className={thumb({ className: classNames?.thumb })}
+      />
     </SwitchPrimitives.Root>
   )
 }
