@@ -1,22 +1,33 @@
 "use client"
 
 import * as React from "react"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-core"
+import {
+  createTVUnstyledSlots,
+  UnstyledComponentWithSlots,
+  UnstyledProps,
+} from "@mijn-ui/react-core"
 import { createContext } from "@mijn-ui/react-utilities"
 import * as RadixAccordion from "@radix-ui/react-accordion"
 import { ChevronDownIcon } from "@mijn-ui/shared-icons"
-import { AccordionVariantProps, accordionStyles } from "@mijn-ui/react-theme"
+import {
+  AccordionSlots,
+  AccordionVariantProps,
+  accordionStyles,
+} from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
+import { cn } from "@mijn-ui/react-utilities"
 
 /* -------------------------------------------------------------------------- */
 /*                              AccordionContext                              */
 /* -------------------------------------------------------------------------- */
 
-type AccordionContextType = UnstyledProps & {
+type AccordionBaseProps = UnstyledComponentWithSlots<AccordionSlots>
+
+type AccordionContextType = AccordionBaseProps & {
   styles: ReturnType<typeof accordionStyles>
 }
 
-export const [AccordionProvider, useAccordionContext] =
+const [AccordionProvider, useAccordionContext] =
   createContext<AccordionContextType>({
     name: "AccordionContext",
     strict: true,
@@ -30,7 +41,8 @@ export const [AccordionProvider, useAccordionContext] =
 
 const useAccordionStyles = (unstyledOverride?: boolean) => {
   const context = useAccordionContext()
-  return useTVUnstyled(context, unstyledOverride)
+  const unstyledSlots = useTVUnstyled(context, unstyledOverride)
+  return { ...unstyledSlots, classNames: context.classNames }
 }
 /* -------------------------------------------------------------------------- */
 /*                                  Accordion                                 */
@@ -40,20 +52,22 @@ export type AccordionProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Root
 > &
   AccordionVariantProps &
-  UnstyledProps
+  AccordionBaseProps
 
 const Accordion = ({
   className,
+  classNames,
   unstyled = false,
   variant,
   ...props
 }: AccordionProps) => {
   const styles = accordionStyles({ variant })
+  const { base } = createTVUnstyledSlots({ base: styles.base }, unstyled)
 
   return (
-    <AccordionProvider value={{ unstyled, styles }}>
+    <AccordionProvider value={{ classNames, unstyled, styles }}>
       <RadixAccordion.Root
-        className={applyUnstyled(unstyled, styles.base(), className)}
+        className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
     </AccordionProvider>
@@ -74,9 +88,14 @@ const AccordionItem = ({
   unstyled,
   ...props
 }: AccordionItemProps) => {
-  const { item } = useAccordionStyles(unstyled)
+  const { item, classNames } = useAccordionStyles(unstyled)
 
-  return <RadixAccordion.Item className={item({ className })} {...props} />
+  return (
+    <RadixAccordion.Item
+      className={item({ className: cn(classNames?.item, className) })}
+      {...props}
+    />
+  )
 }
 
 /* -------------------------------------------------------------------------- */
@@ -98,16 +117,28 @@ const AccordionTrigger = ({
   ...props
 }: AccordionTriggerProps) => {
   const {
+    classNames,
     triggerWrapper,
     trigger,
     icon: iconStyles,
   } = useAccordionStyles(unstyled)
 
   return (
-    <RadixAccordion.Header className={triggerWrapper()}>
-      <RadixAccordion.Trigger className={trigger({ className })} {...props}>
+    <RadixAccordion.Header
+      className={triggerWrapper({ className: classNames?.triggerWrapper })}
+    >
+      <RadixAccordion.Trigger
+        className={trigger({ className: cn(classNames?.trigger, className) })}
+        {...props}
+      >
         {children}
-        {icon ? icon : <ChevronDownIcon className={iconStyles()} />}
+        {icon ? (
+          icon
+        ) : (
+          <ChevronDownIcon
+            className={iconStyles({ className: classNames?.icon })}
+          />
+        )}
       </RadixAccordion.Trigger>
     </RadixAccordion.Header>
   )
@@ -128,11 +159,18 @@ const AccordionContent = ({
   children,
   ...props
 }: AccordionContentProps) => {
-  const { contentWrapper, content } = useAccordionStyles(unstyled)
+  const { contentWrapper, content, classNames } = useAccordionStyles(unstyled)
 
   return (
-    <RadixAccordion.Content className={contentWrapper()} {...props}>
-      <div className={content({ className })}>{children}</div>
+    <RadixAccordion.Content
+      className={contentWrapper({ className: classNames?.contentWrapper })}
+      {...props}
+    >
+      <div
+        className={content({ className: cn(classNames?.content, className) })}
+      >
+        {children}
+      </div>
     </RadixAccordion.Content>
   )
 }
@@ -146,5 +184,6 @@ export {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  useAccordionStyles,
   accordionStyles,
 }
