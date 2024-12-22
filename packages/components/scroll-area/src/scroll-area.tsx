@@ -1,18 +1,18 @@
 "use client"
 
 import * as React from "react"
-import { cn, createContext } from "@mijn-ui/react-utilities"
 import {
   createTVUnstyledSlots,
   UnstyledComponentWithSlots,
   UnstyledProps,
 } from "@mijn-ui/react-core"
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
-import { scrollAreaStyles, ScrollAreaSlots } from "@mijn-ui/react-theme"
+import { ScrollAreaSlots, scrollAreaStyles } from "@mijn-ui/react-theme"
+import { cn, createContext } from "@mijn-ui/react-utilities"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 /* -------------------------------------------------------------------------- */
-/*                             ScrollAreaContext                              */
+/*                              ScrollAreaContext                             */
 /* -------------------------------------------------------------------------- */
 
 type ScrollAreaBaseProps = UnstyledComponentWithSlots<ScrollAreaSlots>
@@ -30,7 +30,7 @@ const [ScrollAreaProvider, useScrollAreaContext] =
   })
 
 /* -------------------------------------------------------------------------- */
-/*                              ScrollAreaHook                                */
+/*                               ScrollAreaHook                               */
 /* -------------------------------------------------------------------------- */
 
 const useScrollAreaStyles = (unstyledOverride?: boolean) => {
@@ -40,7 +40,7 @@ const useScrollAreaStyles = (unstyledOverride?: boolean) => {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                ScrollArea                                  */
+/*                                 ScrollArea                                 */
 /* -------------------------------------------------------------------------- */
 
 type ScrollAreaProps = React.ComponentPropsWithRef<
@@ -49,138 +49,64 @@ type ScrollAreaProps = React.ComponentPropsWithRef<
   ScrollAreaBaseProps
 
 const ScrollArea = ({
-  className,
+  unstyled,
   classNames,
-  unstyled = false,
+  className,
+  children,
   ...props
 }: ScrollAreaProps) => {
   const styles = scrollAreaStyles()
-  const { base } = createTVUnstyledSlots({ base: styles.base }, unstyled)
+  const { base, viewport } = createTVUnstyledSlots(styles, unstyled)
 
   return (
-    <ScrollAreaProvider value={{ unstyled, styles, classNames }}>
+    <ScrollAreaProvider value={{ unstyled, styles }}>
       <ScrollAreaPrimitive.Root
-        className={base({
-          className: cn(classNames?.base, className),
-        })}
+        className={base({ className: cn(classNames?.base, className) })}
         {...props}
-      />
+      >
+        <ScrollAreaPrimitive.Viewport
+          className={viewport({ className: classNames?.viewport })}
+        >
+          {children}
+        </ScrollAreaPrimitive.Viewport>
+        <ScrollBar />
+        <ScrollAreaPrimitive.Corner />
+      </ScrollAreaPrimitive.Root>
     </ScrollAreaProvider>
   )
 }
 
 /* -------------------------------------------------------------------------- */
-/*                             ScrollAreaViewport                             */
+/*                                  ScrollBar                                 */
 /* -------------------------------------------------------------------------- */
 
-type ScrollAreaViewportProps = React.ComponentPropsWithRef<
-  typeof ScrollAreaPrimitive.Viewport
+type ScrollBarProps = React.ComponentPropsWithRef<
+  typeof ScrollAreaPrimitive.ScrollAreaScrollbar
 > &
   UnstyledProps
 
-const ScrollAreaViewport = ({
-  className,
+const ScrollBar = ({
   unstyled,
+  className,
+  orientation = "vertical",
   ...props
-}: ScrollAreaViewportProps) => {
-  const { viewport, classNames } = useScrollAreaStyles(unstyled)
+}: ScrollBarProps) => {
+  const { scrollbar, scrollThumb, classNames } = useScrollAreaStyles(unstyled)
 
   return (
-    <ScrollAreaPrimitive.Viewport
-      className={viewport({
-        className: cn(classNames?.viewport, className),
-      })}
-      {...props}
-    />
-  )
-}
-
-/* -------------------------------------------------------------------------- */
-/*                             ScrollAreaScrollbar                            */
-/* -------------------------------------------------------------------------- */
-
-type ScrollAreaScrollbarProps = React.ComponentPropsWithRef<
-  typeof ScrollAreaPrimitive.Scrollbar
-> &
-  UnstyledProps & {
-    orientation: "horizontal" | "vertical"
-  }
-
-const ScrollAreaScrollbar = ({
-  className,
-  unstyled,
-  orientation,
-  ...props
-}: ScrollAreaScrollbarProps) => {
-  const { scrollbar, classNames } = useScrollAreaStyles(unstyled)
-
-  return (
-    <ScrollAreaPrimitive.Scrollbar
+    <ScrollAreaPrimitive.ScrollAreaScrollbar
+      orientation={orientation}
       className={scrollbar({
+        orientation,
         className: cn(classNames?.scrollbar, className),
       })}
-      orientation={orientation}
       {...props}
-    />
+    >
+      <ScrollAreaPrimitive.ScrollAreaThumb
+        className={scrollThumb({ className: classNames?.scrollThumb })}
+      />
+    </ScrollAreaPrimitive.ScrollAreaScrollbar>
   )
 }
 
-/* -------------------------------------------------------------------------- */
-/*                             ScrollAreaThumb                                */
-/* -------------------------------------------------------------------------- */
-
-type ScrollAreaThumbProps = React.ComponentPropsWithRef<
-  typeof ScrollAreaPrimitive.Thumb
-> &
-  UnstyledProps
-
-const ScrollAreaThumb = ({
-  className,
-  unstyled,
-  ...props
-}: ScrollAreaThumbProps) => {
-  const { thumb, classNames } = useScrollAreaStyles(unstyled)
-
-  return (
-    <ScrollAreaPrimitive.Thumb
-      className={thumb({
-        className: cn(classNames?.thumb, className),
-      })}
-      {...props}
-    />
-  )
-}
-
-/* -------------------------------------------------------------------------- */
-/*                             ScrollAreaCorner                               */
-/* -------------------------------------------------------------------------- */
-
-type ScrollAreaCornerProps = React.ComponentPropsWithRef<
-  typeof ScrollAreaPrimitive.Corner
-> &
-  UnstyledProps
-
-const ScrollAreaCorner = ({
-  className,
-  unstyled,
-  ...props
-}: ScrollAreaCornerProps) => {
-  const { corner, classNames } = useScrollAreaStyles(unstyled)
-
-  return (
-    <ScrollAreaPrimitive.Corner
-      className={corner({
-        className: cn(classNames?.corner, className),
-      })}
-      {...props}
-    />
-  )
-}
-
-export {
-  ScrollArea,
-  ScrollAreaViewport,
-  ScrollAreaScrollbar,
-  ScrollAreaThumb,
-  ScrollAreaCorner,
-}
+export { ScrollArea, ScrollBar }
