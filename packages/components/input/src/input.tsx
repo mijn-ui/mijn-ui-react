@@ -2,21 +2,19 @@
 
 import * as React from "react"
 import { Label } from "@mijn-ui/react-label"
-import { createTVUnstyledSlots, UnstyledProps } from "@mijn-ui/react-core"
-import { inputStyles } from "@mijn-ui/react-theme"
+import {
+  createTVUnstyledSlots,
+  UnstyledComponentWithSlots,
+} from "@mijn-ui/react-core"
+import { InputSlots, inputStyles } from "@mijn-ui/react-theme"
+import { cn } from "@mijn-ui/react-utilities"
 
-export type InputProps = React.ComponentPropsWithRef<"input"> & {
-  className?: string
-  classNames?: {
-    input?: string
-    label?: string
-    startIcon?: string
-    endIcon?: string
+type InputProps = UnstyledComponentWithSlots<InputSlots> &
+  React.ComponentPropsWithRef<"input"> & {
+    startIcon?: React.ReactNode
+    endIcon?: React.ReactNode
+    label?: React.ReactNode
   }
-  startIcon?: React.ReactNode
-  endIcon?: React.ReactNode
-  label?: React.ReactNode
-} & UnstyledProps
 
 const Input = ({
   unstyled,
@@ -45,7 +43,7 @@ const Input = ({
   const id = React.useId()
 
   return (
-    <div className={base({ className })}>
+    <div className={base({ className: cn(classNames?.base, className) })}>
       {startIcon && (
         <div className={startIconStyle({ className: classNames?.startIcon })}>
           {startIcon}
