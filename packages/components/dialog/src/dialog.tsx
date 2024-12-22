@@ -1,17 +1,23 @@
 "use client"
 
 import * as React from "react"
-import { createContext } from "@mijn-ui/react-utilities"
-import { UnstyledProps } from "@mijn-ui/react-core"
+import { cn, createContext } from "@mijn-ui/react-utilities"
+import { UnstyledComponentWithSlots, UnstyledProps } from "@mijn-ui/react-core"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
-import { dialogStyles, DialogVariantProps } from "@mijn-ui/react-theme"
+import {
+  dialogStyles,
+  DialogVariantProps,
+  DialogSlots,
+} from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 /* -------------------------------------------------------------------------- */
 /*                                DialogContext                               */
 /* -------------------------------------------------------------------------- */
 
-type DialogContextType = UnstyledProps & {
+type DialogBaseProps = UnstyledComponentWithSlots<DialogSlots>
+
+type DialogContextType = DialogBaseProps & {
   styles: ReturnType<typeof dialogStyles>
 }
 
@@ -27,7 +33,8 @@ const [DialogProvider, useDialogContext] = createContext<DialogContextType>({
 /* -------------------------------------------------------------------------- */
 const useDialogStyles = (unstyledOverride?: boolean) => {
   const context = useDialogContext()
-  return useTVUnstyled(context, unstyledOverride)
+  const unstyledSlots = useTVUnstyled(context, unstyledOverride)
+  return { ...unstyledSlots, classNames: context.classNames }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -38,13 +45,13 @@ const DialogPortal = DialogPrimitive.Portal
 
 type DialogProps = React.ComponentPropsWithRef<typeof DialogPrimitive.Root> &
   DialogVariantProps &
-  UnstyledProps
+  DialogBaseProps
 
-const Dialog = ({ unstyled = false, ...props }: DialogProps) => {
+const Dialog = ({ classNames, unstyled = false, ...props }: DialogProps) => {
   const styles = dialogStyles()
 
   return (
-    <DialogProvider value={{ unstyled, styles }}>
+    <DialogProvider value={{ unstyled, styles, classNames }}>
       <DialogPrimitive.Root {...props} />
     </DialogProvider>
   )
@@ -64,10 +71,15 @@ const DialogTrigger = ({
   className,
   ...props
 }: DialogTriggerProps) => {
-  const { trigger } = useDialogStyles(unstyled)
+  const { trigger, classNames } = useDialogStyles(unstyled)
 
   return (
-    <DialogPrimitive.Trigger className={trigger({ className })} {...props} />
+    <DialogPrimitive.Trigger
+      className={trigger({
+        className: cn(classNames?.trigger, className),
+      })}
+      {...props}
+    />
   )
 }
 
@@ -81,9 +93,16 @@ type DialogCloseProps = React.ComponentPropsWithRef<
   UnstyledProps
 
 const DialogClose = ({ unstyled, className, ...props }: DialogCloseProps) => {
-  const { close } = useDialogStyles(unstyled)
+  const { close, classNames } = useDialogStyles(unstyled)
 
-  return <DialogPrimitive.Close className={close({ className })} {...props} />
+  return (
+    <DialogPrimitive.Close
+      className={close({
+        className: cn(classNames?.close, className),
+      })}
+      {...props}
+    />
+  )
 }
 
 /* -------------------------------------------------------------------------- */
@@ -100,10 +119,15 @@ const DialogOverlay = ({
   className,
   ...props
 }: DialogOverlayProps) => {
-  const { overlay } = useDialogStyles(unstyled)
+  const { overlay, classNames } = useDialogStyles(unstyled)
 
   return (
-    <DialogPrimitive.Overlay className={overlay({ className })} {...props} />
+    <DialogPrimitive.Overlay
+      className={overlay({
+        className: cn(classNames?.overlay, className),
+      })}
+      {...props}
+    />
   )
 }
 
@@ -122,7 +146,7 @@ const DialogContent = ({
   children,
   ...props
 }: DialogContentProps) => {
-  const { content } = useDialogStyles(unstyled)
+  const { content, classNames } = useDialogStyles(unstyled)
   const { styles } = useDialogContext()
 
   return (
@@ -133,8 +157,17 @@ const DialogContent = ({
           if the parent component were to be unstyled. Without this constraint, users might face confusion 
           as the dialog may become invisible or inaccessible. Keeping the wrapper styled ensures proper positioning
           and accessibility regardless of the unstyled prop's usage. */}
-      <div className={styles.contentWrapper()}>
-        <DialogPrimitive.Content className={content({ className })} {...props}>
+      <div
+        className={styles.contentWrapper({
+          className: classNames?.contentWrapper,
+        })}
+      >
+        <DialogPrimitive.Content
+          className={content({
+            className: cn(classNames?.content, className),
+          })}
+          {...props}
+        >
           {children}
         </DialogPrimitive.Content>
       </div>
@@ -151,9 +184,16 @@ const DialogHeader = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
-  const { header } = useDialogStyles(unstyled)
+  const { header, classNames } = useDialogStyles(unstyled)
 
-  return <div className={header({ className })} {...props} />
+  return (
+    <div
+      className={header({
+        className: cn(classNames?.header, className),
+      })}
+      {...props}
+    />
+  )
 }
 
 /* -------------------------------------------------------------------------- */
@@ -165,9 +205,16 @@ const DialogFooter = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
-  const { footer } = useDialogStyles(unstyled)
+  const { footer, classNames } = useDialogStyles(unstyled)
 
-  return <div className={footer({ className })} {...props} />
+  return (
+    <div
+      className={footer({
+        className: cn(classNames?.footer, className),
+      })}
+      {...props}
+    />
+  )
 }
 
 /* -------------------------------------------------------------------------- */
@@ -180,9 +227,16 @@ type DialogTitleProps = React.ComponentPropsWithRef<
   UnstyledProps
 
 const DialogTitle = ({ unstyled, className, ...props }: DialogTitleProps) => {
-  const { title } = useDialogStyles(unstyled)
+  const { title, classNames } = useDialogStyles(unstyled)
 
-  return <DialogPrimitive.Title className={title({ className })} {...props} />
+  return (
+    <DialogPrimitive.Title
+      className={title({
+        className: cn(classNames?.title, className),
+      })}
+      {...props}
+    />
+  )
 }
 
 /* -------------------------------------------------------------------------- */
@@ -199,11 +253,13 @@ const DialogDescription = ({
   className,
   ...props
 }: DialogDescriptionProps) => {
-  const { description } = useDialogStyles(unstyled)
+  const { description, classNames } = useDialogStyles(unstyled)
 
   return (
     <DialogPrimitive.Description
-      className={description({ className })}
+      className={description({
+        className: cn(classNames?.description, className),
+      })}
       {...props}
     />
   )
