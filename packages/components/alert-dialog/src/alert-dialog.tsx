@@ -2,13 +2,15 @@
 
 import * as React from "react"
 import { createContext } from "@mijn-ui/react-utilities"
-import { UnstyledProps } from "@mijn-ui/react-core"
+import { UnstyledComponentWithSlots, UnstyledProps } from "@mijn-ui/react-core"
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 import {
+  AlertDialogSlots,
   alertDialogStyles,
   AlertDialogVariantProps,
 } from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
+import { cn } from "@mijn-ui/react-utilities"
 
 const AlertDialogPortal = AlertDialogPrimitive.Portal
 
@@ -16,7 +18,9 @@ const AlertDialogPortal = AlertDialogPrimitive.Portal
 /*                              AlertDialogContext                                  */
 /* -------------------------------------------------------------------------- */
 
-type AlertDialogContextType = UnstyledProps & {
+type AlertDialogBaseProps = UnstyledComponentWithSlots<AlertDialogSlots>
+
+type AlertDialogContextType = AlertDialogBaseProps & {
   styles: ReturnType<typeof alertDialogStyles>
 }
 
@@ -34,7 +38,8 @@ const [AlertDialogProvider, useAlertDialogContext] =
 
 const useAlertDialogStyles = (unstyledOverride?: boolean) => {
   const context = useAlertDialogContext()
-  return useTVUnstyled(context, unstyledOverride)
+  const unstyledSlots = useTVUnstyled(context, unstyledOverride)
+  return { ...unstyledSlots, classNames: context.classNames }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -45,16 +50,17 @@ export type AlertDialogProps = React.ComponentProps<
   typeof AlertDialogPrimitive.Root
 > &
   AlertDialogVariantProps &
-  UnstyledProps
+  AlertDialogBaseProps
 
 const AlertDialog = ({
+  classNames,
   unstyled = false,
   ...props
-}: React.ComponentProps<typeof AlertDialogPrimitive.Root> & UnstyledProps) => {
+}: AlertDialogProps) => {
   const styles = alertDialogStyles()
 
   return (
-    <AlertDialogProvider value={{ unstyled, styles }}>
+    <AlertDialogProvider value={{ unstyled, styles, classNames }}>
       <AlertDialogPrimitive.Root {...props} />
     </AlertDialogProvider>
   )
@@ -74,11 +80,11 @@ const AlertDialogTrigger = ({
   className,
   ...props
 }: AlertDialogTriggerProps) => {
-  const { trigger } = useAlertDialogStyles(unstyled)
+  const { trigger, classNames } = useAlertDialogStyles(unstyled)
 
   return (
     <AlertDialogPrimitive.Trigger
-      className={trigger({ className })}
+      className={trigger({ className: cn(classNames?.trigger, className) })}
       {...props}
     />
   )
@@ -98,11 +104,11 @@ const AlertDialogOverlay = ({
   unstyled,
   ...props
 }: AlertDialogOverlayProps) => {
-  const { overlay } = useAlertDialogStyles(unstyled)
+  const { overlay, classNames } = useAlertDialogStyles(unstyled)
 
   return (
     <AlertDialogPrimitive.Overlay
-      className={overlay({ className })}
+      className={overlay({ className: cn(classNames?.overlay, className) })}
       {...props}
     />
   )
@@ -122,7 +128,7 @@ const AlertDialogContent = ({
   className,
   ...props
 }: AlertDialogContentProps) => {
-  const { content } = useAlertDialogStyles(unstyled)
+  const { content, classNames } = useAlertDialogStyles(unstyled)
   const { styles } = useAlertDialogContext()
 
   return (
@@ -134,9 +140,13 @@ const AlertDialogContent = ({
           as the dialog may become invisible or inaccessible. Keeping the wrapper styled ensures proper positioning
           and accessibility regardless of the unstyled prop's usage. */}
 
-      <div className={styles.contentWrapper()}>
+      <div
+        className={styles.contentWrapper({
+          className: classNames?.contentWrapper,
+        })}
+      >
         <AlertDialogPrimitive.Content
-          className={content({ className })}
+          className={content({ className: cn(classNames?.content, className) })}
           {...props}
         />
       </div>
@@ -153,9 +163,14 @@ const AlertDialogHeader = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
-  const { header } = useAlertDialogStyles(unstyled)
+  const { header, classNames } = useAlertDialogStyles(unstyled)
 
-  return <div className={header({ className })} {...props} />
+  return (
+    <div
+      className={header({ className: cn(classNames?.header, className) })}
+      {...props}
+    />
+  )
 }
 AlertDialogHeader.displayName = "AlertDialogHeader"
 
@@ -168,9 +183,14 @@ const AlertDialogFooter = ({
   unstyled,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
-  const { footer } = useAlertDialogStyles(unstyled)
+  const { footer, classNames } = useAlertDialogStyles(unstyled)
 
-  return <div className={footer({ className })} {...props} />
+  return (
+    <div
+      className={footer({ className: cn(classNames?.footer, className) })}
+      {...props}
+    />
+  )
 }
 AlertDialogFooter.displayName = "AlertDialogFooter"
 
@@ -188,10 +208,13 @@ const AlertDialogTitle = ({
   className,
   ...props
 }: AlertDialogTitleProps) => {
-  const { title } = useAlertDialogStyles(unstyled)
+  const { title, classNames } = useAlertDialogStyles(unstyled)
 
   return (
-    <AlertDialogPrimitive.Title className={title({ className })} {...props} />
+    <AlertDialogPrimitive.Title
+      className={title({ className: cn(classNames?.title, className) })}
+      {...props}
+    />
   )
 }
 
@@ -209,11 +232,13 @@ const AlertDialogDescription = ({
   className,
   ...props
 }: AlertDialogDescriptionProps) => {
-  const { description } = useAlertDialogStyles(unstyled)
+  const { description, classNames } = useAlertDialogStyles(unstyled)
 
   return (
     <AlertDialogPrimitive.Description
-      className={description({ className })}
+      className={description({
+        className: cn(classNames?.description, className),
+      })}
       {...props}
     />
   )
@@ -233,10 +258,13 @@ const AlertDialogAction = ({
   className,
   ...props
 }: AlertDialogActionProps) => {
-  const { action } = useAlertDialogStyles(unstyled)
+  const { action, classNames } = useAlertDialogStyles(unstyled)
 
   return (
-    <AlertDialogPrimitive.Action className={action({ className })} {...props} />
+    <AlertDialogPrimitive.Action
+      className={action({ className: cn(classNames?.action, className) })}
+      {...props}
+    />
   )
 }
 
@@ -254,10 +282,13 @@ const AlertDialogCancel = ({
   className,
   ...props
 }: AlertDialogCancelProps) => {
-  const { cancel } = useAlertDialogStyles(unstyled)
+  const { cancel, classNames } = useAlertDialogStyles(unstyled)
 
   return (
-    <AlertDialogPrimitive.Cancel className={cancel({ className })} {...props} />
+    <AlertDialogPrimitive.Cancel
+      className={cancel({ className: cn(classNames?.cancel, className) })}
+      {...props}
+    />
   )
 }
 
