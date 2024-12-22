@@ -1,10 +1,10 @@
 "use client"
 
 import * as React from "react"
-import { createContext } from "@mijn-ui/react-utilities"
+import { cn, createContext } from "@mijn-ui/react-utilities"
 import {
+  UnstyledComponentWithSlots,
   UnstyledProps,
-  applyUnstyled,
   createTVUnstyledSlots,
 } from "@mijn-ui/react-core"
 import * as AvatarPrimitive from "@radix-ui/react-avatar"
@@ -12,6 +12,8 @@ import {
   avatarGroupStyles,
   avatarStyles,
   AvatarVariantProps,
+  AvatarSlots,
+  AvatarGroupSlots,
 } from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
@@ -19,7 +21,9 @@ import { useTVUnstyled } from "@mijn-ui/react-hooks"
 /*                              AvatarContext                                  */
 /* -------------------------------------------------------------------------- */
 
-type AvatarContextType = UnstyledProps & {
+type AvatarBaseProps = UnstyledComponentWithSlots<AvatarSlots>
+
+type AvatarContextType = AvatarBaseProps & {
   styles: ReturnType<typeof avatarStyles>
 }
 
@@ -36,20 +40,24 @@ const [AvatarProvider, useAvatarContext] = createContext<AvatarContextType>({
 
 const useAvatarStyles = (unstyledOverride?: boolean) => {
   const context = useAvatarContext()
-  return useTVUnstyled(context, unstyledOverride)
+  const unstyledSlots = useTVUnstyled(context, unstyledOverride)
+  return { ...unstyledSlots, classNames: context.classNames }
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                 AvatarGroup                                */
 /* -------------------------------------------------------------------------- */
 
+type AvatarGroupBaseProps = UnstyledComponentWithSlots<AvatarGroupSlots>
+
 type AvatarGroupProps = React.ComponentPropsWithRef<"div"> & {
   max?: number
-} & UnstyledProps
+} & AvatarGroupBaseProps
 
 const AvatarGroup = ({
   max,
   children,
+  classNames,
   className,
   unstyled = false,
   ...props
@@ -63,10 +71,19 @@ const AvatarGroup = ({
   const remainingChildrenCount = max ? childArray.length - max : 0
 
   return (
-    <div className={group({ className })} {...props}>
+    <div
+      className={group({ className: cn(classNames?.group, className) })}
+      {...props}
+    >
       {visibleChildren}
       {remainingChildrenCount > 0 && (
-        <span className={groupRemainChildren()}>+{remainingChildrenCount}</span>
+        <span
+          className={groupRemainChildren({
+            className: classNames?.groupRemainChildren,
+          })}
+        >
+          +{remainingChildrenCount}
+        </span>
       )}
     </div>
   )
@@ -78,15 +95,22 @@ const AvatarGroup = ({
 
 type AvatarProps = React.ComponentPropsWithRef<typeof AvatarPrimitive.Root> &
   AvatarVariantProps &
-  UnstyledProps
+  AvatarBaseProps
 
-const Avatar = ({ unstyled, size, className, ...props }: AvatarProps) => {
+const Avatar = ({
+  unstyled,
+  size,
+  className,
+  classNames,
+  ...props
+}: AvatarProps) => {
   const styles = avatarStyles({ size })
+  const { base } = createTVUnstyledSlots({ base: styles.base }, unstyled)
 
   return (
-    <AvatarProvider value={{ unstyled, styles }}>
+    <AvatarProvider value={{ unstyled, styles, classNames }}>
       <AvatarPrimitive.Root
-        className={applyUnstyled(unstyled, styles.base({ className }))}
+        className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
     </AvatarProvider>
@@ -103,9 +127,16 @@ type AvatarImageProps = React.ComponentPropsWithRef<
   UnstyledProps
 
 const AvatarImage = ({ unstyled, className, ...props }: AvatarImageProps) => {
-  const { image } = useAvatarStyles(unstyled)
+  const { image, classNames } = useAvatarStyles(unstyled)
 
-  return <AvatarPrimitive.Image className={image({ className })} {...props} />
+  return (
+    <AvatarPrimitive.Image
+      className={image({
+        className: cn(classNames?.image, className),
+      })}
+      {...props}
+    />
+  )
 }
 
 /* -------------------------------------------------------------------------- */
@@ -122,10 +153,15 @@ const AvatarFallback = ({
   className,
   ...props
 }: AvatarFallbackProps) => {
-  const { fallback } = useAvatarStyles(unstyled)
+  const { fallback, classNames } = useAvatarStyles(unstyled)
 
   return (
-    <AvatarPrimitive.Fallback className={fallback({ className })} {...props} />
+    <AvatarPrimitive.Fallback
+      className={fallback({
+        className: cn(classNames?.fallback, className),
+      })}
+      {...props}
+    />
   )
 }
 
