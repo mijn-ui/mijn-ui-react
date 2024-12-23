@@ -30,6 +30,10 @@ h1 {
     @apply px-4 md:inline-block md:truncate md:w-[calc(var(--fd-sidebar-width)-48px)] md:overflow-hidden;
   }
 
+  p {
+    @apply !mt-2;
+  }
+
   button {
     &[data-state="open"] {
       @apply text-fd-foreground [&>svg]:rotate-180;

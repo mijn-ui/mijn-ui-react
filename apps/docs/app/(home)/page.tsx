@@ -9,8 +9,8 @@ export default function HomePage() {
         Reusable components for clean, responsive interfaces.
       </h1>
       <p className="w-full text-lg font-medium text-muted-text md:w-3/4">
-        An open-source library built with Radix Primitives and Tailwind CSS,
-        offering customizable, unstyled components.
+        An open-source library inspired by NextUI and Shadcn/ui, built with
+        Radix Primitives and Tailwind CSS.
       </p>
 
       <div className="flex w-full items-center justify-start gap-2 md:justify-center">
