@@ -1,0 +1,117 @@
+---
+title: Installation
+description: This guide provides installation instructions for using Mijn-UI components manually and via npm packages.
+root: true
+---
+
+<Alert 
+  color="warning"
+  title="Beta Notice"
+  description="Currently, we provide only one installation option: Next.js integration."
+/>
+
+
+### Requirements
+
+- [NextJS 15](https://nextjs.org) or later
+- [React 19](https://react.dev) or later
+- [Tailwind Css 3.4](https://tailwindcss.com/) or later
+
+### Starter Template
+
+You can either use the [nextjs-template](https://github.com/mijn-ui/nextjs-template/tree/npm) template to get started quickly or follow the steps [below](#installation-guide) to integrate Mijn-UI components.
+
+---
+
+### Installation Guide
+
+<Steps>
+  <Step>
+  #### Setting Up Your Next.js Project
+
+  ```bash title="bash"
+  npx create-next-app@latest
+  ```
+
+  Make sure to use Tailwind CSS when setting up your Next.js project.
+
+  ```bash title="bash"
+    ...
+    ✔ Would you like to use TypeScript? No / Yes
+    ✔ Would you like to use ESLint? No / Yes
+    ✔ Would you like to use Tailwind CSS? Yes # [!code highlight]
+    ✔ Would you like your code inside a `src/` directory? No / Yes
+    ✔ Would you like to use App Router? (recommended) No / Yes
+    ✔ Would you like to use Turbopack for next dev? No / Yes
+    ✔ Would you like to customize the import alias (@/* by default)? No / Yes
+  ```
+  </Step>
+
+  <Step>
+  #### Install Mijn-UI Dependencies
+
+  Add the necessary Mijn-UI packages to your project:
+
+  ```package-install
+  @mijn-ui/react-core @mijn-ui/react-theme
+  ```
+  </Step>
+
+  <Step>
+  #### Tailwind CSS Configuration
+
+  Configure Tailwind CSS by updating your `tailwind.config.ts` file:
+
+  ```ts title="tailwind.config.ts"
+  import { mijnUiPreset } from "@mijn-ui/react-theme" // [!code highlight]
+
+  /** @type {import('tailwindcss').Config} */
+  export default {
+    content: [
+      // ...
+      // make sure it's pointing to the ROOT node_module
+      "./node_modules/@mijn-ui/react-theme/dist/**/*.{js,ts,jsx,tsx}", // [!code highlight]
+    ],
+    plugins: [mijnUiPreset], // [!code highlight]
+  };
+  ```
+  </Step>
+
+  <Step>
+  #### Add Tailwind CSS to Your Global Styles
+
+  Make sure your global CSS file includes the following Tailwind CSS directives:
+
+  ```css title="global.css"
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  ```
+  </Step>
+
+  <Step>
+  #### That's it
+
+  You can now start adding components to your project. Check out the [components](/docs/components/accordion) section to learn more about the available components.
+  </Step>
+</Steps>
+
+---
+
+### Manual Installation
+
+If you want to use Mijn-UI components manually, make sure to finish the [installation guide](#installation-guide) setup and then install the additional dependencies:
+
+
+```package-install
+@mijn-ui/react-utilities @mijn-ui/react-hooks @mijn-ui/shared-icons
+```
+
+When using Mijn-UI components manually, you will need to resolve the import paths in your project. This is because all of the code is directly from the package source files.
+
+For example, update your imports like this:
+
+```tsx
+import { Button } from "@mijn-ui/react-utilities"; // [!code --]
+import { Button } from "@/components/button"; // [!code ++]
+```

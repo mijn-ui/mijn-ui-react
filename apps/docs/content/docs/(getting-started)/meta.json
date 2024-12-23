@@ -1,4 +1,4 @@
 {
   "title": "Getting Started",
-  "pages": ["index", "motivation", "npm-install", "manual-install", "..."]
+  "pages": ["index", "installation", "..."]
 }
