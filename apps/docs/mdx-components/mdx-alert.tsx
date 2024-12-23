@@ -7,34 +7,39 @@ import {
 import { AlertVariantProps } from "@mijn-ui/react-theme"
 import { cn } from "@mijn-ui/react-utilities"
 import { LuBug } from "react-icons/lu"
-import { CiCircleAlert } from "react-icons/ci"
+import { FiAlertCircle } from "react-icons/fi"
+import { ReactNode } from "react"
 
 type AlertProps = {
-  title: string
-  description: string
+  title: ReactNode
+  description: ReactNode
   color?: AlertVariantProps["color"]
+  variant?: AlertVariantProps["variant"]
   className?: string
 }
 
 const Alert = ({
   title,
   description,
-  color = "info",
+  color,
+  variant,
   className,
 }: AlertProps) => {
-  const Icon = color === "danger" ? LuBug : CiCircleAlert
+  const Icon = color === "danger" ? LuBug : FiAlertCircle
 
   return (
     <MijnUIAlert
       className={cn("not-prose w-full backdrop-blur-md", className)}
-      variant="subtle"
+      variant={variant}
       color={color}
     >
       <AlertIcon>
         <Icon />
       </AlertIcon>
       <AlertTitle>{title}</AlertTitle>
-      <AlertDescription>{description}</AlertDescription>
+      <AlertDescription className={cn(!title && "mt-0")}>
+        {description}
+      </AlertDescription>
     </MijnUIAlert>
   )
 }
