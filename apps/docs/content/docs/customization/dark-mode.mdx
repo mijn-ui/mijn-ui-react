@@ -1,0 +1,91 @@
+---
+title: Dark Mode
+description: Adding dark mode to your next app.
+---
+
+import ThemeToggler from "@/examples/theme/theme-toggler"
+
+Theme management is flexible and personal aspect of application design, so we don’t include a theme provider by default. We recommend using [`next-themes`](https://www.npmjs.com/package/next-themes) to easily add dark mode or custom theming to your Next.js app.
+
+<Steps>
+  <Step>
+  ### Install next-themes
+
+  To get started with dark mode, install the `next-themes` package:
+
+  ```package-install
+  next-themes
+  ```
+  </Step>
+  <Step>
+  ### Create a Theme Provider
+
+  Create a `ThemeProvider` component to manage the theme state.
+  
+  ```json doc-gen:file
+  {
+    "file": "./examples/theme/theme-provider.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"components/theme-provider.tsx\""
+    }
+  }
+  ```
+  </Step>
+  <Step>
+  ### Wrap your root layout
+
+  Wrap your root layout with the `ThemeProvider` to enable theme switching.
+
+  ```tsx
+  import { ThemeProvider } from "@/components/theme-provider" // [!code highlight]
+
+  export default function RootLayout({ children }: RootLayoutProps) {
+    return (
+        <html lang="en" suppressHydrationWarning>
+          <body>
+            <ThemeProvider // [!code highlight]
+              attribute="class" // [!code highlight]
+              defaultTheme="system" // [!code highlight]
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </body>
+        </html>
+    )
+  }
+  ```
+  
+  </Step>
+  <Step>
+  ### Add a Theme Toggle Button
+
+  Add a button to toggle between light and dark modes.
+
+  <ComponentPreview>
+    <ThemeToggler color="accent" variant="text" radius="full" />
+  </ComponentPreview>
+
+  <Tabs items={["source-code", "usage"]}>
+    <Tab value="source-code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/theme/theme-toggler.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"components/theme-toggler.tsx\""
+      }
+    }
+    ```
+    </Tab>
+  
+    <Tab value="usage">
+    ```tsx
+    <ThemeToggler color="accent" variant="text" radius="full" />
+    ```
+    </Tab>
+  </Tabs>
+  </Step>
+</Steps>

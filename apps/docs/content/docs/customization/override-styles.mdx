@@ -1,0 +1,70 @@
+---
+title: Override Styles
+description: Overriding default component styles is as simple as passing your own class names to the `className` or to the `classNames` prop for components with slots.
+---
+
+import BadgeOverride from "@/examples/badge/badge-override";
+import AccordionCustomStyles from "@/examples/accordion/custom-styles-accordion"
+
+### What is a Slot?
+
+A slot is a part of a component that can be styled separately. For example, the Accordion component has multiple slots/parts that can be styled individually, such as `base`, `item`, `triggerWrapper`, `trigger`, etc.
+
+Components with slots have a `classNames` prop that allows you to style each slot separately.
+
+---
+
+### Overriding a Component
+
+Let's override the default styles of the [Badge](/docs/components/badge) component, which has only one `base` slot.
+
+<ComponentPreview>
+  <BadgeOverride />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/badge/badge-override.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"\""
+  }
+}
+```
+
+---
+
+### Components with Slots
+
+All components have slots that can be styled separately.
+<Alert 
+  color="info"
+  title="Note:"
+  description="For components like `label` and `badge` that only have one slot, you cannot use the `classNames` prop to style the slots. Instead, you can pass the `className` prop to customize the style of the component. An example of this has already been shown above."
+/>
+
+For components with multiple slots, you can pass the `classNames` prop to style each slot separately. For example, the [Accordion](/docs/components/accordion) component has the following slots:
+
+- **base:** The main container of the accordion.
+- **item:** Each individual item within the accordion.
+- **triggerWrapper:** The wrapper around the trigger element.
+- **trigger:** The element that triggers the accordion to open or close.
+- **icon:** The icon displayed within the trigger.
+- **contentWrapper:** The wrapper around the content.
+- **content:** The content displayed when the accordion is open.
+
+Each slot can be styled using the `classNames` prop. The example below shows how to change the styles of some slots to create an Accordion component with a different style.
+
+<ComponentPreview>
+  <AccordionCustomStyles />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/accordion/custom-styles-accordion.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"\""
+  }
+}
+```
