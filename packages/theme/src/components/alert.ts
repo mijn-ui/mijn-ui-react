@@ -164,7 +164,7 @@ const alertStyles = tv({
   ],
   defaultVariants: {
     variant: "subtle",
-    color: "info",
+    color: "default",
   },
 })
 
