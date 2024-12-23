@@ -3,7 +3,49 @@ title: Theming
 description: Mijn-UI uses Tawilind CSS variables for themeing.
 ---
 
-MijnUI uses [`tailwind-variants`](https://www.tailwind-variants.org/) under the hood for styling, a utility developed by the [NextUI](https://nextui.org/) team and component theme implementations also take inspiration from their work.
+### Setup
+
+<Alert
+  color="info"
+  title="Note:"
+  description="If you are using pnpm and monorepo architecture, please make sure you are pointing to the ROOT node_modules"
+/>
+
+```ts title="tailwind.config.ts"
+import { mijnUiPreset } from "@mijn-ui/react-theme" // [!code highlight]
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    // ...
+    // make sure it's pointing to the ROOT node_module
+    "./node_modules/@mijn-ui/react-theme/dist/**/*.{js,ts,jsx,tsx}", // [!code highlight]
+  ],
+  plugins: [mijnUiPreset], // [!code highlight]
+};
+```
+
+---
+
+### Usage
+
+After setting up your `tailwind.config.ts` file, you can now start using the predefined CSS variables in your components. Here are some examples:
+
+```tsx
+<div className="bg-primary text-primary-text p-4 rounded">
+  Hello, Welcome 👋
+</div>
+
+<button className="bg-secondary text-secondary-text py-2 px-4 rounded">
+  Click Me
+</button>
+
+<div className="bg-surface text-surface-text p-4 rounded shadow">
+  This is a card 🎴
+</div>
+```
+
+---
 
 ### Variables List
 
@@ -126,7 +168,7 @@ MijnUI uses [`tailwind-variants`](https://www.tailwind-variants.org/) under the 
 
 ### Overriding Colors
 
-To override the default themes, you can easily redefine them in your CSS file. Use the provided [list of variables](/react/docs/theme#variables-list) as a reference to modify specific colors.
+To override the default themes, you can easily redefine them in your CSS file. Use the provided [list of variables](#variables-list) as a reference to modify specific colors.
 
 For example, to override the `--main` color:
 
@@ -153,7 +195,7 @@ For example, to override the `--main` color:
 
 To add new colors, you need to add them to your CSS file and to your tailwind.config.js file.
 
-<Tabs items={['global.css', 'tailwind.config.js']}>
+<Tabs items={['global.css', 'tailwind.config.ts']}>
   <Tab value="global.css">
   ```css
   :root {
@@ -168,18 +210,26 @@ To add new colors, you need to add them to your CSS file and to your tailwind.co
   ```
   </Tab>
 
-  <Tab value="tailwind.config.js">
-  ```js
-  module.exports = {
-    theme: {
-      extend: {
-        colors: {
-          card: "hsl(var(--card))",
-          "card-foreground": "hsl(var(--card-foreground))",
-        },
-      },
-    },
-  }
+  <Tab value="tailwind.config.ts">
+  ```ts
+  import { mijnUiPreset } from "@mijn-ui/react-theme"
+
+  /** @type {import('tailwindcss').Config} */
+  export default {
+    content: [
+      // ...
+      "./node_modules/@mijn-ui/react-theme/dist/**/*.{js,ts,jsx,tsx}",
+    ],
+    plugins: [mijnUiPreset],
+    theme: { // [!code highlight]
+      extend: { // [!code highlight]
+        colors: { // [!code highlight]
+          card: "hsl(var(--card))", // [!code highlight]
+          "card-text": "hsl(var(--card-text))", // [!code highlight]
+        }, // [!code highlight]
+      }, // [!code highlight]
+    }, // [!code highlight]
+  };
   ```
   </Tab>
 </Tabs>
@@ -187,11 +237,6 @@ To add new colors, you need to add them to your CSS file and to your tailwind.co
 You can now use the new colors in your components.
 
 ```tsx
-<div className="bg-card text-card-foreground">Hello</div>
+<div className="bg-card text-card-text">Hello</div>
 ```
 
-### Other Color Formats
-
-You can also use other color formats if you prefer. Tailwind CSS supports various color formats including RGB, RGBA, and HSL.
-
-For more information on using different color formats, refer to the [Tailwind CSS documentation](https://tailwindcss.com/docs/customizing-colors#using-css-variables).
