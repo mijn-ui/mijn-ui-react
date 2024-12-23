@@ -10,7 +10,7 @@ const avatarGroupStyles = tv({
 
 const avatarStyles = tv({
   slots: {
-    base: "relative shrink-0 overflow-hidden rounded-full",
+    base: "inline-block relative shrink-0 overflow-hidden rounded-full",
     image: "aspect-square size-full object-cover",
     fallback:
       "bg-muted flex size-full items-center justify-center rounded-full",
