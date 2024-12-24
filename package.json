@@ -11,7 +11,7 @@
     "build:sb": "pnpm --filter @mijn-ui/storybook build",
     "start:sb": "pnpm --filter @mijn-ui/storybook start",
     "clean": "turbo clean && rimraf ./node_modules/.cache/turbo",
-    "clean:node-modules": "rimraf ./apps/**/node_modules && rimraf ./packages/**/**/node_modules && rimraf ./node_modules",
+    "clean:node-modules": "rimraf --glob ./apps/**/node_modules && rimraf --glob ./packages/**/**/node_modules && rimraf --glob ./node_modules",
     "test": "turbo test",
     "lint": "turbo lint",
     "lint:fix": "turbo lint -- --fix",
