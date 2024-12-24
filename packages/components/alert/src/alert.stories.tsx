@@ -1,3 +1,4 @@
+import type { Meta, StoryObj } from "@storybook/react"
 import {
   Alert,
   AlertDescription,
@@ -7,7 +8,7 @@ import {
 } from "./alert"
 import { IconSvgProps } from "@mijn-ui/shared-icons"
 
-const meta = {
+const meta: Meta<typeof Alert> = {
   title: "Components/Alert",
   component: Alert,
   parameters: {
@@ -31,10 +32,11 @@ const meta = {
 }
 
 export default meta
+type Story = StoryObj<typeof Alert>
 
 const AlertTemplate = (args: AlertProps) => {
   return (
-    <Alert className=" md:w-xl w-60" {...args}>
+    <Alert className="md:w-xl w-60" {...args}>
       <AlertIcon>
         <RocketIcon />
       </AlertIcon>
@@ -46,11 +48,28 @@ const AlertTemplate = (args: AlertProps) => {
   )
 }
 
-export const Default = {
+const AlertUnstyled = (args: AlertProps) => {
+  return (
+    <Alert
+      className="md:w-xl bg-accent relative w-60 px-3 py-4 [&>span~*]:pl-8"
+      {...args}
+    >
+      <AlertIcon className="translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:size-5 [&>svg]:text-current">
+        <RocketIcon />
+      </AlertIcon>
+      <AlertTitle className="font-bold">New Feature Added</AlertTitle>
+      <AlertDescription className="col-start-2">
+        A new feature has been added to the project.
+      </AlertDescription>
+    </Alert>
+  )
+}
+
+export const Default: Story = {
   render: AlertTemplate,
 }
 
-export const Colors = {
+export const Colors: Story = {
   render: (args: AlertProps) => (
     <div className="flex flex-col items-center gap-8">
       <div className="space-y-2">
@@ -90,7 +109,7 @@ export const Colors = {
   },
 }
 
-export const Variants = {
+export const Variants: Story = {
   render: (args: AlertProps) => (
     <div className="flex flex-col items-center gap-8">
       <div className="space-y-2">
@@ -118,6 +137,13 @@ export const Variants = {
   args: {
     color: "info",
     variant: "filled",
+  },
+}
+
+export const Unstyled: Story = {
+  render: AlertUnstyled,
+  args: {
+    unstyled: true,
   },
 }
 

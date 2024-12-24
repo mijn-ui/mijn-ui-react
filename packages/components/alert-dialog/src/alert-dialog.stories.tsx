@@ -1,3 +1,4 @@
+import type { Meta, StoryObj } from "@storybook/react"
 import { AlertDialogProps } from "@radix-ui/react-alert-dialog"
 import {
   AlertDialog,
@@ -11,7 +12,7 @@ import {
   AlertDialogTrigger,
 } from "./alert-dialog"
 
-const meta = {
+const meta: Meta<typeof AlertDialog> = {
   title: "Components/AlertDialog",
   component: AlertDialog,
   parameters: {
@@ -23,6 +24,7 @@ const meta = {
 }
 
 export default meta
+type Story = StoryObj<typeof AlertDialog>
 
 const AlertDialogTemplate = (args: AlertDialogProps) => {
   return (
@@ -46,6 +48,41 @@ const AlertDialogTemplate = (args: AlertDialogProps) => {
   )
 }
 
-export const Default = {
+const AlertDialogUnstyled = (args: AlertDialogProps) => {
+  return (
+    <AlertDialog {...args}>
+      <AlertDialogTrigger className="bg-muted text-muted-text p-2">
+        Delete Account
+      </AlertDialogTrigger>
+      <AlertDialogContent className="bg-accent flex w-1/2 flex-col p-4">
+        <AlertDialogHeader>
+          <AlertDialogTitle className="font-bold">
+            Confirm Account Deletion
+          </AlertDialogTitle>
+          <AlertDialogDescription>
+            Deleting your account is irreversible. All your account information,
+            including data and settings, will be permanently erased. Are you
+            absolutely sure?
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter className="ml-auto flex gap-4">
+          <AlertDialogCancel className="p-2">Cancel</AlertDialogCancel>
+          <AlertDialogAction className="bg-primary text-primary-text p-2">
+            Continue
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  )
+}
+
+export const Default: Story = {
   render: AlertDialogTemplate,
+}
+
+export const Unstyled: Story = {
+  render: AlertDialogUnstyled,
+  args: {
+    unstyled: true,
+  },
 }
