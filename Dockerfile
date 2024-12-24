@@ -1,5 +1,5 @@
 # Base Image
-FROM node:18-alpine AS base
+FROM node:22-alpine AS base
 RUN apk update
 RUN apk add --no-cache libc6-compat git
 
@@ -34,7 +34,7 @@ RUN --mount=type=cache,id=pnpm,target=~/.pnpm-store pnpm prune --prod --no-optio
 RUN rm -rf ./**/*/src
 
 # Final image
-FROM node:18-alpine AS runner
+FROM node:22-alpine AS runner
 
 # Don't run production as root
 RUN addgroup --system --gid 1001 nodejs
