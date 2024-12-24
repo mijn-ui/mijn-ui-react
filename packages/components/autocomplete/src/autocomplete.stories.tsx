@@ -1,3 +1,4 @@
+import { Meta, StoryObj } from "@storybook/react"
 import { Input } from "@mijn-ui/react-input"
 import {
   Autocomplete,
@@ -9,7 +10,6 @@ import {
 } from "./autocomplete"
 import { useState } from "react"
 import { ChevronDownIcon, SearchIcon } from "@mijn-ui/shared-icons"
-import { Meta } from "@storybook/react"
 import { ScrollArea } from "@mijn-ui/react-scroll-area"
 import { Button } from "@mijn-ui/react-button"
 import {
@@ -21,7 +21,7 @@ import {
 } from "@mijn-ui/react-dialog"
 
 const meta: Meta<typeof Autocomplete> = {
-  title: "Components/Autcomplete",
+  title: "Components/Autocomplete",
   component: Autocomplete,
   parameters: {
     layout: "centered",
@@ -33,6 +33,7 @@ const meta: Meta<typeof Autocomplete> = {
 }
 
 export default meta
+type Story = StoryObj<typeof Autocomplete>
 
 const FRAMEWORKS1 = [
   "Next.js",
@@ -129,7 +130,7 @@ const AutocompleteWithScrollArea = (args: AutocompleteProps) => {
   )
 }
 
-const AutoCompleteWithDialog = (args: AutocompleteProps) => {
+const AutocompleteWithDialog = (args: AutocompleteProps) => {
   const [value, setValue] = useState(args.value)
 
   return (
@@ -181,14 +182,61 @@ const AutoCompleteWithDialog = (args: AutocompleteProps) => {
   )
 }
 
-export const Default = {
+const AutocompleteUnstyled = (args: AutocompleteProps) => {
+  const [value, setValue] = useState(args.value)
+
+  return (
+    <Autocomplete
+      value={value}
+      onValueChange={setValue}
+      unstyled={args.unstyled}
+    >
+      <AutocompleteTrigger asChild>
+        <Input
+          className="bg-surface flex items-center gap-2 p-2"
+          classNames={{
+            input:
+              "bg-surface border-0 focus-visible:outline-none focus-visible:ring-0",
+          }}
+          placeholder={"Search for a framework"}
+          startIcon={<SearchIcon />}
+          unstyled={args.unstyled}
+        />
+      </AutocompleteTrigger>
+      <AutocompleteContent
+        className="bg-accent mt-2 w-[--radix-popover-trigger-width] p-2"
+        emptyMessage="No Frameworks Found"
+        loading={false}
+      >
+        {FRAMEWORKS1.map((framework) => (
+          <AutocompleteItem
+            key={framework}
+            value={framework}
+            className="flex items-center justify-between p-1 data-[selected=true]:bg-muted"
+          >
+            {framework}
+          </AutocompleteItem>
+        ))}
+      </AutocompleteContent>
+    </Autocomplete>
+  )
+}
+
+export const Default: Story = {
   render: (args: AutocompleteProps) => <AutocompleteTemplate {...args} />,
 }
 
-export const WithScrollArea = {
+export const WithScrollArea: Story = {
   render: (args: AutocompleteProps) => <AutocompleteWithScrollArea {...args} />,
 }
 
-export const WithDialog = {
-  render: (args: AutocompleteProps) => <AutoCompleteWithDialog {...args} />,
+export const WithDialog: Story = {
+  render: (args: AutocompleteProps) => <AutocompleteWithDialog {...args} />,
+}
+
+export const Unstyled: Story = {
+  render: (args: AutocompleteProps) => <AutocompleteUnstyled {...args} />,
+  args: {
+    unstyled: true,
+  },
 }
