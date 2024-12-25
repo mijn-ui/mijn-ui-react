@@ -14,6 +14,7 @@ export const { docs, meta } = defineDocs({
     schema: frontmatterSchema.extend({
       docs: z.string().optional(),
       apiReference: z.string().optional(),
+      styleSource: z.string().optional(),
     }),
     mdxOptions: getDefaultMDXOptions({
       remarkPlugins: [

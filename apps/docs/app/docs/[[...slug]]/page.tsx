@@ -61,11 +61,21 @@ export default async function Page(props: {
           {page.data.apiReference && (
             <Link
               target="_blank"
-              className="flex items-center gap-1 text-sm text-main-text/80 underline hover:text-secondary-text/80"
+              className="flex items-center gap-1 text-sm text-main-text/80 underline hover:text-primary"
               href={page.data.apiReference}
             >
               <LuExternalLink />
               Api Reference
+            </Link>
+          )}
+          {page.data.styleSource && (
+            <Link
+              target="_blank"
+              className="flex items-center gap-1 text-sm text-main-text/80 underline hover:text-primary"
+              href={page.data.styleSource}
+            >
+              <LuExternalLink />
+              Style Source
             </Link>
           )}
         </div>
