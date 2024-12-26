@@ -47,7 +47,7 @@ const SelectGroup = SelectPrimitive.Group
 
 const SelectValue = SelectPrimitive.Value
 
-type SelectProps = React.ComponentProps<typeof SelectPrimitive.Root> &
+export type SelectProps = React.ComponentProps<typeof SelectPrimitive.Root> &
   SelectBaseProps
 
 const Select = ({ classNames, unstyled = false, ...props }: SelectProps) => {

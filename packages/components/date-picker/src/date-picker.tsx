@@ -48,7 +48,7 @@ const months = [
   "December",
 ]
 
-type CalendarDatePickerProps = React.HTMLAttributes<HTMLButtonElement> &
+export type CalendarDatePickerProps = React.HTMLAttributes<HTMLButtonElement> &
   ButtonVariantProps & {
     id?: string
     className?: string

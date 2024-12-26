@@ -41,7 +41,7 @@ const useTableStyles = (unstyledOverride?: boolean) => {
 /*                                    Table                                   */
 /* -------------------------------------------------------------------------- */
 
-type TableProps = React.ComponentPropsWithRef<"table"> & TableBaseProps
+export type TableProps = React.ComponentPropsWithRef<"table"> & TableBaseProps
 
 const Table = ({
   className,

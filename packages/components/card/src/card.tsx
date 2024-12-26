@@ -41,7 +41,7 @@ const useCardStyles = (unstyledOverride?: boolean) => {
 /*                                    Card                                    */
 /* -------------------------------------------------------------------------- */
 
-type CardProps = React.ComponentProps<"div"> & CardBaseProps
+export type CardProps = React.ComponentProps<"div"> & CardBaseProps
 
 const Card = ({
   className,

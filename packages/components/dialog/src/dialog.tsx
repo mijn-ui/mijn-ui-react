@@ -43,7 +43,9 @@ const useDialogStyles = (unstyledOverride?: boolean) => {
 
 const DialogPortal = DialogPrimitive.Portal
 
-type DialogProps = React.ComponentPropsWithRef<typeof DialogPrimitive.Root> &
+export type DialogProps = React.ComponentPropsWithRef<
+  typeof DialogPrimitive.Root
+> &
   DialogVariantProps &
   DialogBaseProps
 

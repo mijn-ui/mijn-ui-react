@@ -48,7 +48,7 @@ const useDropdownStyles = (unstyledOverride?: boolean) => {
 /*                                DropdownMenu                                */
 /* -------------------------------------------------------------------------- */
 
-type DropdownMenuProps = DropdownMenuPrimitive.DropdownMenuProps &
+export type DropdownMenuProps = DropdownMenuPrimitive.DropdownMenuProps &
   DropdownMenuBaseProps
 
 const DropdownMenu = ({

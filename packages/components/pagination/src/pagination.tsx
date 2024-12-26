@@ -102,7 +102,7 @@ const usePaginationStyles = (unstyledOverride?: boolean) => {
 /*                                 Pagination                                 */
 /* -------------------------------------------------------------------------- */
 
-type PaginationProps = {
+export type PaginationProps = {
   totalPages: number
   itemsPerPage: number
   children: React.ReactNode
