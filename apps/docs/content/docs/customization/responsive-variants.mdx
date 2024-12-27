@@ -1,0 +1,93 @@
+---
+title: Responsive Variants
+description: Learn how to use responsive variants in Mijn-UI.
+---
+
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/app/components/resizable"
+import { BlockViewer } from "@/app/components/block-viewer"
+
+By default, Mijn-UI components don't provide responsive variants out of the box because there aren't many cases where you need them. Additionally, you can easily make components responsive by adding Tailwind CSS class names.
+
+This guide will show you how to create responsive variants for your components.
+
+There are two main ways to create responsive variants:
+1. Using `tailwind-variants` built-in responsive variants.
+2. Using the `use-responsive-variants` hook from `@mijn-ui/react-hooks`.
+
+---
+
+## Making Components Responsive Using `tailwind-variants`
+
+<Steps>
+  <Step>
+    ### Configure Tailwind CSS
+
+    To make responsive variants work smoothly, you need to wrap the Tailwind config with the `withTV` function from `tailwind-variants`. You can refer to the [tailwind-variants documentation](https://www.tailwind-variants.org/docs/getting-started#responsive-variants-optional) for more details.
+
+    ```ts title="tailwind.config.ts"
+    import { mijnUiPreset } from "@mijn-ui/react-theme";
+    import { withTV } from "tailwind-variants/dist/transformer.js"; // [!code highlight]
+
+    /** @type {import('tailwindcss').Config} */
+    export default withTV({ // [!code highlight]
+      content: [
+        // ...
+        // make sure it's pointing to the ROOT node_module
+        "./node_modules/@mijn-ui/react-theme/dist/**/*.{js,ts,jsx,tsx}",
+      ],
+      presets: [mijnUiPreset],
+    }); // [!code highlight]
+    ```
+  </Step>
+  <Step>
+    ### Applying Responsive Variants to Component
+
+    Applying responsive variants to components would be more streamlined with [extend-variants](/docs/customization/custom-variants#creating-custom-variants-for-single-slot-components). However, support for responsive variants in `extend-variants` is not yet implemented. In the meantime, you can achieve this by creating a custom component that extends the default theme.
+    
+    1. Install the `tailwind-variants` package:
+
+      ```package-install
+      tailwind-variants
+      ```
+    
+    2. After installing the package, you can apply the responsive variants to the component like this:
+
+    ```json doc-gen:file
+    {
+      "file": "./blocks/components/responsive-button/index.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"components/responsive-button.tsx\""
+      }
+    }
+    ```
+  </Step>
+  <Step>
+    ### Using the Component
+
+    ```tsx
+    import ResponsiveButton from "@/components/responsive-button";
+
+    const App = () => {
+      return (
+        <ResponsiveButton size={{initial: "icon", sm: "md", lg: "lg"}}>Button</ResponsiveButton>
+      )
+    }
+    ```
+
+    <BlockViewer item={{name: "responsive-button", meta: { iframeHeight: 180 }}} />
+  </Step>
+</Steps>
+
+Although you can use `tailwind-variants` responsive variants to make the component responsive, it has a limitation when it comes to making compound variants responsive. To overcome this limitation, you can use the `use-responsive-variants` hook from `@mijn-ui/react-hooks`.
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-import { KanbanCard } from "../kanban-column"
+import { KanbanCard } from ".."
 import { useKanban } from "./context"
 import { KanbanCardItemType } from "./types"
 import { UniqueIdentifier } from "@dnd-kit/core"

@@ -1,8 +1,11 @@
 "use client"
 
 import * as React from "react"
-import KanbanCardItem from "./components/kanban-card-item"
-import { KanbanCardItemType, KanbanContainerType } from "./components/types"
+import KanbanCardItem from "./components/kanban-column/components/kanban-card-item"
+import {
+  KanbanCardItemType,
+  KanbanContainerType,
+} from "./components/kanban-column/components/types"
 import {
   Kanban,
   KanbanColumn,
@@ -13,7 +16,7 @@ import {
   KanbanHeader,
   KanbanItemCount,
   KanbanTitle,
-} from "./kanban-column"
+} from "./components/kanban-column"
 import { Button } from "@mijn-ui/react-button"
 import { LuEllipsisVertical, LuPlus } from "react-icons/lu"
 
@@ -108,29 +111,30 @@ const KanbanExample = () => {
     React.useState<KanbanContainerType[]>(DEFAULT_VALUE)
 
   return (
-    <Kanban value={values} setValue={setValues}>
-      <KanbanContainer>
-        {values.map((container) => (
-          <KanbanColumn key={container.id} className="w-full max-w-[352px]">
-            <KanbanHeader className="pr-2">
-              <div className="flex items-center gap-2">
-                <KanbanTitle className="text-base sm:text-lg">
-                  {container.title}
-                </KanbanTitle>
-                <KanbanItemCount>{container.items.length}</KanbanItemCount>
-              </div>
+    <div className="flex size-full items-center justify-center">
+      <Kanban value={values} setValue={setValues}>
+        <KanbanContainer>
+          {values.map((container) => (
+            <KanbanColumn key={container.id} className="w-full max-w-[352px]">
+              <KanbanHeader className="pr-2">
+                <div className="flex items-center gap-2">
+                  <KanbanTitle className="text-base sm:text-lg">
+                    {container.title}
+                  </KanbanTitle>
+                  <KanbanItemCount>{container.items.length}</KanbanItemCount>
+                </div>
 
-              <Button
-                size="icon"
-                color="accent"
-                variant="text"
-                className="size-7 rounded-full text-muted-text hover:text-main-text"
-              >
-                <LuEllipsisVertical />
-              </Button>
-            </KanbanHeader>
-            <KanbanContent container={container}>
-              {/*
+                <Button
+                  size="icon"
+                  color="accent"
+                  variant="text"
+                  className="size-7 rounded-full text-muted-text hover:text-main-text"
+                >
+                  <LuEllipsisVertical />
+                </Button>
+              </KanbanHeader>
+              <KanbanContent container={container}>
+                {/*
                   KanbanCardItem is imported from /components/kanban-card-item.
                   We must customize the contents of our kanban cards within '/components/kanban-card-item'. 
                   Additionally, you may want to update the KanbanContainer component in the kanban-column.tsx file.
@@ -143,49 +147,50 @@ const KanbanExample = () => {
                   component work smoothly. :)
                 */}
 
-              {container.items.length > 0 ? (
-                container.items.map((item) => (
-                  <KanbanDraggable key={item.id} id={item.id}>
-                    <KanbanCardItem
-                      key={item.id}
-                      itemId={item.id}
-                      containerId={container.id}
-                      {...(item as KanbanCardItemType)}
-                    />
-                  </KanbanDraggable>
-                ))
-              ) : (
-                <div className="h-32">
-                  <div
-                    className="flex size-full flex-col items-center justify-center gap-3 rounded-md px-4 py-2"
-                    // custom dashed border styles
-                    style={{
-                      backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='6' ry='6' stroke='%23737373FF' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
-                      borderRadius: "6px",
-                    }}
-                  >
-                    <span>
-                      <StickyNoteIcon /> {/* custom Icon */}
-                    </span>
-                    <p className="text-sm text-muted-text">
-                      No tasks currently. Board is empty.
-                    </p>
+                {container.items.length > 0 ? (
+                  container.items.map((item) => (
+                    <KanbanDraggable key={item.id} id={item.id}>
+                      <KanbanCardItem
+                        key={item.id}
+                        itemId={item.id}
+                        containerId={container.id}
+                        {...(item as KanbanCardItemType)}
+                      />
+                    </KanbanDraggable>
+                  ))
+                ) : (
+                  <div className="h-32">
+                    <div
+                      className="flex size-full flex-col items-center justify-center gap-3 rounded-md px-4 py-2"
+                      // custom dashed border styles
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='6' ry='6' stroke='%23737373FF' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
+                        borderRadius: "6px",
+                      }}
+                    >
+                      <span>
+                        <StickyNoteIcon /> {/* custom Icon */}
+                      </span>
+                      <p className="text-sm text-muted-text">
+                        No tasks currently. Board is empty.
+                      </p>
+                    </div>
                   </div>
-                </div>
-              )}
-            </KanbanContent>
-            <KanbanFooter>
-              <button className="flex items-center gap-2 text-sm text-muted-text">
-                <span>
-                  <LuPlus className="size-5" />
-                </span>
-                Add a new Item
-              </button>
-            </KanbanFooter>
-          </KanbanColumn>
-        ))}
-      </KanbanContainer>
-    </Kanban>
+                )}
+              </KanbanContent>
+              <KanbanFooter>
+                <button className="flex items-center gap-2 text-sm text-muted-text">
+                  <span>
+                    <LuPlus className="size-5" />
+                  </span>
+                  Add a new Item
+                </button>
+              </KanbanFooter>
+            </KanbanColumn>
+          ))}
+        </KanbanContainer>
+      </Kanban>
+    </div>
   )
 }
 

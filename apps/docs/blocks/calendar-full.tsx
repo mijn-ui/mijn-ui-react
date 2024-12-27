@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { useMediaQuery } from "@mijn-ui/react-hooks"
-import { CalendarFull } from "./calendar-full"
+import { CalendarFull } from "./components/calendar-full"
 import { EventDropArg, EventSourceInput } from "@fullcalendar/core"
 import { DropArg, EventResizeDoneArg } from "@fullcalendar/interaction"
 import {
@@ -283,8 +283,9 @@ const CalendarFullExample = () => {
   }
 
   return (
-    <>
-      <div className="relative size-full overflow-y-auto rounded-2xl bg-surface p-4">
+    <div className="flex size-full items-center justify-center">
+      <div className="relative h-fit w-full max-w-screen-lg overflow-y-auto rounded-2xl bg-surface p-4">
+        {/* TODO: Fix the hydration error */}
         <div className="size-full">
           <CalendarFull
             events={events as EventSourceInput}
@@ -356,7 +357,7 @@ const CalendarFullExample = () => {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-    </>
+    </div>
   )
 }
 
