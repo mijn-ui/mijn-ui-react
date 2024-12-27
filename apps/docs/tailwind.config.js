@@ -1,10 +1,12 @@
 import { createPreset } from "fumadocs-ui/tailwind-plugin"
 import { mijnUiPreset } from "@mijn-ui/react-theme"
+import { withTV } from "tailwind-variants/dist/transformer.js"
 
 /** @type {import('tailwindcss').Config} */
-export default {
+export default withTV({
   content: [
     "./app/**/*.{ts,tsx}",
+    "./view/**/*.{ts,tsx}",
     "./examples/**/*.{ts,tsx,html}",
     "./content/**/*.{md,mdx}",
     "./mdx-components/**/*.{ts,tsx}",
@@ -36,4 +38,4 @@ export default {
     },
   },
   plugins: [],
-}
+})
