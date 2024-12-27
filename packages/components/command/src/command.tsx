@@ -45,7 +45,9 @@ const useCommandStyles = (unstyledOverride?: boolean) => {
 /*                                   Command                                  */
 /* -------------------------------------------------------------------------- */
 
-type CommandProps = React.ComponentPropsWithRef<typeof CommandPrimitive> &
+export type CommandProps = React.ComponentPropsWithRef<
+  typeof CommandPrimitive
+> &
   CommandBaseProps
 
 const Command = ({

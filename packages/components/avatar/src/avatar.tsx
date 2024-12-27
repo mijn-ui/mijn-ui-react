@@ -93,7 +93,9 @@ const AvatarGroup = ({
 /*                                   Avatar                                   */
 /* -------------------------------------------------------------------------- */
 
-type AvatarProps = React.ComponentPropsWithRef<typeof AvatarPrimitive.Root> &
+export type AvatarProps = React.ComponentPropsWithRef<
+  typeof AvatarPrimitive.Root
+> &
   AvatarVariantProps &
   AvatarBaseProps
 

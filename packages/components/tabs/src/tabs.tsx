@@ -41,7 +41,7 @@ const useTabsStyles = (unstyledOverride?: boolean) => {
 /*                                    Tabs                                    */
 /* -------------------------------------------------------------------------- */
 
-type TabsProps = React.ComponentPropsWithRef<typeof TabsPrimitive.Root> &
+export type TabsProps = React.ComponentPropsWithRef<typeof TabsPrimitive.Root> &
   TabsBaseProps
 
 const Tabs = ({

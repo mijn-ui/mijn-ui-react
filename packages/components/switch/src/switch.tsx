@@ -9,7 +9,7 @@ import * as SwitchPrimitives from "@radix-ui/react-switch"
 import { SwitchSlots, switchStyles } from "@mijn-ui/react-theme"
 import { cn } from "@mijn-ui/react-utilities"
 
-type SwitchProps = UnstyledComponentWithSlots<SwitchSlots> &
+export type SwitchProps = UnstyledComponentWithSlots<SwitchSlots> &
   React.ComponentPropsWithRef<typeof SwitchPrimitives.Root>
 
 const Switch = ({ className, classNames, unstyled, ...props }: SwitchProps) => {

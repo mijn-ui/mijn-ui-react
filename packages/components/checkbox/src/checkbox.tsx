@@ -22,7 +22,7 @@ import { cn } from "@mijn-ui/react-utilities"
 type CheckboxBaseProps = UnstyledComponentWithSlots<CheckboxSlots> &
   React.ComponentPropsWithRef<typeof CheckboxPrimitive.Root>
 
-type CheckboxProps = CheckboxBaseProps &
+export type CheckboxProps = CheckboxBaseProps &
   CheckboxVariantProps & {
     checked?: boolean | "indeterminate"
     onCheckedChange?: (checked: boolean | "indeterminate") => void

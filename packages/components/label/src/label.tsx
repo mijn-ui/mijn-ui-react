@@ -5,7 +5,9 @@ import { createTVUnstyledSlots, UnstyledProps } from "@mijn-ui/react-core"
 import * as LabelPrimitive from "@radix-ui/react-label"
 import { labelStyles, LabelVariantProps } from "@mijn-ui/react-theme"
 
-type LabelProps = React.ComponentPropsWithRef<typeof LabelPrimitive.Root> &
+export type LabelProps = React.ComponentPropsWithRef<
+  typeof LabelPrimitive.Root
+> &
   LabelVariantProps &
   UnstyledProps
 

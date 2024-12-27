@@ -42,7 +42,9 @@ const usePopoverStyles = (unstyledOverride?: boolean) => {
 /*                                   Popover                                  */
 /* -------------------------------------------------------------------------- */
 
-type PopoverProps = React.ComponentPropsWithoutRef<typeof RadixPopover.Root> &
+export type PopoverProps = React.ComponentPropsWithoutRef<
+  typeof RadixPopover.Root
+> &
   PopoverBaseProps
 
 const Popover = ({ unstyled = false, classNames, ...props }: PopoverProps) => {

@@ -44,7 +44,7 @@ const useRadioGroupStyles = (unstyledOverride?: boolean) => {
 /*                                 RadioGroup                                 */
 /* -------------------------------------------------------------------------- */
 
-type RadioGroupProps = React.ComponentPropsWithRef<
+export type RadioGroupProps = React.ComponentPropsWithRef<
   typeof RadioGroupPrimitive.Root
 > &
   RadioGroupBaseProps

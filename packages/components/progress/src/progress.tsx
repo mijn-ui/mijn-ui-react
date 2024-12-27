@@ -9,7 +9,7 @@ import * as ProgressPrimitive from "@radix-ui/react-progress"
 import { ProgressSlots, progressStyles } from "@mijn-ui/react-theme"
 import { cn } from "@mijn-ui/react-utilities"
 
-type ProgressProps = UnstyledComponentWithSlots<ProgressSlots> &
+export type ProgressProps = UnstyledComponentWithSlots<ProgressSlots> &
   React.ComponentPropsWithRef<typeof ProgressPrimitive.Root>
 
 const Progress = ({

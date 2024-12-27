@@ -5,7 +5,7 @@ import { createTVUnstyledSlots, UnstyledProps } from "@mijn-ui/react-core"
 import * as SeparatorPrimitive from "@radix-ui/react-separator"
 import { separatorStyles } from "@mijn-ui/react-theme"
 
-type SeparatorProps = React.ComponentPropsWithRef<
+export type SeparatorProps = React.ComponentPropsWithRef<
   typeof SeparatorPrimitive.Root
 > &
   UnstyledProps

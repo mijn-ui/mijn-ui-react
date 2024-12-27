@@ -43,7 +43,7 @@ const useScrollAreaStyles = (unstyledOverride?: boolean) => {
 /*                                 ScrollArea                                 */
 /* -------------------------------------------------------------------------- */
 
-type ScrollAreaProps = React.ComponentPropsWithRef<
+export type ScrollAreaProps = React.ComponentPropsWithRef<
   typeof ScrollAreaPrimitive.Root
 > &
   ScrollAreaBaseProps
