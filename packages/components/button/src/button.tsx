@@ -1,7 +1,6 @@
 import * as React from "react"
 import {
   UnstyledComponentWithSlots,
-  UnstyledProps,
   createTVUnstyledSlots,
 } from "@mijn-ui/react-core"
 import { Slot, Slottable } from "@radix-ui/react-slot"
@@ -13,14 +12,13 @@ import {
 } from "@mijn-ui/react-theme"
 import { cn } from "@mijn-ui/react-utilities"
 
-type ButtonBaseProps = UnstyledComponentWithSlots<ButtonSlots> &
-  React.ComponentPropsWithRef<"button">
-
-export type ButtonProps = ButtonBaseProps &
-  ButtonVariantProps & {
+export type ButtonBaseProps = UnstyledComponentWithSlots<ButtonSlots> &
+  React.ComponentPropsWithRef<"button"> & {
     asChild?: boolean
     loading?: boolean
-  } & UnstyledProps
+  }
+
+export type ButtonProps = ButtonBaseProps & ButtonVariantProps
 
 const Button = ({
   unstyled,
