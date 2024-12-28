@@ -11,6 +11,14 @@ const config = withAnalyzer({
   output: "standalone",
   reactStrictMode: true,
   basePath: "/react",
+  redirects: async () => [
+    {
+      source: "/",
+      destination: "/react",
+      basePath: false,
+      permanent: true,
+    },
+  ],
   assetPrefix: "/react",
   swcMinify: true,
   assetPrefix: "/react",
