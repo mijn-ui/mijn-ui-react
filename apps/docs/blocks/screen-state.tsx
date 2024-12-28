@@ -1,3 +1,5 @@
+"use client"
+
 import ScreenState from "./components/screen-state"
 
 const ScreenState01 = () => {

@@ -12,9 +12,16 @@ type BlockPageProps = {
 
 export const generateStaticParams = async () => {
   const blocksDir = path.join(process.cwd(), "blocks")
-  const blockFolders = fs.readdirSync(blocksDir)
 
-  return blockFolders.map((name) => ({ name }))
+  // Read all entries (files and folders) in the blocks directory
+  const entries = fs.readdirSync(blocksDir, { withFileTypes: true })
+
+  // Filter for files only and exclude folders
+  const blockFiles = entries
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".tsx")) // Only .tsx files
+    .map((file) => path.parse(file.name).name) // Get file names without extensions
+
+  return blockFiles.map((name) => ({ name }))
 }
 
 const BlockPage = async ({ params }: BlockPageProps) => {

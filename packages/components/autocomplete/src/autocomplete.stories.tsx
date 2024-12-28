@@ -212,7 +212,7 @@ const AutocompleteUnstyled = (args: AutocompleteProps) => {
           <AutocompleteItem
             key={framework}
             value={framework}
-            className="flex items-center justify-between p-1 data-[selected=true]:bg-muted"
+            className="data-[selected=true]:bg-muted flex items-center justify-between p-1"
           >
             {framework}
           </AutocompleteItem>
