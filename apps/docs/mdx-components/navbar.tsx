@@ -53,7 +53,7 @@ const Navbar = () => {
   const renderPages = PAGES.map((page) => (
     <Link
       key={page.title}
-      className="text-sm text-muted-text hover:text-secondary"
+      className="text-muted-text hover:text-secondary text-sm"
       href={page.href}
     >
       {page.title}
@@ -80,7 +80,7 @@ const Navbar = () => {
       <nav className="flex w-full items-center justify-between px-5 py-2">
         <div className="flex items-center gap-4">
           <Link href={"/"} className="flex  items-center gap-2 font-bold">
-            <Logo className="size-5 items-center fill-fd-foreground" />
+            <Logo className="fill-fd-foreground size-5 items-center" />
             MijnUI
           </Link>
           <Badge className="bg-primary/20 text-primary hover:bg-primary/20">
@@ -100,7 +100,7 @@ const Navbar = () => {
             className="gap-2"
           >
             <LuSearch />
-            <span className="inline-block text-muted-text">Search...</span>
+            <span className="text-muted-text inline-block">Search...</span>
             <div className="ml-4 inline-flex h-5 gap-1 rounded-full border px-2 py-px">
               <kbd className="text-xxs">Ctrl+</kbd>
               <kbd className="text-xxs">K</kbd>
@@ -120,24 +120,24 @@ const Navbar = () => {
         <div className="flex items-center md:hidden">
           <button
             onClick={() => setOpenSearch(true)}
-            className="inline-flex size-8 items-center justify-center text-muted-text transition duration-200 hover:text-secondary"
+            className="text-muted-text hover:text-secondary inline-flex size-8 items-center justify-center transition duration-200"
           >
             <LuSearch />
           </button>
 
           <ClickAwayListener onClickAway={() => setDropdownOpen(false)}>
             <Collapsible open={dropdownOpen} onOpenChange={setDropdownOpen}>
-              <CollapsibleTrigger className="flex size-8 items-center justify-center text-muted-text transition duration-200 hover:text-secondary">
+              <CollapsibleTrigger className="text-muted-text hover:text-secondary flex size-8 items-center justify-center transition duration-200">
                 <LuChevronDown className="text-lg" />
               </CollapsibleTrigger>
-              <CollapsibleContent className="top-[calc(var(--navbar-height)] absolute inset-x-0 mt-2 overflow-hidden bg-surface text-sm transition-[height] data-[state=closed]:animate-collapsible-close data-[state=open]:animate-collapsible-open">
+              <CollapsibleContent className="top-[calc(var(--navbar-height)] bg-surface data-[state=closed]:animate-collapsible-close data-[state=open]:animate-collapsible-open absolute inset-x-0 mt-2 overflow-hidden text-sm transition-[height]">
                 <div className="relative flex w-full flex-col items-start justify-between space-y-2 px-4 py-2">
                   <div className="flex w-fit flex-col gap-2">{renderPages}</div>
                   <Separator />
 
                   <div className="flex w-full items-center justify-between">
                     <Link
-                      className="inline-flex items-center gap-2 text-muted-text hover:text-secondary"
+                      className="text-muted-text hover:text-secondary inline-flex items-center gap-2"
                       target="_blank"
                       href={GITHUB_URL}
                     >
