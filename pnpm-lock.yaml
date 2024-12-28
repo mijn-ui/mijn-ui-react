@@ -583,6 +583,9 @@ importers:
       '@mijn-ui/react-core':
         specifier: workspace:*
         version: link:../../core
+      '@mijn-ui/react-hooks':
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-theme':
         specifier: workspace:*
         version: link:../../theme

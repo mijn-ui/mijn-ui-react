@@ -18,7 +18,7 @@ const responsiveButton = tv(
     responsiveVariants: true, // `true` to apply to all screen sizes
   },
 )
-const ResponsiveButton = ({
+const TVResponsiveButton = ({
   size,
   variant,
   radius,
@@ -41,4 +41,4 @@ const ResponsiveButton = ({
   )
 }
 
-export default ResponsiveButton
+export { TVResponsiveButton }

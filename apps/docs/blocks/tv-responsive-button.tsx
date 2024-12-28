@@ -1,6 +1,6 @@
-import ResponsiveButton from "./components/responsive-button"
+import { TVResponsiveButton } from "./components/responsive-button"
 
-const ResponsiveButtonExample = () => {
+const TVResponsiveButtonExample = () => {
   return (
     <div className="flex size-full items-center justify-center">
       {/* screen size indicator */}
@@ -12,7 +12,7 @@ const ResponsiveButtonExample = () => {
         <p className="hidden xl:block">xl</p>
       </div>
 
-      <ResponsiveButton
+      <TVResponsiveButton
         size={{
           initial: "icon",
           sm: "md",
@@ -22,12 +22,12 @@ const ResponsiveButtonExample = () => {
         variant="filled"
         color="primary"
         radius="md"
-        className="inline-block min-w-0 truncate"
       >
-        <span className="block truncate">Button</span>
-      </ResponsiveButton>
+        <span className="hidden sm:block">Button</span>
+        <span className="block sm:hidden">B</span>
+      </TVResponsiveButton>
     </div>
   )
 }
 
-export default ResponsiveButtonExample
+export default TVResponsiveButtonExample
