@@ -834,6 +834,9 @@ importers:
       react-dom:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
+      react-icons:
+        specifier: ^5.3.0
+        version: 5.4.0(react@19.0.0)
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/ts-config
@@ -920,6 +923,12 @@ importers:
       '@mijn-ui/react-core':
         specifier: workspace:*
         version: link:../../core
+      '@mijn-ui/react-input':
+        specifier: workspace:*
+        version: link:../input
+      '@mijn-ui/react-label':
+        specifier: workspace:*
+        version: link:../label
       '@mijn-ui/react-theme':
         specifier: workspace:*
         version: link:../../theme
@@ -941,6 +950,9 @@ importers:
       react-dom:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
+      react-icons:
+        specifier: ^5.3.0
+        version: 5.4.0(react@19.0.0)
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/ts-config
@@ -987,6 +999,9 @@ importers:
       react-dom:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
+      react-icons:
+        specifier: ^5.3.0
+        version: 5.4.0(react@19.0.0)
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/ts-config
