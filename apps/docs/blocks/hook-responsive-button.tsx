@@ -1,11 +1,19 @@
 "use client"
 
-import Loading from "@/app/loading"
 import dynamic from "next/dynamic"
+import { LuLoaderCircle } from "react-icons/lu"
 
 const ButtonWithHook = dynamic(
   () => import("./components/responsive-button/button-with-hook"),
-  { ssr: false, loading: () => <Loading /> },
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex w-full items-center justify-center text-sm text-muted-text">
+        <LuLoaderCircle className="mr-2 size-4 animate-spin" />
+        Loading...
+      </div>
+    ),
+  },
 )
 
 const ResponsiveButton = () => {
