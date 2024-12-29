@@ -8,8 +8,8 @@ const withAnalyzer = createBundleAnalyzer({
 /** @type {import('next').NextConfig} */
 
 const config = withAnalyzer({
-  output: "standalone",
   reactStrictMode: true,
+  output: "standalone",
   basePath: "/react",
   redirects: async () => [
     {
@@ -20,29 +20,8 @@ const config = withAnalyzer({
     },
   ],
   assetPrefix: "/react",
-  swcMinify: true,
-  assetPrefix: "/react",
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  webpack: (config, { dev }) => {
-    if (config.cache && !dev) {
-      config.cache = Object.freeze({
-        type: "memory",
-      })
-    }
-    // Important: return the modified config
-    return config
-  },
-
   images: {
     unoptimized: true,
-  },
-  productionBrowserSourceMaps: false,
-  experimental: {
-    webpackMemoryOptimizations: true,
-    serverSourceMaps: false,
-    swcMinify: true,
   },
 })
 

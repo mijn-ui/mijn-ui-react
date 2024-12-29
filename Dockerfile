@@ -1,3 +1,5 @@
+# Adapted from https://fintlabs.medium.com/optimized-multi-stage-docker-builds-with-turborepo-and-pnpm-for-nodejs-microservices-in-a-monorepo-c686fdcf051f
+
 # Base Image
 FROM node:18-alpine AS base
 RUN apk update
