@@ -22,7 +22,7 @@ const BlockViewer = ({ name }: BlockerViewerProps) => {
             minSize={30}
           >
             <iframe
-              src={`/react/view/${block.name}`}
+              src={`/view/${block.name}`}
               height={block?.iframeHeight ?? 930}
               className="relative z-20 w-full bg-main"
             />

@@ -121,7 +121,7 @@ export async function generateMetadata(props: {
     title: page.data.title,
     description: page.data.description,
     openGraph: {
-      url: `/react/docs/${page.slugs.join("/")}`,
+      url: `/docs/${page.slugs.join("/")}`,
     },
   })
 }

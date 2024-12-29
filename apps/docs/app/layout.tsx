@@ -41,7 +41,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             }}
             search={{
               options: {
-                api: "/react/api/search",
+                api: "/api/search",
                 type: "fetch",
               },
             }}

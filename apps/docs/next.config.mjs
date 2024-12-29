@@ -10,16 +10,6 @@ const withAnalyzer = createBundleAnalyzer({
 const config = withAnalyzer({
   reactStrictMode: true,
   output: "standalone",
-  basePath: "/react",
-  redirects: async () => [
-    {
-      source: "/",
-      destination: "/react",
-      basePath: false,
-      permanent: true,
-    },
-  ],
-  assetPrefix: "/react",
   images: {
     unoptimized: true,
   },
