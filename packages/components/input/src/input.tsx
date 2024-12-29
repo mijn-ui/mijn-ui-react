@@ -9,7 +9,7 @@ import {
 import { InputSlots, inputStyles } from "@mijn-ui/react-theme"
 import { cn } from "@mijn-ui/react-utilities"
 
-type InputProps = UnstyledComponentWithSlots<InputSlots> &
+export type InputProps = UnstyledComponentWithSlots<InputSlots> &
   React.ComponentPropsWithRef<"input"> & {
     startIcon?: React.ReactNode
     endIcon?: React.ReactNode
