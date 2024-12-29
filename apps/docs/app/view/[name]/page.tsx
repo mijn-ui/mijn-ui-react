@@ -1,8 +1,6 @@
-import Loading from "@/app/loading"
-import fs from "fs"
-import dynamic from "next/dynamic"
+import { Blocks } from "@/blocks"
+import { Metadata } from "next"
 import { notFound } from "next/navigation"
-import path from "path"
 
 type BlockPageProps = {
   params: Promise<{
@@ -10,37 +8,43 @@ type BlockPageProps = {
   }>
 }
 
+export async function generateMetadata({
+  params,
+}: BlockPageProps): Promise<Metadata> {
+  const { name } = await params
+  const block = Blocks[name]
+
+  if (!block) {
+    return {}
+  }
+
+  const { title, description } = block
+
+  return {
+    title,
+    description,
+  }
+}
+
 export const generateStaticParams = async () => {
-  const blocksDir = path.join(process.cwd(), "blocks")
-
-  // Read all entries (files and folders) in the blocks directory
-  const entries = fs.readdirSync(blocksDir, { withFileTypes: true })
-
-  // Filter for files only and exclude folders
-  const blockFiles = entries
-    .filter((entry) => entry.isFile() && entry.name.endsWith(".tsx")) // Only .tsx files
-    .map((file) => path.parse(file.name).name) // Get file names without extensions
-
-  return blockFiles.map((name) => ({ name }))
+  return Object.values(Blocks).map((block) => block.name)
 }
 
 const BlockPage = async ({ params }: BlockPageProps) => {
   const { name } = await params
+  const Component = getBlockComponent(name)
 
-  try {
-    const Block = dynamic(() => import(`@/blocks/${name}`), {
-      loading: () => <Loading />,
-    })
-
-    return (
-      <div className="h-screen w-screen overflow-hidden">
-        <Block />
-      </div>
-    )
-  } catch (error) {
-    console.error("Block not found:", error)
-    notFound()
+  if (!Component) {
+    return notFound()
   }
+
+  return (
+    <div className="h-screen w-screen overflow-hidden">
+      <Component />
+    </div>
+  )
 }
+
+const getBlockComponent = (name: string) => Blocks[name]?.component
 
 export default BlockPage
