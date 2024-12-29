@@ -1,6 +1,5 @@
 import type { ReactNode } from "react"
-import Footer from "../components/layout/footer"
-import Navbar from "@/mdx-components/navbar"
+import { Navbar, Footer } from "@/app/components/layout"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {

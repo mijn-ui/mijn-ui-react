@@ -1,8 +1,8 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { source } from "@/app/source"
-import ComponentPreview from "@/mdx-components/component-preview"
-import Alert from "@/mdx-components/mdx-alert"
+import ComponentPreview from "@/app/components/component-preview"
+import Alert from "@/app/components/mdx-alert"
 import { File, Files, Folder } from "fumadocs-ui/components/files"
 import { Step, Steps } from "fumadocs-ui/components/steps"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs"
@@ -17,7 +17,7 @@ import { LuExternalLink } from "react-icons/lu"
 import {
   InstallationTabs,
   InstallationTabsContent,
-} from "@/mdx-components/installation-tabs"
+} from "@/app/components/installation-tabs"
 import { metadataImage } from "@/lib/metadata-image"
 
 export default async function Page(props: {

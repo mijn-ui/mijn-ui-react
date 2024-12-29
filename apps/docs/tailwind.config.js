@@ -9,7 +9,6 @@ export default withTV({
     "./view/**/*.{ts,tsx}",
     "./examples/**/*.{ts,tsx,html}",
     "./content/**/*.{md,mdx}",
-    "./mdx-components/**/*.{ts,tsx}",
     "./blocks/**/*.{ts,tsx}",
 
     // I don't know why this path isn't working in production, so I have to include it this way for development and production

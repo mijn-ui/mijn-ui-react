@@ -18,9 +18,9 @@ const NavigationCard = ({ previous, next }: NavigationCardProps) => {
       {previous ? (
         <Link
           href={previous.url}
-          className="bg-fd-card hover:bg-fd-accent/80 hover:text-fd-accent-foreground flex w-full flex-col gap-2 rounded-lg border p-4 text-sm transition-colors"
+          className="flex w-full flex-col gap-2 rounded-lg border bg-fd-card p-4 text-sm transition-colors hover:bg-fd-accent/80 hover:text-fd-accent-foreground"
         >
-          <div className="text-fd-muted-foreground inline-flex items-center gap-0.5">
+          <div className="inline-flex items-center gap-0.5 text-fd-muted-foreground">
             <LuChevronLeft className="-ms-1 size-4 shrink-0 rtl:rotate-180" />
             <p>Previous</p>
           </div>
@@ -31,10 +31,10 @@ const NavigationCard = ({ previous, next }: NavigationCardProps) => {
         <Link
           href={next.url}
           className={
-            "bg-fd-card hover:bg-fd-accent/80 hover:text-fd-accent-foreground col-start-2 flex w-full flex-col gap-2 rounded-lg border p-4 text-end text-sm transition-colors"
+            "col-start-2 flex w-full flex-col gap-2 rounded-lg border bg-fd-card p-4 text-end text-sm transition-colors hover:bg-fd-accent/80 hover:text-fd-accent-foreground"
           }
         >
-          <div className="text-fd-muted-foreground inline-flex flex-row-reverse items-center gap-0.5">
+          <div className="inline-flex flex-row-reverse items-center gap-0.5 text-fd-muted-foreground">
             <LuChevronRight className="-me-1 size-4 shrink-0 rtl:rotate-180" />
             <p>Next</p>
           </div>
