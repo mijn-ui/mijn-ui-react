@@ -24,7 +24,7 @@ const BlockViewer = ({ name }: BlockerViewerProps) => {
             <iframe
               src={`/react/view/${block.name}`}
               height={block?.iframeHeight ?? 930}
-              className="relative z-20 hidden w-full bg-main md:block"
+              className="relative z-20 w-full bg-main"
             />
           </ResizablePanel>
           <ResizableHandle className="relative hidden w-3 bg-transparent p-0 after:absolute after:right-0 after:top-1/2 after:h-8 after:w-[6px] after:-translate-x-px after:-translate-y-1/2 after:rounded-full after:bg-main-border after:transition-all after:hover:h-10 md:block" />
