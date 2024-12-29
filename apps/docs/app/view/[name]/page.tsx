@@ -1,16 +1,16 @@
+import Loading from "@/app/loading"
 import { Blocks } from "@/blocks"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
-
-type BlockPageProps = {
-  params: Promise<{
-    name: string
-  }>
-}
+import React from "react"
 
 export async function generateMetadata({
   params,
-}: BlockPageProps): Promise<Metadata> {
+}: {
+  params: Promise<{
+    name: string
+  }>
+}): Promise<Metadata> {
   const { name } = await params
   const block = Blocks[name]
 
@@ -26,11 +26,17 @@ export async function generateMetadata({
   }
 }
 
-export const generateStaticParams = async () => {
-  return Object.values(Blocks).map((block) => block.name)
+export const generateStaticParams = () => {
+  return Object.values(Blocks).map((block) => ({ name: block.name }))
 }
 
-const BlockPage = async ({ params }: BlockPageProps) => {
+const BlockPage = async ({
+  params,
+}: {
+  params: Promise<{
+    name: string
+  }>
+}) => {
   const { name } = await params
   const Component = getBlockComponent(name)
 
@@ -40,7 +46,9 @@ const BlockPage = async ({ params }: BlockPageProps) => {
 
   return (
     <div className="h-screen w-screen overflow-hidden">
-      <Component />
+      <React.Suspense fallback={<Loading />}>
+        <Component />
+      </React.Suspense>
     </div>
   )
 }
