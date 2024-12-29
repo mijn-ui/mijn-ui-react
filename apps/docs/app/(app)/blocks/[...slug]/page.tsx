@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation"
 import { blocks } from "@/app/source"
-import ComponentPreview from "@/mdx-components/component-preview"
 import Alert from "@/mdx-components/mdx-alert"
 import NavigationCard from "@/mdx-components/navigation-card"
 import { Step, Steps } from "fumadocs-ui/components/steps"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs"
 import defaultMdxComponents from "fumadocs-ui/mdx"
 import { metadataImage } from "@/lib/metadata-image"
+import { BlockViewer } from "@/app/components/block-viewer"
 
 export default async function Blocks(props: {
   params: Promise<{ slug?: string[] }>
@@ -35,7 +35,7 @@ export default async function Blocks(props: {
             ...defaultMdxComponents,
             Tabs,
             Tab,
-            ComponentPreview,
+            BlockViewer,
             Alert,
             Steps,
             Step,

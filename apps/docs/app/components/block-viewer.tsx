@@ -13,7 +13,7 @@ const BlockViewer = ({ name }: BlockerViewerProps) => {
   const block = Blocks[name]
 
   return (
-    <div className="group-data-[view=code]/block-view-wrapper:hidden md:h-[--height]">
+    <div className="">
       <div className="grid w-full gap-4">
         <ResizablePanelGroup direction="horizontal" className="relative z-10">
           <ResizablePanel

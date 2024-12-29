@@ -8,7 +8,7 @@ export const Blocks: Record<string, any> = {
     description:
       "A comprehensive calendar component for displaying and managing events in a full calendar view.",
     component: React.lazy(() => import("./calendar-full")),
-    iframeHeight: 930,
+    iframeHeight: 840,
   },
   "kanban-column": {
     name: "kanban-column",
@@ -16,7 +16,7 @@ export const Blocks: Record<string, any> = {
     description:
       "A Kanban board component with draggable columns and cards for task management.",
     component: React.lazy(() => import("./kanban-column")),
-    iframeHeight: 930,
+    iframeHeight: 720,
   },
   "hook-responsive-button": {
     name: "hook-responsive-button",
