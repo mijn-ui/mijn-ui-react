@@ -27,6 +27,7 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@mijn-ui/react-button": "workspace:*",
     "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/react-theme": "workspace:*",
     "react": "19.0.0",
