@@ -1254,6 +1254,9 @@ importers:
       '@mijn-ui/react-core':
         specifier: workspace:*
         version: link:../../core
+      '@mijn-ui/react-label':
+        specifier: workspace:*
+        version: link:../label
       '@mijn-ui/react-theme':
         specifier: workspace:*
         version: link:../../theme
@@ -1297,6 +1300,9 @@ importers:
       '@mijn-ui/react-core':
         specifier: workspace:*
         version: link:../../core
+      '@mijn-ui/react-separator':
+        specifier: workspace:*
+        version: link:../separator
       '@mijn-ui/react-theme':
         specifier: workspace:*
         version: link:../../theme
