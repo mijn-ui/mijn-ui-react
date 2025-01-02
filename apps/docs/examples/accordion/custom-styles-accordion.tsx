@@ -10,11 +10,11 @@ const AccordionCustomStyles = () => {
     <Accordion
       classNames={{
         base: "max-w-96 w-full rounded-2xl p-4 bg-gradient-to-tr from-primary/20 to-primary/50 dark:from-primary/10 dark:to-primary/30", // [!code highlight]
-        item: "border-none bg-white/50 dark:bg-white/20 my-2 backdrop-blur rounded-lg px-4", // [!code highlight]
+        item: "border-none bg-white/50 dark:bg-white/20 my-2 backdrop-blur rounded-large px-4", // [!code highlight]
         contentWrapper: "", // [!code highlight]
         content: "", // [!code highlight]
         triggerWrapper: "", // [!code highlight]
-        trigger: "rounded-lg text-primary", // [!code highlight]
+        trigger: "rounded-large text-primary", // [!code highlight]
         icon: "", // [!code highlight]
       }}
       type="single"

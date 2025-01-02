@@ -1,5 +1,5 @@
-import { extendVariants } from "@mijn-ui/react-core"
 import { Badge } from "@mijn-ui/react-badge"
+import { extendVariants } from "@mijn-ui/react-core"
 
 export const MyBadge = extendVariants(Badge, {
   variants: {
@@ -17,7 +17,7 @@ export const MyBadge = extendVariants(Badge, {
     },
     size: {
       xs: "px-1 h-4 text-tiny",
-      md: "px-3 h-6 text-small",
+      md: "px-3 h-6 text-smallall",
       xl: "px-5 h-10 text-large",
     },
   },

@@ -1,23 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
-import { TopRightRadialGradient } from "@/app/components/decorators/gradient-bg"
-import Logo from "@/app/components/logo"
-import ThemeToggler from "@/app/components/theme-toggler"
-import ClickAwayListener from "@/app/components/utils/click-away-listener"
-import { Badge } from "@mijn-ui/react-badge"
-import { Button } from "@mijn-ui/react-button"
-import { buttonStyles } from "@mijn-ui/react-theme"
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@mijn-ui/react-collapsible"
-import { Separator } from "@mijn-ui/react-separator"
-import { cn } from "@mijn-ui/react-utilities"
+
 import { SidebarTrigger } from "fumadocs-core/sidebar"
 import { useSearchContext, useSidebar } from "fumadocs-ui/provider"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 import {
   LuChevronDown,
   LuExternalLink,
@@ -26,7 +14,20 @@ import {
   LuSearch,
   LuX,
 } from "react-icons/lu"
-import { usePathname } from "next/navigation"
+
+import { TopRightRadialGradient } from "@/app/components/decorators/gradient-bg"
+import Logo from "@/app/components/logo"
+import ThemeToggler from "@/app/components/theme-toggler"
+import ClickAwayListener from "@/app/components/utils/click-away-listener"
+import { Badge } from "@mijn-ui/react-badge"
+import { Button } from "@mijn-ui/react-button"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@mijn-ui/react-collapsible"
+import { Separator } from "@mijn-ui/react-separator"
+import { buttonStyles, cn } from "@mijn-ui/react-theme"
 
 const PAGES = [
   {
@@ -53,7 +54,7 @@ const Navbar = () => {
   const renderPages = PAGES.map((page) => (
     <Link
       key={page.title}
-      className="text-sm text-muted-text hover:text-secondary"
+      className="text-small text-muted-text hover:text-secondary"
       href={page.href}
     >
       {page.title}
@@ -83,7 +84,7 @@ const Navbar = () => {
             <Logo className="size-5 items-center fill-fd-foreground" />
             MijnUI
           </Link>
-          <Badge className="bg-primary/20 text-primary hover:bg-primary/20">
+          <Badge className="bg-primary/20 text-tiny text-primary hover:bg-primary/20">
             v0.0.1
           </Badge>
 
@@ -101,7 +102,7 @@ const Navbar = () => {
           >
             <LuSearch />
             <span className="inline-block text-muted-text">Search...</span>
-            <div className="ml-4 inline-flex h-5 gap-1 rounded-full border px-2 py-px">
+            <div className="ml-4 inline-flex h-5 gap-1 rounded-full border-small px-2 py-px">
               <kbd className="text-xxs">Ctrl+</kbd>
               <kbd className="text-xxs">K</kbd>
             </div>
@@ -128,9 +129,9 @@ const Navbar = () => {
           <ClickAwayListener onClickAway={() => setDropdownOpen(false)}>
             <Collapsible open={dropdownOpen} onOpenChange={setDropdownOpen}>
               <CollapsibleTrigger className="flex size-8 items-center justify-center text-muted-text transition duration-200 hover:text-secondary">
-                <LuChevronDown className="text-lg" />
+                <LuChevronDown className="text-large" />
               </CollapsibleTrigger>
-              <CollapsibleContent className="top-[calc(var(--navbar-height)] absolute inset-x-0 mt-2 overflow-hidden bg-surface text-sm transition-[height] data-[state=closed]:animate-collapsible-close data-[state=open]:animate-collapsible-open">
+              <CollapsibleContent className="top-[calc(var(--navbar-height)] absolute inset-x-0 mt-2 overflow-hidden bg-surface text-small transition-[height] data-[state=closed]:animate-collapsible-close data-[state=open]:animate-collapsible-open">
                 <div className="relative flex w-full flex-col items-start justify-between space-y-2 px-4 py-2">
                   <div className="flex w-fit flex-col gap-2">{renderPages}</div>
                   <Separator />

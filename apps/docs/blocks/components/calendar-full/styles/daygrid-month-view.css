@@ -5,7 +5,7 @@
     /* day-header styles */
     .month-view__day-header {
       .fc-col-header-cell-cushion {
-        @apply block bg-accent px-3 py-2 text-left text-sm font-medium uppercase text-muted-text;
+        @apply block bg-accent px-3 py-2 text-left text-small font-medium uppercase text-muted-text;
       }
     }
 
@@ -19,7 +19,7 @@
       @apply h-auto md:h-32;
       /* styles for default date number */
       .fc-daygrid-day-top {
-        @apply flex h-10 w-10 flex-row items-center justify-center p-1 text-lg font-semibold;
+        @apply flex h-10 w-10 flex-row items-center justify-center p-1 text-large font-semibold;
       }
 
       /* styles for active day */
@@ -35,7 +35,7 @@
       /* day-cell event styles */
       .fc-daygrid-day-events,
       .fc-daygrid-block-event {
-        @apply rounded-default border-0 px-px py-0.5 text-xs;
+        @apply rounded-default border-0 px-px py-0.5 text-tiny;
       }
     }
   }

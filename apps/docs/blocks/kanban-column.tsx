@@ -1,11 +1,11 @@
 "use client"
 
 import * as React from "react"
-import KanbanCardItem from "./components/kanban-column/components/kanban-card-item"
-import {
-  KanbanCardItemType,
-  KanbanContainerType,
-} from "./components/kanban-column/components/types"
+
+import { LuEllipsisVertical, LuPlus } from "react-icons/lu"
+
+import { Button } from "@mijn-ui/react-button"
+
 import {
   Kanban,
   KanbanColumn,
@@ -17,8 +17,11 @@ import {
   KanbanItemCount,
   KanbanTitle,
 } from "./components/kanban-column"
-import { Button } from "@mijn-ui/react-button"
-import { LuEllipsisVertical, LuPlus } from "react-icons/lu"
+import KanbanCardItem from "./components/kanban-column/components/kanban-card-item"
+import {
+  KanbanCardItemType,
+  KanbanContainerType,
+} from "./components/kanban-column/components/types"
 
 // Default Kanban container data for initial state
 const DEFAULT_VALUE: KanbanContainerType[] = [
@@ -118,7 +121,7 @@ const KanbanExample = () => {
             <KanbanColumn key={container.id} className="w-full max-w-[352px]">
               <KanbanHeader className="pr-2">
                 <div className="flex items-center gap-2">
-                  <KanbanTitle className="text-base sm:text-lg">
+                  <KanbanTitle className="text-medium sm:text-large">
                     {container.title}
                   </KanbanTitle>
                   <KanbanItemCount>{container.items.length}</KanbanItemCount>
@@ -161,8 +164,8 @@ const KanbanExample = () => {
                 ) : (
                   <div className="h-32">
                     <div
-                      className="flex size-full flex-col items-center justify-center gap-3 rounded-md px-4 py-2"
-                      // custom dashed border styles
+                      className="flex size-full flex-col items-center justify-center gap-3 rounded-medium px-4 py-2"
+                      // custom dashed border-small styles
                       style={{
                         backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='6' ry='6' stroke='%23737373FF' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
                         borderRadius: "6px",
@@ -171,7 +174,7 @@ const KanbanExample = () => {
                       <span>
                         <StickyNoteIcon /> {/* custom Icon */}
                       </span>
-                      <p className="text-sm text-muted-text">
+                      <p className="text-small text-muted-text">
                         No tasks currently. Board is empty.
                       </p>
                     </div>
@@ -179,7 +182,7 @@ const KanbanExample = () => {
                 )}
               </KanbanContent>
               <KanbanFooter>
-                <button className="flex items-center gap-2 text-sm text-muted-text">
+                <button className="flex items-center gap-2 text-small text-muted-text">
                   <span>
                     <LuPlus className="size-5" />
                   </span>

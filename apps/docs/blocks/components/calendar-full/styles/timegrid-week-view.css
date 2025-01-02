@@ -4,10 +4,10 @@
   /* *********** header cell active style *********** */
   .fc-timeGridWeek-view {
     .fc-col-header-cell-cushion {
-      @apply text-main-text flex flex-col whitespace-pre-line px-3 py-2 text-left text-sm font-medium;
+      @apply text-main-text flex flex-col whitespace-pre-line px-3 py-2 text-left text-small font-medium;
 
       span {
-        @apply text-lg font-semibold;
+        @apply text-large font-semibold;
       }
     }
 
@@ -24,10 +24,10 @@
       @apply h-16 text-left;
 
       .fc-col-header-cell-cushion {
-        @apply flex flex-col justify-center pl-2 pt-2 text-sm font-medium;
+        @apply flex flex-col justify-center pl-2 pt-2 text-small font-medium;
 
         span {
-          @apply text-lg font-semibold;
+          @apply text-large font-semibold;
         }
       }
     }

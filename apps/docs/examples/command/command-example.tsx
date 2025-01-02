@@ -1,4 +1,13 @@
 import {
+  LuCalculator,
+  LuCalendar,
+  LuCreditCard,
+  LuSettings,
+  LuSmile,
+  LuUser,
+} from "react-icons/lu"
+
+import {
   Command,
   CommandEmpty,
   CommandGroup,
@@ -8,18 +17,10 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@mijn-ui/react-command"
-import {
-  LuCalculator,
-  LuCalendar,
-  LuCreditCard,
-  LuSettings,
-  LuSmile,
-  LuUser,
-} from "react-icons/lu"
 
 const CommandExample = () => {
   return (
-    <Command className="rounded-lg border border-main-border shadow-md md:w-[450px]">
+    <Command className="rounded-large border-small border-border shadow-medium md:w-[450px]">
       <CommandInput placeholder="Type a command or search..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>

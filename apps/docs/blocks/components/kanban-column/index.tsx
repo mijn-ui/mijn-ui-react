@@ -1,4 +1,25 @@
 import * as React from "react"
+
+import { LuGripVertical } from "react-icons/lu"
+
+import {
+  closestCorners,
+  DndContext,
+  DragOverlay,
+  KeyboardSensor,
+  PointerSensor,
+  UniqueIdentifier,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core"
+import {
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+} from "@dnd-kit/sortable"
+import { CSS } from "@dnd-kit/utilities"
+import { cn } from "@mijn-ui/react-theme"
+
 import {
   KanbanProvider,
   KanbanProviderProps,
@@ -10,24 +31,6 @@ import {
   BaseKanbanItem,
   KanbanCardItemType,
 } from "./components/types"
-import {
-  DndContext,
-  DragOverlay,
-  KeyboardSensor,
-  PointerSensor,
-  UniqueIdentifier,
-  closestCorners,
-  useSensor,
-  useSensors,
-} from "@dnd-kit/core"
-import {
-  SortableContext,
-  sortableKeyboardCoordinates,
-  useSortable,
-} from "@dnd-kit/sortable"
-import { CSS } from "@dnd-kit/utilities"
-import { cn } from "@mijn-ui/react-utilities"
-import { LuGripVertical } from "react-icons/lu"
 
 /* ------------------ make Kanban to be more user friendly ------------------ */
 
@@ -189,7 +192,7 @@ const KanbanDraggable = ({
       {children}
       <button
         {...listeners}
-        className="absolute right-4 top-4 flex size-6 items-center justify-center rounded-md border border-main-border transition-opacity sm:opacity-0 sm:group-hover:opacity-100"
+        className="absolute right-4 top-4 flex size-6 items-center justify-center rounded-medium border-small border-border transition-opacity sm:opacity-0 sm:group-hover:opacity-100"
       >
         <LuGripVertical size={16} />
       </button>
@@ -203,7 +206,7 @@ const KanbanCard = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     className={cn(
-      "w-full cursor-pointer space-y-4 rounded-lg bg-surface p-4",
+      "w-full cursor-pointer space-y-4 rounded-large bg-surface p-4",
       className,
     )}
     ref={ref}
@@ -254,7 +257,11 @@ const KanbanTitle = React.forwardRef<
   React.ComponentProps<"h3">
 >(({ className, ...props }, ref) => {
   return (
-    <h3 className={cn("text-lg font-medium", className)} ref={ref} {...props} />
+    <h3
+      className={cn("text-large font-medium", className)}
+      ref={ref}
+      {...props}
+    />
   )
 })
 
@@ -268,7 +275,7 @@ const KanbanItemCount = React.forwardRef<
     <span
       ref={ref}
       className={cn(
-        "flex size-5 items-center justify-center rounded-full bg-surface text-xs font-medium text-muted-text",
+        "flex size-5 items-center justify-center rounded-full bg-surface text-tiny font-medium text-muted-text",
         className,
       )}
       {...props}

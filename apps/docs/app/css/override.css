@@ -47,7 +47,7 @@ h1 {
 
 #nd-docs-layout {
   .steps .step::before {
-    @apply bg-fd-card text-fd-card-foreground shadow-sm;
+    @apply bg-fd-card text-fd-card-foreground shadow-small;
   }
 
   [role="tablist"] {
