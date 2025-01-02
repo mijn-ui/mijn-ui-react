@@ -1,7 +1,9 @@
 "use client"
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@mijn-ui/react-tabs"
 import React from "react"
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@mijn-ui/react-tabs"
+
 import Alert from "./mdx-alert"
 
 type InstallationTabsProps = React.ComponentProps<typeof Tabs> & {
@@ -25,7 +27,7 @@ const InstallationTabs = ({
       <TabsList className="h-12 w-full justify-start rounded-none border-b !bg-transparent">
         {items.map((item) => (
           <TabsTrigger
-            className="rounded-md data-[state=active]:bg-surface"
+            className="rounded-medium data-[state=active]:bg-surface"
             key={item}
             value={item}
           >

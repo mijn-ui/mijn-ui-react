@@ -1,3 +1,5 @@
+import { LuArrowUpRight, LuPlus } from "react-icons/lu"
+
 import { Button } from "@mijn-ui/react-button"
 import {
   Card,
@@ -6,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@mijn-ui/react-card"
-import { LuArrowUpRight, LuPlus } from "react-icons/lu"
 
 const CardExample = () => {
   return (
@@ -16,7 +17,7 @@ const CardExample = () => {
           variant={"text"}
           color={"accent"}
           size={"icon"}
-          className="rounded-lg bg-accent p-0 text-muted-text sm:size-12"
+          className="rounded-large bg-accent p-0 text-muted-text sm:size-12"
           asChild
         >
           <span>
@@ -29,7 +30,7 @@ const CardExample = () => {
         </div>
       </CardHeader>
       <CardContent>
-        <CardTitle className="text-base">Users</CardTitle>
+        <CardTitle className="text-medium">Users</CardTitle>
         <CardDescription>Manage user accounts and permissions.</CardDescription>
       </CardContent>
     </Card>

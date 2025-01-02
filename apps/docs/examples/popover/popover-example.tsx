@@ -1,3 +1,5 @@
+import { RxCross2, RxMixerHorizontal } from "react-icons/rx"
+
 import { Button } from "@mijn-ui/react-button"
 import { Input } from "@mijn-ui/react-input"
 import { Label } from "@mijn-ui/react-label"
@@ -8,7 +10,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@mijn-ui/react-popover"
-import { RxCross2, RxMixerHorizontal } from "react-icons/rx"
 
 // Making All of the Accordion Components Unstyled
 type PopoverExampleProps = {
@@ -23,7 +24,7 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
       </PopoverTrigger>
       <PopoverContent className="relative w-72 ">
         <div className="flex flex-col justify-center gap-2.5">
-          <p className="text-base font-medium">Dimensions</p>
+          <p className="text-medium font-medium">Dimensions</p>
 
           <fieldset className="flex w-full items-center justify-between gap-2">
             <Label

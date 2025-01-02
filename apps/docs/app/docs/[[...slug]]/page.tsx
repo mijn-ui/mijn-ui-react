@@ -1,8 +1,3 @@
-import Link from "next/link"
-import { notFound } from "next/navigation"
-import { source } from "@/app/source"
-import ComponentPreview from "@/app/components/component-preview"
-import Alert from "@/app/components/mdx-alert"
 import { File, Files, Folder } from "fumadocs-ui/components/files"
 import { Step, Steps } from "fumadocs-ui/components/steps"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs"
@@ -13,11 +8,17 @@ import {
   DocsPage,
   DocsTitle,
 } from "fumadocs-ui/page"
+import Link from "next/link"
+import { notFound } from "next/navigation"
 import { LuExternalLink } from "react-icons/lu"
+
+import ComponentPreview from "@/app/components/component-preview"
 import {
   InstallationTabs,
   InstallationTabsContent,
 } from "@/app/components/installation-tabs"
+import Alert from "@/app/components/mdx-alert"
+import { source } from "@/app/source"
 import { metadataImage } from "@/lib/metadata-image"
 
 export default async function Page(props: {
@@ -51,7 +52,7 @@ export default async function Page(props: {
           {page.data.docs && (
             <Link
               target="_blank"
-              className="flex items-center gap-1 text-sm text-main-text/80 underline hover:text-primary"
+              className="flex items-center gap-1 text-small text-main-text/80 underline hover:text-primary"
               href={page.data.docs}
             >
               <LuExternalLink />
@@ -61,7 +62,7 @@ export default async function Page(props: {
           {page.data.apiReference && (
             <Link
               target="_blank"
-              className="flex items-center gap-1 text-sm text-main-text/80 underline hover:text-primary"
+              className="flex items-center gap-1 text-small text-main-text/80 underline hover:text-primary"
               href={page.data.apiReference}
             >
               <LuExternalLink />
@@ -71,7 +72,7 @@ export default async function Page(props: {
           {page.data.styleSource && (
             <Link
               target="_blank"
-              className="flex items-center gap-1 text-sm text-main-text/80 underline hover:text-primary"
+              className="flex items-center gap-1 text-small text-main-text/80 underline hover:text-primary"
               href={page.data.styleSource}
             >
               <LuExternalLink />

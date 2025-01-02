@@ -3,32 +3,32 @@
 @import "./list-month-view.css";
 
 :root {
-  --fc-page-bg-color: hsl(var(--main));
-  --fc-neutral-bg-color: hsl(var(--accent));
-  --fc-muted-text-color: hsl(var(--accent-text));
-  --fc-border-color: hsl(var(--main-border));
-  --fc-button-text-color: hsl(var(--muted-text));
+  --fc-page-bg-color: hsl(var(--mijnui-main));
+  --fc-neutral-bg-color: hsl(var(--mijnui-accent));
+  --fc-muted-text-color: hsl(var(--mijnui-accent-text));
+  --fc-border-color: hsl(var(--mijnui-border));
+  --fc-button-text-color: hsl(var(--mijnui-muted-text));
   --fc-button-bg-color: transparent;
-  --fc-button-border-color: hsl(var(--main-border));
+  --fc-button-border-color: hsl(var(--mijnui-border));
   --fc-button-hover-bg-color: transparent;
-  --fc-button-hover-border-color: hsl(var(--accent));
-  --fc-button-active-bg-color: hsl(var(--main));
-  --fc-button-active-border-color: hsl(var(--accent));
-  --fc-event-bg-color: hsl(var(--primary));
-  --fc-event-border-color: hsl(var(--primary));
-  --fc-event-text-color: hsl(var(--primary-text));
-  --fc-event-selected-overlay-color: hsla(0, 0, 0, 0.25);
-  --fc-more-link-bg-color: hsl(var(--accent));
+  --fc-button-hover-border-color: hsl(var(--mijnui-accent));
+  --fc-button-active-bg-color: hsl(var(--mijnui-main));
+  --fc-button-active-border-color: hsl(var(--mijnui-accent));
+  --fc-event-bg-color: hsl(var(--mijnui-primary));
+  --fc-event-border-color: hsl(var(--mijnui-primary));
+  --fc-event-text-color: hsl(var(--mijnui-primary-text));
+  --fc-event-selected-overlay-color: hsl(var(--mijnui-overlay) / 0.25);
+  --fc-more-link-bg-color: hsl(var(--mijnui-accent));
   --fc-more-link-text-color: inherit;
   --fc-event-resizer-thickness: 8px;
   --fc-event-resizer-dot-total-width: 8px;
   --fc-event-resizer-dot-border-width: 1px;
-  --fc-non-business-color: hsl(var(--accent));
+  --fc-non-business-color: hsl(var(--mijnui-accent));
   --fc-bg-event-color: #8fdf82;
   --fc-bg-event-opacity: 0.3;
   --fc-highlight-color: hsla(64, 64, 64, 0.1);
   --fc-today-bg-color: transparent;
-  --fc-now-indicator-color: hsl(var(--primary));
+  --fc-now-indicator-color: hsl(var(--mijnui-primary));
 }
 
 /* ======================================== COMMON STYLES OVERRIDES ======================================== */
@@ -38,11 +38,11 @@
   @apply text-main-text;
 
   .fc-daygrid {
-    @apply overflow-hidden rounded-md;
+    @apply overflow-hidden rounded-medium;
   }
 
   .fc-scrollgrid {
-    @apply !rounded-md;
+    @apply !rounded-medium;
   }
 
   .fc-col-header {
@@ -74,16 +74,16 @@
 
   /* ******* styles for month/week/day/list items button ******* */
   .fc-header-toolbar .fc-toolbar-chunk:nth-child(2) .fc-button-group {
-    @apply rounded-lg bg-accent p-1;
+    @apply rounded-large bg-accent p-1;
 
     .fc-button {
-      @apply rounded-md border-none px-3 py-2 text-sm;
+      @apply rounded-medium border-none px-3 py-2 text-small;
     }
   }
 
   /* styles for active header button */
   .fc-button-primary:not(:disabled).fc-button-active {
-    @apply bg-surface text-main-text drop-shadow-sm;
+    @apply bg-surface text-main-text shadow-small;
   }
 
   /* ******* styles for prev month, next month and today button ******* */
@@ -91,7 +91,7 @@
     @apply gap-2;
 
     .fc-button {
-      @apply h-10 rounded-md border border-main-border text-sm text-main-text;
+      @apply h-10 rounded-medium border-small border-border text-small text-main-text;
     }
 
     .fc-prev-button,
@@ -103,12 +103,12 @@
       @apply flex items-center justify-center;
 
       &::before {
-        @apply text-lg;
+        @apply text-large;
       }
     }
 
     .fc-today-button {
-      @apply rounded-md px-3 py-2;
+      @apply rounded-medium px-3 py-2;
     }
   }
 
@@ -123,11 +123,11 @@
 
   /* ********** daygrid event more link and popover ********** */
   .fc-daygrid-more-link {
-    @apply text-sm font-medium text-primary;
+    @apply text-small font-medium text-primary;
   }
 
   .fc-daygrid-dot-event {
-    @apply flex flex-col items-start justify-start truncate bg-secondary px-1 py-0.5 text-xs text-black;
+    @apply flex flex-col items-start justify-start truncate bg-secondary px-1 py-0.5 text-tiny text-black;
 
     .fc-daygrid-event-dot {
       @apply hidden;
@@ -158,7 +158,7 @@
 
     /* styles for all day header slot */
     .timegrid-all-day {
-      @apply h-12 bg-accent pr-2 text-xs capitalize text-muted-text;
+      @apply h-12 bg-accent pr-2 text-tiny capitalize text-muted-text;
     }
 
     /* hide divider between timegrid header and timegrid body  */
@@ -173,7 +173,7 @@
       }
 
       .fc-timegrid-slot-label {
-        @apply h-6 bg-accent pr-2 pt-2 text-xs text-muted-text;
+        @apply h-6 bg-accent pr-2 pt-2 text-tiny text-muted-text;
       }
     }
   }

@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { buttonStyles } from "@mijn-ui/react-theme"
-import { cn } from "@mijn-ui/react-utilities"
+
+import { buttonStyles, cn } from "@mijn-ui/react-theme"
 
 export default function HomePage() {
   return (
@@ -8,7 +8,7 @@ export default function HomePage() {
       <h1 className="bg-gradient-to-br from-main-text to-muted-text/70 bg-clip-text text-3xl/[1.2] font-bold tracking-tight text-transparent sm:text-4xl/[1.2] sm:font-extrabold lg:text-5xl/[1.2]">
         Reusable components for clean, responsive interfaces.
       </h1>
-      <p className="w-full text-lg font-medium text-muted-text md:w-3/4">
+      <p className="w-full text-large font-medium text-muted-text md:w-3/4">
         An open-source library inspired by NextUI and Shadcn/ui, built with
         Radix Primitives and Tailwind CSS.
       </p>
@@ -18,7 +18,7 @@ export default function HomePage() {
           className={cn(
             buttonStyles({
               size: "sm",
-              className: "text-xs md:text-sm",
+              className: "text-tiny md:text-small",
             }).base(),
           )}
           href={"/docs"}
@@ -30,7 +30,7 @@ export default function HomePage() {
             size: "sm",
             color: "secondary",
             variant: "outlined",
-            className: "text-xs md:text-sm",
+            className: "text-tiny md:text-small",
           }).base()}
           href={"/blocks"}
         >

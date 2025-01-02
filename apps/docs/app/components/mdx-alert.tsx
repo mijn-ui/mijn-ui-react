@@ -1,14 +1,15 @@
+import { ReactNode } from "react"
+
+import { FiAlertCircle } from "react-icons/fi"
+import { LuBug } from "react-icons/lu"
+
 import {
+  Alert as MijnUIAlert,
   AlertDescription,
   AlertIcon,
   AlertTitle,
-  Alert as MijnUIAlert,
 } from "@mijn-ui/react-alert"
-import { AlertVariantProps } from "@mijn-ui/react-theme"
-import { cn } from "@mijn-ui/react-utilities"
-import { LuBug } from "react-icons/lu"
-import { FiAlertCircle } from "react-icons/fi"
-import { ReactNode } from "react"
+import { AlertVariantProps, cn } from "@mijn-ui/react-theme"
 
 type AlertProps = {
   title: ReactNode

@@ -1,3 +1,5 @@
+import { LuX } from "react-icons/lu"
+
 import { Button } from "@mijn-ui/react-button"
 import {
   Dialog,
@@ -8,7 +10,6 @@ import {
   DialogTrigger,
 } from "@mijn-ui/react-dialog"
 import { Input } from "@mijn-ui/react-input"
-import { LuX } from "react-icons/lu"
 
 type DialogExampleProps = {
   unstyled?: boolean
@@ -19,7 +20,7 @@ const DialogExample = ({ unstyled = false }: DialogExampleProps) => {
     <Dialog unstyled={unstyled}>
       <DialogTrigger>Sign In</DialogTrigger>
       <DialogContent className="relative ">
-        <DialogClose className="absolute right-4 top-4 border-none p-2 text-lg text-muted-text hover:text-main-text">
+        <DialogClose className="absolute right-4 top-4 border-none p-2 text-large text-muted-text hover:text-main-text">
           <LuX />
         </DialogClose>
         <div>

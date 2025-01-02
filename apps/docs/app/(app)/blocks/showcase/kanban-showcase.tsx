@@ -10,7 +10,7 @@ const KanbanShowcase = () => {
 
       <div className="px-3">
         {" "}
-        <div className="group relative mt-2 w-full space-y-1 rounded-lg bg-surface p-3">
+        <div className="group relative mt-2 w-full space-y-1 rounded-large bg-surface p-3">
           <div className="h-3 w-36 rounded-full bg-accent" />
           <div className="h-3 w-14 rounded-full bg-accent" />
           <div className="flex flex-wrap">
@@ -47,9 +47,9 @@ const KanbanShowcase = () => {
               </div>
             </div>
             <div className="flex items-center justify-center -space-x-2">
-              <div className="size-5 shrink-0 rounded-full bg-accent shadow-sm" />
-              <div className="size-5 shrink-0 rounded-full bg-accent shadow-sm" />
-              <div className="size-5 shrink-0 rounded-full bg-accent shadow-sm" />
+              <div className="size-5 shrink-0 rounded-full bg-accent shadow-small" />
+              <div className="size-5 shrink-0 rounded-full bg-accent shadow-small" />
+              <div className="size-5 shrink-0 rounded-full bg-accent shadow-small" />
 
               <div className="!ml-1.5 h-3 w-2 rounded-full bg-accent" />
             </div>

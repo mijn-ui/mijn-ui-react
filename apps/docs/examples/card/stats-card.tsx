@@ -1,3 +1,5 @@
+import { IoBagOutline } from "react-icons/io5"
+
 import { Button } from "@mijn-ui/react-button"
 import {
   Card,
@@ -6,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@mijn-ui/react-card"
-import { IoBagOutline } from "react-icons/io5"
 
 const StatsCardExample = () => {
   return (
@@ -26,7 +27,7 @@ const StatsCardExample = () => {
         <CardTitle className="text-xl font-medium sm:text-2xl">
           $75,890.75
         </CardTitle>
-        <p className="text-xs font-normal text-muted-text">
+        <p className="text-tiny font-normal text-muted-text">
           <span className="text-success">+128%</span> from June
         </p>
       </CardContent>

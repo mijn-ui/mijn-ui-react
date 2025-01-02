@@ -1,14 +1,16 @@
 import React from "react"
+
+import { FaBoxArchive } from "react-icons/fa6"
+
+import { Button } from "@mijn-ui/react-button"
 import {
   Card,
-  CardHeader,
   CardContent,
-  CardTitle,
   CardDescription,
   CardFooter,
+  CardHeader,
+  CardTitle,
 } from "@mijn-ui/react-card"
-import { FaBoxArchive } from "react-icons/fa6"
-import { Button } from "@mijn-ui/react-button"
 
 interface ScreenStateProps {
   title: string
@@ -31,7 +33,7 @@ const ScreenState: React.FC<ScreenStateProps> = ({
       <CardContent unstyled className="space-y-1">
         <CardTitle
           unstyled
-          className="text-lg font-medium text-main-text sm:text-xl"
+          className="text-large font-medium text-main-text sm:text-xl"
         >
           {title}
         </CardTitle>

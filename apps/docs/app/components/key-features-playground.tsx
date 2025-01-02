@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+
 import { Button } from "@mijn-ui/react-button"
 import { Checkbox } from "@mijn-ui/react-checkbox"
 import { Label } from "@mijn-ui/react-label"
@@ -31,7 +32,7 @@ const CheckboxWithLabel = ({
       checked={checked}
       onCheckedChange={onCheckedChange}
     />
-    <Label className="text-sm" htmlFor={id}>
+    <Label className="text-small" htmlFor={id}>
       {label}
     </Label>
   </div>
@@ -56,7 +57,7 @@ const RadioGroupWithOptions = ({
     value={value}
     onValueChange={onValueChange}
   >
-    <p className="text-sm">{label}</p>
+    <p className="text-small">{label}</p>
     {options.map((option) => (
       <div className="flex items-center space-x-2" key={option.id}>
         <RadioGroupItem value={option.value} id={option.id} />
@@ -86,9 +87,9 @@ const KeyFeaturesPlayground = () => {
 
   return (
     <figure className="not-prose w-full">
-      <figcaption className="mb-3 text-base">Try it here!</figcaption>
+      <figcaption className="mb-3 text-medium">Try it here!</figcaption>
 
-      <div className="flex h-80 w-full flex-col items-center overflow-hidden rounded-md border sm:flex-row">
+      <div className="flex h-80 w-full flex-col items-center overflow-hidden rounded-medium border-small sm:flex-row">
         <div className="flex h-full min-h-32 flex-auto items-center justify-center bg-main">
           <Button
             unstyled={buttonOptions.unstyled}

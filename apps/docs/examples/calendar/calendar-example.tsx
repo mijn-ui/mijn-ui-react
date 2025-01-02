@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+
 import { Calendar } from "@mijn-ui/react-calendar"
 
 const CalendarExample = () => {
@@ -11,7 +12,7 @@ const CalendarExample = () => {
       mode="single"
       selected={date}
       onSelect={setDate}
-      className="rounded-lg border"
+      className="rounded-large border"
     />
   )
 }

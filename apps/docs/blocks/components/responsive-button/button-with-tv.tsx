@@ -1,6 +1,10 @@
 import { Button, ButtonProps } from "@mijn-ui/react-button"
-import { buttonStyles, ButtonVariantProps } from "@mijn-ui/react-theme"
-import { tv, VariantProps } from "tailwind-variants"
+import {
+  buttonStyles,
+  ButtonVariantProps,
+  tv,
+  VariantProps,
+} from "@mijn-ui/react-theme"
 
 const responsiveButton = tv(
   {
