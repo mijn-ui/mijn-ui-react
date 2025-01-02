@@ -1,11 +1,13 @@
-import { it, expect, describe } from "vitest"
-import { tv } from "tailwind-variants"
+import { describe, expect, it } from "vitest"
+
+import { tv } from "@mijn-ui/react-theme"
+
 import { createTVUnstyledSlots } from "../src/tv-unstyled-slots"
 
 describe("createTVUnstyledSlots", () => {
   // Constants for default classes
   const DEFAULT_CLASSES = {
-    base: "rounded-md",
+    base: "rounded-medium",
     icon: "p-4",
     indicator: "border-solid",
   }

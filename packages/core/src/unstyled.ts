@@ -1,4 +1,4 @@
-import { cn } from "@mijn-ui/react-utilities"
+import { cn } from "@mijn-ui/react-theme"
 
 /**
  * Conditionally applies CSS class names based on the `unstyled` flag.
