@@ -1,12 +1,22 @@
 "use client"
 
-import * as React from "react"
-import { cn, createContext } from "@mijn-ui/react-utilities"
-import { UnstyledComponentWithSlots, UnstyledProps } from "@mijn-ui/react-core"
-import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
-import { CheckIcon, ChevronRightIcon, CircleIcon } from "@mijn-ui/shared-icons"
-import { dropdownMenuStyles, DropdownMenuSlots } from "@mijn-ui/react-theme"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
+import * as React from 'react';
+
+import { useTVUnstyled } from '@mijn-ui/react-hooks';
+import {
+  cn,
+  DropdownMenuSlots,
+  dropdownMenuStyles,
+  UnstyledComponentWithSlots,
+  UnstyledProps,
+} from '@mijn-ui/react-theme';
+import { createContext } from '@mijn-ui/react-utilities';
+import {
+  CheckIcon,
+  ChevronRightIcon,
+  CircleIcon,
+} from '@mijn-ui/shared-icons';
+import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
 const DropdownMenuGroup = DropdownMenuPrimitive.Group
 
@@ -377,18 +387,18 @@ DropdownMenuShortcut.displayName = "DropdownMenuShortcut"
 
 export {
   DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuCheckboxItem,
-  DropdownMenuRadioItem,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
-  DropdownMenuGroup,
-  DropdownMenuPortal,
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-  DropdownMenuRadioGroup,
-}
+  DropdownMenuTrigger,
+};

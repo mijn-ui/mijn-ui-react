@@ -1,16 +1,18 @@
-import * as React from "react"
-import {
-  UnstyledComponentWithSlots,
-  createTVUnstyledSlots,
-} from "@mijn-ui/react-core"
-import { Slot, Slottable } from "@radix-ui/react-slot"
-import { LoaderCircleIcon } from "@mijn-ui/shared-icons"
+import * as React from 'react';
+
+import { createTVUnstyledSlots } from '@mijn-ui/react-core';
 import {
   ButtonSlots,
-  ButtonVariantProps,
   buttonStyles,
-} from "@mijn-ui/react-theme"
-import { cn } from "@mijn-ui/react-utilities"
+  ButtonVariantProps,
+  cn,
+  UnstyledComponentWithSlots,
+} from '@mijn-ui/react-theme';
+import { LoaderCircleIcon } from '@mijn-ui/shared-icons';
+import {
+  Slot,
+  Slottable,
+} from '@radix-ui/react-slot';
 
 export type ButtonBaseProps = UnstyledComponentWithSlots<ButtonSlots> &
   React.ComponentPropsWithRef<"button"> & {
@@ -52,4 +54,4 @@ const Button = ({
   )
 }
 
-export { Button }
+export { Button };

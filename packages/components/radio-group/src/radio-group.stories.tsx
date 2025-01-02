@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/react"
-import { RadioGroup, RadioGroupItem, RadioGroupProps } from "./radio-group"
 import { Label } from "@mijn-ui/react-label"
+import type { Meta, StoryObj } from "@storybook/react"
+
+import { RadioGroup, RadioGroupItem, RadioGroupProps } from "./radio-group"
 
 const meta: Meta<typeof RadioGroup> = {
   title: "Components/RadioGroup",
@@ -41,7 +42,7 @@ const RadioGroupUnstyled = (args: RadioGroupProps) => {
       defaultValue="comfortable"
       classNames={{
         base: "grid gap-2",
-        item: "border border-primary size-4 rounded-full",
+        item: "border-small border-primary size-4 rounded-full",
         indicator: "flex justify-center items-center",
         icon: "size-2.5 fill-current",
       }}

@@ -1,15 +1,18 @@
 "use client"
 
-import * as React from "react"
-import { cn, createContext } from "@mijn-ui/react-utilities"
-import { UnstyledComponentWithSlots, UnstyledProps } from "@mijn-ui/react-core"
-import * as DialogPrimitive from "@radix-ui/react-dialog"
+import * as React from 'react';
+
+import { useTVUnstyled } from '@mijn-ui/react-hooks';
 import {
+  cn,
+  DialogSlots,
   dialogStyles,
   DialogVariantProps,
-  DialogSlots,
-} from "@mijn-ui/react-theme"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
+  UnstyledComponentWithSlots,
+  UnstyledProps,
+} from '@mijn-ui/react-theme';
+import { createContext } from '@mijn-ui/react-utilities';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
 
 /* -------------------------------------------------------------------------- */
 /*                                DialogContext                               */
@@ -278,4 +281,4 @@ export {
   DialogPortal,
   DialogTitle,
   DialogTrigger,
-}
+};

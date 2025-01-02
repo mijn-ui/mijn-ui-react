@@ -1,16 +1,18 @@
-import type { Meta, StoryObj } from "@storybook/react"
-import {
-  Popover,
-  PopoverProps,
-  PopoverArrow,
-  PopoverClose,
-  PopoverContent,
-  PopoverTrigger,
-} from "./popover"
+import { RxCross2, RxMixerHorizontal } from "react-icons/rx"
+
 import { Button } from "@mijn-ui/react-button"
 import { Input } from "@mijn-ui/react-input"
 import { Label } from "@mijn-ui/react-label"
-import { RxCross2, RxMixerHorizontal } from "react-icons/rx"
+import type { Meta, StoryObj } from "@storybook/react"
+
+import {
+  Popover,
+  PopoverArrow,
+  PopoverClose,
+  PopoverContent,
+  PopoverProps,
+  PopoverTrigger,
+} from "./popover"
 
 const meta: Meta<typeof Popover> = {
   title: "Components/Popover",
@@ -61,7 +63,7 @@ const PopoverTemplate = (args: PopoverProps) => {
       </PopoverTrigger>
       <PopoverContent className="relative w-72 ">
         <div className="flex flex-col justify-center gap-2.5">
-          <p className="text-base font-medium">Dimensions</p>
+          <p className="text-medium font-medium">Dimensions</p>
           {DATA.map((field) => {
             return (
               <fieldset
@@ -111,7 +113,7 @@ const PopoverUnstyled = (args: PopoverProps) => {
       </PopoverTrigger>
       <PopoverContent className="bg-accent relative w-72 p-4">
         <div className="flex flex-col justify-center gap-2.5">
-          <p className="text-base font-semibold">Dimensions</p>
+          <p className="text-medium font-semibold">Dimensions</p>
           {DATA.map((field) => {
             return (
               <fieldset

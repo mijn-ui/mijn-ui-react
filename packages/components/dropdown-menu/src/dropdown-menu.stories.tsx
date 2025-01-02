@@ -1,22 +1,25 @@
+import React from "react"
+
+import { LuFilter } from "react-icons/lu"
+
 import type { Meta, StoryObj } from "@storybook/react"
+
 import {
   DropdownMenu,
+  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
   DropdownMenuPortal,
   DropdownMenuProps,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-  DropdownMenuCheckboxItem,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
 } from "./dropdown-menu"
-import React from "react"
-import { LuFilter } from "react-icons/lu"
 
 const meta: Meta<typeof DropdownMenu> = {
   title: "Components/DropdownMenu",
@@ -204,10 +207,10 @@ const DropdownMenuUnstyled = (args: DropdownMenuProps) => {
       {...args}
       classNames={{
         trigger: "bg-accent p-2",
-        content: "bg-accent p-4 shadow-md flex flex-col gap-2",
-        item: "pointer-events-none data-[disabled]:opacity-50",
+        content: "bg-accent p-4 shadow-medium flex flex-col gap-2",
+        item: "pointer-events-none data-[disabled]:opacity-disabled",
         subTrigger: "flex items-center",
-        subContent: "bg-accent px-4 py-2 flex flex-col gap-2 shadow-md",
+        subContent: "bg-accent px-4 py-2 flex flex-col gap-2 shadow-medium",
       }}
     >
       <DropdownMenuTrigger>Edit</DropdownMenuTrigger>

@@ -1,15 +1,18 @@
 "use client"
 
-import * as React from "react"
+import * as React from 'react';
+
+import { createTVUnstyledSlots } from '@mijn-ui/react-core';
+import { useTVUnstyled } from '@mijn-ui/react-hooks';
 import {
-  createTVUnstyledSlots,
+  cn,
+  ScrollAreaSlots,
+  scrollAreaStyles,
   UnstyledComponentWithSlots,
   UnstyledProps,
-} from "@mijn-ui/react-core"
-import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
-import { ScrollAreaSlots, scrollAreaStyles } from "@mijn-ui/react-theme"
-import { cn, createContext } from "@mijn-ui/react-utilities"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
+} from '@mijn-ui/react-theme';
+import { createContext } from '@mijn-ui/react-utilities';
+import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area';
 
 /* -------------------------------------------------------------------------- */
 /*                              ScrollAreaContext                             */
@@ -109,4 +112,4 @@ const ScrollBar = ({
   )
 }
 
-export { ScrollArea, ScrollBar }
+export { ScrollArea, ScrollBar };

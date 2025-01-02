@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/react"
-import { Label, LabelProps } from "./label"
 import { Button } from "@mijn-ui/react-button"
+import type { Meta, StoryObj } from "@storybook/react"
+
+import { Label, LabelProps } from "./label"
 
 const meta: Meta<typeof Label> = {
   title: "Components/Label",
@@ -28,7 +29,7 @@ const LabelTemplate = (args: LabelProps) => {
         className={
           args.unstyled
             ? "indent-2"
-            : "border-input placeholder:text-muted-text focus-visible:ring-ring flex min-h-[80px] w-full rounded-md border bg-transparent px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50"
+            : "border-input placeholder:text-muted-text focus-visible:ring-ring rounded-medium border-small text-small flex min-h-[80px] w-full bg-transparent px-3 py-2 focus-visible:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50"
         }
         placeholder="Enter your feedback ..."
       ></textarea>

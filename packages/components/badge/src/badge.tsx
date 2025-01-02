@@ -1,6 +1,11 @@
-import * as React from "react"
-import { UnstyledProps, createTVUnstyledSlots } from "@mijn-ui/react-core"
-import { BadgeVariantsProps, badgeStyles } from "@mijn-ui/react-theme"
+import * as React from 'react';
+
+import { createTVUnstyledSlots } from '@mijn-ui/react-core';
+import {
+  badgeStyles,
+  BadgeVariantsProps,
+  UnstyledProps,
+} from '@mijn-ui/react-theme';
 
 export type BadgeProps = React.HTMLAttributes<HTMLDivElement> &
   BadgeVariantsProps &
@@ -20,4 +25,4 @@ function Badge({
   return <div className={base({ className })} {...props} />
 }
 
-export { Badge }
+export { Badge };

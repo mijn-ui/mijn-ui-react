@@ -1,16 +1,18 @@
+import { IoBagOutline } from "react-icons/io5"
+import { LuArrowUpRight, LuPlus } from "react-icons/lu"
+
+import { Button } from "@mijn-ui/react-button"
 import type { Meta, StoryObj } from "@storybook/react"
+
 import {
   Card,
   CardContent,
-  CardHeader,
-  CardTitle,
   CardDescription,
-  CardProps,
   CardFooter,
+  CardHeader,
+  CardProps,
+  CardTitle,
 } from "./card"
-import { Button } from "@mijn-ui/react-button"
-import { LuArrowUpRight, LuPlus } from "react-icons/lu"
-import { IoBagOutline } from "react-icons/io5"
 
 const meta: Meta<typeof Card> = {
   title: "Components/Card",
@@ -49,7 +51,7 @@ const CardTemplate = (args: CardProps) => {
         </div>
       </CardHeader>
       <CardContent>
-        <CardTitle className="text-base">Users</CardTitle>
+        <CardTitle className="text-medium">Users</CardTitle>
         <CardDescription>Manage user accounts and permissions.</CardDescription>
       </CardContent>
     </Card>
@@ -75,7 +77,7 @@ const CardStats = (args: CardProps) => {
         <CardTitle className="text-xl font-medium sm:text-2xl">
           $75,890.75
         </CardTitle>
-        <p className="text-muted-text text-xs font-normal">
+        <p className="text-muted-text text-tiny font-normal">
           <span className="text-success">+128%</span> from June
         </p>
       </CardContent>
@@ -85,7 +87,7 @@ const CardStats = (args: CardProps) => {
 
 const CardCustom = (args: CardProps) => {
   return (
-    <Card className="max-w-72 rounded-xl shadow-lg" {...args}>
+    <Card className="max-w-72 rounded-xl shadow-large" {...args}>
       <CardHeader className="relative py-12">
         <div className="absolute -top-32 left-0 w-full">
           <img
@@ -137,7 +139,7 @@ const CardUnstyled = (args: CardProps) => {
         </div>
       </CardHeader>
       <CardContent>
-        <CardTitle className="text-base font-bold">Users</CardTitle>
+        <CardTitle className="text-medium font-bold">Users</CardTitle>
         <CardDescription>Manage user accounts and permissions.</CardDescription>
       </CardContent>
     </Card>

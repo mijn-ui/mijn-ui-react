@@ -1,16 +1,18 @@
+import { LuX } from "react-icons/lu"
+
+import { Button } from "@mijn-ui/react-button"
+import { Input } from "@mijn-ui/react-input"
 import type { Meta, StoryObj } from "@storybook/react"
+
 import {
   Dialog,
-  DialogProps,
   DialogClose,
   DialogContent,
   DialogDescription,
+  DialogProps,
   DialogTitle,
   DialogTrigger,
 } from "./dialog"
-import { Input } from "@mijn-ui/react-input"
-import { Button } from "@mijn-ui/react-button"
-import { LuX } from "react-icons/lu"
 
 const meta: Meta<typeof Dialog> = {
   title: "Components/Dialog",
@@ -31,7 +33,7 @@ const DialogTemplate = (args: DialogProps) => {
     <Dialog {...args}>
       <DialogTrigger>Sign In</DialogTrigger>
       <DialogContent className="bg-main relative">
-        <DialogClose className="text-muted-text hover:text-main-text absolute right-4 top-4 border-none p-2 text-lg">
+        <DialogClose className="text-muted-text hover:text-main-text absolute right-4 top-4 border-none p-2 text-large">
           <LuX />
         </DialogClose>
         <div>
@@ -63,12 +65,12 @@ const DialogUnstyled = (args: DialogProps) => {
   return (
     <Dialog {...args}>
       <DialogTrigger className="bg-accent p-2">Sign In</DialogTrigger>
-      <DialogContent className="bg-main relative border-2 p-4">
-        <DialogClose className="text-muted-text hover:text-main-text absolute right-4 top-4 border-none p-2 text-lg">
+      <DialogContent className="bg-main relative border-medium  p-4">
+        <DialogClose className="text-muted-text hover:text-main-text absolute right-4 top-4 border-none p-2 text-large">
           <LuX />
         </DialogClose>
         <div>
-          <DialogTitle className="text-lg font-semibold">SignIn</DialogTitle>
+          <DialogTitle className="text-large font-semibold">SignIn</DialogTitle>
           <DialogDescription>
             Don&apos;t have an account yet?{" "}
             <a href="#" className="text-blue-500 underline">

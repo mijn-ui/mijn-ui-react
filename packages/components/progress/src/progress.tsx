@@ -1,13 +1,15 @@
 "use client"
 
-import * as React from "react"
+import * as React from 'react';
+
+import { createTVUnstyledSlots } from '@mijn-ui/react-core';
 import {
-  createTVUnstyledSlots,
+  cn,
+  ProgressSlots,
+  progressStyles,
   UnstyledComponentWithSlots,
-} from "@mijn-ui/react-core"
-import * as ProgressPrimitive from "@radix-ui/react-progress"
-import { ProgressSlots, progressStyles } from "@mijn-ui/react-theme"
-import { cn } from "@mijn-ui/react-utilities"
+} from '@mijn-ui/react-theme';
+import * as ProgressPrimitive from '@radix-ui/react-progress';
 
 export type ProgressProps = UnstyledComponentWithSlots<ProgressSlots> &
   React.ComponentPropsWithRef<typeof ProgressPrimitive.Root>
@@ -36,4 +38,4 @@ const Progress = ({
   )
 }
 
-export { Progress }
+export { Progress };

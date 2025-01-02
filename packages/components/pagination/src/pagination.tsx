@@ -1,11 +1,17 @@
 "use client"
 
-import * as React from "react"
-import { createContext, cn } from "@mijn-ui/react-utilities"
-import { UnstyledComponentWithSlots, UnstyledProps } from "@mijn-ui/react-core"
-import { EllipsisIcon } from "@mijn-ui/shared-icons"
-import { paginationStyles, PaginationSlots } from "@mijn-ui/react-theme"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
+import * as React from 'react';
+
+import { useTVUnstyled } from '@mijn-ui/react-hooks';
+import {
+  cn,
+  PaginationSlots,
+  paginationStyles,
+  UnstyledComponentWithSlots,
+  UnstyledProps,
+} from '@mijn-ui/react-theme';
+import { createContext } from '@mijn-ui/react-utilities';
+import { EllipsisIcon } from '@mijn-ui/shared-icons';
 
 /* -------------------------------------------------------------------------- */
 /*                              PaginationContext                             */
@@ -345,4 +351,4 @@ export {
   PaginationPreviousButton,
   PaginationPreviousEllipsis,
   usePaginationContext,
-}
+};

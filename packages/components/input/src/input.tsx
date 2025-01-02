@@ -1,13 +1,15 @@
 "use client"
 
-import * as React from "react"
-import { Label } from "@mijn-ui/react-label"
+import * as React from 'react';
+
+import { createTVUnstyledSlots } from '@mijn-ui/react-core';
+import { Label } from '@mijn-ui/react-label';
 import {
-  createTVUnstyledSlots,
+  cn,
+  InputSlots,
+  inputStyles,
   UnstyledComponentWithSlots,
-} from "@mijn-ui/react-core"
-import { InputSlots, inputStyles } from "@mijn-ui/react-theme"
-import { cn } from "@mijn-ui/react-utilities"
+} from '@mijn-ui/react-theme';
 
 export type InputProps = UnstyledComponentWithSlots<InputSlots> &
   React.ComponentPropsWithRef<"input"> & {
@@ -79,4 +81,4 @@ const Input = ({
 
 Input.displayName = "Input"
 
-export { Input }
+export { Input };
