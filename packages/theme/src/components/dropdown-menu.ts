@@ -1,19 +1,21 @@
-import { tv, VariantProps } from "tailwind-variants"
-import { buttonStyles } from "./button"
+import { VariantProps } from "tailwind-variants"
+
 import {
   dataDisabledClasses,
   popupAnimationClasses,
   popupSubAnimationClasses,
 } from "../utils/classes"
+import { tv } from "../utils/tv"
+import { buttonStyles } from "./button"
 
 const itemFocusClasses = ["focus:bg-accent focus:text-accent-text"]
 
 const commonContentClasses = [
-  "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-surface p-1 text-surface-text shadow-md",
+  "z-50 min-w-[8rem] overflow-hidden rounded-medium border-small bg-surface p-1 text-surface-text shadow-medium",
 ]
 
 const commonItemClasses = [
-  "relative flex cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none transition-colors",
+  "relative flex cursor-default select-none items-center rounded-medium py-1.5 pl-8 pr-2 text-small outline-none transition-colors",
 ]
 
 const commonIconWrapperClasses =
@@ -24,7 +26,7 @@ const dropdownMenuStyles = tv({
     base: "",
     trigger: buttonStyles({ color: "secondary" }).base(),
     subTrigger:
-      "focus:bg-accent data-[state=open]:bg-accent flex cursor-default select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none",
+      "focus:bg-accent data-[state=open]:bg-accent flex cursor-default select-none items-center gap-2 rounded-medium px-2 py-1.5 text-small outline-none",
     subTriggerIcon: "pointer-events-none ml-auto size-4 shrink-0",
     subContent: [...popupSubAnimationClasses, ...commonContentClasses],
     content: [
@@ -35,7 +37,7 @@ const dropdownMenuStyles = tv({
     item: [
       ...itemFocusClasses,
       ...dataDisabledClasses,
-      "relative flex cursor-default select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none transition-colors [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+      "relative flex cursor-default select-none items-center gap-2 rounded-medium px-2 py-1.5 text-small outline-none transition-colors [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
     ],
     checkboxItem: [
       ...itemFocusClasses,
@@ -51,9 +53,9 @@ const dropdownMenuStyles = tv({
     ],
     radioItemIconWrapper: commonIconWrapperClasses,
     radioItemIcon: "size-2 fill-current",
-    label: "px-2 py-1.5 text-sm font-semibold",
+    label: "px-2 py-1.5 text-small font-semibold",
     separator: "bg-muted -mx-1 my-1 h-px",
-    shortcut: "ml-auto text-xs tracking-widest opacity-60",
+    shortcut: "ml-auto text-tiny tracking-widest opacity-60",
   },
   variants: {
     inset: {

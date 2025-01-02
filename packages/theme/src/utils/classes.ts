@@ -1,17 +1,26 @@
+/**
+ * This is the base classNames for all elements.
+ * Is meant to be used with the `addBase` method from tailwindcss.
+ */
+export const baseStyles = (prefix: string) => ({
+  color: `hsl(var(--${prefix}-foreground))`,
+  backgroundColor: `hsl(var(--${prefix}-background))`,
+})
+
 export const disabledClasses = [
   "disabled:pointer-events-none",
-  "disabled:opacity-50",
+  "disabled:opacity-disabled",
 ]
 
 export const dataDisabledClasses = [
   "data-[disabled]:pointer-events-none",
-  "data-[disabled]:opacity-50",
+  "data-[disabled]:opacity-disabled",
 ]
 
 /* ------------------------------- Animations ------------------------------- */
 
 export const dialogOverlayClasses = [
-  "fixed inset-0 z-50 bg-black/80",
+  "fixed inset-0 z-50 bg-overlay/80",
   "data-[state=open]:animate-in data-[state=open]:fade-in-0",
   "data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
 ]

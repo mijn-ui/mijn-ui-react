@@ -1,9 +1,11 @@
-import { VariantProps, tv } from "tailwind-variants"
+import { VariantProps } from "tailwind-variants"
+
+import { tv } from "../utils/tv"
 import { colorVariants } from "../utils/variants"
 
 const buttonStyles = tv({
   slots: {
-    base: "inline-flex items-center justify-center gap-1 text-sm transition-colors duration-200 ease-in-out active:brightness-90 disabled:pointer-events-none disabled:opacity-80 disabled:brightness-75",
+    base: "inline-flex items-center justify-center gap-1 text-small transition-colors duration-200 ease-in-out active:brightness-90 disabled:pointer-events-none disabled:opacity-disabled disabled:brightness-75",
     icon: "mr-2 size-5 animate-spin text-current",
   },
   variants: {
@@ -16,9 +18,9 @@ const buttonStyles = tv({
     },
     radius: {
       none: "rounded-none",
-      sm: "rounded-sm",
-      md: "rounded-md",
-      lg: "rounded-lg",
+      sm: "rounded-small",
+      md: "rounded-medium",
+      lg: "rounded-large",
       full: "rounded-full",
     },
     size: {
@@ -29,7 +31,7 @@ const buttonStyles = tv({
     },
     variant: {
       filled: "",
-      outlined: "border border-current",
+      outlined: "border-small border-current",
       text: "",
     },
   },
@@ -136,35 +138,41 @@ const buttonStyles = tv({
       color: "primary",
       variant: "filled",
       class: {
-        base: [colorVariants.filled.primary, "hover:bg-primary/80"],
+        base: [colorVariants.filled.primary],
       },
     },
     {
       color: "secondary",
       variant: "filled",
       class: {
-        base: [colorVariants.filled.secondary, "hover:bg-secondary/80"],
+        base: [colorVariants.filled.secondary],
       },
     },
     {
       color: "accent",
       variant: "filled",
       class: {
-        base: [colorVariants.filled.accent, "hover:bg-accent/80"],
+        base: [colorVariants.filled.accent],
       },
     },
     {
       color: "muted",
       variant: "filled",
       class: {
-        base: [colorVariants.filled.muted, "hover:bg-muted/80"],
+        base: [colorVariants.filled.muted],
       },
     },
     {
       color: "danger",
       variant: "filled",
       class: {
-        base: [colorVariants.filled.danger, "hover:bg-danger/80"],
+        base: [colorVariants.filled.danger],
+      },
+    },
+    {
+      variant: "filled",
+      class: {
+        base: "hover:opacity-hover",
       },
     },
   ],

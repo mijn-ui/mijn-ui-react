@@ -1,4 +1,6 @@
-import { tv, VariantProps } from "tailwind-variants"
+import { VariantProps } from "tailwind-variants"
+
+import { tv } from "../utils/tv"
 import { buttonStyles } from "./button"
 
 const paginationStyles = tv({

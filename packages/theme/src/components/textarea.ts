@@ -1,8 +1,10 @@
-import { tv, VariantProps } from "tailwind-variants"
+import { VariantProps } from "tailwind-variants"
+
+import { tv } from "../utils/tv"
 
 const textareaStyles = tv({
   slots: {
-    base: "border-input placeholder:text-muted-text focus-visible:ring-ring flex min-h-[80px] w-full rounded-md border bg-transparent px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50",
+    base: "border-input placeholder:text-muted-text focus-visible:ring-ring flex min-h-[80px] w-full rounded-medium border-small bg-transparent px-3 py-2 text-small focus-visible:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-disabled",
   },
 })
 

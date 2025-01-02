@@ -1,13 +1,15 @@
-import { tv, VariantProps } from "tailwind-variants"
+import { VariantProps } from "tailwind-variants"
+
 import { colorVariants } from "../utils"
+import { tv } from "../utils/tv"
 
 const alertStyles = tv({
   slots: {
-    base: "group relative w-full rounded-lg px-3 py-4 [&>span~*]:pl-8",
+    base: "group relative w-full rounded-large px-3 py-4 [&>span~*]:pl-8",
     iconWrapper:
       "translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:size-5 [&>svg]:text-current",
     title: "w-full font-semibold leading-none",
-    description: "mt-1 text-sm",
+    description: "mt-1 text-small",
   },
   variants: {
     variant: {
@@ -28,7 +30,7 @@ const alertStyles = tv({
       variant: "subtle",
       color: "default",
       class: {
-        base: ["bg-main/20 text-main-text border-main-border"],
+        base: ["bg-main/20 text-main-text border-border"],
         title: "text-main-text",
         description: "text-muted-text",
       },
