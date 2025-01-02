@@ -1,6 +1,8 @@
-import type { Meta, StoryObj } from "@storybook/react"
-import { Progress, ProgressProps } from "./progress"
 import React from "react"
+
+import type { Meta, StoryObj } from "@storybook/react"
+
+import { Progress, ProgressProps } from "./progress"
 
 const meta: Meta<typeof Progress> = {
   title: "Components/Progress",
@@ -44,7 +46,7 @@ const ProgressTemplate = (args: ProgressProps) => {
 
   return (
     <div className="w-80 space-y-1">
-      <div className="text-main-text flex items-center justify-between text-sm font-medium">
+      <div className="text-main-text flex items-center justify-between text-small font-medium">
         <h5>Progress Label</h5>
         <p>{value}%</p>
       </div>
@@ -60,7 +62,7 @@ const ProgressTemplate = (args: ProgressProps) => {
         }
         {...args}
       />
-      <div className="text-muted-text flex items-center justify-between text-xs">
+      <div className="text-muted-text flex items-center justify-between text-tiny">
         <p>min</p>
         <p>max</p>
       </div>

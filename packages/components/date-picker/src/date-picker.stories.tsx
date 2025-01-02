@@ -1,6 +1,8 @@
-import type { Meta, StoryObj } from "@storybook/react"
-import { CalendarDatePicker, CalendarDatePickerProps } from "./date-picker"
 import React from "react"
+
+import type { Meta, StoryObj } from "@storybook/react"
+
+import { CalendarDatePicker, CalendarDatePickerProps } from "./date-picker"
 
 const meta: Meta<typeof CalendarDatePicker> = {
   title: "Components/DatePicker",
@@ -62,8 +64,8 @@ const DatePickerTemplate = (args: CalendarDatePickerProps) => {
         closeOnSelect={args.closeOnSelect}
       />
       <div className="mt-4">
-        <h2 className="text-md font-semibold">Selected Date Range:</h2>
-        <p className="text-sm">
+        <h2 className="text-medium font-semibold">Selected Date Range:</h2>
+        <p className="text-small">
           {selectedDateRange.from?.toDateString()} -{" "}
           {selectedDateRange.to?.toDateString()}
         </p>

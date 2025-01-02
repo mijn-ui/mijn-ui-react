@@ -1,21 +1,21 @@
 "use client"
 
-import * as React from "react"
-import { cn, createContext } from "@mijn-ui/react-utilities"
+import * as React from 'react';
+
+import { createTVUnstyledSlots } from '@mijn-ui/react-core';
+import { useTVUnstyled } from '@mijn-ui/react-hooks';
 import {
-  UnstyledComponentWithSlots,
-  UnstyledProps,
-  createTVUnstyledSlots,
-} from "@mijn-ui/react-core"
-import * as AvatarPrimitive from "@radix-ui/react-avatar"
-import {
+  AvatarGroupSlots,
   avatarGroupStyles,
+  AvatarSlots,
   avatarStyles,
   AvatarVariantProps,
-  AvatarSlots,
-  AvatarGroupSlots,
-} from "@mijn-ui/react-theme"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
+  cn,
+  UnstyledComponentWithSlots,
+  UnstyledProps,
+} from '@mijn-ui/react-theme';
+import { createContext } from '@mijn-ui/react-utilities';
+import * as AvatarPrimitive from '@radix-ui/react-avatar';
 
 /* -------------------------------------------------------------------------- */
 /*                              AvatarContext                                  */
@@ -167,4 +167,4 @@ const AvatarFallback = ({
   )
 }
 
-export { Avatar, AvatarFallback, AvatarGroup, AvatarImage }
+export { Avatar, AvatarFallback, AvatarGroup, AvatarImage };

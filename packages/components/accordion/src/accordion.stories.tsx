@@ -1,3 +1,4 @@
+import { ChevronDownIcon, IconSvgProps } from "@mijn-ui/shared-icons"
 import { StoryObj } from "@storybook/react"
 
 import {
@@ -7,7 +8,6 @@ import {
   AccordionProps,
   AccordionTrigger,
 } from "./accordion"
-import { ChevronDownIcon, IconSvgProps } from "@mijn-ui/shared-icons"
 
 const meta = {
   title: "Components/Accordion",
@@ -119,7 +119,7 @@ const AccordionWithCustomIcons = (args: AccordionProps) => (
 const AccordionUnstyled = (args: AccordionProps) => (
   <Accordion
     {...args}
-    className="md:w-xl w-60 rounded-2xl border border-orange-500 p-4"
+    className="md:w-xl w-60 rounded-2xl border-small border-orange-500 p-4"
   >
     <AccordionItem className="my-2" value="item-1">
       <AccordionTrigger
@@ -130,7 +130,7 @@ const AccordionUnstyled = (args: AccordionProps) => (
       >
         Is it accessible
       </AccordionTrigger>
-      <AccordionContent className="bg-neutral-300 px-4 py-2 text-sm dark:bg-neutral-700">
+      <AccordionContent className="bg-neutral-300 px-4 py-2 text-small dark:bg-neutral-700">
         Yes. It adheres to the WAI-ARIA design pattern.
       </AccordionContent>
     </AccordionItem>
@@ -144,7 +144,7 @@ const AccordionUnstyled = (args: AccordionProps) => (
       >
         Is it unstyled
       </AccordionTrigger>
-      <AccordionContent className="bg-neutral-300 px-4 py-2 text-sm dark:bg-neutral-700">
+      <AccordionContent className="bg-neutral-300 px-4 py-2 text-small dark:bg-neutral-700">
         Yes, you can make the components unstyled by setting the{" "}
         <span className="font-semibold">unstyled</span> prop to{" "}
         <span className="font-semibold">true</span> on either a single component
@@ -161,7 +161,7 @@ const AccordionUnstyled = (args: AccordionProps) => (
       >
         Is it animated?
       </AccordionTrigger>
-      <AccordionContent className="bg-neutral-300 px-4 py-2 text-sm dark:bg-neutral-700">
+      <AccordionContent className="bg-neutral-300 px-4 py-2 text-small dark:bg-neutral-700">
         Yes! You can animate the Accordion with CSS or JavaScript.
       </AccordionContent>
     </AccordionItem>
@@ -252,11 +252,11 @@ export const CustomStyles: Story = {
   args: {
     classNames: {
       base: "md:w-xl w-60 rounded-2xl p-4 bg-gradient-to-tr from-primary/20 to-primary/50 dark:from-primary/10 dark:to-primary/30",
-      item: "border-none bg-white/50 dark:bg-white/20 my-2 backdrop-blur rounded-lg px-4",
+      item: "border-none bg-white/50 dark:bg-white/20 my-2 backdrop-blur rounded-large px-4",
       contentWrapper: "",
       content: "",
       triggerWrapper: "",
-      trigger: "rounded-lg text-primary",
+      trigger: "rounded-large text-primary",
       icon: "",
     },
   },

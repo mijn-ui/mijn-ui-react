@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react"
+
 import {
   Select,
-  SelectProps,
   SelectContent,
   SelectGroup,
   SelectItem,
   SelectLabel,
+  SelectProps,
+  SelectSeparator,
   SelectTrigger,
   SelectValue,
-  SelectSeparator,
 } from "./select"
 
 const meta: Meta<typeof Select> = {
@@ -34,7 +35,7 @@ const SelectTemplate = (args: SelectProps) => {
               trigger: "bg-accent p-2 flex items-center gap-4",
               content: "min-w-32 mt-1 bg-accent p-2 pointer-events-none",
               item: "outline-none hover:bg-muted",
-              label: "text-sm font-semibold",
+              label: "text-small font-semibold",
             }
           : {}
       }

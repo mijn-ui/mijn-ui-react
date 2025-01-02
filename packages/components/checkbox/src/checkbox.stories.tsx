@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/react"
-import { Checkbox, CheckboxProps } from "./checkbox"
 import { Label } from "@mijn-ui/react-label"
+import type { Meta, StoryObj } from "@storybook/react"
+
+import { Checkbox, CheckboxProps } from "./checkbox"
 
 const meta: Meta<typeof Checkbox> = {
   title: "Components/Checkbox",
@@ -108,7 +109,7 @@ const CheckboxUnstyled = (args: CheckboxProps) => {
       <Checkbox
         id="terms"
         classNames={{
-          base: "border size-5",
+          base: "border-small size-5",
           indicator: "flex justify-center",
         }}
         {...args}

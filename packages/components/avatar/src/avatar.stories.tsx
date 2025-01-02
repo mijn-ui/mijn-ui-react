@@ -1,11 +1,12 @@
+import { AvatarProps } from "@radix-ui/react-avatar"
 import type { Meta, StoryObj } from "@storybook/react"
+
 import {
   Avatar,
   AvatarFallback,
-  AvatarImage,
   AvatarGroup as MijnUIAvatarGroup,
+  AvatarImage,
 } from "./avatar"
-import { AvatarProps } from "@radix-ui/react-avatar"
 
 const meta: Meta<typeof Avatar> = {
   title: "Components/Avatar",
@@ -119,7 +120,7 @@ const AvatarUnstyled = (args: AvatarProps) => {
       <AvatarImage
         src="https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D"
         alt="anthony"
-        className="size-10 object-cover text-sm"
+        className="size-10 object-cover text-small"
       />
       <AvatarFallback>xs</AvatarFallback>
     </Avatar>

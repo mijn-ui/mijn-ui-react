@@ -1,16 +1,22 @@
 "use client"
 
-import * as React from "react"
-import { cn, createContext } from "@mijn-ui/react-utilities"
-import { UnstyledComponentWithSlots, UnstyledProps } from "@mijn-ui/react-core"
-import * as SelectPrimitive from "@radix-ui/react-select"
+import * as React from 'react';
+
+import { useTVUnstyled } from '@mijn-ui/react-hooks';
+import {
+  cn,
+  SelectSlots,
+  selectStyles,
+  UnstyledComponentWithSlots,
+  UnstyledProps,
+} from '@mijn-ui/react-theme';
+import { createContext } from '@mijn-ui/react-utilities';
 import {
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
-} from "@mijn-ui/shared-icons"
-import { selectStyles, SelectSlots } from "@mijn-ui/react-theme"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
+} from '@mijn-ui/shared-icons';
+import * as SelectPrimitive from '@radix-ui/react-select';
 
 /* -------------------------------------------------------------------------- */
 /*                                SelectContext                               */
@@ -289,4 +295,4 @@ export {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-}
+};

@@ -1,18 +1,25 @@
 "use client"
 
-import * as React from "react"
-import { Dialog, DialogContent } from "@mijn-ui/react-dialog"
-import { cn, createContext } from "@mijn-ui/react-utilities"
+import * as React from 'react';
+
+import { Command as CommandPrimitive } from 'cmdk';
+
+import { createTVUnstyledSlots } from '@mijn-ui/react-core';
 import {
-  createTVUnstyledSlots,
+  Dialog,
+  DialogContent,
+  type DialogProps,
+} from '@mijn-ui/react-dialog';
+import { useTVUnstyled } from '@mijn-ui/react-hooks';
+import {
+  cn,
+  CommandSlots,
+  commandStyles,
   UnstyledComponentWithSlots,
   UnstyledProps,
-} from "@mijn-ui/react-core"
-import { type DialogProps } from "@radix-ui/react-dialog"
-import { Command as CommandPrimitive } from "cmdk"
-import { SearchIcon } from "@mijn-ui/shared-icons"
-import { commandStyles, CommandSlots } from "@mijn-ui/react-theme"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
+} from '@mijn-ui/react-theme';
+import { createContext } from '@mijn-ui/react-utilities';
+import { SearchIcon } from '@mijn-ui/shared-icons';
 
 /* -------------------------------------------------------------------------- */
 /*                               CommandContext                               */
@@ -76,7 +83,7 @@ const Command = ({
 /*                                CommandDialog                               */
 /* -------------------------------------------------------------------------- */
 
-type CommandDialogProps = DialogProps &
+type CommandDialogProps = Omit<DialogProps, "classNames"> &
   CommandBaseProps & { className?: string }
 
 const CommandDialog = ({
@@ -299,4 +306,4 @@ export {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-}
+};
