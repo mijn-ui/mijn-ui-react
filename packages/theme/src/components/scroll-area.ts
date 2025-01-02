@@ -1,11 +1,13 @@
-import { tv, VariantProps } from "tailwind-variants"
+import { VariantProps } from "tailwind-variants"
+
+import { tv } from "../utils/tv"
 
 const scrollAreaStyles = tv({
   slots: {
     base: "relative overflow-hidden",
     viewport: "size-full rounded-[inherit]",
     scrollbar: "flex touch-none select-none transition-colors",
-    scrollThumb: "bg-main-border relative flex-1 rounded-full",
+    scrollThumb: "bg-border relative flex-1 rounded-full",
   },
   variants: {
     orientation: {

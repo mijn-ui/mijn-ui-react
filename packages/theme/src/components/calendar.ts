@@ -1,9 +1,11 @@
-import { tv, VariantProps } from "tailwind-variants"
+import { VariantProps } from "tailwind-variants"
+
+import { tv } from "../utils/tv"
 import { buttonStyles } from "./button"
 
 const calendarStyles = tv({
   slots: {
-    base: "border-main-border bg-surface p-3",
+    base: "border-border bg-surface p-3",
     months: "relative flex flex-col sm:flex-row",
     month: "space-y-0",
     month_caption: "relative flex items-center justify-center py-2",
@@ -25,7 +27,7 @@ const calendarStyles = tv({
       "size-9 p-0 font-normal aria-selected:opacity-100",
     ],
     day_button:
-      "[&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent relative size-9 p-0 text-center text-sm focus-within:relative focus-within:z-20 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md [&:has([aria-selected].day-range-end)]:rounded-r-md",
+      "[&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent relative size-9 p-0 text-center text-small focus-within:relative focus-within:z-20 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md [&:has([aria-selected].day-range-end)]:rounded-r-md",
     range_end: "day-range-end",
     selected:
       "bg-primary text-primary-text hover:bg-primary hover:text-primary-text focus:bg-primary focus:text-primary-text",

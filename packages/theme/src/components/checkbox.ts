@@ -1,8 +1,10 @@
-import { tv, VariantProps } from "tailwind-variants"
+import { VariantProps } from "tailwind-variants"
+
+import { tv } from "../utils/tv"
 
 const checkboxStyles = tv({
   slots: {
-    base: "rounded-default peer size-5 shrink-0 border disabled:cursor-not-allowed disabled:opacity-50",
+    base: "rounded-default peer size-5 shrink-0 border-small disabled:cursor-not-allowed disabled:opacity-disabled",
     indicator: "flex items-center justify-center text-current",
     icon: "size-4",
   },
@@ -13,7 +15,7 @@ const checkboxStyles = tv({
       secondary:
         "border-main-text data-[state=checked]:border-secondary data-[state=indeterminate]:border-secondary data-[state=checked]:bg-secondary data-[state=indeterminate]:bg-secondary data-[state=checked]:text-secondary-text data-[state=indeterminate]:text-secondary-text",
       accent:
-        "border-main-text data-[state=checked]:border-main-border data-[state=indeterminate]:border-main-border data-[state=checked]:bg-accent data-[state=indeterminate]:bg-accent data-[state=checked]:text-accent-text data-[state=indeterminate]:text-accent-text",
+        "border-main-text data-[state=checked]:border-border data-[state=indeterminate]:border-border data-[state=checked]:bg-accent data-[state=indeterminate]:bg-accent data-[state=checked]:text-accent-text data-[state=indeterminate]:text-accent-text",
       muted:
         "border-main-text data-[state=checked]:border-muted data-[state=indeterminate]:border-muted data-[state=checked]:bg-muted data-[state=indeterminate]:bg-muted data-[state=checked]:text-muted-text data-[state=indeterminate]:text-muted-text",
       danger:

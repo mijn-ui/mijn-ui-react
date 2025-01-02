@@ -1,9 +1,11 @@
-import { tv, VariantProps } from "tailwind-variants"
+import { VariantProps } from "tailwind-variants"
+
 import { colorVariants } from "../utils"
+import { tv } from "../utils/tv"
 
 const badgeStyles = tv({
   slots: {
-    base: "focus:ring-ring inline-flex items-center px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2",
+    base: "focus:ring-ring inline-flex items-center px-2.5 py-0.5 text-tiny font-semibold transition-colors focus:outline-none focus:ring-2",
   },
   variants: {
     color: {
@@ -15,14 +17,14 @@ const badgeStyles = tv({
     },
     variant: {
       filled: "",
-      outlined: "border border-current",
+      outlined: "border-small border-current",
       text: "bg-transparent",
     },
     radius: {
       none: "rounded-none",
-      sm: "rounded-sm",
-      md: "rounded-md",
-      lg: "rounded-lg",
+      sm: "rounded-small",
+      md: "rounded-medium",
+      lg: "rounded-large",
       full: "rounded-full",
     },
   },
@@ -129,35 +131,41 @@ const badgeStyles = tv({
       color: "primary",
       variant: "filled",
       class: {
-        base: [colorVariants.filled.primary, "hover:bg-primary/80"],
+        base: [colorVariants.filled.primary],
       },
     },
     {
       color: "secondary",
       variant: "filled",
       class: {
-        base: [colorVariants.filled.secondary, "hover:bg-secondary/80"],
+        base: [colorVariants.filled.secondary],
       },
     },
     {
       color: "accent",
       variant: "filled",
       class: {
-        base: [colorVariants.filled.accent, "hover:bg-accent/80"],
+        base: [colorVariants.filled.accent],
       },
     },
     {
       color: "muted",
       variant: "filled",
       class: {
-        base: [colorVariants.filled.muted, "hover:bg-muted/80"],
+        base: [colorVariants.filled.muted],
       },
     },
     {
       color: "danger",
       variant: "filled",
       class: {
-        base: [colorVariants.filled.danger, "hover:bg-danger/80"],
+        base: [colorVariants.filled.danger],
+      },
+    },
+    {
+      variant: "filled",
+      class: {
+        base: "hover:opacity-hover",
       },
     },
   ],

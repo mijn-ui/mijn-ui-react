@@ -1,4 +1,9 @@
-export * from "./preset"
-export { defaultColors } from "./colors"
 export * from "./components"
 export * from "./utils"
+export * from "./colors"
+export * from "./types"
+export * from "./layout"
+export * from "./plugin"
+
+export { tv } from "./utils/tv"
+export type { VariantProps, TV } from "tailwind-variants"

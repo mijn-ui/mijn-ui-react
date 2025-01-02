@@ -1,13 +1,15 @@
-import { tv, VariantProps } from "tailwind-variants"
+import { VariantProps } from "tailwind-variants"
+
+import { tv } from "../utils/tv"
 
 const cardStyles = tv({
   slots: {
-    base: "bg-surface text-surface-text rounded-lg shadow-sm",
+    base: "bg-surface text-surface-text rounded-large shadow-small",
     header: "flex flex-col space-y-1.5 p-4",
     content: "p-4 pt-0",
     footer: "flex items-center p-4 pt-0",
     title: "text-2xl font-semibold leading-none tracking-tight",
-    description: "text-muted-text text-sm",
+    description: "text-muted-text text-small",
   },
 })
 

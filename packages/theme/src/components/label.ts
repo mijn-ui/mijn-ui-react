@@ -1,8 +1,10 @@
-import { tv, VariantProps } from "tailwind-variants"
+import { VariantProps } from "tailwind-variants"
+
+import { tv } from "../utils/tv"
 
 const labelStyles = tv({
   slots: {
-    base: "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+    base: "text-small font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-disabled",
   },
 })
 

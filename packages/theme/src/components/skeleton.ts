@@ -1,8 +1,10 @@
-import { tv, VariantProps } from "tailwind-variants"
+import { VariantProps } from "tailwind-variants"
+
+import { tv } from "../utils/tv"
 
 const skeletonStyles = tv({
   slots: {
-    base: "bg-muted animate-pulse rounded-md",
+    base: "bg-muted animate-pulse rounded-medium",
   },
 })
 

@@ -1,8 +1,10 @@
-import { tv, VariantProps } from "tailwind-variants"
+import { VariantProps } from "tailwind-variants"
+
+import { tv } from "../utils/tv"
 
 const separatorStyles = tv({
   slots: {
-    base: "bg-main-border shrink-0",
+    base: "bg-border shrink-0",
   },
   variants: {
     orientation: {

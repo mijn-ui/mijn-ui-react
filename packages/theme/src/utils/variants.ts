@@ -12,7 +12,7 @@ const filled = {
 const outlined = {
   primary: "bg-transparent border-primary text-primary",
   secondary: "bg-transparent border-secondary text-secondary",
-  accent: "bg-transparent border-main-border text-accent-text",
+  accent: "bg-transparent border-border text-accent-text",
   muted: "bg-transparent border-muted text-muted-text",
   success: "bg-transparent border-success text-success",
   info: "bg-transparent border-info text-info",

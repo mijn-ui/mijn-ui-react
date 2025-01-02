@@ -1,9 +1,11 @@
-import { tv, VariantProps } from "tailwind-variants"
-import { buttonStyles } from "./button"
+import { VariantProps } from "tailwind-variants"
+
 import {
   dialogContentAnimationClasses,
   dialogOverlayClasses,
 } from "../utils/classes"
+import { tv } from "../utils/tv"
+import { buttonStyles } from "./button"
 
 const alertDialogStyles = tv({
   slots: {
@@ -12,13 +14,13 @@ const alertDialogStyles = tv({
     overlay: dialogOverlayClasses,
     contentWrapper: "fixed inset-0 z-50 flex items-center justify-center",
     content: [
-      "border-main-border bg-surface flex w-full max-w-lg flex-col gap-2 rounded-xl border p-6 shadow-lg !duration-300",
+      "border-border bg-surface flex w-full max-w-lg flex-col gap-2 rounded-xl border-small p-6 shadow-large !duration-300",
       ...dialogContentAnimationClasses,
     ],
     header: "flex flex-col space-y-2 text-center sm:text-left",
     footer: "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
-    title: "text-lg font-semibold",
-    description: "text-muted-text text-sm",
+    title: "text-large font-semibold",
+    description: "text-muted-text text-small",
     action: buttonStyles().base(),
     cancel: buttonStyles({ color: "accent", variant: "text" }).base(),
   },
