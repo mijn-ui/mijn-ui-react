@@ -1,4 +1,4 @@
-import { mijnUiPreset } from "@mijn-ui/react-theme"
+import { mijnui } from "@mijn-ui/react-theme"
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -8,7 +8,7 @@ export default {
     "../components/*/stories/**/*.{js,jsx,ts,tsx}",
     "../theme/src/**/**/*.{js,jsx,ts,tsx}",
   ],
-  presets: [mijnUiPreset],
+  plugins: [mijnui()],
   theme: {
     extend: {
       width: {
