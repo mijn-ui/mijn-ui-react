@@ -30,9 +30,9 @@ const alertStyles = tv({
       variant: "subtle",
       color: "default",
       class: {
-        base: ["bg-main/20 text-main-text border-border"],
-        title: "text-main-text",
-        description: "text-muted-text",
+        base: ["bg-background/20 text-foreground border-border"],
+        title: "text-foreground",
+        description: "text-muted-foreground",
       },
     },
     {
@@ -40,8 +40,8 @@ const alertStyles = tv({
       color: "success",
       class: {
         base: [colorVariants.subtle.success, "border-success"],
-        title: "text-success-text",
-        description: "text-muted-text",
+        title: "text-success-foreground",
+        description: "text-muted-foreground",
       },
     },
     {
@@ -49,8 +49,8 @@ const alertStyles = tv({
       color: "info",
       class: {
         base: [colorVariants.subtle.info, "border-info"],
-        title: "text-info-text",
-        description: "text-muted-text",
+        title: "text-info-foreground",
+        description: "text-muted-foreground",
       },
     },
     {
@@ -58,8 +58,8 @@ const alertStyles = tv({
       color: "warning",
       class: {
         base: [colorVariants.subtle.warning, "border-warning"],
-        title: "text-warning-text",
-        description: "text-muted-text",
+        title: "text-warning-foreground",
+        description: "text-muted-foreground",
       },
     },
     {
@@ -67,18 +67,27 @@ const alertStyles = tv({
       color: "danger",
       class: {
         base: [colorVariants.subtle.danger, "border-danger"],
-        title: "text-danger-text",
-        description: "text-muted-text",
+        title: "text-danger-foreground",
+        description: "text-muted-foreground",
       },
     },
 
     {
       variant: "filled",
+      color: "default",
+      class: {
+        base: "bg-foreground text-background",
+        title: "text-background",
+        description: "text-background",
+      },
+    },
+    {
+      variant: "filled",
       color: "success",
       class: {
         base: [colorVariants.filled.success, "dark:bg-success/80"],
-        title: "text-success-filled-text",
-        description: "text-success-filled-text",
+        title: "text-success-foreground-filled",
+        description: "text-success-foreground-filled",
       },
     },
     {
@@ -86,8 +95,8 @@ const alertStyles = tv({
       color: "info",
       class: {
         base: [colorVariants.filled.info, "dark:bg-info/80"],
-        title: "text-info-filled-text",
-        description: "text-info-filled-text",
+        title: "text-info-foreground-filled",
+        description: "text-info-foreground-filled",
       },
     },
     {
@@ -95,8 +104,8 @@ const alertStyles = tv({
       color: "warning",
       class: {
         base: [colorVariants.filled.warning, "dark:bg-warning/80"],
-        title: "text-warning-filled-text",
-        description: "text-warning-filled-text",
+        title: "text-warning-foreground-filled",
+        description: "text-warning-foreground-filled",
       },
     },
     {
@@ -104,28 +113,26 @@ const alertStyles = tv({
       color: "danger",
       class: {
         base: [colorVariants.filled.danger, "dark:bg-danger/80"],
-        title: "text-danger-filled-text",
-        description: "text-danger-filled-text",
-      },
-    },
-
-    {
-      variant: "filled",
-      color: "default",
-      class: {
-        base: "bg-main-text text-main",
-        title: "text-main",
-        description: "text-main",
+        title: "text-danger-foreground-filled",
+        description: "text-danger-foreground-filled",
       },
     },
 
     {
       variant: "outlined",
+      color: "default",
+      class: {
+        base: "border-foreground text-foreground",
+        description: "text-muted-foreground",
+      },
+    },
+    {
+      variant: "outlined",
       color: "success",
       class: {
         base: [colorVariants.outlined.success],
-        title: "text-success-text",
-        description: "text-muted-text",
+        title: "text-success-foreground",
+        description: "text-muted-foreground",
       },
     },
     {
@@ -133,8 +140,8 @@ const alertStyles = tv({
       color: "info",
       class: {
         base: [colorVariants.outlined.info],
-        title: "text-info-text",
-        description: "text-muted-text",
+        title: "text-info-foreground",
+        description: "text-muted-foreground",
       },
     },
     {
@@ -142,8 +149,8 @@ const alertStyles = tv({
       color: "warning",
       class: {
         base: [colorVariants.outlined.warning],
-        title: "text-warning-text",
-        description: "text-muted-text",
+        title: "text-warning-foreground",
+        description: "text-muted-foreground",
       },
     },
     {
@@ -151,16 +158,8 @@ const alertStyles = tv({
       color: "danger",
       class: {
         base: [colorVariants.outlined.danger],
-        title: "text-danger-text",
-        description: "text-muted-text",
-      },
-    },
-    {
-      variant: "outlined",
-      color: "default",
-      class: {
-        base: "border-main-text text-main-text",
-        description: "text-muted-text",
+        title: "text-danger-foreground",
+        description: "text-muted-foreground",
       },
     },
   ],

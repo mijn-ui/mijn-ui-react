@@ -8,10 +8,10 @@ import {
 import { tv } from "../utils/tv"
 import { buttonStyles } from "./button"
 
-const itemFocusClasses = ["focus:bg-accent focus:text-accent-text"]
+const itemFocusClasses = ["focus:bg-accent focus:text-accent-foreground"]
 
 const commonContentClasses = [
-  "z-50 min-w-[8rem] overflow-hidden rounded-medium border-small bg-surface p-1 text-surface-text shadow-medium",
+  "z-50 min-w-[8rem] overflow-hidden rounded-medium border-small bg-popover p-1 text-popover-foreground shadow-medium",
 ]
 
 const commonItemClasses = [
@@ -24,7 +24,7 @@ const commonIconWrapperClasses =
 const dropdownMenuStyles = tv({
   slots: {
     base: "",
-    trigger: buttonStyles({ color: "secondary" }).base(),
+    trigger: buttonStyles().base(),
     subTrigger:
       "focus:bg-accent data-[state=open]:bg-accent flex cursor-default select-none items-center gap-2 rounded-medium px-2 py-1.5 text-small outline-none",
     subTriggerIcon: "pointer-events-none ml-auto size-4 shrink-0",
