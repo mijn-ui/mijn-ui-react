@@ -14,10 +14,9 @@ const CardExample = () => {
     <Card className="relative max-w-60">
       <CardHeader>
         <Button
-          variant={"text"}
-          color={"accent"}
+          variant="ghost"
           size={"icon"}
-          className="rounded-large bg-accent p-0 text-muted-text sm:size-12"
+          className="rounded-large bg-accent p-0 text-muted-foreground sm:size-12"
           asChild
         >
           <span>
@@ -25,7 +24,7 @@ const CardExample = () => {
           </span>
         </Button>
 
-        <div className="absolute right-4 top-4 text-muted-text">
+        <div className="absolute right-4 top-4 text-muted-foreground">
           <LuArrowUpRight className="size-5 sm:size-6" />
         </div>
       </CardHeader>

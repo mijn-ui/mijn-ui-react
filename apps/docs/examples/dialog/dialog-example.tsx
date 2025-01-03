@@ -20,7 +20,7 @@ const DialogExample = ({ unstyled = false }: DialogExampleProps) => {
     <Dialog unstyled={unstyled}>
       <DialogTrigger>Sign In</DialogTrigger>
       <DialogContent className="relative ">
-        <DialogClose className="absolute right-4 top-4 border-none p-2 text-large text-muted-text hover:text-main-text">
+        <DialogClose className="text-large text-muted-foreground hover:text-foreground absolute right-4 top-4 border-none p-2">
           <LuX />
         </DialogClose>
         <div>
@@ -37,7 +37,10 @@ const DialogExample = ({ unstyled = false }: DialogExampleProps) => {
           <Input
             unstyled={unstyled}
             type="email"
-            classNames={{ label: "peer-focus:bg-surface" }}
+            classNames={{
+              input: "bg-card",
+              label: "bg-card peer-focus:bg-card",
+            }}
             label="Email..."
             autoFocus
           />
@@ -45,13 +48,18 @@ const DialogExample = ({ unstyled = false }: DialogExampleProps) => {
             unstyled={unstyled}
             label="Password..."
             type="password"
-            classNames={{ label: "peer-focus:bg-surface" }}
+            classNames={{
+              input: "bg-card",
+              label: "bg-card peer-focus:bg-card",
+            }}
           />
         </div>
         <div className="mt-4 flex items-center justify-end gap-2">
           <DialogClose>Close</DialogClose>
           <DialogClose asChild unstyled>
-            <Button unstyled={unstyled}>Submit</Button>
+            <Button unstyled={unstyled} color="primary">
+              Submit
+            </Button>
           </DialogClose>
         </div>
       </DialogContent>

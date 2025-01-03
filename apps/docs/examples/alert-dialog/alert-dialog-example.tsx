@@ -14,7 +14,7 @@ const AlertDialogExample = () => {
   return (
     <AlertDialog>
       <AlertDialogTrigger>Delete Account</AlertDialogTrigger>
-      <AlertDialogContent className="">
+      <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Confirm Account Deletion</AlertDialogTitle>
           <AlertDialogDescription>

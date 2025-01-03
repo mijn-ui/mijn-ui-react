@@ -15,12 +15,12 @@ const CheckboxColors = () => {
       </div>
 
       <div className="flex items-center gap-2">
-        <Checkbox defaultChecked id="accent" color="accent" />
+        <Checkbox defaultChecked id="accent" color="default" />
         <Label htmlFor="accent">Accent</Label>
       </div>
 
       <div className="flex items-center gap-2">
-        <Checkbox defaultChecked id="muted" color="muted" />
+        <Checkbox defaultChecked id="muted" color="default" />
         <Label htmlFor="muted">Muted</Label>
       </div>
 
