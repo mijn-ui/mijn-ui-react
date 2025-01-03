@@ -10,11 +10,13 @@ const buttonStyles = tv({
   },
   variants: {
     color: {
-      primary: {},
-      secondary: {},
-      accent: {},
-      muted: {},
-      danger: {},
+      default: "",
+      primary: "",
+      secondary: "",
+      success: "",
+      info: "",
+      warning: "",
+      danger: "",
     },
     radius: {
       none: "rounded-none",
@@ -32,17 +34,27 @@ const buttonStyles = tv({
     variant: {
       filled: "",
       outlined: "border-small border-current",
-      text: "",
+      ghost: "",
     },
   },
   compoundVariants: [
+    {
+      color: "default",
+      variant: "outlined",
+      class: {
+        base: [
+          colorVariants.outlined.default,
+          "hover:bg-accent hover:text-accent-foreground",
+        ],
+      },
+    },
     {
       color: "primary",
       variant: "outlined",
       class: {
         base: [
           colorVariants.outlined.primary,
-          "hover:bg-primary hover:text-primary-text",
+          "hover:bg-primary hover:text-primary-foreground",
         ],
       },
     },
@@ -52,27 +64,37 @@ const buttonStyles = tv({
       class: {
         base: [
           colorVariants.outlined.secondary,
-          "hover:bg-secondary hover:text-secondary-text",
+          "hover:bg-secondary hover:text-secondary-foreground",
         ],
       },
     },
     {
-      color: "accent",
+      color: "success",
       variant: "outlined",
       class: {
         base: [
-          colorVariants.outlined.accent,
-          "hover:bg-accent hover:text-accent-text",
+          colorVariants.outlined.success,
+          "hover:bg-success hover:text-success-foreground-filled",
         ],
       },
     },
     {
-      color: "muted",
+      color: "info",
       variant: "outlined",
       class: {
         base: [
-          colorVariants.outlined.muted,
-          "hover:bg-muted hover:text-muted-text",
+          colorVariants.outlined.info,
+          "hover:bg-info hover:text-info-foreground-filled",
+        ],
+      },
+    },
+    {
+      color: "warning",
+      variant: "outlined",
+      class: {
+        base: [
+          colorVariants.outlined.warning,
+          "hover:bg-warning hover:text-warning-foreground-filled",
         ],
       },
     },
@@ -82,58 +104,91 @@ const buttonStyles = tv({
       class: {
         base: [
           colorVariants.outlined.danger,
-          "hover:bg-danger hover:text-danger-filled-text",
+          "hover:bg-danger hover:text-danger-foreground-filled",
         ],
       },
     },
 
     /* ---------------------------------- Ghost --------------------------------- */
     {
-      color: "primary",
-      variant: "text",
+      color: "default",
+      variant: "ghost",
       class: {
         base: [
-          colorVariants.ghost.primary,
-          "hover:bg-primary hover:text-primary-text",
+          colorVariants.ghost.default,
+          "hover:bg-accent hover:text-accent-foreground",
         ],
       },
     },
     {
-      color: "accent",
-      variant: "text",
+      color: "primary",
+      variant: "ghost",
       class: {
-        base: [colorVariants.ghost.accent, "hover:bg-accent"],
-      },
-    },
-    {
-      color: "muted",
-      variant: "text",
-      class: {
-        base: [colorVariants.ghost.muted, "hover:bg-muted"],
+        base: [
+          colorVariants.ghost.primary,
+          "hover:bg-primary hover:text-primary-foreground",
+        ],
       },
     },
     {
       color: "secondary",
-      variant: "text",
+      variant: "ghost",
       class: {
         base: [
           colorVariants.ghost.secondary,
-          "hover:bg-secondary hover:text-secondary-text",
+          "hover:bg-secondary hover:text-secondary-foreground",
+        ],
+      },
+    },
+    {
+      color: "success",
+      variant: "ghost",
+      class: {
+        base: [
+          colorVariants.ghost.success,
+          "hover:bg-success hover:text-success-foreground-filled",
+        ],
+      },
+    },
+    {
+      color: "info",
+      variant: "ghost",
+      class: {
+        base: [
+          colorVariants.ghost.info,
+          "hover:bg-info hover:text-info-foreground-filled",
+        ],
+      },
+    },
+    {
+      color: "warning",
+      variant: "ghost",
+      class: {
+        base: [
+          colorVariants.ghost.warning,
+          "hover:bg-warning hover:text-warning-foreground-filled",
         ],
       },
     },
     {
       color: "danger",
-      variant: "text",
+      variant: "ghost",
       class: {
         base: [
           colorVariants.ghost.danger,
-          "hover:bg-danger hover:text-danger-filled-text",
+          "hover:bg-danger hover:text-danger-foreground-filled",
         ],
       },
     },
 
     /* --------------------------------- Filled --------------------------------- */
+    {
+      color: "default",
+      variant: "filled",
+      class: {
+        base: [colorVariants.filled.default],
+      },
+    },
     {
       color: "primary",
       variant: "filled",
@@ -149,17 +204,24 @@ const buttonStyles = tv({
       },
     },
     {
-      color: "accent",
+      color: "success",
       variant: "filled",
       class: {
-        base: [colorVariants.filled.accent],
+        base: [colorVariants.filled.success],
       },
     },
     {
-      color: "muted",
+      color: "info",
       variant: "filled",
       class: {
-        base: [colorVariants.filled.muted],
+        base: [colorVariants.filled.info],
+      },
+    },
+    {
+      color: "warning",
+      variant: "filled",
+      class: {
+        base: [colorVariants.filled.warning],
       },
     },
     {
@@ -178,7 +240,7 @@ const buttonStyles = tv({
   ],
   defaultVariants: {
     variant: "filled",
-    color: "primary",
+    color: "default",
     radius: "md",
     size: "md",
   },

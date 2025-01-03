@@ -1,27 +1,31 @@
-// need to rename
-export type GeneralColor = Partial<{ text: string; DEFAULT: string }> | string
+export type ColorSchema =
+  | Partial<{ foreground: string; DEFAULT: string }>
+  | string
 
-export type ActionColor = GeneralColor & { "filled-text"?: string }
+export type ActionSchema = ColorSchema & { "foreground-filled"?: string }
 
 export type BaseColors = {
-  main: GeneralColor
-  border: string
-  overlay: string
-  ring: string
-  // TODO: removed this later
-  "input-border": string
+  background: ColorSchema
+  foreground: ColorSchema
+  border: ColorSchema
+  overlay: ColorSchema
+  ring: ColorSchema
+  input: ColorSchema
 }
 
 export type ThemeColors = BaseColors & {
-  surface: GeneralColor
-  muted: GeneralColor
-  accent: GeneralColor
-  primary: GeneralColor
-  secondary: GeneralColor
-  info: ActionColor
-  warning: ActionColor
-  danger: ActionColor
-  success: ActionColor
+  card: ColorSchema
+  popover: ColorSchema
+  default: ColorSchema
+  primary: ColorSchema
+  secondary: ColorSchema
+  muted: ColorSchema
+  accent: ColorSchema
+
+  info: ActionSchema
+  warning: ActionSchema
+  danger: ActionSchema
+  success: ActionSchema
 }
 
 export type DefaultBaseColors = {

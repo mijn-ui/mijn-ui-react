@@ -19,14 +19,14 @@ const paginationStyles = tv({
       true: {
         item: buttonStyles({
           variant: "outlined",
-          color: "accent",
+
           size: "icon",
         }).base(),
       },
       false: {
         item: buttonStyles({
-          variant: "text",
-          color: "accent",
+          variant: "ghost",
+
           size: "icon",
         }).base(),
       },
@@ -36,8 +36,8 @@ const paginationStyles = tv({
     {
       slots: ["previousBtn", "nextBtn"],
       class: buttonStyles({
-        variant: "text",
-        color: "accent",
+        variant: "ghost",
+
         size: "md",
         className: "gap-1 font-medium",
       }).base(),

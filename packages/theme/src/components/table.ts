@@ -11,7 +11,7 @@ const tableStyles = tv({
     row: "border-border border-b text-left",
     headerCell: "px-4 py-3 font-semibold",
     cell: "px-4 py-2 align-middle",
-    caption: "text-muted-text mt-4 text-small",
+    caption: "text-muted-foreground mt-4 text-small",
   },
 })
 

@@ -6,7 +6,7 @@ const avatarGroupStyles = tv({
   slots: {
     group: "flex items-center justify-center -space-x-2",
     groupRemainChildren:
-      "text-muted-text !ml-1.5 flex items-center justify-center text-tiny",
+      "text-muted-foreground !ml-1.5 flex items-center justify-center text-tiny",
   },
 })
 

@@ -26,9 +26,9 @@ export const defaultLayout: LayoutTheme = {
     large: "3px",
   },
   boxShadow: {
-    small: "0px 0px 5px 0px rgb(0 0 0 / 0.1)",
-    medium: "0px 0px 15px 0px rgb(0 0 0 / 0.15)",
-    large: "0px 0px 30px 0px rgb(0 0 0 / 0.2)",
+    small: "0px 0px 5px 0px rgb(0 0 0 / 0.05)",
+    medium: "0px 0px 15px 0px rgb(0 0 0 / 0.1)",
+    large: "0px 0px 30px 0px rgb(0 0 0 / 0.15)",
   },
 }
 

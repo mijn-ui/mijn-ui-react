@@ -7,11 +7,11 @@ import { buttonStyles } from "./button"
 const popoverStyles = tv({
   slots: {
     base: "",
-    trigger: buttonStyles({ color: "secondary" }).base(),
-    close: buttonStyles({ variant: "text" }).base(),
+    trigger: buttonStyles().base(),
+    close: buttonStyles({ variant: "ghost" }).base(),
     content: [
       popupAnimationClasses,
-      "border-border bg-surface text-surface-text z-50 w-full rounded-large border-small p-4 shadow-medium outline-none !duration-300",
+      "border-border bg-popover text-popover-foreground z-50 w-full rounded-large border-small p-4 shadow-medium outline-none !duration-300",
     ],
   },
 })

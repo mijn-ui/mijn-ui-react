@@ -1,19 +1,17 @@
 const filled = {
-  primary: "bg-primary text-primary-text",
-  secondary: "bg-secondary text-secondary-text",
-  accent: "bg-accent text-accent-text",
-  muted: "bg-muted text-muted-text",
-  success: "bg-success text-success-filled-text",
-  info: "bg-info text-info-filled-text",
-  warning: "bg-warning text-warning-filled-text",
-  danger: "bg-danger text-danger-filled-text",
+  default: "bg-default text-default-foreground",
+  primary: "bg-primary text-primary-foreground",
+  secondary: "bg-secondary text-secondary-foreground",
+  success: "bg-success text-success-foreground-filled",
+  info: "bg-info text-info-foreground-filled",
+  warning: "bg-warning text-warning-foreground-filled",
+  danger: "bg-danger text-danger-foreground-filled",
 }
 
 const outlined = {
+  default: "bg-transparent border-border text-default-foreground",
   primary: "bg-transparent border-primary text-primary",
   secondary: "bg-transparent border-secondary text-secondary",
-  accent: "bg-transparent border-border text-accent-text",
-  muted: "bg-transparent border-muted text-muted-text",
   success: "bg-transparent border-success text-success",
   info: "bg-transparent border-info text-info",
   warning: "bg-transparent border-warning text-warning",
@@ -21,10 +19,9 @@ const outlined = {
 }
 
 const ghost = {
+  default: "text-default-foreground",
   primary: "text-primary",
   secondary: "text-secondary",
-  accent: "text-accent-text",
-  muted: "text-muted-text",
   success: "text-success",
   info: "text-info",
   warning: "text-warning",
@@ -32,10 +29,9 @@ const ghost = {
 }
 
 const subtle = {
+  default: "bg-default/10 text-default",
   primary: "bg-primary/10 text-primary",
   secondary: "bg-secondary/10 text-secondary",
-  accent: "bg-accent/10 text-accent-text",
-  muted: "bg-muted/10 text-muted-text",
   success: "bg-success/10 text-success",
   info: "bg-info/10 text-info",
   warning: "bg-warning/10 text-warning",
