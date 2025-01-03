@@ -26,7 +26,7 @@ const tags = Array.from({ length: 50 }).map(
 const ScrollAreaTemplate = (args: ScrollAreaProps) => {
   return (
     <ScrollArea
-      className="bg-surface h-72 w-48 overflow-y-auto rounded-medium border"
+      className="bg-card h-72 w-48 overflow-y-auto rounded-medium border"
       {...args}
     >
       <div className="p-4">

@@ -1,22 +1,22 @@
 "use client"
 
-import * as React from 'react';
+import * as React from "react"
 
-import { useTVUnstyled } from '@mijn-ui/react-hooks';
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
   cn,
   SelectSlots,
   selectStyles,
   UnstyledComponentWithSlots,
   UnstyledProps,
-} from '@mijn-ui/react-theme';
-import { createContext } from '@mijn-ui/react-utilities';
+} from "@mijn-ui/react-theme"
+import { createContext } from "@mijn-ui/react-utilities"
 import {
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
-} from '@mijn-ui/shared-icons';
-import * as SelectPrimitive from '@radix-ui/react-select';
+} from "@mijn-ui/shared-icons"
+import * as SelectPrimitive from "@radix-ui/react-select"
 
 /* -------------------------------------------------------------------------- */
 /*                                SelectContext                               */
@@ -121,7 +121,7 @@ const SelectScrollUpButton = ({
       })}
       {...props}
     >
-      <ChevronUpIcon className="" />
+      <ChevronUpIcon />
     </SelectPrimitive.ScrollUpButton>
   )
 }
@@ -295,4 +295,4 @@ export {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-};
+}

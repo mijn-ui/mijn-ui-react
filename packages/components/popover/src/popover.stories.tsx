@@ -78,6 +78,10 @@ const PopoverTemplate = (args: PopoverProps) => {
                   {field.label}
                 </Label>
                 <Input
+                  classNames={{
+                    input: "bg-card",
+                    label: "bg-card peer-focus:bg-card",
+                  }}
                   id={field.id}
                   name={field.name}
                   defaultValue={field.defaultValue}
@@ -89,8 +93,7 @@ const PopoverTemplate = (args: PopoverProps) => {
         </div>
         <PopoverClose unstyled asChild>
           <Button
-            color={"accent"}
-            variant={"text"}
+            variant="ghost"
             size={"icon"}
             radius={"full"}
             className="absolute right-0 top-0 hover:bg-transparent"
@@ -99,7 +102,7 @@ const PopoverTemplate = (args: PopoverProps) => {
             <RxCross2 />
           </Button>
         </PopoverClose>
-        <PopoverArrow className="fill-muted-text" />
+        <PopoverArrow className="fill-muted-foreground" />
       </PopoverContent>
     </Popover>
   )
@@ -140,8 +143,7 @@ const PopoverUnstyled = (args: PopoverProps) => {
         </div>
         <PopoverClose unstyled asChild>
           <Button
-            color={"accent"}
-            variant={"text"}
+            variant="ghost"
             size={"icon"}
             radius={"full"}
             className="absolute right-4 top-4 hover:bg-transparent"
@@ -150,7 +152,7 @@ const PopoverUnstyled = (args: PopoverProps) => {
             <RxCross2 />
           </Button>
         </PopoverClose>
-        <PopoverArrow className="fill-muted-text" />
+        <PopoverArrow className="fill-muted-foreground" />
       </PopoverContent>
     </Popover>
   )

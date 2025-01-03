@@ -2,6 +2,7 @@ import React from "react"
 
 import { LuFilter } from "react-icons/lu"
 
+import { Button } from "@mijn-ui/react-button"
 import type { Meta, StoryObj } from "@storybook/react"
 
 import {
@@ -118,10 +119,8 @@ const DropdownMenuCheckBoxes = (args: DropdownMenuProps) => {
 
   return (
     <DropdownMenu {...args}>
-      <DropdownMenuTrigger className="bg-accent text-accent-text hover:bg-accent hover:opacity-75">
-        Manage Permissions
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuTrigger>Manage Permissions</DropdownMenuTrigger>
+      <DropdownMenuContent className="w-[var(--radix-dropdown-menu-trigger-width)]">
         {permissions.map((permission) => (
           <DropdownMenuCheckboxItem
             key={permission.name}
@@ -156,12 +155,14 @@ const DropdownMenuRadioGroups = (args: DropdownMenuProps) => {
 
   return (
     <DropdownMenu {...args}>
-      <DropdownMenuTrigger className="bg-primary">
-        <LuFilter />
-        Filters
+      <DropdownMenuTrigger asChild unstyled>
+        <Button color="primary">
+          <LuFilter />
+          Filters
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-60">
-        <DropdownMenuLabel className="text-muted-text">
+        <DropdownMenuLabel className="text-muted-foreground">
           {BRANDS.label}
         </DropdownMenuLabel>
         <DropdownMenuRadioGroup
@@ -179,7 +180,7 @@ const DropdownMenuRadioGroups = (args: DropdownMenuProps) => {
           ))}
         </DropdownMenuRadioGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuLabel className="text-muted-text">
+        <DropdownMenuLabel className="text-muted-foreground">
           {PRICE_RANGES.label}
         </DropdownMenuLabel>
         <DropdownMenuRadioGroup

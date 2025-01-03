@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react"
 import { AlertDialogProps } from "@radix-ui/react-alert-dialog"
+import type { Meta, StoryObj } from "@storybook/react"
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -51,7 +52,7 @@ const AlertDialogTemplate = (args: AlertDialogProps) => {
 const AlertDialogUnstyled = (args: AlertDialogProps) => {
   return (
     <AlertDialog {...args}>
-      <AlertDialogTrigger className="bg-muted text-muted-text p-2">
+      <AlertDialogTrigger className="bg-muted text-muted-foreground p-2">
         Delete Account
       </AlertDialogTrigger>
       <AlertDialogContent className="bg-accent flex w-1/2 flex-col p-4">
@@ -67,7 +68,7 @@ const AlertDialogUnstyled = (args: AlertDialogProps) => {
         </AlertDialogHeader>
         <AlertDialogFooter className="ml-auto flex gap-4">
           <AlertDialogCancel className="p-2">Cancel</AlertDialogCancel>
-          <AlertDialogAction className="bg-primary text-primary-text p-2">
+          <AlertDialogAction className="bg-primary text-primary-foreground p-2">
             Continue
           </AlertDialogAction>
         </AlertDialogFooter>

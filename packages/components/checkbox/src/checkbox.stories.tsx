@@ -10,7 +10,7 @@ const meta: Meta<typeof Checkbox> = {
     layout: "centered",
   },
   args: {
-    color: "primary",
+    color: "default",
     size: "md",
     unstyled: false,
   },
@@ -22,7 +22,15 @@ const meta: Meta<typeof Checkbox> = {
     color: {
       type: "string",
       control: "select",
-      options: ["primary", "secondary", "accent", "muted", "danger"],
+      options: [
+        "default",
+        "primary",
+        "secondary",
+        "success",
+        "info",
+        "warning",
+        "danger",
+      ],
     },
     size: {
       type: "string",
@@ -50,7 +58,11 @@ const CheckboxColors = (args: CheckboxProps) => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-2">
-        <Checkbox defaultChecked id="primary" color="primary" {...args} />
+        <Checkbox defaultChecked id="default" color="default" {...args} />
+        <Label htmlFor="default">Default</Label>
+      </div>
+      <div className="flex items-center gap-2">
+        <Checkbox defaultChecked id="primary" color="primary" />
         <Label htmlFor="primary">Primary</Label>
       </div>
 
@@ -60,23 +72,23 @@ const CheckboxColors = (args: CheckboxProps) => {
       </div>
 
       <div className="flex items-center gap-2">
-        <Checkbox defaultChecked id="accent" color="accent" />
-        <Label htmlFor="accent">Accent</Label>
+        <Checkbox defaultChecked id="success" color="success" />
+        <Label htmlFor="success">Success</Label>
       </div>
 
       <div className="flex items-center gap-2">
-        <Checkbox defaultChecked id="muted" color="muted" />
-        <Label htmlFor="muted">Muted</Label>
+        <Checkbox defaultChecked id="info" color="info" />
+        <Label htmlFor="info">Info</Label>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <Checkbox defaultChecked id="warning" color="warning" />
+        <Label htmlFor="warning">Warning</Label>
       </div>
 
       <div className="flex items-center gap-2">
         <Checkbox defaultChecked id="danger" color="danger" />
         <Label htmlFor="danger">Danger</Label>
-      </div>
-
-      <div className="flex items-center gap-2">
-        <Checkbox defaultChecked id="success" color="success" />
-        <Label htmlFor="success">Success</Label>
       </div>
     </div>
   )

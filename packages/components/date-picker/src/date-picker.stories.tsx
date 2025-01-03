@@ -56,7 +56,7 @@ const DatePickerTemplate = (args: CalendarDatePickerProps) => {
         Calendar Date Picker Component
       </h1>
       <CalendarDatePicker
-        color="accent"
+        color="default"
         date={selectedDateRange}
         onDateSelect={setSelectedDateRange}
         numberOfMonths={args.numberOfMonths}
