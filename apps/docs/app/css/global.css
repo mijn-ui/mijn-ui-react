@@ -5,30 +5,30 @@
 @import "./override.css";
 
 /* These variables come from the Tailwind plugin @mijn-ui/react-theme */
-/* eg: --main, --main-text */
+/* eg: --background, --foreground */
 :root,
 .dark {
   /* general */
-  --fd-background: var(--mijnui-main); /* slate-100 */
-  --fd-foreground: var(--mijnui-main-text); /* black */
+  --fd-background: var(--mijnui-background); /* slate-100 */
+  --fd-foreground: var(--mijnui-foreground); /* black */
 
   --fd-border: var(--mijnui-border); /* neutral-300 */
 
   --fd-muted: var(--mijnui-muted); /* neutral-300 */
-  --fd-muted-foreground: var(--mijnui-muted-text); /* neutral-700 */
+  --fd-muted-foreground: var(--mijnui-muted-foreground); /* neutral-700 */
 
   --fd-primary: var(--mijnui-primary); /* orange-500 */
-  --fd-primary-foreground: var(--mijnui-primary-text); /* white */
+  --fd-primary-foreground: var(--mijnui-primary-foreground); /* white */
 
   --fd-accent: var(--mijnui-accent); /* neutral-200 */
-  --fd-accent-foreground: var(--mijnui-accent-text); /* black */
+  --fd-accent-foreground: var(--mijnui-accent-foreground); /* black */
 
-  --fd-card: var(--mijnui-surface); /* neutral-50 */
-  --fd-card-foreground: var(--mijnui-surface-text); /* black */
+  --fd-card: var(--mijnui-card); /* neutral-50 */
+  --fd-card-foreground: var(--mijnui-card-foreground); /* black */
 
   --fd-ring: var(--mijnui-ring); /* neutral-800 */
 
-  --fd-input: var(--mijnui-input-border); /* neutral-500 */
+  --fd-input: var(--mijnui-input); /* neutral-500 */
 }
 
 .custom_scroll_bar {

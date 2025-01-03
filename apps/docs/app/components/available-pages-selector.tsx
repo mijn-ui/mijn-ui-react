@@ -46,7 +46,7 @@ const AvailablePagesSelector = () => {
       >
         <SelectValue placeholder="Select a page" />
       </SelectTrigger>
-      <SelectContent className="w-[var(--radix-popover-trigger-width)] bg-surface">
+      <SelectContent className="w-[var(--radix-popover-trigger-width)] bg-popover">
         <SelectGroup>
           <SelectLabel className="text-small">Available Pages</SelectLabel>
           <SelectItem className="text-tiny" value={PAGE_OPTIONS.next}>

@@ -50,7 +50,7 @@ const BlockPage = async ({
     <div className="h-screen w-screen overflow-hidden">
       <React.Suspense
         fallback={
-          <div className="flex w-full items-center justify-center text-small text-muted-text">
+          <div className="flex w-full items-center justify-center text-small text-muted-foreground">
             <LuLoaderCircle className="mr-2 size-4 animate-spin" />
             Loading...
           </div>

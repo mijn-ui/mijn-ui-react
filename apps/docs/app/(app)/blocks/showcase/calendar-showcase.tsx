@@ -1,6 +1,6 @@
 const CalendarShowcase = () => {
   return (
-    <div className="flex size-full flex-col gap-1.5 rounded-large bg-surface p-2">
+    <div className="flex size-full flex-col gap-1.5 rounded-large bg-card p-2">
       <div className="flex items-center justify-between">
         <div className="h-2 w-14 rounded-full bg-accent"></div>
         <div className="flex h-3 w-20 items-center gap-0.5">

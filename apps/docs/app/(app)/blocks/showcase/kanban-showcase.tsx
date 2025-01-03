@@ -10,7 +10,7 @@ const KanbanShowcase = () => {
 
       <div className="px-3">
         {" "}
-        <div className="group relative mt-2 w-full space-y-1 rounded-large bg-surface p-3">
+        <div className="group relative mt-2 w-full space-y-1 rounded-large bg-card p-3">
           <div className="h-3 w-36 rounded-full bg-accent" />
           <div className="h-3 w-14 rounded-full bg-accent" />
           <div className="flex flex-wrap">
@@ -23,7 +23,7 @@ const KanbanShowcase = () => {
             </div>
             <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-muted">
               <div
-                className="h-full bg-main-text/10"
+                className="h-full bg-foreground/10"
                 style={{
                   transform: "scaleX(0.75)",
                   transformOrigin: "left center",

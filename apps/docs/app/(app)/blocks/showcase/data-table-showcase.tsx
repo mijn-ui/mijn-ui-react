@@ -1,6 +1,6 @@
 const DataTableShowcase = () => {
   return (
-    <div className="flex size-full flex-col gap-2 rounded-medium bg-surface">
+    <div className="flex size-full flex-col gap-2 rounded-medium bg-card">
       <div className="flex items-center justify-between p-2">
         <div className="space-y-1">
           <div className="h-2 w-10 rounded-medium bg-accent"></div>
