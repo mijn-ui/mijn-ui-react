@@ -5,13 +5,13 @@
     /* day-header styles */
     .month-view__day-header {
       .fc-col-header-cell-cushion {
-        @apply block bg-accent px-3 py-2 text-left text-small font-medium uppercase text-muted-text;
+        @apply block bg-accent px-3 py-2 text-left text-small font-medium uppercase text-muted-foreground;
       }
     }
 
     /* styles for the last month days and the next month days */
     .fc-day-other {
-      @apply text-muted-text;
+      @apply text-muted-foreground;
     }
 
     /* day-cell styles */
@@ -27,7 +27,7 @@
         .fc-daygrid-day-top {
           /* styles for current date number */
           .fc-daygrid-day-number {
-            @apply flex h-full w-full items-center justify-center rounded-full bg-primary font-semibold text-primary-text;
+            @apply flex h-full w-full items-center justify-center rounded-full bg-primary font-semibold text-primary-foreground;
           }
         }
       }

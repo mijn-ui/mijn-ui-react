@@ -52,7 +52,7 @@ export default async function Page(props: {
           {page.data.docs && (
             <Link
               target="_blank"
-              className="flex items-center gap-1 text-small text-main-text/80 underline hover:text-primary"
+              className="flex items-center gap-1 text-small text-foreground/80 underline hover:text-primary"
               href={page.data.docs}
             >
               <LuExternalLink />
@@ -62,7 +62,7 @@ export default async function Page(props: {
           {page.data.apiReference && (
             <Link
               target="_blank"
-              className="flex items-center gap-1 text-small text-main-text/80 underline hover:text-primary"
+              className="flex items-center gap-1 text-small text-foreground/80 underline hover:text-primary"
               href={page.data.apiReference}
             >
               <LuExternalLink />
@@ -72,7 +72,7 @@ export default async function Page(props: {
           {page.data.styleSource && (
             <Link
               target="_blank"
-              className="flex items-center gap-1 text-small text-main-text/80 underline hover:text-primary"
+              className="flex items-center gap-1 text-small text-foreground/80 underline hover:text-primary"
               href={page.data.styleSource}
             >
               <LuExternalLink />

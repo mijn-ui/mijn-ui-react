@@ -1,6 +1,6 @@
 const SidebarShowcase = () => {
   return (
-    <div className="flex size-full overflow-hidden rounded-medium border-small bg-surface">
+    <div className="flex size-full overflow-hidden rounded-medium border-small bg-card">
       <div className="flex h-full w-20 flex-col gap-1 border-r p-2">
         <div className="h-3 w-full rounded-small bg-accent"></div>
 

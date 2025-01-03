@@ -27,7 +27,7 @@ const InstallationTabs = ({
       <TabsList className="h-12 w-full justify-start rounded-none border-b !bg-transparent">
         {items.map((item) => (
           <TabsTrigger
-            className="rounded-medium data-[state=active]:bg-surface"
+            className="rounded-medium data-[state=active]:bg-default"
             key={item}
             value={item}
           >

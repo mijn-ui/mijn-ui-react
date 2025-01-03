@@ -43,11 +43,7 @@ const KanbanCardItem = ({
 
       {tags?.map((tag: string) => (
         <div key={tag} className="flex flex-wrap">
-          <Badge
-            variant={"outlined"}
-            color="muted"
-            className="px-2 py-0.5 text-tiny"
-          >
+          <Badge variant={"outlined"} className="px-2 py-0.5 text-tiny">
             {tag}
           </Badge>
         </div>
@@ -55,7 +51,7 @@ const KanbanCardItem = ({
 
       {progress && (
         <div className="space-y-1">
-          <div className="flex items-center justify-between text-tiny text-muted-text">
+          <div className="flex items-center justify-between text-tiny text-muted-foreground">
             <h5>CheckList</h5>
             <p>3/4</p>
           </div>
@@ -63,7 +59,7 @@ const KanbanCardItem = ({
         </div>
       )}
 
-      <div className="flex w-full items-center justify-between text-muted-text">
+      <div className="flex w-full items-center justify-between text-muted-foreground">
         <div className="flex items-center gap-2 sm:gap-4">
           <div className="flex items-center gap-1">
             <GoClock size={20} />
@@ -96,7 +92,7 @@ const KanbanCardItem = ({
 
       <button
         onClick={handleOnDelete}
-        className="absolute -right-2 -top-6 flex size-5 items-center justify-center rounded-full border-small border-border bg-surface opacity-0 transition-opacity hover:brightness-90 group-hover:opacity-100"
+        className="absolute -right-2 -top-6 flex size-5 items-center justify-center rounded-full border-small border-border bg-card opacity-0 transition-opacity hover:brightness-90 group-hover:opacity-100"
       >
         <LuX size={12} />
       </button>

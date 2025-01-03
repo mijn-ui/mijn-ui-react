@@ -1,6 +1,6 @@
 const GanttChartShowcase = () => {
   return (
-    <div className="flex size-full overflow-hidden rounded-medium border-small bg-surface ">
+    <div className="flex size-full overflow-hidden rounded-medium border-small bg-card ">
       <div className="flex h-full w-20 flex-col border-r">
         <div className="h-4 w-full border-b bg-accent"></div>
         <div className="flex h-3 w-full items-center gap-2 border-b p-1">
@@ -12,9 +12,9 @@ const GanttChartShowcase = () => {
           <div className="h-1.5 w-9 rounded-full bg-accent"></div>
         </div>
         <div className="flex h-3 w-full items-center gap-2 border-b bg-accent p-1">
-          <div className="size-1.5 rounded-full bg-muted-text/15"></div>
-          <div className="h-1.5 w-9 rounded-full bg-muted-text/15"></div>
-          <div className="size-1 rounded-full bg-muted-text/15"></div>
+          <div className="size-1.5 rounded-full bg-muted-foreground/15"></div>
+          <div className="h-1.5 w-9 rounded-full bg-muted-foreground/15"></div>
+          <div className="size-1 rounded-full bg-muted-foreground/15"></div>
         </div>
         <div className="flex h-3 w-full items-center gap-2 border-b bg-accent/50 p-1">
           <div className="size-1.5 rounded-full bg-accent"></div>
@@ -29,14 +29,14 @@ const GanttChartShowcase = () => {
           <div className="h-1.5 w-9 rounded-full bg-accent"></div>
         </div>
         <div className="flex h-3 w-full items-center gap-2 border-b bg-accent p-1">
-          <div className="size-1.5 rounded-full bg-muted-text/15"></div>
-          <div className="h-1.5 w-9 rounded-full bg-muted-text/15"></div>
-          <div className="size-1 rounded-full bg-muted-text/15"></div>
+          <div className="size-1.5 rounded-full bg-muted-foreground/15"></div>
+          <div className="h-1.5 w-9 rounded-full bg-muted-foreground/15"></div>
+          <div className="size-1 rounded-full bg-muted-foreground/15"></div>
         </div>
         <div className="flex h-3 w-full items-center gap-2 border-b bg-accent p-1">
-          <div className="size-1.5 rounded-full bg-muted-text/15"></div>
-          <div className="h-1.5 w-9 rounded-full bg-muted-text/15"></div>
-          <div className="size-1 rounded-full bg-muted-text/15"></div>
+          <div className="size-1.5 rounded-full bg-muted-foreground/15"></div>
+          <div className="h-1.5 w-9 rounded-full bg-muted-foreground/15"></div>
+          <div className="size-1 rounded-full bg-muted-foreground/15"></div>
         </div>
         <div className="flex h-3 w-full items-center gap-2 border-b bg-accent/50 p-1">
           <div className="size-1.5 rounded-full bg-accent"></div>

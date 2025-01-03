@@ -1,8 +1,10 @@
 "use client"
 
 import * as React from "react"
-import { useMediaQuery } from "@mijn-ui/react-hooks"
-import { CalendarFull } from "./components/calendar-full"
+
+import { setMonth, setYear } from "date-fns"
+import { LuBug } from "react-icons/lu"
+
 import { EventDropArg, EventSourceInput } from "@fullcalendar/core"
 import { DropArg, EventResizeDoneArg } from "@fullcalendar/interaction"
 import {
@@ -21,9 +23,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@mijn-ui/react-dialog"
+import { useMediaQuery } from "@mijn-ui/react-hooks"
 import { Input } from "@mijn-ui/react-input"
-import { setMonth, setYear } from "date-fns"
-import { LuBug } from "react-icons/lu"
+
+import { CalendarFull } from "./components/calendar-full"
 
 const now = new Date()
 const currentYear = now.getFullYear()
@@ -284,7 +287,7 @@ const CalendarFullExample = () => {
 
   return (
     <div className="flex size-full items-center justify-center">
-      <div className="relative h-fit w-full max-w-screen-lg overflow-y-auto rounded-2xl bg-surface p-4">
+      <div className="relative h-fit w-full max-w-screen-lg overflow-y-auto rounded-2xl bg-card p-4">
         {/* TODO: Fix the hydration error */}
         <div className="size-full">
           <CalendarFull
@@ -315,12 +318,7 @@ const CalendarFullExample = () => {
               />
 
               <DialogFooter className="mt-4">
-                <Button
-                  type="button"
-                  variant="text"
-                  color="accent"
-                  onClick={closeDialogs}
-                >
+                <Button type="button" variant="ghost" onClick={closeDialogs}>
                   Cancel
                 </Button>
                 <Button type="submit" disabled={newEvent.title === ""}>

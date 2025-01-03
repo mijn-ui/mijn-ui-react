@@ -4,7 +4,7 @@
   /* *********** header cell active style *********** */
   .fc-timeGridWeek-view {
     .fc-col-header-cell-cushion {
-      @apply text-main-text flex flex-col whitespace-pre-line px-3 py-2 text-left text-small font-medium;
+      @apply text-foreground flex flex-col whitespace-pre-line px-3 py-2 text-left text-small font-medium;
 
       span {
         @apply text-large font-semibold;

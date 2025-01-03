@@ -109,7 +109,7 @@ const LinkCard = ({
     >
       <Card
         className={
-          "card_glow relative flex min-h-72 w-full items-center justify-center border-small bg-main [mask:radial-gradient(75%_75%_at_50%,rgb(0,0,0)_60%,rgba(0,0,0,0)_100%)] sm:aspect-video sm:size-full"
+          "card_glow relative flex min-h-72 w-full items-center justify-center border-small bg-background [mask:radial-gradient(75%_75%_at_50%,rgb(0,0,0)_60%,rgba(0,0,0,0)_100%)] sm:aspect-video sm:size-full"
         }
         id="card"
       >
@@ -123,12 +123,12 @@ const LinkCard = ({
         </div>
       </Card>
       <div className="absolute left-0 top-0 p-2.5 sm:p-4">
-        <p className="bg-gradient-to-br from-main-text to-muted-text bg-clip-text text-small text-transparent sm:text-small">
+        <p className="bg-gradient-to-br from-foreground to-muted-foreground bg-clip-text text-small text-transparent sm:text-small">
           {label}
         </p>
       </div>
       {inprogress && (
-        <p className="absolute inset-0 flex items-center justify-center gap-1 rounded-large bg-black/50 text-tiny font-medium text-main dark:text-muted-text">
+        <p className="absolute inset-0 flex items-center justify-center gap-1 rounded-large bg-black/50 text-tiny font-medium text-foreground dark:text-muted-foreground">
           Under Development
         </p>
       )}

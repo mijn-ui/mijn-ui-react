@@ -21,7 +21,7 @@
     }
 
     .fc-list-event-title {
-      @apply hover:bg-surface py-0;
+      @apply hover:bg-card py-0;
 
       .custom-event-list {
         @apply my-1 flex h-10 cursor-pointer items-center justify-between border-l-4 border-l-primary px-3 py-2 hover:bg-accent;
@@ -31,7 +31,7 @@
         }
 
         .custom-event-list-time {
-          @apply text-small text-muted-text;
+          @apply text-small text-muted-foreground;
         }
       }
     }
