@@ -1,3 +1,5 @@
+import animationPlugin from "tailwindcss-animate"
+
 import { mijnui } from "@mijn-ui/react-theme"
 
 /** @type {import('tailwindcss').Config} */
@@ -8,7 +10,7 @@ export default {
     "../components/*/stories/**/*.{js,jsx,ts,tsx}",
     "../theme/src/**/**/*.{js,jsx,ts,tsx}",
   ],
-  plugins: [mijnui()],
+  plugins: [animationPlugin, mijnui()],
   theme: {
     extend: {
       width: {

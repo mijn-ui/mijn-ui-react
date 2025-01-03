@@ -16,7 +16,8 @@
     "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/react-theme": "workspace:*",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
