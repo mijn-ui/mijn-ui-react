@@ -17,7 +17,7 @@ export const MyBadge = extendVariants(Badge, {
     },
     size: {
       xs: "px-1 h-4 text-tiny",
-      md: "px-3 h-6 text-smallall",
+      md: "px-3 h-6 text-small",
       xl: "px-5 h-10 text-large",
     },
   },
@@ -29,7 +29,7 @@ export const MyBadge = extendVariants(Badge, {
   compoundVariants: [
     // <- modify/add compound variants
     {
-      variant: "text",
+      variant: "ghost",
       color: "olive",
       class:
         "!bg-clip-text !text-transparent from-[#84cc16]/30 via-[#84cc16] to-[#84cc16]/30",

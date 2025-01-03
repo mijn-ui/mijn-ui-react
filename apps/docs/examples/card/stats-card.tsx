@@ -13,11 +13,7 @@ const StatsCardExample = () => {
   return (
     <Card className="max-w-44">
       <CardHeader className="px-5 pb-5 sm:px-6 sm:pb-4">
-        <Button
-          color="muted"
-          size={"icon"}
-          className="rounded-full p-0 sm:size-12"
-        >
+        <Button size={"icon"} className="rounded-full bg-accent p-0 sm:size-12">
           <IoBagOutline className="size-4 sm:size-5" />
         </Button>
       </CardHeader>
@@ -27,7 +23,7 @@ const StatsCardExample = () => {
         <CardTitle className="text-xl font-medium sm:text-2xl">
           $75,890.75
         </CardTitle>
-        <p className="text-tiny font-normal text-muted-text">
+        <p className="text-tiny font-normal text-muted-foreground">
           <span className="text-success">+128%</span> from June
         </p>
       </CardContent>

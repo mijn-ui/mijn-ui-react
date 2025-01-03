@@ -7,7 +7,7 @@ const SeparatorExample = () => {
         <h4 className="text-small font-medium leading-none">
           Radix Primitives
         </h4>
-        <p className="text-small text-muted-text">
+        <p className="text-small text-muted-foreground">
           An open-source UI component library.
         </p>
       </div>

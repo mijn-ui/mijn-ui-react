@@ -39,19 +39,25 @@ const TabsExample = () => {
           <CardContent className="space-y-4">
             <Input
               id="name"
-              classNames={{ label: "bg-surface" }}
+              classNames={{
+                input: "bg-card",
+                label: "bg-card peer-focus:bg-card",
+              }}
               label="Name"
               defaultValue="Pedro Duarte"
             />
             <Input
               id="username"
-              classNames={{ label: "bg-surface" }}
+              classNames={{
+                input: "bg-card",
+                label: "bg-card peer-focus:bg-card",
+              }}
               label="Username"
               defaultValue="@peduarte"
             />
           </CardContent>
           <CardFooter>
-            <Button>Save changes</Button>
+            <Button color="primary">Save changes</Button>
           </CardFooter>
         </Card>
       </TabsContent>
@@ -67,20 +73,26 @@ const TabsExample = () => {
           <CardContent className="space-y-4">
             <Input
               id="current"
-              classNames={{ label: "bg-surface" }}
+              classNames={{
+                input: "bg-card",
+                label: "bg-card peer-focus:bg-card",
+              }}
               label="Current password"
               type="password"
             />
 
             <Input
               id="new"
-              classNames={{ label: "bg-surface" }}
+              classNames={{
+                input: "bg-card",
+                label: "bg-card peer-focus:bg-card",
+              }}
               label="New password"
               type="password"
             />
           </CardContent>
           <CardFooter>
-            <Button>Save password</Button>
+            <Button color="primary">Save password</Button>
           </CardFooter>
         </Card>
       </TabsContent>

@@ -5,10 +5,10 @@ import {
   AccordionTrigger,
 } from "@mijn-ui/react-accordion"
 
-const SurfaceAccordionExample = () => {
+const FilledAccordionExample = () => {
   return (
     <Accordion
-      variant="surface"
+      variant="filled"
       className="w-full max-w-80"
       collapsible
       type="single"
@@ -38,4 +38,4 @@ const SurfaceAccordionExample = () => {
   )
 }
 
-export default SurfaceAccordionExample
+export default FilledAccordionExample

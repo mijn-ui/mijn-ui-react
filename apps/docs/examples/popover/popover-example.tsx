@@ -36,7 +36,8 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
             <Input
               className="max-w-40"
               classNames={{
-                input: "h-8 py-1.5 px-1.5",
+                input: "bg-card h-8 py-1.5 px-1.5",
+                label: "bg-card peer-focus:bg-card",
               }}
               id="width"
               defaultValue="100%"
@@ -52,7 +53,8 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
             <Input
               className="max-w-40"
               classNames={{
-                input: "h-8 py-1.5 px-1.5",
+                input: "bg-card h-8 py-1.5 px-1.5",
+                label: "bg-card peer-focus:bg-card",
               }}
               id="maxWidth"
               defaultValue="300px"
@@ -68,7 +70,8 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
             <Input
               className="max-w-40"
               classNames={{
-                input: "h-8 py-1.5 px-1.5",
+                input: "bg-card h-8 py-1.5 px-1.5",
+                label: "bg-card peer-focus:bg-card",
               }}
               id="height"
               defaultValue="25px"
@@ -84,7 +87,8 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
             <Input
               className="max-w-40"
               classNames={{
-                input: "h-8 py-1.5 px-1.5",
+                input: "bg-card h-8 py-1.5 px-1.5",
+                label: "bg-card peer-focus:bg-card",
               }}
               id="maxHeight"
               defaultValue="none"
@@ -93,8 +97,7 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
         </div>
         <PopoverClose unstyled asChild>
           <Button
-            color={"accent"}
-            variant={"text"}
+            variant="ghost"
             size={"icon"}
             radius={"full"}
             className="absolute right-0 top-0 hover:bg-transparent"
@@ -102,7 +105,7 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
             <RxCross2 />
           </Button>
         </PopoverClose>
-        <PopoverArrow className="fill-muted-text" />
+        <PopoverArrow className="fill-muted-foreground" />
       </PopoverContent>
     </Popover>
   )

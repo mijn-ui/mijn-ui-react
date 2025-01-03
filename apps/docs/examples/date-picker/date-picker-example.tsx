@@ -16,7 +16,7 @@ const CalendarDatePickerExample = () => {
         Calendar Date Picker Component
       </h1>
       <CalendarDatePicker
-        color="accent"
+        color="default"
         date={selectedDateRange}
         onDateSelect={setSelectedDateRange}
       />
