@@ -32,8 +32,8 @@ const DialogTemplate = (args: DialogProps) => {
   return (
     <Dialog {...args}>
       <DialogTrigger>Sign In</DialogTrigger>
-      <DialogContent className="bg-main relative">
-        <DialogClose className="text-muted-text hover:text-main-text absolute right-4 top-4 border-none p-2 text-large">
+      <DialogContent className="bg-background relative">
+        <DialogClose className="text-muted-foreground hover:text-foreground text-large absolute right-4 top-4 border-none p-2">
           <LuX />
         </DialogClose>
         <div>
@@ -47,13 +47,28 @@ const DialogTemplate = (args: DialogProps) => {
           </DialogDescription>
         </div>
         <div className="mt-4 space-y-2">
-          <Input type="email" label="Email" autoFocus />
-          <Input label="Password" type="password" />
+          <Input
+            type="email"
+            label="Email"
+            autoFocus
+            classNames={{
+              input: "bg-popover",
+              label: "bg-popover peer-focus:bg-popover",
+            }}
+          />
+          <Input
+            label="Password"
+            type="password"
+            classNames={{
+              input: "bg-popover",
+              label: "bg-popover peer-focus:bg-popover",
+            }}
+          />
         </div>
         <div className="mt-4 flex items-center justify-end gap-2">
           <DialogClose>Close</DialogClose>
           <DialogClose asChild unstyled>
-            <Button>Submit</Button>
+            <Button color="primary">Submit</Button>
           </DialogClose>
         </div>
       </DialogContent>
@@ -65,8 +80,8 @@ const DialogUnstyled = (args: DialogProps) => {
   return (
     <Dialog {...args}>
       <DialogTrigger className="bg-accent p-2">Sign In</DialogTrigger>
-      <DialogContent className="bg-main relative border-medium  p-4">
-        <DialogClose className="text-muted-text hover:text-main-text absolute right-4 top-4 border-none p-2 text-large">
+      <DialogContent className="bg-background border-medium relative  p-4">
+        <DialogClose className="text-muted-foreground hover:text-foreground text-large absolute right-4 top-4 border-none p-2">
           <LuX />
         </DialogClose>
         <div>

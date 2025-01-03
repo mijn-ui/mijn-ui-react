@@ -30,7 +30,7 @@ const meta = {
     variant: {
       type: "string",
       control: "select",
-      options: ["default", "outlined", "surface"],
+      options: ["default", "outlined", "filled"],
     },
   },
 }
@@ -119,7 +119,7 @@ const AccordionWithCustomIcons = (args: AccordionProps) => (
 const AccordionUnstyled = (args: AccordionProps) => (
   <Accordion
     {...args}
-    className="md:w-xl w-60 rounded-2xl border-small border-orange-500 p-4"
+    className="md:w-xl border-small w-60 rounded-2xl border-orange-500 p-4"
   >
     <AccordionItem className="my-2" value="item-1">
       <AccordionTrigger
@@ -130,7 +130,7 @@ const AccordionUnstyled = (args: AccordionProps) => (
       >
         Is it accessible
       </AccordionTrigger>
-      <AccordionContent className="bg-neutral-300 px-4 py-2 text-small dark:bg-neutral-700">
+      <AccordionContent className="text-small bg-neutral-300 px-4 py-2 dark:bg-neutral-700">
         Yes. It adheres to the WAI-ARIA design pattern.
       </AccordionContent>
     </AccordionItem>
@@ -144,7 +144,7 @@ const AccordionUnstyled = (args: AccordionProps) => (
       >
         Is it unstyled
       </AccordionTrigger>
-      <AccordionContent className="bg-neutral-300 px-4 py-2 text-small dark:bg-neutral-700">
+      <AccordionContent className="text-small bg-neutral-300 px-4 py-2 dark:bg-neutral-700">
         Yes, you can make the components unstyled by setting the{" "}
         <span className="font-semibold">unstyled</span> prop to{" "}
         <span className="font-semibold">true</span> on either a single component
@@ -161,7 +161,7 @@ const AccordionUnstyled = (args: AccordionProps) => (
       >
         Is it animated?
       </AccordionTrigger>
-      <AccordionContent className="bg-neutral-300 px-4 py-2 text-small dark:bg-neutral-700">
+      <AccordionContent className="text-small bg-neutral-300 px-4 py-2 dark:bg-neutral-700">
         Yes! You can animate the Accordion with CSS or JavaScript.
       </AccordionContent>
     </AccordionItem>
@@ -207,19 +207,19 @@ export const Variants: Story = {
     return (
       <div className="flex flex-col items-center gap-8">
         <div className="space-y-2">
-          <h3 className="text-muted-text w-full text-start font-semibold">
+          <h3 className="text-muted-foreground w-full text-start font-semibold">
             Default
           </h3>
           <AccordionTemplate {...args} />
         </div>
         <div className="space-y-2">
-          <h3 className="text-muted-text w-full text-start font-semibold">
-            Surface
+          <h3 className="text-muted-foreground w-full text-start font-semibold">
+            Filled
           </h3>
-          <AccordionTemplate {...args} variant="surface" />
+          <AccordionTemplate {...args} variant="filled" />
         </div>
         <div className="space-y-2">
-          <h3 className="text-muted-text w-full text-start font-semibold">
+          <h3 className="text-muted-foreground w-full text-start font-semibold">
             Outlined
           </h3>
           <AccordionTemplate {...args} variant="outlined" />

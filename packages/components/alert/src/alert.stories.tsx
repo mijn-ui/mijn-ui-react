@@ -1,4 +1,6 @@
+import { IconSvgProps } from "@mijn-ui/shared-icons"
 import type { Meta, StoryObj } from "@storybook/react"
+
 import {
   Alert,
   AlertDescription,
@@ -6,7 +8,6 @@ import {
   AlertProps,
   AlertTitle,
 } from "./alert"
-import { IconSvgProps } from "@mijn-ui/shared-icons"
 
 const meta: Meta<typeof Alert> = {
   title: "Components/Alert",
@@ -73,31 +74,31 @@ export const Colors: Story = {
   render: (args: AlertProps) => (
     <div className="flex flex-col items-center gap-8">
       <div className="space-y-2">
-        <h3 className="text-muted-text w-full text-start font-semibold">
+        <h3 className="text-muted-foreground w-full text-start font-semibold">
           Success
         </h3>
         <AlertTemplate {...args} />
       </div>
       <div className="space-y-2">
-        <h3 className="text-muted-text w-full text-start font-semibold">
+        <h3 className="text-muted-foreground w-full text-start font-semibold">
           Info
         </h3>
         <AlertTemplate {...args} color="info" />
       </div>
       <div className="space-y-2">
-        <h3 className="text-muted-text w-full text-start font-semibold">
+        <h3 className="text-muted-foreground w-full text-start font-semibold">
           Warning
         </h3>
         <AlertTemplate {...args} color="warning" />
       </div>
       <div className="space-y-2">
-        <h3 className="text-muted-text w-full text-start font-semibold">
+        <h3 className="text-muted-foreground w-full text-start font-semibold">
           Danger
         </h3>
         <AlertTemplate {...args} color="danger" />
       </div>
       <div className="space-y-2">
-        <h3 className="text-muted-text w-full text-start font-semibold">
+        <h3 className="text-muted-foreground w-full text-start font-semibold">
           Default
         </h3>
         <AlertTemplate {...args} color="default" />
@@ -113,21 +114,21 @@ export const Variants: Story = {
   render: (args: AlertProps) => (
     <div className="flex flex-col items-center gap-8">
       <div className="space-y-2">
-        <h3 className="text-muted-text w-full text-start font-semibold">
+        <h3 className="text-muted-foreground w-full text-start font-semibold">
           Filled
         </h3>
         <AlertTemplate {...args} />
       </div>
 
       <div className="space-y-2">
-        <h3 className="text-muted-text w-full text-start font-semibold">
+        <h3 className="text-muted-foreground w-full text-start font-semibold">
           Subtle / Default
         </h3>
         <AlertTemplate {...args} variant="subtle" />
       </div>
 
       <div className="space-y-2">
-        <h3 className="text-muted-text w-full text-start font-semibold">
+        <h3 className="text-muted-foreground w-full text-start font-semibold">
           Outlined
         </h3>
         <AlertTemplate {...args} variant="outlined" />

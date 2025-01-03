@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react"
+
 import { Badge, BadgeProps } from "./badge"
 
 const meta: Meta<typeof Badge> = {
@@ -9,25 +10,39 @@ const meta: Meta<typeof Badge> = {
   },
   args: {
     variant: "filled",
-    color: "primary",
+    color: "default",
     radius: "full",
     unstyled: false,
+    size: "md",
   },
   argTypes: {
     variant: {
       type: "string",
       control: "select",
-      options: ["filled", "outlined", "text"],
+      options: ["filled", "outlined", "ghost"],
     },
     color: {
       type: "string",
       control: "select",
-      options: ["primary", "secondary", "accent", "muted", "danger"],
+      options: [
+        "default",
+        "primary",
+        "secondary",
+        "success",
+        "info",
+        "warning",
+        "danger",
+      ],
     },
     radius: {
       type: "string",
       control: "select",
       options: ["none", "sm", "md", "lg", "full"],
+    },
+    size: {
+      type: "string",
+      control: "select",
+      options: ["sm", "md", "lg", "icon"],
     },
   },
 }
@@ -42,15 +57,21 @@ const BadgeTemplate = (args: BadgeProps) => {
 const BadgeColors = (args: BadgeProps) => {
   return (
     <div className="flex items-center gap-8">
-      <Badge {...args}>Primary</Badge>
+      <Badge {...args}>Default</Badge>
+      <Badge {...args} color="primary">
+        Primary
+      </Badge>
       <Badge {...args} color="secondary">
         Secondary
       </Badge>
-      <Badge {...args} color="accent">
-        Accent
+      <Badge {...args} color="success">
+        Success
       </Badge>
-      <Badge {...args} color="muted">
-        Muted
+      <Badge {...args} color="info">
+        Info
+      </Badge>
+      <Badge {...args} color="warning">
+        Warning
       </Badge>
       <Badge {...args} color="danger">
         Danger
@@ -63,22 +84,22 @@ const BadgeVariants = (args: BadgeProps) => {
   return (
     <div className="flex flex-col items-center gap-12">
       <div>
-        <h3 className="text-muted-text mb-3 w-full text-start font-semibold">
+        <h3 className="text-muted-foreground mb-3 w-full text-start font-semibold">
           Filled
         </h3>
         <BadgeColors variant="filled" {...args} />
       </div>
       <div>
-        <h3 className="text-muted-text mb-3 w-full text-start font-semibold">
+        <h3 className="text-muted-foreground mb-3 w-full text-start font-semibold">
           Outlined
         </h3>
         <BadgeColors variant="outlined" />
       </div>
       <div>
-        <h3 className="text-muted-text mb-3 w-full text-start font-semibold">
-          Text
+        <h3 className="text-muted-foreground mb-3 w-full text-start font-semibold">
+          Ghost
         </h3>
-        <BadgeColors variant="text" />
+        <BadgeColors variant="ghost" />
       </div>
     </div>
   )
@@ -99,6 +120,23 @@ const BadgeRadius = (args: BadgeProps) => {
       </Badge>
       <Badge {...args} radius="full" className="px-4">
         full
+      </Badge>
+    </div>
+  )
+}
+
+const BadgeSizes = (args: BadgeProps) => {
+  return (
+    <div className="flex items-center gap-8">
+      <Badge {...args}>Badge xs</Badge>
+      <Badge {...args} size="sm">
+        Badge sm
+      </Badge>
+      <Badge {...args} size="md">
+        Badge md
+      </Badge>
+      <Badge {...args} size="lg">
+        Badge lg
       </Badge>
     </div>
   )
@@ -128,6 +166,13 @@ export const Radius: Story = {
   render: BadgeRadius,
   args: {
     radius: "none",
+  },
+}
+
+export const Sizes: Story = {
+  render: BadgeSizes,
+  args: {
+    size: "xs",
   },
 }
 

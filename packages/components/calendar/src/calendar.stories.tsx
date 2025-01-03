@@ -23,7 +23,7 @@ export default meta
 type Story = StoryObj<typeof Calendar>
 
 const renderDate = (date?: Date) => {
-  return <Badge color="muted">{date?.toLocaleDateString("UK")}</Badge>
+  return <Badge>{date?.toLocaleDateString("UK")}</Badge>
 }
 
 const renderDateRange = (dateRange?: DateRange) => {
@@ -46,7 +46,7 @@ const CalendarTemplate = (args: CalendarProps) => {
         className="rounded-large border"
         unstyled={args.unstyled}
       />
-      <p className="text-muted-text mt-2 text-small">
+      <p className="text-muted-foreground text-small mt-2">
         Selected Date: {renderDate(date)}
       </p>
     </div>
@@ -65,7 +65,7 @@ const CalendarMultiple = (args: CalendarProps) => {
         className="rounded-large border"
         unstyled={args.unstyled}
       />
-      <p className="text-muted-text mt-2 w-64 text-small leading-6">
+      <p className="text-muted-foreground text-small mt-2 w-64 leading-6">
         Selected Dates: {dates?.map((date) => renderDate(date))}
       </p>
     </div>
@@ -84,7 +84,7 @@ const CalendarRange = (args: CalendarProps) => {
         className="rounded-large border"
         unstyled={args.unstyled}
       />
-      <p className="text-muted-text mt-2 w-64 text-small">
+      <p className="text-muted-foreground text-small mt-2 w-64">
         Selected Date Range: <br />
         {dateRange && renderDateRange(dateRange)}
       </p>
@@ -109,12 +109,12 @@ const CalendarUnstyled = (args: CalendarProps) => {
           day_button: "p-2",
           months: "relative",
           month_caption: "flex justify-center",
-          outside: "text-muted-text opacity-50",
+          outside: "text-muted-foreground opacity-50",
           today: "bg-accent",
         }}
         unstyled={args.unstyled}
       />
-      <p className="text-muted-text mt-2 text-small">
+      <p className="text-muted-foreground text-small mt-2">
         Selected Date: {renderDate(date)}
       </p>
     </div>

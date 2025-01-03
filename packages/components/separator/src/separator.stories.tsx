@@ -32,7 +32,7 @@ const SelectTemplate = (args: SeparatorProps) => {
         <h4 className="text-small font-medium leading-none">
           Radix Primitives
         </h4>
-        <p className="text-muted-text text-small">
+        <p className="text-muted-foreground text-small">
           An open-source UI component library.
         </p>
       </div>
@@ -55,22 +55,22 @@ const SelectUnstyled = (args: SeparatorProps) => {
         <h4 className="text-small font-medium leading-none">
           Radix Primitives
         </h4>
-        <p className="text-muted-text text-small">
+        <p className="text-muted-foreground text-small">
           An open-source UI component library.
         </p>
       </div>
-      <Separator {...args} className="bg-main-text my-4 h-px w-full" />
+      <Separator {...args} className="bg-foreground my-4 h-px w-full" />
       <div className="flex h-5 items-center space-x-4 text-small">
         <div>Blog</div>
         <Separator
           {...args}
-          className="bg-main-text h-full w-px"
+          className="bg-foreground h-full w-px"
           orientation="vertical"
         />
         <div>Docs</div>
         <Separator
           {...args}
-          className="bg-main-text h-full w-px"
+          className="bg-foreground h-full w-px"
           orientation="vertical"
         />
         <div>Source</div>

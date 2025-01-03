@@ -46,7 +46,7 @@ const ProgressTemplate = (args: ProgressProps) => {
 
   return (
     <div className="w-80 space-y-1">
-      <div className="text-main-text flex items-center justify-between text-small font-medium">
+      <div className="text-foreground flex items-center justify-between text-small font-medium">
         <h5>Progress Label</h5>
         <p>{value}%</p>
       </div>
@@ -62,7 +62,7 @@ const ProgressTemplate = (args: ProgressProps) => {
         }
         {...args}
       />
-      <div className="text-muted-text flex items-center justify-between text-tiny">
+      <div className="text-muted-foreground flex items-center justify-between text-tiny">
         <p>min</p>
         <p>max</p>
       </div>

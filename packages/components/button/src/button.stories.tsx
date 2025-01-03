@@ -10,7 +10,7 @@ const meta: Meta<typeof Button> = {
   },
   args: {
     variant: "filled",
-    color: "primary",
+    color: "default",
     radius: "md",
     size: "md",
     loading: false,
@@ -22,12 +22,20 @@ const meta: Meta<typeof Button> = {
     variant: {
       type: "string",
       control: "select",
-      options: ["filled", "outlined", "text"],
+      options: ["filled", "outlined", "ghost"],
     },
     color: {
       type: "string",
       control: "select",
-      options: ["primary", "secondary", "accent", "muted", "danger"],
+      options: [
+        "default",
+        "primary",
+        "secondary",
+        "success",
+        "info",
+        "warning",
+        "danger",
+      ],
     },
     radius: {
       type: "string",
@@ -52,15 +60,21 @@ const ButtonTemplate = (args: ButtonProps) => {
 const ButtonColors = (args: ButtonProps) => {
   return (
     <div className="flex items-center gap-8">
-      <Button {...args}>Primary</Button>
+      <Button {...args}>Default</Button>
+      <Button {...args} color="primary">
+        Primary
+      </Button>
       <Button {...args} color="secondary">
         Secondary
       </Button>
-      <Button {...args} color="accent">
-        Accent
+      <Button {...args} color="success">
+        Success
       </Button>
-      <Button {...args} color="muted">
-        Muted
+      <Button {...args} color="info">
+        Info
+      </Button>
+      <Button {...args} color="warning">
+        Warning
       </Button>
       <Button {...args} color="danger">
         Danger
@@ -73,22 +87,22 @@ const ButtonVariants = (args: ButtonProps) => {
   return (
     <div className="flex flex-col items-center gap-12">
       <div>
-        <h3 className="text-muted-text mb-3 w-full text-start font-semibold">
+        <h3 className="text-muted-foreground mb-3 w-full text-start font-semibold">
           Filled
         </h3>
         <ButtonColors variant="filled" {...args} />
       </div>
       <div>
-        <h3 className="text-muted-text mb-3 w-full text-start font-semibold">
+        <h3 className="text-muted-foreground mb-3 w-full text-start font-semibold">
           Outlined
         </h3>
         <ButtonColors variant="outlined" />
       </div>
       <div>
-        <h3 className="text-muted-text mb-3 w-full text-start font-semibold">
-          Text
+        <h3 className="text-muted-foreground mb-3 w-full text-start font-semibold">
+          Ghost
         </h3>
-        <ButtonColors variant="text" />
+        <ButtonColors variant="ghost" />
       </div>
     </div>
   )
