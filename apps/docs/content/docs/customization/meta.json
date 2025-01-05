@@ -1,3 +1,13 @@
 {
-  "pages": ["dark-mode", "override-styles", "custom-variants", "..."]
+  "pages": [
+    "theme",
+    "layout",
+    "colors",
+    "customize-theme",
+    "create-theme",
+    "dark-mode",
+    "override-styles",
+    "custom-variants",
+    "..."
+  ]
 }

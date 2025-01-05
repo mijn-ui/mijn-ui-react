@@ -1,10 +1,15 @@
+import "./css/global.css"
+
 import type { ReactNode } from "react"
+
+import { RootProvider } from "fumadocs-ui/provider"
 import dynamic from "next/dynamic"
 import { Inter } from "next/font/google"
-import ThemeProvider from "./components/providers/theme-provider"
-import "./css/global.css"
-import { RootProvider } from "fumadocs-ui/provider"
+
 import { baseUrl, createMetadata } from "@/lib/metadata"
+
+import ThemeProvider from "./components/providers/theme-provider"
+import { TooltipProvider } from "./components/tooltip"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,7 +51,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               },
             }}
           >
-            {children}
+            <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
           </RootProvider>
         </ThemeProvider>
       </body>

@@ -16,7 +16,7 @@ You can create or override the component `variants`, `defaultVariants`, and `com
   title="Note:"
   description={
     <span>
-      For quick customizations, refer to the <Link className="underline decoration-primary text-main-text" href="/docs/customization/override-styles">Override Styles</Link> documentation.
+      For quick customizations, refer to the <Link className="underline decoration-primary text-foreground" href="/docs/customization/override-styles">Override Styles</Link> documentation.
     </span>
   }
 />
@@ -30,7 +30,7 @@ Components like the `Label`, `Badge` have only one slot, meaning they don't have
 <Alert 
   description={
     <span>
-    If you are not familiar with the variants concept, please refer to the <Link className="underline decoration-primary text-main-text" href="https://www.tailwind-variants.org/docs/variants">Tailwind Variants</Link> documentation.
+    If you are not familiar with the variants concept, please refer to the <Link className="underline decoration-primary text-foreground" href="https://www.tailwind-variants.org/docs/variants">Tailwind Variants</Link> documentation.
     </span>
   }
 />
@@ -41,11 +41,11 @@ Components like the `Label`, `Badge` have only one slot, meaning they don't have
 Here's how you can create a custom variant for the Badge component, Go [here](https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/badge.ts) to view the styles source code.
 
 <ComponentPreview className="!min-h-24">
-  <MyBadge color="olive" size="xl" variant="text">
+  <MyBadge color="olive" size="md" variant="ghost">
     Extended Badge
   </MyBadge>
 
-  <MyBadge color="olive" size="xl">
+  <MyBadge color="olive" size="md">
     Extended Badge
   </MyBadge>
 </ComponentPreview>
@@ -70,7 +70,7 @@ Here's how you can create a custom variant for the Badge component, Go [here](ht
   const DemoUsage = () => {
     return (
     <div>
-      <MyBadge color="olive" size="xl" variant="text">
+      <MyBadge color="olive" size="xl" variant="ghost">
         Extended Badge
       </MyBadge>
 
@@ -93,7 +93,7 @@ For components with multiple slots, such as the [Input](/docs/components/input)Â
 <Alert 
   description={
     <span>
-    If you are not familiar with the variants concept, please refer to the <Link className="underline decoration-primary text-main-text" href="https://www.tailwind-variants.org/docs/variants">Tailwind Variants</Link> documentation.
+    If you are not familiar with the variants concept, please refer to the <Link className="underline decoration-primary text-foreground" href="https://www.tailwind-variants.org/docs/variants">Tailwind Variants</Link> documentation.
     </span>
   }
 />
@@ -185,7 +185,7 @@ type ExtendVariantsOptions = {
 <Alert 
   description={
   <span>
-  See the <Link className="underline decoration-primary text-main-text" href="https://www.tailwind-variants.org/docs/variants">Tailwind Merge Config</Link> to learn more about it.
+  See the <Link className="underline decoration-primary text-foreground" href="https://www.tailwind-variants.org/docs/variants">Tailwind Merge Config</Link> to learn more about it.
   </span>
   }
 />

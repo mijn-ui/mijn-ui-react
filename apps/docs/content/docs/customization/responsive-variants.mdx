@@ -33,7 +33,7 @@ There are two main ways to create responsive variants:
       {" "}
       Although you can use{" "}
       <Link
-        className="underline decoration-primary text-main-text"
+        className="underline decoration-primary text-foreground"
         href="https://www.tailwind-variants.org/docs/getting-started#responsive-variants-optional"
       >
         tailwind-variants
@@ -42,7 +42,7 @@ There are two main ways to create responsive variants:
       when it comes to making compound variants responsive. To overcome this
       limitation, you can use the{" "}
       <Link
-        className="underline decoration-primary text-main-text"
+        className="underline decoration-primary text-foreground"
         href="#making-component-responsive-using-use-responsive-variants-hook"
       >
         use-responsive-variants
@@ -53,6 +53,13 @@ There are two main ways to create responsive variants:
 />
 
 <Steps>
+  <Step>
+    ### Install necessary dependencies
+
+    ```package-install
+    tailwind-variants
+    ```
+  </Step>
   <Step>
     ### Configure Tailwind CSS
 
@@ -76,14 +83,8 @@ There are two main ways to create responsive variants:
   </Step>
   <Step>
     ### Applying Responsive Variants to Component
-    
-    1. Install the `tailwind-variants` package:
 
-      ```package-install
-      tailwind-variants
-      ```
-
-    2. After installing the package, you can apply the responsive variants to the component like this:
+    You can apply the responsive variants to the component like this:
 
     ```json doc-gen:file
     {
