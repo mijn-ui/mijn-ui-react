@@ -54,19 +54,25 @@ import { Button } from "@mijn-ui/react-button"
 ### Colors
 
 <ComponentPreview className="flex-col md:flex-row">
-  <Button color="primary">Primary</Button>
-  <Button color="secondary">Secondary</Button>
-  <Button color="accent">Accent</Button>
-  <Button color="muted">Muted</Button>
-  <Button color="danger">Danger</Button>
+  <div className="flex items-center flex-wrap gap-4">
+    <Button color="default">Default</Button>
+    <Button color="primary">Primary</Button>
+    <Button color="secondary">Secondary</Button>
+    <Button color="success">Success</Button>
+    <Button color="info">Info</Button>
+    <Button color="warning">Warning</Button>
+    <Button color="danger">Danger</Button>
+  </div>
 </ComponentPreview>
 
 ```tsx
-<Button color="primary">Primary</Button>
-<Button color="secondary">Secondary</Button>
-<Button color="accent">Accent</Button>
-<Button color="muted">Muted</Button>
-<Button color="danger">Danger</Button>
+  <Button color="default">Default</Button>
+  <Button color="primary">Primary</Button>
+  <Button color="secondary">Secondary</Button>
+  <Button color="success">Success</Button>
+  <Button color="info">Info</Button>
+  <Button color="warning">Warning</Button>
+  <Button color="danger">Danger</Button>
 ```
 
 ---
@@ -75,107 +81,153 @@ import { Button } from "@mijn-ui/react-button"
 
 #### Filled
 
-There are four colors available for the filled variant `primary`, `accent`, `muted` and `danger`.
-
 <ComponentPreview className="flex-col md:flex-row">
+  <div className="flex items-center flex-wrap gap-4">
+    <Button variant="filled" color="default">
+      Default
+    </Button>
+    <Button variant="filled" color="primary">
+      Primary
+    </Button>
+    <Button variant="filled" color="secondary">
+      Secondary
+    </Button>
+    <Button variant="filled" color="success">
+      Success
+    </Button>
+    <Button variant="filled" color="info">
+      Info
+    </Button>
+    <Button variant="filled" color="warning">
+      Warning
+    </Button>
+    <Button variant="filled" color="danger">
+      Danger
+    </Button>
+  </div>
+</ComponentPreview>
+
+```tsx
+  <Button variant="filled" color="default">
+    Default
+  </Button>
   <Button variant="filled" color="primary">
     Primary
   </Button>
   <Button variant="filled" color="secondary">
     Secondary
   </Button>
-  <Button variant="filled" color="accent">
-    Accent
+  <Button variant="filled" color="success">
+    Success
   </Button>
-  <Button variant="filled" color="muted">
-    Muted
+  <Button variant="filled" color="info">
+    Info
+  </Button>
+  <Button variant="filled" color="warning">
+    Warning
   </Button>
   <Button variant="filled" color="danger">
     Danger
   </Button>
-</ComponentPreview>
-
-```tsx
-<Button variant="filled" color="primary">Primary</Button>
-<Button variant="filled" color="secondary">Secondary</Button>
-<Button variant="filled" color="accent">Accent</Button>
-<Button variant="filled" color="muted">Muted</Button>
-<Button variant="filled" color="danger">Danger</Button>
 ```
 
 ---
 
-#### Outline
-
-There are four colors available for the outline variant `primary`, `accent`, `muted` and `danger`.
+#### Outlined
 
 <ComponentPreview className="flex-col md:flex-row">
-  <Button variant="outlined" color="primary">
-    Primary
-  </Button>
-  <Button variant="outlined" color="secondary">
-    Secondary
-  </Button>
-  <Button variant="outlined" color="accent">
-    Accent
-  </Button>
-  <Button variant="outlined" color="muted">
-    Muted
-  </Button>
-  <Button variant="outlined" color="danger">
-    Danger
-  </Button>
+  <div className="flex items-center flex-wrap gap-4">
+    <Button variant="outlined" color="default">
+      Default
+    </Button>
+    <Button variant="outlined" color="primary">
+      Primary
+    </Button>
+    <Button variant="outlined" color="secondary">
+      Secondary
+    </Button>
+    <Button variant="outlined" color="success">
+      Success
+    </Button>
+    <Button variant="outlined" color="info">
+      Info
+    </Button>
+    <Button variant="outlined" color="warning">
+      Warning
+    </Button> 
+    <Button variant="outlined" color="danger">
+      Danger
+    </Button>
+  </div>
 </ComponentPreview>
 
 ```tsx
+<Button variant="outlined" color="default">Default</Button>
 <Button variant="outlined" color="primary">Primary</Button>
 <Button variant="outlined" color="secondary">Secondary</Button>
-<Button variant="outlined" color="accent">Accent</Button>
-<Button variant="outlined" color="muted">Muted</Button>
+<Button variant="outlined" color="default">Muted</Button>
 <Button variant="outlined" color="danger">Danger</Button>
 ```
 
 ---
 
-#### Text
-
-There are four colors available for the text variant `primary`, `accent`, `muted` and `danger`.
+#### Ghost
 
 <ComponentPreview className="flex-col md:flex-row">
-  <Button variant="text" color="primary">
-    Primary
-  </Button>
-  <Button variant="text" color="secondary">
-    Secondary
-  </Button>
-  <Button variant="text" color="accent">
-    Accent
-  </Button>
-  <Button variant="text" color="muted">
-    Muted
-  </Button>
-  <Button variant="text" color="danger">
-    Danger
-  </Button>
+  <div className="flex items-center flex-wrap gap-4">
+    <Button variant="ghost" color="default">
+      Default
+    </Button>
+    <Button variant="ghost" color="primary">
+      Primary
+    </Button>
+    <Button variant="ghost" color="secondary">
+      Secondary
+    </Button>
+    <Button variant="ghost" color="success">
+      Success
+    </Button>
+    <Button variant="ghost" color="info">
+      Info
+    </Button>
+    <Button variant="ghost" color="warning">
+      Warning
+    </Button>
+    <Button variant="ghost" color="danger">
+      Danger
+    </Button>
+  </div>
 </ComponentPreview>
 
 ```tsx
-<Button variant="text" color="primary">Primary</Button>
-<Button variant="text" color="secondary">Secondary</Button>
-<Button variant="text" color="accent">Accent</Button>
-<Button variant="text" color="muted">Muted</Button>
-<Button variant="text" color="danger">Danger</Button>
+  <Button variant="ghost" color="default">
+    Default
+  </Button>
+  <Button variant="ghost" color="primary">
+    Primary
+  </Button>
+  <Button variant="ghost" color="secondary">
+    Secondary
+  </Button>
+  <Button variant="ghost" color="default">
+    Muted
+  </Button>
+  <Button variant="ghost" color="danger">
+    Danger
+  </Button>
 ```
 
 ---
 
 ### Radius
 
-<ComponentPreview className="flex-col md:flex-row">
-  <Button radius="sm">Button</Button>
-  <Button radius="md">Button</Button>
-  <Button radius="lg">Button</Button>
-  <Button radius="full">Button</Button>
+<ComponentPreview>
+  <div className="flex items-center flex-wrap gap-4">
+    <Button radius="sm">Button</Button>
+    <Button radius="md">Button</Button>
+    <Button radius="lg">Button</Button>
+    <Button radius="full">Button</Button>
+  </div>
 </ComponentPreview>
 
 ```tsx
@@ -189,16 +241,18 @@ There are four colors available for the text variant `primary`, `accent`, `muted
 
 ### Sizes
 
-<ComponentPreview className="flex-col md:flex-row">
-  <Button size="sm">Button</Button>
-  <Button size="md">Button</Button>
-  <Button size="lg">Button</Button>
-  <Button size="icon">B</Button>
+<ComponentPreview>
+<div className="flex items-end flex-wrap gap-4">
+  <Button size="sm">sm</Button>
+  <Button size="md">md</Button>
+  <Button size="lg">lg</Button>
+  <Button size="icon">icon</Button>
+</div>
 </ComponentPreview>
 
 ```tsx
-<Button size="sm">Button</Button>
-<Button size="md">Button</Button>
-<Button size="lg">Button</Button>
-<Button size="icon">B</Button>
+<Button size="sm">sm</Button>
+<Button size="md">md</Button>
+<Button size="lg">lg</Button>
+<Button size="icon">icon</Button>
 ```

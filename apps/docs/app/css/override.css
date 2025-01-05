@@ -66,3 +66,7 @@ h1 {
     @apply !bg-background;
   }
 }
+
+.fd-codeblock code {
+  font-size: 14px !important;
+}

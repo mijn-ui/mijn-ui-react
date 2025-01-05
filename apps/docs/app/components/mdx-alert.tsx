@@ -1,7 +1,6 @@
 import { ReactNode } from "react"
 
 import { FiAlertCircle } from "react-icons/fi"
-import { LuBug } from "react-icons/lu"
 
 import {
   Alert as MijnUIAlert,
@@ -26,8 +25,6 @@ const Alert = ({
   variant,
   className,
 }: AlertProps) => {
-  const Icon = color === "danger" ? LuBug : FiAlertCircle
-
   return (
     <MijnUIAlert
       className={cn("not-prose w-full backdrop-blur-md", className)}
@@ -35,7 +32,7 @@ const Alert = ({
       color={color}
     >
       <AlertIcon>
-        <Icon />
+        <FiAlertCircle />
       </AlertIcon>
       <AlertTitle>{title}</AlertTitle>
       <AlertDescription className={cn(!title && "mt-0")}>

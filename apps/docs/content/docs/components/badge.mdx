@@ -51,12 +51,26 @@ import { Badge } from "@mijn-ui/react-badge"
 ### Colors
 
 <ComponentPreview className="flex-col md:flex-row">
+  <div className="flex items-center flex-wrap gap-4">
+    <Badge color="default">Default</Badge>
+    <Badge color="primary">Primary</Badge>
+    <Badge color="secondary">Secondary</Badge>
+    <Badge color="success">Success</Badge>
+    <Badge color="info">Info</Badge>
+    <Badge color="warning">Warning</Badge>
+    <Badge color="danger">Danger</Badge>
+  </div>
+</ComponentPreview>
+
+```tsx
+  <Badge color="default">Default</Badge>
   <Badge color="primary">Primary</Badge>
   <Badge color="secondary">Secondary</Badge>
-  <Badge color="accent">Accent</Badge>
-  <Badge color="muted">Muted</Badge>
+  <Badge color="success">Success</Badge>
+  <Badge color="info">Info</Badge>
+  <Badge color="warning">Warning</Badge>
   <Badge color="danger">Danger</Badge>
-</ComponentPreview>
+```
 
 ---
 
@@ -64,107 +78,153 @@ import { Badge } from "@mijn-ui/react-badge"
 
 #### Filled
 
-There are four colors available for the filled variant `primary`, `accent`, `muted` and `danger`.
-
 <ComponentPreview className="flex-col md:flex-row">
+  <div className="flex items-center flex-wrap gap-4">
+    <Badge variant="filled" color="default">
+      Default
+    </Badge>
+    <Badge variant="filled" color="primary">
+      Primary
+    </Badge>
+    <Badge variant="filled" color="secondary">
+      Secondary
+    </Badge>
+    <Badge variant="filled" color="success">
+      Success
+    </Badge>
+    <Badge variant="filled" color="info">
+      Info
+    </Badge>
+    <Badge variant="filled" color="warning">
+      Warning
+    </Badge>
+    <Badge variant="filled" color="danger">
+      Danger
+    </Badge>
+  </div>
+</ComponentPreview>
+
+```tsx
+  <Badge variant="filled" color="default">
+    Default
+  </Badge>
   <Badge variant="filled" color="primary">
     Primary
   </Badge>
   <Badge variant="filled" color="secondary">
     Secondary
   </Badge>
-  <Badge variant="filled" color="accent">
-    Accent
+  <Badge variant="filled" color="success">
+    Success
   </Badge>
-  <Badge variant="filled" color="muted">
-    Muted
+  <Badge variant="filled" color="info">
+    Info
+  </Badge>
+  <Badge variant="filled" color="warning">
+    Warning
   </Badge>
   <Badge variant="filled" color="danger">
     Danger
   </Badge>
-</ComponentPreview>
-
-```tsx
-<Badge variant="filled" color="primary">Primary</Badge>
-<Badge variant="filled" color="secondary">Secondary</Badge>
-<Badge variant="filled" color="accent">Accent</Badge>
-<Badge variant="filled" color="muted">Munted</Badge>
-<Badge variant="filled" color="danger">Danger</Badge>
 ```
 
 ---
 
-#### Outline
-
-There are four colors available for the outline variant `primary`, `accent`, `muted` and `danger`.
+#### Outlined
 
 <ComponentPreview className="flex-col md:flex-row">
-  <Badge variant="outlined" color="primary">
-    Primary
-  </Badge>
-  <Badge variant="outlined" color="secondary">
-    Secondary
-  </Badge>
-  <Badge variant="outlined" color="accent">
-    Accent
-  </Badge>
-  <Badge variant="outlined" color="muted">
-    Muted
-  </Badge>
-  <Badge variant="outlined" color="danger">
-    Danger
-  </Badge>
+  <div className="flex items-center flex-wrap gap-4">
+    <Badge variant="outlined" color="default">
+      Default
+    </Badge>
+    <Badge variant="outlined" color="primary">
+      Primary
+    </Badge>
+    <Badge variant="outlined" color="secondary">
+      Secondary
+    </Badge>
+    <Badge variant="outlined" color="success">
+      Success
+    </Badge>
+    <Badge variant="outlined" color="info">
+      Info
+    </Badge>
+    <Badge variant="outlined" color="warning">
+      Warning
+    </Badge> 
+    <Badge variant="outlined" color="danger">
+      Danger
+    </Badge>
+  </div>
 </ComponentPreview>
 
 ```tsx
+<Badge variant="outlined" color="default">Default</Badge>
 <Badge variant="outlined" color="primary">Primary</Badge>
 <Badge variant="outlined" color="secondary">Secondary</Badge>
-<Badge variant="outlined" color="accent">Accent</Badge>
-<Badge variant="outlined" color="muted">Muted</Badge>
+<Badge variant="outlined" color="default">Muted</Badge>
 <Badge variant="outlined" color="danger">Danger</Badge>
 ```
 
 ---
 
-#### Text
-
-There are four colors available for the text variant `primary`, `accent`, `muted` and `danger`.
+#### Ghost
 
 <ComponentPreview className="flex-col md:flex-row">
-  <Badge variant="text" color="primary">
-    Primary
-  </Badge>
-  <Badge variant="text" color="secondary">
-    Secondary
-  </Badge>
-  <Badge variant="text" color="accent">
-    Accent
-  </Badge>
-  <Badge variant="text" color="muted">
-    Muted
-  </Badge>
-  <Badge variant="text" color="danger">
-    Danger
-  </Badge>
+  <div className="flex items-center flex-wrap gap-4">
+    <Badge variant="ghost" color="default">
+      Default
+    </Badge>
+    <Badge variant="ghost" color="primary">
+      Primary
+    </Badge>
+    <Badge variant="ghost" color="secondary">
+      Secondary
+    </Badge>
+    <Badge variant="ghost" color="success">
+      Success
+    </Badge>
+    <Badge variant="ghost" color="info">
+      Info
+    </Badge>
+    <Badge variant="ghost" color="warning">
+      Warning
+    </Badge>
+    <Badge variant="ghost" color="danger">
+      Danger
+    </Badge>
+  </div>
 </ComponentPreview>
 
 ```tsx
-<Badge variant="text" color="primary">Primary</Badge>
-<Badge variant="text" color="secondary">Secondary</Badge>
-<Badge variant="text" color="accent">Accent</Badge>
-<Badge variant="text" color="muted">Muted</Badge>
-<Badge variant="text" color="danger">Danger</Badge>
+  <Badge variant="ghost" color="default">
+    Default
+  </Badge>
+  <Badge variant="ghost" color="primary">
+    Primary
+  </Badge>
+  <Badge variant="ghost" color="secondary">
+    Secondary
+  </Badge>
+  <Badge variant="ghost" color="default">
+    Muted
+  </Badge>
+  <Badge variant="ghost" color="danger">
+    Danger
+  </Badge>
 ```
 
 ---
 
 ### Radius
 
-<ComponentPreview className="flex-col md:flex-row">
-  <Badge radius="sm">Badge</Badge>
-  <Badge radius="md">Badge</Badge>
-  <Badge radius="lg">Badge</Badge>
-  <Badge radius="full">Badge</Badge>
+<ComponentPreview>
+  <div className="flex items-center flex-wrap gap-4">
+    <Badge radius="sm">Badge</Badge>
+    <Badge radius="md">Badge</Badge>
+    <Badge radius="lg">Badge</Badge>
+    <Badge radius="full">Badge</Badge>
+  </div>
 </ComponentPreview>
 
 ```tsx
@@ -172,4 +232,24 @@ There are four colors available for the text variant `primary`, `accent`, `muted
 <Badge radius="md">Badge</Badge>
 <Badge radius="lg">Badge</Badge>
 <Badge radius="full">Badge</Badge>
+```
+
+---
+
+### Sizes
+
+<ComponentPreview>
+<div className="flex items-end flex-wrap gap-4">
+  <Badge size="xs">xs</Badge>
+  <Badge size="sm">sm</Badge>
+  <Badge size="md">md</Badge>
+  <Badge size="lg">lg</Badge>
+</div>
+</ComponentPreview>
+
+```tsx
+<Badge size="xs">xs</Badge>
+<Badge size="sm">sm</Badge>
+<Badge size="md">md</Badge>
+<Badge size="lg">lg</Badge>
 ```

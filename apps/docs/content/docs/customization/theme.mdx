@@ -1,0 +1,258 @@
+---
+title: Theme
+description: Learn how to use themes in MijnUI to create consistent and visually appealing user interfaces.
+---
+
+import Link from "next/link"
+
+### What is a Theme
+
+A **theme** in MijnUI is a collection of predefined styles, including colors, layout attributes, and UI components. Themes ensure visual consistency across your application, making it easier to manage and scale your design system.
+
+### Setup
+
+<Alert
+  color="info"
+  title="Note:"
+  description="If you're using pnpm with a monorepo architecture, ensure your configuration points to the ROOT `node_modules` directory."
+/>
+
+<Steps>
+  <Step>
+  #### Install Required Dependencies
+
+  ```package-install
+  tailwindcss-animate
+  ```
+  </Step>
+  
+  <Step>
+  #### Configure tailwind.config.ts
+
+```ts title="tailwind.config.ts"
+import { mijnUiPreset } from "@mijn-ui/react-theme" // [!code highlight]
+import animationPlugin from "tailwindcss-animate" // [!code highlight]
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    // ...
+    // make sure it's pointing to the ROOT node_module
+    "./node_modules/@mijn-ui/react-theme/dist/**/*.{js,ts,jsx,tsx}", // [!code highlight]
+  ],
+  darkMode: "class", // [!code highlight]
+  plugins: [animationPlugin, mijnUiPreset()], // [!code highlight]
+}
+```
+
+  </Step>
+
+  <Step>
+  #### Usage
+
+  Once your `tailwind.config.ts` is configured, you can start using the predefined CSS variables in your components. Here's an example:
+
+  ```tsx
+  export default function RootLayout({
+    children,
+  }: Readonly<{
+    children: React.ReactNode
+  }>) {
+    return (
+      <html lang="en" suppressHydrationWarning>
+        {/* [!code highlight] */}
+        <body className="dark bg-background text-foreground">{children}</body>
+      </html>
+    )
+  }
+  ```
+    
+  <Alert
+    title="Note:"
+    description={
+    <span>
+      For more details on customizing colors, check out the{" "}
+      <Link className="underline decoration-primary text-foreground" href="/docs/customization/override-styles">
+        Colors
+      </Link>{" "}
+      section.
+    </span>
+    }
+  />
+  </Step>
+</Steps>
+---
+
+### Default Plugin Options
+
+```ts
+export default {
+  plugins: [
+    mijnui({
+      prefix: "mijnui", // prefix for themes variables
+      defaultTheme: "light", // default theme from the themes object
+      defaultExtendTheme: "light", // default theme to extend on custom themes
+      layout: {}, // common layout tokens (applied to all themes)
+      themes: {
+        light: {
+          layout: {}, // light theme layout tokens
+          colors: {}, // light theme colors
+        },
+        dark: {
+          layout: {}, // dark theme layout tokens
+          colors: {}, // dark theme colors
+        },
+        // ... custom themes
+      },
+    }),
+  ],
+}
+```
+
+---
+
+### Themes Options
+
+These are the options that you can use to apply custom configurations to your themes.
+
+```ts
+export default {
+  plugins: [
+    mijnui({
+      themes: {
+        light: {
+          layout: {}, // [!code highlight]
+          colors: {} // [!code highlight]
+        },
+        dark: {
+          layout: {}, // [!code highlight]
+          colors: {} // [!code highlight]
+        },
+        ... // custom themes
+      }
+    })
+  ]
+}
+```
+
+---
+
+### Nested themes
+
+MijnUI supports nested themes, allowing you to apply different themes to different sections of your application:
+
+```tsx
+<html class="dark">
+  ...
+  <div class="light">...</div>
+  <div class="purple-dark">...</div>
+</html>
+```
+
+---
+
+### Theme based variants
+
+MijnUI supports nested themes, enabling you to apply different themes to specific sections of your application:
+
+```tsx
+// In dark theme, background will be dark and text will be light. 
+// In light theme, background will be light and text will be dark.
+
+<div class="dark dark:bg-gray-800 dark:text-white bg-white text-black">
+  ...
+  <div>Text color changes based on theme</div>
+</div>
+
+<div class="light light:bg-gray-100 light:text-black bg-black text-white">
+  ...
+  <div>Text color changes based on theme</div>
+</div>
+```
+
+---
+
+### API Reference
+
+The following table provides an overview of the various attributes you can use when working
+with themes in MijnUI:
+
+| Attribute          | Type                          | Description                                                                                                     | Default  |
+| ------------------ | ----------------------------- | --------------------------------------------------------------------------------------------------------------- | -------- |
+| prefix             | `string`                      | The prefix for the css variables.                                                                               | `mijnui` |
+| defaultTheme       | `light` \| `dark`             | The default theme to use.                                                                                       | `light`  |
+| defaultExtendTheme | `light` \| `dark`             | The default theme to extend.                                                                                    | `light`  |
+| layout             | [LayoutTheme](#layouttheme)   | The layout definitions.                                                                                         | -        |
+| themes             | [ConfigThemes](#configthemes) | The theme definitions.                                                                                          | -        |
+
+---
+
+### Types
+
+#### ConfigThemes
+
+```ts
+type ConfigTheme = {
+  extend?: "light" | "dark"; // base theme to extend
+  layout?: LayoutTheme; // see LayoutTheme
+  colors?: ThemeColors; // see ThemeColors
+};
+
+type ConfigThemes = Record<string, ConfigTheme>;
+```
+
+#### LayoutTheme
+
+```ts
+type BaseThemeUnit = {
+  small?: string;
+  medium?: string;
+  large?: string;
+};
+
+type FontThemeUnit = {
+  small?: string;
+  medium?: string;
+  large?: string;
+  tiny?: string;
+};
+
+interface LayoutTheme {
+  /**
+   * The default font size applied across the components.
+   */
+  fontSize?: FontThemeUnit;
+  /**
+   * The default line height applied across the components.
+   */
+  lineHeight?: FontThemeUnit;
+  /**
+   * The default radius applied across the components.
+   * we recommend to use `rem` units.
+   */
+  radius?: BaseThemeUnit;
+  /**
+   * A number between 0 and 1 that is applied as opacity-[value] when
+   * the component is hovered.
+   */
+  hoverOpacity?: string | number
+  /**
+   * A number between 0 and 1 that is applied as opacity-[value] when
+   * the component is disabled.
+   */
+  disabledOpacity?: string | number;
+  /**
+   * The default height applied to the divider component.
+   * we recommend to use `px` units.
+   */
+  dividerWeight?: string;
+  /**
+   * The border width applied across the components.
+   */
+  borderWidth?: BaseThemeUnit;
+  /**
+   * The box shadow applied across the components.
+   */
+  boxShadow?: BaseThemeUnit;
+}
+```

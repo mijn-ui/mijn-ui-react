@@ -20,6 +20,9 @@
   --fd-primary: var(--mijnui-primary); /* orange-500 */
   --fd-primary-foreground: var(--mijnui-primary-foreground); /* white */
 
+  --fd-secondary: var(--mijnui-default);
+  --fd-secondary-foreground: var(--mijnui-default-foreground);
+
   --fd-accent: var(--mijnui-accent); /* neutral-200 */
   --fd-accent-foreground: var(--mijnui-accent-foreground); /* black */
 

@@ -1,0 +1,147 @@
+---
+title: Colors
+description: Learn how to configure and customize colors with MijnUI.
+---
+
+import DefaultColorSwatches from "@/app/components/default-color-swatches";
+
+MijnUI's plugin allows you to customize the color palette of your theme, including `primary`, `secondary`, `accent`, and more. These color configurations are applied globally across all components, ensuring a consistent look and feel throughout your application.
+
+### Default Color Palette
+
+MijnUI provides a default color palette designed for most use cases. Colors are categorized into base, common, and status, each serving specific UI needs.
+
+- **Base Colors**: Fundamental colors for your application.
+
+- **Common Colors**: Frequently used colors for UI elements.
+
+- **Status Colors**: Colors indicating different statuses.
+
+---
+
+**Base Colors**
+
+<DefaultColorSwatches category="base" />
+
+---
+
+**Common Colors**
+
+<DefaultColorSwatches category="common" />
+
+---
+
+**Status Colors**
+
+<DefaultColorSwatches category="status" />
+
+---
+
+### Customizing Colors
+
+You can customize the theme colors by defining them in the `themes` object within the `mijnui` plugin configuration. Below is an example of how to configure colors for both light and dark themes, as well as a custom theme:
+
+```ts
+  themes: {
+    light: {
+      colors: { // [!code highlight]
+        background: "220 14% 96%", // [!code highlight]
+        foreground: "0 0% 0%", // [!code highlight]
+        primary: { // [!code highlight]
+          DEFAULT: "29 100% 52%", // [!code highlight]
+          foreground: "0 0% 100%", // [!code highlight]
+        }, // [!code highlight]
+        // ... rest of the colors
+      },
+    },
+    dark: {
+      colors: {
+        background: "0 0% 4%", // [!code highlight]
+        foreground: "0 0% 96%", // [!code highlight]
+        primary: { // [!code highlight]
+          DEFAULT: "29 100% 52%", // [!code highlight]
+          foreground: "0 0% 100%", // [!code highlight]
+        }, // [!code highlight]
+        // ... rest of the colors
+      }
+    },
+    mytheme: {
+      colors: {
+        extend: "dark",
+        colors: { 
+          primary: { // [!code highlight]
+            DEFAULT: "82, 85%, 67%", // [!code highlight]
+            foreground: "0 0% 0%", // [!code highlight]
+          }, // [!code highlight]
+          ring: "0 0% 0%" // [!code highlight]
+        }
+      }
+    }
+  },
+```
+
+<Alert
+  title="Important"
+  description="When customizing colors, make sure to use only HSL values without color functions (e.g: `hsl()`). Using functions will cause the theme system to fail."
+  color="danger"
+/>
+
+---
+
+### Using Default Colors
+
+The default color palette can be applied throughout your project, including text, background, and border colors. This makes it easy to maintain consistency in your UI.
+
+```tsx
+<div className="bg-default text-primary rounded-small px-2 py-1">
+  This is a default color box
+</div>
+```
+
+<ComponentPreview className="min-h-24">
+  <div className="bg-default text-primary rounded-small px-2 py-1">
+    This is a default color box
+  </div>
+</ComponentPreview>
+
+---
+
+### Importing Colors
+
+You can access default colors in your TypeScript files by importing them from: `@mijn-ui/react-theme`
+
+```ts
+import { defaultColors } from "@mijn-ui/react-theme";
+
+console.log(defaultColors.dark.warning.DEFAULT); // #EAB308
+console.log(defaultColors.light.primary.DEFAULT); // #F97316
+```
+
+---
+
+### Using CSS Variables
+
+MijnUI generates CSS variables for each color following the format `--prefix-colorname-shade`. By default, the prefix is `mijnui`, but you can customize it by setting the `prefix` option in your configuration:
+
+```ts
+export default {
+  plugins: [
+    mijnui({
+      prefix: "myapp", // [!code highlight]
+    }),
+  ],
+}
+```
+
+Then you can use the CSS variables in your CSS files.
+
+```css
+/* With default prefix */
+.my-component {
+  background-color: hsl(var(--mijnui-primary));
+}
+/*  With custom prefix */
+.my-component {
+  background-color: hsl(var(--myapp-primary));
+}
+```
