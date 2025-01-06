@@ -6,25 +6,54 @@ root: true
 
 import KeyFeaturesPlayground from "@/app/components/key-features-playground";
 
-### Welcome to Mijn-UI!
+MijnUI is a React component library designed to help you create a customized, robust design system with minimal effort.
 
-Hello there! 👋 Welcome to Mijn-UI, an open-source component library. Inspired by `Shadcn/ui` and `NextUI`, Mijn-UI aims to make your development process easier. Let's see what Mijn-UI offers!
+> Ever notice how, when a library becomes popular, all the apps start to look the same
 
-### What is Mijn-UI?
+### Motivation: The Issue with Similar-Looking Apps
 
-Mijn-UI is a component library designed to give you more control when building UI components. Here’s what you can expect:
+React component libraries have evolved over time, each solving some challenges while introducing others:
 
-- **Styled and Unstyled Variants**: Customize components to match your design preferences.
-- **Extensive Variant Options**: Integrate with your design system.
-- **Easy Integration**: Install Mijn-UI as an npm package for a smooth development experience.
+- **Material UI and Similar Libraries**: These libraries accelerated development by bundling styles with components, but their predefined aesthetics were difficult to customize. This led to many applications sharing a uniform "Material Design" look, making it hard to achieve a unique appearance.
+    
+- **Headless Libraries**: Headless libraries, such as Radix UI, provide unstyled components, giving developers full control over styling. However, this freedom often comes at the cost of time and effort spent on building and maintaining a cohesive design system from scratch.
+    
+- **Copy-Paste Trends**: Libraries like shadcn/ui offered a solid foundation with headless components and preconfigured styles. Despite this, the ease of use resulted in many apps adopting similar “minimalist” aesthetics, even when some customization was applied.
+
+---
+
+### How MijnUI Solves These Issues
+
+MijnUI addresses these challenges with features that make it flexible and easy to use:
+
+- **More Design Options**: Additional variants help integrate components seamlessly into your design system.
+- **Flexible Integration**: Choose between using MijnUI as an npm package or integrating components manually for full customization.
+- **Styled and Unstyled Modes**: While libraries like shadcn/ui require extra steps to override styles, MijnUI simplifies this process. Components like `DialogContent`, which often depend on complex logic, can switch to an unstyled mode by passing an `unstyled` prop. This saves time and effort while preserving the component’s functionality.
+
+Try it here!
 
 <KeyFeaturesPlayground />
 
+---
+
+### Why Choose MijnUI?
+
+MijnUI combines the functional approach of libraries like **shadcn/ui** with the theming flexibility of **nextui**. By blending these concepts, MijnUI gives developers the tools they need to build a unique design system with less effort.
+
+---
 
 ### Join Our Community
 
 Mijn-UI is an **open-source** project, and we believe in the power of community. We’d love for you to join us! Whether you want to try out our library, provide feedback, or contribute code, your input is invaluable. Let's collaborate and make Mijn-UI even better together.
 
-Happy coding! 🚀
+---
 
-— The Mijn-UI Team
+### Acknowledgements
+
+MijnUI wouldn’t be what it is without the inspiration and contributions from other open-source projects. We’d like to acknowledge the following libraries that influenced our development:
+
+- [Radix Primitives:](https://www.radix-ui.com/primitives) For offering unstyled, accessible components and providing the flexibility to build custom UIs.
+- [shadcn/ui](https://ui.shadcn.com/): For demonstrating how to combine headless components with customizable styles, serving as a great starting point for building unique designs.
+- [NextUI](https://nextui.org/) For its innovative theming system, which helped shape the approach to flexibility in MijnUI.
+
+We’re grateful to all these projects and their creators for making it easier to build beautiful, functional user interfaces.

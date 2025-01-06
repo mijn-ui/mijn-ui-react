@@ -56,7 +56,7 @@ h1 {
 }
 
 .fd-codeblock {
-  @apply bg-fd-card;
+  @apply !bg-fd-card;
 }
 
 /* override for the preview */

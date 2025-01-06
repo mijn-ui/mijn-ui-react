@@ -41,8 +41,6 @@ const KeyFeaturesPlayground = () => {
 
   return (
     <figure className="not-prose w-full">
-      <figcaption className="text-medium mb-3">Try it here!</figcaption>
-
       <div className="rounded-medium border-small flex h-80 w-full flex-col items-center overflow-hidden sm:flex-row">
         <div className="bg-background flex h-full min-h-32 flex-auto items-center justify-center">
           <Button {...buttonOptions}>
