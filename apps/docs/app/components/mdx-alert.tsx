@@ -4,30 +4,23 @@ import { FiAlertCircle } from "react-icons/fi"
 
 import {
   Alert as MijnUIAlert,
-  AlertDescription,
   AlertIcon,
   AlertTitle,
 } from "@mijn-ui/react-alert"
-import { AlertVariantProps, cn } from "@mijn-ui/react-theme"
+import { alertStyles, AlertVariantProps, cn } from "@mijn-ui/react-theme"
 
 type AlertProps = {
-  title: ReactNode
-  description: ReactNode
+  title?: ReactNode
   color?: AlertVariantProps["color"]
   variant?: AlertVariantProps["variant"]
   className?: string
+  children: ReactNode
 }
 
-const Alert = ({
-  title,
-  description,
-  color,
-  variant,
-  className,
-}: AlertProps) => {
+const Alert = ({ title, children, color, variant, className }: AlertProps) => {
   return (
     <MijnUIAlert
-      className={cn("not-prose w-full backdrop-blur-md", className)}
+      className={cn("w-full backdrop-blur-md", className)}
       variant={variant}
       color={color}
     >
@@ -35,9 +28,14 @@ const Alert = ({
         <FiAlertCircle />
       </AlertIcon>
       <AlertTitle>{title}</AlertTitle>
-      <AlertDescription className={cn(!title && "mt-0")}>
-        {description}
-      </AlertDescription>
+      <div
+        className={cn(
+          alertStyles().description({ className: "[&>*]:!my-0" }),
+          !title && "mt-0",
+        )}
+      >
+        {children}
+      </div>
     </MijnUIAlert>
   )
 }

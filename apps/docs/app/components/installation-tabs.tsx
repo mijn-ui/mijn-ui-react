@@ -37,12 +37,10 @@ const InstallationTabs = ({
       </TabsList>
 
       {value.toLocaleLowerCase() === "npm" && (
-        <Alert
-          color={"danger"}
-          title=""
-          description="NPM packages are currently unstable and may cause issues. Use it at your own risk."
-          className="unstable_alert mt-3 [&>p]:mt-0"
-        />
+        <Alert color={"danger"} className="unstable_alert mt-3">
+          NPM packages are currently unstable and may cause issues. Use it at
+          your own risk.
+        </Alert>
       )}
       {children}
     </Tabs>

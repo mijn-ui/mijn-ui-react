@@ -80,10 +80,9 @@ export default function App() {
   </div>
 </ComponentPreview>
 
-<Alert
-  className="mt-6"
-  description="See the Layout section for more details about the available tokens."
-/>
+<Alert className="mt-6">
+See the [Layout](/docs/customization/layout) section for more details about the available tokens.
+</Alert>
 
 ---
 
@@ -114,11 +113,9 @@ export default {
 };
 ```
 
-<Alert
-  title="Important"
-  description="When customizing colors, make sure to use only HSL values without color functions (e.g: `hsl()`)."
-  color="danger"
-/>
+<Alert title="Important:" color="danger" >
+  When customizing colors, make sure to use only HSL values without color functions (e.g: `hsl()`).
+</Alert>
 
 ```tsx
 import { Button } from "@mijn-ui/react-button";
@@ -144,4 +141,4 @@ export default function App() {
   </div> 
 </ComponentPreview>
 
-**🎉 That’s it!** You’ve successfully customized the default theme. Check out the [Colors]("/docs/customization/colors") section for more details about default colors and available tokens.
+**🎉 That’s it!** You’ve successfully customized the default theme. Check out the [Colors](/docs/customization/colors) section for more details about default colors and available tokens.

@@ -14,12 +14,9 @@ You can create or override the component `variants`, `defaultVariants`, and `com
 <Alert
   color="info"
   title="Note:"
-  description={
-    <span>
-      For quick customizations, refer to the <Link className="underline decoration-primary text-foreground" href="/docs/customization/override-styles">Override Styles</Link> documentation.
-    </span>
-  }
-/>
+>
+  For quick customizations, refer to the [Override Styles](/docs/customization/override-styles) documentation.
+</Alert>
 
 ---
 
@@ -27,14 +24,9 @@ You can create or override the component `variants`, `defaultVariants`, and `com
 
 Components like the `Label`, `Badge` have only one slot, meaning they don't have multiple parts that can be individually customized. However, you can still create custom variants to change their appearance and behavior.
 
-<Alert 
-  description={
-    <span>
-    If you are not familiar with the variants concept, please refer to the <Link className="underline decoration-primary text-foreground" href="https://www.tailwind-variants.org/docs/variants">Tailwind Variants</Link> documentation.
-    </span>
-  }
-/>
-
+<Alert>
+  If you are not familiar with the variants concept, please refer to the [Tailwind Variants](https://www.tailwind-variants.org/docs/variants) documentation.
+</Alert>
 
 #### Example: Custom Badge Variant
 
@@ -90,20 +82,16 @@ Here's how you can create a custom variant for the Badge component, Go [here](ht
 
 For components with multiple slots, such as the [Input](/docs/components/input)  component, you can create custom variants for each slot. This allows for more granular control over the component's appearance and behavior.
 
-<Alert 
-  description={
-    <span>
-    If you are not familiar with the variants concept, please refer to the <Link className="underline decoration-primary text-foreground" href="https://www.tailwind-variants.org/docs/variants">Tailwind Variants</Link> documentation.
-    </span>
-  }
-/>
+<Alert>
+  If you are not familiar with the variants concept, please refer to the [Tailwind Variants](https://www.tailwind-variants.org/docs/variants) documentation.
+</Alert>
 
 ### Example: Custom Input Variant
 
 Here's how you can create a custom variant for the Input component, Go [here](https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/input.ts) to view the styles source code.
 
 
-<ComponentPreview className="min-h-28 mt-4">
+<ComponentPreview className="min-h-24 mt-4">
   <MyInput startIcon={<LuSearch />} placeholder="Input With Extended Variants" />
 </ComponentPreview>
 
@@ -136,8 +124,9 @@ Here's how you can create a custom variant for the Input component, Go [here](h
 <Alert
   color="info"
   title="Note:"
-  description="All MijnUI components have the Styles source link on top of the page. This link will take you to the styles source code of the component. You can use this as a reference when creating your own custom component."
-/>
+>
+  All MijnUI components have the Styles source link on top of the page. This link will take you to the styles source code of the component. You can use this as a reference when creating your own custom component.
+</Alert>
 
 ---
 
@@ -182,10 +171,6 @@ type ExtendVariantsOptions = {
   twMergeConfig?: TWMergeConfig;
 ```
 
-<Alert 
-  description={
-  <span>
-  See the <Link className="underline decoration-primary text-foreground" href="https://www.tailwind-variants.org/docs/variants">Tailwind Merge Config</Link> to learn more about it.
-  </span>
-  }
-/>
+<Alert>
+  See the [Tailwind Merge Config](https://www.tailwind-variants.org/docs/variants) to learn more about it.
+</Alert>
