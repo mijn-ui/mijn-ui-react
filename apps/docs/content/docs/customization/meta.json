@@ -9,5 +9,6 @@
     "override-styles",
     "custom-variants",
     "..."
-  ]
+  ],
+  "defaultOpen": true
 }
