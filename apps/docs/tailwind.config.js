@@ -36,5 +36,5 @@ export default withTV({
       },
     },
   },
-  plugins: [animationPlugin, mijnui()], // !need to update the doucmentation for this
+  plugins: [animationPlugin, mijnui({})], // !need to update the doucmentation for this
 })
