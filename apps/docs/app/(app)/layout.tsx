@@ -1,11 +1,13 @@
 import type { ReactNode } from "react"
-import { Navbar, Footer } from "@/app/components/layout"
+
 import { Metadata } from "next"
+
+import { Footer, Navbar } from "@/app/components/layout"
 
 export const metadata: Metadata = {
   title: "React",
   description:
-    "An open-source library inspired by NextUI and Shadcn/ui, built with Radix Primitives and Tailwind CSS.",
+    "An open-source React component library built with Radix Primitives and Tailwind CSS for flexible, accessible, and responsive interfaces.",
 }
 
 export default function Layout({
