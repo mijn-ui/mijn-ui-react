@@ -22,7 +22,7 @@ export const metadata = createMetadata({
     default: "MijnUI",
   },
   description:
-    "An open-source library inspired by NextUI and Shadcn/ui, built with Radix Primitives and Tailwind CSS.",
+    "An open-source React component library built with Radix Primitives and Tailwind CSS for flexible, accessible, and responsive interfaces.",
   metadataBase: baseUrl,
 })
 
