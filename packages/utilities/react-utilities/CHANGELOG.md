@@ -1,5 +1,11 @@
 # @mijn-ui-react/utilities
 
+## 0.0.9
+
+### Patch Changes
+
+- 9ffa4c1: Beta release.
+
 ## 0.0.8
 
 ### Patch Changes

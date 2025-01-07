@@ -1,5 +1,19 @@
 # @mijn-ui-react/button
 
+## 0.0.13
+
+### Patch Changes
+
+- 7b1ba9f: Update imports
+- 9ffa4c1: Beta release.
+- Updated dependencies [9ffa4c1]
+- Updated dependencies [7b1ba9f]
+- Updated dependencies [4256d76]
+  - @mijn-ui/react-utilities@0.0.9
+  - @mijn-ui/shared-icons@0.0.4
+  - @mijn-ui/react-theme@0.0.9
+  - @mijn-ui/react-core@0.0.4
+
 ## 0.0.12
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @mijn-ui/react-core
 
+## 0.0.4
+
+### Patch Changes
+
+- 9ffa4c1: Beta release.
+- 7b1ba9f: Update imports and remove unnecessary types
+- Updated dependencies [9ffa4c1]
+- Updated dependencies [4256d76]
+  - @mijn-ui/react-theme@0.0.9
+
 ## 0.0.3
 
 ### Patch Changes

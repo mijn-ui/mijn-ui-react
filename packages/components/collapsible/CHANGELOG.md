@@ -1,5 +1,12 @@
 # @mijn-ui-react/collapsible
 
+## 0.0.10
+
+### Patch Changes
+
+- 7b1ba9f: Update imports
+- 9ffa4c1: Beta release.
+
 ## 0.0.9
 
 ### Patch Changes
