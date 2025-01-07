@@ -42,7 +42,7 @@ There are two main ways to create responsive variants:
     To make responsive variants work smoothly, you need to wrap the Tailwind config with the `withTV` function from `tailwind-variants`. You can refer to the [tailwind-variants documentation](https://www.tailwind-variants.org/docs/getting-started#responsive-variants-optional) for more details.
 
     ```ts title="tailwind.config.ts"
-    import { mijnUiPreset } from "@mijn-ui/react-theme";
+    import { mijnui } from "@mijn-ui/react-theme";
     import { withTV } from "tailwind-variants/dist/transformer.js"; // [!code highlight]
 
     /** @type {import('tailwindcss').Config} */
@@ -52,7 +52,7 @@ There are two main ways to create responsive variants:
         // make sure it's pointing to the ROOT node_module
         "./node_modules/@mijn-ui/react-theme/dist/**/*.{js,ts,jsx,tsx}",
       ],
-      presets: [mijnUiPreset],
+      plugins: [mijnui({})],
     }); // [!code highlight]
     ```
 
