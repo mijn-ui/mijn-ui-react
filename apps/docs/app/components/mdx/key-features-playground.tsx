@@ -39,14 +39,14 @@ const KeyFeaturesPlayground = () => {
 
   return (
     <figure className="not-prose w-full">
-      <div className="rounded-medium border-small flex h-80 w-full flex-col items-center overflow-hidden sm:flex-row">
-        <div className="bg-background flex h-full min-h-32 flex-auto items-center justify-center">
+      <div className="flex h-80 w-full flex-col items-center overflow-hidden rounded-medium border-small sm:flex-row">
+        <div className="flex h-full min-h-32 flex-auto items-center justify-center bg-background">
           <Button {...buttonOptions}>
             {buttonOptions.size === "icon" ? "M" : "MijnUI"}
           </Button>
         </div>
 
-        <div className="bg-card flex size-full grow flex-col items-center gap-4 p-5 sm:max-w-80 xl:w-1/2 xl:max-w-none xl:flex-initial">
+        <div className="flex size-full grow flex-col items-center gap-4 bg-card p-5 sm:max-w-80 xl:w-1/2 xl:max-w-none xl:flex-initial">
           <div className="flex items-center gap-5 sm:w-full">
             <CheckboxWithLabel
               id="unstyled"
