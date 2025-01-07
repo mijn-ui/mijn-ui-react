@@ -1,3 +1,4 @@
 {
-  "pages": ["npm", "manual"]
+  "pages": ["npm", "manual"],
+  "defaultOpen": true
 }
