@@ -1,16 +1,26 @@
-CHANGELOG.md
+# Ignore common lock files
 pnpm-lock.yaml
+yarn.lock
+
+# Ignore version control and dependency folders
+node_modules
+.next
+
+# Ignore changelog and changeset files
+CHANGELOG.md
 .changeset/*.md
+
+# Ignore GitHub-specific files
 .github/**/*.md
 
-public 
+# Ignore generated and public assets
+public
+.source
+
+# Ignore configs and examples in specific folders
+_configs
+apps/docs/examples/**/*.config.js
+
+# Ignore Markdown and handlebars templates
 *.mdx
 *.hbs
-_configs
-
-.next
-yarn.lock
-node_modules
-pnpm-lock.yaml
-
-apps/docs/examples/**/*.config.js
