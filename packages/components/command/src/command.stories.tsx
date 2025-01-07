@@ -82,7 +82,7 @@ const CommandTemplate = (args: CommandProps) => {
 const CommandUnstyled = (args: CommandProps) => {
   return (
     <Command
-      className="border-border rounded-large border-small p-3 shadow-medium md:w-[300px]"
+      className="border-border rounded-large border-small shadow-medium p-3 md:w-[300px]"
       classNames={{
         inputWrapper: "flex items-center gap-2",
         item: "flex items-center pointer-events-none",

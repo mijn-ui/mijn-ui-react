@@ -24,14 +24,14 @@ const ScreenState: React.FC<ScreenStateProps> = ({
   onCreate,
 }) => {
   return (
-    <Card className="bg-card flex w-full max-w-screen-sm flex-col items-center justify-center space-y-3 rounded-2xl p-6 text-center sm:space-y-6">
+    <Card className="flex w-full max-w-screen-sm flex-col items-center justify-center space-y-3 rounded-2xl bg-card p-6 text-center sm:space-y-6">
       <CardHeader className="p-0">
-        <FaBoxArchive className="text-foreground size-10 sm:size-12" />
+        <FaBoxArchive className="size-10 text-foreground sm:size-12" />
       </CardHeader>
       <CardContent unstyled className="space-y-1">
         <CardTitle
           unstyled
-          className="text-large text-foreground font-medium sm:text-xl"
+          className="text-large font-medium text-foreground sm:text-xl"
         >
           {title}
         </CardTitle>

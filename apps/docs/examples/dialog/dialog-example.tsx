@@ -19,7 +19,7 @@ const DialogExample = ({ unstyled = false }: DialogExampleProps) => {
     <Dialog unstyled={unstyled}>
       <DialogTrigger>Sign In</DialogTrigger>
       <DialogContent className="relative ">
-        <DialogClose className="text-large text-muted-foreground hover:text-foreground absolute right-4 top-4 border-none p-2">
+        <DialogClose className="absolute right-4 top-4 border-none p-2 text-large text-muted-foreground hover:text-foreground">
           <LuX />
         </DialogClose>
         <div>
