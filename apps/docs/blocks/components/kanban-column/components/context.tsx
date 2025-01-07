@@ -1,8 +1,8 @@
 import * as React from "react"
+import { UniqueIdentifier } from "@dnd-kit/core"
 import { BaseKanbanContainer, BaseKanbanItem } from "./types"
 import { useHandleDrag } from "./use-handle-drag"
 import { findValueOfItems } from "./utils"
-import { UniqueIdentifier } from "@dnd-kit/core"
 
 type KanbanContextType<ItemType extends BaseKanbanItem> = {
   containers: BaseKanbanContainer<ItemType>[]

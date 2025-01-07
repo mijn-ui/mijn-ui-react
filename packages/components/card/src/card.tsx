@@ -1,17 +1,16 @@
 "use client"
 
-import * as React from 'react';
-
-import { createTVUnstyledSlots } from '@mijn-ui/react-core';
-import { useTVUnstyled } from '@mijn-ui/react-hooks';
+import * as React from "react"
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
   CardSlots,
-  cardStyles,
-  cn,
   UnstyledComponentWithSlots,
   UnstyledProps,
-} from '@mijn-ui/react-theme';
-import { createContext } from '@mijn-ui/react-utilities';
+  cardStyles,
+  cn,
+} from "@mijn-ui/react-theme"
+import { createContext } from "@mijn-ui/react-utilities"
 
 /* -------------------------------------------------------------------------- */
 /*                              CardContext                                   */
@@ -166,11 +165,4 @@ const CardFooter = ({ className, unstyled, ...props }: CardFooterProps) => {
   )
 }
 
-export {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-};
+export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }

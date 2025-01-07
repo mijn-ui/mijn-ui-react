@@ -1,6 +1,3 @@
-import { GoClock } from "react-icons/go"
-import { LuX } from "react-icons/lu"
-
 import { UniqueIdentifier } from "@dnd-kit/core"
 import {
   Avatar,
@@ -10,7 +7,8 @@ import {
 } from "@mijn-ui/react-avatar"
 import { Badge } from "@mijn-ui/react-badge"
 import { Progress } from "@mijn-ui/react-progress"
-
+import { GoClock } from "react-icons/go"
+import { LuX } from "react-icons/lu"
 import { KanbanCard } from "../"
 import { useKanban } from "./context"
 import { KanbanCardItemType } from "./types"

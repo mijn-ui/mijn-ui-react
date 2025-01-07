@@ -1,5 +1,4 @@
-import { tv as tvBase, TV } from "tailwind-variants"
-
+import { TV, tv as tvBase } from "tailwind-variants"
 import { twMergeConfig } from "./tw-merge-config"
 
 export const tv: TV = (options, config) =>

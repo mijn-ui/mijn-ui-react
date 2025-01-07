@@ -1,6 +1,5 @@
 import { Button } from "@mijn-ui/react-button"
 import type { Meta, StoryObj } from "@storybook/react"
-
 import { Label, LabelProps } from "./label"
 
 const meta: Meta<typeof Label> = {

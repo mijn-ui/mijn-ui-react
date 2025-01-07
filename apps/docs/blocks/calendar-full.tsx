@@ -1,10 +1,6 @@
 "use client"
 
 import * as React from "react"
-
-import { setMonth, setYear } from "date-fns"
-import { LuBug } from "react-icons/lu"
-
 import { EventDropArg, EventSourceInput } from "@fullcalendar/core"
 import { DropArg, EventResizeDoneArg } from "@fullcalendar/interaction"
 import {
@@ -25,7 +21,8 @@ import {
 } from "@mijn-ui/react-dialog"
 import { useMediaQuery } from "@mijn-ui/react-hooks"
 import { Input } from "@mijn-ui/react-input"
-
+import { setMonth, setYear } from "date-fns"
+import { LuBug } from "react-icons/lu"
 import { CalendarFull } from "./components/calendar-full"
 
 const now = new Date()

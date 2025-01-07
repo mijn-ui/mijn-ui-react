@@ -1,13 +1,9 @@
 "use client"
 
-import * as React from 'react';
-
-import { createTVUnstyledSlots } from '@mijn-ui/react-core';
-import {
-  separatorStyles,
-  UnstyledProps,
-} from '@mijn-ui/react-theme';
-import * as SeparatorPrimitive from '@radix-ui/react-separator';
+import * as React from "react"
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
+import { UnstyledProps, separatorStyles } from "@mijn-ui/react-theme"
+import * as SeparatorPrimitive from "@radix-ui/react-separator"
 
 export type SeparatorProps = React.ComponentPropsWithRef<
   typeof SeparatorPrimitive.Root
@@ -36,4 +32,4 @@ const Separator = ({
   )
 }
 
-export { Separator };
+export { Separator }

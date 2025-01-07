@@ -1,6 +1,5 @@
-import animationPlugin from "tailwindcss-animate"
-
 import { mijnui } from "@mijn-ui/react-theme"
+import animationPlugin from "tailwindcss-animate"
 
 /** @type {import('tailwindcss').Config} */
 export default {

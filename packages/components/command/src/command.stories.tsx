@@ -1,3 +1,4 @@
+import type { Meta, StoryObj } from "@storybook/react"
 import {
   LuCalculator,
   LuCalendar,
@@ -6,9 +7,6 @@ import {
   LuSmile,
   LuUser,
 } from "react-icons/lu"
-
-import type { Meta, StoryObj } from "@storybook/react"
-
 import {
   Command,
   CommandEmpty,

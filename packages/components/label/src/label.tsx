@@ -1,14 +1,13 @@
 "use client"
 
-import * as React from 'react';
-
-import { createTVUnstyledSlots } from '@mijn-ui/react-core';
+import * as React from "react"
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
 import {
-  labelStyles,
   LabelVariantProps,
   UnstyledProps,
-} from '@mijn-ui/react-theme';
-import * as LabelPrimitive from '@radix-ui/react-label';
+  labelStyles,
+} from "@mijn-ui/react-theme"
+import * as LabelPrimitive from "@radix-ui/react-label"
 
 export type LabelProps = React.ComponentPropsWithRef<
   typeof LabelPrimitive.Root
@@ -22,4 +21,4 @@ const Label = ({ unstyled, className, ...props }: LabelProps) => {
   return <LabelPrimitive.Root className={base({ className })} {...props} />
 }
 
-export { Label };
+export { Label }

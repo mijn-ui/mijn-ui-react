@@ -2,7 +2,6 @@
 
 // Adapted from https://gist.github.com/Gomah/cb2b0b3f7cb9838a0efd6508a42c3eda/aa5d64a6ca2c0cfb6c86118410c943c62a1023b2
 /* eslint-disable */
-
 import { useMediaQuery } from "@mijn-ui/react-hooks"
 
 const screens = {

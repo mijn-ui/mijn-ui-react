@@ -1,5 +1,4 @@
 import { Blocks } from "@/blocks"
-
 import {
   ResizableHandle,
   ResizablePanel,

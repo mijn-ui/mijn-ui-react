@@ -1,9 +1,9 @@
 import { Button, ButtonProps } from "@mijn-ui/react-button"
 import {
-  buttonStyles,
   ButtonVariantProps,
-  tv,
   VariantProps,
+  buttonStyles,
+  tv,
 } from "@mijn-ui/react-theme"
 
 const responsiveButton = tv(

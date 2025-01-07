@@ -1,18 +1,17 @@
 "use client"
 
-import * as React from 'react';
-
-import { createTVUnstyledSlots } from '@mijn-ui/react-core';
-import { useTVUnstyled } from '@mijn-ui/react-hooks';
+import * as React from "react"
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
   AlertSlots,
-  alertStyles,
   AlertVariantProps,
-  cn,
   UnstyledComponentWithSlots,
   UnstyledProps,
-} from '@mijn-ui/react-theme';
-import { createContext } from '@mijn-ui/react-utilities';
+  alertStyles,
+  cn,
+} from "@mijn-ui/react-theme"
+import { createContext } from "@mijn-ui/react-utilities"
 
 /* -------------------------------------------------------------------------- */
 /*                              AlertContext                                  */
@@ -129,4 +128,4 @@ const AlertDescription = ({
   )
 }
 
-export { Alert, AlertDescription, AlertIcon, AlertTitle };
+export { Alert, AlertDescription, AlertIcon, AlertTitle }

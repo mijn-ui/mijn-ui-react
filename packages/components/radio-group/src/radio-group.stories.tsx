@@ -1,6 +1,5 @@
 import { Label } from "@mijn-ui/react-label"
 import type { Meta, StoryObj } from "@storybook/react"
-
 import { RadioGroup, RadioGroupItem, RadioGroupProps } from "./radio-group"
 
 const meta: Meta<typeof RadioGroup> = {

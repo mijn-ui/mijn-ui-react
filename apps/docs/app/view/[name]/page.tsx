@@ -1,10 +1,8 @@
 import React from "react"
-
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { LuLoaderCircle } from "react-icons/lu"
-
 import { Blocks } from "@/blocks"
+import { LuLoaderCircle } from "react-icons/lu"
 
 export async function generateMetadata({
   params,

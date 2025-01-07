@@ -1,25 +1,19 @@
 "use client"
 
-import * as React from 'react';
-
-import { Command as CommandPrimitive } from 'cmdk';
-
-import { createTVUnstyledSlots } from '@mijn-ui/react-core';
+import * as React from "react"
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
+import { Dialog, DialogContent, type DialogProps } from "@mijn-ui/react-dialog"
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  Dialog,
-  DialogContent,
-  type DialogProps,
-} from '@mijn-ui/react-dialog';
-import { useTVUnstyled } from '@mijn-ui/react-hooks';
-import {
-  cn,
   CommandSlots,
-  commandStyles,
   UnstyledComponentWithSlots,
   UnstyledProps,
-} from '@mijn-ui/react-theme';
-import { createContext } from '@mijn-ui/react-utilities';
-import { SearchIcon } from '@mijn-ui/shared-icons';
+  cn,
+  commandStyles,
+} from "@mijn-ui/react-theme"
+import { createContext } from "@mijn-ui/react-utilities"
+import { SearchIcon } from "@mijn-ui/shared-icons"
+import { Command as CommandPrimitive } from "cmdk"
 
 /* -------------------------------------------------------------------------- */
 /*                               CommandContext                               */
@@ -306,4 +300,4 @@ export {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-};
+}

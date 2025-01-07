@@ -1,10 +1,8 @@
-import { RxCross2, RxMixerHorizontal } from "react-icons/rx"
-
 import { Button } from "@mijn-ui/react-button"
 import { Input } from "@mijn-ui/react-input"
 import { Label } from "@mijn-ui/react-label"
 import type { Meta, StoryObj } from "@storybook/react"
-
+import { RxCross2, RxMixerHorizontal } from "react-icons/rx"
 import {
   Popover,
   PopoverArrow,

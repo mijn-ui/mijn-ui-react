@@ -1,8 +1,6 @@
 /* Adapted From NextUI ❤️ */
-
 import * as React from "react"
 import { clsx, tv } from "@mijn-ui/react-theme"
-
 import { mapPropsVariants } from "./map-props-variants"
 
 function getSlots(variants) {

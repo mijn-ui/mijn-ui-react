@@ -1,13 +1,4 @@
 import {
-  LuCalculator,
-  LuCalendar,
-  LuCreditCard,
-  LuSettings,
-  LuSmile,
-  LuUser,
-} from "react-icons/lu"
-
-import {
   Command,
   CommandEmpty,
   CommandGroup,
@@ -17,6 +8,14 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@mijn-ui/react-command"
+import {
+  LuCalculator,
+  LuCalendar,
+  LuCreditCard,
+  LuSettings,
+  LuSmile,
+  LuUser,
+} from "react-icons/lu"
 
 const CommandExample = () => {
   return (

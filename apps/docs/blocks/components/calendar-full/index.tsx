@@ -1,7 +1,7 @@
-import { calendarConfig } from "./config"
-import "./styles/index.css"
 import { CalendarOptions, EventSourceInput } from "@fullcalendar/core/index.js"
 import FullCalendarComponent from "@fullcalendar/react"
+import { calendarConfig } from "./config"
+import "./styles/index.css"
 
 type CalendarFullProps = CalendarOptions & {
   events?: EventSourceInput

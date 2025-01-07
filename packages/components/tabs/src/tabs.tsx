@@ -1,18 +1,17 @@
 "use client"
 
-import * as React from 'react';
-
-import { createTVUnstyledSlots } from '@mijn-ui/react-core';
-import { useTVUnstyled } from '@mijn-ui/react-hooks';
+import * as React from "react"
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  cn,
   TabsSlots,
-  tabsStyles,
   UnstyledComponentWithSlots,
   UnstyledProps,
-} from '@mijn-ui/react-theme';
-import { createContext } from '@mijn-ui/react-utilities';
-import * as TabsPrimitive from '@radix-ui/react-tabs';
+  cn,
+  tabsStyles,
+} from "@mijn-ui/react-theme"
+import { createContext } from "@mijn-ui/react-utilities"
+import * as TabsPrimitive from "@radix-ui/react-tabs"
 
 /* -------------------------------------------------------------------------- */
 /*                                 TabsContext                                */
@@ -132,4 +131,4 @@ const TabsContent = ({ className, unstyled, ...props }: TabsContentProps) => {
   )
 }
 
-export { Tabs, TabsContent, TabsList, TabsTrigger };
+export { Tabs, TabsContent, TabsList, TabsTrigger }

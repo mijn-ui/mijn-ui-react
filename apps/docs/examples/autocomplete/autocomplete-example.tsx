@@ -1,9 +1,6 @@
 "use client"
 
 import { useState } from "react"
-
-import { LuSearch } from "react-icons/lu"
-
 import {
   Autocomplete,
   AutocompleteContent,
@@ -11,6 +8,7 @@ import {
   AutocompleteTrigger,
 } from "@mijn-ui/react-autocomplete"
 import { Input } from "@mijn-ui/react-input"
+import { LuSearch } from "react-icons/lu"
 
 const FRAMEWORKS = [
   "Next.js",

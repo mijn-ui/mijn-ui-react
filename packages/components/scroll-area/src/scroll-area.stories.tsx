@@ -1,8 +1,6 @@
 import React from "react"
-
 import { Separator } from "@mijn-ui/react-separator"
 import type { Meta, StoryObj } from "@storybook/react"
-
 import { ScrollArea, ScrollAreaProps } from "./scroll-area"
 
 const meta: Meta<typeof ScrollArea> = {

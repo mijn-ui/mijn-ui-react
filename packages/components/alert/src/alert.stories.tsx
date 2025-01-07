@@ -1,6 +1,5 @@
 import { IconSvgProps } from "@mijn-ui/shared-icons"
 import type { Meta, StoryObj } from "@storybook/react"
-
 import {
   Alert,
   AlertDescription,

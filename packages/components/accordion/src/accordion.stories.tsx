@@ -1,6 +1,5 @@
 import { ChevronDownIcon, IconSvgProps } from "@mijn-ui/shared-icons"
 import { StoryObj } from "@storybook/react"
-
 import {
   Accordion,
   AccordionContent,

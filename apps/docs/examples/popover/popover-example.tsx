@@ -1,5 +1,3 @@
-import { RxCross2, RxMixerHorizontal } from "react-icons/rx"
-
 import { Button } from "@mijn-ui/react-button"
 import { Input } from "@mijn-ui/react-input"
 import { Label } from "@mijn-ui/react-label"
@@ -10,6 +8,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@mijn-ui/react-popover"
+import { RxCross2, RxMixerHorizontal } from "react-icons/rx"
 
 // Making All of the Accordion Components Unstyled
 type PopoverExampleProps = {

@@ -5,8 +5,8 @@ import {
   AlertTitle,
 } from "@mijn-ui/react-alert"
 import { IoRocketOutline } from "react-icons/io5"
-import { LuFileWarning } from "react-icons/lu"
 import { LiaCheckCircle } from "react-icons/lia"
+import { LuFileWarning } from "react-icons/lu"
 import { MdErrorOutline } from "react-icons/md"
 
 const AlertColors = () => {

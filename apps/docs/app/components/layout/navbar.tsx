@@ -1,24 +1,8 @@
 "use client"
 
 import { useState } from "react"
-
-import { SidebarTrigger } from "fumadocs-core/sidebar"
-import { useSearchContext, useSidebar } from "fumadocs-ui/provider"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import {
-  LuChevronDown,
-  LuExternalLink,
-  LuGithub,
-  LuMenu,
-  LuSearch,
-  LuX,
-} from "react-icons/lu"
-
-import { TopRightRadialGradient } from "@/app/components/decorators/gradient-bg"
-import Logo from "@/app/components/logo"
-import ThemeToggler from "@/app/components/theme-toggler"
-import ClickAwayListener from "@/app/components/utils/click-away-listener"
 import { Badge } from "@mijn-ui/react-badge"
 import { Button } from "@mijn-ui/react-button"
 import {
@@ -28,6 +12,20 @@ import {
 } from "@mijn-ui/react-collapsible"
 import { Separator } from "@mijn-ui/react-separator"
 import { buttonStyles, cn } from "@mijn-ui/react-theme"
+import { SidebarTrigger } from "fumadocs-core/sidebar"
+import { useSearchContext, useSidebar } from "fumadocs-ui/provider"
+import {
+  LuChevronDown,
+  LuExternalLink,
+  LuGithub,
+  LuMenu,
+  LuSearch,
+  LuX,
+} from "react-icons/lu"
+import { TopRightRadialGradient } from "@/app/components/decorators/gradient-bg"
+import Logo from "@/app/components/logo"
+import ThemeToggler from "@/app/components/theme-toggler"
+import ClickAwayListener from "@/app/components/utils/click-away-listener"
 
 const PAGES = [
   {

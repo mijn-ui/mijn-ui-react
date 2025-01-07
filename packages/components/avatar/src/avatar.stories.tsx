@@ -1,11 +1,10 @@
 import { AvatarProps } from "@radix-ui/react-avatar"
 import type { Meta, StoryObj } from "@storybook/react"
-
 import {
   Avatar,
   AvatarFallback,
-  AvatarGroup as MijnUIAvatarGroup,
   AvatarImage,
+  AvatarGroup as MijnUIAvatarGroup,
 } from "./avatar"
 
 const meta: Meta<typeof Avatar> = {

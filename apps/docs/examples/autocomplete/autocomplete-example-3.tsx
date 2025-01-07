@@ -1,9 +1,6 @@
 "use client"
 
 import * as React from "react"
-
-import { LuChevronsUpDown } from "react-icons/lu"
-
 import {
   Autocomplete,
   AutocompleteContent,
@@ -21,6 +18,7 @@ import {
 } from "@mijn-ui/react-dialog"
 import { Input } from "@mijn-ui/react-input"
 import { ScrollArea } from "@mijn-ui/react-scroll-area"
+import { LuChevronsUpDown } from "react-icons/lu"
 
 const FRAMEWORKS = [
   "Next.js",

@@ -1,7 +1,5 @@
 import React from "react"
-
 import type { Meta, StoryObj } from "@storybook/react"
-
 import { CalendarDatePicker, CalendarDatePickerProps } from "./date-picker"
 
 const meta: Meta<typeof CalendarDatePicker> = {

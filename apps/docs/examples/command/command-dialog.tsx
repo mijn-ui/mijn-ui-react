@@ -1,16 +1,6 @@
 "use client"
 
 import * as React from "react"
-
-import {
-  LuCalculator,
-  LuCalendar,
-  LuCreditCard,
-  LuSettings,
-  LuSmile,
-  LuUser,
-} from "react-icons/lu"
-
 import {
   CommandDialog,
   CommandEmpty,
@@ -21,6 +11,14 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@mijn-ui/react-command"
+import {
+  LuCalculator,
+  LuCalendar,
+  LuCreditCard,
+  LuSettings,
+  LuSmile,
+  LuUser,
+} from "react-icons/lu"
 
 const CommandDialogExample = () => {
   const [open, setOpen] = React.useState(false)

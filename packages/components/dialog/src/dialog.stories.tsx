@@ -1,9 +1,7 @@
-import { LuX } from "react-icons/lu"
-
 import { Button } from "@mijn-ui/react-button"
 import { Input } from "@mijn-ui/react-input"
 import type { Meta, StoryObj } from "@storybook/react"
-
+import { LuX } from "react-icons/lu"
 import {
   Dialog,
   DialogClose,

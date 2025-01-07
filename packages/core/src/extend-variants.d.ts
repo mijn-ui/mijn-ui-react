@@ -1,13 +1,12 @@
 /* Adapted From NextUI ❤️ */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
-import type {
-  ClassValue,
-  StringToBoolean,
-  OmitUndefined,
-  ClassProp,
-} from "tailwind-variants"
 import type { JSXElementConstructor, ReactElement } from "react"
+import type {
+  ClassProp,
+  ClassValue,
+  OmitUndefined,
+  StringToBoolean,
+} from "tailwind-variants"
 
 type SlotsClassValue<S> = {
   [K in keyof S]?: ClassValue

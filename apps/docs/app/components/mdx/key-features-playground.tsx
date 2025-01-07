@@ -1,13 +1,11 @@
 "use client"
 
 import React from "react"
-
 import { Button } from "@mijn-ui/react-button"
 import { Checkbox } from "@mijn-ui/react-checkbox"
 import { Label } from "@mijn-ui/react-label"
 import { RadioGroup, RadioGroupItem } from "@mijn-ui/react-radio-group"
-import { buttonStyles, ButtonVariantProps } from "@mijn-ui/react-theme"
-
+import { ButtonVariantProps, buttonStyles } from "@mijn-ui/react-theme"
 import { createVariantObjWithDefaults } from "../../utils/variant-objects"
 
 /* -------------------------------------------------------------------------- */

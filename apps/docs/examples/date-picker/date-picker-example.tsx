@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-
 import { CalendarDatePicker } from "@mijn-ui/react-date-picker"
 
 const CalendarDatePickerExample = () => {

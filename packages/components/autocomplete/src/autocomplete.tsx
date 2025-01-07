@@ -1,28 +1,19 @@
 "use client"
 
-import * as React from 'react';
-
-import { Command as CommandPrimitive } from 'cmdk';
-
-import { createTVUnstyledSlots } from '@mijn-ui/react-core';
-import { useTVUnstyled } from '@mijn-ui/react-hooks';
-import {
-  Popover,
-  PopoverAnchor,
-  PopoverContent,
-} from '@mijn-ui/react-popover';
+import * as React from "react"
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
+import { Popover, PopoverAnchor, PopoverContent } from "@mijn-ui/react-popover"
 import {
   AutocompleteSlots,
-  autocompleteStyles,
-  cn,
   UnstyledComponentWithSlots,
   UnstyledProps,
-} from '@mijn-ui/react-theme';
-import {
-  createContext,
-  mergeRefs,
-} from '@mijn-ui/react-utilities';
-import { CheckIcon } from '@mijn-ui/shared-icons';
+  autocompleteStyles,
+  cn,
+} from "@mijn-ui/react-theme"
+import { createContext, mergeRefs } from "@mijn-ui/react-utilities"
+import { CheckIcon } from "@mijn-ui/shared-icons"
+import { Command as CommandPrimitive } from "cmdk"
 
 /* -------------------------------------------------------------------------- */
 
@@ -349,4 +340,4 @@ export {
   AutocompleteGroup,
   AutocompleteItem,
   AutocompleteTrigger,
-};
+}

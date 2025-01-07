@@ -1,13 +1,9 @@
-import "./glow-effect.css"
-
 import React from "react"
-
 import Link from "next/link"
-
 import { Card } from "@mijn-ui/react-card"
 import { cn } from "@mijn-ui/react-theme"
-
 import GlowEffectWrapper from "./glow-effect-wrapper"
+import "./glow-effect.css"
 import CalendarShowcase from "./showcase/calendar-showcase"
 import DataTableShowcase from "./showcase/data-table-showcase"
 import GanttChartShowcase from "./showcase/gantt-chart-showcase"

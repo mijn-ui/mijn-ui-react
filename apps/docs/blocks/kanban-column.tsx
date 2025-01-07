@@ -1,11 +1,8 @@
 "use client"
 
 import * as React from "react"
-
-import { LuEllipsisVertical, LuPlus } from "react-icons/lu"
-
 import { Button } from "@mijn-ui/react-button"
-
+import { LuEllipsisVertical, LuPlus } from "react-icons/lu"
 import {
   Kanban,
   KanbanColumn,

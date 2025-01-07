@@ -1,7 +1,6 @@
 "use client"
 
 /* Adapted From NextUI ❤️ */
-
 import * as React from "react"
 
 export interface CreateContextOptions {
