@@ -1,16 +1,16 @@
+import React from "react"
 import type { Meta, StoryObj } from "@storybook/react"
+import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
 import {
   Pagination,
-  PaginationProps,
   PaginationContent,
   PaginationList,
   PaginationNextButton,
   PaginationNextEllipsis,
   PaginationPreviousButton,
   PaginationPreviousEllipsis,
+  PaginationProps,
 } from "./pagination"
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
-import React from "react"
 
 const meta: Meta<typeof Pagination> = {
   title: "Components/Pagination",

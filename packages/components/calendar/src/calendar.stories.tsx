@@ -1,10 +1,7 @@
 import React from "react"
-
-import { DateRange } from "react-day-picker"
-
 import { Badge } from "@mijn-ui/react-badge"
 import type { Meta, StoryObj } from "@storybook/react"
-
+import { DateRange } from "react-day-picker"
 import { Calendar, CalendarProps } from "./calendar"
 
 const meta: Meta<typeof Calendar> = {

@@ -1,10 +1,7 @@
 import React from "react"
-
-import { LuFilter } from "react-icons/lu"
-
 import { Button } from "@mijn-ui/react-button"
 import type { Meta, StoryObj } from "@storybook/react"
-
+import { LuFilter } from "react-icons/lu"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,

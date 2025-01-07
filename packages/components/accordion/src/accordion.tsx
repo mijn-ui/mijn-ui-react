@@ -1,20 +1,19 @@
 "use client"
 
-import * as React from 'react';
-
-import { createTVUnstyledSlots } from '@mijn-ui/react-core';
-import { useTVUnstyled } from '@mijn-ui/react-hooks';
+import * as React from "react"
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
   AccordionSlots,
-  accordionStyles,
   AccordionVariantProps,
-  cn,
   UnstyledComponentWithSlots,
   UnstyledProps,
-} from '@mijn-ui/react-theme';
-import { createContext } from '@mijn-ui/react-utilities';
-import { ChevronDownIcon } from '@mijn-ui/shared-icons';
-import * as RadixAccordion from '@radix-ui/react-accordion';
+  accordionStyles,
+  cn,
+} from "@mijn-ui/react-theme"
+import { createContext } from "@mijn-ui/react-utilities"
+import { ChevronDownIcon } from "@mijn-ui/shared-icons"
+import * as RadixAccordion from "@radix-ui/react-accordion"
 
 /* -------------------------------------------------------------------------- */
 /*                              AccordionContext                              */
@@ -184,4 +183,4 @@ export {
   AccordionItem,
   AccordionTrigger,
   useAccordionStyles,
-};
+}

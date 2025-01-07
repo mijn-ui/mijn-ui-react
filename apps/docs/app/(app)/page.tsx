@@ -1,5 +1,4 @@
 import Link from "next/link"
-
 import { buttonStyles, cn } from "@mijn-ui/react-theme"
 
 export default function HomePage() {

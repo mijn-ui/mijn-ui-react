@@ -1,7 +1,7 @@
+import { readFileSync } from "fs"
 import { generateOGImage } from "fumadocs-ui/og"
 import { metadataImage } from "@/lib/metadata-image"
 import Logo from "@/app/components/logo"
-import { readFileSync } from "fs"
 
 const font = readFileSync("./app/og/[...slug]/Geist-Regular.ttf")
 const fontBold = readFileSync("./app/og/[...slug]/Geist-Bold.ttf")

@@ -1,5 +1,4 @@
 import { useState } from "react"
-
 import { Button } from "@mijn-ui/react-button"
 import {
   Dialog,
@@ -12,7 +11,6 @@ import { Input } from "@mijn-ui/react-input"
 import { ScrollArea } from "@mijn-ui/react-scroll-area"
 import { ChevronDownIcon, SearchIcon } from "@mijn-ui/shared-icons"
 import { Meta, StoryObj } from "@storybook/react"
-
 import {
   Autocomplete,
   AutocompleteContent,

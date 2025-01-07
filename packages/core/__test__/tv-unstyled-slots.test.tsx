@@ -1,7 +1,5 @@
-import { describe, expect, it } from "vitest"
-
 import { tv } from "@mijn-ui/react-theme"
-
+import { describe, expect, it } from "vitest"
 import { createTVUnstyledSlots } from "../src/tv-unstyled-slots"
 
 describe("createTVUnstyledSlots", () => {

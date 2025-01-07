@@ -1,6 +1,5 @@
 import { AlertDialogProps } from "@radix-ui/react-alert-dialog"
 import type { Meta, StoryObj } from "@storybook/react"
-
 import {
   AlertDialog,
   AlertDialogAction,

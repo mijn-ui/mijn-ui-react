@@ -1,8 +1,5 @@
-import { createTVUnstyledSlots } from '@mijn-ui/react-core';
-import {
-  skeletonStyles,
-  UnstyledProps,
-} from '@mijn-ui/react-theme';
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
+import { UnstyledProps, skeletonStyles } from "@mijn-ui/react-theme"
 
 export type SkeletonProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
 
@@ -12,4 +9,4 @@ function Skeleton({ unstyled, className, ...props }: SkeletonProps) {
   return <div className={base({ className })} {...props} />
 }
 
-export { Skeleton };
+export { Skeleton }

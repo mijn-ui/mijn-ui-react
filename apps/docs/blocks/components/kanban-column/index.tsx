@@ -1,14 +1,11 @@
 import * as React from "react"
-
-import { LuGripVertical } from "react-icons/lu"
-
 import {
-  closestCorners,
   DndContext,
   DragOverlay,
   KeyboardSensor,
   PointerSensor,
   UniqueIdentifier,
+  closestCorners,
   useSensor,
   useSensors,
 } from "@dnd-kit/core"
@@ -19,7 +16,7 @@ import {
 } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
 import { cn } from "@mijn-ui/react-theme"
-
+import { LuGripVertical } from "react-icons/lu"
 import {
   KanbanProvider,
   KanbanProviderProps,

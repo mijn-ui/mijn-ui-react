@@ -1,6 +1,5 @@
 import { Label } from "@mijn-ui/react-label"
 import type { Meta, StoryObj } from "@storybook/react"
-
 import { Checkbox, CheckboxProps } from "./checkbox"
 
 const meta: Meta<typeof Checkbox> = {

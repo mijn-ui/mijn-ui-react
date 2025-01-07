@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-
 import { Progress } from "@mijn-ui/react-progress"
 
 const ProgressExample = () => {

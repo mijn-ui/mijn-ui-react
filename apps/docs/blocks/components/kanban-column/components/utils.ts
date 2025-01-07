@@ -1,5 +1,5 @@
-import { BaseKanbanContainer, BaseKanbanItem } from "./types"
 import { UniqueIdentifier } from "@dnd-kit/core"
+import { BaseKanbanContainer, BaseKanbanItem } from "./types"
 
 export const findValueOfItems = <ItemType extends BaseKanbanItem>(
   containers: BaseKanbanContainer<ItemType>[],

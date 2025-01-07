@@ -1,9 +1,7 @@
-import { IoBagOutline } from "react-icons/io5"
-import { LuArrowUpRight, LuPlus } from "react-icons/lu"
-
 import { Button } from "@mijn-ui/react-button"
 import type { Meta, StoryObj } from "@storybook/react"
-
+import { IoBagOutline } from "react-icons/io5"
+import { LuArrowUpRight, LuPlus } from "react-icons/lu"
 import {
   Card,
   CardContent,

@@ -1,13 +1,11 @@
 import { ReactNode } from "react"
-
-import { FiAlertCircle } from "react-icons/fi"
-
 import {
-  Alert as MijnUIAlert,
   AlertIcon,
   AlertTitle,
+  Alert as MijnUIAlert,
 } from "@mijn-ui/react-alert"
-import { alertStyles, AlertVariantProps, cn } from "@mijn-ui/react-theme"
+import { AlertVariantProps, alertStyles, cn } from "@mijn-ui/react-theme"
+import { FiAlertCircle } from "react-icons/fi"
 
 type AlertProps = {
   title?: ReactNode

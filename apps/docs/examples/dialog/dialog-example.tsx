@@ -1,5 +1,3 @@
-import { LuX } from "react-icons/lu"
-
 import { Button } from "@mijn-ui/react-button"
 import {
   Dialog,
@@ -10,6 +8,7 @@ import {
   DialogTrigger,
 } from "@mijn-ui/react-dialog"
 import { Input } from "@mijn-ui/react-input"
+import { LuX } from "react-icons/lu"
 
 type DialogExampleProps = {
   unstyled?: boolean

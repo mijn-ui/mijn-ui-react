@@ -6,7 +6,18 @@ Adapted from https://github.com/sersavan/shadcn-calendar-component.
 Full credit for the original implementation goes to [sersavan](https://github.com/sersavan), whose work served as the foundation for this component.  
  */
 import * as React from "react"
-
+import { Button } from "@mijn-ui/react-button"
+import { Calendar } from "@mijn-ui/react-calendar"
+import { Popover, PopoverContent, PopoverTrigger } from "@mijn-ui/react-popover"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@mijn-ui/react-select"
+import { ButtonVariantProps, buttonStyles, cn } from "@mijn-ui/react-theme"
+import { CalendarIcon } from "@mijn-ui/shared-icons"
 import {
   endOfDay,
   endOfMonth,
@@ -20,19 +31,6 @@ import {
 } from "date-fns"
 import { formatInTimeZone, toDate } from "date-fns-tz"
 import { DateRange, UI } from "react-day-picker"
-
-import { Button } from "@mijn-ui/react-button"
-import { Calendar } from "@mijn-ui/react-calendar"
-import { Popover, PopoverContent, PopoverTrigger } from "@mijn-ui/react-popover"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@mijn-ui/react-select"
-import { buttonStyles, ButtonVariantProps, cn } from "@mijn-ui/react-theme"
-import { CalendarIcon } from "@mijn-ui/shared-icons"
 
 const months = [
   "January",

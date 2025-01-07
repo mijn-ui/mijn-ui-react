@@ -1,7 +1,4 @@
-import {
-  DefaultBaseColors,
-  ThemeColors,
-} from './types';
+import { DefaultBaseColors, ThemeColors } from "./types"
 
 const base: DefaultBaseColors = {
   light: {

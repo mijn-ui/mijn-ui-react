@@ -1,18 +1,15 @@
 "use client"
 
 import { useEffect, useState } from "react"
-
-import { readableColor, toHex } from "color2k"
-import { useTheme } from "next-themes"
-import { LuCheck, LuClipboard } from "react-icons/lu"
-
 import {
   ActionSchema,
   ThemeColors,
   themeColorsDark,
   themeColorsLight,
 } from "@mijn-ui/react-theme"
-
+import { readableColor, toHex } from "color2k"
+import { useTheme } from "next-themes"
+import { LuCheck, LuClipboard } from "react-icons/lu"
 import { useCopyToClipboard } from "../../hooks/use-copy-to-clipboard"
 import { Tooltip, TooltipContent, TooltipTrigger } from "../tooltip"
 

@@ -1,8 +1,10 @@
 /* eslint-disable */
-
+import { kebabCase, mapKeys, omit } from "@mijn-ui/react-utilities"
 import deepmerge from "deepmerge"
 import plugin from "tailwindcss/plugin.js"
-import { kebabCase, mapKeys, omit } from "@mijn-ui/react-utilities"
+import { animations } from "./animations"
+import { defaultColors } from "./colors"
+import { darkLayout, defaultLayout, lightLayout } from "./layout"
 import {
   ConfigTheme,
   ConfigThemes,
@@ -10,9 +12,6 @@ import {
   MijnUIPluginConfig,
 } from "./types"
 import { baseStyles, flattenThemeObject, isBaseTheme } from "./utils"
-import { darkLayout, defaultLayout, lightLayout } from "./layout"
-import { animations } from "./animations"
-import { defaultColors } from "./colors"
 
 const DEFAULT_PREFIX = "mijnui"
 

@@ -1,5 +1,4 @@
 import { VariantProps } from "tailwind-variants"
-
 import { tv } from "../utils/tv"
 
 const skeletonStyles = tv({

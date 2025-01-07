@@ -1,21 +1,17 @@
 "use client"
 
-import * as React from 'react';
-
-import { createTVUnstyledSlots } from '@mijn-ui/react-core';
-import { useControlledState } from '@mijn-ui/react-hooks';
+import * as React from "react"
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
+import { useControlledState } from "@mijn-ui/react-hooks"
 import {
   CheckboxSlots,
-  checkboxStyles,
   CheckboxVariantProps,
-  cn,
   UnstyledComponentWithSlots,
-} from '@mijn-ui/react-theme';
-import {
-  CheckIcon,
-  DividerHorizontalIcon,
-} from '@mijn-ui/shared-icons';
-import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
+  checkboxStyles,
+  cn,
+} from "@mijn-ui/react-theme"
+import { CheckIcon, DividerHorizontalIcon } from "@mijn-ui/shared-icons"
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
 
 /* -------------------------------------------------------------------------- */
 /*                                  Checkbox                                  */
@@ -72,4 +68,4 @@ const Checkbox = ({
   )
 }
 
-export { Checkbox };
+export { Checkbox }

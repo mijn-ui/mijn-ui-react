@@ -1,8 +1,7 @@
+import { mijnui } from "@mijn-ui/react-theme"
 import { createPreset } from "fumadocs-ui/tailwind-plugin"
 import { withTV } from "tailwind-variants/dist/transformer.js"
 import animationPlugin from "tailwindcss-animate"
-
-import { mijnui } from "@mijn-ui/react-theme"
 
 /** @type {import('tailwindcss').Config} */
 export default withTV({

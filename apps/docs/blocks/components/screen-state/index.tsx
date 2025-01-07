@@ -1,7 +1,4 @@
 import React from "react"
-
-import { FaBoxArchive } from "react-icons/fa6"
-
 import { Button } from "@mijn-ui/react-button"
 import {
   Card,
@@ -11,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@mijn-ui/react-card"
+import { FaBoxArchive } from "react-icons/fa6"
 
 interface ScreenStateProps {
   title: string

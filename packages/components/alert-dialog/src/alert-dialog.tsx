@@ -1,18 +1,17 @@
 "use client"
 
-import * as React from 'react';
-
-import { useTVUnstyled } from '@mijn-ui/react-hooks';
+import * as React from "react"
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
   AlertDialogSlots,
-  alertDialogStyles,
   AlertDialogVariantProps,
-  cn,
   UnstyledComponentWithSlots,
   UnstyledProps,
-} from '@mijn-ui/react-theme';
-import { createContext } from '@mijn-ui/react-utilities';
-import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
+  alertDialogStyles,
+  cn,
+} from "@mijn-ui/react-theme"
+import { createContext } from "@mijn-ui/react-utilities"
+import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 
 const AlertDialogPortal = AlertDialogPrimitive.Portal
 
@@ -306,4 +305,4 @@ export {
   AlertDialogPortal,
   AlertDialogTitle,
   AlertDialogTrigger,
-};
+}

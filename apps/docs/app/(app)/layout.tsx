@@ -1,7 +1,5 @@
 import type { ReactNode } from "react"
-
 import { Metadata } from "next"
-
 import { Footer, Navbar } from "@/app/components/layout"
 
 export const metadata: Metadata = {

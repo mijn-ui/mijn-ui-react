@@ -1,5 +1,3 @@
-import { IoBagOutline } from "react-icons/io5"
-
 import { Button } from "@mijn-ui/react-button"
 import {
   Card,
@@ -8,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@mijn-ui/react-card"
+import { IoBagOutline } from "react-icons/io5"
 
 const StatsCardExample = () => {
   return (

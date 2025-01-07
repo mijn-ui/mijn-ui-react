@@ -1,5 +1,3 @@
-import { LuEllipsis } from "react-icons/lu"
-
 import {
   Table,
   TableBody,
@@ -8,6 +6,7 @@ import {
   TableHeaderCell,
   TableRow,
 } from "@mijn-ui/react-table"
+import { LuEllipsis } from "react-icons/lu"
 
 const TableExample = () => {
   return (

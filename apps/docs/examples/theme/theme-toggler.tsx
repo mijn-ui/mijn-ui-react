@@ -1,8 +1,9 @@
 "use client"
 
-import { useTheme } from "next-themes"
 import { SVGProps, useEffect, useState } from "react"
 import { Button, ButtonProps } from "@mijn-ui/react-button"
+import { useTheme } from "next-themes"
+
 /* -------------------------------------------------------------------------- */
 
 const ThemeToggler = ({ ...props }: ButtonProps) => {

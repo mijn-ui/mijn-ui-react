@@ -1,3 +1,5 @@
+import Link from "next/link"
+import { notFound } from "next/navigation"
 import { File, Files, Folder } from "fumadocs-ui/components/files"
 import { Step, Steps } from "fumadocs-ui/components/steps"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs"
@@ -8,10 +10,8 @@ import {
   DocsPage,
   DocsTitle,
 } from "fumadocs-ui/page"
-import Link from "next/link"
-import { notFound } from "next/navigation"
 import { LuExternalLink } from "react-icons/lu"
-
+import { metadataImage } from "@/lib/metadata-image"
 import Alert from "@/app/components/mdx/alert"
 import ComponentPreview from "@/app/components/mdx/component-preview"
 import {
@@ -19,7 +19,6 @@ import {
   InstallationTabsContent,
 } from "@/app/components/mdx/installation-tabs"
 import { source } from "@/app/source"
-import { metadataImage } from "@/lib/metadata-image"
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>

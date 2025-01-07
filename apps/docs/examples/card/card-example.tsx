@@ -1,5 +1,3 @@
-import { LuArrowUpRight, LuPlus } from "react-icons/lu"
-
 import { Button } from "@mijn-ui/react-button"
 import {
   Card,
@@ -8,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@mijn-ui/react-card"
+import { LuArrowUpRight, LuPlus } from "react-icons/lu"
 
 const CardExample = () => {
   return (

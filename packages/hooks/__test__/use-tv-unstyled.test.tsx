@@ -1,9 +1,7 @@
-import { describe, expect, it } from "vitest"
-
-import { tv, UnstyledProps } from "@mijn-ui/react-theme"
+import { UnstyledProps, tv } from "@mijn-ui/react-theme"
 import { createContext } from "@mijn-ui/react-utilities"
 import { renderHook } from "@testing-library/react"
-
+import { describe, expect, it } from "vitest"
 import { useTVUnstyled } from "../src/use-tv-unstyled"
 
 describe("useTVUnstyled", () => {

@@ -1,5 +1,3 @@
-import { BaseKanbanContainer, BaseKanbanItem } from "./types"
-import { findValueOfItems } from "./utils"
 import {
   DragEndEvent,
   DragMoveEvent,
@@ -7,6 +5,8 @@ import {
   UniqueIdentifier,
 } from "@dnd-kit/core"
 import { arrayMove } from "@dnd-kit/sortable"
+import { BaseKanbanContainer, BaseKanbanItem } from "./types"
+import { findValueOfItems } from "./utils"
 
 type UseHandleDragProps<ItemType extends BaseKanbanItem> = {
   containers: BaseKanbanContainer<ItemType>[]
