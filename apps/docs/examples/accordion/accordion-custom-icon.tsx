@@ -1,10 +1,11 @@
+import { LuMinus, LuPlus } from "react-icons/lu"
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@mijn-ui/react-accordion"
-import { LuMinus, LuPlus } from "react-icons/lu"
 
 const AccordionCustomIconExample = () => {
   return (
@@ -13,8 +14,8 @@ const AccordionCustomIconExample = () => {
         <AccordionTrigger
           icon={
             <>
-              <LuPlus className="size-4 shrink-0 transition-transform duration-400 group-data-[state=open]:hidden" />
-              <LuMinus className="size-4 shrink-0 transition-transform duration-400 group-data-[state=closed]:hidden" />
+              <LuPlus className="duration-400 size-4 shrink-0 transition-transform group-data-[state=open]:hidden" />
+              <LuMinus className="duration-400 size-4 shrink-0 transition-transform group-data-[state=closed]:hidden" />
             </>
           }
         >
