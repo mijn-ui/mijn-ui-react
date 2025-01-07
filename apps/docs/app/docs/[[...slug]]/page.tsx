@@ -12,12 +12,12 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { LuExternalLink } from "react-icons/lu"
 
-import ComponentPreview from "@/app/components/component-preview"
+import Alert from "@/app/components/mdx/alert"
+import ComponentPreview from "@/app/components/mdx/component-preview"
 import {
   InstallationTabs,
   InstallationTabsContent,
-} from "@/app/components/installation-tabs"
-import Alert from "@/app/components/mdx-alert"
+} from "@/app/components/mdx/installation-tabs"
 import { source } from "@/app/source"
 import { metadataImage } from "@/lib/metadata-image"
 
