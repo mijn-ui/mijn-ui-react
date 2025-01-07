@@ -8,7 +8,7 @@ import { Label } from "@mijn-ui/react-label"
 import { RadioGroup, RadioGroupItem } from "@mijn-ui/react-radio-group"
 import { buttonStyles, ButtonVariantProps } from "@mijn-ui/react-theme"
 
-import { createVariantObjWithDefaults } from "../utils/variant-objects"
+import { createVariantObjWithDefaults } from "../../utils/variant-objects"
 
 /* -------------------------------------------------------------------------- */
 
