@@ -28,7 +28,7 @@ If you're using pnpm with a monorepo architecture, ensure your configuration poi
   #### Configure tailwind.config.ts
 
 ```ts title="tailwind.config.ts"
-import { mijnUiPreset } from "@mijn-ui/react-theme" // [!code highlight]
+import { mijnui } from "@mijn-ui/react-theme" // [!code highlight]
 import animationPlugin from "tailwindcss-animate" // [!code highlight]
 
 /** @type {import('tailwindcss').Config} */
@@ -39,7 +39,7 @@ export default {
     "./node_modules/@mijn-ui/react-theme/dist/**/*.{js,ts,jsx,tsx}", // [!code highlight]
   ],
   darkMode: "class", // [!code highlight]
-  plugins: [animationPlugin, mijnUiPreset()], // [!code highlight]
+  plugins: [animationPlugin, mijnui({})], // [!code highlight]
 }
 ```
 
