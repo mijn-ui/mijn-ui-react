@@ -12,7 +12,7 @@ const commandStyles = tv({
     list: "max-h-[300px] overflow-y-auto overflow-x-hidden",
     group:
       "text-foreground [&_[cmdk-group-heading]]:text-muted-foreground overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-tiny [&_[cmdk-group-heading]]:font-medium",
-    separator: "bg-border -mx-1 h-px",
+    separator: "bg-border -mx-1 h-divider",
     inputWrapper: "border-border flex items-center border-b px-3",
     inputIcon: "mr-2 size-4 shrink-0 opacity-50",
     input:

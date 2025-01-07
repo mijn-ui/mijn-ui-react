@@ -29,7 +29,7 @@ const selectStyles = tv({
     ],
     itemIndicator:
       "absolute right-2 flex size-3.5 items-center justify-center [&_svg]:size-4",
-    separator: "bg-muted -mx-1 my-1 h-px",
+    separator: "bg-muted -mx-1 my-1 h-divider",
   },
   compoundSlots: [
     {
