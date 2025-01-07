@@ -4,8 +4,8 @@ import defaultMdxComponents from "fumadocs-ui/mdx"
 import { notFound } from "next/navigation"
 
 import { BlockViewer } from "@/app/components/block-viewer"
-import Alert from "@/app/components/mdx-alert"
-import NavigationCard from "@/app/components/navigation-card"
+import Alert from "@/app/components/mdx/alert"
+import NavigationCard from "@/app/components/mdx/navigation-card"
 import { blocks } from "@/app/source"
 import { metadataImage } from "@/lib/metadata-image"
 
