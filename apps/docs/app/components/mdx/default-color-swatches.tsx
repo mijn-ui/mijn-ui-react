@@ -13,8 +13,8 @@ import {
   themeColorsLight,
 } from "@mijn-ui/react-theme"
 
-import { useCopyToClipboard } from "../hooks/use-copy-to-clipboard"
-import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip"
+import { useCopyToClipboard } from "../../hooks/use-copy-to-clipboard"
+import { Tooltip, TooltipContent, TooltipTrigger } from "../tooltip"
 
 /* -------------------------------------------------------------------------- */
 /*                             Constant Variables                             */

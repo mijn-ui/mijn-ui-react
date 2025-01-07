@@ -4,7 +4,7 @@ import React from "react"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@mijn-ui/react-tabs"
 
-import Alert from "./mdx-alert"
+import Alert from "./alert"
 
 type InstallationTabsProps = React.ComponentProps<typeof Tabs> & {
   items: string[]
