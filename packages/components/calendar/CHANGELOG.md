@@ -1,5 +1,11 @@
 # @mijn-ui-react/calendar
 
+## 0.0.14
+
+### Patch Changes
+
+- 3a9d89e: Update peer dependencies
+
 ## 0.0.13
 
 ### Patch Changes

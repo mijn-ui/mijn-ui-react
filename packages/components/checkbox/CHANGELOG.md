@@ -1,5 +1,13 @@
 # @mijn-ui-react/checkbox
 
+## 0.0.14
+
+### Patch Changes
+
+- 3a9d89e: Update peer dependencies
+- Updated dependencies [3a9d89e]
+  - @mijn-ui/react-hooks@0.0.12
+
 ## 0.0.13
 
 ### Patch Changes
