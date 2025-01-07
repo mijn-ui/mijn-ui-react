@@ -1,0 +1,165 @@
+---
+title: Layout
+description: MijnUI provides layout options to configure spacing, font sizes, line heights, and more for a consistent design.
+---
+
+MijnUI allows you to customize layout settings, including spacing, font sizes, line heights, border radius, and more. These layout options help ensure consistency across your components without the need to modify the default Tailwind CSS configuration.
+
+```ts
+export default {
+  plugins: [
+    mijnui({
+      layout: {},  // shared layout options [!code highlight]
+      themes: {
+        light: {
+          layout: {}, // layout settings for the light theme [!code highlight]
+          // ...
+        },
+        dark: {
+          layout: {}, // layout settings for the dark theme [!code highlight]
+          // ...
+        },
+        // ... custom themes
+      },
+    }),
+  ],
+};
+```
+
+<Alert>
+  Layout options are applied to all components.
+</Alert>
+
+---
+
+### Default Layout
+
+The default values for layout tokens are as follows:
+
+```ts
+export default {
+  plugins: [
+    mijnui({
+      layout: {
+        dividerWeight: "1px", // default height for the divider component
+        disabledOpacity: 0.5, // opacity for disabled components
+        fontSize: {
+          tiny: "0.75rem", // text-tiny
+          small: "0.875rem", // text-small
+          medium: "1rem", // text-medium
+          large: "1.125rem", // text-large
+        },
+        lineHeight: {
+          tiny: "1rem", // text-tiny
+          small: "1.25rem", // text-small
+          medium: "1.5rem", // text-medium
+          large: "1.75rem", // text-large
+        },
+        radius: {
+          small: "4px", // rounded-small
+          medium: "8px", // rounded-medium
+          large: "12px", // rounded-large
+        },
+        borderWidth: {
+          small: "1px", // border-small
+          medium: "2px", // border-medium (default)
+          large: "3px", // border-large
+        },
+      },
+      themes: {
+        light: {
+          layout: {
+            hoverOpacity: 0.8, // opacity when hovered
+            boxShadow: {
+              small: "0px 0px 5px 0px rgb(0 0 0 / 0.05)", // shadow-small
+              medium: "0px 0px 15px 0px rgb(0 0 0 / 0.1)", // shadow-medium
+              large: "0px 0px 30px 0px rgb(0 0 0 / 0.15)", // shadow-large
+            },
+          },
+        },
+        dark: {
+          layout: {
+            hoverOpacity: 0.8,
+            boxShadow: {
+              small: "0px 0px 5px 0px rgb(0 0 0 / 0.2)",
+              medium: "0px 0px 15px 0px rgb(0 0 0 / 0.25)",
+              large: "0px 0px 30px 0px rgb(0 0 0 / 0.3)",
+            },
+          },
+        },
+      },
+    }),
+  ],
+};
+```
+
+---
+
+#### CSS Variables
+
+MijnUI generates CSS variables for layout tokens using the format `--prefix-prop-name-scale`. The default prefix is `mijnui`, but you can change it with the `prefix` option.
+
+```ts
+export default {
+  plugins: [
+    mijnui({
+      prefix: "myapp", //  custom prefix [!code highlight]
+    }),
+  ],
+};
+```
+These variables can be used in your styles:
+
+```css
+/* Default prefix */
+.my-button {
+  font-size: var(--mijnui-font-size-small);
+  line-height: var(--mijnui-line-height-small);
+  border-radius: var(--mijnui-radius-medium);
+}
+
+/* Custom prefix */
+.my-component {
+  font-size: var(--myapp-font-size-small);
+  line-height: var(--myapp-line-height-small);
+  border-radius: var(--myapp-radius-medium);
+}
+```
+
+---
+### API Reference
+
+|Attribute|Type|Description|
+|---|---|---|
+|hoverOpacity|string, number|Opacity when the component is hovered. Must be a value between 0 and 1.|
+|disabledOpacity|string, number|Opacity when the component is disabled. Must be a value between 0 and 1.|
+|dividerWeight|string|Height for the divider component. Recommended unit: `px`.|
+|fontSize|[FontThemeUnit](#fontthemeunit)|Font size for text components.|
+|lineHeight|[FontThemeUnit](#fontthemeunit)|Line height for text components.|
+|radius|[BaseThemeUnit](#basethemeunit)|Border radius for components. Recommended unit: `rem`.|
+|borderWidth|[BaseThemeUnit](#basethemeunit)|Border width for components.|
+|boxShadow|[BaseThemeUnit](#basethemeunit)|Box shadow for components.|
+
+
+---
+
+#### BaseThemeUnit
+
+```ts
+export type BaseThemeUnit = {
+  small?: string;
+  medium?: string;
+  large?: string;
+};
+```
+
+#### FontThemeUnit
+
+```ts
+export type FontThemeUnit = {
+  small?: string;
+  medium?: string;
+  large?: string;
+  tiny?: string;
+};
+```
