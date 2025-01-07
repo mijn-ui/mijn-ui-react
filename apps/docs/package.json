@@ -77,6 +77,7 @@
     "@fumadocs/cli": "^0.0.4",
     "@next/eslint-plugin-next": "15.1.2",
     "@tailwindcss/typography": "^0.5.15",
+    "@mijn-ui/shared-icons": "workspace:*",
     "@types/mdx": "^2.0.13",
     "@types/node": "22.9.0",
     "@types/react": "^19.0.0",

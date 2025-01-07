@@ -1,25 +1,19 @@
 ---
-title: Installation
-description: This guide provides installation instructions for using Mijn-UI components via npm packages.
-root: true
+title: Manual Installation
+description: This guide provides installation instructions for using MijnUI components manually.
 ---
+
+import { Button } from "@/examples/button/button-extend"
 
 <Alert color="warning" title="Beta Notice">
   Currently, we provide only one installation option: Next.js integration.
 </Alert>
-
 
 ### Requirements
 
 - [NextJS 15](https://nextjs.org) or later
 - [React 19](https://react.dev) or later
 - [Tailwind Css 3.4](https://tailwindcss.com/) or later
-
-### Starter Template
-
-You can either use the [nextjs-template](https://github.com/mijn-ui/nextjs-template/tree/npm) template to get started quickly or follow the steps [below](#installation-guide) to integrate Mijn-UI components.
-
----
 
 ### Installation Guide
 
@@ -46,12 +40,12 @@ You can either use the [nextjs-template](https://github.com/mijn-ui/nextjs-templ
   </Step>
 
   <Step>
-  #### Install Mijn-UI Dependencies
+  #### Install Dependencies
 
-  Add the necessary Mijn-UI packages to your project:
+  Install the required packages:
 
   ```package-install
-  @mijn-ui/react-core @mijn-ui/react-theme tailwindcss-animate
+  @mijn-ui/react-core @mijn-ui/react-theme @mijn-ui/react-utilities @mijn-ui/react-hooks @mijn-ui/shared-icons tailwindcss-animate 
   ```
   </Step>
 
@@ -61,7 +55,7 @@ You can either use the [nextjs-template](https://github.com/mijn-ui/nextjs-templ
   Configure Tailwind CSS by updating your `tailwind.config.ts` file:
 
   ```ts title="tailwind.config.ts"
-  import { mijnUiPreset } from "@mijn-ui/react-theme" // [!code highlight]
+  import { mijnui } from "@mijn-ui/react-theme" // [!code highlight]
   import animationPlugin from "tailwindcss-animate" // [!code highlight]
 
   /** @type {import('tailwindcss').Config} */
@@ -72,7 +66,7 @@ You can either use the [nextjs-template](https://github.com/mijn-ui/nextjs-templ
       "./node_modules/@mijn-ui/react-theme/dist/**/*.{js,ts,jsx,tsx}", // [!code highlight]
     ],
     darkMode: "class", // [!code highlight]
-    plugins: [animationPlugin, mijnUiPreset()], // [!code highlight]
+    plugins: [animationPlugin, mijnui({})], // [!code highlight]
   }
   ```
   </Step>
@@ -98,14 +92,7 @@ You can either use the [nextjs-template](https://github.com/mijn-ui/nextjs-templ
 
 ---
 
-### Manual Installation
-
-If you want to use Mijn-UI components manually, make sure to finish the [installation guide](#installation-guide) setup and then install the additional dependencies:
-
-
-```package-install
-@mijn-ui/react-utilities @mijn-ui/react-hooks @mijn-ui/shared-icons
-```
+### Note:
 
 When using Mijn-UI components manually, you will need to resolve the import paths in your project. This is because all of the code is directly from the package source files.
 
@@ -115,3 +102,43 @@ For example, update your imports like this:
 import { Button } from "@mijn-ui/react-utilities"; // [!code --]
 import { Button } from "@/components/button"; // [!code ++]
 ```
+
+---
+
+### Why Choose Manual Integration?
+
+Manual integration might be the right choice if you need more control or are concerned about the stability of the npm packages.
+
+#### 1. **Access to Source Code**
+
+- Full control over the components for deeper customization or understanding.
+
+#### 2. **Avoid NPM Package Instability**
+
+- If you’re concerned about potential breaking changes in the npm packages, manual integration can be a more stable approach.
+
+#### 3. **Customizable Foundations**
+
+- Modify and extend components directly to suit your needs.
+
+For example, here’s how you can extend the [Button](/docs/components/button) variants by manually integrating MijnUI components:
+
+```json doc-gen:file
+{
+  "file": "./examples/button/button-extend.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"components/button.tsx\""
+  }
+}
+```
+
+**Usage**
+
+```tsx
+<Button color="olive">Extended Button</Button>
+```
+
+<ComponentPreview className="min-h-28">
+  <Button color="olive">Extended Button</Button>
+</ComponentPreview>
