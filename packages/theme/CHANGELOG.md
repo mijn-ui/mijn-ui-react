@@ -1,5 +1,19 @@
 # @mijn-ui/react-theme
 
+## 0.0.9
+
+### Patch Changes
+
+- 9ffa4c1: Beta release.
+- 4256d76: ### Replace Preset with Plugin and Update Components styles.
+
+  You can now customize the `theme`, `fontsize`, `hoverOpacity`, `lineHeight` in tailwind.config.ts file.
+
+  For more detail please refer to the [documentation](https://mijn-ui.vercel.app/react/docs)
+
+- Updated dependencies [9ffa4c1]
+  - @mijn-ui/react-utilities@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @mijn-ui/shared-icons
 
+## 0.0.4
+
+### Patch Changes
+
+- 9ffa4c1: Beta release.
+
 ## 0.0.3
 
 ### Patch Changes
