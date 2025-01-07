@@ -255,6 +255,9 @@ importers:
       '@fumadocs/cli':
         specifier: ^0.0.4
         version: 0.0.4
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../packages/utilities/shared-icons
       '@next/eslint-plugin-next':
         specifier: 15.1.2
         version: 15.1.2
