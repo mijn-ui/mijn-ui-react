@@ -9,10 +9,10 @@ const separatorStyles = tv({
   variants: {
     orientation: {
       horizontal: {
-        base: "h-px w-full",
+        base: "h-divider w-full",
       },
       vertical: {
-        base: "h-full w-px",
+        base: "h-full w-divider",
       },
     },
   },

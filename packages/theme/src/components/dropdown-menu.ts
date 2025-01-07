@@ -54,7 +54,7 @@ const dropdownMenuStyles = tv({
     radioItemIconWrapper: commonIconWrapperClasses,
     radioItemIcon: "size-2 fill-current",
     label: "px-2 py-1.5 text-small font-semibold",
-    separator: "bg-muted -mx-1 my-1 h-px",
+    separator: "bg-muted -mx-1 my-1 h-divider",
     shortcut: "ml-auto text-tiny tracking-widest opacity-60",
   },
   variants: {
