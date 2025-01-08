@@ -1,5 +1,11 @@
 # @mijn-ui/react-theme
 
+## 0.0.10
+
+### Patch Changes
+
+- 6777e35: Add tailwindcss-animate as a peer dependencies.
+
 ## 0.0.9
 
 ### Patch Changes

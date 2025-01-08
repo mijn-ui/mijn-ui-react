@@ -1,7 +1,7 @@
 {
   "name": "@mijn-ui/react-command",
   "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "homepage": "https://mijn-ui.vercel.app",
   "license": "MIT",
   "type": "module",
@@ -49,8 +49,8 @@
   "peerDependencies": {
     "react": "^19.0",
     "react-dom": "^19.0",
-    "@mijn-ui/react-theme": "^0.0.9",
-    "@mijn-ui/react-core": "^0.0.4"
+    "@mijn-ui/react-theme": "^0.0.10",
+    "@mijn-ui/react-core": "^0.0.5"
   },
   "publishConfig": {
     "access": "public"
