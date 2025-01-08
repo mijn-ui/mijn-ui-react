@@ -85,7 +85,7 @@ Getting started with MijnUI is simple using the global installation method, wher
       content: [
         // ...
         // make sure it's pointing to the ROOT node_module
-        "./node_modules/@mijn-ui/react-theme/dist/**/*.{js,ts,jsx,tsx}", // [!code highlight]
+        "./node_modules/@mijn-ui/react-theme/dist/**/*.js", // [!code highlight]
       ],
       darkMode: "class", // [!code highlight]
       plugins: [animationPlugin, mijnui({})], // [!code highlight]
@@ -177,7 +177,7 @@ For greater flexibility, you can install MijnUI components individually. This al
   <Step>
     #### Tailwind CSS Configuration
 
-    When using individual components, include their styles in your `tailwind.config.ts` file. For example, to use the **Button** component, configure your file like this:
+    Configure Tailwind CSS by updating your `tailwind.config.ts` file:
 
     ```ts title="tailwind.config.ts"
     import { mijnui } from "@mijn-ui/react-theme" // [!code highlight]
@@ -186,10 +186,9 @@ For greater flexibility, you can install MijnUI components individually. This al
     /** @type {import('tailwindcss').Config} */
     export default {
       content: [
-      // single component styles
-      "./node_modules/@mijn-ui/react-theme/dist/components/button.js",  // [!code highlight]
-      // or you can use a glob pattern (multiple component styles)
-      './node_modules/@mijn-ui/react-theme/dist/components/(button|badge|avatar|input).js'  // [!code highlight]
+        // ...
+        // make sure it's pointing to the ROOT node_module
+        "./node_modules/@mijn-ui/react-theme/dist/**/*.js", // [!code highlight]
       ],
       darkMode: "class", // [!code highlight]
       plugins: [animationPlugin, mijnui({})], // [!code highlight]
