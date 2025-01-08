@@ -1,6 +1,6 @@
+import { Label } from "@mijn-ui/react-label"
 import type { Meta, StoryObj } from "@storybook/react"
 import { Textarea, TextareaProps } from "./textarea"
-import { Label } from "@mijn-ui/react-label"
 
 const meta: Meta<typeof Textarea> = {
   title: "Components/Textarea",

@@ -3,15 +3,15 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Badge } from "@mijn-ui/react-badge"
-import { Button } from "@mijn-ui/react-button"
+import { Badge } from "@mijn-ui/react"
+import { Button } from "@mijn-ui/react"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@mijn-ui/react-collapsible"
-import { Separator } from "@mijn-ui/react-separator"
-import { buttonStyles, cn } from "@mijn-ui/react-theme"
+} from "@mijn-ui/react"
+import { Separator } from "@mijn-ui/react"
+import { buttonStyles, cn } from "@mijn-ui/react"
 import { SidebarTrigger } from "fumadocs-core/sidebar"
 import { useSearchContext, useSidebar } from "fumadocs-ui/provider"
 import {

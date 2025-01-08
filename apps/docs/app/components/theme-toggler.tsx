@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { cn } from "@mijn-ui/react-theme"
+import { cn } from "@mijn-ui/react"
 import { useTheme } from "next-themes"
 import { FiMoon, FiSun } from "react-icons/fi"
 

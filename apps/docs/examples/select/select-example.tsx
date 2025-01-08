@@ -6,7 +6,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@mijn-ui/react-select"
+} from "@mijn-ui/react"
 
 const SelectExample = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react"
-import { ScrollArea } from "@mijn-ui/react-scroll-area"
-import { Separator } from "@mijn-ui/react-separator"
+import { ScrollArea } from "@mijn-ui/react"
+import { Separator } from "@mijn-ui/react"
 
 const tags = Array.from({ length: 50 }).map(
   (_, i, a) => `v0.0.1-beta.${a.length - i}`,

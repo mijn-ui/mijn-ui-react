@@ -5,7 +5,7 @@ import {
   TableHeader,
   TableHeaderCell,
   TableRow,
-} from "@mijn-ui/react-table"
+} from "@mijn-ui/react"
 import { LuEllipsis } from "react-icons/lu"
 
 const TableExample = () => {

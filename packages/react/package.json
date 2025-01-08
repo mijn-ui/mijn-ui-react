@@ -21,9 +21,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist .turbo",
-    "build": "tsup",
-    "lint": "eslint .",
-    "types:check": "tsc --noEmit"
+    "build": "tsup"
   },
   "publishConfig": {
     "access": "public"

@@ -1,8 +1,8 @@
 "use client"
 
-import { Button } from "@mijn-ui/react-button"
+import { Button } from "@mijn-ui/react"
 // update import path
-import { ButtonVariantProps } from "@mijn-ui/react-theme"
+import { ButtonVariantProps } from "@mijn-ui/react"
 import { useResponsiveVariants } from "./use-responsive-variants"
 
 const ButtonWithHook = () => {

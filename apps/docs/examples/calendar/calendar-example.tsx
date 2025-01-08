@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Calendar } from "@mijn-ui/react-calendar"
+import { Calendar } from "@mijn-ui/react"
 
 const CalendarExample = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date())

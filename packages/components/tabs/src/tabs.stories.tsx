@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import { Button } from "@mijn-ui/react-button"
 import {
   Card,
   CardContent,
@@ -8,8 +8,8 @@ import {
   CardTitle,
 } from "@mijn-ui/react-card"
 import { Input } from "@mijn-ui/react-input"
-import { Button } from "@mijn-ui/react-button"
-import { Tabs, TabsContent, TabsList, TabsTrigger, TabsProps } from "./tabs"
+import type { Meta, StoryObj } from "@storybook/react"
+import { Tabs, TabsContent, TabsList, TabsProps, TabsTrigger } from "./tabs"
 
 const meta: Meta<typeof Tabs> = {
   title: "Components/Tabs",

@@ -10,17 +10,17 @@ import {
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogTitle,
-} from "@mijn-ui/react-alert-dialog"
-import { Button } from "@mijn-ui/react-button"
+} from "@mijn-ui/react"
+import { Button } from "@mijn-ui/react"
 import {
   Dialog,
   DialogContent,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@mijn-ui/react-dialog"
+} from "@mijn-ui/react"
+import { Input } from "@mijn-ui/react"
 import { useMediaQuery } from "@mijn-ui/react-hooks"
-import { Input } from "@mijn-ui/react-input"
 import { setMonth, setYear } from "date-fns"
 import { LuBug } from "react-icons/lu"
 import { CalendarFull } from "./components/calendar-full"

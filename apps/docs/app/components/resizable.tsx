@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "@mijn-ui/react-theme"
+import { cn } from "@mijn-ui/react"
 import { LuGripVertical } from "react-icons/lu"
 import * as ResizablePrimitive from "react-resizable-panels"
 

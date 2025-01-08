@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@mijn-ui/react-accordion"
+} from "@mijn-ui/react"
 import { LuMinus, LuPlus } from "react-icons/lu"
 
 const AccordionCustomIconExample = () => {

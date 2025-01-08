@@ -15,7 +15,7 @@ import {
   useSortable,
 } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
-import { cn } from "@mijn-ui/react-theme"
+import { cn } from "@mijn-ui/react"
 import { LuGripVertical } from "react-icons/lu"
 import {
   KanbanProvider,

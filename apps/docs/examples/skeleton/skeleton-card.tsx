@@ -1,4 +1,4 @@
-import { Skeleton } from "@mijn-ui/react-skeleton"
+import { Skeleton } from "@mijn-ui/react"
 
 const SkeletonCard = () => {
   return (

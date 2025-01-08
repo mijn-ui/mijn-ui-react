@@ -6,7 +6,7 @@ import {
   ThemeColors,
   themeColorsDark,
   themeColorsLight,
-} from "@mijn-ui/react-theme"
+} from "@mijn-ui/react"
 import { readableColor, toHex } from "color2k"
 import { useTheme } from "next-themes"
 import { LuCheck, LuClipboard } from "react-icons/lu"

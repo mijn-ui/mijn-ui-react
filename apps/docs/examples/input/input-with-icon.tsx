@@ -1,4 +1,4 @@
-import { Input } from "@mijn-ui/react-input"
+import { Input } from "@mijn-ui/react"
 import { LuPlus } from "react-icons/lu"
 
 const InputWithIcon = () => {
