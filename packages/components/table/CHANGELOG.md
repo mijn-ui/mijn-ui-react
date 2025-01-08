@@ -1,5 +1,13 @@
 # @mijn-ui-react/table
 
+## 0.0.12
+
+### Patch Changes
+
+- 3a9d89e: Update peer dependencies
+- Updated dependencies [3a9d89e]
+  - @mijn-ui/react-hooks@0.0.12
+
 ## 0.0.11
 
 ### Patch Changes

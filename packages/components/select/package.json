@@ -1,7 +1,7 @@
 {
   "name": "@mijn-ui/react-select",
   "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "homepage": "https://mijn-ui.vercel.app",
   "license": "MIT",
   "type": "module",

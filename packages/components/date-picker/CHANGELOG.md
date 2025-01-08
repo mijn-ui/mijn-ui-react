@@ -1,5 +1,16 @@
 # @mijn-ui-react/date-picker
 
+## 0.0.14
+
+### Patch Changes
+
+- 3a9d89e: Update peer dependencies
+- Updated dependencies [3a9d89e]
+  - @mijn-ui/react-calendar@0.0.14
+  - @mijn-ui/react-popover@0.0.14
+  - @mijn-ui/react-button@0.0.14
+  - @mijn-ui/react-select@0.0.13
+
 ## 0.0.13
 
 ### Patch Changes

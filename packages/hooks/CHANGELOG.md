@@ -1,5 +1,11 @@
 # @mijn-ui-react/hooks
 
+## 0.0.12
+
+### Patch Changes
+
+- 3a9d89e: Update peer dependencies
+
 ## 0.0.11
 
 ### Patch Changes
