@@ -107,7 +107,7 @@ const KanbanColumn = React.forwardRef<
   return (
     <div
       className={cn(
-        "bg-kanban relative w-full overflow-auto rounded-2xl py-2",
+        "relative w-full overflow-auto rounded-2xl bg-muted py-2",
         className,
       )}
       ref={ref}
@@ -272,7 +272,7 @@ const KanbanItemCount = React.forwardRef<
     <span
       ref={ref}
       className={cn(
-        "flex size-5 items-center justify-center rounded-full bg-secondary text-tiny font-medium text-muted-foreground",
+        "flex size-5 items-center justify-center rounded-full bg-default text-tiny font-medium text-muted-foreground",
         className,
       )}
       {...props}

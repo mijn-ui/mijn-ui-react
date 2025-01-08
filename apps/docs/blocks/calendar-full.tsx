@@ -318,7 +318,11 @@ const CalendarFullExample = () => {
                 <Button type="button" variant="ghost" onClick={closeDialogs}>
                   Cancel
                 </Button>
-                <Button type="submit" disabled={newEvent.title === ""}>
+                <Button
+                  color="primary"
+                  type="submit"
+                  disabled={newEvent.title === ""}
+                >
                   Create
                 </Button>
               </DialogFooter>

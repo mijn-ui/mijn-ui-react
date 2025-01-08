@@ -42,7 +42,7 @@ const ScreenState: React.FC<ScreenStateProps> = ({
         <Button className="h-9 sm:h-10" variant={"outlined"} onClick={onCancel}>
           Cancel
         </Button>
-        <Button className="h-9 sm:h-10" onClick={onCreate}>
+        <Button color="primary" className="h-9 sm:h-10" onClick={onCreate}>
           Create New File
         </Button>
       </CardFooter>
