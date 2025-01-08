@@ -1,0 +1,83 @@
+{
+  "name": "@mijn-ui/react",
+  "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
+  "version": "0.0.3",
+  "homepage": "https://mijn-ui.vercel.app",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mijn-ui/mijn-ui-react.git",
+    "directory": "packages/react/src"
+  },
+  "bugs": {
+    "url": "https://github.com/mijn-ui/mijn-ui-react/issues"
+  },
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist .turbo",
+    "build": "tsup",
+    "lint": "eslint .",
+    "types:check": "tsc --noEmit"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "mijn-ui",
+    "react",
+    "components",
+    "react components"
+  ],
+  "dependencies": {
+    "@mijn-ui/react-theme": "workspace:*",
+    "@mijn-ui/react-utilities": "workspace:*",
+    "@mijn-ui/react-hooks": "workspace:*",
+    "@mijn-ui/shared-icons": "workspace:*",
+    "@mijn-ui/react-accordion": "workspace:*",
+    "@mijn-ui/react-alert": "workspace:*",
+    "@mijn-ui/react-alert-dialog": "workspace:*",
+    "@mijn-ui/react-autocomplete": "workspace:*",
+    "@mijn-ui/react-avatar": "workspace:*",
+    "@mijn-ui/react-badge": "workspace:*",
+    "@mijn-ui/react-button": "workspace:*",
+    "@mijn-ui/react-calendar": "workspace:*",
+    "@mijn-ui/react-card": "workspace:*",
+    "@mijn-ui/react-checkbox": "workspace:*",
+    "@mijn-ui/react-collapsible": "workspace:*",
+    "@mijn-ui/react-command": "workspace:*",
+    "@mijn-ui/react-core": "workspace:*",
+    "@mijn-ui/react-date-picker": "workspace:*",
+    "@mijn-ui/react-dialog": "workspace:*",
+    "@mijn-ui/react-dropdown-menu": "workspace:*",
+    "@mijn-ui/react-input": "workspace:*",
+    "@mijn-ui/react-label": "workspace:*",
+    "@mijn-ui/react-pagination": "workspace:*",
+    "@mijn-ui/react-popover": "workspace:*",
+    "@mijn-ui/react-progress": "workspace:*",
+    "@mijn-ui/react-radio-group": "workspace:*",
+    "@mijn-ui/react-scroll-area": "workspace:*",
+    "@mijn-ui/react-select": "workspace:*",
+    "@mijn-ui/react-separator": "workspace:*",
+    "@mijn-ui/react-skeleton": "workspace:*",
+    "@mijn-ui/react-switch": "workspace:*",
+    "@mijn-ui/react-table": "workspace:*",
+    "@mijn-ui/react-tabs": "workspace:*",
+    "@mijn-ui/react-textarea": "workspace:*"
+  },
+  "devDependencies": {
+    "tsconfig": "workspace:*",
+    "tsup-config": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.0",
+    "react-dom": "^19.0",
+    "tailwindcss": ">=3.4.0",
+    "tailwindcss-animate": ">=1.0.0"
+  }
+}
