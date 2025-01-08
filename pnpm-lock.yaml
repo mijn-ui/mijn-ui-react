@@ -1648,13 +1648,16 @@ importers:
 
   packages/core:
     dependencies:
-      '@mijn-ui/react-theme':
-        specifier: workspace:*
-        version: link:../theme
       react-dom:
         specifier: ^19.0
         version: 19.0.0(react@19.0.0)
+      tailwindcss:
+        specifier: '>=3.4.0'
+        version: 3.4.17
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../theme
       '@types/node':
         specifier: 22.9.0
         version: 22.9.0
@@ -1709,6 +1712,130 @@ importers:
       tailwind-variants:
         specifier: ^0.3.0
         version: 0.3.0(tailwindcss@3.4.17)
+      tsconfig:
+        specifier: workspace:*
+        version: link:../configs/ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../configs/tsup-config
+
+  packages/react:
+    dependencies:
+      '@mijn-ui/react-accordion':
+        specifier: workspace:*
+        version: link:../components/accordion
+      '@mijn-ui/react-alert':
+        specifier: workspace:*
+        version: link:../components/alert
+      '@mijn-ui/react-alert-dialog':
+        specifier: workspace:*
+        version: link:../components/alert-dialog
+      '@mijn-ui/react-autocomplete':
+        specifier: workspace:*
+        version: link:../components/autocomplete
+      '@mijn-ui/react-avatar':
+        specifier: workspace:*
+        version: link:../components/avatar
+      '@mijn-ui/react-badge':
+        specifier: workspace:*
+        version: link:../components/badge
+      '@mijn-ui/react-button':
+        specifier: workspace:*
+        version: link:../components/button
+      '@mijn-ui/react-calendar':
+        specifier: workspace:*
+        version: link:../components/calendar
+      '@mijn-ui/react-card':
+        specifier: workspace:*
+        version: link:../components/card
+      '@mijn-ui/react-checkbox':
+        specifier: workspace:*
+        version: link:../components/checkbox
+      '@mijn-ui/react-collapsible':
+        specifier: workspace:*
+        version: link:../components/collapsible
+      '@mijn-ui/react-command':
+        specifier: workspace:*
+        version: link:../components/command
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../core
+      '@mijn-ui/react-date-picker':
+        specifier: workspace:*
+        version: link:../components/date-picker
+      '@mijn-ui/react-dialog':
+        specifier: workspace:*
+        version: link:../components/dialog
+      '@mijn-ui/react-dropdown-menu':
+        specifier: workspace:*
+        version: link:../components/dropdown-menu
+      '@mijn-ui/react-hooks':
+        specifier: workspace:*
+        version: link:../hooks
+      '@mijn-ui/react-input':
+        specifier: workspace:*
+        version: link:../components/input
+      '@mijn-ui/react-label':
+        specifier: workspace:*
+        version: link:../components/label
+      '@mijn-ui/react-pagination':
+        specifier: workspace:*
+        version: link:../components/pagination
+      '@mijn-ui/react-popover':
+        specifier: workspace:*
+        version: link:../components/popover
+      '@mijn-ui/react-progress':
+        specifier: workspace:*
+        version: link:../components/progress
+      '@mijn-ui/react-radio-group':
+        specifier: workspace:*
+        version: link:../components/radio-group
+      '@mijn-ui/react-scroll-area':
+        specifier: workspace:*
+        version: link:../components/scroll-area
+      '@mijn-ui/react-select':
+        specifier: workspace:*
+        version: link:../components/select
+      '@mijn-ui/react-separator':
+        specifier: workspace:*
+        version: link:../components/separator
+      '@mijn-ui/react-skeleton':
+        specifier: workspace:*
+        version: link:../components/skeleton
+      '@mijn-ui/react-switch':
+        specifier: workspace:*
+        version: link:../components/switch
+      '@mijn-ui/react-table':
+        specifier: workspace:*
+        version: link:../components/table
+      '@mijn-ui/react-tabs':
+        specifier: workspace:*
+        version: link:../components/tabs
+      '@mijn-ui/react-textarea':
+        specifier: workspace:*
+        version: link:../components/textarea
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../theme
+      '@mijn-ui/react-utilities':
+        specifier: workspace:*
+        version: link:../utilities/react-utilities
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../utilities/shared-icons
+      react:
+        specifier: ^19.0
+        version: 19.0.0
+      react-dom:
+        specifier: ^19.0
+        version: 19.0.0(react@19.0.0)
+      tailwindcss:
+        specifier: '>=3.4.0'
+        version: 3.4.17
+      tailwindcss-animate:
+        specifier: '>=1.0.0'
+        version: 1.0.7(tailwindcss@3.4.17)
+    devDependencies:
       tsconfig:
         specifier: workspace:*
         version: link:../configs/ts-config
@@ -1818,6 +1945,9 @@ importers:
       tailwind-variants:
         specifier: ^0.3.0
         version: 0.3.0(tailwindcss@3.4.17)
+      tailwindcss-animate:
+        specifier: '>=1.0.0'
+        version: 1.0.7(tailwindcss@3.4.17)
     devDependencies:
       eslint-config-custom:
         specifier: workspace:*
