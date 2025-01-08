@@ -1,5 +1,12 @@
 # @mijn-ui-react/hooks
 
+## 0.0.13
+
+### Patch Changes
+
+- Updated dependencies [a7594eb]
+  - @mijn-ui/react-core@0.0.5
+
 ## 0.0.12
 
 ### Patch Changes
