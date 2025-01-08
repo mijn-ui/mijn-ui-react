@@ -1,5 +1,5 @@
-import { extendVariants } from "@mijn-ui/react-core"
-import { Input } from "@mijn-ui/react-input"
+import { extendVariants } from "@mijn-ui/react"
+import { Input } from "@mijn-ui/react"
 
 export const MyInput = extendVariants(Input, {
   variants: {

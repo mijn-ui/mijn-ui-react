@@ -1,4 +1,4 @@
-import { cn } from "@mijn-ui/react-theme"
+import { cn } from "@mijn-ui/react"
 
 type CodePreviewerProps = {
   children?: React.ReactNode

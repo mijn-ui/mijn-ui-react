@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react"
+import { LuEllipsis } from "react-icons/lu"
 import {
   Table,
-  TableProps,
   TableBody,
   TableCell,
   TableHeader,
   TableHeaderCell,
+  TableProps,
   TableRow,
 } from "./table"
-import { LuEllipsis } from "react-icons/lu"
 
 const meta: Meta<typeof Table> = {
   title: "Components/Table",

@@ -1,4 +1,4 @@
-import { Badge } from "@mijn-ui/react-badge"
+import { Badge } from "@mijn-ui/react"
 
 const BadgeOverride = () => {
   return (

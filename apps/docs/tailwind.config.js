@@ -1,4 +1,4 @@
-import { mijnui } from "@mijn-ui/react-theme"
+import { mijnui } from "@mijn-ui/react"
 import { createPreset } from "fumadocs-ui/tailwind-plugin"
 import { withTV } from "tailwind-variants/dist/transformer.js"
 import animationPlugin from "tailwindcss-animate"

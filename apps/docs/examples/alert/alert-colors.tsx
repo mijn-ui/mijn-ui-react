@@ -1,9 +1,4 @@
-import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
-} from "@mijn-ui/react-alert"
+import { Alert, AlertDescription, AlertIcon, AlertTitle } from "@mijn-ui/react"
 import { IoRocketOutline } from "react-icons/io5"
 import { LiaCheckCircle } from "react-icons/lia"
 import { LuFileWarning } from "react-icons/lu"

@@ -1,4 +1,4 @@
-import { Button } from "@mijn-ui/react-button"
+import { Button } from "@mijn-ui/react"
 import {
   Card,
   CardContent,
@@ -6,9 +6,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@mijn-ui/react-card"
-import { Input } from "@mijn-ui/react-input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@mijn-ui/react-tabs"
+} from "@mijn-ui/react"
+import { Input } from "@mijn-ui/react"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@mijn-ui/react"
 
 const TabsExample = () => {
   return (

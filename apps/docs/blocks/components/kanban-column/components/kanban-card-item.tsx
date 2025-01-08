@@ -4,9 +4,9 @@ import {
   AvatarFallback,
   AvatarGroup,
   AvatarImage,
-} from "@mijn-ui/react-avatar"
-import { Badge } from "@mijn-ui/react-badge"
-import { Progress } from "@mijn-ui/react-progress"
+} from "@mijn-ui/react"
+import { Badge } from "@mijn-ui/react"
+import { Progress } from "@mijn-ui/react"
 import { GoClock } from "react-icons/go"
 import { LuX } from "react-icons/lu"
 import { KanbanCard } from "../"

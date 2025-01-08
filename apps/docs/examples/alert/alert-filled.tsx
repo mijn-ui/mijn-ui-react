@@ -1,9 +1,4 @@
-import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
-} from "@mijn-ui/react-alert"
+import { Alert, AlertDescription, AlertIcon, AlertTitle } from "@mijn-ui/react"
 import { MdErrorOutline } from "react-icons/md"
 
 const AlertFilled = () => {

@@ -1,5 +1,5 @@
-import { Checkbox } from "@mijn-ui/react-checkbox"
-import { Label } from "@mijn-ui/react-label"
+import { Checkbox } from "@mijn-ui/react"
+import { Label } from "@mijn-ui/react"
 
 const CheckboxSizes = () => {
   return (

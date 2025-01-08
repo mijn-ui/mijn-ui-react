@@ -104,102 +104,12 @@ importers:
       '@fullcalendar/timegrid':
         specifier: ^6.1.15
         version: 6.1.15(@fullcalendar/core@6.1.15)
-      '@mijn-ui/react-accordion':
+      '@mijn-ui/react':
         specifier: workspace:*
-        version: link:../../packages/components/accordion
-      '@mijn-ui/react-alert':
-        specifier: workspace:*
-        version: link:../../packages/components/alert
-      '@mijn-ui/react-alert-dialog':
-        specifier: workspace:*
-        version: link:../../packages/components/alert-dialog
-      '@mijn-ui/react-autocomplete':
-        specifier: workspace:*
-        version: link:../../packages/components/autocomplete
-      '@mijn-ui/react-avatar':
-        specifier: workspace:*
-        version: link:../../packages/components/avatar
-      '@mijn-ui/react-badge':
-        specifier: workspace:*
-        version: link:../../packages/components/badge
-      '@mijn-ui/react-button':
-        specifier: workspace:*
-        version: link:../../packages/components/button
-      '@mijn-ui/react-calendar':
-        specifier: workspace:*
-        version: link:../../packages/components/calendar
-      '@mijn-ui/react-card':
-        specifier: workspace:*
-        version: link:../../packages/components/card
-      '@mijn-ui/react-checkbox':
-        specifier: workspace:*
-        version: link:../../packages/components/checkbox
-      '@mijn-ui/react-collapsible':
-        specifier: workspace:*
-        version: link:../../packages/components/collapsible
-      '@mijn-ui/react-command':
-        specifier: workspace:*
-        version: link:../../packages/components/command
-      '@mijn-ui/react-core':
-        specifier: workspace:*
-        version: link:../../packages/core
-      '@mijn-ui/react-date-picker':
-        specifier: workspace:*
-        version: link:../../packages/components/date-picker
-      '@mijn-ui/react-dialog':
-        specifier: workspace:*
-        version: link:../../packages/components/dialog
-      '@mijn-ui/react-dropdown-menu':
-        specifier: workspace:*
-        version: link:../../packages/components/dropdown-menu
+        version: link:../../packages/react
       '@mijn-ui/react-hooks':
         specifier: workspace:*
         version: link:../../packages/hooks
-      '@mijn-ui/react-input':
-        specifier: workspace:*
-        version: link:../../packages/components/input
-      '@mijn-ui/react-label':
-        specifier: workspace:*
-        version: link:../../packages/components/label
-      '@mijn-ui/react-pagination':
-        specifier: workspace:*
-        version: link:../../packages/components/pagination
-      '@mijn-ui/react-popover':
-        specifier: workspace:*
-        version: link:../../packages/components/popover
-      '@mijn-ui/react-progress':
-        specifier: workspace:*
-        version: link:../../packages/components/progress
-      '@mijn-ui/react-radio-group':
-        specifier: workspace:*
-        version: link:../../packages/components/radio-group
-      '@mijn-ui/react-scroll-area':
-        specifier: workspace:*
-        version: link:../../packages/components/scroll-area
-      '@mijn-ui/react-select':
-        specifier: workspace:*
-        version: link:../../packages/components/select
-      '@mijn-ui/react-separator':
-        specifier: workspace:*
-        version: link:../../packages/components/separator
-      '@mijn-ui/react-skeleton':
-        specifier: workspace:*
-        version: link:../../packages/components/skeleton
-      '@mijn-ui/react-switch':
-        specifier: workspace:*
-        version: link:../../packages/components/switch
-      '@mijn-ui/react-table':
-        specifier: workspace:*
-        version: link:../../packages/components/table
-      '@mijn-ui/react-tabs':
-        specifier: workspace:*
-        version: link:../../packages/components/tabs
-      '@mijn-ui/react-textarea':
-        specifier: workspace:*
-        version: link:../../packages/components/textarea
-      '@mijn-ui/react-theme':
-        specifier: workspace:*
-        version: link:../../packages/theme
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../packages/utilities/react-utilities

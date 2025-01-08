@@ -1,5 +1,5 @@
-import { Label } from "@mijn-ui/react-label"
-import { RadioGroup, RadioGroupItem } from "@mijn-ui/react-radio-group"
+import { Label } from "@mijn-ui/react"
+import { RadioGroup, RadioGroupItem } from "@mijn-ui/react"
 
 const RadioGroupExmaple = () => {
   return (

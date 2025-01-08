@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@mijn-ui/react-tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@mijn-ui/react"
 import Alert from "./alert"
 
 type InstallationTabsProps = React.ComponentProps<typeof Tabs> & {

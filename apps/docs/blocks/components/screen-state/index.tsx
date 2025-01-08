@@ -1,5 +1,5 @@
 import React from "react"
-import { Button } from "@mijn-ui/react-button"
+import { Button } from "@mijn-ui/react"
 import {
   Card,
   CardContent,
@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@mijn-ui/react-card"
+} from "@mijn-ui/react"
 import { FaBoxArchive } from "react-icons/fa6"
 
 interface ScreenStateProps {

@@ -1,12 +1,12 @@
 import * as React from "react"
-import { createTVUnstyledSlots } from "@mijn-ui/react-core"
+import { createTVUnstyledSlots } from "@mijn-ui/react"
 import {
   UnstyledComponentWithSlots,
   VariantProps,
   buttonStyles,
   cn,
   tv,
-} from "@mijn-ui/react-theme"
+} from "@mijn-ui/react"
 import { LoaderCircleIcon } from "@mijn-ui/shared-icons"
 import { Slot, Slottable } from "@radix-ui/react-slot"
 

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { buttonStyles, cn } from "@mijn-ui/react-theme"
+import { buttonStyles, cn } from "@mijn-ui/react"
 
 export default function HomePage() {
   return (

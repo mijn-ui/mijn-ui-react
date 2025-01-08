@@ -1,7 +1,7 @@
 "use client"
 
 import { SVGProps, useEffect, useState } from "react"
-import { Button, ButtonProps } from "@mijn-ui/react-button"
+import { Button, ButtonProps } from "@mijn-ui/react"
 import { useTheme } from "next-themes"
 
 /* -------------------------------------------------------------------------- */

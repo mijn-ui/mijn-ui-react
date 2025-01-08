@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@mijn-ui/react-avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@mijn-ui/react"
 
 const AvatarExample = () => {
   return (

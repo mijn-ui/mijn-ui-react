@@ -7,9 +7,9 @@ import {
   AutocompleteGroup,
   AutocompleteItem,
   AutocompleteTrigger,
-} from "@mijn-ui/react-autocomplete"
-import { Input } from "@mijn-ui/react-input"
-import { ScrollArea } from "@mijn-ui/react-scroll-area"
+} from "@mijn-ui/react"
+import { Input } from "@mijn-ui/react"
+import { ScrollArea } from "@mijn-ui/react"
 import { LuSearch } from "react-icons/lu"
 
 const FRAMEWORKS = [

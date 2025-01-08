@@ -1,4 +1,4 @@
-import { Button } from "@mijn-ui/react-button"
+import { Button } from "@mijn-ui/react"
 
 const ButtonVariants = () => {
   return (
