@@ -18,6 +18,7 @@ const meta: Meta<typeof Select> = {
     layout: "centered",
   },
   args: {
+    disabled: false,
     unstyled: false,
   },
 }
