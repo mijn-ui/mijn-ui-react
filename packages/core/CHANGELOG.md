@@ -1,5 +1,13 @@
 # @mijn-ui/react-core
 
+## 0.0.5
+
+### Patch Changes
+
+- a7594eb: remove @mijn-ui/react-theme from dependencies.
+- Updated dependencies [6777e35]
+  - @mijn-ui/react-theme@0.0.10
+
 ## 0.0.4
 
 ### Patch Changes

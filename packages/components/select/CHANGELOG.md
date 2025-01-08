@@ -1,5 +1,15 @@
 # @mijn-ui-react/select
 
+## 0.0.14
+
+### Patch Changes
+
+- Updated dependencies [a7594eb]
+- Updated dependencies [6777e35]
+  - @mijn-ui/react-core@0.0.5
+  - @mijn-ui/react-theme@0.0.10
+  - @mijn-ui/react-hooks@0.0.13
+
 ## 0.0.13
 
 ### Patch Changes
