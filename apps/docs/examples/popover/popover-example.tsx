@@ -97,7 +97,7 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
         <PopoverClose unstyled asChild>
           <Button
             variant="ghost"
-            size={"icon"}
+            iconOnly
             radius={"full"}
             className="absolute right-0 top-0 hover:bg-transparent"
           >

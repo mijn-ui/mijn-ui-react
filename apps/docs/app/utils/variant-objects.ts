@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 /**
  * Transforms a record of variants into an array of variant objects with formatted options.
  *
@@ -66,12 +68,12 @@ export function getVariantObjects<T extends Record<string, VariantValues>>(
  */
 export function addDefaultValue<
   T extends Record<string, VariantValues>,
-  D extends Record<string, string>,
+  D extends Record<string, any>,
 >(variantsObj: VariantObjects<T>, defaultVariants: D) {
   return variantsObj.map((variant) => {
     const defaultVariantKey = defaultVariants[variant.name as string]
     const defaultOption = defaultVariantKey
-      ? variant.options[defaultVariantKey]
+      ? variant.options[`${defaultVariantKey}`]
       : Object.values(variant.options)[0]
 
     return {
@@ -106,7 +108,7 @@ export function addDefaultValue<
 
 export function createVariantObjWithDefaults<
   T extends Record<string, VariantValues>,
-  D extends Record<string, string>,
+  D extends Record<string, string | any>,
 >(variants: T, defaultVariants: D) {
   const variantObjects = getVariantObjects(variants)
   return addDefaultValue(variantObjects, defaultVariants)
