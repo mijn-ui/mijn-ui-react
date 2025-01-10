@@ -1,5 +1,11 @@
 # @mijn-ui-react/button
 
+## 0.0.17
+
+### Patch Changes
+
+- 610a9ae: Add icon only support.
+
 ## 0.0.16
 
 ### Patch Changes
