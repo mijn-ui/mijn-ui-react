@@ -14,10 +14,10 @@ const TVResponsiveButtonExample = () => {
 
       <TVResponsiveButton
         size={{
-          initial: "icon",
+          initial: "sm",
           sm: "md",
           md: "lg",
-          lg: "lg",
+          lg: "xl",
         }}
         variant="filled"
         color="primary"

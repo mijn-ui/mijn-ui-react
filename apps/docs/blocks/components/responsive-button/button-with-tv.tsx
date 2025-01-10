@@ -11,11 +11,11 @@ const responsiveButton = tv(
     extend: buttonStyles,
     variants: {
       size: {
-        xs: "text-small h-8 px-2",
-        sm: "text-small h-9 px-3",
-        md: "text-small h-10 px-3.5",
-        lg: "text-medium h-11 px-5",
-        xl: "text-medium h-12 px-6",
+        xs: "h-8 px-2 text-small",
+        sm: "h-9 px-3 text-small",
+        md: "h-10 px-3.5 text-small",
+        lg: "h-11 px-5 text-medium",
+        xl: "h-12 px-6 text-medium",
       },
     },
   },
