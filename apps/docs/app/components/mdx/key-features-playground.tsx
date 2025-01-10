@@ -37,12 +37,20 @@ const KeyFeaturesPlayground = () => {
     }))
   }
 
+  // have to convert string to boolean for iconOnly
+  // because the value comming from the radio group is a string
+  // this is temporary solution. TODO: Improve this.
+  const iconOnly =
+    typeof buttonOptions.iconOnly === "string"
+      ? stringToBoolean(buttonOptions.iconOnly)
+      : buttonOptions?.iconOnly
+
   return (
     <figure className="not-prose w-full">
       <div className="flex h-80 w-full flex-col items-center overflow-hidden rounded-medium border-small sm:flex-row">
         <div className="flex h-full min-h-32 flex-auto items-center justify-center bg-background">
-          <Button {...buttonOptions}>
-            {buttonOptions.iconOnly ? "M" : "MijnUI"}
+          <Button {...buttonOptions} iconOnly={iconOnly}>
+            {iconOnly ? "M" : "MijnUI"}
           </Button>
         </div>
 
@@ -153,3 +161,13 @@ const RadioGroupWithOptions = ({
     )}
   </RadioGroup>
 )
+
+/* -------------------------------------------------------------------------- */
+
+function stringToBoolean(value: string): boolean | undefined {
+  if (value === "true") {
+    return true
+  } else if (value === "false") {
+    return false
+  }
+}
