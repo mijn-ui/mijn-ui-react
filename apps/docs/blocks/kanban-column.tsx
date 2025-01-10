@@ -125,7 +125,7 @@ const KanbanExample = () => {
                 </div>
 
                 <Button
-                  size="icon"
+                  iconOnly
                   variant="ghost"
                   className="size-7 rounded-full text-muted-foreground hover:text-foreground"
                 >

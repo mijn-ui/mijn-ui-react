@@ -12,7 +12,7 @@ const StatsCardExample = () => {
   return (
     <Card className="max-w-44">
       <CardHeader className="px-5 pb-5 sm:px-6 sm:pb-4">
-        <Button size={"icon"} className="rounded-full bg-accent p-0 sm:size-12">
+        <Button iconOnly className="rounded-full bg-accent p-0 sm:size-12">
           <IoBagOutline className="size-4 sm:size-5" />
         </Button>
       </CardHeader>

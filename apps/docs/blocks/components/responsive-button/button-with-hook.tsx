@@ -14,7 +14,7 @@ const ButtonWithHook = () => {
       lg: "danger",
     },
     size: {
-      initial: "icon",
+      initial: "xs",
       sm: "sm",
       md: "lg",
       lg: "lg",
@@ -25,7 +25,7 @@ const ButtonWithHook = () => {
 
   return (
     <Button color={color} size={size}>
-      {size === "icon" ? "B" : "Button"}
+      Button
     </Button>
   )
 }

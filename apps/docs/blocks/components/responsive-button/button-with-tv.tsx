@@ -11,10 +11,11 @@ const responsiveButton = tv(
     extend: buttonStyles,
     variants: {
       size: {
-        sm: "h-9 w-fit px-3",
-        md: "h-10 w-fit px-3",
-        lg: "h-11 w-fit px-8",
-        icon: "size-10",
+        xs: "text-small h-8 px-2",
+        sm: "text-small h-9 px-3",
+        md: "text-small h-10 px-3.5",
+        lg: "text-medium h-11 px-5",
+        xl: "text-medium h-12 px-6",
       },
     },
   },
@@ -27,11 +28,12 @@ const TVResponsiveButton = ({
   variant,
   radius,
   color,
+  iconOnly,
   classNames,
   ...props
 }: Omit<ButtonProps, keyof ButtonVariantProps> &
   VariantProps<typeof responsiveButton>) => {
-  const styles = responsiveButton({ color, size, variant, radius })
+  const styles = responsiveButton({ color, size, variant, radius, iconOnly })
 
   return (
     <Button
