@@ -171,6 +171,54 @@ import { Button } from "@mijn-ui/react"
 
 ---
 
+#### Subtle
+
+<ComponentPreview className="flex-col md:flex-row">
+  <div className="flex items-center flex-wrap gap-4">
+    <Button variant="subtle" color="default">
+      Default
+    </Button>
+    <Button variant="subtle" color="primary">
+      Primary
+    </Button>
+    <Button variant="subtle" color="secondary">
+      Secondary
+    </Button>
+    <Button variant="subtle" color="success">
+      Success
+    </Button>
+    <Button variant="subtle" color="info">
+      Info
+    </Button>
+    <Button variant="subtle" color="warning">
+      Warning
+    </Button>
+    <Button variant="subtle" color="danger">
+      Danger
+    </Button>
+  </div>
+</ComponentPreview>
+
+```tsx
+  <Button variant="subtle" color="default">
+    Default
+  </Button>
+  <Button variant="subtle" color="primary">
+    Primary
+  </Button>
+  <Button variant="subtle" color="secondary">
+    Secondary
+  </Button>
+  <Button variant="subtle" color="default">
+    Muted
+  </Button>
+  <Button variant="subtle" color="danger">
+    Danger
+  </Button>
+```
+
+---
+
 #### Ghost
 
 <ComponentPreview className="flex-col md:flex-row">
@@ -243,16 +291,38 @@ import { Button } from "@mijn-ui/react"
 
 <ComponentPreview>
 <div className="flex items-end flex-wrap gap-4">
+  <Button size="xs">xs</Button>
   <Button size="sm">sm</Button>
   <Button size="md">md</Button>
   <Button size="lg">lg</Button>
-  <Button size="icon">icon</Button>
+  <Button size="xl">xl</Button>
 </div>
 </ComponentPreview>
 
 ```tsx
+<Button size="xs">xs</Button>
 <Button size="sm">sm</Button>
 <Button size="md">md</Button>
 <Button size="lg">lg</Button>
-<Button size="icon">icon</Button>
+<Button size="xl">xl</Button>
+```
+
+### IconOnly
+
+<ComponentPreview>
+<div className="flex items-end flex-wrap gap-4">
+  <Button iconOnly size="xs">xs</Button>
+  <Button iconOnly size="sm">sm</Button>
+  <Button iconOnly size="md">md</Button>
+  <Button iconOnly size="lg">lg</Button>
+  <Button iconOnly size="xl">xl</Button>
+</div>
+</ComponentPreview>
+
+```tsx
+<Button iconOnly size="xs">xs</Button>
+<Button iconOnly size="sm">sm</Button>
+<Button iconOnly size="md">md</Button>
+<Button iconOnly size="lg">lg</Button>
+<Button iconOnly size="xl">icon</Button>
 ```
