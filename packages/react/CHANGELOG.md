@@ -1,5 +1,21 @@
 # @mijn-ui/react
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies [610a9ae]
+  - @mijn-ui/react-button@0.0.17
+  - @mijn-ui/react-autocomplete@0.0.17
+  - @mijn-ui/react-card@0.0.14
+  - @mijn-ui/react-date-picker@0.0.17
+  - @mijn-ui/react-dialog@0.0.17
+  - @mijn-ui/react-dropdown-menu@0.0.16
+  - @mijn-ui/react-label@0.0.14
+  - @mijn-ui/react-popover@0.0.16
+  - @mijn-ui/react-tabs@0.0.15
+  - @mijn-ui/react-command@0.0.17
+
 ## 0.0.5
 
 ### Patch Changes

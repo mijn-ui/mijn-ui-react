@@ -1,5 +1,13 @@
 # @mijn-ui-react/date-picker
 
+## 0.0.17
+
+### Patch Changes
+
+- Updated dependencies [610a9ae]
+  - @mijn-ui/react-button@0.0.17
+  - @mijn-ui/react-popover@0.0.16
+
 ## 0.0.16
 
 ### Patch Changes
