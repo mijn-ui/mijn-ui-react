@@ -4,7 +4,7 @@ import { colorVariants } from "../utils/variants"
 
 const buttonStyles = tv({
   slots: {
-    base: "inline-flex items-center justify-center gap-1 text-small transition-colors duration-200 ease-in-out active:brightness-90 disabled:pointer-events-none disabled:opacity-disabled disabled:brightness-75",
+    base: "inline-flex items-center justify-center gap-1 transition-colors duration-200 ease-in-out active:brightness-90 disabled:pointer-events-none disabled:opacity-disabled disabled:brightness-75",
     icon: "mr-2 size-5 animate-spin text-current",
   },
   variants: {
@@ -25,16 +25,28 @@ const buttonStyles = tv({
       full: "rounded-full",
     },
     size: {
-      sm: "h-9 px-3",
-      md: "h-10 px-3",
-      lg: "h-11 px-8",
-      icon: "size-10",
+      xs: "text-small h-8 px-2",
+      sm: "text-small h-9 px-3",
+      md: "text-small h-10 px-3.5",
+      lg: "text-medium h-11 px-5",
+      xl: "text-medium h-12 px-6",
     },
     variant: {
       filled: "",
       outlined: "border-small border-current",
       ghost: "",
+      subtle: "",
     },
+    iconOnly: {
+      true: "px-0 gap-0",
+      false: "",
+    },
+  },
+  defaultVariants: {
+    variant: "filled",
+    color: "default",
+    radius: "md",
+    size: "md",
   },
   compoundVariants: [
     {
@@ -105,6 +117,58 @@ const buttonStyles = tv({
           colorVariants.outlined.danger,
           "hover:bg-danger hover:text-danger-foreground-filled",
         ],
+      },
+    },
+
+    /* --------------------------------- Subtle --------------------------------- */
+
+    {
+      color: "default",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.default,
+      },
+    },
+    {
+      color: "primary",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.primary,
+      },
+    },
+    {
+      color: "secondary",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.secondary,
+      },
+    },
+    {
+      color: "success",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.success,
+      },
+    },
+    {
+      color: "info",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.info,
+      },
+    },
+    {
+      color: "warning",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.warning,
+      },
+    },
+    {
+      color: "danger",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.danger,
       },
     },
 
@@ -231,18 +295,49 @@ const buttonStyles = tv({
       },
     },
     {
-      variant: "filled",
+      variant: ["filled", "subtle"],
       class: {
         base: "hover:opacity-hover",
       },
     },
+
+    /* --------------------------------- Icon Only --------------------------------- */
+    {
+      iconOnly: true,
+      size: "xs",
+      class: {
+        base: "size-8",
+      },
+    },
+    {
+      iconOnly: true,
+      size: "sm",
+      class: {
+        base: "size-9",
+      },
+    },
+    {
+      iconOnly: true,
+      size: "md",
+      class: {
+        base: "size-10",
+      },
+    },
+    {
+      iconOnly: true,
+      size: "lg",
+      class: {
+        base: "size-11",
+      },
+    },
+    {
+      iconOnly: true,
+      size: "xl",
+      class: {
+        base: "size-12",
+      },
+    },
   ],
-  defaultVariants: {
-    variant: "filled",
-    color: "default",
-    radius: "md",
-    size: "md",
-  },
 })
 
 export type ButtonVariantProps = VariantProps<typeof buttonStyles>

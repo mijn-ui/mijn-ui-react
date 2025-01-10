@@ -18,15 +18,13 @@ const paginationStyles = tv({
       true: {
         item: buttonStyles({
           variant: "outlined",
-
-          size: "icon",
+          iconOnly: true,
         }).base(),
       },
       false: {
         item: buttonStyles({
           variant: "ghost",
-
-          size: "icon",
+          iconOnly: true,
         }).base(),
       },
     },
