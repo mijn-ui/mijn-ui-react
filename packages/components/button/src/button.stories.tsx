@@ -12,6 +12,7 @@ const meta: Meta<typeof Button> = {
     color: "default",
     radius: "md",
     size: "md",
+    iconOnly: false,
     loading: false,
     disabled: false,
     unstyled: false,
@@ -21,7 +22,7 @@ const meta: Meta<typeof Button> = {
     variant: {
       type: "string",
       control: "select",
-      options: ["filled", "outlined", "ghost"],
+      options: ["filled", "outlined", "ghost", "subtle"],
     },
     color: {
       type: "string",
@@ -44,7 +45,7 @@ const meta: Meta<typeof Button> = {
     size: {
       type: "string",
       control: "select",
-      options: ["sm", "md", "lg", "icon"],
+      options: ["xs", "sm", "md", "lg", "xl"],
     },
   },
 }
@@ -99,6 +100,12 @@ const ButtonVariants = (args: ButtonProps) => {
       </div>
       <div>
         <h3 className="text-muted-foreground mb-3 w-full text-start font-semibold">
+          Subtle
+        </h3>
+        <ButtonColors variant="subtle" />
+      </div>
+      <div>
+        <h3 className="text-muted-foreground mb-3 w-full text-start font-semibold">
           Ghost
         </h3>
         <ButtonColors variant="ghost" />
@@ -132,17 +139,18 @@ const ButtonRadius = (args: ButtonProps) => {
 const ButtonSizes = (args: ButtonProps) => {
   return (
     <div className="flex items-center gap-8">
-      <Button {...args} className="px-6">
+      <Button {...args}>xs</Button>
+      <Button {...args} size="sm">
         sm
       </Button>
-      <Button {...args} size="md" className="px-6">
+      <Button {...args} size="md">
         md
       </Button>
       <Button {...args} size="lg">
         lg
       </Button>
-      <Button {...args} size="icon">
-        icon
+      <Button {...args} size="xl">
+        xl
       </Button>
     </div>
   )
@@ -179,7 +187,15 @@ export const Radius: Story = {
 export const Sizes: Story = {
   render: ButtonSizes,
   args: {
-    size: "sm",
+    size: "xs",
+  },
+}
+
+export const IconOnly: Story = {
+  render: ButtonSizes,
+  args: {
+    size: "xs",
+    iconOnly: true,
   },
 }
 
