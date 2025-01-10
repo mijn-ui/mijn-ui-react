@@ -11,7 +11,7 @@ const selectStyles = tv({
     base: "",
     trigger: [
       ...disabledClasses,
-      "border-input placeholder:text-muted-foreground focus:border-input-small focus:ring-ring hover:bg-accent flex h-10 w-full items-center justify-between rounded-medium border-small px-3 py-2 text-small focus:outline-none focus:ring-1 [&>span]:line-clamp-1",
+      "border-input bg-default placeholder:text-muted-foreground focus:border-input-small focus:ring-ring hover:bg-accent flex h-10 w-full items-center justify-between rounded-medium border-small px-3 py-2 text-small focus:outline-none focus:ring-1 [&>span]:line-clamp-1",
       "[&_svg]:size-4 [&_svg]:opacity-50",
     ],
     scrollUpBtn: "",
