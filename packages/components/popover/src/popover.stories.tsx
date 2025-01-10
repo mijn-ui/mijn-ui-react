@@ -92,7 +92,7 @@ const PopoverTemplate = (args: PopoverProps) => {
         <PopoverClose unstyled asChild>
           <Button
             variant="ghost"
-            size={"icon"}
+            iconOnly
             radius={"full"}
             className="absolute right-0 top-0 hover:bg-transparent"
             unstyled={args.unstyled}
@@ -142,7 +142,7 @@ const PopoverUnstyled = (args: PopoverProps) => {
         <PopoverClose unstyled asChild>
           <Button
             variant="ghost"
-            size={"icon"}
+            iconOnly
             radius={"full"}
             className="absolute right-4 top-4 hover:bg-transparent"
             unstyled={args.unstyled}

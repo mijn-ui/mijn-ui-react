@@ -32,7 +32,7 @@ const CardTemplate = (args: CardProps) => {
       <CardHeader>
         <Button
           variant="ghost"
-          size={"icon"}
+          iconOnly
           radius={"lg"}
           className="bg-accent text-muted-foreground p-0 sm:size-12"
           unstyled={args.unstyled}
@@ -60,7 +60,7 @@ const CardStats = (args: CardProps) => {
     <Card className="max-w-44" {...args}>
       <CardHeader className="px-5 pb-5 sm:px-6 sm:pb-4">
         <Button
-          size={"icon"}
+          iconOnly
           className="bg-accent rounded-full p-0 sm:size-12"
           unstyled={args.unstyled}
         >
@@ -120,7 +120,7 @@ const CardUnstyled = (args: CardProps) => {
       <CardHeader>
         <Button
           variant={"outlined"}
-          size={"icon"}
+          iconOnly
           radius={"lg"}
           className="text-muted-foreground p-0 sm:size-12"
           asChild
