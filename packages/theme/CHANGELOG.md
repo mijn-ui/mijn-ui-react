@@ -1,5 +1,11 @@
 # @mijn-ui/react-theme
 
+## 0.0.11
+
+### Patch Changes
+
+- 32b1f0a: Add button styles and select styles.
+
 ## 0.0.10
 
 ### Patch Changes
