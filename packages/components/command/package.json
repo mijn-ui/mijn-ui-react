@@ -42,6 +42,7 @@
   "dependencies": {
     "@mijn-ui/react-dialog": "workspace:*",
     "@mijn-ui/shared-icons": "workspace:*",
+    "@mijn-ui/react-input": "workspace:*",
     "@mijn-ui/react-utilities": "workspace:*",
     "@mijn-ui/react-hooks": "workspace:*",
     "cmdk": "^1.0.4"

@@ -12,10 +12,11 @@ const commandStyles = tv({
     group:
       "text-foreground [&_[cmdk-group-heading]]:text-muted-foreground overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-tiny [&_[cmdk-group-heading]]:font-medium",
     separator: "bg-border -mx-1 h-divider",
-    inputWrapper: "border-border flex items-center border-b px-3",
-    inputIcon: "mr-2 size-4 shrink-0 opacity-50",
+    inputWrapper: "border-border flex items-center border-b px-1",
+    inputIcon: "",
+    inputPrimitive: "hidden",
     input:
-      "placeholder:text-muted-foreground flex h-11 w-full rounded-medium bg-transparent py-3 text-small outline-none disabled:cursor-not-allowed disabled:opacity-disabled",
+      "border-none bg-transparent focus-visible:border-none focus-visible:ring-0",
     item: "data-[selected='true']:bg-accent data-[selected=true]:text-accent-foreground relative flex cursor-default select-none items-center rounded-medium px-2 py-1.5 text-small outline-none data-[disabled]:pointer-events-auto data-[disabled=true]:opacity-disabled",
     empty: "py-6 text-center text-small",
     shortcut: "text-muted-foreground ml-auto text-tiny tracking-widest",

@@ -4,6 +4,7 @@ import * as React from "react"
 import { createTVUnstyledSlots } from "@mijn-ui/react-core"
 import { Dialog, DialogContent, type DialogProps } from "@mijn-ui/react-dialog"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
+import { Input } from "@mijn-ui/react-input"
 import {
   CommandSlots,
   UnstyledComponentWithSlots,
@@ -127,9 +128,27 @@ type CommandInputProps = React.ComponentPropsWithRef<
 > &
   UnstyledProps
 
-const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
-  const { input, inputIcon, inputWrapper, classNames } =
+const CommandInput = ({
+  className,
+  unstyled,
+  value: externalValue,
+  onValueChange,
+  ...props
+}: CommandInputProps) => {
+  const { input, inputIcon, inputPrimitive, inputWrapper, classNames } =
     useCommandStyles(unstyled)
+  const [fallbackValue, setFallbackValue] = React.useState("")
+  const isControlled = externalValue !== undefined
+  const value = isControlled ? externalValue : fallbackValue
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value
+    if (isControlled) {
+      onValueChange?.(newValue)
+    } else {
+      setFallbackValue(newValue)
+    }
+  }
 
   return (
     <div
@@ -139,16 +158,28 @@ const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
       /* eslint-disable-next-line */
       cmdk-input-wrapper=""
     >
-      <SearchIcon
-        className={inputIcon({
-          className: classNames?.inputIcon,
-        })}
+      <Input
+        classNames={{
+          input: input({
+            className: classNames?.input,
+          }),
+        }}
+        className={cn(className)}
+        value={value}
+        onChange={handleChange}
+        startIcon={
+          <SearchIcon
+            className={inputIcon({
+              className: classNames?.inputIcon,
+            })}
+          />
+        }
+        {...props}
       />
       <CommandPrimitive.Input
-        className={input({
-          className: cn(classNames?.input, className),
-        })}
-        {...props}
+        className={inputPrimitive()}
+        value={value}
+        onValueChange={onValueChange}
       />
     </div>
   )

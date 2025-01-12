@@ -722,6 +722,9 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: workspace:*
         version: link:../../hooks
+      '@mijn-ui/react-input':
+        specifier: workspace:*
+        version: link:../input
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities/react-utilities
