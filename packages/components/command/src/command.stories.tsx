@@ -1,8 +1,10 @@
+import { Input } from "@mijn-ui/react-input"
 import type { Meta, StoryObj } from "@storybook/react"
 import {
   LuCalculator,
   LuCalendar,
   LuCreditCard,
+  LuSearch,
   LuSettings,
   LuSmile,
   LuUser,
@@ -39,7 +41,16 @@ const CommandTemplate = (args: CommandProps) => {
       className="border-border rounded-large border-small shadow-medium md:w-[450px]"
       {...args}
     >
-      <CommandInput placeholder="Type a command or search..." />
+      <CommandInput asChild placeholder="Type a command or search...">
+        <Input
+          startIcon={<LuSearch />}
+          classNames={{
+            // TODO: Let the user know that they have to do this unfortunately, for now.
+            input:
+              "bg-card border-transparent ring-0 focus-visible:ring-0 focus-visible:order-b-ring border-b border-b-input rounded-none",
+          }}
+        />
+      </CommandInput>
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
@@ -84,11 +95,11 @@ const CommandUnstyled = (args: CommandProps) => {
     <Command
       className="border-border rounded-large border-small shadow-medium p-3 md:w-[300px]"
       classNames={{
-        inputWrapper: "flex items-center gap-2",
-        item: "flex items-center pointer-events-none",
-        shortcut: "ml-auto",
-        separator: "border-b-2",
-        group: "flex flex-col gap-1 py-2 [&_[cmdk-group-heading]]:text-small",
+        commandItem: "flex items-center pointer-events-none",
+        commandShortcut: "ml-auto",
+        commandSeparator: "border-b-2",
+        commandGroup:
+          "flex flex-col gap-1 py-2 [&_[cmdk-group-heading]]:text-small",
       }}
       {...args}
     >

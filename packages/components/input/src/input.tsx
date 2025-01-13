@@ -35,7 +35,7 @@ const Input = ({
     endIcon: !!endIcon,
   })
   const {
-    base,
+    inputWrapper,
     input,
     startIcon: startIconStyle,
     endIcon: endIconStyle,
@@ -44,7 +44,11 @@ const Input = ({
   const id = React.useId()
 
   return (
-    <div className={base({ className: cn(classNames?.base, className) })}>
+    <div
+      className={inputWrapper({
+        className: cn(classNames?.inputWrapper, className),
+      })}
+    >
       {startIcon && (
         <div className={startIconStyle({ className: classNames?.startIcon })}>
           {startIcon}

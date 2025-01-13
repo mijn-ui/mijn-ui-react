@@ -735,6 +735,9 @@ importers:
       '@mijn-ui/react-core':
         specifier: workspace:*
         version: link:../../core
+      '@mijn-ui/react-input':
+        specifier: workspace:*
+        version: link:../input
       '@mijn-ui/react-theme':
         specifier: workspace:*
         version: link:../../theme
