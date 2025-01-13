@@ -74,7 +74,7 @@ const Navbar = () => {
   )
 
   return (
-    <header className="sticky inset-x-0 top-0 z-50 h-[var(--navbar-height)] w-full flex-col items-center justify-center border-b bg-transparent backdrop-blur-md md:flex">
+    <header className="sticky inset-x-0 top-0 z-40 h-[var(--navbar-height)] w-full flex-col items-center justify-center border-b bg-transparent backdrop-blur-md md:flex">
       <nav className="flex w-full items-center justify-between px-5 py-2">
         <div className="flex items-center gap-4">
           <Link href={"/"} className="flex  items-center gap-2 font-bold">
