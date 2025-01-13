@@ -11,7 +11,7 @@ const labelWithIconClasses = [
 
 const inputStyles = tv({
   slots: {
-    base: "relative w-full",
+    inputWrapper: "relative w-full",
     startIcon:
       "[&>svg]:text-muted-foreground absolute left-2 top-1/2 -translate-y-1/2 transform text-medium",
     endIcon:
@@ -30,7 +30,7 @@ const inputStyles = tv({
   variants: {
     disabled: {
       true: {
-        base: "opacity-disabled pointer-events-none cursor-not-allowed",
+        inputWrapper: "opacity-disabled pointer-events-none cursor-not-allowed",
       },
     },
     startIcon: {
