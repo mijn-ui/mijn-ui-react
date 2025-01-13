@@ -14,7 +14,6 @@ const commandStyles = tv({
     separator: "bg-border -mx-1 h-divider",
     inputWrapper: "border-border flex items-center border-b px-1",
     inputIcon: "",
-    inputPrimitive: "hidden",
     input:
       "border-none bg-transparent focus-visible:border-none focus-visible:ring-0",
     item: "data-[selected='true']:bg-accent data-[selected=true]:text-accent-foreground relative flex cursor-default select-none items-center rounded-medium px-2 py-1.5 text-small outline-none data-[disabled]:pointer-events-auto data-[disabled=true]:opacity-disabled",

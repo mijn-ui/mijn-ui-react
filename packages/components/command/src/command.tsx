@@ -135,7 +135,8 @@ const CommandInput = ({
   onValueChange,
   ...props
 }: CommandInputProps) => {
-  const { input, inputIcon, inputPrimitive, inputWrapper, classNames } =
+  const context = useCommandContext()
+  const { input, inputIcon, inputWrapper, classNames } =
     useCommandStyles(unstyled)
   const [fallbackValue, setFallbackValue] = React.useState("")
   const isControlled = externalValue !== undefined
@@ -164,7 +165,7 @@ const CommandInput = ({
             className: classNames?.input,
           }),
         }}
-        className={cn(className)}
+        className={className}
         value={value}
         onChange={handleChange}
         startIcon={
@@ -174,10 +175,11 @@ const CommandInput = ({
             })}
           />
         }
+        unstyled={context.unstyled}
         {...props}
       />
       <CommandPrimitive.Input
-        className={inputPrimitive()}
+        className="hidden"
         value={value}
         onValueChange={onValueChange}
       />
