@@ -7,11 +7,13 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
+  Input,
 } from "@mijn-ui/react"
 import {
   LuCalculator,
   LuCalendar,
   LuCreditCard,
+  LuSearch,
   LuSettings,
   LuSmile,
   LuUser,
@@ -20,7 +22,18 @@ import {
 const CommandExample = () => {
   return (
     <Command className="rounded-large border-small border-border shadow-medium md:w-[450px]">
-      <CommandInput placeholder="Type a command or search..." />
+      <CommandInput asChild>
+        {/* CommandInput serves as a wrapper to trigger functionality and does not include any default styles. 
+    This allows you to fully customize it with your own styles and components as needed. */}
+        <Input
+          startIcon={<LuSearch />}
+          classNames={{
+            input:
+              "bg-card border-transparent ring-0 focus-visible:ring-0 focus-visible:order-b-ring border-b border-b-input rounded-none",
+          }}
+          placeholder="Type a command or search..."
+        />
+      </CommandInput>
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
