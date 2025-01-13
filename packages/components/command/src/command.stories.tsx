@@ -84,7 +84,6 @@ const CommandUnstyled = (args: CommandProps) => {
     <Command
       className="border-border rounded-large border-small shadow-medium p-3 md:w-[300px]"
       classNames={{
-        inputWrapper: "flex items-center gap-2",
         item: "flex items-center pointer-events-none",
         shortcut: "ml-auto",
         separator: "border-b-2",
@@ -92,7 +91,10 @@ const CommandUnstyled = (args: CommandProps) => {
       }}
       {...args}
     >
-      <CommandInput placeholder="Type a command or search..." />
+      <CommandInput
+        placeholder="Type a command or search..."
+        className="flex items-center gap-2"
+      />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
