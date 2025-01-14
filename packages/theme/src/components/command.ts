@@ -14,6 +14,7 @@ const commandStyles = tv({
     commandSeparator: "bg-border -mx-1 h-divider",
     commandItem:
       "data-[selected='true']:bg-accent data-[selected=true]:text-accent-foreground relative flex cursor-default select-none items-center rounded-medium px-2 py-1.5 text-small outline-none data-[disabled]:pointer-events-auto data-[disabled=true]:opacity-disabled",
+    commandInput: "",
     commandEmpty: "py-6 text-center text-small",
     commandShortcut: "text-muted-foreground ml-auto text-tiny tracking-widest",
   },
