@@ -76,7 +76,7 @@ const Command = ({
 /*                                CommandDialog                               */
 /* -------------------------------------------------------------------------- */
 
-type CommandDialogProps = Omit<DialogProps, "classNames"> &
+export type CommandDialogProps = Omit<DialogProps, "classNames"> &
   CommandBaseProps & { className?: string }
 
 const CommandDialog = ({
@@ -121,13 +121,29 @@ const CommandDialog = ({
 /*                                CommandInput                                */
 /* -------------------------------------------------------------------------- */
 
-const CommandInput = CommandPrimitive.Input
+export type CommandInputProps = React.ComponentPropsWithRef<
+  typeof CommandPrimitive.Input
+> &
+  UnstyledProps
+
+const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
+  const { commandInput, classNames } = useCommandStyles(unstyled)
+
+  return (
+    <CommandPrimitive.Input
+      className={commandInput({
+        className: cn(classNames?.commandInput, className),
+      })}
+      {...props}
+    />
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                 CommandList                                */
 /* -------------------------------------------------------------------------- */
 
-type CommandListProps = React.ComponentPropsWithRef<
+export type CommandListProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.List
 > &
   UnstyledProps
@@ -149,7 +165,7 @@ const CommandList = ({ className, unstyled, ...props }: CommandListProps) => {
 /*                                CommandEmpty                                */
 /* -------------------------------------------------------------------------- */
 
-type CommandEmptyProps = React.ComponentPropsWithRef<
+export type CommandEmptyProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Empty
 > &
   UnstyledProps
@@ -171,7 +187,7 @@ const CommandEmpty = ({ unstyled, className, ...props }: CommandEmptyProps) => {
 /*                                CommandGroup                                */
 /* -------------------------------------------------------------------------- */
 
-type CommandGroupProps = React.ComponentPropsWithRef<
+export type CommandGroupProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Group
 > &
   UnstyledProps
@@ -193,7 +209,7 @@ const CommandGroup = ({ className, unstyled, ...props }: CommandGroupProps) => {
 /*                              CommandSeparator                              */
 /* -------------------------------------------------------------------------- */
 
-type CommandSeparatorProps = React.ComponentPropsWithRef<
+export type CommandSeparatorProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Separator
 > &
   UnstyledProps
@@ -218,7 +234,7 @@ const CommandSeparator = ({
 /*                                 CommandItem                                */
 /* -------------------------------------------------------------------------- */
 
-type CommandItemProps = React.ComponentPropsWithRef<
+export type CommandItemProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Item
 > &
   UnstyledProps
@@ -239,7 +255,7 @@ const CommandItem = ({ className, unstyled, ...props }: CommandItemProps) => {
 /*                               CommandShortcut                              */
 /* -------------------------------------------------------------------------- */
 
-type CommandShortcutProps = React.HTMLAttributes<HTMLSpanElement> &
+export type CommandShortcutProps = React.HTMLAttributes<HTMLSpanElement> &
   UnstyledProps
 
 const CommandShortcut = ({
@@ -269,4 +285,5 @@ export {
   CommandList,
   CommandSeparator,
   CommandShortcut,
+  useCommandStyles,
 }
