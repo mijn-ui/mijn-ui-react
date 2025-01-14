@@ -212,8 +212,8 @@ const TabsUnstyled = (args: TabsProps) => {
           <CardContent className="space-y-4">
             <Input
               id="name"
+              className="w-full py-1 indent-2"
               classNames={{
-                input: "indent-2 py-1 w-full",
                 label: "bg-surface",
               }}
               placeholder="Name"
@@ -222,8 +222,8 @@ const TabsUnstyled = (args: TabsProps) => {
             />
             <Input
               id="username"
+              className="w-full py-1 indent-2"
               classNames={{
-                input: "indent-2 py-1 w-full",
                 label: "bg-surface",
               }}
               placeholder="Username"
@@ -256,8 +256,8 @@ const TabsUnstyled = (args: TabsProps) => {
           <CardContent className="space-y-4">
             <Input
               id="current"
+              className="w-full py-1 indent-2"
               classNames={{
-                input: "indent-2 py-1 w-full",
                 label: "bg-surface",
               }}
               placeholder="Current password"
@@ -266,8 +266,8 @@ const TabsUnstyled = (args: TabsProps) => {
             />
             <Input
               id="new"
+              className="w-full py-1 indent-2"
               classNames={{
-                input: "indent-2 py-1 w-full",
                 label: "bg-surface",
               }}
               placeholder="New password"

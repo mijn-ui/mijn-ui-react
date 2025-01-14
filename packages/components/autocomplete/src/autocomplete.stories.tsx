@@ -136,18 +136,8 @@ const AutocompleteWithDialog = (args: AutocompleteProps) => {
         <div className="flex flex-col space-y-2 text-center sm:text-left">
           <DialogTitle>User Information</DialogTitle>
         </div>
-        <Input
-          placeholder="Username"
-          classNames={{
-            input: "bg-card",
-          }}
-        />
-        <Input
-          placeholder="Email"
-          classNames={{
-            input: "bg-card",
-          }}
-        />
+        <Input placeholder="Username" className="bg-card" />
+        <Input placeholder="Email" className="bg-card" />
         <Autocomplete
           value={value}
           onValueChange={setValue}
@@ -156,9 +146,7 @@ const AutocompleteWithDialog = (args: AutocompleteProps) => {
           <AutocompleteTrigger asChild>
             <Input
               unstyled={args.unstyled}
-              classNames={{
-                input: "bg-card",
-              }}
+              className="bg-card"
               placeholder={"Search for a framework"}
               endIcon={<ChevronDownIcon />}
             />
@@ -200,10 +188,9 @@ const AutocompleteUnstyled = (args: AutocompleteProps) => {
     >
       <AutocompleteTrigger asChild>
         <Input
-          className="bg-muted flex items-center gap-2 p-2"
+          className="bg-muted border-0 focus-visible:outline-none focus-visible:ring-0"
           classNames={{
-            input:
-              "bg-muted border-0 focus-visible:outline-none focus-visible:ring-0",
+            wrapper: "bg-muted flex items-center gap-2 p-2",
           }}
           placeholder={"Search for a framework"}
           startIcon={<SearchIcon />}

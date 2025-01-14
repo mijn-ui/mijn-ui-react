@@ -76,8 +76,8 @@ const PopoverTemplate = (args: PopoverProps) => {
                   {field.label}
                 </Label>
                 <Input
+                  className="bg-card"
                   classNames={{
-                    input: "bg-card",
                     label: "bg-card peer-focus:bg-card",
                   }}
                   id={field.id}
@@ -133,7 +133,7 @@ const PopoverUnstyled = (args: PopoverProps) => {
                   name={field.name}
                   defaultValue={field.defaultValue}
                   unstyled={args.unstyled}
-                  classNames={{ input: "w-full indent-2" }}
+                  className="w-full indent-2"
                 />
               </fieldset>
             )

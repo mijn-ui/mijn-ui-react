@@ -49,16 +49,16 @@ const DialogTemplate = (args: DialogProps) => {
             type="email"
             label="Email"
             autoFocus
+            className="bg-popover"
             classNames={{
-              input: "bg-popover",
               label: "bg-popover peer-focus:bg-popover",
             }}
           />
           <Input
             label="Password"
             type="password"
+            className="bg-popover"
             classNames={{
-              input: "bg-popover",
               label: "bg-popover peer-focus:bg-popover",
             }}
           />
