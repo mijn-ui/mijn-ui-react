@@ -41,14 +41,12 @@ const CommandTemplate = (args: CommandProps) => {
       className="border-border rounded-large border-small shadow-medium md:w-[450px]"
       {...args}
     >
-      <CommandInput asChild placeholder="Type a command or search...">
+      <CommandInput asChild>
         <Input
           startIcon={<LuSearch />}
-          classNames={{
-            // TODO: Let the user know that they have to do this unfortunately, for now.
-            input:
-              "bg-card border-transparent ring-0 focus-visible:ring-0 focus-visible:order-b-ring border-b border-b-input rounded-none",
-          }}
+          variant="underline"
+          placeholder="Type a command or search..."
+          className="bg-card"
         />
       </CommandInput>
       <CommandList>
@@ -95,11 +93,10 @@ const CommandUnstyled = (args: CommandProps) => {
     <Command
       className="border-border rounded-large border-small shadow-medium p-3 md:w-[300px]"
       classNames={{
-        commandItem: "flex items-center pointer-events-none",
-        commandShortcut: "ml-auto",
-        commandSeparator: "border-b-2",
-        commandGroup:
-          "flex flex-col gap-1 py-2 [&_[cmdk-group-heading]]:text-small",
+        item: "flex items-center pointer-events-none",
+        shortcut: "ml-auto",
+        separator: "border-b-2",
+        group: "flex flex-col gap-1 py-2 [&_[cmdk-group-heading]]:text-small",
       }}
       {...args}
     >

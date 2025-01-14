@@ -5,19 +5,24 @@ import { createTVUnstyledSlots } from "@mijn-ui/react-core"
 import { Label } from "@mijn-ui/react-label"
 import {
   InputSlots,
+  InputVariantProps,
   UnstyledComponentWithSlots,
   cn,
   inputStyles,
 } from "@mijn-ui/react-theme"
 
-export type InputProps = UnstyledComponentWithSlots<InputSlots> &
+export type InputBaseProps = UnstyledComponentWithSlots<InputSlots> &
   React.ComponentPropsWithRef<"input"> & {
     startIcon?: React.ReactNode
     endIcon?: React.ReactNode
     label?: React.ReactNode
   }
 
+export type InputProps = InputBaseProps &
+  Omit<InputVariantProps, "startIcon" | "endIcon" | "label">
+
 const Input = ({
+  variant,
   unstyled,
   className,
   classNames,
@@ -30,13 +35,14 @@ const Input = ({
   ...props
 }: InputProps) => {
   const styles = inputStyles({
+    variant,
     disabled,
     startIcon: !!startIcon,
     endIcon: !!endIcon,
   })
   const {
-    inputWrapper,
-    input,
+    wrapper,
+    base,
     startIcon: startIconStyle,
     endIcon: endIconStyle,
     label: labelStyles,
@@ -45,8 +51,8 @@ const Input = ({
 
   return (
     <div
-      className={inputWrapper({
-        className: cn(classNames?.inputWrapper, className),
+      className={wrapper({
+        className: classNames?.wrapper,
       })}
     >
       {startIcon && (
@@ -56,7 +62,7 @@ const Input = ({
       )}
       <input
         type={type}
-        className={input({ className: classNames?.input })}
+        className={base({ className: cn(classNames?.base, className) })}
         id={userId || id}
         disabled={disabled}
         // Adding an empty space by default ensures the floating label moves correctly on focus or when input is present.
