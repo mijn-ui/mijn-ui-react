@@ -8,12 +8,15 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
+  Button,
 } from "@mijn-ui/react"
 
 const AlertDialogExample = () => {
   return (
     <AlertDialog>
-      <AlertDialogTrigger>Delete Account</AlertDialogTrigger>
+      <AlertDialogTrigger asChild>
+        <Button>Delete Account</Button>
+      </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Confirm Account Deletion</AlertDialogTitle>

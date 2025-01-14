@@ -1,4 +1,5 @@
 import {
+  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -12,7 +13,9 @@ import {
 const DropdownMenuExample = () => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>Edit</DropdownMenuTrigger>
+      <DropdownMenuTrigger asChild>
+        <Button>Edit</Button>
+      </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>Undo</DropdownMenuItem>
         <DropdownMenuItem disabled>Redo</DropdownMenuItem>
