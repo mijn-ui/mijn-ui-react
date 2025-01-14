@@ -1,5 +1,16 @@
 # @mijn-ui-react/command
 
+## 0.0.18
+
+### Patch Changes
+
+- 562f35f: Command Input will not have any default styling, allowing users to fully customize it and simplifying the component.
+- Updated dependencies [562f35f]
+  - @mijn-ui/react-theme@0.0.12
+  - @mijn-ui/react-dialog@0.0.18
+  - @mijn-ui/react-core@0.0.7
+  - @mijn-ui/react-hooks@0.0.15
+
 ## 0.0.17
 
 ### Patch Changes
