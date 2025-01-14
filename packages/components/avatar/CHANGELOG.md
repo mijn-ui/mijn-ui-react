@@ -1,5 +1,14 @@
 # @mijn-ui-react/avatar
 
+## 0.0.15
+
+### Patch Changes
+
+- Updated dependencies [562f35f]
+  - @mijn-ui/react-theme@0.0.12
+  - @mijn-ui/react-core@0.0.7
+  - @mijn-ui/react-hooks@0.0.15
+
 ## 0.0.14
 
 ### Patch Changes
