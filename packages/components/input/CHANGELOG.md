@@ -1,5 +1,15 @@
 # @mijn-ui-react/input
 
+## 0.0.15
+
+### Patch Changes
+
+- 562f35f: Input now has two variants, filled and underline.
+- Updated dependencies [562f35f]
+  - @mijn-ui/react-theme@0.0.12
+  - @mijn-ui/react-label@0.0.15
+  - @mijn-ui/react-core@0.0.7
+
 ## 0.0.14
 
 ### Patch Changes

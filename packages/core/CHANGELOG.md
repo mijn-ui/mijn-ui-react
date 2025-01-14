@@ -1,5 +1,12 @@
 # @mijn-ui/react-core
 
+## 0.0.7
+
+### Patch Changes
+
+- Updated dependencies [562f35f]
+  - @mijn-ui/react-theme@0.0.12
+
 ## 0.0.6
 
 ### Patch Changes
