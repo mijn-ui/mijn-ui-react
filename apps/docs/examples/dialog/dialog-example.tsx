@@ -38,8 +38,8 @@ const DialogExample = ({ unstyled = false }: DialogExampleProps) => {
           <Input
             unstyled={unstyled}
             type="email"
+            className="bg-card"
             classNames={{
-              input: "bg-card",
               label: "bg-card peer-focus:bg-card",
             }}
             label="Email..."
@@ -49,8 +49,8 @@ const DialogExample = ({ unstyled = false }: DialogExampleProps) => {
             unstyled={unstyled}
             label="Password..."
             type="password"
+            className="bg-card"
             classNames={{
-              input: "bg-card",
               label: "bg-card peer-focus:bg-card",
             }}
           />

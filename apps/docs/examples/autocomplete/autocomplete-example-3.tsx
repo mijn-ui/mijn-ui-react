@@ -57,24 +57,12 @@ const AutocompleteWithDialog = () => {
         <div className="flex flex-col space-y-2 text-center sm:text-left">
           <DialogTitle>User Information</DialogTitle>
         </div>
-        <Input
-          placeholder="Username"
-          classNames={{
-            input: "bg-card",
-          }}
-        />
-        <Input
-          placeholder="Email"
-          classNames={{
-            input: "bg-card",
-          }}
-        />
+        <Input placeholder="Username" className="bg-card" />
+        <Input placeholder="Email" className="bg-card" />
         <Autocomplete value={value} onValueChange={setValue}>
           <AutocompleteTrigger asChild>
             <Input
-              classNames={{
-                input: "bg-card",
-              }}
+              className="bg-card"
               placeholder={"Search for a framework"}
               endIcon={<LuChevronsUpDown />}
             />
