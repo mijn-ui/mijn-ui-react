@@ -55,6 +55,27 @@ import { Input } from "@mijn-ui/react"
 
 ---
 
+### InputVariants
+
+<ComponentPreview className="flex-col gap-8">
+  <div className="flex flex-col gap-2">
+    <p className="font-medium text-small">Filled / Default</p>
+    <Input classNames={{ wrapper: "w-80" }} variant="filled" placeholder="Username..." />
+  </div>
+  <div className="flex flex-col gap-2">
+    <p className="font-medium text-small">Underline</p>
+    <Input classNames={{ wrapper: "w-80" }} variant="underline" placeholder="Username..." />
+  </div>
+</ComponentPreview>
+
+
+```tsx
+<Input classNames={{ wrapper: "w-80" }} variant="filled" placeholder="Username..." />
+<Input classNames={{ wrapper: "w-80" }} variant="underline" placeholder="Username..." />
+```
+
+---
+
 ### Input with Icon
 
 <ComponentPreview>
@@ -80,7 +101,7 @@ import { Input } from "@mijn-ui/react"
 </ComponentPreview>
 
 ```tsx
-  <Input classNames={{ wrapper: "w-80" }} label="Username" />
+<Input classNames={{ wrapper: "w-80" }} label="Username" />
 ```
 
 ---
