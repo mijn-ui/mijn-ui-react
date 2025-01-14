@@ -11,12 +11,10 @@ const avatarGroupStyles = tv({
 
 const avatarStyles = tv({
   slots: {
-    base: "inline-block relative shrink-0 overflow-hidden rounded-full",
+    base: "inline-block relative shrink-0 overflow-hidden",
     image: "aspect-square size-full object-cover",
-    fallback:
-      "bg-muted flex size-full items-center justify-center rounded-full",
+    fallback: "bg-muted flex size-full items-center justify-center",
   },
-
   variants: {
     size: {
       xxl: "size-16 text-medium",
@@ -26,9 +24,17 @@ const avatarStyles = tv({
       sm: "size-8 text-tiny",
       xs: "size-6 text-tiny",
     },
+    radius: {
+      none: "rounded-none",
+      sm: "rounded-small",
+      md: "rounded-medium",
+      lg: "rounded-large",
+      full: "rounded-full",
+    },
   },
   defaultVariants: {
     size: "md",
+    radius: "full",
   },
 })
 

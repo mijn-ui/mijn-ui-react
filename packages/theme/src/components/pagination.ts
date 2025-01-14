@@ -7,7 +7,7 @@ const paginationStyles = tv({
     base: "",
     content: "flex items-center gap-2",
     list: "flex flex-row items-center gap-1",
-    item: "",
+    listItem: "",
     previousBtn: "",
     previousElipsis: "",
     nextBtn: "",
@@ -16,13 +16,13 @@ const paginationStyles = tv({
   variants: {
     active: {
       true: {
-        item: buttonStyles({
+        listItem: buttonStyles({
           variant: "outlined",
           iconOnly: true,
         }).base(),
       },
       false: {
-        item: buttonStyles({
+        listItem: buttonStyles({
           variant: "ghost",
           iconOnly: true,
         }).base(),

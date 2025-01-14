@@ -20,6 +20,7 @@ const badgeStyles = tv({
       filled: "",
       outlined: "border-small border-current",
       ghost: "bg-transparent",
+      subtle: "",
     },
     radius: {
       none: "rounded-none",
@@ -232,8 +233,60 @@ const badgeStyles = tv({
         base: [colorVariants.filled.danger],
       },
     },
+
+    /* --------------------------------- Subtle --------------------------------- */
+
     {
-      variant: "filled",
+      color: "default",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.default,
+      },
+    },
+    {
+      color: "primary",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.primary,
+      },
+    },
+    {
+      color: "secondary",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.secondary,
+      },
+    },
+    {
+      color: "success",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.success,
+      },
+    },
+    {
+      color: "info",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.info,
+      },
+    },
+    {
+      color: "warning",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.warning,
+      },
+    },
+    {
+      color: "danger",
+      variant: "subtle",
+      class: {
+        base: colorVariants.subtle.danger,
+      },
+    },
+    {
+      variant: ["filled", "subtle"],
       color: ["primary", "secondary", "success", "info", "warning", "danger"],
       class: {
         base: "hover:opacity-hover",
