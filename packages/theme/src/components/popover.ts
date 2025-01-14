@@ -6,7 +6,7 @@ import { buttonStyles } from "./button"
 const popoverStyles = tv({
   slots: {
     base: "",
-    trigger: buttonStyles().base(),
+    trigger: "",
     close: buttonStyles({ variant: "ghost" }).base(),
     content: [
       popupAnimationClasses,

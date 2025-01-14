@@ -9,7 +9,7 @@ import { buttonStyles } from "./button"
 const dialogStyles = tv({
   slots: {
     base: "",
-    trigger: buttonStyles().base(),
+    trigger: "",
     overlay: dialogOverlayClasses,
     contentWrapper: "fixed inset-0 z-50 flex items-center justify-center",
     content: [
