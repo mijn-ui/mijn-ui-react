@@ -39,8 +39,8 @@ const TabsExample = () => {
           <CardContent className="space-y-4">
             <Input
               id="name"
+              className="bg-card"
               classNames={{
-                input: "bg-card",
                 label: "bg-card peer-focus:bg-card",
               }}
               label="Name"
@@ -48,8 +48,8 @@ const TabsExample = () => {
             />
             <Input
               id="username"
+              className="bg-card"
               classNames={{
-                input: "bg-card",
                 label: "bg-card peer-focus:bg-card",
               }}
               label="Username"
@@ -73,8 +73,8 @@ const TabsExample = () => {
           <CardContent className="space-y-4">
             <Input
               id="current"
+              className="bg-card"
               classNames={{
-                input: "bg-card",
                 label: "bg-card peer-focus:bg-card",
               }}
               label="Current password"
@@ -83,8 +83,8 @@ const TabsExample = () => {
 
             <Input
               id="new"
+              className="bg-card"
               classNames={{
-                input: "bg-card",
                 label: "bg-card peer-focus:bg-card",
               }}
               label="New password"

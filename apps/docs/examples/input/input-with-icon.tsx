@@ -6,17 +6,21 @@ const InputWithIcon = () => {
     <div className="flex flex-col gap-4">
       {/* start Icon */}
       <Input
-        className="w-80"
+        classNames={{ wrapper: "w-80" }}
         placeholder="Username..."
         startIcon={<LuPlus />}
       />
 
       {/* end Icon */}
-      <Input className="w-80" endIcon={<LuPlus />} placeholder="Username..." />
+      <Input
+        classNames={{ wrapper: "w-80" }}
+        endIcon={<LuPlus />}
+        placeholder="Username..."
+      />
 
       {/* both Icon */}
       <Input
-        className="w-80"
+        classNames={{ wrapper: "w-80" }}
         endIcon={<LuPlus />}
         placeholder="Username..."
         startIcon={<LuPlus />}

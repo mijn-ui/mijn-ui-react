@@ -23,15 +23,11 @@ const CommandExample = () => {
   return (
     <Command className="rounded-large border-small border-border shadow-medium md:w-[450px]">
       <CommandInput asChild>
-        {/* CommandInput serves as a wrapper to trigger functionality and does not include any default styles. 
-    This allows you to fully customize it with your own styles and components as needed. */}
         <Input
           startIcon={<LuSearch />}
-          classNames={{
-            input:
-              "bg-card border-transparent ring-0 focus-visible:ring-0 focus-visible:order-b-ring border-b border-b-input rounded-none",
-          }}
+          variant="underline"
           placeholder="Type a command or search..."
+          className="bg-card"
         />
       </CommandInput>
       <CommandList>

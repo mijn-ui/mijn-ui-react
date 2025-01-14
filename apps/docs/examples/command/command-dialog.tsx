@@ -41,21 +41,17 @@ const CommandDialogExample = () => {
     <>
       <p className="text-small text-muted-foreground">
         Press{" "}
-        <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border-small bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+        <kbd className="border-small bg-muted text-muted-foreground pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded px-1.5 font-mono text-[10px] font-medium opacity-100">
           <span className="text-tiny">⌘</span>J
         </kbd>
       </p>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput asChild placeholder="Type a command or search...">
-          {/* CommandInput serves as a wrapper to trigger functionality and does not include any default styles. 
-              This allows you to fully customize it with your own styles and components as needed. */}
           <Input
             startIcon={<LuSearch />}
-            classNames={{
-              input:
-                "bg-card border-transparent ring-0 focus-visible:ring-0 focus-visible:order-b-ring border-b border-b-input rounded-none",
-            }}
+            variant="underline"
             placeholder="Type a command or search..."
+            className="bg-card"
           />
         </CommandInput>
         <CommandList>

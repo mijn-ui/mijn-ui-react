@@ -35,9 +35,9 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
               Width
             </Label>
             <Input
-              className="max-w-40"
+              className="bg-card h-8 p-1.5"
               classNames={{
-                input: "bg-card h-8 py-1.5 px-1.5",
+                wrapper: "max-w-40",
                 label: "bg-card peer-focus:bg-card",
               }}
               id="width"
@@ -52,9 +52,9 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
               Max. width
             </Label>
             <Input
-              className="max-w-40"
+              className="bg-card h-8 p-1.5"
               classNames={{
-                input: "bg-card h-8 py-1.5 px-1.5",
+                wrapper: "max-w-40",
                 label: "bg-card peer-focus:bg-card",
               }}
               id="maxWidth"
@@ -69,9 +69,9 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
               Height
             </Label>
             <Input
-              className="max-w-40"
+              className="bg-card h-8 p-1.5"
               classNames={{
-                input: "bg-card h-8 py-1.5 px-1.5",
+                wrapper: "max-w-40",
                 label: "bg-card peer-focus:bg-card",
               }}
               id="height"
@@ -86,9 +86,9 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
               Max. height
             </Label>
             <Input
-              className="max-w-40"
+              className="bg-card h-8 p-1.5"
               classNames={{
-                input: "bg-card h-8 py-1.5 px-1.5",
+                wrapper: "max-w-40",
                 label: "bg-card peer-focus:bg-card",
               }}
               id="maxHeight"
