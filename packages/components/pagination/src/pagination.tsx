@@ -210,7 +210,7 @@ const PaginationList = ({
   ...props
 }: PaginationListProps) => {
   const { currentPage, setPage, paginationRange } = usePaginationContext()
-  const { list, item, classNames } = usePaginationStyles(unstyled)
+  const { list, listItem, classNames } = usePaginationStyles(unstyled)
 
   return (
     <ul
@@ -220,9 +220,9 @@ const PaginationList = ({
       {paginationRange.map((page, index) => (
         <li key={index} onClick={() => setPage(page)}>
           <button
-            className={item({
+            className={listItem({
               active: currentPage === page,
-              className: classNames?.item,
+              className: classNames?.listItem,
             })}
           >
             {page}

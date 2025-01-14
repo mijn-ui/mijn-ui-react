@@ -18,8 +18,10 @@ type PopoverExampleProps = {
 const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
   return (
     <Popover unstyled={unstyled}>
-      <PopoverTrigger className="rounded-full">
-        <RxMixerHorizontal size={18} />
+      <PopoverTrigger asChild>
+        <Button iconOnly radius="full">
+          <RxMixerHorizontal size={18} />
+        </Button>
       </PopoverTrigger>
       <PopoverContent className="relative w-72 ">
         <div className="flex flex-col justify-center gap-2.5">
