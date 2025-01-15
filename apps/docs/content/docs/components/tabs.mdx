@@ -1,5 +1,6 @@
 ---
 title: Tabs
+description: A navigation component for organizing content into separate panels.
 docs: https://www.radix-ui.com/primitives/docs/components/tabs
 apiReference: https://www.radix-ui.com/primitives/docs/components/tabs#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/tabs.ts
@@ -7,11 +8,26 @@ styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/s
 
 import TabsExample from "@/examples/tabs/tabs-example"
 
-<ComponentPreview>
-  <TabsExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <TabsExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/tabs/tabs-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -28,9 +44,7 @@ import TabsExample from "@/examples/tabs/tabs-example"
         ```package-install
         @radix-ui/react-tabs
         ```
-
       </Step>
-
       <Step>
         **Copy and paste the following code into  `mijn-ui` folder.**
 
@@ -49,25 +63,30 @@ import TabsExample from "@/examples/tabs/tabs-example"
   </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-{
-  "file": "./examples/tabs/tabs-example.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": "title=\"tabs-example.tsx\""
-  }
-}
+```tsx
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@mijn-ui/react-tabs"
+```
+
+```tsx
+<Tabs defaultValue="account" className="w-[400px]">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">Make changes to your account here.</TabsContent>
+  <TabsContent value="password">Change your password here.</TabsContent>
+</Tabs>
 ```
 
 ---
 
-### Tabs Style Slots
+## Tabs Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Tabs`                | Styles the root tabs component.                 |
-| `list`           | `TabsList`            | Styles the list of tabs.                        |
-| `trigger`        | `TabsTrigger`         | Styles individual tab triggers.                 |
-| `content`        | `TabsContent`         | Styles the content for individual tabs.         |
+| **Slot Name** | **Targeted Component** | **Purpose**                             |
+| ------------- | ---------------------- | --------------------------------------- |
+| `base`        | `Tabs`                 | Styles the root tabs component.         |
+| `list`        | `TabsList`             | Styles the list of tabs.                |
+| `trigger`     | `TabsTrigger`          | Styles individual tab triggers.         |
+| `content`     | `TabsContent`          | Styles the content for individual tabs. |
