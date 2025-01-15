@@ -1,5 +1,6 @@
 ---
 title: Avatar
+description: A graphical representation of a user or profile.
 docs: https://www.radix-ui.com/primitives/docs/components/avatar
 apiReference: https://www.radix-ui.com/primitives/docs/components/avatar#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/avatar.ts
@@ -9,11 +10,26 @@ import AvatarExample from "@/examples/avatar/avatar-example"
 import AvatarGroup from "@/examples/avatar/avatar-group"
 import AvatarSizes from "@/examples/avatar/avatar-sizes"
 
-<ComponentPreview>
-  <AvatarExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <AvatarExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/avatar/avatar-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -21,92 +37,104 @@ import AvatarSizes from "@/examples/avatar/avatar-sizes"
   @mijn-ui/react-avatar
   ```
   </MijnUITabsContent>
-  <MijnUITabsContent value="Manual">
-
-  <Steps>
-  <Step>
-  **Install Required Dependencies:** 
-  ```package-install
-  @radix-ui/react-avatar
-  ```
-  </Step>
-  <Step>
-  **Copy and paste the following code into `mijn-ui` folder.**
-
-    ```json doc-gen:file
-      {
-        "file": "../../packages/components/avatar/src/avatar.tsx",
-        "codeblock": {
-          "lang": "tsx",
-          "meta": "title=\"components/avatar.tsx\""
-        }
-      }
-    ```  
-  </Step>
   
-  <Step>
-  **Ensure that everything is functioning correctly after installation.**
-  </Step>
-</Steps>
-</MijnUITabsContent>
+  <MijnUITabsContent value="Manual">
+    <Steps>
+      <Step>
+        **Install Required Dependencies:** 
+        ```package-install
+        @radix-ui/react-avatar
+        ```
+      </Step>
+      <Step>
+        **Copy and paste the following code into `mijn-ui` folder.**
+
+        ```json doc-gen:file
+          {
+            "file": "../../packages/components/avatar/src/avatar.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"components/avatar.tsx\""
+            }
+          }
+        ```
+      </Step>
+
+      <Step>
+      **Ensure that everything is functioning correctly after installation.**
+      </Step>
+    </Steps>
+
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/avatar/avatar-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"avatar-example.tsx\""
-    }
-  }
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from "@mijn-ui/react-avatar"
+```
+
+```tsx
+<Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
 ```
 
 ---
+
+## Examples
 
 ### Avatar Sizes
 
-<ComponentPreview className="flex-col md:flex-row">
-  <AvatarSizes />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <AvatarSizes />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/avatar/avatar-sizes.tsx",
+      "codeblock": {
+      "lang": "tsx",
+      "meta": ""
+    }
+    }
+    ```
 
-```json doc-gen:file
-{
-  "file": "./examples/avatar/avatar-sizes.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-  }
-}
-```
-
----
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ### Avatar Group
 
-<ComponentPreview>
-  <AvatarGroup />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/avatar/avatar-group.tsx",
-  "codeblock": {
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <AvatarGroup />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+    "file": "./examples/avatar/avatar-group.tsx",
+    "codeblock": {
     "lang": "tsx",
     "meta": ""
+    }
   }
-}
-```
+  ```
+
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ---
 
-### Avatar Style Slots
+## Avatar Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Avatar`              | Styles the root `Avatar` component.             |
-| `image`          | `AvatarImage`         | Styles the avatar image.                        |
-| `fallback`       | `AvatarFallback`      | Styles the fallback content when the image is missing. |
-
-
+| **Slot Name** | **Targeted Component** | **Purpose**                                            |
+| ------------- | ---------------------- | ------------------------------------------------------ |
+| `base`        | `Avatar`               | Styles the root `Avatar` component.                    |
+| `image`       | `AvatarImage`          | Styles the avatar image.                               |
+| `fallback`    | `AvatarFallback`       | Styles the fallback content when the image is missing. |
