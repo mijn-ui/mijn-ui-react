@@ -1,5 +1,6 @@
 ---
 title: Progress
+description: A visual indicator of task completion or status.
 docs: https://www.radix-ui.com/primitives/docs/components/progress
 apiReference: https://www.radix-ui.com/primitives/docs/components/progress#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/progress.ts
@@ -7,11 +8,26 @@ styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/s
 
 import ProgressExample from "@/examples/progress/progress-example"
 
-<ComponentPreview>
-  <ProgressExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <ProgressExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/progress/progress-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -20,45 +36,42 @@ import ProgressExample from "@/examples/progress/progress-example"
   ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-  **Copy and paste the following code into `mijn-ui` folder.**
- 
-  ```json doc-gen:file
-    {
-      "file": "../../packages/components/progress/src/progress.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": "title=\"components/progress.tsx\""
-      }
-    }
-  ```
-  </Step>
-  
-  <Step>
-  **Ensure that everything is functioning correctly after installation.**
-  </Step>
-</Steps>
-</MijnUITabsContent>
+    <Steps>
+      <Step>
+      **Copy and paste the following code into `mijn-ui` folder.**
+    
+      ```json doc-gen:file
+        {
+          "file": "../../packages/components/progress/src/progress.tsx",
+          "codeblock": {
+            "lang": "tsx",
+            "meta": "title=\"components/progress.tsx\""
+          }
+        }
+      ```
+      </Step>
+      <Step>
+      **Ensure that everything is functioning correctly after installation.**
+      </Step>
+    </Steps>
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/progress/progress-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"progress-example.tsx\""
-    }
-  }
+```tsx
+import { Progress } from "@mijn-ui/react-progress"
+```
+
+```tsx
+<Progress value={33} />
 ```
 
 ---
 
-### Progress Style Slots
+## Progress Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Progress`            | Styles the root progress component.             |
-| `indicator`      | `Progress`            | Styles the progress indicator.                  |
+| **Slot Name** | **Targeted Component** | **Purpose**                         |
+| ------------- | ---------------------- | ----------------------------------- |
+| `base`        | `Progress`             | Styles the root progress component. |
+| `indicator`   | `Progress`             | Styles the progress indicator.      |
