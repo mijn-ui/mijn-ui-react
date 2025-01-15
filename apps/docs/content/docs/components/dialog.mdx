@@ -1,5 +1,6 @@
 ---
 title: Dialog
+description: A modal window for displaying additional content or actions.
 docs: https://www.radix-ui.com/primitives/docs/components/dialog
 apiReference: https://www.radix-ui.com/primitives/docs/components/dialog#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/dialog.ts
@@ -7,11 +8,26 @@ styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/s
 
 import DialogExample from "@/examples/dialog/dialog-example"
 
-<ComponentPreview>
-  <DialogExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <DialogExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/dialog/dialog-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -20,58 +36,74 @@ import DialogExample from "@/examples/dialog/dialog-example"
   ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-    **Install Required Dependicies**
+    <Steps>
+      <Step>
+        **Install Required Dependicies**
 
-    ```package-install
-    @radix-ui/react-dialog
-    ```
+        ```package-install
+        @radix-ui/react-dialog
+        ```
 
-  </Step>
-  <Step>
-    **Copy and paste the following code into  `mijn-ui` folder.**
+      </Step>
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
 
-    ```json doc-gen:file
-      {
-        "file": "../../packages/components/dialog/src/dialog.tsx",
-        "codeblock": {
-          "lang": "tsx",
-          "meta": "title=\"components/dialog.tsx\""
-        }
-      }
-    ```
-  </Step>
-</Steps>
-</MijnUITabsContent>
+        ```json doc-gen:file
+          {
+            "file": "../../packages/components/dialog/src/dialog.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"components/dialog.tsx\""
+            }
+          }
+        ```
+      </Step>
+    </Steps>
+
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
+```tsx
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@mijn-ui/react-dialog"
+```
 
-```json doc-gen:file
-  {
-    "file": "./examples/dialog/dialog-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"dialog-example.tsx\""
-    }
-  }
+```tsx
+<Dialog>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Are you absolutely sure?</DialogTitle>
+      <DialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </DialogDescription>
+    </DialogHeader>
+  </DialogContent>
+</Dialog>
 ```
 
 ---
 
-### Dialog Style Slots
+## Dialog Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Dialog`              | Styles the root dialog component.               |
-| `trigger`        | `DialogTrigger`       | Styles the trigger for opening the dialog.      |
-| `overlay`        | `DialogOverlay`       | Styles the background overlay of the dialog.    |
-| `content`        | `DialogContent`       | Styles the dialog content area.                 |
-| `contentWrapper` | `DialogContent`       | Styles the wrapper around dialog content.       |
-| `header`         | `DialogHeader`        | Styles the dialog header.                       |
-| `footer`         | `DialogFooter`        | Styles the dialog footer.                       |
-| `title`          | `DialogTitle`         | Styles the title of the dialog.                 |
-| `description`    | `DialogDescription`   | Styles the description text of the dialog.      |
-| `close`          | `DialogClose`         | Styles the close button of the dialog.          |
+| **Slot Name**    | **Targeted Component** | **Purpose**                                  |
+| ---------------- | ---------------------- | -------------------------------------------- |
+| `base`           | `Dialog`               | Styles the root dialog component.            |
+| `trigger`        | `DialogTrigger`        | Styles the trigger for opening the dialog.   |
+| `overlay`        | `DialogOverlay`        | Styles the background overlay of the dialog. |
+| `content`        | `DialogContent`        | Styles the dialog content area.              |
+| `contentWrapper` | `DialogContent`        | Styles the wrapper around dialog content.    |
+| `header`         | `DialogHeader`         | Styles the dialog header.                    |
+| `footer`         | `DialogFooter`         | Styles the dialog footer.                    |
+| `title`          | `DialogTitle`          | Styles the title of the dialog.              |
+| `description`    | `DialogDescription`    | Styles the description text of the dialog.   |
+| `close`          | `DialogClose`          | Styles the close button of the dialog.       |
