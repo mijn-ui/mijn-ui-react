@@ -1,15 +1,31 @@
 ---
 title: Table
+description: A structured layout for displaying tabular data.
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/table.ts
 ---
 
 import TableExample from "@/examples/table/table-example"
 
-<ComponentPreview className="p-10">
-  <TableExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview className="p-10">
+      <TableExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/table/table-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -18,51 +34,76 @@ import TableExample from "@/examples/table/table-example"
   ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-  **Copy and paste the following code into `mijn-ui` folder.**
+    <Steps>
+      <Step>
+      **Copy and paste the following code into `mijn-ui` folder.**
 
-  ```json doc-gen:file
-    {
-      "file": "../../packages/components/table/src/table.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": "title=\"components/table.tsx\""
-      }
-    }
-  ```
-  </Step>
-  
-  <Step>
-  **Ensure that everything is functioning correctly after installation.**
-  </Step>
-</Steps>
-</MijnUITabsContent>
+      ```json doc-gen:file
+        {
+          "file": "../../packages/components/table/src/table.tsx",
+          "codeblock": {
+            "lang": "tsx",
+            "meta": "title=\"components/table.tsx\""
+          }
+        }
+      ```
+      </Step>
+
+      <Step>
+      **Ensure that everything is functioning correctly after installation.**
+      </Step>
+
+  </Steps>
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/table/table-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"table-example.tsx\""
-    }
-  }
+```tsx
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHeader,
+  TableHeaderCell,
+  TableRow,
+} from "@mijn-ui/react-table"
+```
+
+```tsx
+<Table>
+  <TableCaption>A list of your recent invoices.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHeaderCell className="w-[100px]">Invoice</TableHeaderCell>
+      <TableHeaderCell>Status</TableHeaderCell>
+      <TableHeaderCell>Method</TableHeaderCell>
+      <TableHeaderCell className="text-right">Amount</TableHeaderCell>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell className="font-medium">INV001</TableCell>
+      <TableCell>Paid</TableCell>
+      <TableCell>Credit Card</TableCell>
+      <TableCell className="text-right">$250.00</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
 ```
 
 ---
 
-### Table Style Slots
+## Table Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Table`               | Styles the root table component.                |
-| `header`         | `TableHeader`         | Styles the table header.                        |
-| `body`           | `TableBody`           | Styles the table body.                          |
-| `footer`         | `TableFooter`         | Styles the table footer.                        |
-| `row`            | `TableRow`            | Styles table rows.                              |
-| `headerCell`     | `TableHeaderCell`     | Styles individual header cells.                 |
-| `cell`           | `TableCell`           | Styles individual cells.                        |
-| `caption`        | `TableCaption`        | Styles the table caption.                       |
+| **Slot Name** | **Targeted Component** | **Purpose**                      |
+| ------------- | ---------------------- | -------------------------------- |
+| `base`        | `Table`                | Styles the root table component. |
+| `header`      | `TableHeader`          | Styles the table header.         |
+| `body`        | `TableBody`            | Styles the table body.           |
+| `footer`      | `TableFooter`          | Styles the table footer.         |
+| `row`         | `TableRow`             | Styles table rows.               |
+| `headerCell`  | `TableHeaderCell`      | Styles individual header cells.  |
+| `cell`        | `TableCell`            | Styles individual cells.         |
+| `caption`     | `TableCaption`         | Styles the table caption.        |
