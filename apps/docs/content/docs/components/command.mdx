@@ -1,5 +1,6 @@
 ---
 title: Command
+description: A command palette for quick access to actions and navigation, often used for keyboard shortcuts.
 docs: https://cmdk.paco.me
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/command.ts
 ---
@@ -7,98 +8,143 @@ styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/s
 import CommandDialogExample from "@/examples/command/command-dialog"
 import CommandExample from "@/examples/command/command-example"
 
-<ComponentPreview>
-  <CommandExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <CommandExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/command/command-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
-  ```package-install
-  @mijn-ui/react-command
-  ```
+    ```package-install
+    @mijn-ui/react-command
+    ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-    **Add the Dialog Component**
+    <Steps>
+      <Step>
+        **Add the Dialog Component**
 
-    To get started, you need to install the dialog component. Follow the link below to install it:
+        To get started, you need to install the dialog component. Follow the link below to install it:
 
-    [Dialog component](/docs/components/dialog)
-  </Step>
-  <Step>
-  **Install Required Dependencies:** 
-  ```package-install
-  cmdk
-  ```
-  </Step>
-  <Step>
-  **Copy and paste the following code into `mijn-ui` folder.**
+        [Dialog component](/docs/components/dialog)
+      </Step>
+      <Step>
+        **Install Required Dependencies:**
+        ```package-install
+        cmdk
+        ```
+      </Step>
+      <Step>
+      **Copy and paste the following code into `mijn-ui` folder.**
 
-  ```json doc-gen:file
-    {
-      "file": "../../packages/components/command/src/command.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": "title=\"components/command.tsx\""
-      }
-    }
-  ```
-  </Step>
-  
-  <Step>
-  **Ensure that everything is functioning correctly after installation.**
-  </Step>
-</Steps>
-</MijnUITabsContent>
+      ```json doc-gen:file
+        {
+          "file": "../../packages/components/command/src/command.tsx",
+          "codeblock": {
+            "lang": "tsx",
+            "meta": "title=\"components/command.tsx\""
+          }
+        }
+      ```
+      </Step>
+      <Step>
+        **Ensure that everything is functioning correctly after installation.**
+      </Step>
+    </Steps>
+
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/command/command-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"command-example.tsx\""
-    }
-  }
+```tsx
+import {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@mijn-ui/react-command"
+```
+
+```tsx
+<Command>
+  <CommandInput placeholder="Type a command or search..." />
+  <CommandList>
+    <CommandEmpty>No results found.</CommandEmpty>
+    <CommandGroup heading="Suggestions">
+      <CommandItem>Calendar</CommandItem>
+      <CommandItem>Search Emoji</CommandItem>
+      <CommandItem>Calculator</CommandItem>
+    </CommandGroup>
+    <CommandSeparator />
+    <CommandGroup heading="Settings">
+      <CommandItem>Profile</CommandItem>
+      <CommandItem>Billing</CommandItem>
+      <CommandItem>Settings</CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>
 ```
 
 ---
+
+## Examples
 
 ### Command Dialog
 
-<ComponentPreview>
-  <CommandDialogExample />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/command/command-dialog.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": "title=\"command-dialog.tsx\""
-  }
-}
-```
-
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <CommandDialogExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/command/command-dialog.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ---
 
-### Command Style Slots
+## Command Style Slots
 
-| **Slot Name**     | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Command`             | Styles the root `Command` component.            |
-| `dialogWrapper`  | `CommandDialog`       | Styles the command dialog Wrapper.                      |
-| `dialog`         | `CommandDialog`       | Styles the command dialog.       |
-| `group`          | `CommandGroup`        | Styles the groups inside the command.           |
-| `list`           | `CommandList`         | Styles the command list.                        |
-| `item`           | `CommandItem`         | Styles individual command items.                |
-| `separator`      | `CommandSeparator`    | Styles separators inside the command list.      |
-| `shortcut`       | `CommandShortcut`     | Styles shortcut text inside commands.           |
-| `empty`          | `CommandEmpty`        | Styles the state when the command list is empty.|
-| `input`          | `CommandInput`        | Styles the input field of the command.          |
+| **Slot Name**   | **Targeted Component** | **Purpose**                                      |
+| --------------- | ---------------------- | ------------------------------------------------ |
+| `base`          | `Command`              | Styles the root `Command` component.             |
+| `dialogWrapper` | `CommandDialog`        | Styles the command dialog Wrapper.               |
+| `dialog`        | `CommandDialog`        | Styles the command dialog.                       |
+| `group`         | `CommandGroup`         | Styles the groups inside the command.            |
+| `list`          | `CommandList`          | Styles the command list.                         |
+| `item`          | `CommandItem`          | Styles individual command items.                 |
+| `separator`     | `CommandSeparator`     | Styles separators inside the command list.       |
+| `shortcut`      | `CommandShortcut`      | Styles shortcut text inside commands.            |
+| `empty`         | `CommandEmpty`         | Styles the state when the command list is empty. |
+| `input`         | `CommandInput`         | Styles the input field of the command.           |
