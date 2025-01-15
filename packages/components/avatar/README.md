@@ -2,7 +2,7 @@
 
 A graphical representation of a user or profile.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/avatar)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/avatar)
 
 ## Installation
 

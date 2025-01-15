@@ -2,7 +2,7 @@
 
 A placeholder for loading states or empty content.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/skeleton)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/skeleton)
 
 ## Installation
 

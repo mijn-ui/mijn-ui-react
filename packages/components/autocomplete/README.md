@@ -2,7 +2,7 @@
 
 An input field with suggestions dropdown.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/autocomplete)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/autocomplete)
 
 ## Installation
 

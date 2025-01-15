@@ -2,7 +2,7 @@
 
 A modal window for displaying additional content or actions.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/dialog)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/dialog)
 
 ## Installation
 

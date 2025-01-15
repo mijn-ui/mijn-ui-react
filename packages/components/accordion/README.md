@@ -2,7 +2,7 @@
 
 A vertically stacked list of expandable items, perfect for organizing content.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/accordion)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/accordion)
 
 ## Installation
 

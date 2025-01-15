@@ -2,7 +2,7 @@
 
 A flexible and customizable button component for various actions.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/button)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/button)
 
 ## Installation
 

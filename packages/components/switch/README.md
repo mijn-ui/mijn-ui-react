@@ -2,7 +2,7 @@
 
 A toggle control for enabling or disabling settings.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/switch)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/switch)
 
 ## Installation
 

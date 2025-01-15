@@ -2,7 +2,7 @@
 
 A date field component that allows users to enter and edit date.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/calendar)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/calendar)
 
 ## Installation
 
