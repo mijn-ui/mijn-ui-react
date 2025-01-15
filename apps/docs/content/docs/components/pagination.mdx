@@ -1,15 +1,31 @@
 ---
 title: Pagination
+description: A navigation control for traversing paginated content.
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/pagination.ts
 ---
 
 import PaginationExample from "@/examples/pagination/pagination-example"
 
-<ComponentPreview>
-  <PaginationExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <PaginationExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/pagination/pagination-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -18,53 +34,74 @@ import PaginationExample from "@/examples/pagination/pagination-example"
   ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-   **Copy and paste the following code into `mijn-ui` folder.**
+    <Steps>
+      <Step>
+      **Copy and paste the following code into `mijn-ui` folder.**
 
-    ```json doc-gen:file
-      {
-        "file": "../../packages/components/pagination/src/pagination.tsx",
-        "codeblock": {
-          "lang": "tsx",
-          "meta": "title=\"components/pagination/pagination.tsx\""
-        }
-      }
-    ```
-  </Step>
+        ```json doc-gen:file
+          {
+            "file": "../../packages/components/pagination/src/pagination.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"components/pagination/pagination.tsx\""
+            }
+          }
+        ```
+      </Step>
+      <Step>
+      **Ensure that everything is functioning correctly after installation.**
+      </Step>
+    </Steps>
 
-  <Step>
-  **Ensure that everything is functioning correctly after installation.**
-  </Step>
-</Steps>
-</MijnUITabsContent>
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/pagination/pagination-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"pagination-example.tsx\""
-    }
-  }
+```tsx
+import {
+  Pagination,
+  PaginationContent,
+  PaginationList,
+  PaginationNextButton,
+  PaginationNextEllipsis,
+  PaginationPreviousButton,
+  PaginationPreviousEllipsis,
+} from @mijn-ui/react-pagination
+```
+
+```tsx
+const [currentPage, setCurrentPage] = React.useState(7)
+const ItemsPerPage = 10
+const TotalPage = 160
+
+<Pagination
+  totalPages={TotalPage}
+  currentPage={currentPage}
+  itemsPerPage={ItemsPerPage}
+  onChangePage={setCurrentPage}
+>
+  <PaginationContent>
+    <PaginationPreviousButton>Previous</PaginationPreviousButton>
+    <PaginationPreviousEllipsis />
+    <PaginationList />
+    <PaginationNextEllipsis />
+    <PaginationNextButton>Next</PaginationNextButton>
+  </PaginationContent>
+</Pagination>
 ```
 
 ---
 
-### Pagination Style Slots
+## Pagination Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Pagination`          | Styles the root pagination component.           |
-| `content`        | `PaginationContent`   | Styles the content area of the pagination.      |
-| `list`           | `PaginationList`      | Styles the list container for pagination items. |
-| `listItem`       | `PaginationList`  | Styles individual pagination items.             |
-| `previousBtn`    | `PaginationPreviousButton` | Styles the button for the previous page.      |
-| `previousElipsis`| `PaginationPreviousElipsis`| Styles the ellipsis before the previous page. |
-| `nextBtn`        | `PaginationNextButton`| Styles the button for the next page.            |
-| `nextElipsis`    | `PaginationNextElipsis`| Styles the ellipsis after the next page.        |
-
-
+| **Slot Name**     | **Targeted Component**      | **Purpose**                                     |
+| ----------------- | --------------------------- | ----------------------------------------------- |
+| `base`            | `Pagination`                | Styles the root pagination component.           |
+| `content`         | `PaginationContent`         | Styles the content area of the pagination.      |
+| `list`            | `PaginationList`            | Styles the list container for pagination items. |
+| `listItem`        | `PaginationList`            | Styles individual pagination items.             |
+| `previousBtn`     | `PaginationPreviousButton`  | Styles the button for the previous page.        |
+| `previousElipsis` | `PaginationPreviousElipsis` | Styles the ellipsis before the previous page.   |
+| `nextBtn`         | `PaginationNextButton`      | Styles the button for the next page.            |
+| `nextElipsis`     | `PaginationNextElipsis`     | Styles the ellipsis after the next page.        |
