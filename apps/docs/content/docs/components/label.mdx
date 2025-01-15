@@ -1,72 +1,82 @@
 ---
 title: Label
+description: A text label for form controls.
 docs: https://www.radix-ui.com/primitives/docs/components/label
 apiReference: https://www.radix-ui.com/primitives/docs/components/label#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/label.ts
 ---
 
-import { Label } from "@mijn-ui/react"
-import { Checkbox } from "@mijn-ui/react"
+import LabelExample from "@/examples/label/label-example"
 
-<ComponentPreview>
-  <div className="flex items-center space-x-2">
-    <Checkbox id="terms1" />
-    <Label htmlFor="terms1">Accept terms and conditions</Label>
-  </div>
-</ComponentPreview>
-
-### Installation
-
-<MijnUITabs items={["Npm", "Manual"]}>
-  <MijnUITabsContent value="Npm">
-  ```package-install
-  @mijn-ui/react-label
-  ```
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <LabelExample />
+    </ComponentPreview>
   </MijnUITabsContent>
-  <MijnUITabsContent value="Manual">
-
-  <Steps>
-  <Step>
-  **Install Required Dependencies:**
-
-  ```package-install
-  @radix-ui/react-label
-  ```
-  </Step>
-
-  <Step>
-    **Copy and paste the following code into  `mijn-ui` folder.**
-
+  <MijnUITabsContent value="Code">
     ```json doc-gen:file
     {
-      "file": "../../packages/components/label/src/label.tsx",
+      "file": "./examples/label/label-example.tsx",
       "codeblock": {
         "lang": "tsx",
-        "meta": "title=\"components/label.tsx\""
+        "meta": ""
       }
     }
     ```
-
-  </Step>
-</Steps>
-</MijnUITabsContent>
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Installation
+
+<MijnUITabs items={["Npm", "Manual"]}>
+  <MijnUITabsContent value="Npm">
+    ```package-install
+    @mijn-ui/react-label
+    ```
+    </MijnUITabsContent>
+    <MijnUITabsContent value="Manual">
+
+    <Steps>
+      <Step>
+      **Install Required Dependencies:**
+
+      ```package-install
+      @radix-ui/react-label
+      ```
+      </Step>
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
+
+        ```json doc-gen:file
+        {
+          "file": "../../packages/components/label/src/label.tsx",
+          "codeblock": {
+            "lang": "tsx",
+            "meta": "title=\"components/label.tsx\""
+          }
+        }
+        ```
+      </Step>
+    </Steps>
+
+  </MijnUITabsContent>
+</MijnUITabs>
+
+## Usage
 
 ```tsx
-<div className="flex items-center space-x-2">
-  <Checkbox id="terms1" />
-  <Label htmlFor="terms1">
-    Accept terms and conditions
-  </Label>
-</div>
+import { Label } from "@mijn-ui/react-label"
+```
+
+```tsx
+<Label htmlFor="email">Your email address</Label>
 ```
 
 ---
 
 ### Lable Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Label`               | Styles the label component.                     |
+| **Slot Name** | **Targeted Component** | **Purpose**                 |
+| ------------- | ---------------------- | --------------------------- |
+| `base`        | `Label`                | Styles the label component. |
