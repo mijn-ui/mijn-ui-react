@@ -1,5 +1,6 @@
 ---
 title: Popover
+description: A floating panel for contextual information or actions.
 docs: https://www.radix-ui.com/primitives/docs/components/popover
 apiReference: https://www.radix-ui.com/primitives/docs/components/popover#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/popover.ts
@@ -7,11 +8,26 @@ styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/s
 
 import PopoverExample from "@/examples/popover/popover-example"
 
-<ComponentPreview>
-  <PopoverExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <PopoverExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/popover/popover-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -20,52 +36,52 @@ import PopoverExample from "@/examples/popover/popover-example"
   ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-    **Install Required Dependicies**
+    <Steps>
+      <Step>
+        **Install Required Dependicies**
 
-    ```package-install
-    @radix-ui/react-popover
-    ```
-  </Step>
+        ```package-install
+        @radix-ui/react-popover
+        ```
+      </Step>
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
 
-  <Step>
-    **Copy and paste the following code into  `mijn-ui` folder.**
+        ```json doc-gen:file
+          {
+            "file": "../../packages/components/popover/src/popover.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"components/popover.tsx\""
+            }
+          }
+        ```
+      </Step>
+    </Steps>
 
-    ```json doc-gen:file
-      {
-        "file": "../../packages/components/popover/src/popover.tsx",
-        "codeblock": {
-          "lang": "tsx",
-          "meta": "title=\"components/popover.tsx\""
-        }
-      }
-    ```
-  </Step>
-
-</Steps>
-</MijnUITabsContent>
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-{
-  "file": "./examples/popover/popover-example.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": "title=\"popover-example.tsx\""
-  }
-}
+```tsx
+import { Popover, PopoverContent, PopoverTrigger } from "@mijn-ui/react-popover"
+```
+
+```tsx
+<Popover>
+  <PopoverTrigger>Open</PopoverTrigger>
+  <PopoverContent>Place content for the popover here.</PopoverContent>
+</Popover>
 ```
 
 ---
 
-### Popover Style Slots
+## Popover Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Popover`             | Styles the root popover component.              |
-| `trigger`        | `PopoverTrigger`      | Styles the trigger for opening the popover.     |
-| `close`          | `PopoverClose`        | Styles the close button within the popover.     |
-| `content`        | `PopoverContent`      | Styles the popover content.                |
+| **Slot Name** | **Targeted Component** | **Purpose**                                 |
+| ------------- | ---------------------- | ------------------------------------------- |
+| `base`        | `Popover`              | Styles the root popover component.          |
+| `trigger`     | `PopoverTrigger`       | Styles the trigger for opening the popover. |
+| `close`       | `PopoverClose`         | Styles the close button within the popover. |
+| `content`     | `PopoverContent`       | Styles the popover content.                 |
