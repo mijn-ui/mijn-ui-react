@@ -1,17 +1,34 @@
 ---
 title: ScrollArea
+description: A custom scrollable container for overflowing content.
 docs: https://www.radix-ui.com/primitives/docs/components/scroll-area
 apiReference: https://www.radix-ui.com/primitives/docs/components/scroll-area#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/scroll-area.ts
 ---
 
 import ScrollAreaExample from "@/examples/scroll-area/scroll-area-example"
+import ScrollAreaHorizontal from "@/examples/scroll-area/scroll-area-horizontal"
 
-<ComponentPreview>
-  <ScrollAreaExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <ScrollAreaExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/scroll-area/scroll-area-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -21,52 +38,81 @@ import ScrollAreaExample from "@/examples/scroll-area/scroll-area-example"
   </MijnUITabsContent>
   
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-    **Install Required Dependencies:**
-  
-    ```package-install
-    @radix-ui/react-scroll-area
-    ```
-  </Step>
+    <Steps>
+      <Step>
+        **Install Required Dependencies:**
+      
+        ```package-install
+        @radix-ui/react-scroll-area
+        ```
+      </Step>
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
 
-  <Step>
-    **Copy and paste the following code into  `mijn-ui` folder.**
+        ```json doc-gen:file
+          {
+            "file": "../../packages/components/scroll-area/src/scroll-area.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"components/scroll-area.tsx\""
+            }
+          }
+        ```
+      </Step>
+    </Steps>
 
-    ```json doc-gen:file
-      {
-        "file": "../../packages/components/scroll-area/src/scroll-area.tsx",
-        "codeblock": {
-          "lang": "tsx",
-          "meta": "title=\"components/scroll-area.tsx\""
-        }
-      }
-    ```
-  </Step>
-</Steps>
-</MijnUITabsContent>
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/scroll-area/scroll-area-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"scroll-area-example.tsx\""
-    }
-  }
+```tsx
+import { ScrollArea } from "@mijn-ui/react-scroll-area"
+```
+
+```tsx
+<ScrollArea className="h-[200px] w-[350px] rounded-md border p-4">
+  Jokester began sneaking into the castle in the middle of the night and leaving
+  jokes all over the place: under the king's pillow, in his soup, even in the
+  royal toilet. The king was furious, but he couldn't seem to stop Jokester. And
+  then, one day, the people of the kingdom discovered that the jokes left by
+  Jokester were so funny that they couldn't help but laugh. And once they
+  started laughing, they couldn't stop.
+</ScrollArea>
 ```
 
 ---
 
-### ScrollArea Style Slots
+## Examples
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `ScrollArea`          | Styles the root scroll area component.          |
-| `viewport`       | `ScrollArea`          | Styles the viewport of the scroll area.         |
-| `scrollbar`      | `ScrollBar`           | Styles the scrollbar.                           |
-| `scrollThumb`    | `ScrollBar`           | Styles the thumb of the scrollbar.              |
+### Horizontal Scrolling
 
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <ScrollAreaHorizontal />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/scroll-area/scroll-area-horizontal.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
+
+---
+
+## ScrollArea Style Slots
+
+| **Slot Name** | **Targeted Component** | **Purpose**                             |
+| ------------- | ---------------------- | --------------------------------------- |
+| `base`        | `ScrollArea`           | Styles the root scroll area component.  |
+| `viewport`    | `ScrollArea`           | Styles the viewport of the scroll area. |
+| `scrollbar`   | `ScrollBar`            | Styles the scrollbar.                   |
+| `scrollThumb` | `ScrollBar`            | Styles the thumb of the scrollbar.      |
