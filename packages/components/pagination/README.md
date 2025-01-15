@@ -2,7 +2,7 @@
 
 A navigation control for traversing paginated content.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/pagination)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/pagination)
 
 ## Installation
 

@@ -2,7 +2,7 @@
 
 A calendar-based date picker component built with React DayPicker and Popover.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/date-picker)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/date-picker)
 
 ## Installation
 

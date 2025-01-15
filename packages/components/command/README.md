@@ -2,7 +2,7 @@
 
 A command palette for quick access to actions and navigation, often used for keyboard shortcuts.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/command)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/command)
 
 ## Installation
 

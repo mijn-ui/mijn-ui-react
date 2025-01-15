@@ -2,7 +2,7 @@
 
 A group of radio buttons for single-option selection.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/radio-group)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/radio-group)
 
 ## Installation
 

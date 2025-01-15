@@ -2,7 +2,7 @@
 
 A control for selecting one or multiple options.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/checkbox)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/checkbox)
 
 ## Installation
 

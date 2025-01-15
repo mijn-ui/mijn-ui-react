@@ -2,7 +2,7 @@
 
 A container for grouping and displaying related content or actions.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/card)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/card)
 
 ## Installation
 

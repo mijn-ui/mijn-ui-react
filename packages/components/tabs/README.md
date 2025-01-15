@@ -2,7 +2,7 @@
 
 A navigation component for organizing content into separate panels.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/tabs)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/tabs)
 
 ## Installation
 

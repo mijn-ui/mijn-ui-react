@@ -2,7 +2,7 @@
 
 A multi-line input field for larger text entry.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/textarea)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/textarea)
 
 ## Installation
 

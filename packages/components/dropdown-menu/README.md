@@ -2,7 +2,7 @@
 
 A contextual menu for displaying a list of actions or options.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/dropdown-menu)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/dropdown-menu)
 
 ## Installation
 

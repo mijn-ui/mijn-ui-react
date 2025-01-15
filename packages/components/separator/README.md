@@ -2,7 +2,7 @@
 
 A divider for grouping content or sections.
 
-[Documentation](https://mijn-ui.vercel.app/docs/components/separator)
+[Documentation](https://mijn-ui.vercel.app/react/docs/components/separator)
 
 ## Installation
 
