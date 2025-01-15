@@ -1,136 +1,175 @@
 ---
 title: Input
+description: A basic input field for user text entry.
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/input.ts
 ---
 
+import InputExample from "@/examples/input/input-example"
+import InputFloatingLabel from "@/examples/input/input-floating-label"
 import InputFloatingLabelIcon from "@/examples/input/input-floating-label-icon"
+import InputVariants from "@/examples/input/input-variants"
 import InputWithIcon from "@/examples/input/input-with-icon"
-import { Input } from "@mijn-ui/react"
 
-<ComponentPreview>
-  <Input classNames={{ wrapper: "w-80" }} placeholder="Username..." />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <InputExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/input/input-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
-  ```package-install
-  @mijn-ui/react-input
-  ```
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-     **Add the Label Component**
-
-    To get started, you need to install the label component. Follow the link below to install it:
-
-    [Label component](/docs/components/label)
-
-  </Step>
-
-  <Step>
-    **Copy and paste the following code into  `mijn-ui` folder.**
-
-    ```json doc-gen:file
-      {
-        "file": "../../packages/components/input/src/input.tsx",
-        "codeblock": {
-          "lang": "tsx",
-          "meta": "title=\"components/input.tsx\""
-        }
-      }
+    ```package-install
+    @mijn-ui/react-input
     ```
-  </Step>
-</Steps>
-</MijnUITabsContent>
+    </MijnUITabsContent>
+    <MijnUITabsContent value="Manual">
+      <Steps>
+      <Step>
+        **Add the Label Component**
+
+        To get started, you need to install the label component. Follow the link below to install it:
+
+        [Label component](/docs/components/label)
+      </Step>
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
+
+        ```json doc-gen:file
+          {
+            "file": "../../packages/components/input/src/input.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"components/input.tsx\""
+            }
+          }
+        ```
+      </Step>
+    </Steps>
+
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
 ```tsx
-<Input classNames={{ wrapper: "w-80" }} placeholder="Username..." />
+import { Input } from "@mijn-ui/react-input"
+```
+
+```tsx
+<Input />
 ```
 
 ---
+
+## Examples
 
 ### InputVariants
 
-<ComponentPreview className="flex-col gap-8">
-  <div className="flex flex-col gap-2">
-    <p className="font-medium text-small">Filled / Default</p>
-    <Input classNames={{ wrapper: "w-80" }} variant="filled" placeholder="Username..." />
-  </div>
-  <div className="flex flex-col gap-2">
-    <p className="font-medium text-small">Underline</p>
-    <Input classNames={{ wrapper: "w-80" }} variant="underline" placeholder="Username..." />
-  </div>
-</ComponentPreview>
-
-
-```tsx
-<Input classNames={{ wrapper: "w-80" }} variant="filled" placeholder="Username..." />
-<Input classNames={{ wrapper: "w-80" }} variant="underline" placeholder="Username..." />
-```
-
----
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview className="flex-col gap-6">
+      <InputVariants />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/input/input-variants.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ### Input with Icon
 
-<ComponentPreview>
-  <InputWithIcon />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/input/input-with-icon.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-  }
-}
-```
-
----
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <InputWithIcon />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/input/input-with-icon.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ### Input With Floating Label
 
-<ComponentPreview>
-  <Input classNames={{ wrapper: "w-80" }} label="Username" />
-</ComponentPreview>
-
-```tsx
-<Input classNames={{ wrapper: "w-80" }} label="Username" />
-```
-
----
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <InputFloatingLabel />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/input/input-floating-label.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ### Input Floating Label with Icon
 
-<ComponentPreview>
-  <InputFloatingLabelIcon />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/input/input-floating-label-icon.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-  }
-}
-```
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <InputFloatingLabelIcon />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/input/input-floating-label-icon.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ---
 
-### Input Style Slots
+## Input Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Input`               | Styles the input component.                |
-| `wrapper`        | `Input`        | Styles the wrapper around the input field.      |
-| `startIcon`      | `Input`      | Styles the icon displayed before the input.     |
-| `endIcon`        | `Input`        | Styles the icon displayed after the input.      |
-| `label`          | `Input`          | Styles the input label.                         |
-
+| **Slot Name** | **Targeted Component** | **Purpose**                                 |
+| ------------- | ---------------------- | ------------------------------------------- |
+| `base`        | `Input`                | Styles the input component.                 |
+| `wrapper`     | `Input`                | Styles the wrapper around the input field.  |
+| `startIcon`   | `Input`                | Styles the icon displayed before the input. |
+| `endIcon`     | `Input`                | Styles the icon displayed after the input.  |
+| `label`       | `Input`                | Styles the input label.                     |
