@@ -1,13 +1,14 @@
 ---
 title: Accordion
+description: A vertically stacked list of expandable items, perfect for organizing content.
 docs: https://www.radix-ui.com/primitives/docs/components/accordion
 apiReference: https://www.radix-ui.com/primitives/docs/components/accordion#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/accordion.ts
 ---
 
 import AccordionCustomIconExample from "@/examples/accordion/accordion-custom-icon"
-import AccordionMultipleExample from "@/examples/accordion/accordion-multiple"
 import AccordionFilledExample from "@/examples/accordion/accordion-filled"
+import AccordionMultipleExample from "@/examples/accordion/accordion-multiple"
 import AccordionOutlinedExample from "@/examples/accordion/accordion-outlined"
 import AccordionSingleExample from "@/examples/accordion/accordion-single"
 import AccordionUnstyledExample from "@/examples/accordion/accordion-unstyled.tsx"
@@ -24,15 +25,14 @@ import AccordionUnstyledExample from "@/examples/accordion/accordion-unstyled.ts
       "file": "./examples/accordion/accordion-single.tsx",
       "codeblock": {
         "lang": "tsx",
-        "meta": "title=\"accordion-single.tsx\""
+        "meta": ""
       }
     }
     ```
   </MijnUITabsContent>
 </MijnUITabs>
 
-
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -66,8 +66,31 @@ import AccordionUnstyledExample from "@/examples/accordion/accordion-unstyled.ts
         ```
       </Step>
     </Steps>
+
   </MijnUITabsContent>
 </MijnUITabs>
+
+## Usage
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@mijn-ui/react-accordion"
+```
+
+```tsx
+<Accordion type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
 
 ---
 
@@ -87,7 +110,7 @@ import AccordionUnstyledExample from "@/examples/accordion/accordion-unstyled.ts
       "file": "./examples/accordion/accordion-multiple.tsx",
       "codeblock": {
         "lang": "tsx",
-        "meta": "title=\"accordion-single.tsx\""
+        "meta": ""
       }
     }
     ```
@@ -112,7 +135,7 @@ There are three variants available for the accordion component: `default`, `outl
       "file": "./examples/accordion/accordion-outlined.tsx",
       "codeblock": {
         "lang": "tsx",
-        "meta": "title=\"accordion-single.tsx\""
+        "meta": ""
       }
     }
     ```
@@ -133,7 +156,7 @@ There are three variants available for the accordion component: `default`, `outl
       "file": "./examples/accordion/accordion-filled.tsx",
       "codeblock": {
         "lang": "tsx",
-        "meta": "title=\"accordion-single.tsx\""
+        "meta": ""
       }
     }
     ```
@@ -154,7 +177,7 @@ There are three variants available for the accordion component: `default`, `outl
       "file": "./examples/accordion/accordion-custom-icon.tsx",
       "codeblock": {
         "lang": "tsx",
-        "meta": "title=\"accordion-single.tsx\""
+        "meta": ""
       }
     }
     ```
@@ -175,7 +198,7 @@ There are three variants available for the accordion component: `default`, `outl
       "file": "./examples/accordion/accordion-unstyled.tsx",
       "codeblock": {
         "lang": "tsx",
-        "meta": "title=\"accordion-single.tsx\""
+        "meta": ""
       }
     }
     ```
@@ -184,15 +207,14 @@ There are three variants available for the accordion component: `default`, `outl
 
 ---
 
-### Accordion Style Slots
+## Accordion Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Accordion`           | Applies styles to the root `Accordion` component. |
-| `item`           | `AccordionItem`       | Styles the individual accordion item container.   |
-| `triggerWrapper` | `AccordionTrigger`    | Styles the wrapper around the trigger.           |
-| `trigger`        | `AccordionTrigger`    | Applies styles to the actual trigger element.    |
-| `icon`           | `AccordionTrigger`    | Styles the icon inside the trigger (if any).     |
-| `contentWrapper` | `AccordionContent`    | Styles the wrapper around the accordion content. |
-| `content`        | `AccordionContent`    | Applies styles to the actual content element.    |
-
+| **Slot Name**    | **Targeted Component** | **Purpose**                                       |
+| ---------------- | ---------------------- | ------------------------------------------------- |
+| `base`           | `Accordion`            | Applies styles to the root `Accordion` component. |
+| `item`           | `AccordionItem`        | Styles the individual accordion item container.   |
+| `triggerWrapper` | `AccordionTrigger`     | Styles the wrapper around the trigger.            |
+| `trigger`        | `AccordionTrigger`     | Applies styles to the actual trigger element.     |
+| `icon`           | `AccordionTrigger`     | Styles the icon inside the trigger (if any).      |
+| `contentWrapper` | `AccordionContent`     | Styles the wrapper around the accordion content.  |
+| `content`        | `AccordionContent`     | Applies styles to the actual content element.     |
