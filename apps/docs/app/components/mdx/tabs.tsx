@@ -8,11 +8,7 @@ type InstallationTabsProps = React.ComponentProps<typeof Tabs> & {
   items: string[]
 }
 
-const InstallationTabs = ({
-  items,
-  children,
-  ...props
-}: InstallationTabsProps) => {
+const MijnUITabs = ({ items, children, ...props }: InstallationTabsProps) => {
   const [value, onValueChange] = React.useState(items[0])
 
   return (
@@ -22,7 +18,7 @@ const InstallationTabs = ({
       onValueChange={onValueChange}
       {...props}
     >
-      <TabsList className="h-12 w-full justify-start rounded-none border-b !bg-transparent">
+      <TabsList className="mb-2 h-12 w-full justify-start rounded-none border-b !bg-transparent">
         {items.map((item) => (
           <TabsTrigger
             className="rounded-medium data-[state=active]:bg-default"
@@ -33,7 +29,7 @@ const InstallationTabs = ({
           </TabsTrigger>
         ))}
       </TabsList>
-
+      {/* temporary alert, will be removed later */}
       {value.toLocaleLowerCase() === "npm" && (
         <Alert color={"danger"} className="unstable_alert mt-3">
           NPM packages are currently unstable and may cause issues. Use it at
@@ -45,4 +41,4 @@ const InstallationTabs = ({
   )
 }
 
-export { InstallationTabs, TabsContent as InstallationTabsContent }
+export { MijnUITabs, TabsContent as MijnUITabsContent }

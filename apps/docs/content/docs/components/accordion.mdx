@@ -6,32 +6,42 @@ styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/s
 ---
 
 import AccordionCustomIconExample from "@/examples/accordion/accordion-custom-icon"
-import MultiAccordionExample from "@/examples/accordion/accordion-multiple"
-import FilledAccordionExample from "@/examples/accordion/accordion-filled"
-import OutlinedAccordionExample from "@/examples/accordion/accordion-outlined"
-import SingleAccordionExample from "@/examples/accordion/accordion-single"
-import UnstyledAccordionExample from "@/examples/accordion/accordion-unstyled.tsx"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@mijn-ui/react"
+import AccordionMultipleExample from "@/examples/accordion/accordion-multiple"
+import AccordionFilledExample from "@/examples/accordion/accordion-filled"
+import AccordionOutlinedExample from "@/examples/accordion/accordion-outlined"
+import AccordionSingleExample from "@/examples/accordion/accordion-single"
+import AccordionUnstyledExample from "@/examples/accordion/accordion-unstyled.tsx"
 
-<ComponentPreview>
-  <SingleAccordionExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <AccordionSingleExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/accordion/accordion-single.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"accordion-single.tsx\""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
+
 
 ### Installation
 
-<InstallationTabs items={["Npm", "Manual"]}>
-  <InstallationTabsContent value="Npm">
+<MijnUITabs items={["Npm", "Manual"]}>
+  <MijnUITabsContent value="Npm">
   ```package-install
   @mijn-ui/react-accordion
   ```
-  </InstallationTabsContent>
+  </MijnUITabsContent>
 
-  <InstallationTabsContent value="Manual">
+  <MijnUITabsContent value="Manual">
     <Steps>
       <Step>
         **Install Required Packages**
@@ -56,113 +66,121 @@ import {
         ```
       </Step>
     </Steps>
-
-  </InstallationTabsContent>
-</InstallationTabs>
-
-**Example Usage**
-
-```json doc-gen:file
-{
-  "file": "./examples/accordion/accordion-single.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": "title=\"accordion-single.tsx\""
-  }
-}
-```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ---
+
+## Examples
 
 ### Multi Accordion
 
-<ComponentPreview>
-  <MultiAccordionExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <AccordionMultipleExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/accordion/accordion-multiple.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"accordion-single.tsx\""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-```json doc-gen:file
-{
-  "file": "./examples/accordion/accordion-multiple.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-  }
-}
-```
-
----
-
-### Accordion Variants
+### Variants
 
 There are three variants available for the accordion component: `default`, `outlined`, and `filled`.
 
-**Outlined**
+#### Outlined
 
-<ComponentPreview>
-  <OutlinedAccordionExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <AccordionOutlinedExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/accordion/accordion-outlined.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"accordion-single.tsx\""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-```json doc-gen:file
-{
-  "file": "./examples/accordion/accordion-outlined.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-  }
-}
-```
+#### Filled
 
-**Filled**
-
-<ComponentPreview>
-  <FilledAccordionExample />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/accordion/accordion-filled.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-  }
-}
-```
-
----
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <AccordionFilledExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/accordion/accordion-filled.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"accordion-single.tsx\""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ### Custom Icon
 
-<ComponentPreview>
-  <AccordionCustomIconExample />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/accordion/accordion-custom-icon.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-  }
-}
-```
-
----
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <AccordionCustomIconExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/accordion/accordion-custom-icon.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"accordion-single.tsx\""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ### Unstyled Accordion
 
-<ComponentPreview>
-  <UnstyledAccordionExample />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/accordion/accordion-unstyled.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-  }
-}
-```
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <AccordionUnstyledExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/accordion/accordion-unstyled.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"accordion-single.tsx\""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ---
 
