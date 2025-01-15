@@ -1,5 +1,6 @@
 ---
 title: Separator
+description: A divider for grouping content or sections.
 docs: https://www.radix-ui.com/primitives/docs/components/separator
 apiReference: https://www.radix-ui.com/primitives/docs/components/separator#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/separator.ts
@@ -7,11 +8,26 @@ styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/s
 
 import SeparatorExample from "@/examples/separator/separator-example"
 
-<ComponentPreview>
-  <SeparatorExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <SeparatorExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/separator/separator-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -20,49 +36,48 @@ import SeparatorExample from "@/examples/separator/separator-example"
   ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-    **Install Required Dependencies:**
-  
-    ```package-install
-    @radix-ui/react-separator
-    ```
-  </Step>
+    <Steps>
+      <Step>
+        **Install Required Dependencies:**
+      
+        ```package-install
+        @radix-ui/react-separator
+        ```
+      </Step>
 
-  <Step>
-    **Copy and paste the following code into  `mijn-ui` folder.**
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
 
-    ```json doc-gen:file
-    {
-      "file": "../../packages/components/separator/src/separator.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": "title=\"components/separator.tsx\""
-      }
-    }
-    ```
-  </Step>
-</Steps>
-</MijnUITabsContent>
+        ```json doc-gen:file
+        {
+          "file": "../../packages/components/separator/src/separator.tsx",
+          "codeblock": {
+            "lang": "tsx",
+            "meta": "title=\"components/separator.tsx\""
+          }
+        }
+        ```
+
+      </Step>
+    </Steps>
+
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/separator/separator-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"separator-example.tsx\""
-    }
-  }
+```tsx
+import { Separator } from "@mijn-ui/react-separator"
 ```
 
+```tsx
+<Separator />
+```
 
 ---
 
-### Separator Style Slots
+## Separator Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Separator`           | Styles the separator component.                 |
+| **Slot Name** | **Targeted Component** | **Purpose**                     |
+| ------------- | ---------------------- | ------------------------------- |
+| `base`        | `Separator`            | Styles the separator component. |
