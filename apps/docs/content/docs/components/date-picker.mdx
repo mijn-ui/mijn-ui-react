@@ -1,67 +1,88 @@
 ---
 title: Date Picker
+description: A calendar-based date picker component built with React DayPicker and Popover.
 ---
 
 import DatePickerExample from "@/examples/date-picker/date-picker-example"
 
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <DatePickerExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/date-picker/date-picker-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-<ComponentPreview>
-  <DatePickerExample />
-</ComponentPreview>
-
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
-  ```package-install
-  @mijn-ui/react-date-picker
-  ```
+    ```package-install
+    @mijn-ui/react-date-picker
+    ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-   **Autocomplete uses the following components: Button, Calendar, Select and Popover. If you haven't installed them yet, you can install them by following the links below:**
+    <Steps>
+      <Step>
+      **Autocomplete uses the following components: Button, Calendar, Select and Popover. If you haven't installed them yet, you can install them by following the links below:**
 
-    - [Button Component](/docs/components/button)
-    - [Calendar Component](/docs/components/calendar)
-    - [Select Component](/docs/components/select)
-    - [Popover Component](/docs/components/popover)
+        - [Button Component](/docs/components/button)
+        - [Calendar Component](/docs/components/calendar)
+        - [Select Component](/docs/components/select)
+        - [Popover Component](/docs/components/popover)
 
-  </Step>
-  <Step>
-    **Install Required Packages**
+      </Step>
+      <Step>
+        **Install Required Packages**
 
-    ```package-install
-    react-day-picker
-    ```
+        ```package-install
+        react-day-picker
+        ```
+      </Step>
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
 
-  </Step>
+        ```json doc-gen:file
+          {
+            "file": "../../packages/components/date-picker/src/date-picker.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"components/date-picker.tsx\""
+            }
+          }
+        ```
+      </Step>
+    </Steps>
 
-  <Step>
-    **Copy and paste the following code into  `mijn-ui` folder.**
-
-    ```json doc-gen:file
-      {
-        "file": "../../packages/components/date-picker/src/date-picker.tsx",
-        "codeblock": {
-          "lang": "tsx",
-          "meta": "title=\"components/date-picker.tsx\""
-        }
-      }
-    ```
-  </Step>
-</Steps>
-</MijnUITabsContent>
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/date-picker/date-picker-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"date-picker-example.tsx\""
-    }
-  }
+```tsx
+import { CalendarDatePicker } from "@mijn-ui/react"
+```
+
+```tsx
+const [selectedDateRange, setSelectedDateRange] = useState({
+  from: new Date(new Date().getFullYear(), 0, 1),
+  to: new Date(),
+})
+
+<CalendarDatePicker
+  color="default"
+  date={selectedDateRange}
+  onDateSelect={setSelectedDateRange}
+/>
 ```
