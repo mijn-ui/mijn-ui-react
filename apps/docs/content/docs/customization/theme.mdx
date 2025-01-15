@@ -5,11 +5,11 @@ description: Learn how to use themes in MijnUI to create consistent and visually
 
 import Link from "next/link"
 
-### What is a Theme
+## What is a Theme
 
 A **theme** in MijnUI is a collection of predefined styles, including colors, layout attributes, and UI components. Themes ensure visual consistency across your application, making it easier to manage and scale your design system.
 
-### Setup
+## Setup
 
 <Alert color="info" title="Note:">
 If you're using pnpm with a monorepo architecture, ensure your configuration points to the ROOT `node_modules` directory.
@@ -17,7 +17,7 @@ If you're using pnpm with a monorepo architecture, ensure your configuration poi
 
 <Steps>
   <Step>
-  #### Install Required Dependencies
+  ### Install Required Dependencies
 
   ```package-install
   tailwindcss-animate
@@ -25,7 +25,7 @@ If you're using pnpm with a monorepo architecture, ensure your configuration poi
   </Step>
   
   <Step>
-  #### Configure tailwind.config.ts
+  ### Configure tailwind.config.ts
 
 ```ts title="tailwind.config.ts"
 import { mijnui } from "@mijn-ui/react-theme" // [!code highlight]
@@ -46,7 +46,7 @@ export default {
   </Step>
 
   <Step>
-  #### Usage
+  ### Usage
 
   Once your `tailwind.config.ts` is configured, you can start using the predefined CSS variables in your components. Here's an example:
 
@@ -74,7 +74,7 @@ export default {
 </Steps>
 ---
 
-### Default Plugin Options
+## Default Plugin Options
 
 ```ts
 export default {
@@ -102,7 +102,7 @@ export default {
 
 ---
 
-### Themes Options
+## Themes Options
 
 These are the options that you can use to apply custom configurations to your themes.
 
@@ -128,7 +128,7 @@ export default {
 
 ---
 
-### Nested themes
+## Nested themes
 
 MijnUI supports nested themes, allowing you to apply different themes to different sections of your application:
 
@@ -142,7 +142,7 @@ MijnUI supports nested themes, allowing you to apply different themes to differe
 
 ---
 
-### Theme based variants
+## Theme based variants
 
 MijnUI supports nested themes, enabling you to apply different themes to specific sections of your application:
 
@@ -163,7 +163,7 @@ MijnUI supports nested themes, enabling you to apply different themes to specifi
 
 ---
 
-### API Reference
+## API Reference
 
 The following table provides an overview of the various attributes you can use when working
 with themes in MijnUI:
@@ -178,9 +178,9 @@ with themes in MijnUI:
 
 ---
 
-### Types
+## Types
 
-#### ConfigThemes
+### ConfigThemes
 
 ```ts
 type ConfigTheme = {
@@ -192,7 +192,7 @@ type ConfigTheme = {
 type ConfigThemes = Record<string, ConfigTheme>;
 ```
 
-#### LayoutTheme
+### LayoutTheme
 
 ```ts
 type BaseThemeUnit = {
