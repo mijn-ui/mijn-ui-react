@@ -80,7 +80,6 @@ export default async function Page(props: {
       <DocsDescription className="mb-0">
         {page.data.description}
       </DocsDescription>
-      <hr />
       <DocsBody>
         <MDX
           components={{
