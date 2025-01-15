@@ -1,5 +1,6 @@
 ---
 title: Autocomplete
+description: An input field with suggestions dropdown.
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/autocomplete.ts
 ---
 
@@ -7,11 +8,26 @@ import AutocompleteExample from "@/examples/autocomplete/autocomplete-example"
 import AutocompleteWithScrollArea from "@/examples/autocomplete/autocomplete-example-2"
 import AutocompleteWithDialog from "@/examples/autocomplete/autocomplete-example-3"
 
-<ComponentPreview>
-  <AutocompleteExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <AutocompleteExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/alert/alert-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -22,17 +38,17 @@ import AutocompleteWithDialog from "@/examples/autocomplete/autocomplete-example
   
   <MijnUITabsContent value="Manual">
   <Steps>
-  <Step>
-  **Add Popover Component**
+    <Step>
+    **Add Popover Component**
 
-    To get started, you need to install the popover component. Follow the link below to install it:
+      To get started, you need to install the popover component. Follow the link below to install it:
 
-    [Popover component](/docs/components/popover)
-  </Step>
-  <Step>
-  **Copy and paste the following code into `mijn-ui` folder.**
+      [Popover component](/docs/components/popover)
+    </Step>
+    <Step>
+    **Copy and paste the following code into `mijn-ui` folder.**
 
-  ```json doc-gen:file
+    ```json doc-gen:file
     {
       "file": "../../packages/components/autocomplete/src/autocomplete.tsx",
       "codeblock": {
@@ -40,74 +56,96 @@ import AutocompleteWithDialog from "@/examples/autocomplete/autocomplete-example
         "meta": "title=\"components/autocomplete.tsx\""
       }
     }
-  ``` 
-  </Step>
-  
-  <Step>
-  **Ensure that everything is functioning correctly after installation.**
-  </Step>
-</Steps>
+    ```
+    </Step>
+
+    <Step>
+      **Ensure that everything is functioning correctly after installation.**
+    </Step>
+
+  </Steps>
 </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/autocomplete/autocomplete-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"autocomplete-example.tsx\""
-    }
-  }
+```tsx
+import {
+  Autocomplete,
+  AutocompleteContent,
+  AutocompleteGroup,
+  AutocompleteItem,
+  AutocompleteTrigger,
+} from "@mijn-ui/react"
+```
+
+```tsx
+<Autocomplete>
+  <AutocompleteTrigger placeholder={"Search for a framework"} />
+  <AutocompleteGroup>
+    <AutocompleteContent>
+      <AutocompleteItem value="nextjs">Next.js</AutocompleteItem>
+    </AutocompleteContent>
+  </AutocompleteGroup>
+</Autocomplete>
 ```
 
 ---
+
+## Examples
 
 ### Autocomplete With Scrollarea
 
-<ComponentPreview>
-  <AutocompleteWithScrollArea />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/autocomplete/autocomplete-example-2.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": "title=\"autocomplete-with-scrollarea.tsx\""
-  }
-}
-```
-
----
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <AutocompleteWithScrollArea />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/autocomplete/autocomplete-example-2.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ### Autocomplete With Dialog
 
-<ComponentPreview>
-  <AutocompleteWithDialog />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/autocomplete/autocomplete-example-3.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": "title=\"autocomplete-with-dialog.tsx\""
-  }
-}
-```
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <AutocompleteWithDialog />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/autocomplete/autocomplete-example-3.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ---
 
-### Autocomplete Style Slots
+## Autocomplete Style Slots
 
-| **Slot Name**    | **Targeted Component**     | **Purpose**                                      |
-|-------------------|----------------------------|-------------------------------------------------|
-| `base`           | `AutoComplete`            | Styles the root `AutoComplete` component.       |
-| `trigger`        | `AutoComplete`            | Styles the trigger for the autocomplete.        |
-| `content`        | `AutoCompleteContent`     | Applies styles to the content container.        |
-| `contentEmpty`   | `AutoCompleteContent`     | Styles the content when no results are available. |
-| `skeleton`       | `AutoCompleteContent`     | Styles the skeleton/loading state of content.   |
-| `group`          | `AutoCompleteGroup`       | Styles groups of autocomplete items.            |
-| `item`           | `AutoCompleteItem`        | Styles individual autocomplete items.           |
+| **Slot Name**  | **Targeted Component** | **Purpose**                                       |
+| -------------- | ---------------------- | ------------------------------------------------- |
+| `base`         | `AutoComplete`         | Styles the root `AutoComplete` component.         |
+| `trigger`      | `AutoComplete`         | Styles the trigger for the autocomplete.          |
+| `content`      | `AutoCompleteContent`  | Applies styles to the content container.          |
+| `contentEmpty` | `AutoCompleteContent`  | Styles the content when no results are available. |
+| `skeleton`     | `AutoCompleteContent`  | Styles the skeleton/loading state of content.     |
+| `group`        | `AutoCompleteGroup`    | Styles groups of autocomplete items.              |
+| `item`         | `AutoCompleteItem`     | Styles individual autocomplete items.             |
