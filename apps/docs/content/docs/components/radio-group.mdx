@@ -1,5 +1,6 @@
 ---
 title: RadioGroup
+description: A group of radio buttons for single-option selection.
 docs: https://www.radix-ui.com/primitives/docs/components/radio-group
 apiReference: https://www.radix-ui.com/primitives/docs/components/radio-group#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/radio-group.ts
@@ -7,11 +8,26 @@ styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/s
 
 import RadioGroupExample from "@/examples/radio-group/radio-group-example"
 
-<ComponentPreview>
-  <RadioGroupExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <RadioGroupExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/radio-group/radio-group-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -20,53 +36,59 @@ import RadioGroupExample from "@/examples/radio-group/radio-group-example"
   ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
+    <Steps>
+      <Step>
+      **Install Required Dependencies:**
 
-  <Steps>
-  <Step>
-  **Install Required Dependencies:**
+      ```package-install
+      @radix-ui/react-radio-group
+      ```
+      </Step>
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
 
-  ```package-install
-  @radix-ui/react-radio-group
-  ```
-  </Step>
+        ```json doc-gen:file
+        {
+          "file": "../../packages/components/radio-group/src/radio-group.tsx",
+          "codeblock": {
+            "lang": "tsx",
+            "meta": "title=\"components/radio-group.tsx\""
+          }
+        }
+        ```
+      </Step>
+    </Steps>
 
-  <Step>
-    **Copy and paste the following code into  `mijn-ui` folder.**
-
-    ```json doc-gen:file
-    {
-      "file": "../../packages/components/radio-group/src/radio-group.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": "title=\"components/radio-group.tsx\""
-      }
-    }
-    ```
-
-  </Step>
-</Steps>
-</MijnUITabsContent>
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/radio-group/radio-group-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"radio-group-example.tsx\""
-    }
-  }
+```tsx
+import { Label } from "@mijn-ui/react-label"
+import { RadioGroup, RadioGroupItem } from "@mijn-ui/react-radio-group"
+```
+
+```tsx
+<RadioGroup defaultValue="option-one">
+  <div className="flex items-center space-x-2">
+    <RadioGroupItem value="option-one" id="option-one" />
+    <Label htmlFor="option-one">Option One</Label>
+  </div>
+  <div className="flex items-center space-x-2">
+    <RadioGroupItem value="option-two" id="option-two" />
+    <Label htmlFor="option-two">Option Two</Label>
+  </div>
+</RadioGroup>
 ```
 
 ---
 
-### RadioGroup Style Slots
+## RadioGroup Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `RadioGroup`          | Styles the root radio group component.          |
-| `item`           | `RadioGroupItem`      | Styles individual radio items.                  |
-| `indicator`      | `RadioGroupItem`      | Styles the indicator for selected radio items.  |
-| `icon`           | `RadioGroupItem`      | Styles the icon within the radio item.          |
+| **Slot Name** | **Targeted Component** | **Purpose**                                    |
+| ------------- | ---------------------- | ---------------------------------------------- |
+| `base`        | `RadioGroup`           | Styles the root radio group component.         |
+| `item`        | `RadioGroupItem`       | Styles individual radio items.                 |
+| `indicator`   | `RadioGroupItem`       | Styles the indicator for selected radio items. |
+| `icon`        | `RadioGroupItem`       | Styles the icon within the radio item.         |
