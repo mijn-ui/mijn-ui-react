@@ -3,7 +3,7 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "./resizable"
+} from "../resizable"
 
 type BlockerViewerProps = {
   name: string

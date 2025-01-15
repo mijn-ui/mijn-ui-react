@@ -14,10 +14,7 @@ import { LuExternalLink } from "react-icons/lu"
 import { metadataImage } from "@/lib/metadata-image"
 import Alert from "@/app/components/mdx/alert"
 import ComponentPreview from "@/app/components/mdx/component-preview"
-import {
-  InstallationTabs,
-  InstallationTabsContent,
-} from "@/app/components/mdx/installation-tabs"
+import { MijnUITabs, MijnUITabsContent } from "@/app/components/mdx/tabs"
 import { source } from "@/app/source"
 
 export default async function Page(props: {
@@ -96,8 +93,8 @@ export default async function Page(props: {
             Files,
             Folder,
             Alert,
-            InstallationTabs,
-            InstallationTabsContent,
+            MijnUITabs,
+            MijnUITabsContent,
             ComponentPreview,
           }}
         />
