@@ -1,300 +1,236 @@
 ---
 title: Badge
+description: Displays a badge or a component that looks like a badge.
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/badge.ts
 ---
 
-import { Badge } from "@mijn-ui/react"
+import BadgeColors from "@/examples/badge/badge-colors"
+import BadgeExample from "@/examples/badge/badge-example"
+import BadgeFilled from "@/examples/badge/badge-filled"
+import BadgeGhost from "@/examples/badge/badge-ghost"
+import BadgeOutlined from "@/examples/badge/badge-outlined"
+import BadgeRadius from "@/examples/badge/badge-radius"
+import BadgeSizes from "@/examples/badge/badge-sizes"
+import BadgeSubtle from "@/examples/badge/badge-subtle"
 
-<ComponentPreview className="flex-col md:flex-row">
-  <Badge>Badge</Badge>
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <BadgeExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/badge/badge-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
-  ```package-install
-  @mijn-ui/react-badge
-  ```
+    ```package-install
+    @mijn-ui/react-badge
+    ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-  **Copy and paste the following code into `mijn-ui` folder.**
+    <Steps>
+      <Step>
+        **Copy and paste the following code into `mijn-ui` folder.**
 
-  ```json doc-gen:file
-    {
-      "file": "../../packages/components/badge/src/badge.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": "title=\"components/badge.tsx\""
-      }
-    }
-  ```
-  </Step>
-  
-  <Step>
-  **Ensure that everything is functioning correctly after installation.**
-  </Step>
-</Steps>
-</MijnUITabsContent>
+        ```json doc-gen:file
+        {
+          "file": "../../packages/components/badge/src/badge.tsx",
+          "codeblock": {
+            "lang": "tsx",
+            "meta": "title=\"components/badge.tsx\""
+          }
+        }
+        ```
+      </Step>
+
+      <Step>
+        **Ensure that everything is functioning correctly after installation.**
+      </Step>
+    </Steps>
+
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
 ```tsx
-<Badge>Badge</Badge>
+import { Badge } from "@mijn-ui/react-badge"
+```
+
+```tsx
+<Badge variant="outlined">Badge</Badge>
 ```
 
 ---
+
+## Examples
 
 ### Colors
 
-<ComponentPreview className="flex-col md:flex-row">
-  <div className="flex items-center flex-wrap gap-4">
-    <Badge color="default">Default</Badge>
-    <Badge color="primary">Primary</Badge>
-    <Badge color="secondary">Secondary</Badge>
-    <Badge color="success">Success</Badge>
-    <Badge color="info">Info</Badge>
-    <Badge color="warning">Warning</Badge>
-    <Badge color="danger">Danger</Badge>
-  </div>
-</ComponentPreview>
-
-```tsx
-  <Badge color="default">Default</Badge>
-  <Badge color="primary">Primary</Badge>
-  <Badge color="secondary">Secondary</Badge>
-  <Badge color="success">Success</Badge>
-  <Badge color="info">Info</Badge>
-  <Badge color="warning">Warning</Badge>
-  <Badge color="danger">Danger</Badge>
-```
-
----
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview className="flex-col md:flex-row">
+      <BadgeColors />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/badge/badge-colors.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ### Variants
 
 #### Filled
 
-<ComponentPreview className="flex-col md:flex-row">
-  <div className="flex items-center flex-wrap gap-4">
-    <Badge variant="filled" color="default">
-      Default
-    </Badge>
-    <Badge variant="filled" color="primary">
-      Primary
-    </Badge>
-    <Badge variant="filled" color="secondary">
-      Secondary
-    </Badge>
-    <Badge variant="filled" color="success">
-      Success
-    </Badge>
-    <Badge variant="filled" color="info">
-      Info
-    </Badge>
-    <Badge variant="filled" color="warning">
-      Warning
-    </Badge>
-    <Badge variant="filled" color="danger">
-      Danger
-    </Badge>
-  </div>
-</ComponentPreview>
-
-```tsx
-  <Badge variant="filled" color="default">
-    Default
-  </Badge>
-  <Badge variant="filled" color="primary">
-    Primary
-  </Badge>
-  <Badge variant="filled" color="secondary">
-    Secondary
-  </Badge>
-  <Badge variant="filled" color="success">
-    Success
-  </Badge>
-  <Badge variant="filled" color="info">
-    Info
-  </Badge>
-  <Badge variant="filled" color="warning">
-    Warning
-  </Badge>
-  <Badge variant="filled" color="danger">
-    Danger
-  </Badge>
-```
-
----
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview className="flex-col md:flex-row">
+      <BadgeFilled />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/badge/badge-filled.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 #### Outlined
 
-<ComponentPreview className="flex-col md:flex-row">
-  <div className="flex items-center flex-wrap gap-4">
-    <Badge variant="outlined" color="default">
-      Default
-    </Badge>
-    <Badge variant="outlined" color="primary">
-      Primary
-    </Badge>
-    <Badge variant="outlined" color="secondary">
-      Secondary
-    </Badge>
-    <Badge variant="outlined" color="success">
-      Success
-    </Badge>
-    <Badge variant="outlined" color="info">
-      Info
-    </Badge>
-    <Badge variant="outlined" color="warning">
-      Warning
-    </Badge> 
-    <Badge variant="outlined" color="danger">
-      Danger
-    </Badge>
-  </div>
-</ComponentPreview>
-
-```tsx
-<Badge variant="outlined" color="default">Default</Badge>
-<Badge variant="outlined" color="primary">Primary</Badge>
-<Badge variant="outlined" color="secondary">Secondary</Badge>
-<Badge variant="outlined" color="default">Muted</Badge>
-<Badge variant="outlined" color="danger">Danger</Badge>
-```
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview className="flex-col md:flex-row">
+      <BadgeOutlined />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/badge/badge-outlined.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 #### Subtle
 
-<ComponentPreview className="flex-col md:flex-row">
-  <div className="flex items-center flex-wrap gap-4">
-    <Badge variant="subtle" color="default">
-      Default
-    </Badge>
-    <Badge variant="subtle" color="primary">
-      Primary
-    </Badge>
-    <Badge variant="subtle" color="secondary">
-      Secondary
-    </Badge>
-    <Badge variant="subtle" color="success">
-      Success
-    </Badge>
-    <Badge variant="subtle" color="info">
-      Info
-    </Badge>
-    <Badge variant="subtle" color="warning">
-      Warning
-    </Badge> 
-    <Badge variant="subtle" color="danger">
-      Danger
-    </Badge>
-  </div>
-</ComponentPreview>
-
-```tsx
-<Badge variant="subtle" color="default">Default</Badge>
-<Badge variant="subtle" color="primary">Primary</Badge>
-<Badge variant="subtle" color="secondary">Secondary</Badge>
-<Badge variant="subtle" color="default">Muted</Badge>
-<Badge variant="subtle" color="danger">Danger</Badge>
-```
-
----
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview className="flex-col md:flex-row">
+      <BadgeSubtle />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/badge/badge-subtle.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 #### Ghost
 
-<ComponentPreview className="flex-col md:flex-row">
-  <div className="flex items-center flex-wrap gap-4">
-    <Badge variant="ghost" color="default">
-      Default
-    </Badge>
-    <Badge variant="ghost" color="primary">
-      Primary
-    </Badge>
-    <Badge variant="ghost" color="secondary">
-      Secondary
-    </Badge>
-    <Badge variant="ghost" color="success">
-      Success
-    </Badge>
-    <Badge variant="ghost" color="info">
-      Info
-    </Badge>
-    <Badge variant="ghost" color="warning">
-      Warning
-    </Badge>
-    <Badge variant="ghost" color="danger">
-      Danger
-    </Badge>
-  </div>
-</ComponentPreview>
-
-```tsx
-  <Badge variant="ghost" color="default">
-    Default
-  </Badge>
-  <Badge variant="ghost" color="primary">
-    Primary
-  </Badge>
-  <Badge variant="ghost" color="secondary">
-    Secondary
-  </Badge>
-  <Badge variant="ghost" color="default">
-    Muted
-  </Badge>
-  <Badge variant="ghost" color="danger">
-    Danger
-  </Badge>
-```
-
----
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview" className="flex-col md:flex-row">
+    <ComponentPreview className="flex-col md:flex-row">
+      <BadgeGhost />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/badge/badge-ghost.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ### Radius
 
-<ComponentPreview>
-  <div className="flex items-center flex-wrap gap-4">
-    <Badge radius="sm">Badge</Badge>
-    <Badge radius="md">Badge</Badge>
-    <Badge radius="lg">Badge</Badge>
-    <Badge radius="full">Badge</Badge>
-  </div>
-</ComponentPreview>
-
-```tsx
-<Badge radius="sm">Badge</Badge>
-<Badge radius="md">Badge</Badge>
-<Badge radius="lg">Badge</Badge>
-<Badge radius="full">Badge</Badge>
-```
-
----
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <BadgeRadius />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/badge/badge-radius.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ### Sizes
 
-<ComponentPreview>
-<div className="flex items-end flex-wrap gap-4">
-  <Badge size="xs">xs</Badge>
-  <Badge size="sm">sm</Badge>
-  <Badge size="md">md</Badge>
-  <Badge size="lg">lg</Badge>
-</div>
-</ComponentPreview>
-
-```tsx
-<Badge size="xs">xs</Badge>
-<Badge size="sm">sm</Badge>
-<Badge size="md">md</Badge>
-<Badge size="lg">lg</Badge>
-```
-
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <BadgeSizes />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/badge/badge-sizes.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ---
 
-### Badge Style Slots
+## Badge Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Badge`               | Styles the badge component.                     |
+| **Slot Name** | **Targeted Component** | **Purpose**                 |
+| ------------- | ---------------------- | --------------------------- |
+| `base`        | `Badge`                | Styles the badge component. |
