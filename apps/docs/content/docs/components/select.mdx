@@ -1,17 +1,34 @@
 ---
 title: Select
+description: A dropdown selector for single or multiple options.
 docs: https://www.radix-ui.com/primitives/docs/components/select
 apiReference: https://www.radix-ui.com/primitives/docs/components/select#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/select.ts
 ---
 
 import SelectExample from "@/examples/select/select-example"
+import SelectScrollable from "@/examples/select/select-scrollable"
 
-<ComponentPreview>
-  <SelectExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <SelectExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/select/select-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -20,59 +37,97 @@ import SelectExample from "@/examples/select/select-example"
   ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-    **Install Required Dependicies**
+    <Steps>
+      <Step>
+        **Install Required Dependicies**
 
-    ```package-install
-    @radix-ui/react-select
-    ```
+        ```package-install
+        @radix-ui/react-select
+        ```
 
-  </Step>
+      </Step>
 
-  <Step>
-    **Copy and paste the following code into  `mijn-ui` folder.**
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
 
-    ```json doc-gen:file
-      {
-        "file": "../../packages/components/select/src/select.tsx",
-        "codeblock": {
-          "lang": "tsx",
-          "meta": "title=\"components/select.tsx\""
-        }
-      }
-    ```
-  </Step>
+        ```json doc-gen:file
+          {
+            "file": "../../packages/components/select/src/select.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"components/select.tsx\""
+            }
+          }
+        ```
+      </Step>
+    </Steps>
 
-</Steps>
-</MijnUITabsContent>
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/select/select-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"select-example.tsx\""
-    }
-  }
+```tsx
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@mijn-ui/react-select"
+```
+
+```tsx
+<Select>
+  <SelectTrigger className="w-[180px]">
+    <SelectValue placeholder="Theme" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="light">Light</SelectItem>
+    <SelectItem value="dark">Dark</SelectItem>
+    <SelectItem value="system">System</SelectItem>
+  </SelectContent>
+</Select>
 ```
 
 ---
 
-### Select Style Slots
+## Examples
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Select`                | Styles the root select component.               |
-| `trigger`        | `SelectTrigger`         | Styles the trigger for opening the select.      |
-| `scrollUpBtn`    | `SelectScrollUpButton`  | Styles the scroll-up button in the select.      |
-| `scrollDownBtn`  | `SelectScrollDownButton`| Styles the scroll-down button in the select.   |
-| `content`        | `SelectContent`         | Styles the select content container.            |
-| `viewport`       | `SelectContent`         | Styles the viewport of the select content.      |
-| `label`          | `SelectLabel`           | Styles the label within the select.             |
-| `item`           | `SelectItem`            | Styles individual select items.                 |
-| `itemIndicator`  | `SelectItem`            | Styles the indicator for selected items.        |
-| `separator`      | `SelectSeparator`       | Styles the separator between select items.      |
+### Scrollable
+
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <SelectScrollable />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/select/select-scrollable.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
+
+---
+
+## Select Style Slots
+
+| **Slot Name**   | **Targeted Component**   | **Purpose**                                  |
+| --------------- | ------------------------ | -------------------------------------------- |
+| `base`          | `Select`                 | Styles the root select component.            |
+| `trigger`       | `SelectTrigger`          | Styles the trigger for opening the select.   |
+| `scrollUpBtn`   | `SelectScrollUpButton`   | Styles the scroll-up button in the select.   |
+| `scrollDownBtn` | `SelectScrollDownButton` | Styles the scroll-down button in the select. |
+| `content`       | `SelectContent`          | Styles the select content container.         |
+| `viewport`      | `SelectContent`          | Styles the viewport of the select content.   |
+| `label`         | `SelectLabel`            | Styles the label within the select.          |
+| `item`          | `SelectItem`             | Styles individual select items.              |
+| `itemIndicator` | `SelectItem`             | Styles the indicator for selected items.     |
+| `separator`     | `SelectSeparator`        | Styles the separator between select items.   |
