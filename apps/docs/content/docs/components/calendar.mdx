@@ -1,59 +1,83 @@
 ---
 title: Calendar
+description: A date field component that allows users to enter and edit date.
 docs: https://react-day-picker.js.org
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/calendar.ts
 ---
 
 import CalendarExample from "@/examples/calendar/calendar-example"
 
-<ComponentPreview>
-  <CalendarExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <CalendarExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/calendar/calendar-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
-  ```package-install
-  @mijn-ui/react-calendar
-  ```
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-    **Install Required Packages**
-
     ```package-install
-    react-day-picker
+    @mijn-ui/react-calendar
     ```
+  </MijnUITabsContent>
 
-  </Step>
+  <MijnUITabsContent value="Manual">
+    <Steps>
+      <Step>
+        **Install Required Packages**
 
-  <Step>
-    **Copy and paste the following code into  `mijn-ui` folder.**
+        ```package-install
+        react-day-picker date-fns
+        ```
+      </Step>
 
-    ```json doc-gen:file
-      {
-        "file": "../../packages/components/calendar/src/calendar.tsx",
-        "codeblock": {
-          "lang": "tsx",
-          "meta": "title=\"components/calendar.tsx\""
-        }
-      }
-    ```
-  </Step>
-</Steps>
-</MijnUITabsContent>
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
+
+        ```json doc-gen:file
+          {
+            "file": "../../packages/components/calendar/src/calendar.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"components/calendar.tsx\""
+            }
+          }
+        ```
+      </Step>
+    </Steps>
+
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/calendar/calendar-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"calendar-example.tsx\""
-    }
-  }
+```tsx
+import { Calendar } from "@mijn-ui/react-calendar"
+```
+
+```tsx
+const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+return (
+  <Calendar
+    mode="single"
+    selected={date}
+    onSelect={setDate}
+    className="rounded-md border"
+  />
+)
 ```
