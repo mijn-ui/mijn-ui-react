@@ -52,7 +52,7 @@ const AutocompleteWithDialog = () => {
 
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger asChild>
         <Button>Add User</Button>
       </DialogTrigger>
       <DialogContent>
@@ -87,7 +87,7 @@ const AutocompleteWithDialog = () => {
         <div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
           <DialogClose>Cancel</DialogClose>
           <DialogClose unstyled asChild>
-            <Button>Add User</Button>
+            <Button color="primary">Add User</Button>
           </DialogClose>
         </div>
       </DialogContent>
