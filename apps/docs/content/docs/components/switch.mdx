@@ -1,17 +1,33 @@
 ---
 title: Switch
+description: A toggle control for enabling or disabling settings.
 docs: https://www.radix-ui.com/primitives/docs/components/switch
 apiReference: https://www.radix-ui.com/primitives/docs/components/switch#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/switch.ts
 ---
 
-import { Switch } from "@mijn-ui/react"
+import SwitchExample from "@/examples/switch/switch-example"
 
-<ComponentPreview>
-  <Switch />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <SwitchExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/switch/switch-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -20,30 +36,32 @@ import { Switch } from "@mijn-ui/react"
   ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-  **Copy and paste the following code into `mijn-ui` folder.**
-
- 
-  ```json doc-gen:file
-    {
-      "file": "../../packages/components/switch/src/switch.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": "title=\"components/switch.tsx\""
-      }
-    }
-  ```
-  </Step>
-  
-  <Step>
-  **Ensure that everything is functioning correctly after installation.**
-  </Step>
-</Steps>
-</MijnUITabsContent>
+    <Steps>
+      <Step>
+      **Copy and paste the following code into `mijn-ui` folder.**
+    
+      ```json doc-gen:file
+        {
+          "file": "../../packages/components/switch/src/switch.tsx",
+          "codeblock": {
+            "lang": "tsx",
+            "meta": "title=\"components/switch.tsx\""
+          }
+        }
+      ```
+      </Step>
+      <Step>
+      **Ensure that everything is functioning correctly after installation.**
+      </Step>
+    </Steps>
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
+
+```tsx
+import { Switch } from "@mijn-ui/react-switch"
+```
 
 ```tsx
 <Switch />
@@ -51,9 +69,9 @@ import { Switch } from "@mijn-ui/react"
 
 ---
 
-### Switch Style Slots
+## Switch Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Switch`              | Styles the root switch component.               |
-| `thumb`          | `Switch`              | Styles the thumb of the switch.                 |
+| **Slot Name** | **Targeted Component** | **Purpose**                       |
+| ------------- | ---------------------- | --------------------------------- |
+| `base`        | `Switch`               | Styles the root switch component. |
+| `thumb`       | `Switch`               | Styles the thumb of the switch.   |
