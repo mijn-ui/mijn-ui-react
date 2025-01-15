@@ -1,16 +1,32 @@
 ---
 title: Card
+description: A container for grouping and displaying related content or actions.
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/card.ts
 ---
 
 import CardExample from "@/examples/card/card-example"
 import StatsCardExample from "@/examples/card/card-stats"
 
-<ComponentPreview>
-  <CardExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <CardExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/card/card-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -19,67 +35,89 @@ import StatsCardExample from "@/examples/card/card-stats"
   ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-  **Copy and paste the following code into `mijn-ui` folder.**
+    <Steps>
+      <Step>
+      **Copy and paste the following code into `mijn-ui` folder.**
 
-  ```json doc-gen:file
-    {
-      "file": "../../packages/components/card/src/card.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": "title=\"components/card.tsx\""
+      ```json doc-gen:file
+      {
+        "file": "../../packages/components/card/src/card.tsx",
+        "codeblock": {
+          "lang": "tsx",
+          "meta": "title=\"components/card.tsx\""
+        }
       }
-    }
-  ```
-  </Step>
-  
-  <Step>
-  **Ensure that everything is functioning correctly after installation.**
-  </Step>
-</Steps>
-</MijnUITabsContent>
+      ```
+      </Step>
+
+      <Step>
+       **Ensure that everything is functioning correctly after installation.**
+      </Step>
+    </Steps>
+
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+```tsx
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@mijn-ui/react-card"
+```
 
-```json doc-gen:file
-  {
-    "file": "./examples/card/card-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"card-example.tsx\""
-    }
-  }
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card Description</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Card Content</p>
+  </CardContent>
+  <CardFooter>
+    <p>Card Footer</p>
+  </CardFooter>
+</Card>
 ```
 
 ---
+
+## Examples
 
 ### Stats Card
 
-<ComponentPreview>
-  <StatsCardExample />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/card/card-stats.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": "title=\"card-stats.tsx\""
-  }
-}
-```
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <StatsCardExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/card/card-stats.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ---
 
-### Card Style Slots
+## Card Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Card`                | Styles the root card component.                 |
-| `header`         | `CardHeader`          | Styles the card header.                         |
-| `content`        | `CardContent`         | Styles the card content area.                   |
-| `footer`         | `CardFooter`          | Styles the card footer.                         |
-| `title`          | `CardTitle`           | Styles the card title.                          |
-| `description`    | `CardDescription`     | Styles the card description text.               |
+| **Slot Name** | **Targeted Component** | **Purpose**                       |
+| ------------- | ---------------------- | --------------------------------- |
+| `base`        | `Card`                 | Styles the root card component.   |
+| `header`      | `CardHeader`           | Styles the card header.           |
+| `content`     | `CardContent`          | Styles the card content area.     |
+| `footer`      | `CardFooter`           | Styles the card footer.           |
+| `title`       | `CardTitle`            | Styles the card title.            |
+| `description` | `CardDescription`      | Styles the card description text. |
