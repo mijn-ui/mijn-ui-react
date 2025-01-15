@@ -1,17 +1,35 @@
 ---
 title: DropdownMenu
+description: A contextual menu for displaying a list of actions or options.
 docs: https://www.radix-ui.com/primitives/docs/components/dropdown-menu
 apiReference: https://www.radix-ui.com/primitives/docs/components/dropdown-menu#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/dropdown-menu.ts
 ---
 
+import DropdownMenuCheckboxes from "@/examples/dropdown-menu/dropdown-menu-checkboxes"
 import DropdownMenuExample from "@/examples/dropdown-menu/dropdown-menu-example"
+import DropdownMenuRadioGroup from "@/examples/dropdown-menu/dropdown-menu-radio-group"
 
-<ComponentPreview>
-  <DropdownMenuExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <DropdownMenuExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/dropdown-menu/dropdown-menu-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -20,63 +38,124 @@ import DropdownMenuExample from "@/examples/dropdown-menu/dropdown-menu-example"
   ```
   </MijnUITabsContent>
   <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-    **Install Required Dependicies**
+    <Steps>
+      <Step>
+        **Install Required Dependicies**
 
-    ```package-install
-    @radix-ui/react-dropdown-menu
-    ```
+        ```package-install
+        @radix-ui/react-dropdown-menu
+        ```
+      </Step>
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
 
-  </Step>
-  <Step>
-    **Copy and paste the following code into  `mijn-ui` folder.**
+        ```json doc-gen:file
+          {
+            "file": "../../packages/components/dropdown-menu/src/dropdown-menu.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"components/dropdown-menu.tsx\""
+            }
+          }
+        ```
+      </Step>
+    </Steps>
 
-    ```json doc-gen:file
-      {
-        "file": "../../packages/components/dropdown-menu/src/dropdown-menu.tsx",
-        "codeblock": {
-          "lang": "tsx",
-          "meta": "title=\"components/dropdown-menu.tsx\""
-        }
-      }
-    ```
-  </Step>
-</Steps>
-</MijnUITabsContent>
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/dropdown-menu/dropdown-menu-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"dropdown-menu-example.tsx\""
-    }
-  }
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@mijn-ui/react-dropdown-menu"
+```
+
+```tsx
+<DropdownMenu>
+  <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Billing</DropdownMenuItem>
+    <DropdownMenuItem>Team</DropdownMenuItem>
+    <DropdownMenuItem>Subscription</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
 ```
 
 ---
 
-### DropdownMenu Style Slots
+## Examples
 
-| **Slot Name**        | **Targeted Component**        | **Purpose**                                      |
-|-----------------------|-------------------------------|-------------------------------------------------|
-| `base`               | `DropdownMenu`               | Styles the root dropdown menu component.        |
-| `trigger`            | `DropdownMenuTrigger`        | Styles the trigger button for the menu.         |
-| `content`            | `DropdownMenuContent`        | Styles the dropdown content.          |
-| `item`               | `DropdownMenuItem`           | Styles individual dropdown menu items.          |
-| `subTrigger`         | `DropdownMenuSubTrigger`     | Styles the trigger for submenu activation.      |
-| `subTriggerIcon`     | `DropdownMenuSubTrigger` | Styles the icon within the submenu trigger.     |
-| `subContent`  | `DropdownMenuSubContent`| Styles the content of the submenu content.      |
-| `checkboxItem`       | `DropdownMenuCheckboxItem`   | Styles the checkbox menu item.                  |
-| `checkboxItemIconWrapper`| `DropdownMenuCheckboxItem` | Styles the wrapper for the checkbox icon.       |
-| `checkboxItemIcon`   | `DropdownMenuCheckboxItem`| Styles the checkbox icon.                       |
-| `radioItem`          | `DropdownMenuRadioItem`      | Styles the radio menu item.                     |
-| `radioItemIconWrapper`| `DropdownMenuRadioItem`| Styles the wrapper for the radio icon.         |
-| `radioItemIcon`      | `DropdownMenuRadioItem`  | Styles the radio icon.                          |
-| `label`              | `DropdownMenuLabel`          | Styles the menu label.                          |
-| `separator`          | `DropdownMenuSeparator`      | Styles the separator between menu items.        |
-| `shortcut`           | `DropdownMenuShortcut`       | Styles shortcut text within the menu.           |
+### Checkboxes
+
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <DropdownMenuCheckboxes />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/dropdown-menu/dropdown-menu-checkboxes.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
+
+### Radio Group
+
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <DropdownMenuRadioGroup />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/dropdown-menu/dropdown-menu-radio-group.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
+
+---
+
+## DropdownMenu Style Slots
+
+| **Slot Name**             | **Targeted Component**     | **Purpose**                                 |
+| ------------------------- | -------------------------- | ------------------------------------------- |
+| `base`                    | `DropdownMenu`             | Styles the root dropdown menu component.    |
+| `trigger`                 | `DropdownMenuTrigger`      | Styles the trigger button for the menu.     |
+| `content`                 | `DropdownMenuContent`      | Styles the dropdown content.                |
+| `item`                    | `DropdownMenuItem`         | Styles individual dropdown menu items.      |
+| `subTrigger`              | `DropdownMenuSubTrigger`   | Styles the trigger for submenu activation.  |
+| `subTriggerIcon`          | `DropdownMenuSubTrigger`   | Styles the icon within the submenu trigger. |
+| `subContent`              | `DropdownMenuSubContent`   | Styles the content of the submenu content.  |
+| `checkboxItem`            | `DropdownMenuCheckboxItem` | Styles the checkbox menu item.              |
+| `checkboxItemIconWrapper` | `DropdownMenuCheckboxItem` | Styles the wrapper for the checkbox icon.   |
+| `checkboxItemIcon`        | `DropdownMenuCheckboxItem` | Styles the checkbox icon.                   |
+| `radioItem`               | `DropdownMenuRadioItem`    | Styles the radio menu item.                 |
+| `radioItemIconWrapper`    | `DropdownMenuRadioItem`    | Styles the wrapper for the radio icon.      |
+| `radioItemIcon`           | `DropdownMenuRadioItem`    | Styles the radio icon.                      |
+| `label`                   | `DropdownMenuLabel`        | Styles the menu label.                      |
+| `separator`               | `DropdownMenuSeparator`    | Styles the separator between menu items.    |
+| `shortcut`                | `DropdownMenuShortcut`     | Styles shortcut text within the menu.       |
