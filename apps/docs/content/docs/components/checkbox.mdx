@@ -1,110 +1,133 @@
 ---
 title: Checkbox
+description: A control for selecting one or multiple options.
 docs: https://www.radix-ui.com/primitives/docs/components/checkbox
 apiReference: https://www.radix-ui.com/primitives/docs/components/checkbox#api-reference
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/checkbox.ts
 ---
 
 import CheckboxColors from "@/examples/checkbox/checkbox-colors"
+import CheckboxExample from "@/examples/checkbox/checkbox-example"
 import CheckboxSizes from "@/examples/checkbox/checkbox-sizes"
-import { Checkbox } from "@mijn-ui/react"
-import { Label } from "@mijn-ui/react"
 
-<ComponentPreview>
-  <div className="flex items-center space-x-2">
-    <Checkbox id="terms" />
-    <Label htmlFor="terms">Accept terms and conditions</Label>
-  </div>
-</ComponentPreview>
-
-### Installation
-
-<MijnUITabs items={["Npm", "Manual"]}>
-  <MijnUITabsContent value="Npm">
-  ```package-install
-  @mijn-ui/react-checkbox
-  ```
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <CheckboxExample />
+    </ComponentPreview>
   </MijnUITabsContent>
-  <MijnUITabsContent value="Manual">
-  <Steps>
-  <Step>
-    **Install Required Dependencies:**
-  
-    ```package-install
-    @radix-ui/react-checkbox
-    ```
-  </Step>
-
-  <Step>
-    **Copy and paste the following code into  `mijn-ui` folder.**
-
+  <MijnUITabsContent value="Code">
     ```json doc-gen:file
     {
-      "file": "../../packages/components/checkbox/src/checkbox.tsx",
+      "file": "./examples/checkbox/checkbox-example.tsx",
       "codeblock": {
         "lang": "tsx",
-        "meta": "title=\"components/checkbox.tsx\""
+        "meta": ""
       }
     }
     ```
-  </Step>
-</Steps>
-</MijnUITabsContent>
+  </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Installation
+
+<MijnUITabs items={["Npm", "Manual"]}>
+  <MijnUITabsContent value="Npm">
+    ```package-install
+    @mijn-ui/react-checkbox
+    ```
+  </MijnUITabsContent>
+
+  <MijnUITabsContent value="Manual">
+    <Steps>
+      <Step>
+        **Install Required Dependencies:**
+      
+        ```package-install
+        @radix-ui/react-checkbox
+        ```
+      </Step>
+
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
+
+        ```json doc-gen:file
+        {
+          "file": "../../packages/components/checkbox/src/checkbox.tsx",
+          "codeblock": {
+            "lang": "tsx",
+            "meta": "title=\"components/checkbox.tsx\""
+          }
+        }
+        ```
+      </Step>
+    </Steps>
+
+  </MijnUITabsContent>
+</MijnUITabs>
+
+## Usage
 
 ```tsx
-<div className="flex items-center space-x-2">
-  <Checkbox id="terms" />
-  <Label htmlFor="terms">
-    Accept terms and conditions
-  </Label>
-</div>
+import { Checkbox } from "@mijn-ui/react-checkbox"
+```
+
+```tsx
+<Checkbox />
 ```
 
 ---
+
+## Examples
 
 ### Checkbox Colors
 
-<ComponentPreview>
-  <CheckboxColors />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/checkbox/checkbox-colors.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-  }
-}
-```
-
----
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <CheckboxColors />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/checkbox/checkbox-colors.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ### Checkbox Sizes
 
-<ComponentPreview>
-  <CheckboxSizes />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/checkbox/checkbox-sizes.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-  }
-}
-```
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <CheckboxSizes />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/checkbox/checkbox-sizes.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ---
 
-### Checkbox Style Slots
+## Checkbox Style Slots
 
-| **Slot Name**    | **Targeted Component** | **Purpose**                                      |
-|-------------------|------------------------|-------------------------------------------------|
-| `base`           | `Checkbox`            | Styles the root checkbox component.             |
-| `indicator`      | `Checkbox`            | Styles the checkbox indicator.                  |
-| `icon`           | `Checkbox`            | Styles the icon inside the checkbox.            |
+| **Slot Name** | **Targeted Component** | **Purpose**                          |
+| ------------- | ---------------------- | ------------------------------------ |
+| `base`        | `Checkbox`             | Styles the root checkbox component.  |
+| `indicator`   | `Checkbox`             | Styles the checkbox indicator.       |
+| `icon`        | `Checkbox`             | Styles the icon inside the checkbox. |
