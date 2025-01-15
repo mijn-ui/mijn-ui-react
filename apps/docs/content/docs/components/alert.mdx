@@ -1,18 +1,34 @@
 ---
 title: Alert
+description: A component for displaying critical information or notifications.
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/alert.ts
 ---
 
+import AlertColors from "@/examples/alert/alert-colors"
 import AlertExample from "@/examples/alert/alert-example"
 import AlertFilled from "@/examples/alert/alert-filled"
-import AlertOutline from "@/examples/alert/alert-outline"
-import AlertColors from "@/examples/alert/alert-colors"
+import AlertOutline from "@/examples/alert/alert-outlined"
 
-<ComponentPreview>
-  <AlertExample />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview>
+      <AlertExample />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/alert/alert-example.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-### Installation
+## Installation
 
 <MijnUITabs items={["Npm", "Manual"]}>
   <MijnUITabsContent value="Npm">
@@ -45,39 +61,48 @@ import AlertColors from "@/examples/alert/alert-colors"
   </MijnUITabsContent>
 </MijnUITabs>
 
-**Example Usage**
+## Usage
 
-```json doc-gen:file
-  {
-    "file": "./examples/alert/alert-example.tsx",
-    "codeblock": {
-      "lang": "tsx",
-      "meta": "title=\"alert-example.tsx\""
-    }
-  }
+```tsx
+import { Alert, AlertDescription, AlertTitle } from "@mijn-ui/react-alert"
+```
+
+```tsx
+<Alert>
+  <Terminal className="h-4 w-4" />
+  <AlertTitle>Heads up!</AlertTitle>
+  <AlertDescription>
+    You can add components and dependencies to your app using the cli.
+  </AlertDescription>
+</Alert>
 ```
 
 ---
+
+## Examples
 
 ### Alert Colors
 
 The alert component offers five Colors: `success`, `info`, `warning`, `error`, and `default`:
 
-<ComponentPreview className="md:p-10">
-  <AlertColors />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/alert/alert-colors.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-  }
-}
-```
-
----
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview className="md:p-10">
+      <AlertColors />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/alert/alert-colors.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ### Alert Variants
 
@@ -85,47 +110,53 @@ The alert component is available in three variants: `default`, `outlined`, and `
 
 #### Filled
 
-<ComponentPreview className="md:p-10">
-  <AlertFilled />
-</ComponentPreview>
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview className="md:p-10">
+      <AlertFilled />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/alert/alert-filled.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
-```json doc-gen:file
-{
-  "file": "./examples/alert/alert-filled.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-  }
-}
-```
+#### Outlined
+
+<MijnUITabs items={["Preview", "Code"]}>
+  <MijnUITabsContent value="Preview">
+    <ComponentPreview className="md:p-10">
+      <AlertOutline />
+    </ComponentPreview>
+  </MijnUITabsContent>
+  <MijnUITabsContent value="Code">
+    ```json doc-gen:file
+    {
+      "file": "./examples/alert/alert-outlined.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+    ```
+  </MijnUITabsContent>
+</MijnUITabs>
 
 ---
 
-#### Outline
+## Alert Style Slots
 
-<ComponentPreview className="md:p-10">
-  <AlertOutline />
-</ComponentPreview>
-
-```json doc-gen:file
-{
-  "file": "./examples/alert/alert-outline.tsx",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-  }
-}
-```
-
----
-
-### Alert Style Slots
-
-| **Slot Name**    | **Targeted Component** | **Purpose**                                  |
-|-------------------|------------------------|---------------------------------------------|
-| `base`           | `Alert`               | Applies styles to the root `Alert` component. |
-| `iconWrapper`    | `Alert`               | Styles the wrapper around the alert icon.    |
-| `title`          | `Alert`               | Styles the alert title.                      |
-| `description`    | `Alert`               | Styles the alert description text.           |
-
-
+| **Slot Name** | **Targeted Component** | **Purpose**                                   |
+| ------------- | ---------------------- | --------------------------------------------- |
+| `base`        | `Alert`                | Applies styles to the root `Alert` component. |
+| `iconWrapper` | `Alert`                | Styles the wrapper around the alert icon.     |
+| `title`       | `Alert`                | Styles the alert title.                       |
+| `description` | `Alert`                | Styles the alert description text.            |
