@@ -7,7 +7,7 @@ import DefaultColorSwatches from "@/app/components/mdx/default-color-swatches";
 
 MijnUI's plugin allows you to customize the color palette of your theme, including `primary`, `secondary`, `accent`, and more. These color configurations are applied globally across all components, ensuring a consistent look and feel throughout your application.
 
-### Default Color Palette
+## Default Color Palette
 
 MijnUI provides a default color palette designed for most use cases. Colors are categorized into base, common, and status, each serving specific UI needs.
 
@@ -37,7 +37,7 @@ MijnUI provides a default color palette designed for most use cases. Colors are 
 
 ---
 
-### Customizing Colors
+## Customizing Colors
 
 You can customize the theme colors by defining them in the `themes` object within the `mijnui` plugin configuration. Below is an example of how to configure colors for both light and dark themes, as well as a custom theme:
 
@@ -86,7 +86,7 @@ When customizing colors, make sure to use only HSL values without color function
 
 ---
 
-### Using Default Colors
+## Using Default Colors
 
 The default color palette can be applied throughout your project, including text, background, and border colors. This makes it easy to maintain consistency in your UI.
 
@@ -104,7 +104,7 @@ The default color palette can be applied throughout your project, including text
 
 ---
 
-### Importing Colors
+## Importing Colors
 
 You can access default colors in your TypeScript files by importing them from: `@mijn-ui/react-theme`
 
@@ -117,7 +117,7 @@ console.log(defaultColors.light.primary.DEFAULT); // #F97316
 
 ---
 
-### Using CSS Variables
+## Using CSS Variables
 
 MijnUI generates CSS variables for each color following the format `--prefix-colorname-shade`. By default, the prefix is `mijnui`, but you can customize it by setting the `prefix` option in your configuration:
 
