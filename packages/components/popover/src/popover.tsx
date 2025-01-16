@@ -66,7 +66,7 @@ const Popover = ({ unstyled = false, classNames, ...props }: PopoverProps) => {
 /*                               PopoverTrigger                               */
 /* -------------------------------------------------------------------------- */
 
-type PopoverTriggerProps = React.ComponentPropsWithRef<
+export type PopoverTriggerProps = React.ComponentPropsWithRef<
   typeof RadixPopover.Trigger
 > &
   UnstyledProps
@@ -90,7 +90,7 @@ const PopoverTrigger = ({
 /*                                PopoverClose                                */
 /* -------------------------------------------------------------------------- */
 
-type PopoverCloseProps = React.ComponentPropsWithRef<
+export type PopoverCloseProps = React.ComponentPropsWithRef<
   typeof RadixPopover.Close
 > &
   UnstyledProps
@@ -145,4 +145,5 @@ export {
   PopoverClose,
   PopoverContent,
   PopoverTrigger,
+  usePopoverStyles,
 }

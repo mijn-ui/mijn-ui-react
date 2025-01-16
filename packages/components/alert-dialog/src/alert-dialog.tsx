@@ -71,7 +71,7 @@ const AlertDialog = ({
 /*                             AlertDialogTrigger                             */
 /* -------------------------------------------------------------------------- */
 
-type AlertDialogTriggerProps = React.ComponentPropsWithRef<
+export type AlertDialogTriggerProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Trigger
 > &
   UnstyledProps
@@ -95,7 +95,7 @@ const AlertDialogTrigger = ({
 /*                             AlertDialogOverlay                             */
 /* -------------------------------------------------------------------------- */
 
-type AlertDialogOverlayProps = React.ComponentPropsWithRef<
+export type AlertDialogOverlayProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Overlay
 > &
   UnstyledProps
@@ -119,7 +119,7 @@ const AlertDialogOverlay = ({
 /*                             AlertDialogContent                             */
 /* -------------------------------------------------------------------------- */
 
-type AlertDialogContentProps = React.ComponentPropsWithRef<
+export type AlertDialogContentProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Content
 > &
   UnstyledProps
@@ -159,11 +159,14 @@ const AlertDialogContent = ({
 /*                              AlertDialogHeader                             */
 /* -------------------------------------------------------------------------- */
 
+export type AlertDialogHeaderProps = React.ComponentPropsWithRef<"div"> &
+  UnstyledProps
+
 const AlertDialogHeader = ({
   unstyled,
   className,
   ...props
-}: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
+}: AlertDialogHeaderProps) => {
   const { header, classNames } = useAlertDialogStyles(unstyled)
 
   return (
@@ -179,11 +182,14 @@ AlertDialogHeader.displayName = "AlertDialogHeader"
 /*                              AlertDialogFooter                             */
 /* -------------------------------------------------------------------------- */
 
+export type AlertDialogFooterProps = React.ComponentPropsWithRef<"div"> &
+  UnstyledProps
+
 const AlertDialogFooter = ({
   className,
   unstyled,
   ...props
-}: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
+}: AlertDialogFooterProps) => {
   const { footer, classNames } = useAlertDialogStyles(unstyled)
 
   return (
@@ -199,7 +205,7 @@ AlertDialogFooter.displayName = "AlertDialogFooter"
 /*                              AlertDialogTitle                              */
 /* -------------------------------------------------------------------------- */
 
-type AlertDialogTitleProps = React.ComponentPropsWithRef<
+export type AlertDialogTitleProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Title
 > &
   UnstyledProps
@@ -273,7 +279,7 @@ const AlertDialogAction = ({
 /*                              AlertDialogCancel                             */
 /* -------------------------------------------------------------------------- */
 
-type AlertDialogCancelProps = React.ComponentPropsWithRef<
+export type AlertDialogCancelProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Cancel
 > &
   UnstyledProps
@@ -305,4 +311,5 @@ export {
   AlertDialogPortal,
   AlertDialogTitle,
   AlertDialogTrigger,
+  useAlertDialogStyles,
 }

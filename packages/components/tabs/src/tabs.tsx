@@ -70,8 +70,9 @@ const Tabs = ({
 /* -------------------------------------------------------------------------- */
 /*                                  TabsList                                  */
 /* -------------------------------------------------------------------------- */
-
-type TabsListProps = React.ComponentPropsWithRef<typeof TabsPrimitive.List> &
+export type TabsListProps = React.ComponentPropsWithRef<
+  typeof TabsPrimitive.List
+> &
   UnstyledProps
 
 const TabsList = ({ className, unstyled, ...props }: TabsListProps) => {
@@ -91,7 +92,7 @@ const TabsList = ({ className, unstyled, ...props }: TabsListProps) => {
 /*                                 TabsTrigger                                */
 /* -------------------------------------------------------------------------- */
 
-type TabsTriggerProps = React.ComponentPropsWithRef<
+export type TabsTriggerProps = React.ComponentPropsWithRef<
   typeof TabsPrimitive.Trigger
 > &
   UnstyledProps
@@ -113,7 +114,7 @@ const TabsTrigger = ({ className, unstyled, ...props }: TabsTriggerProps) => {
 /*                                 TabsContent                                */
 /* -------------------------------------------------------------------------- */
 
-type TabsContentProps = React.ComponentPropsWithRef<
+export type TabsContentProps = React.ComponentPropsWithRef<
   typeof TabsPrimitive.Content
 > &
   UnstyledProps
@@ -131,4 +132,11 @@ const TabsContent = ({ className, unstyled, ...props }: TabsContentProps) => {
   )
 }
 
-export { Tabs, TabsContent, TabsList, TabsTrigger }
+export {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+  useTabsContext,
+  useTabsStyles,
+}

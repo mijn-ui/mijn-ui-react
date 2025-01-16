@@ -49,7 +49,7 @@ const useAvatarStyles = (unstyledOverride?: boolean) => {
 
 type AvatarGroupBaseProps = UnstyledComponentWithSlots<AvatarGroupSlots>
 
-type AvatarGroupProps = React.ComponentPropsWithRef<"div"> & {
+export type AvatarGroupProps = React.ComponentPropsWithRef<"div"> & {
   max?: number
 } & AvatarGroupBaseProps
 
@@ -144,7 +144,7 @@ const AvatarImage = ({ unstyled, className, ...props }: AvatarImageProps) => {
 /*                               AvatarFallback                               */
 /* -------------------------------------------------------------------------- */
 
-type AvatarFallbackProps = React.ComponentPropsWithRef<
+export type AvatarFallbackProps = React.ComponentPropsWithRef<
   typeof AvatarPrimitive.Fallback
 > &
   UnstyledProps
@@ -166,4 +166,4 @@ const AvatarFallback = ({
   )
 }
 
-export { Avatar, AvatarFallback, AvatarGroup, AvatarImage }
+export { Avatar, AvatarFallback, AvatarGroup, AvatarImage, useAvatarStyles }
