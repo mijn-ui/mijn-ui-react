@@ -74,7 +74,7 @@ const RadioGroup = ({
 /*                               RadioGroupItem                               */
 /* -------------------------------------------------------------------------- */
 
-type RadioGroupItemProps = React.ComponentPropsWithRef<
+export type RadioGroupItemProps = React.ComponentPropsWithRef<
   typeof RadioGroupPrimitive.Item
 > &
   UnstyledProps
@@ -100,4 +100,4 @@ const RadioGroupItem = ({
   )
 }
 
-export { RadioGroup, RadioGroupItem }
+export { RadioGroup, RadioGroupItem, useRadioGroupStyles }

@@ -162,7 +162,7 @@ const Autocomplete = ({
 /*                               AutocompleteTrigger                              */
 /* -------------------------------------------------------------------------- */
 
-type AutocompleteTriggerProps = React.ComponentPropsWithRef<
+export type AutocompleteTriggerProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Input
 > &
   UnstyledProps
@@ -270,7 +270,7 @@ const AutocompleteContent = ({
 /*                              AutocompleteGroup                             */
 /* -------------------------------------------------------------------------- */
 
-type AutocompleteGroupProps = React.ComponentPropsWithRef<
+export type AutocompleteGroupProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Group
 > &
   UnstyledProps
@@ -297,7 +297,7 @@ const AutocompleteGroup = ({
 /*                                AutocompleteItem                                */
 /* -------------------------------------------------------------------------- */
 
-type AutocompleteItemProps = React.ComponentPropsWithRef<
+export type AutocompleteItemProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Item
 > &
   UnstyledProps
@@ -340,4 +340,5 @@ export {
   AutocompleteGroup,
   AutocompleteItem,
   AutocompleteTrigger,
+  useAutocompleteStyles,
 }

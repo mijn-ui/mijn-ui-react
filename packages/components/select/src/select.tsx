@@ -68,8 +68,7 @@ const Select = ({ classNames, unstyled = false, ...props }: SelectProps) => {
 /* -------------------------------------------------------------------------- */
 /*                                SelectTrigger                               */
 /* -------------------------------------------------------------------------- */
-
-type SelectTriggerProps = React.ComponentPropsWithRef<
+export type SelectTriggerProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Trigger
 > &
   UnstyledProps
@@ -101,7 +100,7 @@ const SelectTrigger = ({
 /*                            SelectScrollUpButton                            */
 /* -------------------------------------------------------------------------- */
 
-type SelectScrollUpButtonProps = React.ComponentPropsWithRef<
+export type SelectScrollUpButtonProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.ScrollUpButton
 > &
   UnstyledProps
@@ -129,7 +128,7 @@ const SelectScrollUpButton = ({
 /*                           SelectScrollDownButton                           */
 /* -------------------------------------------------------------------------- */
 
-type SelectScrollDownButtonProps = React.ComponentPropsWithRef<
+export type SelectScrollDownButtonProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.ScrollDownButton
 > &
   UnstyledProps
@@ -157,7 +156,7 @@ const SelectScrollDownButton = ({
 /*                                SelectContent                               */
 /* -------------------------------------------------------------------------- */
 
-type SelectContentProps = React.ComponentPropsWithRef<
+export type SelectContentProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Content
 > &
   UnstyledProps
@@ -200,7 +199,7 @@ const SelectContent = ({
 /*                                 SelectLabel                                */
 /* -------------------------------------------------------------------------- */
 
-type SelectLabelProps = React.ComponentPropsWithRef<
+export type SelectLabelProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Label
 > &
   UnstyledProps
@@ -222,7 +221,7 @@ const SelectLabel = ({ unstyled, className, ...props }: SelectLabelProps) => {
 /*                                 SelectItem                                 */
 /* -------------------------------------------------------------------------- */
 
-type SelectItemProps = React.ComponentPropsWithRef<
+export type SelectItemProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Item
 > &
   UnstyledProps
@@ -261,7 +260,7 @@ const SelectItem = ({
 /*                               SelectSeparator                              */
 /* -------------------------------------------------------------------------- */
 
-type SelectSeparatorProps = React.ComponentPropsWithRef<
+export type SelectSeparatorProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Separator
 > &
   UnstyledProps
@@ -294,4 +293,5 @@ export {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
+  useSelectStyles,
 }

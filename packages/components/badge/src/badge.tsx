@@ -10,7 +10,7 @@ export type BadgeProps = React.HTMLAttributes<HTMLDivElement> &
   BadgeVariantsProps &
   UnstyledProps
 
-function Badge({
+const Badge = ({
   unstyled,
   className,
   size,
@@ -18,7 +18,7 @@ function Badge({
   variant,
   radius,
   ...props
-}: BadgeProps) {
+}: BadgeProps) => {
   const styles = badgeStyles({ color, size, variant, radius })
   const { base } = createTVUnstyledSlots(styles, unstyled)
 

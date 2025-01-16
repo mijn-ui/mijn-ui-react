@@ -65,7 +65,7 @@ const Dialog = ({ classNames, unstyled = false, ...props }: DialogProps) => {
 /*                                DialogTrigger                               */
 /* -------------------------------------------------------------------------- */
 
-type DialogTriggerProps = React.ComponentPropsWithRef<
+export type DialogTriggerProps = React.ComponentPropsWithRef<
   typeof DialogPrimitive.Trigger
 > &
   UnstyledProps
@@ -91,7 +91,7 @@ const DialogTrigger = ({
 /*                                 DialogClose                                */
 /* -------------------------------------------------------------------------- */
 
-type DialogCloseProps = React.ComponentPropsWithRef<
+export type DialogCloseProps = React.ComponentPropsWithRef<
   typeof DialogPrimitive.Close
 > &
   UnstyledProps
@@ -113,7 +113,7 @@ const DialogClose = ({ unstyled, className, ...props }: DialogCloseProps) => {
 /*                                DialogOverlay                               */
 /* -------------------------------------------------------------------------- */
 
-type DialogOverlayProps = React.ComponentPropsWithRef<
+export type DialogOverlayProps = React.ComponentPropsWithRef<
   typeof DialogPrimitive.Overlay
 > &
   UnstyledProps
@@ -139,7 +139,7 @@ const DialogOverlay = ({
 /*                                DialogContent                               */
 /* -------------------------------------------------------------------------- */
 
-type DialogContentProps = React.ComponentPropsWithRef<
+export type DialogContentProps = React.ComponentPropsWithRef<
   typeof DialogPrimitive.Content
 > &
   UnstyledProps
@@ -183,11 +183,9 @@ const DialogContent = ({
 /*                                DialogHeader                                */
 /* -------------------------------------------------------------------------- */
 
-const DialogHeader = ({
-  unstyled,
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
+type DialogHeaderProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
+
+const DialogHeader = ({ unstyled, className, ...props }: DialogHeaderProps) => {
   const { header, classNames } = useDialogStyles(unstyled)
 
   return (
@@ -204,11 +202,10 @@ const DialogHeader = ({
 /*                                DialogFooter                                */
 /* -------------------------------------------------------------------------- */
 
-const DialogFooter = ({
-  unstyled,
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
+export type DialogFooterProps = React.ComponentPropsWithRef<"div"> &
+  UnstyledProps
+
+const DialogFooter = ({ unstyled, className, ...props }: DialogFooterProps) => {
   const { footer, classNames } = useDialogStyles(unstyled)
 
   return (
@@ -225,7 +222,7 @@ const DialogFooter = ({
 /*                                 DialogTitle                                */
 /* -------------------------------------------------------------------------- */
 
-type DialogTitleProps = React.ComponentPropsWithRef<
+export type DialogTitleProps = React.ComponentPropsWithRef<
   typeof DialogPrimitive.Title
 > &
   UnstyledProps
@@ -247,7 +244,7 @@ const DialogTitle = ({ unstyled, className, ...props }: DialogTitleProps) => {
 /*                              DialogDescription                             */
 /* -------------------------------------------------------------------------- */
 
-type DialogDescriptionProps = React.ComponentPropsWithRef<
+export type DialogDescriptionProps = React.ComponentPropsWithRef<
   typeof DialogPrimitive.Description
 > &
   UnstyledProps
@@ -280,4 +277,5 @@ export {
   DialogPortal,
   DialogTitle,
   DialogTrigger,
+  useDialogStyles,
 }

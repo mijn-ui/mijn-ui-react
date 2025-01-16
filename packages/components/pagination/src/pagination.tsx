@@ -181,7 +181,8 @@ const Pagination: React.FC<PaginationProps> = ({
 /*                              PaginationContent                             */
 /* -------------------------------------------------------------------------- */
 
-type PaginationContentProps = React.ComponentPropsWithRef<"nav"> & UnstyledProps
+export type PaginationContentProps = React.ComponentPropsWithRef<"nav"> &
+  UnstyledProps
 
 const PaginationContent = ({
   className,
@@ -198,7 +199,7 @@ const PaginationContent = ({
   )
 }
 
-type PaginationListProps = React.ComponentProps<"ul"> & UnstyledProps
+export type PaginationListProps = React.ComponentProps<"ul"> & UnstyledProps
 
 /* -------------------------------------------------------------------------- */
 /*                               PaginationList                               */
@@ -263,7 +264,8 @@ const PaginationPreviousButton = ({
 /*                            PaginationNextButton                            */
 /* -------------------------------------------------------------------------- */
 
-type PaginationNextButtonProps = React.ComponentProps<"button"> & UnstyledProps
+export type PaginationNextButtonProps = React.ComponentProps<"button"> &
+  UnstyledProps
 
 const PaginationNextButton = ({
   className,
@@ -316,7 +318,8 @@ const PaginationPreviousEllipsis = ({
 /*                           PaginationNextEllipsis                           */
 /* -------------------------------------------------------------------------- */
 
-type PaginationNextEllipsisProps = React.ComponentProps<"span"> & UnstyledProps
+export type PaginationNextEllipsisProps = React.ComponentProps<"span"> &
+  UnstyledProps
 
 const PaginationNextEllipsis = ({
   className,
@@ -350,4 +353,5 @@ export {
   PaginationPreviousButton,
   PaginationPreviousEllipsis,
   usePaginationContext,
+  usePaginationStyles,
 }

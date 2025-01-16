@@ -74,7 +74,7 @@ const DropdownMenu = ({
 /*                             DropdownMenuTrigger                            */
 /* -------------------------------------------------------------------------- */
 
-type DropdownTriggerProps = React.ComponentPropsWithRef<
+export type DropdownTriggerProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Trigger
 > &
   UnstyledProps
@@ -99,7 +99,7 @@ const DropdownMenuTrigger = ({
 /*                           DropdownMenuSubTrigger                           */
 /* -------------------------------------------------------------------------- */
 
-type DropdownMenuSubTriggerProps = React.ComponentPropsWithRef<
+export type DropdownMenuSubTriggerProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.SubTrigger
 > &
   UnstyledProps & {
@@ -135,7 +135,7 @@ const DropdownMenuSubTrigger = ({
 /*                           DropdownMenuSubContent                           */
 /* -------------------------------------------------------------------------- */
 
-type DropdownMenuSubContentProps = React.ComponentPropsWithRef<
+export type DropdownMenuSubContentProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.SubContent
 > &
   UnstyledProps
@@ -161,7 +161,7 @@ const DropdownMenuSubContent = ({
 /*                             DropdownMenuContent                            */
 /* -------------------------------------------------------------------------- */
 
-type DropdownMenuContentProps = React.ComponentPropsWithRef<
+export type DropdownMenuContentProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Content
 > &
   UnstyledProps
@@ -190,7 +190,7 @@ const DropdownMenuContent = ({
 /*                              DropdownMenuItem                              */
 /* -------------------------------------------------------------------------- */
 
-type DropdownMenuItemProps = React.ComponentPropsWithRef<
+export type DropdownMenuItemProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Item
 > & {
   inset?: boolean
@@ -219,7 +219,7 @@ const DropdownMenuItem = ({
 /*                          DropdownMenuCheckboxItem                          */
 /* -------------------------------------------------------------------------- */
 
-type DropdownMenuCheckboxItemProps = React.ComponentPropsWithRef<
+export type DropdownMenuCheckboxItemProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.CheckboxItem
 > &
   UnstyledProps
@@ -267,7 +267,7 @@ const DropdownMenuCheckboxItem = ({
 /*                            DropdownMenuRadioItem                           */
 /* -------------------------------------------------------------------------- */
 
-type DropdownMenuRadioItemProps = React.ComponentPropsWithRef<
+export type DropdownMenuRadioItemProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.RadioItem
 > &
   UnstyledProps
@@ -336,7 +336,7 @@ const DropdownMenuLabel = ({
 /*                            DropdownMenuSeparator                           */
 /* -------------------------------------------------------------------------- */
 
-type DropdownMenuSeparatorProps = React.ComponentPropsWithRef<
+export type DropdownMenuSeparatorProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Separator
 > &
   UnstyledProps
@@ -362,11 +362,14 @@ const DropdownMenuSeparator = ({
 /*                            DropdownMenuShortcut                            */
 /* -------------------------------------------------------------------------- */
 
+type DropdownMenuShortcutProps = React.ComponentPropsWithRef<"span"> &
+  UnstyledProps
+
 const DropdownMenuShortcut = ({
   className,
   unstyled,
   ...props
-}: React.HTMLAttributes<HTMLSpanElement> & UnstyledProps) => {
+}: DropdownMenuShortcutProps) => {
   const { shortcut, classNames } = useDropdownStyles(unstyled)
 
   return (
@@ -396,4 +399,5 @@ export {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
+  useDropdownStyles,
 }
