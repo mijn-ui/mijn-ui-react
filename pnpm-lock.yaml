@@ -29,9 +29,6 @@ importers:
       '@types/eslint__js':
         specifier: ^8.42.3
         version: 8.42.3
-      esbuild-plugin-preserve-directives:
-        specifier: ^0.0.11
-        version: 0.0.11(esbuild@0.24.2)
       eslint:
         specifier: ^9.14.0
         version: 9.17.0(jiti@1.21.7)
@@ -4394,12 +4391,6 @@ packages:
 
   esast-util-from-js@2.0.1:
     resolution: {integrity: sha512-8Ja+rNJ0Lt56Pcf3TAmpBZjmx8ZcK5Ts4cAzIOjsjevg9oSXJnl6SUQ2EevU8tv3h6ZLWmoKL5H4fgWvdvfETw==}
-
-  esbuild-plugin-preserve-directives@0.0.11:
-    resolution: {integrity: sha512-OolFhx1h/1ADEEoPjVi0hYWru1pTZBHki7XozawYVkhRhO63mwZT6isLylbwPs7dJ72doVQJGHCT2I1l9z8DcA==}
-    engines: {node: '>=18.0.0'}
-    peerDependencies:
-      esbuild: ^0.21.0
 
   esbuild-register@3.6.0:
     resolution: {integrity: sha512-H2/S7Pm8a9CL1uhp9OvjwrBh5Pvx0H8qVOxNu8Wed9Y7qv56MPtq+GGM8RJpq6glYJn9Wspr8uw7l55uyinNeg==}
@@ -9404,10 +9395,6 @@ snapshots:
       acorn: 8.14.0
       esast-util-from-estree: 2.0.0
       vfile-message: 4.0.2
-
-  esbuild-plugin-preserve-directives@0.0.11(esbuild@0.24.2):
-    dependencies:
-      esbuild: 0.24.2
 
   esbuild-register@3.6.0(esbuild@0.24.2):
     dependencies:

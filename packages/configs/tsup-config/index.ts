@@ -1,4 +1,3 @@
-import { preserveDirectivesPlugin } from "esbuild-plugin-preserve-directives"
 import type { Options } from "tsup"
 
 export const baseConfig: Options = {
@@ -13,13 +12,6 @@ export const baseConfig: Options = {
 export const componentConfig: Options = {
   ...baseConfig,
   metafile: true,
-  esbuildPlugins: [
-    preserveDirectivesPlugin({
-      directives: ["use client", "use strict"],
-      include: /\.(js|ts|jsx|tsx)$/,
-      exclude: /node_modules/,
-    }),
-  ],
   external: ["tailwindcss"],
   tsconfig: "./tsconfig.build.json",
 }
