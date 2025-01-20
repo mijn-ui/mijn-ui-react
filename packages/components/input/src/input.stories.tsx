@@ -89,6 +89,6 @@ export const Unstyled: Story = {
   render: InputTemplate,
   args: {
     unstyled: true,
-    classNames: { input: "indent-2 py-1" },
+    classNames: { base: "indent-2 py-1" },
   },
 }

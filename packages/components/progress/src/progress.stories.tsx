@@ -19,7 +19,7 @@ type Story = StoryObj<typeof Progress>
 const ProgressTemplate = (args: ProgressProps) => {
   const MAX_VALUE = 100
   const [value, setValue] = React.useState<number>(0)
-  const intervalRef = React.useRef<number | null>(null)
+  const intervalRef = React.useRef<NodeJS.Timeout | null>(null)
 
   React.useEffect(() => {
     intervalRef.current = setInterval(() => {
