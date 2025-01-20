@@ -1139,6 +1139,9 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.1.2
+      '@types/node':
+        specifier: 22.9.0
+        version: 22.9.0
       '@types/react':
         specifier: ^19.0.0
         version: 19.0.4
