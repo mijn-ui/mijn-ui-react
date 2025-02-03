@@ -1,5 +1,11 @@
 # @mijn-ui-react/dialog
 
+## 0.0.19
+
+### Patch Changes
+
+- b9b775f: Export types and hooks
+
 ## 0.0.18
 
 ### Patch Changes

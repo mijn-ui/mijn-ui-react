@@ -1,5 +1,15 @@
 # @mijn-ui-react/autocomplete
 
+## 0.0.19
+
+### Patch Changes
+
+- b9b775f: Export types and hooks
+- Updated dependencies [b9b775f]
+  - @mijn-ui/react-skeleton@0.0.16
+  - @mijn-ui/react-popover@0.0.18
+  - @mijn-ui/react-command@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes
