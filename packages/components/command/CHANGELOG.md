@@ -1,5 +1,12 @@
 # @mijn-ui-react/command
 
+## 0.0.19
+
+### Patch Changes
+
+- Updated dependencies [b9b775f]
+  - @mijn-ui/react-dialog@0.0.19
+
 ## 0.0.18
 
 ### Patch Changes

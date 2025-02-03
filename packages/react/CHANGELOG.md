@@ -1,5 +1,30 @@
 # @mijn-ui/react
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [b9b775f]
+  - @mijn-ui/react-dropdown-menu@0.0.18
+  - @mijn-ui/react-alert-dialog@0.0.18
+  - @mijn-ui/react-autocomplete@0.0.19
+  - @mijn-ui/react-date-picker@0.0.19
+  - @mijn-ui/react-radio-group@0.0.17
+  - @mijn-ui/react-scroll-area@0.0.16
+  - @mijn-ui/react-pagination@0.0.18
+  - @mijn-ui/react-skeleton@0.0.16
+  - @mijn-ui/react-popover@0.0.18
+  - @mijn-ui/react-avatar@0.0.16
+  - @mijn-ui/react-dialog@0.0.19
+  - @mijn-ui/react-select@0.0.17
+  - @mijn-ui/react-alert@0.0.16
+  - @mijn-ui/react-badge@0.0.16
+  - @mijn-ui/react-table@0.0.16
+  - @mijn-ui/react-card@0.0.16
+  - @mijn-ui/react-tabs@0.0.17
+  - @mijn-ui/react-command@0.0.19
+  - @mijn-ui/react-calendar@0.0.17
+
 ## 0.0.7
 
 ### Patch Changes
