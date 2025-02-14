@@ -1,5 +1,11 @@
 # @mijn-ui-react/switch
 
+## 0.0.16
+
+### Patch Changes
+
+- 2e00de6: Fix focus ring styles issues and refactor.
+
 ## 0.0.15
 
 ### Patch Changes
