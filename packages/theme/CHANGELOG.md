@@ -1,5 +1,11 @@
 # @mijn-ui/react-theme
 
+## 0.0.13
+
+### Patch Changes
+
+- 1bcaa59: Fix ringstyles and refactor
+
 ## 0.0.12
 
 ### Patch Changes
