@@ -1,5 +1,15 @@
 # @mijn-ui-react/command
 
+## 0.0.20
+
+### Patch Changes
+
+- Updated dependencies [1bcaa59]
+  - @mijn-ui/react-theme@0.0.13
+  - @mijn-ui/react-dialog@0.0.20
+  - @mijn-ui/react-core@0.0.8
+  - @mijn-ui/react-hooks@0.0.16
+
 ## 0.0.19
 
 ### Patch Changes
