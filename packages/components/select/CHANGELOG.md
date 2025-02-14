@@ -1,5 +1,12 @@
 # @mijn-ui-react/select
 
+## 0.0.17
+
+### Patch Changes
+
+- 2e00de6: Fix focus ring styles issues and refactor.
+- b9b775f: Export types and hooks
+
 ## 0.0.16
 
 ### Patch Changes

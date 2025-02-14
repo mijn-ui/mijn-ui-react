@@ -1,5 +1,12 @@
 # @mijn-ui-react/input
 
+## 0.0.16
+
+### Patch Changes
+
+- 2e00de6: Fix focus ring styles issues and refactor.
+  - @mijn-ui/react-label@0.0.15
+
 ## 0.0.15
 
 ### Patch Changes
