@@ -1,5 +1,13 @@
 # @mijn-ui-react/button
 
+## 0.0.20
+
+### Patch Changes
+
+- Updated dependencies [1bcaa59]
+  - @mijn-ui/react-theme@0.0.13
+  - @mijn-ui/react-core@0.0.8
+
 ## 0.0.19
 
 ### Patch Changes

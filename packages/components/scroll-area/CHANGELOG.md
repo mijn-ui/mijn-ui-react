@@ -1,5 +1,14 @@
 # @mijn-ui-react/scroll-area
 
+## 0.0.17
+
+### Patch Changes
+
+- Updated dependencies [1bcaa59]
+  - @mijn-ui/react-theme@0.0.13
+  - @mijn-ui/react-core@0.0.8
+  - @mijn-ui/react-hooks@0.0.16
+
 ## 0.0.16
 
 ### Patch Changes
