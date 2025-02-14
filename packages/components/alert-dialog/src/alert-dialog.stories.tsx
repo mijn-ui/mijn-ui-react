@@ -1,4 +1,4 @@
-import { AlertDialogProps } from "@radix-ui/react-alert-dialog"
+import { Button } from "@mijn-ui/react-button"
 import type { Meta, StoryObj } from "@storybook/react"
 import {
   AlertDialog,
@@ -8,6 +8,7 @@ import {
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
+  AlertDialogProps,
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "./alert-dialog"
@@ -29,7 +30,9 @@ type Story = StoryObj<typeof AlertDialog>
 const AlertDialogTemplate = (args: AlertDialogProps) => {
   return (
     <AlertDialog {...args}>
-      <AlertDialogTrigger>Delete Account</AlertDialogTrigger>
+      <AlertDialogTrigger asChild>
+        <Button>Delete Account</Button>
+      </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Confirm Account Deletion</AlertDialogTitle>

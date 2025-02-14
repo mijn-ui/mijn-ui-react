@@ -17,6 +17,14 @@ export const dataDisabledClasses = [
   "data-[disabled]:opacity-disabled",
 ]
 
+export const focusVisibleClasses = [
+  "focus-visible:outline-none",
+  "focus-visible:ring-2",
+  "focus-visible:ring-ring",
+  "focus-visible:ring-offset-2",
+  "focus-visible:ring-offset-background",
+]
+
 /* ------------------------------- Animations ------------------------------- */
 
 export const dialogOverlayClasses = [

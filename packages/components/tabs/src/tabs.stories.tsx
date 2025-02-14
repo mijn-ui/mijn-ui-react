@@ -54,13 +54,19 @@ const TabsTemplate = (args: TabsProps) => {
           <CardContent className="space-y-4">
             <Input
               id="name"
-              classNames={{ label: "bg-surface" }}
+              className="bg-card"
+              classNames={{
+                label: "bg-card peer-focus:bg-card",
+              }}
               label="Name"
               defaultValue="Pedro Duarte"
             />
             <Input
               id="username"
-              classNames={{ label: "bg-surface" }}
+              className="bg-card"
+              classNames={{
+                label: "bg-card peer-focus:bg-card",
+              }}
               label="Username"
               defaultValue="@peduarte"
             />

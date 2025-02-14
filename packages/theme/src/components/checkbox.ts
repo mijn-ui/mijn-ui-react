@@ -1,9 +1,15 @@
 import { VariantProps } from "tailwind-variants"
+import { disabledClasses } from "../utils"
+import { focusVisibleClasses } from "../utils/classes"
 import { tv } from "../utils/tv"
 
 const checkboxStyles = tv({
   slots: {
-    base: "rounded-small peer size-5 shrink-0 border-small disabled:cursor-not-allowed disabled:opacity-disabled",
+    base: [
+      "rounded-small peer size-5 shrink-0 border-small",
+      ...disabledClasses,
+      ...focusVisibleClasses,
+    ],
     indicator: "flex items-center justify-center text-current",
     icon: "size-4",
   },
