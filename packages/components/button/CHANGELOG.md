@@ -1,5 +1,11 @@
 # @mijn-ui-react/button
 
+## 0.0.19
+
+### Patch Changes
+
+- 2e00de6: Fix focus ring styles issues and refactor.
+
 ## 0.0.18
 
 ### Patch Changes
