@@ -1,10 +1,15 @@
 import { VariantProps } from "tailwind-variants"
+import { disabledClasses, focusVisibleClasses } from "../utils/classes"
 import { tv } from "../utils/tv"
 import { colorVariants } from "../utils/variants"
 
 const buttonStyles = tv({
   slots: {
-    base: "inline-flex items-center justify-center gap-1 transition-colors duration-200 ease-in-out active:brightness-90 disabled:pointer-events-none disabled:opacity-disabled disabled:brightness-75",
+    base: [
+      "inline-flex items-center justify-center gap-1 transition-colors duration-200 ease-in-out active:brightness-90",
+      ...disabledClasses,
+      ...focusVisibleClasses,
+    ],
     icon: "mr-2 size-5 animate-spin text-current",
   },
   variants: {

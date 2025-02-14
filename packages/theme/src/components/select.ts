@@ -2,6 +2,7 @@ import { VariantProps } from "tailwind-variants"
 import {
   dataDisabledClasses,
   disabledClasses,
+  focusVisibleClasses,
   popupAnimationClasses,
 } from "../utils/classes"
 import { tv } from "../utils/tv"
@@ -10,9 +11,10 @@ const selectStyles = tv({
   slots: {
     base: "",
     trigger: [
-      ...disabledClasses,
-      "border-input bg-default placeholder:text-muted-foreground focus:border-input-small focus:ring-ring hover:bg-accent flex h-10 w-full items-center justify-between rounded-medium border-small px-3 py-2 text-small focus:outline-none focus:ring-1 [&>span]:line-clamp-1",
+      "border-input bg-default placeholder:text-muted-foreground hover:bg-accent flex h-10 w-full items-center justify-between rounded-medium border-small px-3 py-2 text-small [&>span]:line-clamp-1",
       "[&_svg]:size-4 [&_svg]:opacity-50",
+      ...disabledClasses,
+      ...focusVisibleClasses,
     ],
     scrollUpBtn: "",
     scrollDownBtn: "",

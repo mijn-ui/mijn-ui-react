@@ -1,4 +1,5 @@
 import { VariantProps } from "tailwind-variants"
+import { focusVisibleClasses } from "../utils/classes"
 import { tv } from "../utils/tv"
 
 const labelClasses = [
@@ -18,7 +19,7 @@ const inputStyles = tv({
       "[&>svg]:text-muted-foreground absolute right-3.5 top-1/2 -translate-y-1/2 transform text-medium",
     base: [
       "peer",
-      "flex h-10 w-full bg-background px-3 py-2 text-small outline-none focus-visible:outline-none",
+      "flex h-10 w-full bg-background px-3 py-2 text-small",
       "placeholder:text-muted-foreground",
       "file:border-0 file:bg-background file:text-small file:font-medium",
     ],
@@ -29,10 +30,13 @@ const inputStyles = tv({
   variants: {
     variant: {
       filled: {
-        base: "border-input border-small rounded-medium focus-visible:border-ring focus-visible:ring-ring focus-visible:ring-1 ",
+        base: [
+          "border-input border-small rounded-medium",
+          ...focusVisibleClasses,
+        ],
       },
       underline: {
-        base: "border-b-input border-b-small focus-visible:border-b-ring",
+        base: "border-b-input border-b-small focus-visible:border-b-ring outline-none",
       },
     },
     disabled: {
