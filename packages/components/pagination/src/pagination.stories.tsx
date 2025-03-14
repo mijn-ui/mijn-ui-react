@@ -1,6 +1,6 @@
 import React from "react"
 import type { Meta, StoryObj } from "@storybook/react"
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import {
   Pagination,
   PaginationContent,
@@ -49,7 +49,7 @@ const PaginationTemplate = (args: PaginationProps) => {
     >
       <PaginationContent>
         <PaginationPreviousButton className="h-9 sm:h-10">
-          <LuChevronLeft className="size-4" />
+          <ChevronLeft className="size-4" />
           <span className="hidden sm:inline">Previous</span>
         </PaginationPreviousButton>
         <PaginationPreviousEllipsis />
@@ -57,7 +57,7 @@ const PaginationTemplate = (args: PaginationProps) => {
         <PaginationNextEllipsis className="[&>svg]:size-3.5 sm:[&>svg]:size-4" />
         <PaginationNextButton className="h-9 sm:h-10">
           <span className="hidden sm:inline">Next</span>
-          <LuChevronRight className="size-4" />
+          <ChevronRight className="size-4" />
         </PaginationNextButton>
       </PaginationContent>
     </Pagination>
@@ -77,7 +77,7 @@ const PaginationUnstyled = (args: PaginationProps) => {
     >
       <PaginationContent className="flex items-center gap-2">
         <PaginationPreviousButton className="flex h-9 items-center gap-2 sm:h-10">
-          <LuChevronLeft className="size-4" />
+          <ChevronLeft className="size-4" />
           <span className="hidden sm:inline">Previous</span>
         </PaginationPreviousButton>
         <PaginationPreviousEllipsis />
@@ -85,7 +85,7 @@ const PaginationUnstyled = (args: PaginationProps) => {
         <PaginationNextEllipsis className="[&>svg]:size-3.5 sm:[&>svg]:size-4" />
         <PaginationNextButton className="flex h-9 items-center gap-2 sm:h-10">
           <span className="hidden sm:inline">Next</span>
-          <LuChevronRight className="size-4" />
+          <ChevronRight className="size-4" />
         </PaginationNextButton>
       </PaginationContent>
     </Pagination>

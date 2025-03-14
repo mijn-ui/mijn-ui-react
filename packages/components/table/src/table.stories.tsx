@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { LuEllipsis } from "react-icons/lu"
+import { Ellipsis } from "lucide-react"
 import {
   Table,
   TableBody,
@@ -72,7 +72,7 @@ const TableTemplate = (args: TableProps) => {
             </TableCell>
 
             <TableCell>
-              <LuEllipsis />
+              <Ellipsis />
             </TableCell>
           </TableRow>
 
@@ -100,7 +100,7 @@ const TableTemplate = (args: TableProps) => {
             </TableCell>
 
             <TableCell>
-              <LuEllipsis />
+              <Ellipsis />
             </TableCell>
           </TableRow>
 
@@ -130,7 +130,7 @@ const TableTemplate = (args: TableProps) => {
             </TableCell>
 
             <TableCell>
-              <LuEllipsis />
+              <Ellipsis />
             </TableCell>
           </TableRow>
 
@@ -159,7 +159,7 @@ const TableTemplate = (args: TableProps) => {
               </p>
             </TableCell>
             <TableCell>
-              <LuEllipsis />
+              <Ellipsis />
             </TableCell>
           </TableRow>
         </TableBody>

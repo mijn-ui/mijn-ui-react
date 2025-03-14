@@ -1,14 +1,14 @@
 import { Input } from "@mijn-ui/react-input"
 import type { Meta, StoryObj } from "@storybook/react"
 import {
-  LuCalculator,
-  LuCalendar,
-  LuCreditCard,
-  LuSearch,
-  LuSettings,
-  LuSmile,
-  LuUser,
-} from "react-icons/lu"
+  Calculator,
+  Calendar,
+  CreditCard,
+  Search,
+  Settings,
+  Smile,
+  User,
+} from "lucide-react"
 import {
   Command,
   CommandEmpty,
@@ -43,7 +43,7 @@ const CommandTemplate = (args: CommandProps) => {
     >
       <CommandInput asChild>
         <Input
-          startIcon={<LuSearch />}
+          startIcon={<Search />}
           variant="underline"
           placeholder="Type a command or search..."
           className="bg-card"
@@ -53,32 +53,32 @@ const CommandTemplate = (args: CommandProps) => {
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
           <CommandItem>
-            <LuCalendar className="mr-2 size-4" />
+            <Calendar className="mr-2 size-4" />
             <span>Calendar</span>
           </CommandItem>
           <CommandItem>
-            <LuSmile className="mr-2 size-4" />
+            <Smile className="mr-2 size-4" />
             <span>Search Emoji</span>
           </CommandItem>
           <CommandItem disabled>
-            <LuCalculator className="mr-2 size-4" />
+            <Calculator className="mr-2 size-4" />
             <span>Calculator</span>
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading="Settings">
           <CommandItem>
-            <LuUser className="mr-2 size-4" />
+            <User className="mr-2 size-4" />
             <span>Profile</span>
             <CommandShortcut>⌘P</CommandShortcut>
           </CommandItem>
           <CommandItem>
-            <LuCreditCard className="mr-2 size-4" />
+            <CreditCard className="mr-2 size-4" />
             <span>Billing</span>
             <CommandShortcut>⌘B</CommandShortcut>
           </CommandItem>
           <CommandItem>
-            <LuSettings className="mr-2 size-4" />
+            <Settings className="mr-2 size-4" />
             <span>Settings</span>
             <CommandShortcut>⌘S</CommandShortcut>
           </CommandItem>
@@ -105,32 +105,32 @@ const CommandUnstyled = (args: CommandProps) => {
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
           <CommandItem>
-            <LuCalendar className="mr-2 size-4" />
+            <Calendar className="mr-2 size-4" />
             <span>Calendar</span>
           </CommandItem>
           <CommandItem>
-            <LuSmile className="mr-2 size-4" />
+            <Smile className="mr-2 size-4" />
             <span>Search Emoji</span>
           </CommandItem>
           <CommandItem disabled>
-            <LuCalculator className="mr-2 size-4" />
+            <Calculator className="mr-2 size-4" />
             <span>Calculator</span>
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading="Settings">
           <CommandItem>
-            <LuUser className="mr-2 size-4" />
+            <User className="mr-2 size-4" />
             <span>Profile</span>
             <CommandShortcut>⌘P</CommandShortcut>
           </CommandItem>
           <CommandItem>
-            <LuCreditCard className="mr-2 size-4" />
+            <CreditCard className="mr-2 size-4" />
             <span>Billing</span>
             <CommandShortcut>⌘B</CommandShortcut>
           </CommandItem>
           <CommandItem>
-            <LuSettings className="mr-2 size-4" />
+            <Settings className="mr-2 size-4" />
             <span>Settings</span>
             <CommandShortcut>⌘S</CommandShortcut>
           </CommandItem>

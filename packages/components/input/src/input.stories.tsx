@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { LuPlus } from "react-icons/lu"
+import { Plus } from "lucide-react"
 import { Input, InputProps } from "./input"
 
 const meta: Meta<typeof Input> = {
@@ -62,8 +62,8 @@ export const Default: Story = {
 export const WithIcon: Story = {
   render: InputWithIcons,
   args: {
-    startIcon: <LuPlus />,
-    endIcon: <LuPlus />,
+    startIcon: <Plus />,
+    endIcon: <Plus />,
   },
 }
 
@@ -80,8 +80,8 @@ export const WithFloatingLabelAndIcon: Story = {
   args: {
     placeholder: "",
     label: "Username",
-    startIcon: <LuPlus />,
-    endIcon: <LuPlus />,
+    startIcon: <Plus />,
+    endIcon: <Plus />,
   },
 }
 

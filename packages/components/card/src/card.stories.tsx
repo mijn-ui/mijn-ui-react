@@ -1,7 +1,5 @@
 import { Button } from "@mijn-ui/react-button"
 import type { Meta, StoryObj } from "@storybook/react"
-import { IoBagOutline } from "react-icons/io5"
-import { LuArrowUpRight, LuPlus } from "react-icons/lu"
 import {
   Card,
   CardContent,
@@ -39,12 +37,12 @@ const CardTemplate = (args: CardProps) => {
           asChild
         >
           <span>
-            <LuPlus className="size-5 sm:size-6" />
+            <Icons.plus className="size-5 sm:size-6" />
           </span>
         </Button>
 
         <div className="text-muted-foreground absolute right-4 top-4">
-          <LuArrowUpRight className="size-5 sm:size-6" />
+          <Icons.arrowUpRight className="size-5 sm:size-6" />
         </div>
       </CardHeader>
       <CardContent>
@@ -64,7 +62,7 @@ const CardStats = (args: CardProps) => {
           className="bg-accent rounded-full p-0 sm:size-12"
           unstyled={args.unstyled}
         >
-          <IoBagOutline className="size-4 sm:size-5" />
+          <Icons.bagOutline className="size-4 sm:size-5" />
         </Button>
       </CardHeader>
 
@@ -126,12 +124,12 @@ const CardUnstyled = (args: CardProps) => {
           asChild
         >
           <span>
-            <LuPlus className="size-5 sm:size-6" />
+            <Icons.plus className="size-5 sm:size-6" />
           </span>
         </Button>
 
         <div className="text-muted-foreground absolute right-4 top-4">
-          <LuArrowUpRight className="size-5 sm:size-6" />
+          <Icons.arrowUpRight className="size-5 sm:size-6" />
         </div>
       </CardHeader>
       <CardContent>
@@ -159,4 +157,61 @@ export const Unstyled: Story = {
   args: {
     unstyled: true,
   },
+}
+
+const Icons = {
+  arrowUpRight: (props: React.HTMLAttributes<SVGElement>) => (
+    <svg
+      stroke="currentColor"
+      fill="none"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      height="1em"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M7 7h10v10" />
+      <path d="M7 17 17 7" />
+    </svg>
+  ),
+  plus: (props: React.HTMLAttributes<SVGElement>) => (
+    <svg
+      stroke="currentColor"
+      fill="none"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      height="1em"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M5 12h14" />
+      <path d="M12 5v14" />
+    </svg>
+  ),
+  bagOutline: (props: React.HTMLAttributes<SVGElement>) => (
+    <svg
+      stroke="currentColor"
+      fill="currentColor"
+      strokeWidth={0}
+      viewBox="0 0 512 512"
+      height="1em"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={32}
+        d="M80 176a16 16 0 0 0-16 16v216c0 30.24 25.76 56 56 56h272c30.24 0 56-24.51 56-54.75V192a16 16 0 0 0-16-16zm80 0v-32a96 96 0 0 1 96-96h0a96 96 0 0 1 96 96v32"
+      />
+    </svg>
+  ),
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import { Button } from "@mijn-ui/react-button"
 import type { Meta, StoryObj } from "@storybook/react"
-import { LuFilter } from "react-icons/lu"
+import { Filter } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -154,7 +154,7 @@ const DropdownMenuRadioGroups = (args: DropdownMenuProps) => {
     <DropdownMenu {...args}>
       <DropdownMenuTrigger asChild unstyled>
         <Button color="primary">
-          <LuFilter />
+          <Filter />
           Filters
         </Button>
       </DropdownMenuTrigger>
