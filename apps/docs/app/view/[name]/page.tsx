@@ -2,7 +2,7 @@ import React from "react"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { Blocks } from "@/blocks"
-import { LuLoaderCircle } from "react-icons/lu"
+import { LoaderCircle } from "lucide-react"
 
 export async function generateMetadata({
   params,
@@ -49,7 +49,7 @@ const BlockPage = async ({
       <React.Suspense
         fallback={
           <div className="flex w-full items-center justify-center text-small text-muted-foreground">
-            <LuLoaderCircle className="mr-2 size-4 animate-spin" />
+            <LoaderCircle className="mr-2 size-4 animate-spin" />
             Loading...
           </div>
         }

@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Button } from "@mijn-ui/react"
-import { LuEllipsisVertical, LuPlus } from "react-icons/lu"
+import { EllipsisVertical, Plus } from "lucide-react"
 import {
   Kanban,
   KanbanColumn,
@@ -129,7 +129,7 @@ const KanbanExample = () => {
                   variant="ghost"
                   className="size-7 rounded-full text-muted-foreground hover:text-foreground"
                 >
-                  <LuEllipsisVertical />
+                  <EllipsisVertical />
                 </Button>
               </KanbanHeader>
               <KanbanContent container={container}>
@@ -180,7 +180,7 @@ const KanbanExample = () => {
               <KanbanFooter>
                 <button className="flex items-center gap-2 text-small text-muted-foreground">
                   <span>
-                    <LuPlus className="size-5" />
+                    <Plus className="size-5" />
                   </span>
                   Add a new Item
                 </button>

@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import { AlertIcon, AlertTitle, Alert as MijnUIAlert } from "@mijn-ui/react"
 import { AlertVariantProps, alertStyles, cn } from "@mijn-ui/react"
-import { FiAlertCircle } from "react-icons/fi"
+import { Icons } from "../icons"
 
 type AlertProps = {
   title?: ReactNode
@@ -19,7 +19,7 @@ const Alert = ({ title, children, color, variant, className }: AlertProps) => {
       color={color}
     >
       <AlertIcon>
-        <FiAlertCircle />
+        <Icons.alertCircle />
       </AlertIcon>
       <AlertTitle>{title}</AlertTitle>
       <div

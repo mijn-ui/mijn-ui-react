@@ -6,7 +6,7 @@ import {
   TableHeaderCell,
   TableRow,
 } from "@mijn-ui/react"
-import { LuEllipsis } from "react-icons/lu"
+import { Ellipsis } from "lucide-react"
 
 const TableExample = () => {
   return (
@@ -49,7 +49,7 @@ const TableExample = () => {
             </TableCell>
 
             <TableCell>
-              <LuEllipsis />
+              <Ellipsis />
             </TableCell>
           </TableRow>
 
@@ -77,7 +77,7 @@ const TableExample = () => {
             </TableCell>
 
             <TableCell>
-              <LuEllipsis />
+              <Ellipsis />
             </TableCell>
           </TableRow>
 
@@ -107,7 +107,7 @@ const TableExample = () => {
             </TableCell>
 
             <TableCell>
-              <LuEllipsis />
+              <Ellipsis />
             </TableCell>
           </TableRow>
 
@@ -136,7 +136,7 @@ const TableExample = () => {
               </p>
             </TableCell>
             <TableCell>
-              <LuEllipsis />
+              <Ellipsis />
             </TableCell>
           </TableRow>
         </TableBody>

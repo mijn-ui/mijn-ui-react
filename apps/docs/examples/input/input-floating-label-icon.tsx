@@ -1,5 +1,5 @@
 import { Input } from "@mijn-ui/react"
-import { LuPlus } from "react-icons/lu"
+import { Plus } from "lucide-react"
 
 const InputWithFloatingLabelIcon = () => {
   return (
@@ -8,22 +8,22 @@ const InputWithFloatingLabelIcon = () => {
       <Input
         classNames={{ wrapper: "w-80" }}
         label="Username"
-        startIcon={<LuPlus />}
+        startIcon={<Plus />}
       />
 
       {/* end Icon */}
       <Input
         classNames={{ wrapper: "w-80" }}
-        endIcon={<LuPlus />}
+        endIcon={<Plus />}
         label="Username"
       />
 
       {/* both Icon */}
       <Input
         classNames={{ wrapper: "w-80" }}
-        endIcon={<LuPlus />}
+        endIcon={<Plus />}
         label="Username"
-        startIcon={<LuPlus />}
+        startIcon={<Plus />}
       />
     </div>
   )

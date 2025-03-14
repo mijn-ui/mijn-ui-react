@@ -10,7 +10,7 @@ import {
   DocsPage,
   DocsTitle,
 } from "fumadocs-ui/page"
-import { LuExternalLink } from "react-icons/lu"
+import { ExternalLink } from "lucide-react"
 import { metadataImage } from "@/lib/metadata-image"
 import Alert from "@/app/components/mdx/alert"
 import ComponentPreview from "@/app/components/mdx/component-preview"
@@ -51,7 +51,7 @@ export default async function Page(props: {
               className="flex items-center gap-1 text-small text-foreground/80 underline hover:text-primary"
               href={page.data.docs}
             >
-              <LuExternalLink />
+              <ExternalLink />
               Docs
             </Link>
           )}
@@ -61,7 +61,7 @@ export default async function Page(props: {
               className="flex items-center gap-1 text-small text-foreground/80 underline hover:text-primary"
               href={page.data.apiReference}
             >
-              <LuExternalLink />
+              <ExternalLink />
               Api Reference
             </Link>
           )}
@@ -71,7 +71,7 @@ export default async function Page(props: {
               className="flex items-center gap-1 text-small text-foreground/80 underline hover:text-primary"
               href={page.data.styleSource}
             >
-              <LuExternalLink />
+              <ExternalLink />
               Style Source
             </Link>
           )}

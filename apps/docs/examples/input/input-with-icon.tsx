@@ -1,5 +1,5 @@
 import { Input } from "@mijn-ui/react"
-import { LuPlus } from "react-icons/lu"
+import { Plus } from "lucide-react"
 
 const InputWithIcon = () => {
   return (
@@ -8,22 +8,22 @@ const InputWithIcon = () => {
       <Input
         classNames={{ wrapper: "w-80" }}
         placeholder="Username..."
-        startIcon={<LuPlus />}
+        startIcon={<Plus />}
       />
 
       {/* end Icon */}
       <Input
         classNames={{ wrapper: "w-80" }}
-        endIcon={<LuPlus />}
+        endIcon={<Plus />}
         placeholder="Username..."
       />
 
       {/* both Icon */}
       <Input
         classNames={{ wrapper: "w-80" }}
-        endIcon={<LuPlus />}
+        endIcon={<Plus />}
         placeholder="Username..."
-        startIcon={<LuPlus />}
+        startIcon={<Plus />}
       />
     </div>
   )

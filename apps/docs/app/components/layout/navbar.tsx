@@ -14,18 +14,12 @@ import { Separator } from "@mijn-ui/react"
 import { buttonStyles, cn } from "@mijn-ui/react"
 import { SidebarTrigger } from "fumadocs-core/sidebar"
 import { useSearchContext, useSidebar } from "fumadocs-ui/provider"
-import {
-  LuChevronDown,
-  LuExternalLink,
-  LuGithub,
-  LuMenu,
-  LuSearch,
-  LuX,
-} from "react-icons/lu"
+import { ChevronDown, ExternalLink, Menu, Search, X } from "lucide-react"
 import { TopRightRadialGradient } from "@/app/components/decorators/gradient-bg"
 import Logo from "@/app/components/logo"
 import ThemeToggler from "@/app/components/theme-toggler"
 import ClickAwayListener from "@/app/components/utils/click-away-listener"
+import { Icons } from "../icons"
 
 const PAGES = [
   {
@@ -69,7 +63,7 @@ const Navbar = () => {
         }).base(),
       )}
     >
-      {isSidebarOpen ? <LuX /> : <LuMenu />}
+      {isSidebarOpen ? <X /> : <Menu />}
     </SidebarTrigger>
   )
 
@@ -99,7 +93,7 @@ const Navbar = () => {
             size={"sm"}
             className="gap-2"
           >
-            <LuSearch />
+            <Search />
             <span className="inline-block text-muted-foreground">
               Search...
             </span>
@@ -111,7 +105,7 @@ const Navbar = () => {
 
           <Button size={"sm"} className="px-2" asChild>
             <Link target="_blank" href={GITHUB_URL}>
-              <LuGithub size={18} />
+              <Icons.github className="text-lg" />
             </Link>
           </Button>
 
@@ -124,13 +118,13 @@ const Navbar = () => {
             onClick={() => setOpenSearch(true)}
             className="inline-flex size-8 items-center justify-center text-muted-foreground transition duration-200 hover:text-secondary"
           >
-            <LuSearch />
+            <Search />
           </button>
 
           <ClickAwayListener onClickAway={() => setDropdownOpen(false)}>
             <Collapsible open={dropdownOpen} onOpenChange={setDropdownOpen}>
               <CollapsibleTrigger className="flex size-8 items-center justify-center text-muted-foreground transition duration-200 hover:text-secondary">
-                <LuChevronDown className="text-large" />
+                <ChevronDown className="text-large" />
               </CollapsibleTrigger>
               <CollapsibleContent className="top-[calc(var(--navbar-height)] absolute inset-x-0 mt-2 overflow-hidden bg-card text-small transition-[height] data-[state=closed]:animate-collapsible-close data-[state=open]:animate-collapsible-open">
                 <div className="relative flex w-full flex-col items-start justify-between space-y-2 px-4 py-2">
@@ -143,7 +137,7 @@ const Navbar = () => {
                       target="_blank"
                       href={GITHUB_URL}
                     >
-                      Github <LuExternalLink />
+                      Github <ExternalLink />
                     </Link>
                     <ThemeToggler />
                   </div>

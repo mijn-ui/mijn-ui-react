@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { cn } from "@mijn-ui/react"
 import { useTheme } from "next-themes"
-import { FiMoon, FiSun } from "react-icons/fi"
+import { Icons } from "./icons"
 
 /* -------------------------------------------------------------------------- */
 
@@ -24,7 +24,7 @@ const ThemeToggler = ({ className }: { className?: string }) => {
           className,
         )}
       >
-        <FiSun />
+        <Icons.sun />
       </button>
     )
   }
@@ -37,7 +37,7 @@ const ThemeToggler = ({ className }: { className?: string }) => {
           className,
         )}
       >
-        <FiMoon />
+        <Icons.moon />
       </button>
     )
   }

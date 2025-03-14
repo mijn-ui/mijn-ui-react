@@ -7,8 +7,8 @@ import {
 } from "@mijn-ui/react"
 import { Badge } from "@mijn-ui/react"
 import { Progress } from "@mijn-ui/react"
-import { GoClock } from "react-icons/go"
-import { LuX } from "react-icons/lu"
+import { X } from "lucide-react"
+import { Icons } from "@/app/components/icons"
 import { KanbanCard } from "../"
 import { useKanban } from "./context"
 import { KanbanCardItemType } from "./types"
@@ -60,7 +60,7 @@ const KanbanCardItem = ({
       <div className="flex w-full items-center justify-between text-muted-foreground">
         <div className="flex items-center gap-2 sm:gap-4">
           <div className="flex items-center gap-1">
-            <GoClock size={20} />
+            <Icons.clock className="size-5" />
             <span className="text-tiny">{status.createdAt}</span>
           </div>
           {status.comments && (
@@ -92,7 +92,7 @@ const KanbanCardItem = ({
         onClick={handleOnDelete}
         className="absolute -right-2 -top-6 flex size-5 items-center justify-center rounded-full border-small border-border bg-card opacity-0 transition-opacity hover:brightness-90 group-hover:opacity-100"
       >
-        <LuX size={12} />
+        <X size={12} />
       </button>
     </KanbanCard>
   )

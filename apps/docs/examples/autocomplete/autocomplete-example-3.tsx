@@ -18,7 +18,7 @@ import {
 } from "@mijn-ui/react"
 import { Input } from "@mijn-ui/react"
 import { ScrollArea } from "@mijn-ui/react"
-import { LuChevronsUpDown } from "react-icons/lu"
+import { ChevronsUpDown } from "lucide-react"
 
 const FRAMEWORKS = [
   "Next.js",
@@ -66,7 +66,7 @@ const AutocompleteWithDialog = () => {
             <Input
               className="bg-card"
               placeholder={"Search for a framework"}
-              endIcon={<LuChevronsUpDown />}
+              endIcon={<ChevronsUpDown />}
             />
           </AutocompleteTrigger>
           <AutocompleteContent

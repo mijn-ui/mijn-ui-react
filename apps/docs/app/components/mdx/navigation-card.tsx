@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 type NavigationCardProps = {
   previous: {
@@ -21,7 +21,7 @@ const NavigationCard = ({ previous, next }: NavigationCardProps) => {
           className="flex w-full flex-col gap-2 rounded-large border-small bg-fd-card p-4 text-small transition-colors hover:text-fd-accent-foreground hover:opacity-hover"
         >
           <div className="inline-flex items-center gap-0.5 text-fd-muted-foreground">
-            <LuChevronLeft className="-ms-1 size-4 shrink-0 rtl:rotate-180" />
+            <ChevronLeft className="-ms-1 size-4 shrink-0 rtl:rotate-180" />
             <p>Previous</p>
           </div>
           <p className="font-medium">{previous.name}</p>
@@ -35,7 +35,7 @@ const NavigationCard = ({ previous, next }: NavigationCardProps) => {
           }
         >
           <div className="inline-flex flex-row-reverse items-center gap-0.5 text-fd-muted-foreground">
-            <LuChevronRight className="-me-1 size-4 shrink-0 rtl:rotate-180" />
+            <ChevronRight className="-me-1 size-4 shrink-0 rtl:rotate-180" />
             <p>Next</p>
           </div>
           <p className="font-medium">{next.name}</p>

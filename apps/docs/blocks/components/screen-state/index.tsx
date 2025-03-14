@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@mijn-ui/react"
-import { FaBoxArchive } from "react-icons/fa6"
+import { Icons } from "@/app/components/icons"
 
 interface ScreenStateProps {
   title: string
@@ -26,7 +26,7 @@ const ScreenState: React.FC<ScreenStateProps> = ({
   return (
     <Card className="flex w-full max-w-screen-sm flex-col items-center justify-center space-y-3 rounded-2xl bg-card p-6 text-center sm:space-y-6">
       <CardHeader className="p-0">
-        <FaBoxArchive className="size-10 text-foreground sm:size-12" />
+        <Icons.boxArchive className="size-10 text-foreground sm:size-12" />
       </CardHeader>
       <CardContent unstyled className="space-y-1">
         <CardTitle
