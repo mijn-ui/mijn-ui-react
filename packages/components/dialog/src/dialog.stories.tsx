@@ -1,7 +1,7 @@
 import { Button } from "@mijn-ui/react-button"
 import { Input } from "@mijn-ui/react-input"
 import type { Meta, StoryObj } from "@storybook/react"
-import { LuX } from "react-icons/lu"
+import { X } from "lucide-react"
 import {
   Dialog,
   DialogClose,
@@ -32,7 +32,7 @@ const DialogTemplate = (args: DialogProps) => {
       <DialogTrigger>Sign In</DialogTrigger>
       <DialogContent className="bg-background relative">
         <DialogClose className="text-muted-foreground hover:text-foreground text-large absolute right-4 top-4 border-none p-2">
-          <LuX />
+          <X />
         </DialogClose>
         <div>
           <DialogTitle>SignIn</DialogTitle>
@@ -80,7 +80,7 @@ const DialogUnstyled = (args: DialogProps) => {
       <DialogTrigger className="bg-accent p-2">Sign In</DialogTrigger>
       <DialogContent className="bg-background border-medium relative  p-4">
         <DialogClose className="text-muted-foreground hover:text-foreground text-large absolute right-4 top-4 border-none p-2">
-          <LuX />
+          <X />
         </DialogClose>
         <div>
           <DialogTitle className="text-large font-semibold">SignIn</DialogTitle>
