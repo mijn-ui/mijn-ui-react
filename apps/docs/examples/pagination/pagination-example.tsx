@@ -10,7 +10,7 @@ import {
   PaginationPreviousButton,
   PaginationPreviousEllipsis,
 } from "@mijn-ui/react"
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const PaginationExample = () => {
   const [currentPage, setCurrentPage] = React.useState(7)
@@ -27,7 +27,7 @@ const PaginationExample = () => {
     >
       <PaginationContent>
         <PaginationPreviousButton className="h-9 sm:h-10">
-          <LuChevronLeft className="size-4" />
+          <ChevronLeft className="size-4" />
           <span className="hidden sm:inline">Previous</span>
         </PaginationPreviousButton>
         <PaginationPreviousEllipsis />
@@ -36,7 +36,7 @@ const PaginationExample = () => {
         <PaginationNextEllipsis className="[&>svg]:size-3.5 sm:[&>svg]:size-4" />
         <PaginationNextButton className="h-9 sm:h-10">
           <span className="hidden sm:inline">Next</span>
-          <LuChevronRight className="size-4" />
+          <ChevronRight className="size-4" />
         </PaginationNextButton>
       </PaginationContent>
     </Pagination>

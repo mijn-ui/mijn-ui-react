@@ -1,9 +1,9 @@
-import { FaBoxArchive } from "react-icons/fa6"
+import { Icons } from "@/app/components/icons"
 
 const ScreenStateShowcase = () => {
   return (
     <div className="flex w-full max-w-screen-sm flex-col items-center justify-center space-y-2 rounded-2xl bg-card p-4 text-center text-card-foreground shadow-small">
-      <FaBoxArchive className="size-4 text-muted" />
+      <Icons.boxArchive className="size-4 text-muted" />
       <div className="flex w-full flex-col items-center space-y-1">
         <div className="h-3 w-20 rounded-medium bg-accent" />
         <div className="h-2 w-2/3 rounded-medium bg-accent" />

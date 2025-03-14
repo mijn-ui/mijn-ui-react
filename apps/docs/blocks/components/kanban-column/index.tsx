@@ -16,7 +16,7 @@ import {
 } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
 import { cn } from "@mijn-ui/react"
-import { LuGripVertical } from "react-icons/lu"
+import { GripVertical } from "lucide-react"
 import {
   KanbanProvider,
   KanbanProviderProps,
@@ -191,7 +191,7 @@ const KanbanDraggable = ({
         {...listeners}
         className="absolute right-4 top-4 flex size-6 items-center justify-center rounded-medium border-small border-border transition-opacity sm:opacity-0 sm:group-hover:opacity-100"
       >
-        <LuGripVertical size={16} />
+        <GripVertical size={16} />
       </button>
     </div>
   )

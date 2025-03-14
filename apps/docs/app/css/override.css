@@ -60,7 +60,6 @@ h1 {
 }
 
 /* override for the preview */
-
 .preview {
   [role="tablist"] {
     @apply !bg-background;

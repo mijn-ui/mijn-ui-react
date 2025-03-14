@@ -8,9 +8,9 @@ import {
   themeColorsLight,
 } from "@mijn-ui/react"
 import { readableColor, toHex } from "color2k"
+import { Check, Clipboard } from "lucide-react"
 import { useTheme } from "next-themes"
-import { LuCheck, LuClipboard } from "react-icons/lu"
-import { useCopyToClipboard } from "../../hooks/use-copy-to-clipboard"
+import { useCopyToClipboard } from "@/app/hooks/use-copy-to-clipboard"
 import { Tooltip, TooltipContent, TooltipTrigger } from "../tooltip"
 
 /* -------------------------------------------------------------------------- */
@@ -132,7 +132,7 @@ const ColorSwatch = ({ color, label }: { color?: string; label: string }) => {
         style={style}
       >
         <span className="absolute right-2 top-2 hidden text-tiny group-hover:block">
-          {isCopied ? <LuCheck /> : <LuClipboard />}
+          {isCopied ? <Check /> : <Clipboard />}
         </span>
         <span className="inline-block text-center font-medium">{label}</span>
         <span className="inline-block text-center text-[12px]">{color}</span>

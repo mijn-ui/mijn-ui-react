@@ -1,7 +1,7 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import { LuLoaderCircle } from "react-icons/lu"
+import { LoaderCircle } from "lucide-react"
 
 const ButtonWithHook = dynamic(
   () => import("./components/responsive-button/button-with-hook"),
@@ -9,7 +9,7 @@ const ButtonWithHook = dynamic(
     ssr: false,
     loading: () => (
       <div className="flex w-full items-center justify-center text-small text-muted-foreground">
-        <LuLoaderCircle className="mr-2 size-4 animate-spin" />
+        <LoaderCircle className="mr-2 size-4 animate-spin" />
         Loading...
       </div>
     ),

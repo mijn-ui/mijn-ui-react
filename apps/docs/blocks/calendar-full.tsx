@@ -22,7 +22,7 @@ import {
 import { Input } from "@mijn-ui/react"
 import { useMediaQuery } from "@mijn-ui/react-hooks"
 import { setMonth, setYear } from "date-fns"
-import { LuBug } from "react-icons/lu"
+import { Bug } from "lucide-react"
 import { CalendarFull } from "./components/calendar-full"
 
 const now = new Date()
@@ -339,7 +339,7 @@ const CalendarFullExample = () => {
         <AlertDialogContent className="p-5 sm:p-6">
           <div className="sm:flex sm:items-start">
             <div className="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:size-10">
-              <LuBug className="size-6 text-danger" aria-hidden="true" />
+              <Bug className="size-6 text-danger" aria-hidden="true" />
             </div>
             <div className="text-center sm:ml-4 sm:mt-0 sm:text-left">
               <AlertDialogTitle>Delete Event</AlertDialogTitle>

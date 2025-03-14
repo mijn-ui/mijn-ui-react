@@ -8,7 +8,7 @@ import {
   AutocompleteTrigger,
 } from "@mijn-ui/react"
 import { Input } from "@mijn-ui/react"
-import { LuSearch } from "react-icons/lu"
+import { Search } from "lucide-react"
 
 const FRAMEWORKS = [
   "Next.js",
@@ -26,10 +26,7 @@ const AutocompleteExample = () => {
   return (
     <Autocomplete value={value} onValueChange={setValue}>
       <AutocompleteTrigger asChild>
-        <Input
-          placeholder={"Search for a framework"}
-          startIcon={<LuSearch />}
-        />
+        <Input placeholder={"Search for a framework"} startIcon={<Search />} />
       </AutocompleteTrigger>
       <AutocompleteContent emptyMessage="No Frameworks Found" loading={false}>
         {FRAMEWORKS.map((framework) => (

@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from "@mijn-ui/react"
 import { Input } from "@mijn-ui/react"
-import { LuX } from "react-icons/lu"
+import { X } from "lucide-react"
 
 type DialogExampleProps = {
   unstyled?: boolean
@@ -22,7 +22,7 @@ const DialogExample = ({ unstyled = false }: DialogExampleProps) => {
       </DialogTrigger>
       <DialogContent className="relative ">
         <DialogClose className="absolute right-4 top-4 border-none p-2 text-large text-muted-foreground hover:text-foreground">
-          <LuX />
+          <X />
         </DialogClose>
         <div>
           <DialogTitle>SignIn</DialogTitle>

@@ -10,7 +10,7 @@ import {
 } from "@mijn-ui/react"
 import { Input } from "@mijn-ui/react"
 import { ScrollArea } from "@mijn-ui/react"
-import { LuSearch } from "react-icons/lu"
+import { Search } from "lucide-react"
 
 const FRAMEWORKS = [
   "Next.js",
@@ -45,10 +45,7 @@ const AutocompleteWithScrollArea = () => {
   return (
     <Autocomplete value={value} onValueChange={setValue}>
       <AutocompleteTrigger asChild>
-        <Input
-          placeholder={"Search for a framework"}
-          startIcon={<LuSearch />}
-        />
+        <Input placeholder={"Search for a framework"} startIcon={<Search />} />
       </AutocompleteTrigger>
       <AutocompleteContent emptyMessage="No Frameworks Found" loading={false}>
         <ScrollArea className="flex max-h-52 flex-col overflow-y-auto">
