@@ -132,7 +132,11 @@ const ColorSwatch = ({ color, label }: { color?: string; label: string }) => {
         style={style}
       >
         <span className="absolute right-2 top-2 hidden text-tiny group-hover:block">
-          {isCopied ? <Check /> : <Clipboard />}
+          {isCopied ? (
+            <Check className="size-[1em]" />
+          ) : (
+            <Clipboard className="size-[1em]" />
+          )}
         </span>
         <span className="inline-block text-center font-medium">{label}</span>
         <span className="inline-block text-center text-[12px]">{color}</span>

@@ -69,3 +69,8 @@
 .custom_scroll_bar::-webkit-scrollbar-corner {
   @apply bg-transparent;
 }
+
+.lucide {
+  width: 1em;
+  height: 1em;
+}
