@@ -185,8 +185,8 @@ export const mijnui = (
     defaultExtendTheme = "light",
   } = config
 
-  const userLightColors = themeObject.light || {}
-  const userDarkColors = themeObject.dark || {}
+  const userLightColors = themeObject.light?.colors || {}
+  const userDarkColors = themeObject.dark?.colors || {}
 
   const defaultLayoutObj =
     userLayout && typeof userLayout === "object"
