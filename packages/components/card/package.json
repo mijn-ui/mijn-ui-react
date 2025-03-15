@@ -44,8 +44,8 @@
     "@mijn-ui/react-utilities": "workspace:*"
   },
   "peerDependencies": {
-    "@mijn-ui/react-core": "^0.0.8",
-    "@mijn-ui/react-theme": "^0.0.13",
+    "@mijn-ui/react-core": "^0.1.0",
+    "@mijn-ui/react-theme": "^0.1.0",
     "react": "^19.0",
     "react-dom": "^19.0"
   },
