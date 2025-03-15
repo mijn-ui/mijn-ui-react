@@ -35,17 +35,5 @@ export default withTV({
       },
     },
   },
-  plugins: [
-    animationPlugin,
-    mijnui({
-      themes: {
-        dark: {
-          extend: "dark",
-          colors: {
-            background: "0 0% 96%",
-          },
-        },
-      },
-    }),
-  ], // !need to update the doucmentation for this
+  plugins: [animationPlugin, mijnui({})], // !need to update the doucmentation for this
 })
