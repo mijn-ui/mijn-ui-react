@@ -1,5 +1,11 @@
 # @mijn-ui-react/card
 
+## 0.1.0
+
+### Minor Changes
+
+- 284b531: Beta Release
+
 ## 0.0.17
 
 ### Patch Changes
