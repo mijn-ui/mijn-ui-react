@@ -1,5 +1,11 @@
 # @mijn-ui/react-theme
 
+## 0.1.0
+
+### Minor Changes
+
+- 29bd2ad: Beta Release.
+
 ## 0.0.13
 
 ### Patch Changes
