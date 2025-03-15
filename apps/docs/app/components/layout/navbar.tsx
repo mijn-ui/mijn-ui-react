@@ -93,7 +93,7 @@ const Navbar = () => {
             size={"sm"}
             className="gap-2"
           >
-            <Search />
+            <Search size={16} className="text-muted-foreground" />
             <span className="inline-block text-muted-foreground">
               Search...
             </span>
