@@ -1,5 +1,11 @@
 # @mijn-ui/react-core
 
+## 0.1.0
+
+### Minor Changes
+
+- 29bd2ad: Beta Release.
+
 ## 0.0.8
 
 ### Patch Changes
