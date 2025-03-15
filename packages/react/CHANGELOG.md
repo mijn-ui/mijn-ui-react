@@ -1,5 +1,16 @@
 # @mijn-ui/react
 
+## 0.0.10
+
+### Patch Changes
+
+- Updated dependencies [29bd2ad]
+- Updated dependencies [29bd2ad]
+  - @mijn-ui/react-theme@0.1.0
+  - @mijn-ui/react-core@0.1.0
+  - @mijn-ui/react-collapsible@0.0.11
+  - @mijn-ui/react-hooks@0.0.16
+
 ## 0.0.9
 
 ### Patch Changes
