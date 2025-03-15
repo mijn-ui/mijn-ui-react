@@ -1,5 +1,16 @@
 # @mijn-ui-react/command
 
+## 0.1.0
+
+### Minor Changes
+
+- 284b531: Beta Release
+
+### Patch Changes
+
+- Updated dependencies [284b531]
+  - @mijn-ui/react-dialog@0.1.0
+
 ## 0.0.20
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @mijn-ui-react/radio-group
 
+## 0.1.0
+
+### Minor Changes
+
+- 284b531: Beta Release
+
 ## 0.0.18
 
 ### Patch Changes

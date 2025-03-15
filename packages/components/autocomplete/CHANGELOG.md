@@ -1,5 +1,14 @@
 # @mijn-ui-react/autocomplete
 
+## 0.0.21
+
+### Patch Changes
+
+- Updated dependencies [284b531]
+  - @mijn-ui/react-command@0.1.0
+  - @mijn-ui/react-popover@0.1.0
+  - @mijn-ui/react-skeleton@0.1.0
+
 ## 0.0.20
 
 ### Patch Changes
