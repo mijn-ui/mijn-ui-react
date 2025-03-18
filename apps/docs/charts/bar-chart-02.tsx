@@ -29,12 +29,12 @@ const chartData = [
 
 const BarChart02 = () => {
   return (
-    <Card className="rounded-none">
-      <CardHeader className="space-y-0">
+    <Card className="flex h-full min-h-80 flex-col items-center justify-between gap-4 rounded-none">
+      <CardHeader className="flex w-full flex-col items-start space-y-0">
         <CardTitle className="text-large">Bar Chart - Horizontal</CardTitle>
         <CardDescription>Trends in monthly revenue.</CardDescription>
       </CardHeader>
-      <CardContent className="flex aspect-[543/300] w-[calc(543/16*1rem)] max-w-full items-center rounded-none text-xs">
+      <CardContent className="flex h-64 w-[calc(543/16*1rem)] max-w-full items-center rounded-none text-xs">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart accessibilityLayer data={chartData} layout="vertical">
             <CartesianGrid
