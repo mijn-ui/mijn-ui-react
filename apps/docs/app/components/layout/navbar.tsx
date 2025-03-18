@@ -30,6 +30,10 @@ const PAGES = [
     title: "Blocks",
     href: "/blocks",
   },
+  {
+    title: "Charts",
+    href: "/charts",
+  },
 ]
 
 const GITHUB_URL = "https://github.com/mijn-ui/mijn-ui-react"
@@ -82,7 +86,7 @@ const Navbar = () => {
             v0.0.1
           </Badge>
 
-          <div className="hidden gap-4 md:flex">{renderPages}</div>
+          <div className="hidden gap-6 md:flex">{renderPages}</div>
         </div>
 
         {/* Desktop Buttons */}
