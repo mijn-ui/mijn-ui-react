@@ -12,12 +12,13 @@ export default withTV({
     "./examples/**/*.{ts,tsx,html}",
     "./content/**/*.{md,mdx}",
     "./blocks/**/*.{ts,tsx}",
+    "./charts/**/*.{ts,tsx}",
 
     // I don't know why this path isn't working in production, so I have to include it this way for development and production
     // just a workaround for now, needs to address this later
+    "./node_modules/fumadocs-ui/dist/**/*.js",
     "../../node_modules/fumadocs-ui/dist/**/*.js",
     "./node_modules/@mijn-ui/**/dist/*.js",
-    "./node_modules/fumadocs-ui/dist/**/*.js",
   ],
   presets: [createPreset({ cssPrefix: "fd", addGlobalColors: false })],
   theme: {
