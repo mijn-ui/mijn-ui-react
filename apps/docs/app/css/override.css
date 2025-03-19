@@ -69,3 +69,9 @@ h1 {
 .fd-codeblock code {
   font-size: 14px !important;
 }
+
+.chart .fd-codeblock {
+  .max-h-\[600px\] {
+    max-height: none;
+  }
+}
