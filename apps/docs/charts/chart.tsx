@@ -1,6 +1,6 @@
 import React from "react"
 import { VariantProps, cn, tv } from "@mijn-ui/react"
-import { Tooltip } from "recharts"
+import { ResponsiveContainer, Tooltip } from "recharts"
 
 /* -------------------------------------------------------------------------- */
 /*                                ChartToolTip                                */
@@ -51,6 +51,30 @@ export type TooltipSlots = keyof ReturnType<typeof tooltipStyles>
 export type TooltipVariantProps = VariantProps<typeof tooltipStyles>
 
 /* -------------------------------------------------------------------------- */
+/*                               ChartContainer                               */
+/* -------------------------------------------------------------------------- */
+
+const ChartContainer = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof ResponsiveContainer>) => {
+  return (
+    <ResponsiveContainer
+      width="100%"
+      height="100%"
+      className={cn(
+        "[&_.recharts-active-dot]:stroke-card [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line]:stroke-border [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border  [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-accent [&_.recharts-tooltip-cursor]:stroke-1",
+        className,
+      )}
+      {...props}
+    />
+  )
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                ChartTooltip                                */
+/* -------------------------------------------------------------------------- */
+
 type TooltipProps = React.ComponentProps<typeof Tooltip> &
   React.ComponentProps<"div"> & {
     hideLabel?: boolean
@@ -167,4 +191,4 @@ const ChartLegend = ({
   )
 }
 
-export { ChartTooltip, ChartLegend }
+export { ChartTooltip, ChartLegend, ChartContainer }

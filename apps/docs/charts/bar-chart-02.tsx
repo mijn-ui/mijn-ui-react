@@ -7,16 +7,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@mijn-ui/react"
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts"
-import { ChartTooltip } from "./chart"
+import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from "recharts"
+import { ChartContainer, ChartTooltip } from "./chart"
 
 const chartData = [
   { date: "Jan 23", Revenue: 32000 },
@@ -35,13 +27,9 @@ const BarChart02 = () => {
         <CardDescription>Trends in monthly revenue.</CardDescription>
       </CardHeader>
       <CardContent className="flex h-64 w-[calc(543/16*1rem)] max-w-full items-center rounded-none text-xs">
-        <ResponsiveContainer width="100%" height="100%">
+        <ChartContainer>
           <BarChart accessibilityLayer data={chartData} layout="vertical">
-            <CartesianGrid
-              horizontal={false}
-              stroke="hsl(var(--mijnui-border))"
-              strokeDasharray={3}
-            />
+            <CartesianGrid horizontal={false} strokeDasharray={3} />
 
             <XAxis
               type="number"
@@ -59,13 +47,10 @@ const BarChart02 = () => {
               tickMargin={10}
               axisLine={false}
             />
-            <Tooltip
-              cursor={{ fill: "hsl(var(--mijnui-accent))" }}
-              content={<ChartTooltip active />}
-            />
+            <Tooltip content={<ChartTooltip active />} />
             <Bar dataKey="Revenue" fill="hsl(var(--chart-1))" radius={4} />
           </BarChart>
-        </ResponsiveContainer>
+        </ChartContainer>
       </CardContent>
     </Card>
   )

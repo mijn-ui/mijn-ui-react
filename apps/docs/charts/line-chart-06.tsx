@@ -12,12 +12,11 @@ import {
   Legend,
   Line,
   LineChart,
-  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from "recharts"
-import { ChartLegend, ChartTooltip } from "./chart"
+import { ChartContainer, ChartLegend, ChartTooltip } from "./chart"
 
 const chartData = [
   { date: "Jan 23", Revenue: 50000, Expenses: 32000 },
@@ -46,27 +45,18 @@ const LineChart06 = () => {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex h-64 w-[calc(543/16*1rem)] max-w-full items-center rounded-none text-xs">
-        <ResponsiveContainer width="100%" height="100%">
+        <ChartContainer>
           <LineChart accessibilityLayer data={chartData}>
             <YAxis
-              className="text-muted-foreground"
               width={42}
-              fontSize={12}
               tickLine={false}
               axisLine={false}
               tickFormatter={(value) => `$${value / 1000}k`}
             />
 
-            <XAxis
-              className="text-muted-foreground"
-              dataKey="date"
-              fontSize={12}
-              tickLine={false}
-              axisLine={false}
-            />
+            <XAxis dataKey="date" tickLine={false} axisLine={false} />
 
             <Tooltip
-              cursor={{ stroke: "hsl(var(--mijnui-border))", strokeWidth: 1 }}
               content={<ChartTooltip active />}
               position={{ y: 0 }}
               offset={20}
@@ -103,9 +93,7 @@ const LineChart06 = () => {
                 fill: "hsl(var(--chart-1))",
               }}
               activeDot={{
-                color: "hsl(var(--chart-1))",
-                r: 3,
-                stroke: "currentColor",
+                r: 5,
               }}
             />
 
@@ -118,8 +106,7 @@ const LineChart06 = () => {
               }}
               activeDot={{
                 color: "hsl(var(--chart-2))",
-                r: 3,
-                stroke: "currentColor",
+                r: 5,
               }}
             />
 
@@ -134,7 +121,7 @@ const LineChart06 = () => {
               }}
             />
           </LineChart>
-        </ResponsiveContainer>
+        </ChartContainer>
       </CardContent>
     </Card>
   )

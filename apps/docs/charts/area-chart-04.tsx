@@ -12,12 +12,11 @@ import {
   AreaChart,
   CartesianGrid,
   Legend,
-  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from "recharts"
-import { ChartLegend, ChartTooltip } from "./chart"
+import { ChartContainer, ChartLegend, ChartTooltip } from "./chart"
 
 const chartData = [
   { date: "Jan 23", Revenue: 50000, Expenses: 32000 },
@@ -26,12 +25,6 @@ const chartData = [
   { date: "Apr 23", Revenue: 62000, Expenses: 35000 },
   { date: "May 23", Revenue: 54000, Expenses: 40000 },
   { date: "Jun 23", Revenue: 68000, Expenses: 42000 },
-  // { date: "Jul 23", Revenue: 59000, Expenses: 45000 },
-  // { date: "Aug 23", Revenue: 71000, Expenses: 42000 },
-  // { date: "Sep 23", Revenue: 56000, Expenses: 39000 },
-  // { date: "Oct 23", Revenue: 63000, Expenses: 31000 },
-  // { date: "Nov 23", Revenue: 49000, Expenses: 43000 },
-  // { date: "Dec 23", Revenue: 72000, Expenses: 47000 },
 ]
 
 const AreaChart04 = () => {
@@ -46,34 +39,19 @@ const AreaChart04 = () => {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex h-64 w-[calc(543/16*1rem)] max-w-full items-center rounded-none text-xs">
-        <ResponsiveContainer width="100%" height="100%">
+        <ChartContainer>
           <AreaChart data={chartData}>
             <YAxis
-              className="text-muted-foreground"
-              fontSize={12}
               tickLine={false}
               axisLine={false}
               tick={{ transform: "translate(-3, 0)" }}
               tickFormatter={(value) => `$${value / 1000}k`}
             />
-            <XAxis
-              className="text-muted-foreground"
-              dataKey="date"
-              fontSize={12}
-              tickLine={false}
-              axisLine={false}
-            />
+            <XAxis dataKey="date" tickLine={false} axisLine={false} />
 
-            <Tooltip
-              cursor={{ stroke: "hsl(var(--mijnui-border))", strokeWidth: 1 }}
-              content={<ChartTooltip />}
-            />
+            <Tooltip content={<ChartTooltip />} />
 
-            <CartesianGrid
-              horizontal={false}
-              stroke="hsl(var(--mijnui-border))"
-              strokeDasharray={3}
-            />
+            <CartesianGrid horizontal={false} strokeDasharray={3} />
 
             <Area
               fill="hsl(var(--chart-1))"
@@ -82,9 +60,7 @@ const AreaChart04 = () => {
               dataKey="Revenue"
               type={"natural"}
               activeDot={{
-                color: "hsl(var(--chart-1))",
-                r: 3,
-                stroke: "white",
+                r: 5,
               }}
             />
 
@@ -95,9 +71,7 @@ const AreaChart04 = () => {
               dataKey="Expenses"
               type={"natural"}
               activeDot={{
-                color: "hsl(var(--chart-2))",
-                r: 3,
-                stroke: "white",
+                r: 5,
               }}
             />
 
@@ -108,7 +82,7 @@ const AreaChart04 = () => {
               iconSize={8}
             />
           </AreaChart>
-        </ResponsiveContainer>
+        </ChartContainer>
       </CardContent>
     </Card>
   )
