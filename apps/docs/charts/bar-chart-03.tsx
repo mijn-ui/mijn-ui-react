@@ -12,12 +12,11 @@ import {
   BarChart,
   CartesianGrid,
   Legend,
-  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from "recharts"
-import { ChartLegend, ChartTooltip } from "./chart"
+import { ChartContainer, ChartLegend, ChartTooltip } from "./chart"
 
 const chartData = [
   { date: "Jan 23", Revenue: 50000, Expenses: 32000 },
@@ -46,13 +45,9 @@ const BarChart03 = () => {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex h-64 w-[calc(543/16*1rem)] max-w-full items-center rounded-none text-xs">
-        <ResponsiveContainer width="100%" height="100%">
+        <ChartContainer>
           <BarChart accessibilityLayer data={chartData}>
-            <CartesianGrid
-              vertical={false}
-              stroke="hsl(var(--mijnui-border))"
-              strokeDasharray={3}
-            />
+            <CartesianGrid vertical={false} strokeDasharray={3} />
 
             <XAxis
               tickMargin={10}
@@ -62,18 +57,13 @@ const BarChart03 = () => {
             />
 
             <YAxis
-              className="text-muted-foreground"
-              fontSize={12}
               tickLine={false}
               axisLine={false}
               tick={{ transform: "translate(-3, 0)" }}
               tickFormatter={(value) => `$${value / 1000}k`}
             />
 
-            <Tooltip
-              cursor={{ fill: "hsl(var(--mijnui-accent))" }}
-              content={<ChartTooltip active />}
-            />
+            <Tooltip content={<ChartTooltip active />} />
 
             <Bar stackId="a" fill={`hsl(var(--chart-1))`} dataKey={"Revenue"} />
             <Bar
@@ -90,7 +80,7 @@ const BarChart03 = () => {
               iconSize={8}
             />
           </BarChart>
-        </ResponsiveContainer>
+        </ChartContainer>
       </CardContent>
     </Card>
   )

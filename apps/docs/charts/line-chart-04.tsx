@@ -12,12 +12,11 @@ import {
   Legend,
   Line,
   LineChart,
-  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from "recharts"
-import { ChartLegend, ChartTooltip } from "./chart"
+import { ChartContainer, ChartLegend, ChartTooltip } from "./chart"
 
 const chartData = [
   { date: "Jan 23", Revenue: 50000, Expenses: 32000 },
@@ -40,35 +39,20 @@ const LineChart04 = () => {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex h-64 w-[calc(543/16*1rem)] max-w-full items-center rounded-none text-xs">
-        <ResponsiveContainer width="100%" height="100%">
+        <ChartContainer>
           <LineChart accessibilityLayer data={chartData}>
             <YAxis
-              className="text-muted-foreground"
               width={36}
-              fontSize={12}
               tickLine={false}
               axisLine={false}
               tickFormatter={(value) => `$${value / 1000}k`}
             />
 
-            <XAxis
-              className="text-muted-foreground"
-              dataKey="date"
-              fontSize={12}
-              tickLine={false}
-              axisLine={false}
-            />
+            <XAxis dataKey="date" tickLine={false} axisLine={false} />
 
-            <Tooltip
-              cursor={{ stroke: "hsl(var(--mijnui-border))", strokeWidth: 1 }}
-              content={<ChartTooltip active />}
-            />
+            <Tooltip content={<ChartTooltip active />} />
 
-            <CartesianGrid
-              horizontal={false}
-              stroke="hsl(var(--mijnui-border))"
-              strokeDasharray={3}
-            />
+            <CartesianGrid horizontal={false} strokeDasharray={3} />
 
             <Line
               stroke="hsl(var(--chart-1))"
@@ -76,8 +60,7 @@ const LineChart04 = () => {
               dataKey="Revenue"
               type="natural"
               activeDot={{
-                color: "hsl(var(--chart-1))",
-                r: 3,
+                r: 5,
                 stroke: "hsl(var(--chart-1))",
               }}
             />
@@ -89,7 +72,7 @@ const LineChart04 = () => {
               dataKey="Expenses"
               activeDot={{
                 color: "hsl(var(--chart-2))",
-                r: 3,
+                r: 5,
                 stroke: "hsl(var(--chart-2))",
               }}
             />
@@ -101,7 +84,7 @@ const LineChart04 = () => {
               iconSize={8}
             />
           </LineChart>
-        </ResponsiveContainer>
+        </ChartContainer>
       </CardContent>
     </Card>
   )

@@ -7,16 +7,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@mijn-ui/react"
-import {
-  CartesianGrid,
-  Line,
-  LineChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts"
-import { ChartTooltip } from "./chart"
+import { CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts"
+import { ChartContainer, ChartTooltip } from "./chart"
 
 const chartData = [
   { date: "Jan 23", Revenue: 50000 },
@@ -35,35 +27,20 @@ const LineChart03 = () => {
         <CardDescription>Trends in monthly revenue.</CardDescription>
       </CardHeader>
       <CardContent className="flex h-64 w-[calc(543/16*1rem)] max-w-full items-center rounded-none text-xs">
-        <ResponsiveContainer width="100%" height="100%">
+        <ChartContainer>
           <LineChart accessibilityLayer data={chartData}>
             <YAxis
-              className="text-muted-foreground"
               width={36}
-              fontSize={12}
               tickLine={false}
               axisLine={false}
               tickFormatter={(value) => `$${value / 1000}k`}
             />
 
-            <XAxis
-              className="text-muted-foreground"
-              dataKey="date"
-              fontSize={12}
-              tickLine={false}
-              axisLine={false}
-            />
+            <XAxis dataKey="date" tickLine={false} axisLine={false} />
 
-            <Tooltip
-              cursor={{ stroke: "hsl(var(--mijnui-border))", strokeWidth: 1 }}
-              content={<ChartTooltip active />}
-            />
+            <Tooltip content={<ChartTooltip active />} />
 
-            <CartesianGrid
-              horizontal={false}
-              stroke="hsl(var(--mijnui-border))"
-              strokeDasharray={3}
-            />
+            <CartesianGrid horizontal={false} strokeDasharray={3} />
 
             <Line
               stroke="hsl(var(--chart-1))"
@@ -71,13 +48,11 @@ const LineChart03 = () => {
               type={"step"}
               dataKey="Revenue"
               activeDot={{
-                color: "hsl(var(--chart-1))",
-                r: 3,
-                stroke: "currentColor",
+                r: 5,
               }}
             />
           </LineChart>
-        </ResponsiveContainer>
+        </ChartContainer>
       </CardContent>
     </Card>
   )
