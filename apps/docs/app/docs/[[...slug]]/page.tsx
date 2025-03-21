@@ -14,6 +14,7 @@ import { ExternalLink } from "lucide-react"
 import { metadataImage } from "@/lib/metadata-image"
 import Alert from "@/app/components/mdx/alert"
 import ComponentPreview from "@/app/components/mdx/component-preview"
+import PreviewWrapper from "@/app/components/mdx/preview-wrapper"
 import { MijnUITabs, MijnUITabsContent } from "@/app/components/mdx/tabs"
 import { source } from "@/app/source"
 
@@ -95,6 +96,7 @@ export default async function Page(props: {
             MijnUITabs,
             MijnUITabsContent,
             ComponentPreview,
+            PreviewWrapper,
           }}
         />
       </DocsBody>
