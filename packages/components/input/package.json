@@ -33,7 +33,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "eslint-config-custom": "workspace:*",
-    "lucide-react": "^0.479.0",
+    "lucide-react": "^0.483.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "tsconfig": "workspace:*",
