@@ -4,29 +4,7 @@ description: A component for displaying critical information or notifications.
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/alert.ts
 ---
 
-import AlertColors from "@/examples/alert/alert-colors"
-import AlertExample from "@/examples/alert/alert-example"
-import AlertFilled from "@/examples/alert/alert-filled"
-import AlertOutline from "@/examples/alert/alert-outlined"
-
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <AlertExample />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/alert/alert-example.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="alert-example" />
 
 ## Installation
 
@@ -40,7 +18,7 @@ import AlertOutline from "@/examples/alert/alert-outlined"
   <MijnUITabsContent value="Manual">
   <Steps>
     <Step>
-    **Copy and paste the following code into `mijn-ui` folder.**
+    **Copy and paste the following code into your project**
 
     ```json doc-gen:file
       {
@@ -85,24 +63,7 @@ import { Alert, AlertDescription, AlertTitle } from "@mijn-ui/react-alert"
 
 The alert component offers five Colors: `success`, `info`, `warning`, `error`, and `default`:
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview className="md:p-10">
-      <AlertColors />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/alert/alert-colors.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="alert-colors" className="md:p-10" />
 
 ### Alert Variants
 
@@ -110,45 +71,11 @@ The alert component is available in three variants: `default`, `outlined`, and `
 
 #### Filled
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview className="md:p-10">
-      <AlertFilled />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/alert/alert-filled.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="alert-filled" className="md:p-10" />
 
 #### Outlined
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview className="md:p-10">
-      <AlertOutline />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/alert/alert-outlined.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="alert-outlined" className="md:p-10" />
 
 ---
 

@@ -4,27 +4,8 @@ description: A container for grouping and displaying related content or actions.
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/card.ts
 ---
 
-import CardExample from "@/examples/card/card-example"
-import StatsCardExample from "@/examples/card/card-stats"
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <CardExample />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/card/card-example.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="card-example" />
 
 ## Installation
 
@@ -37,7 +18,8 @@ import StatsCardExample from "@/examples/card/card-stats"
   <MijnUITabsContent value="Manual">
     <Steps>
       <Step>
-      **Copy and paste the following code into `mijn-ui` folder.**
+      **Copy and paste the following code into your project**
+
 
       ```json doc-gen:file
       {
@@ -90,24 +72,7 @@ import {
 
 ### Stats Card
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <StatsCardExample />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/card/card-stats.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="card-stats" />
 
 ---
 

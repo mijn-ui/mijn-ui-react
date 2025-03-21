@@ -8,11 +8,10 @@ import {
   DialogTrigger,
   cn,
 } from "@mijn-ui/react"
-import fs from "fs"
 import { DynamicCodeBlock } from "fumadocs-ui/components/dynamic-codeblock"
 import { Check, Copy, X } from "lucide-react"
-import path from "path"
 import CopyButton from "@/app/components/copy-button"
+import { getSourceCode } from "@/app/utils/get-source-code"
 import * as Charts from "./charts"
 
 const CHART_CONFIG = [
@@ -88,7 +87,7 @@ const ChartWrapper = ({
   children,
   ...props
 }: ChartWrapperProps) => {
-  const code = getChartCode(name)
+  const code = getSourceCode(`/charts/${name}.tsx`)
 
   return (
     <div
@@ -152,18 +151,6 @@ const ChartWrapper = ({
       {children}
     </div>
   )
-}
-
-const getChartCode = (chartName: string): string => {
-  try {
-    return fs.readFileSync(
-      path.resolve(process.cwd(), `charts/${chartName}.tsx`),
-      "utf8",
-    )
-  } catch (error) {
-    console.error(`Failed to load code for chart ${chartName}:`, error)
-    return `Error loading chart code for ${chartName}`
-  }
 }
 
 const BorderDecorator = () => (

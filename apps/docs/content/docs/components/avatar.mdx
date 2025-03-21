@@ -6,28 +6,7 @@ apiReference: https://www.radix-ui.com/primitives/docs/components/avatar#api-ref
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/avatar.ts
 ---
 
-import AvatarExample from "@/examples/avatar/avatar-example"
-import AvatarGroup from "@/examples/avatar/avatar-group"
-import AvatarSizes from "@/examples/avatar/avatar-sizes"
-
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <AvatarExample />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/avatar/avatar-example.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="avatar-example" />
 
 ## Installation
 
@@ -47,7 +26,8 @@ import AvatarSizes from "@/examples/avatar/avatar-sizes"
         ```
       </Step>
       <Step>
-        **Copy and paste the following code into `mijn-ui` folder.**
+        **Copy and paste the following code into your project**
+
 
         ```json doc-gen:file
           {
@@ -87,47 +67,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "@mijn-ui/react-avatar"
 
 ### Avatar Sizes
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <AvatarSizes />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/avatar/avatar-sizes.tsx",
-      "codeblock": {
-      "lang": "tsx",
-      "meta": ""
-    }
-    }
-    ```
-
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="avatar-sizes" />
 
 ### Avatar Group
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <AvatarGroup />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-    "file": "./examples/avatar/avatar-group.tsx",
-    "codeblock": {
-    "lang": "tsx",
-    "meta": ""
-    }
-  }
-  ```
-
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="avatar-group" />
 
 ---
 

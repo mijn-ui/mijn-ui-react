@@ -4,26 +4,7 @@ description: A structured layout for displaying tabular data.
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/table.ts
 ---
 
-import TableExample from "@/examples/table/table-example"
-
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview className="p-10">
-      <TableExample />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/table/table-example.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="table-example" className="p-10" />
 
 ## Installation
 
@@ -36,7 +17,8 @@ import TableExample from "@/examples/table/table-example"
   <MijnUITabsContent value="Manual">
     <Steps>
       <Step>
-      **Copy and paste the following code into `mijn-ui` folder.**
+      **Copy and paste the following code into your project**
+
 
       ```json doc-gen:file
         {

@@ -8,9 +8,6 @@ const withAnalyzer = createBundleAnalyzer({
 /** @type {import('next').NextConfig} */
 
 const config = withAnalyzer({
-  experimental: {
-    reactCompiler: true,
-  },
   reactStrictMode: true,
   output: "standalone",
   basePath: "/react",
