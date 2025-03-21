@@ -1,0 +1,118 @@
+---
+title: Chart
+description: Data visualization components built with Recharts for creating interactive charts and graphs.
+apiReference: https://recharts.org/en-US/api
+---
+
+<ComponentPreview name="bar-chart-01" />
+
+## Installation
+
+<Steps>
+    <Step>
+      **Install Required Dependicies**
+
+      ```package-install
+      recharts
+      ```
+
+    </Step>
+    <Step>
+      **Copy and paste the following code into your project**
+
+
+      ```json doc-gen:file
+        {
+          "file": "./charts/chart.tsx",
+          "codeblock": {
+            "lang": "tsx",
+            "meta": "title=\"components/chart.tsx\""
+          }
+        }
+      ```
+    </Step>
+</Steps>
+
+---
+
+<Alert>
+  [Browse all available chart examples with code snippets](/docs/charts)
+</Alert>
+
+## Usage
+
+Chart utilities work alongside Recharts components to provide consistent styling and simplify common patterns. Here's how to use them:
+
+```tsx
+import { 
+  Bar, 
+  BarChart, 
+  CartesianGrid, 
+  Legend, 
+  Tooltip, 
+  XAxis, 
+  YAxis 
+} from "recharts"
+import { ChartContainer, ChartTooltip, ChartLegend } from "@/components/chart"
+
+// Sample data
+const data = [
+  { month: "Jan", revenue: 12000, expenses: 8000 },
+  { month: "Feb", revenue: 15000, expenses: 7500 },
+  { month: "Mar", revenue: 18000, expenses: 9000 },
+  // ...more data
+]
+
+export function RevenueChart() {
+  return (
+    <div className="h-64 w-full">
+      <ChartContainer>
+        <BarChart data={data}>
+          {/* Grid and axes */}
+          <CartesianGrid vertical={false} strokeDasharray="3" />
+          <XAxis 
+            dataKey="month" 
+            tickLine={false} 
+            axisLine={false} 
+          />
+          <YAxis 
+            tickLine={false} 
+            axisLine={false}
+            tickFormatter={(value) => `$${value / 1000}k`} 
+          />
+          
+          {/* Enhanced tooltip */}
+          <Tooltip content={<ChartTooltip active />} />
+          
+          {/* Chart bars */}
+          <Bar dataKey="revenue" fill="hsl(var(--chart-1))" radius={4} />
+          <Bar dataKey="expenses" fill="hsl(var(--chart-2))" radius={4} />
+          
+          {/* Enhanced legend */}
+          <Legend 
+            formatter={(value) => <ChartLegend value={value} />}
+            iconType="circle"
+            iconSize={8}
+          />
+        </BarChart>
+      </ChartContainer>
+    </div>
+  )
+}
+```
+
+---
+
+## Examples
+
+### Bar Chart - Multiple With Legend
+
+<ComponentPreview name="bar-chart-04" />
+
+### Area Chart
+
+<ComponentPreview name="area-chart-04" />
+
+### Line Chart
+
+<ComponentPreview name="line-chart-04" />
