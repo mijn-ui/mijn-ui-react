@@ -5,27 +5,7 @@ docs: https://cmdk.paco.me
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/command.ts
 ---
 
-import CommandDialogExample from "@/examples/command/command-dialog"
-import CommandExample from "@/examples/command/command-example"
-
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <CommandExample />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/command/command-example.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="command-example" />
 
 ## Installation
 
@@ -51,7 +31,8 @@ import CommandExample from "@/examples/command/command-example"
         ```
       </Step>
       <Step>
-      **Copy and paste the following code into `mijn-ui` folder.**
+      **Copy and paste the following code into your project**
+
 
       ```json doc-gen:file
         {
@@ -113,24 +94,7 @@ import {
 
 ### Command Dialog
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <CommandDialogExample />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/command/command-dialog.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="command-dialog" />
 
 ---
 

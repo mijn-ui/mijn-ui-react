@@ -4,28 +4,7 @@ description: An input field with suggestions dropdown.
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/autocomplete.ts
 ---
 
-import AutocompleteExample from "@/examples/autocomplete/autocomplete-example"
-import AutocompleteWithScrollArea from "@/examples/autocomplete/autocomplete-example-2"
-import AutocompleteWithDialog from "@/examples/autocomplete/autocomplete-example-3"
-
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <AutocompleteExample />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/alert/alert-example.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="autocomplete-example" />
 
 ## Installation
 
@@ -46,7 +25,8 @@ import AutocompleteWithDialog from "@/examples/autocomplete/autocomplete-example
       [Popover component](/docs/components/popover)
     </Step>
     <Step>
-    **Copy and paste the following code into `mijn-ui` folder.**
+    **Copy and paste the following code into your project**
+
 
     ```json doc-gen:file
     {
@@ -96,45 +76,11 @@ import {
 
 ### Autocomplete With Scrollarea
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <AutocompleteWithScrollArea />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/autocomplete/autocomplete-example-2.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="autocomplete-example-2" />
 
 ### Autocomplete With Dialog
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <AutocompleteWithDialog />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/autocomplete/autocomplete-example-3.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="autocomplete-example-3" />
 
 ---
 

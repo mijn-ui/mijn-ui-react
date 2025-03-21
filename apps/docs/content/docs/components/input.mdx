@@ -4,30 +4,7 @@ description: A basic input field for user text entry.
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/input.ts
 ---
 
-import InputExample from "@/examples/input/input-example"
-import InputFloatingLabel from "@/examples/input/input-floating-label"
-import InputFloatingLabelIcon from "@/examples/input/input-floating-label-icon"
-import InputVariants from "@/examples/input/input-variants"
-import InputWithIcon from "@/examples/input/input-with-icon"
-
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <InputExample />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/input/input-example.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="input-example" />
 
 ## Installation
 
@@ -47,7 +24,7 @@ import InputWithIcon from "@/examples/input/input-with-icon"
         [Label component](/docs/components/label)
       </Step>
       <Step>
-        **Copy and paste the following code into  `mijn-ui` folder.**
+        **Copy and paste the following code into your project**
 
         ```json doc-gen:file
           {
@@ -80,87 +57,19 @@ import { Input } from "@mijn-ui/react-input"
 
 ### InputVariants
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview className="flex-col gap-6">
-      <InputVariants />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/input/input-variants.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="input-variants" className="flex-col gap-6" />
 
 ### Input with Icon
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <InputWithIcon />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/input/input-with-icon.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="input-with-icon" />
 
 ### Input With Floating Label
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <InputFloatingLabel />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/input/input-floating-label.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="input-floating-label" />
 
 ### Input Floating Label with Icon
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <InputFloatingLabelIcon />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/input/input-floating-label-icon.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="input-floating-label-icon" />
 
 ---
 

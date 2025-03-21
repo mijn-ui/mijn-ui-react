@@ -6,13 +6,9 @@ apiReference: https://www.radix-ui.com/primitives/docs/components/dropdown-menu#
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/dropdown-menu.ts
 ---
 
-import DropdownMenuCheckboxes from "@/examples/dropdown-menu/dropdown-menu-checkboxes"
-import DropdownMenuExample from "@/examples/dropdown-menu/dropdown-menu-example"
-import DropdownMenuRadioGroup from "@/examples/dropdown-menu/dropdown-menu-radio-group"
-
 <MijnUITabs items={["Preview", "Code"]}>
   <MijnUITabsContent value="Preview">
-    <ComponentPreview>
+    <ComponentPreview name="dropdown-menu-example">
       <DropdownMenuExample />
     </ComponentPreview>
   </MijnUITabsContent>
@@ -47,7 +43,7 @@ import DropdownMenuRadioGroup from "@/examples/dropdown-menu/dropdown-menu-radio
         ```
       </Step>
       <Step>
-        **Copy and paste the following code into  `mijn-ui` folder.**
+        **Copy and paste the following code into your project**
 
         ```json doc-gen:file
           {
@@ -99,7 +95,7 @@ import {
 
 <MijnUITabs items={["Preview", "Code"]}>
   <MijnUITabsContent value="Preview">
-    <ComponentPreview>
+    <ComponentPreview name="dropdown-menu-checkboxes">
       <DropdownMenuCheckboxes />
     </ComponentPreview>
   </MijnUITabsContent>
@@ -120,7 +116,7 @@ import {
 
 <MijnUITabs items={["Preview", "Code"]}>
   <MijnUITabsContent value="Preview">
-    <ComponentPreview>
+    <ComponentPreview name="dropdown-menu-radio-group">
       <DropdownMenuRadioGroup />
     </ComponentPreview>
   </MijnUITabsContent>

@@ -4,27 +4,7 @@ description: A placeholder for loading states or empty content.
 styleSource: https://github.com/mijn-ui/mijn-ui-react/blob/main/packages/theme/src/components/skeleton.ts
 ---
 
-import SkeletonCard from "@/examples/skeleton/skeleton-card"
-import SkeletonExample from "@/examples/skeleton/skeleton-example"
-
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <SkeletonExample />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/skeleton/skeleton-example.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="skeleton-example" />
 
 ## Installation
 
@@ -37,7 +17,8 @@ import SkeletonExample from "@/examples/skeleton/skeleton-example"
   <MijnUITabsContent value="Manual">
     <Steps>
       <Step>
-      **Copy and paste the following code into `mijn-ui` folder.**
+      **Copy and paste the following code into your project**
+
 
       ```json doc-gen:file
         {
@@ -73,24 +54,7 @@ import { Skeleton } from "@mijn-ui/react-skeleton"
 
 ### SkeletonCard
 
-<MijnUITabs items={["Preview", "Code"]}>
-  <MijnUITabsContent value="Preview">
-    <ComponentPreview>
-      <SkeletonCard />
-    </ComponentPreview>
-  </MijnUITabsContent>
-  <MijnUITabsContent value="Code">
-    ```json doc-gen:file
-    {
-      "file": "./examples/skeleton/skeleton-card.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-    ```
-  </MijnUITabsContent>
-</MijnUITabs>
+<ComponentPreview name="skeleton-card" />
 
 ---
 
