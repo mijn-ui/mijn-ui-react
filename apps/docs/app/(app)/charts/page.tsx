@@ -1,4 +1,6 @@
 import React from "react"
+import Link from "next/link"
+import COMPONENT_REGISTRY from "@/registry"
 import {
   Button,
   Dialog,
@@ -9,7 +11,7 @@ import {
   cn,
 } from "@mijn-ui/react"
 import { DynamicCodeBlock } from "fumadocs-ui/components/dynamic-codeblock"
-import { Check, Copy, X } from "lucide-react"
+import { ArrowRight, Check, Copy, X } from "lucide-react"
 import CopyButton from "@/app/components/copy-button"
 import { getSourceCode } from "@/app/utils/get-source-code"
 import * as Charts from "./charts"
@@ -46,6 +48,13 @@ const ChartsPage = () => {
             A collection of copy-paste-ready charts built with Recharts, <br />{" "}
             displaying various data trends in different styles.
           </p>
+
+          <Link
+            className="inline-flex items-center gap-2 underline decoration-primary"
+            href={"/docs/components/chart#installation"}
+          >
+            Installation <ArrowRight size={16} />
+          </Link>
         </div>
       </div>
 
@@ -87,7 +96,8 @@ const ChartWrapper = ({
   children,
   ...props
 }: ChartWrapperProps) => {
-  const code = getSourceCode(`/charts/${name}.tsx`)
+  const sourcePath = COMPONENT_REGISTRY[name]?.source
+  const code = getSourceCode(sourcePath)
 
   return (
     <div
