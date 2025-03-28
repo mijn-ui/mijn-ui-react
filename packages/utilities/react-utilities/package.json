@@ -30,7 +30,7 @@
     "@types/node": "22.9.0",
     "@types/react": "^19.0.0",
     "eslint-config-custom": "workspace:*",
-    "react": "19.0.0",
+    "react": "19.1.0",
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"
   },
