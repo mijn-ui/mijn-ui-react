@@ -1,5 +1,12 @@
 # @mijn-ui-react/avatar
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies [21eb31f]
+  - @mijn-ui/react-hooks@0.0.18
+
 ## 0.1.0
 
 ### Minor Changes
