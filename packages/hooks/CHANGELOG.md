@@ -1,5 +1,11 @@
 # @mijn-ui-react/hooks
 
+## 0.0.18
+
+### Patch Changes
+
+- 21eb31f: Fix peer deps issue.
+
 ## 0.0.16
 
 ### Patch Changes

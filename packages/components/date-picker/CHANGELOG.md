@@ -1,5 +1,12 @@
 # @mijn-ui-react/date-picker
 
+## 0.0.22
+
+### Patch Changes
+
+- @mijn-ui/react-popover@0.1.1
+- @mijn-ui/react-select@0.1.1
+
 ## 0.0.21
 
 ### Patch Changes

@@ -1,5 +1,30 @@
 # @mijn-ui/react
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies [21eb31f]
+  - @mijn-ui/react-hooks@0.0.18
+  - @mijn-ui/react-accordion@0.1.1
+  - @mijn-ui/react-alert@0.1.1
+  - @mijn-ui/react-alert-dialog@0.1.1
+  - @mijn-ui/react-autocomplete@0.0.22
+  - @mijn-ui/react-avatar@0.1.1
+  - @mijn-ui/react-card@0.1.1
+  - @mijn-ui/react-checkbox@0.1.1
+  - @mijn-ui/react-command@0.1.1
+  - @mijn-ui/react-dialog@0.1.1
+  - @mijn-ui/react-dropdown-menu@0.1.1
+  - @mijn-ui/react-pagination@0.1.1
+  - @mijn-ui/react-popover@0.1.1
+  - @mijn-ui/react-radio-group@0.1.1
+  - @mijn-ui/react-scroll-area@0.1.1
+  - @mijn-ui/react-select@0.1.1
+  - @mijn-ui/react-table@0.1.1
+  - @mijn-ui/react-tabs@0.1.1
+  - @mijn-ui/react-date-picker@0.0.22
+
 ## 0.1.0
 
 ### Minor Changes
