@@ -1,5 +1,13 @@
 # @mijn-ui-react/command
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies [21eb31f]
+  - @mijn-ui/react-hooks@0.0.18
+  - @mijn-ui/react-dialog@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
