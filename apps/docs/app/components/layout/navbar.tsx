@@ -83,7 +83,7 @@ const Navbar = () => {
             size="xs"
             className="bg-primary/20 text-primary hover:bg-primary/20 hover:text-primary"
           >
-            v0.0.1
+            v0.1.0
           </Badge>
 
           <div className="hidden gap-6 md:flex">{renderPages}</div>
