@@ -6,7 +6,7 @@ export function createMetadata(override: Metadata): Metadata {
     openGraph: {
       title: override.title ?? undefined,
       description: override.description ?? undefined,
-      url: "https://mijn-ui.com",
+      url: "https://mijn-ui.react.com",
       images: "/banner.png",
       siteName: "MijnUI",
       ...override.openGraph,
