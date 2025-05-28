@@ -16,7 +16,7 @@ NEXT_PUBLIC_APP_URL=
 1. **Clone the repository (if not already done):**
 
    ```
-   git clone --branch docker https://github.com/mijn-ui/mijn-ui
+   git clone --branch docker https://github.com/mijn-ui/mijn-ui-react
    cd mijn-ui
    ```
 
