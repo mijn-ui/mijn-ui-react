@@ -35,7 +35,7 @@ NEXT_PUBLIC_APP_URL=
 3. **Build the Docker image:**
 
    ```
-   docker build -t my-nextjs-app .
+   docker build --build-arg PROJECT=docs -t my-nextjs-app .
    ```
 
 4. **Run the Docker container:**
