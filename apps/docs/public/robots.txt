@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-Host: https://mijn-ui.react.com
-
-Sitemap: https://mijn-ui.react.com/sitemap.xml
