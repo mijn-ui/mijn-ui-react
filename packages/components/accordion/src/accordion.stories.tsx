@@ -118,7 +118,7 @@ const AccordionUnstyled = (args: AccordionProps) => (
       >
         Is it accessible
       </AccordionTrigger>
-      <AccordionContent className="text-sm bg-neutral-300 px-4 py-2 dark:bg-neutral-700">
+      <AccordionContent className="bg-neutral-300 px-4 py-2 text-sm dark:bg-neutral-700">
         Yes. It adheres to the WAI-ARIA design pattern.
       </AccordionContent>
     </AccordionItem>
@@ -132,7 +132,7 @@ const AccordionUnstyled = (args: AccordionProps) => (
       >
         Is it unstyled
       </AccordionTrigger>
-      <AccordionContent className="text-sm bg-neutral-300 px-4 py-2 dark:bg-neutral-700">
+      <AccordionContent className="bg-neutral-300 px-4 py-2 text-sm dark:bg-neutral-700">
         Yes, you can make the components unstyled by setting the{" "}
         <span className="font-semibold">unstyled</span> prop to{" "}
         <span className="font-semibold">true</span> on either a single component
@@ -149,7 +149,7 @@ const AccordionUnstyled = (args: AccordionProps) => (
       >
         Is it animated?
       </AccordionTrigger>
-      <AccordionContent className="text-sm bg-neutral-300 px-4 py-2 dark:bg-neutral-700">
+      <AccordionContent className="bg-neutral-300 px-4 py-2 text-sm dark:bg-neutral-700">
         Yes! You can animate the Accordion with CSS or JavaScript.
       </AccordionContent>
     </AccordionItem>
@@ -229,3 +229,39 @@ export const Unstyled: Story = {
     unstyled: true,
   },
 }
+
+const PlusIcon = ({ ...props }: React.ComponentProps<"svg">) => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M9.99998 3.3335V16.6668M16.6666 10.0002H3.33331"
+      stroke="#71717A"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)
+
+const MinusIcon = ({ ...props }: React.ComponentProps<"svg">) => (
+  <svg
+    stroke="currentColor"
+    fill="none"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    height="1em"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <line x1="5" y1="12" x2="19" y2="12"></line>
+  </svg>
+)

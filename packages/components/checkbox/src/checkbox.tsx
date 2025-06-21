@@ -32,7 +32,6 @@ const Checkbox = ({
   defaultChecked,
   unstyled,
   color,
-  size,
   className,
   classNames,
   ...props
@@ -42,7 +41,7 @@ const Checkbox = ({
     !!defaultChecked,
     ControlledOnCheckedChange,
   )
-  const styles = checkboxStyles({ color, size })
+  const styles = checkboxStyles({ color })
   const { base, indicator, icon } = createTVUnstyledSlots(styles, unstyled)
 
   return (
