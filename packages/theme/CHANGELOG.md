@@ -1,5 +1,11 @@
 # @mijn-ui/react-theme
 
+## 0.2.0
+
+### Minor Changes
+
+- f6d36c0: add new design
+
 ## 0.1.0
 
 ### Minor Changes
