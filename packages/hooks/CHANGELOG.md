@@ -1,5 +1,11 @@
 # @mijn-ui-react/hooks
 
+## 1.0.0
+
+### Patch Changes
+
+- @mijn-ui/react-core@1.0.0
+
 ## 0.0.18
 
 ### Patch Changes

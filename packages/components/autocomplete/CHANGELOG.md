@@ -1,5 +1,22 @@
 # @mijn-ui-react/autocomplete
 
+## 1.0.0
+
+### Minor Changes
+
+- f6d36c0: add new design
+
+### Patch Changes
+
+- Updated dependencies [f6d36c0]
+  - @mijn-ui/react-command@1.0.0
+  - @mijn-ui/react-popover@1.0.0
+  - @mijn-ui/react-skeleton@1.0.0
+  - @mijn-ui/react-theme@0.2.0
+  - @mijn-ui/shared-icons@0.1.0
+  - @mijn-ui/react-core@1.0.0
+  - @mijn-ui/react-hooks@1.0.0
+
 ## 0.0.22
 
 ### Patch Changes

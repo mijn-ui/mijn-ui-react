@@ -1,5 +1,48 @@
 # @mijn-ui/react
 
+## 0.2.0
+
+### Minor Changes
+
+- f6d36c0: add new design
+
+### Patch Changes
+
+- Updated dependencies [f6d36c0]
+  - @mijn-ui/react-accordion@1.0.0
+  - @mijn-ui/react-alert@1.0.0
+  - @mijn-ui/react-alert-dialog@1.0.0
+  - @mijn-ui/react-autocomplete@1.0.0
+  - @mijn-ui/react-avatar@1.0.0
+  - @mijn-ui/react-badge@1.0.0
+  - @mijn-ui/react-button@1.0.0
+  - @mijn-ui/react-calendar@1.0.0
+  - @mijn-ui/react-card@1.0.0
+  - @mijn-ui/react-checkbox@1.0.0
+  - @mijn-ui/react-collapsible@0.2.0
+  - @mijn-ui/react-command@1.0.0
+  - @mijn-ui/react-date-picker@1.0.0
+  - @mijn-ui/react-dialog@1.0.0
+  - @mijn-ui/react-dropdown-menu@1.0.0
+  - @mijn-ui/react-input@1.0.0
+  - @mijn-ui/react-label@1.0.0
+  - @mijn-ui/react-pagination@1.0.0
+  - @mijn-ui/react-popover@1.0.0
+  - @mijn-ui/react-progress@1.0.0
+  - @mijn-ui/react-radio-group@1.0.0
+  - @mijn-ui/react-scroll-area@1.0.0
+  - @mijn-ui/react-select@1.0.0
+  - @mijn-ui/react-separator@1.0.0
+  - @mijn-ui/react-skeleton@1.0.0
+  - @mijn-ui/react-switch@1.0.0
+  - @mijn-ui/react-table@1.0.0
+  - @mijn-ui/react-tabs@1.0.0
+  - @mijn-ui/react-textarea@1.0.0
+  - @mijn-ui/react-theme@0.2.0
+  - @mijn-ui/shared-icons@0.1.0
+  - @mijn-ui/react-core@1.0.0
+  - @mijn-ui/react-hooks@1.0.0
+
 ## 0.1.1
 
 ### Patch Changes
