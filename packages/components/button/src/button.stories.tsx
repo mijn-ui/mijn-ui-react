@@ -8,9 +8,7 @@ const meta: Meta<typeof Button> = {
     layout: "centered",
   },
   args: {
-    variant: "filled",
-    color: "default",
-    radius: "md",
+    variant: "default",
     size: "md",
     iconOnly: false,
     loading: false,
@@ -22,30 +20,12 @@ const meta: Meta<typeof Button> = {
     variant: {
       type: "string",
       control: "select",
-      options: ["filled", "outlined", "ghost", "subtle"],
-    },
-    color: {
-      type: "string",
-      control: "select",
-      options: [
-        "default",
-        "primary",
-        "secondary",
-        "success",
-        "info",
-        "warning",
-        "danger",
-      ],
-    },
-    radius: {
-      type: "string",
-      control: "select",
-      options: ["none", "sm", "md", "lg", "full"],
+      options: ["default", "primary", "danger", "ghost"],
     },
     size: {
       type: "string",
       control: "select",
-      options: ["xs", "sm", "md", "lg", "xl"],
+      options: ["sm", "md", "lg"],
     },
   },
 }
@@ -54,83 +34,37 @@ export default meta
 type Story = StoryObj<typeof Button>
 
 const ButtonTemplate = (args: ButtonProps) => {
-  return <Button {...args}>Button</Button>
-}
-
-const ButtonColors = (args: ButtonProps) => {
   return (
-    <div className="flex items-center gap-8">
-      <Button {...args}>Default</Button>
-      <Button {...args} color="primary">
-        Primary
-      </Button>
-      <Button {...args} color="secondary">
-        Secondary
-      </Button>
-      <Button {...args} color="success">
-        Success
-      </Button>
-      <Button {...args} color="info">
-        Info
-      </Button>
-      <Button {...args} color="warning">
-        Warning
-      </Button>
-      <Button {...args} color="danger">
-        Danger
-      </Button>
-    </div>
+    <Button {...args}>
+      <CircleIcon />
+      <p className="px-1">Button</p>
+      <CircleIcon />
+    </Button>
   )
 }
 
 const ButtonVariants = (args: ButtonProps) => {
   return (
-    <div className="flex flex-col items-center gap-12">
-      <div>
-        <h3 className="text-muted-foreground mb-3 w-full text-start font-semibold">
-          Filled
-        </h3>
-        <ButtonColors variant="filled" {...args} />
-      </div>
-      <div>
-        <h3 className="text-muted-foreground mb-3 w-full text-start font-semibold">
-          Outlined
-        </h3>
-        <ButtonColors variant="outlined" />
-      </div>
-      <div>
-        <h3 className="text-muted-foreground mb-3 w-full text-start font-semibold">
-          Subtle
-        </h3>
-        <ButtonColors variant="subtle" />
-      </div>
-      <div>
-        <h3 className="text-muted-foreground mb-3 w-full text-start font-semibold">
-          Ghost
-        </h3>
-        <ButtonColors variant="ghost" />
-      </div>
-    </div>
-  )
-}
-
-const ButtonRadius = (args: ButtonProps) => {
-  return (
-    <div className="flex items-center gap-8">
-      <Button {...args} className="px-5">
-        none
+    <div className="flex flex-col items-center gap-8 sm:flex-row">
+      <Button {...args}>
+        <CircleIcon />
+        <p className="px-1">Button</p>
+        <CircleIcon />
       </Button>
-      <Button {...args} radius="sm" className="px-6">
-        sm
+      <Button {...args} variant="primary">
+        <CircleIcon />
+        <p className="px-1">Button</p>
+        <CircleIcon />
       </Button>
-      <Button {...args} radius="md" className="px-6">
-        md
+      <Button {...args} variant="danger">
+        <CircleIcon />
+        <p className="px-1">Button</p>
+        <CircleIcon />
       </Button>
-      <Button {...args} radius="lg" className="px-7">
-        lg
-      </Button>
-      <Button {...args} radius="full" className="px-6">
-        full
+      <Button {...args} variant="ghost">
+        <CircleIcon />
+        <p className="px-1">Button</p>
+        <CircleIcon />
       </Button>
     </div>
   )
@@ -139,18 +73,36 @@ const ButtonRadius = (args: ButtonProps) => {
 const ButtonSizes = (args: ButtonProps) => {
   return (
     <div className="flex items-center gap-8">
-      <Button {...args}>xs</Button>
       <Button {...args} size="sm">
-        sm
+        <CircleIcon />
+        <p className="px-1">Button</p>
+        <CircleIcon />
       </Button>
       <Button {...args} size="md">
-        md
+        <CircleIcon />
+        <p className="px-1">Button</p>
+        <CircleIcon />
       </Button>
       <Button {...args} size="lg">
-        lg
+        <CircleIcon />
+        <p className="px-1">Button</p>
+        <CircleIcon />
       </Button>
-      <Button {...args} size="xl">
-        xl
+    </div>
+  )
+}
+
+const ButtonIconOnly = (args: ButtonProps) => {
+  return (
+    <div className="flex items-center gap-8">
+      <Button {...args} size="sm">
+        <CircleIcon />
+      </Button>
+      <Button {...args} size="md">
+        <CircleIcon />
+      </Button>
+      <Button {...args} size="lg">
+        <CircleIcon />
       </Button>
     </div>
   )
@@ -160,7 +112,7 @@ const ButtonUnstyled = (args: ButtonProps) => {
   return (
     <ButtonTemplate
       {...args}
-      className="bg-muted flex gap-2 px-4 py-2 disabled:pointer-events-none disabled:opacity-80 disabled:brightness-75"
+      className="bg-muted flex items-center gap-2 px-4 py-2 disabled:pointer-events-none disabled:opacity-80 disabled:brightness-75"
     />
   )
 }
@@ -169,32 +121,21 @@ export const Default: Story = {
   render: ButtonTemplate,
 }
 
-export const Colors: Story = {
-  render: ButtonColors,
-}
-
 export const Variants: Story = {
   render: ButtonVariants,
-}
-
-export const Radius: Story = {
-  render: ButtonRadius,
-  args: {
-    radius: "none",
-  },
 }
 
 export const Sizes: Story = {
   render: ButtonSizes,
   args: {
-    size: "xs",
+    size: "sm",
   },
 }
 
 export const IconOnly: Story = {
-  render: ButtonSizes,
+  render: ButtonIconOnly,
   args: {
-    size: "xs",
+    size: "sm",
     iconOnly: true,
   },
 }
@@ -205,3 +146,29 @@ export const Unstyled: Story = {
     unstyled: true,
   },
 }
+
+const CircleIcon = () => (
+  <svg
+    width="1em"
+    height="1em"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_2010_3409)">
+      <circle
+        cx="9.99984"
+        cy="9.99996"
+        r="8.33333"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_2010_3409">
+        <rect width="20" height="20" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+)

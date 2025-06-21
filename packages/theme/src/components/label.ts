@@ -3,7 +3,7 @@ import { tv } from "../utils/tv"
 
 const labelStyles = tv({
   slots: {
-    base: "text-small font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-disabled",
+    base: "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
   },
 })
 

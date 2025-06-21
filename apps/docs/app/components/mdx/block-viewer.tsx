@@ -17,7 +17,7 @@ const BlockViewer = ({ name }: BlockerViewerProps) => {
       <div className="grid w-full gap-4">
         <ResizablePanelGroup direction="horizontal" className="relative z-10">
           <ResizablePanel
-            className="relative aspect-[4/2.5] rounded-xl border-small bg-background md:aspect-auto"
+            className="relative aspect-[4/2.5] rounded-xl borderbg-background md:aspect-auto"
             defaultSize={100}
             minSize={30}
           >

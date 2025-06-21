@@ -47,7 +47,7 @@ const KeyFeaturesPlayground = () => {
 
   return (
     <figure className="not-prose w-full">
-      <div className="flex h-80 w-full flex-col items-center overflow-hidden rounded-medium border-small sm:flex-row">
+      <div className="flex h-80 w-full flex-col items-center overflow-hidden rounded-md bordersm:flex-row">
         <div className="flex h-full min-h-32 flex-auto items-center justify-center bg-background">
           <Button {...buttonOptions} iconOnly={iconOnly}>
             {iconOnly ? "M" : "MijnUI"}
@@ -122,7 +122,7 @@ const CheckboxWithLabel = ({
       checked={checked}
       onCheckedChange={onCheckedChange}
     />
-    <Label className="text-small" htmlFor={id}>
+    <Label className="text-sm" htmlFor={id}>
       {label}
     </Label>
   </div>
@@ -149,7 +149,7 @@ const RadioGroupWithOptions = ({
     value={value}
     onValueChange={onValueChange}
   >
-    <p className="text-small">{label}</p>
+    <p className="text-sm">{label}</p>
     {Object.entries(options).map(
       ([variantKey, variantValue], index) =>
         index <= maxOption && (

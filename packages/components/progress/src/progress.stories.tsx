@@ -17,7 +17,7 @@ export default meta
 type Story = StoryObj<typeof Progress>
 
 const ProgressTemplate = (args: ProgressProps) => {
-  const MAX_VALUE = 100
+  const MAX_VALUE = 25
   const [value, setValue] = React.useState<number>(0)
   const intervalRef = React.useRef<NodeJS.Timeout | null>(null)
 
@@ -44,25 +44,12 @@ const ProgressTemplate = (args: ProgressProps) => {
 
   return (
     <div className="w-80 space-y-1">
-      <div className="text-foreground text-small flex items-center justify-between font-medium">
-        <h5>Progress Label</h5>
-        <p>{value}%</p>
-      </div>
-      <Progress
-        value={value}
-        classNames={
-          args.unstyled
-            ? {
-                base: "h-2 overflow-hidden",
-                indicator: "bg-muted size-full",
-              }
-            : {}
-        }
-        {...args}
-      />
-      <div className="text-muted-foreground text-tiny flex items-center justify-between">
-        <p>min</p>
-        <p>max</p>
+      <h5 className="text-foreground flex items-center justify-between text-sm font-medium leading-none">
+        Downloading
+      </h5>
+      <div className="flex items-center gap-2">
+        <Progress value={value} {...args} />
+        <p className="text-foreground text-xs font-medium">{value}%</p>
       </div>
     </div>
   )

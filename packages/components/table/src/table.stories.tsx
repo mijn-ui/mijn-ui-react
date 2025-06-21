@@ -27,15 +27,8 @@ type Story = StoryObj<typeof Table>
 const TableTemplate = (args: TableProps) => {
   return (
     <div className=" border-main-border overflow-auto rounded-xl border">
-      <Table
-        classNames={
-          args.unstyled
-            ? { headerCell: "text-left px-4 py-2", cell: "px-4 py-2" }
-            : {}
-        }
-        {...args}
-      >
-        <TableHeader className="bg-accent">
+      <Table {...args}>
+        <TableHeader>
           <TableRow>
             <TableHeaderCell>Customer</TableHeaderCell>
             <TableHeaderCell>Date/Time</TableHeaderCell>
@@ -48,7 +41,7 @@ const TableTemplate = (args: TableProps) => {
           </TableRow>
         </TableHeader>
 
-        <TableBody className="bg-surface">
+        <TableBody>
           <TableRow>
             <TableCell>Alex Cooper</TableCell>
             <TableCell className="min-w-32">

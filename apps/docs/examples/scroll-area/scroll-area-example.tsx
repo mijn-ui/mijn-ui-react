@@ -8,12 +8,12 @@ const tags = Array.from({ length: 50 }).map(
 
 const ScrollAreaExample = () => {
   return (
-    <ScrollArea className="h-72 w-48 rounded-medium border-small bg-card">
+    <ScrollArea className="h-72 w-48 rounded-md borderbg-card">
       <div className="p-4">
-        <h4 className="mb-4 text-small font-medium leading-none">Tags</h4>
+        <h4 className="mb-4 text-sm font-medium leading-none">Tags</h4>
         {tags.map((tag) => (
           <React.Fragment key={tag}>
-            <div key={tag} className="text-small">
+            <div key={tag} className="text-sm">
               {tag}
             </div>
             <Separator className="my-2" />

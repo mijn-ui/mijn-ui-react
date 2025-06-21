@@ -31,7 +31,7 @@ const ScreenState: React.FC<ScreenStateProps> = ({
       <CardContent unstyled className="space-y-1">
         <CardTitle
           unstyled
-          className="text-large font-medium text-foreground sm:text-xl"
+          className="text-lg font-medium text-foreground sm:text-xl"
         >
           {title}
         </CardTitle>

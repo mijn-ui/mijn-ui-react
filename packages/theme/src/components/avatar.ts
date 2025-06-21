@@ -5,36 +5,29 @@ const avatarGroupStyles = tv({
   slots: {
     group: "flex items-center justify-center -space-x-2",
     groupRemainChildren:
-      "text-muted-foreground !ml-1.5 flex items-center justify-center text-tiny",
+      "text-secondary-foreground !ml-1.5 flex items-center justify-center text-xs",
   },
 })
 
 const avatarStyles = tv({
   slots: {
-    base: "inline-block relative shrink-0 overflow-hidden",
-    image: "aspect-square size-full object-cover",
-    fallback: "bg-muted flex size-full items-center justify-center",
+    base: "relative flex shrink-0 items-center justify-center",
+    image: "aspect-square size-full rounded-full object-cover",
+    fallback:
+      "border-border-primary-subtle bg-primary-subtle text-primary-foreground-subtle flex size-full items-center justify-center rounded-full border font-medium leading-none",
   },
   variants: {
     size: {
-      xxl: "size-16 text-medium",
-      xl: "size-14 text-small",
-      lg: "size-12 text-small",
-      md: "size-10 text-small",
-      sm: "size-8 text-tiny",
-      xs: "size-6 text-tiny",
-    },
-    radius: {
-      none: "rounded-none",
-      sm: "rounded-small",
-      md: "rounded-medium",
-      lg: "rounded-large",
-      full: "rounded-full",
+      xl: "size-20 text-3xl",
+      lg: "size-16 text-2xl",
+      md: "size-14 text-xl",
+      sm: "size-12 text-base",
+      xs: "size-10 text-sm",
+      "2xs": "size-8 text-xs",
     },
   },
   defaultVariants: {
     size: "md",
-    radius: "full",
   },
 })
 

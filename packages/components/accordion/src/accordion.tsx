@@ -56,10 +56,9 @@ const Accordion = ({
   className,
   classNames,
   unstyled = false,
-  variant,
   ...props
 }: AccordionProps) => {
-  const styles = accordionStyles({ variant })
+  const styles = accordionStyles()
   const { base } = createTVUnstyledSlots({ base: styles.base }, unstyled)
 
   return (

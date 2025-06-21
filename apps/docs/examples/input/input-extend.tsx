@@ -23,15 +23,15 @@ export const MyInput = extendVariants(Input, {
     size: {
       xs: {
         wrapper: "",
-        base: "h-6 min-h-6 px-1 text-tiny",
+        base: "h-6 min-h-6 px-1 text-xs",
       },
       md: {
         wrapper: "",
-        base: "h-10 min-h-10 text-small",
+        base: "h-10 min-h-10 text-sm",
       },
       xl: {
         wrapper: "",
-        base: "h-14 min-h-14 text-medium",
+        base: "h-14 min-h-14 text-base",
       },
     },
     radius: {
@@ -39,13 +39,13 @@ export const MyInput = extendVariants(Input, {
         base: "rounded-none",
       },
       sm: {
-        base: "rounded-small",
+        base: "rounded-sm",
       },
       md: {
-        base: "rounded-medium",
+        base: "rounded-md",
       },
       lg: {
-        base: "rounded-large",
+        base: "rounded-lg",
       },
       full: {
         base: "rounded-full",

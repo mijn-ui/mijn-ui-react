@@ -44,26 +44,26 @@ export default {
         dividerWeight: "1px", // default height for the divider component
         disabledOpacity: 0.5, // opacity for disabled components
         fontSize: {
-          tiny: "0.75rem", // text-tiny
-          small: "0.875rem", // text-small
-          medium: "1rem", // text-medium
-          large: "1.125rem", // text-large
+          tiny: "0.75rem", // text-xs
+          small: "0.875rem", // text-sm
+          medium: "1rem", // text-base
+          large: "1.125rem", // text-lg
         },
         lineHeight: {
-          tiny: "1rem", // text-tiny
-          small: "1.25rem", // text-small
-          medium: "1.5rem", // text-medium
-          large: "1.75rem", // text-large
+          tiny: "1rem", // text-xs
+          small: "1.25rem", // text-sm
+          medium: "1.5rem", // text-base
+          large: "1.75rem", // text-lg
         },
         radius: {
-          small: "4px", // rounded-small
-          medium: "8px", // rounded-medium
-          large: "12px", // rounded-large
+          small: "4px", // rounded-sm
+          medium: "8px", // rounded-md
+          large: "12px", // rounded-lg
         },
         borderWidth: {
-          small: "1px", // border-small
+          small: "1px", // border-sm
           medium: "2px", // border-medium (default)
-          large: "3px", // border-large
+          large: "3px", // border-lg
         },
       },
       themes: {
@@ -71,9 +71,9 @@ export default {
           layout: {
             hoverOpacity: 0.8, // opacity when hovered
             boxShadow: {
-              small: "0px 0px 5px 0px rgb(0 0 0 / 0.05)", // shadow-small
+              small: "0px 0px 5px 0px rgb(0 0 0 / 0.05)", // shadow-sm
               medium: "0px 0px 15px 0px rgb(0 0 0 / 0.1)", // shadow-medium
-              large: "0px 0px 30px 0px rgb(0 0 0 / 0.15)", // shadow-large
+              large: "0px 0px 30px 0px rgb(0 0 0 / 0.15)", // shadow-lg
             },
           },
         },
@@ -113,15 +113,15 @@ These variables can be used in your styles:
 ```css
 /* Default prefix */
 .my-button {
-  font-size: var(--mijnui-font-size-small);
-  line-height: var(--mijnui-line-height-small);
+  font-size: var(--mijnui-font-size-sm);
+  line-height: var(--mijnui-line-height-sm);
   border-radius: var(--mijnui-radius-medium);
 }
 
 /* Custom prefix */
 .my-component {
-  font-size: var(--myapp-font-size-small);
-  line-height: var(--myapp-line-height-small);
+  font-size: var(--myapp-font-size-sm);
+  line-height: var(--myapp-line-height-sm);
   border-radius: var(--myapp-radius-medium);
 }
 ```

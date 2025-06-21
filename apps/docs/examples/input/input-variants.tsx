@@ -4,7 +4,7 @@ const InputVariants = () => {
   return (
     <>
       <div className="flex flex-col gap-2">
-        <p className="text-small font-medium">Filled / Default</p>
+        <p className="text-sm font-medium">Filled / Default</p>
         <Input
           classNames={{ wrapper: "w-80" }}
           variant="filled"
@@ -12,7 +12,7 @@ const InputVariants = () => {
         />
       </div>
       <div className="flex flex-col gap-2">
-        <p className="text-small font-medium">Underline</p>
+        <p className="text-sm font-medium">Underline</p>
         <Input
           classNames={{ wrapper: "w-80" }}
           variant="underline"

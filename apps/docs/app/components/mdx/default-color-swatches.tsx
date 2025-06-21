@@ -128,10 +128,10 @@ const ColorSwatch = ({ color, label }: { color?: string; label: string }) => {
     <Tooltip open={isCopied}>
       <TooltipTrigger
         onClick={handleCopy}
-        className="group relative flex size-24 shrink-0 cursor-pointer flex-col items-center justify-center rounded-medium border border-border p-2 text-tiny shadow-small transition-opacity duration-300 hover:opacity-hover md:size-28"
+        className="group relative flex size-24 shrink-0 cursor-pointer flex-col items-center justify-center rounded-md border border-border p-2 text-xs shadow-sm transition-opacity duration-300 hover:opacity-hover md:size-28"
         style={style}
       >
-        <span className="absolute right-2 top-2 hidden text-tiny group-hover:block">
+        <span className="absolute right-2 top-2 hidden text-xs group-hover:block">
           {isCopied ? (
             <Check className="size-[1em]" />
           ) : (

@@ -5,8 +5,8 @@ import { buttonStyles } from "./button"
 const paginationStyles = tv({
   slots: {
     base: "",
-    content: "flex items-center gap-2",
-    list: "flex flex-row items-center gap-1",
+    content: "flex w-full items-center gap-4",
+    list: "flex flex-row items-center",
     listItem: "",
     previousBtn: "",
     previousElipsis: "",
@@ -16,32 +16,34 @@ const paginationStyles = tv({
   variants: {
     active: {
       true: {
-        listItem: buttonStyles({
-          variant: "outlined",
-          iconOnly: true,
-        }).base(),
+        listItem: [
+          buttonStyles({
+            variant: "ghost",
+            iconOnly: true,
+          }).base(),
+          "bg-secondary",
+        ],
       },
       false: {
-        listItem: buttonStyles({
-          variant: "ghost",
-          iconOnly: true,
-        }).base(),
+        listItem: [
+          buttonStyles({
+            variant: "ghost",
+            iconOnly: true,
+          }).base(),
+          "text-muted-foreground",
+        ],
       },
     },
   },
   compoundSlots: [
     {
       slots: ["previousBtn", "nextBtn"],
-      class: buttonStyles({
-        variant: "ghost",
-
-        size: "md",
-        className: "gap-1 font-medium",
-      }).base(),
+      class: buttonStyles({ size: "sm" }).base(),
     },
     {
       slots: ["previousElipsis", "nextElipsis"],
-      class: "flex size-9 items-center justify-center [&_svg]:size-4",
+      class:
+        "text-muted-foreground flex size-8 items-center justify-center [&_svg]:size-4",
     },
   ],
 })

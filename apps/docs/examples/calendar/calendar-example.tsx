@@ -11,7 +11,7 @@ const CalendarExample = () => {
       mode="single"
       selected={date}
       onSelect={setDate}
-      className="rounded-large border"
+      className="rounded-lg border"
     />
   )
 }

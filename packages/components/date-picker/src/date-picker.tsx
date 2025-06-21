@@ -67,7 +67,6 @@ const CalendarDatePicker = ({
   yearsRange = 10,
   onDateSelect,
   variant,
-  color,
   ...props
 }: CalendarDatePickerProps) => {
   const [isPopoverOpen, setIsPopoverOpen] = React.useState(false)
@@ -378,7 +377,7 @@ const CalendarDatePicker = ({
             {...props}
             className={cn(
               "w-auto",
-              buttonStyles({ color, variant, className }).base(),
+              buttonStyles({ variant, className }).base(),
             )}
             onClick={handleTogglePopover}
             suppressHydrationWarning

@@ -25,13 +25,13 @@ const ComponentPreview = ({
       {!hideCode && (
         <TabsList className="mb-2 h-12 w-full justify-start rounded-none border-b !bg-transparent">
           <TabsTrigger
-            className="rounded-medium data-[state=active]:bg-default"
+            className="rounded-md data-[state=active]:bg-default"
             value="preview"
           >
             Preview
           </TabsTrigger>
           <TabsTrigger
-            className="rounded-medium data-[state=active]:bg-default"
+            className="rounded-md data-[state=active]:bg-default"
             value="code"
           >
             Code

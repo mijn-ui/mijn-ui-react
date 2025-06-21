@@ -23,7 +23,7 @@ const AreaChart03 = () => {
   return (
     <Card className="flex size-full min-h-80 flex-col items-center justify-between gap-4">
       <CardHeader className="flex w-full flex-col items-start space-y-0">
-        <CardTitle className="text-large">Area Chart - Step</CardTitle>
+        <CardTitle className="text-lg">Area Chart - Step</CardTitle>
         <CardDescription>Trends in monthly revenue.</CardDescription>
       </CardHeader>
       <CardContent className="flex h-64 w-[calc(543/16*1rem)] max-w-full items-center rounded-none text-xs">

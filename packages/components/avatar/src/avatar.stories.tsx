@@ -46,32 +46,32 @@ const AvatarSizes = (args: AvatarProps) => {
     <div className="flex items-center gap-3">
       <Avatar {...args}>
         <AvatarImage src="" alt="invalid-image" />
-        <AvatarFallback>xs</AvatarFallback>
+        <AvatarFallback>EF</AvatarFallback>
+      </Avatar>
+
+      <Avatar size="xs">
+        <AvatarImage src="" alt="invalid-image" />
+        <AvatarFallback>EF</AvatarFallback>
       </Avatar>
 
       <Avatar size="sm">
         <AvatarImage src="" alt="invalid-image" />
-        <AvatarFallback>sm</AvatarFallback>
+        <AvatarFallback>EF</AvatarFallback>
       </Avatar>
 
       <Avatar size="md">
         <AvatarImage src="" alt="invalid-image" />
-        <AvatarFallback>md</AvatarFallback>
+        <AvatarFallback>EF</AvatarFallback>
       </Avatar>
 
       <Avatar size="lg">
         <AvatarImage src="" alt="invalid-image" />
-        <AvatarFallback>lg</AvatarFallback>
+        <AvatarFallback>EF</AvatarFallback>
       </Avatar>
 
       <Avatar size="xl">
         <AvatarImage src="" alt="invalid-image" />
-        <AvatarFallback>xl</AvatarFallback>
-      </Avatar>
-
-      <Avatar size="xxl">
-        <AvatarImage src="" alt="invalid-image" />
-        <AvatarFallback>xxl</AvatarFallback>
+        <AvatarFallback>EF</AvatarFallback>
       </Avatar>
     </div>
   )
@@ -119,7 +119,7 @@ const AvatarUnstyled = (args: AvatarProps) => {
       <AvatarImage
         src="https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D"
         alt="anthony"
-        className="text-small size-10 object-cover"
+        className="text-sm size-10 object-cover"
       />
       <AvatarFallback>xs</AvatarFallback>
     </Avatar>
@@ -133,12 +133,15 @@ export const Default: Story = {
 export const Sizes: Story = {
   render: AvatarSizes,
   args: {
-    size: "xs",
+    size: "2xs",
   },
 }
 
 export const Group: Story = {
   render: AvatarGroup,
+  args: {
+    size: "2xs",
+  },
 }
 
 export const Unstyled: Story = {

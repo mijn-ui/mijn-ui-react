@@ -24,7 +24,7 @@ export default async function Blocks(props: {
         <h1 className="text-3xl font-bold md:text-4xl md:font-extrabold">
           {page.data.title}
         </h1>
-        <p className="text-large text-fd-muted-foreground">
+        <p className="text-lg text-fd-muted-foreground">
           {page.data.description}
         </p>
       </div>

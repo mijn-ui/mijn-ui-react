@@ -23,7 +23,7 @@ const LineChart01 = () => {
   return (
     <Card className="flex size-full min-h-80 flex-col items-center justify-between gap-4">
       <CardHeader className="flex w-full flex-col items-start space-y-0">
-        <CardTitle className="text-large">Line Chart</CardTitle>
+        <CardTitle className="text-lg">Line Chart</CardTitle>
         <CardDescription>Trends in monthly revenue.</CardDescription>
       </CardHeader>
       <CardContent className="flex h-64 w-[calc(543/16*1rem)] max-w-full items-center rounded-none text-xs">

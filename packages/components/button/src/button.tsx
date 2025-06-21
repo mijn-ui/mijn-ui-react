@@ -22,10 +22,8 @@ const Button = ({
   unstyled,
   className,
   classNames,
-  color,
   variant,
   size,
-  radius,
   iconOnly,
   loading,
   disabled,
@@ -34,7 +32,7 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   const Component = asChild ? Slot : "button"
-  const styles = buttonStyles({ color, variant, size, radius, iconOnly })
+  const styles = buttonStyles({ variant, size, iconOnly })
   const { base, icon } = createTVUnstyledSlots(styles, unstyled)
 
   return (

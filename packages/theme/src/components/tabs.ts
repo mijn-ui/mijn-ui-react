@@ -1,20 +1,17 @@
 import { VariantProps } from "tailwind-variants"
-import { disabledClasses } from "../utils/classes"
 import { tv } from "../utils/tv"
 
 const tabsStyles = tv({
   slots: {
     base: "",
-    list: "bg-background text-muted-foreground inline-flex h-10 items-center justify-center rounded-large p-1",
+    list: "flex flex-col items-stretch sm:flex-row sm:items-center",
     trigger: [
-      ...disabledClasses,
-      "focus-visible:ring-ring data-[state=active]:bg-default data-[state=active]:text-default-foreground inline-flex items-center justify-center whitespace-nowrap rounded-medium px-3 py-1.5 text-small font-medium transition-all focus-visible:outline-none focus-visible:ring-1 data-[state=active]:shadow-small",
+      "text-secondary-foreground hover:bg-secondary focus-visible:bg-secondary active:bg-secondary/70 data-[state=active]:border-b-border-primary data-[state=active]:text-primary-emphasis data-[state=active]:hover:text-primary-emphasis inline-flex h-9 items-center justify-center gap-1.5 border-b px-3 text-sm font-normal leading-none outline-none duration-300 ease-in-out disabled:pointer-events-none disabled:opacity-50 data-[state=active]:border-b-2 data-[state=active]:font-medium data-[state=active]:hover:bg-transparent",
     ],
     content:
-      "focus-visible:ring-ring mt-2 focus-visible:outline-none focus-visible:ring-1",
+      "focus-visible:ring-primary mt-2 focus-visible:outline-none focus-visible:ring-1",
   },
 })
-
 export type TabsVariantProps = VariantProps<typeof tabsStyles>
 export type TabsSlots = keyof ReturnType<typeof tabsStyles>
 

@@ -14,7 +14,7 @@
  * };
  * const result = getVariantObjects(variants);
  * // [
- * //   { name: "size", options: { small: "size-small", large: "size-large" } },
+ * //   { name: "size", options: { small: "size-sm", large: "size-lg" } },
  * //   { name: "color", options: { red: "color-red", blue: "color-blue" } },
  * // ]
  */
@@ -56,13 +56,13 @@ export function getVariantObjects<T extends Record<string, VariantValues>>(
  *
  * @example
  * const variantObjects = [
- *   { name: "size", options: { small: "size-small", large: "size-large" } },
+ *   { name: "size", options: { small: "size-sm", large: "size-lg" } },
  *   { name: "color", options: { red: "color-red", blue: "color-blue" } },
  * ];
  * const defaultVariants = { size: "small", color: "red" };
  * const result = addDefaultValue(variantObjects, defaultVariants);
  * // [
- * //   { name: "size", options: { small: "size-small", large: "size-large" }, defaultOption: "size-small" },
+ * //   { name: "size", options: { small: "size-sm", large: "size-lg" }, defaultOption: "size-sm" },
  * //   { name: "color", options: { red: "color-red", blue: "color-blue" }, defaultOption: "color-red" },
  * // ]
  */
@@ -101,7 +101,7 @@ export function addDefaultValue<
  * const defaultVariants = { size: "small", color: "red" };
  * const result = createVariantWithDefaults(variants, defaultVariants);
  * // [
- * //   { name: "size", options: { small: "size-small", large: "size-large" }, defaultOption: "size-small" },
+ * //   { name: "size", options: { small: "size-sm", large: "size-lg" }, defaultOption: "size-sm" },
  * //   { name: "color", options: { red: "color-red", blue: "color-blue" }, defaultOption: "color-red" },
  * // ]
  */

@@ -41,7 +41,7 @@ const RadioGroupUnstyled = (args: RadioGroupProps) => {
       defaultValue="comfortable"
       classNames={{
         base: "grid gap-2",
-        item: "border-small border-primary size-4 rounded-full",
+        item: "borderborder-primary size-4 rounded-full",
         indicator: "flex justify-center items-center",
         icon: "size-2.5 fill-current",
       }}

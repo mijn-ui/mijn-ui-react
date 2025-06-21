@@ -28,20 +28,8 @@ type Story = StoryObj<typeof Select>
 
 const SelectTemplate = (args: SelectProps) => {
   return (
-    <Select
-      classNames={
-        args.unstyled
-          ? {
-              trigger: "bg-accent p-2 flex items-center gap-4",
-              content: "min-w-32 mt-1 bg-accent p-2 pointer-events-none",
-              item: "outline-none hover:bg-muted",
-              label: "text-small font-semibold",
-            }
-          : {}
-      }
-      {...args}
-    >
-      <SelectTrigger className="gap-4">
+    <Select {...args}>
+      <SelectTrigger>
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
       <SelectContent>
@@ -61,7 +49,7 @@ const SelectTemplate = (args: SelectProps) => {
 const SelectItemAligned = (args: SelectProps) => {
   return (
     <Select {...args}>
-      <SelectTrigger className="gap-4">
+      <SelectTrigger>
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
       <SelectContent position="item-aligned">
@@ -81,7 +69,7 @@ const SelectItemAligned = (args: SelectProps) => {
 const SelectWithSeparator = (args: SelectProps) => {
   return (
     <Select {...args}>
-      <SelectTrigger className="gap-4">
+      <SelectTrigger>
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
       <SelectContent>

@@ -1,14 +1,6 @@
-export const COMMON_UNITS = ["small", "medium", "large"]
-
 export const twMergeConfig = {
-  theme: {
-    opacity: ["disabled"],
-    spacing: ["border"],
-    borderWidth: COMMON_UNITS,
-    borderRadius: COMMON_UNITS,
-  },
+  theme: {},
   classGroups: {
-    shadow: [{ shadow: COMMON_UNITS }],
-    "font-size": [{ text: ["tiny", ...COMMON_UNITS] }],
+    shadow: [{ shadow: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"] }],
   },
 }

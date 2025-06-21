@@ -21,7 +21,7 @@ const MijnUITabs = ({ items, children, ...props }: InstallationTabsProps) => {
       <TabsList className="mb-2 h-12 w-full justify-start rounded-none border-b !bg-transparent">
         {items.map((item) => (
           <TabsTrigger
-            className="rounded-medium data-[state=active]:bg-default"
+            className="rounded-md data-[state=active]:bg-default"
             key={item}
             value={item}
           >

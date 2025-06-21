@@ -10,7 +10,7 @@ import { Ellipsis } from "lucide-react"
 
 const TableExample = () => {
   return (
-    <div className="overflow-auto rounded-xl border-small border-border">
+    <div className="overflow-auto rounded-xl borderborder-border">
       <Table>
         <TableHeader className="bg-accent">
           <TableRow>
@@ -30,7 +30,7 @@ const TableExample = () => {
             <TableCell>Alex Cooper</TableCell>
             <TableCell className="min-w-32">
               <p>Feb 17, 2024</p>
-              <p className="text-tiny text-muted-foreground">08:48 AM</p>
+              <p className="text-xs text-muted-foreground">08:48 AM</p>
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">
@@ -40,7 +40,7 @@ const TableExample = () => {
             <TableCell>$1042.25</TableCell>
 
             <TableCell>
-              <p className="flex items-center gap-2 text-tiny text-muted-foreground">
+              <p className="flex items-center gap-2 text-xs text-muted-foreground">
                 <span
                   className={`block size-2 rounded-full bg-green-500 ring-2 ring-green-200`}
                 />
@@ -58,7 +58,7 @@ const TableExample = () => {
 
             <TableCell className="min-w-32">
               <p>Feb 17, 2024</p>
-              <p className="text-tiny text-muted-foreground"> 08:48 AM</p>
+              <p className="text-xs text-muted-foreground"> 08:48 AM</p>
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">
@@ -68,7 +68,7 @@ const TableExample = () => {
             <TableCell>$1042.25</TableCell>
 
             <TableCell>
-              <p className="flex items-center gap-2 text-tiny text-muted-foreground">
+              <p className="flex items-center gap-2 text-xs text-muted-foreground">
                 <span
                   className={`block size-2 rounded-full bg-yellow-500 ring-2 ring-yellow-200`}
                 />
@@ -86,7 +86,7 @@ const TableExample = () => {
 
             <TableCell className="min-w-32">
               <p>Feb 17, 2024</p>
-              <p className="text-tiny text-muted-foreground"> 08:48 AM</p>
+              <p className="text-xs text-muted-foreground"> 08:48 AM</p>
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">
@@ -98,7 +98,7 @@ const TableExample = () => {
             <TableCell>$1042.25</TableCell>
 
             <TableCell>
-              <p className="flex items-center gap-2 text-tiny text-muted-foreground">
+              <p className="flex items-center gap-2 text-xs text-muted-foreground">
                 <span
                   className={`block size-2 rounded-full bg-green-500 ring-2 ring-green-200`}
                 />
@@ -116,7 +116,7 @@ const TableExample = () => {
 
             <TableCell className="min-w-32">
               <p>Feb 17, 2024</p>
-              <p className="text-tiny text-muted-foreground"> 08:48 AM</p>
+              <p className="text-xs text-muted-foreground"> 08:48 AM</p>
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">
@@ -128,7 +128,7 @@ const TableExample = () => {
             <TableCell>$1042.25</TableCell>
 
             <TableCell>
-              <p className="flex items-center gap-2 text-tiny text-muted-foreground">
+              <p className="flex items-center gap-2 text-xs text-muted-foreground">
                 <span
                   className={`block size-2 rounded-full bg-red-500 ring-2 ring-red-200`}
                 />

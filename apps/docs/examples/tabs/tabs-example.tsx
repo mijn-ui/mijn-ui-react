@@ -15,13 +15,13 @@ const TabsExample = () => {
     <Tabs defaultValue="account" className="w-[400px]">
       <TabsList className="grid h-fit w-full grid-cols-2">
         <TabsTrigger
-          className="h-10 data-[state=active]:shadow-small"
+          className="h-10 data-[state=active]:shadow-sm"
           value="account"
         >
           Account
         </TabsTrigger>
         <TabsTrigger
-          className="h-10 data-[state=active]:shadow-small"
+          className="h-10 data-[state=active]:shadow-sm"
           value="password"
         >
           Password

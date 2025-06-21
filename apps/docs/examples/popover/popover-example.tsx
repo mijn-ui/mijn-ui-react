@@ -25,7 +25,7 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
       </PopoverTrigger>
       <PopoverContent className="relative w-72 ">
         <div className="flex flex-col justify-center gap-2.5">
-          <p className="text-medium font-medium">Dimensions</p>
+          <p className="text-base font-medium">Dimensions</p>
 
           <fieldset className="flex w-full items-center justify-between gap-2">
             <Label

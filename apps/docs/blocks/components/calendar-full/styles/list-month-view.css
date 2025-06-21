@@ -17,7 +17,7 @@
     }
 
     .fc-list-day-cushion {
-      @apply !border-small border-border text-medium;
+      @apply !borderborder-border text-base;
     }
 
     .fc-list-event-title {
@@ -27,11 +27,11 @@
         @apply my-1 flex h-10 cursor-pointer items-center justify-between border-l-4 border-l-primary px-3 py-2 hover:bg-accent;
 
         .custom-event-list-title {
-          @apply text-small font-semibold;
+          @apply text-sm font-semibold;
         }
 
         .custom-event-list-time {
-          @apply text-small text-muted-foreground;
+          @apply text-sm text-muted-foreground;
         }
       }
     }

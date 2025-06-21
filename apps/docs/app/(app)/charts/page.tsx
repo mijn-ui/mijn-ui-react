@@ -44,7 +44,7 @@ const ChartsPage = () => {
           <h1 className="text-3xl font-bold md:text-4xl md:font-extrabold">
             Ready-to-Use Charts
           </h1>
-          <p className="text-large text-muted-foreground">
+          <p className="text-lg text-muted-foreground">
             A collection of copy-paste-ready charts built with Recharts, <br />{" "}
             displaying various data trends in different styles.
           </p>

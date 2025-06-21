@@ -38,11 +38,11 @@
   @apply text-foreground;
 
   .fc-daygrid {
-    @apply overflow-hidden rounded-medium;
+    @apply overflow-hidden rounded-md;
   }
 
   .fc-scrollgrid {
-    @apply !rounded-medium;
+    @apply !rounded-md;
   }
 
   .fc-col-header {
@@ -74,16 +74,16 @@
 
   /* ******* styles for month/week/day/list items button ******* */
   .fc-header-toolbar .fc-toolbar-chunk:nth-child(2) .fc-button-group {
-    @apply rounded-large bg-accent p-1;
+    @apply rounded-lg bg-accent p-1;
 
     .fc-button {
-      @apply rounded-medium border-none px-3 py-2 text-small;
+      @apply rounded-md border-none px-3 py-2 text-sm;
     }
   }
 
   /* styles for active header button */
   .fc-button-primary:not(:disabled).fc-button-active {
-    @apply bg-card text-foreground shadow-small;
+    @apply bg-card text-foreground shadow-sm;
   }
 
   /* ******* styles for prev month, next month and today button ******* */
@@ -91,7 +91,7 @@
     @apply gap-2;
 
     .fc-button {
-      @apply h-10 rounded-medium border-small border-border text-small text-foreground;
+      @apply h-10 rounded-md borderborder-border text-sm text-foreground;
     }
 
     .fc-prev-button,
@@ -103,12 +103,12 @@
       @apply flex items-center justify-center;
 
       &::before {
-        @apply text-large;
+        @apply text-lg;
       }
     }
 
     .fc-today-button {
-      @apply rounded-medium px-3 py-2;
+      @apply rounded-md px-3 py-2;
     }
   }
 
@@ -123,11 +123,11 @@
 
   /* ********** daygrid event more link and popover ********** */
   .fc-daygrid-more-link {
-    @apply text-small font-medium text-primary;
+    @apply text-sm font-medium text-primary;
   }
 
   .fc-daygrid-dot-event {
-    @apply flex flex-col items-start justify-start truncate bg-secondary px-1 py-0.5 text-tiny text-black;
+    @apply flex flex-col items-start justify-start truncate bg-secondary px-1 py-0.5 text-xs text-black;
 
     .fc-daygrid-event-dot {
       @apply hidden;
@@ -158,7 +158,7 @@
 
     /* styles for all day header slot */
     .timegrid-all-day {
-      @apply h-12 bg-accent pr-2 text-tiny capitalize text-muted-foreground;
+      @apply h-12 bg-accent pr-2 text-xs capitalize text-muted-foreground;
     }
 
     /* hide divider between timegrid header and timegrid body  */
@@ -173,7 +173,7 @@
       }
 
       .fc-timegrid-slot-label {
-        @apply h-6 bg-accent pr-2 pt-2 text-tiny text-muted-foreground;
+        @apply h-6 bg-accent pr-2 pt-2 text-xs text-muted-foreground;
       }
     }
   }

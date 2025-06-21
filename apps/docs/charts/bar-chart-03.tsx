@@ -37,7 +37,7 @@ const BarChart03 = () => {
   return (
     <Card className="flex size-full min-h-80 flex-col items-center justify-between gap-4">
       <CardHeader className="flex w-full flex-col items-start space-y-0">
-        <CardTitle className="text-large">
+        <CardTitle className="text-lg">
           Bar Chart - Stacked With Legend
         </CardTitle>
         <CardDescription>

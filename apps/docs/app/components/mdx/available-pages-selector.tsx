@@ -40,17 +40,17 @@ const AvailablePagesSelector = () => {
     <Select onValueChange={handleChange} value={selectedValue}>
       <SelectTrigger
         unstyled
-        className="flex w-full items-center justify-between border-b bg-transparent px-3 py-2 text-small"
+        className="flex w-full items-center justify-between border-b bg-transparent px-3 py-2 text-sm"
       >
         <SelectValue placeholder="Select a page" />
       </SelectTrigger>
       <SelectContent className="w-[var(--radix-popover-trigger-width)] bg-popover">
         <SelectGroup>
-          <SelectLabel className="text-small">Available Pages</SelectLabel>
-          <SelectItem className="text-tiny" value={PAGE_OPTIONS.next}>
+          <SelectLabel className="text-sm">Available Pages</SelectLabel>
+          <SelectItem className="text-xs" value={PAGE_OPTIONS.next}>
             Next.js
           </SelectItem>
-          <SelectItem className="text-tiny" value={PAGE_OPTIONS.tailwind}>
+          <SelectItem className="text-xs" value={PAGE_OPTIONS.tailwind}>
             Tailwind CSS
           </SelectItem>
         </SelectGroup>

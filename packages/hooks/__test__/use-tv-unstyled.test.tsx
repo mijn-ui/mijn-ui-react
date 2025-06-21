@@ -7,7 +7,7 @@ import { useTVUnstyled } from "../src/use-tv-unstyled"
 describe("useTVUnstyled", () => {
   // Constants for default classes
   const DEFAULT_CLASSES = {
-    base: "rounded-medium",
+    base: "rounded-md",
     icon: "p-4",
     indicator: "border-solid",
   }

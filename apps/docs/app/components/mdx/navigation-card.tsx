@@ -18,7 +18,7 @@ const NavigationCard = ({ previous, next }: NavigationCardProps) => {
       {previous ? (
         <Link
           href={previous.url}
-          className="flex w-full flex-col gap-2 rounded-large border-small bg-fd-card p-4 text-small transition-colors hover:text-fd-accent-foreground hover:opacity-hover"
+          className="flex w-full flex-col gap-2 rounded-lg borderbg-fd-card p-4 text-sm transition-colors hover:text-fd-accent-foreground hover:opacity-hover"
         >
           <div className="inline-flex items-center gap-0.5 text-fd-muted-foreground">
             <ChevronLeft className="-ms-1 size-4 shrink-0 rtl:rotate-180" />
@@ -31,7 +31,7 @@ const NavigationCard = ({ previous, next }: NavigationCardProps) => {
         <Link
           href={next.url}
           className={
-            "col-start-2 flex w-full flex-col gap-2 rounded-large border-small bg-fd-card p-4 text-end text-small transition-colors hover:text-fd-accent-foreground hover:opacity-hover"
+            "col-start-2 flex w-full flex-col gap-2 rounded-lg borderbg-fd-card p-4 text-end text-sm transition-colors hover:text-fd-accent-foreground hover:opacity-hover"
           }
         >
           <div className="inline-flex flex-row-reverse items-center gap-0.5 text-fd-muted-foreground">

@@ -124,49 +124,27 @@ const corePlugin = (
           colors: {
             ...resolved?.colors,
           },
-          height: {
-            divider: `var(--${prefix}-divider-weight)`,
-          },
-          width: {
-            divider: `var(--${prefix}-divider-weight)`,
-          },
-          fontSize: {
-            tiny: [
-              `var(--${prefix}-font-size-tiny)`,
-              `var(--${prefix}-line-height-tiny)`,
-            ],
-            small: [
-              `var(--${prefix}-font-size-small)`,
-              `var(--${prefix}-line-height-small)`,
-            ],
-            medium: [
-              `var(--${prefix}-font-size-medium)`,
-              `var(--${prefix}-line-height-medium)`,
-            ],
-            large: [
-              `var(--${prefix}-font-size-large)`,
-              `var(--${prefix}-line-height-large)`,
-            ],
-          },
+
           borderRadius: {
-            small: `var(--${prefix}-radius-small)`,
-            medium: `var(--${prefix}-radius-medium)`,
-            large: `var(--${prefix}-radius-large)`,
+            "2xs": `var(--${prefix}-radius-2xs)`,
+            xs: `var(--${prefix}-radius-xs)`,
+            sm: `var(--${prefix}-radius-sm)`,
+            md: `var(--${prefix}-radius-md)`,
+            lg: `var(--${prefix}-radius-lg)`,
+            xl: `var(--${prefix}-radius-xl)`,
+            "2xl": `var(--${prefix}-radius-2xl)`,
           },
-          opacity: {
-            hover: `var(--${prefix}-hover-opacity)`,
-            disabled: `var(--${prefix}-disabled-opacity)`,
-          },
-          borderWidth: {
-            small: `var(--${prefix}-border-width-small)`,
-            medium: `var(--${prefix}-border-width-medium)`,
-            large: `var(--${prefix}-border-width-large)`,
-          },
+
           boxShadow: {
-            small: `var(--${prefix}-box-shadow-small)`,
-            medium: `var(--${prefix}-box-shadow-medium)`,
-            large: `var(--${prefix}-box-shadow-large)`,
+            xs: `var(--${prefix}-box-shadow-xs)`,
+            sm: `var(--${prefix}-box-shadow-sm)`,
+            md: `var(--${prefix}-box-shadow-md)`,
+            lg: `var(--${prefix}-box-shadow-lg)`,
+            xl: `var(--${prefix}-box-shadow-xl)`,
+            "2xl": `var(--${prefix}-box-shadow-2xl)`,
+            "3xl": `var(--${prefix}-box-shadow-3xl)`,
           },
+
           ...animations,
         },
       },

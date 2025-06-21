@@ -15,7 +15,7 @@ const CardExample = () => {
         <Button
           variant="ghost"
           iconOnly
-          className="rounded-large bg-accent p-0 text-muted-foreground sm:size-12"
+          className="rounded-lg bg-accent p-0 text-muted-foreground sm:size-12"
           asChild
         >
           <span>
@@ -28,7 +28,7 @@ const CardExample = () => {
         </div>
       </CardHeader>
       <CardContent>
-        <CardTitle className="text-medium">Users</CardTitle>
+        <CardTitle className="text-base">Users</CardTitle>
         <CardDescription>Manage user accounts and permissions.</CardDescription>
       </CardContent>
     </Card>

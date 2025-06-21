@@ -15,18 +15,12 @@ const meta: Meta<typeof Alert> = {
     layout: "centered",
   },
   args: {
-    color: "default",
-    variant: "subtle",
     unstyled: false,
   },
   argTypes: {
-    color: {
-      control: "select",
-      options: ["default", "success", "info", "warning", "danger"],
-    },
     variant: {
       control: "select",
-      options: ["subtle", "filled", "outlined"],
+      options: ["default", "danger"],
     },
   },
 }
@@ -69,46 +63,6 @@ export const Default: Story = {
   render: AlertTemplate,
 }
 
-export const Colors: Story = {
-  render: (args: AlertProps) => (
-    <div className="flex flex-col items-center gap-8">
-      <div className="space-y-2">
-        <h3 className="text-muted-foreground w-full text-start font-semibold">
-          Success
-        </h3>
-        <AlertTemplate {...args} />
-      </div>
-      <div className="space-y-2">
-        <h3 className="text-muted-foreground w-full text-start font-semibold">
-          Info
-        </h3>
-        <AlertTemplate {...args} color="info" />
-      </div>
-      <div className="space-y-2">
-        <h3 className="text-muted-foreground w-full text-start font-semibold">
-          Warning
-        </h3>
-        <AlertTemplate {...args} color="warning" />
-      </div>
-      <div className="space-y-2">
-        <h3 className="text-muted-foreground w-full text-start font-semibold">
-          Danger
-        </h3>
-        <AlertTemplate {...args} color="danger" />
-      </div>
-      <div className="space-y-2">
-        <h3 className="text-muted-foreground w-full text-start font-semibold">
-          Default
-        </h3>
-        <AlertTemplate {...args} color="default" />
-      </div>
-    </div>
-  ),
-  args: {
-    color: "success",
-  },
-}
-
 export const Variants: Story = {
   render: (args: AlertProps) => (
     <div className="flex flex-col items-center gap-8">
@@ -121,22 +75,14 @@ export const Variants: Story = {
 
       <div className="space-y-2">
         <h3 className="text-muted-foreground w-full text-start font-semibold">
-          Subtle / Default
+          Danger
         </h3>
-        <AlertTemplate {...args} variant="subtle" />
-      </div>
-
-      <div className="space-y-2">
-        <h3 className="text-muted-foreground w-full text-start font-semibold">
-          Outlined
-        </h3>
-        <AlertTemplate {...args} variant="outlined" />
+        <AlertTemplate {...args} variant="danger" />
       </div>
     </div>
   ),
   args: {
-    color: "info",
-    variant: "filled",
+    variant: "default",
   },
 }
 

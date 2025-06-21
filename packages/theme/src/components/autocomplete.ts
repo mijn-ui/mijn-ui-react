@@ -5,16 +5,16 @@ const autocompleteStyles = tv({
   slots: {
     base: "",
     trigger: "",
-    content: "w-[--radix-popover-trigger-width] overflow-y-auto p-1",
-    contentEmpty: "py-6 text-center text-small",
-    skeleton: "bg-muted animate-pulse rounded-medium h-7 w-full",
+    content: "w-[--radix-popover-trigger-width] overflow-y-auto",
+    contentEmpty: "py-6 text-center text-sm",
+    skeleton: "bg-muted h-7 w-full animate-pulse",
     group: "",
-    item: "data-[selected=true]:bg-accent relative flex w-full cursor-default select-none items-center justify-between gap-2 rounded-medium px-2 py-1.5 text-small outline-none data-[disabled]:pointer-events-auto data-[disabled=true]:opacity-disabled",
+    item: "data-[selected=true]:bg-secondary relative flex w-full cursor-default select-none items-center justify-between gap-2 px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-auto data-[disabled=true]:opacity-50",
   },
   variants: {
     selected: {
       true: {
-        item: "bg-primary/20 text-primary data-[selected=true]:bg-primary/20 data-[selected=true]:text-primary [&_svg]:size-4",
+        item: "[&_svg]:text-primary [&_svg]:size-4",
       },
     },
   },

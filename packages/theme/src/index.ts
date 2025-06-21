@@ -1,7 +1,6 @@
 export * from "./components"
 export * from "./utils"
 export * from "./colors"
-export * from "./types"
 export * from "./layout"
 export * from "./plugin"
 

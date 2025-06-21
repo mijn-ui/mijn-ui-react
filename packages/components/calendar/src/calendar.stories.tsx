@@ -40,10 +40,10 @@ const CalendarTemplate = (args: CalendarProps) => {
         selected={date}
         onSelect={setDate}
         showOutsideDays={args.showOutsideDays}
-        className="rounded-large border"
+        className="rounded-lg border"
         unstyled={args.unstyled}
       />
-      <p className="text-muted-foreground text-small mt-2">
+      <p className="text-muted-foreground text-sm mt-2">
         Selected Date: {renderDate(date)}
       </p>
     </div>
@@ -59,10 +59,10 @@ const CalendarMultiple = (args: CalendarProps) => {
         selected={dates}
         onSelect={setDates}
         showOutsideDays={args.showOutsideDays}
-        className="rounded-large border"
+        className="rounded-lg border"
         unstyled={args.unstyled}
       />
-      <p className="text-muted-foreground text-small mt-2 w-64 leading-6">
+      <p className="text-muted-foreground text-sm mt-2 w-64 leading-6">
         Selected Dates: {dates?.map((date) => renderDate(date))}
       </p>
     </div>
@@ -78,10 +78,10 @@ const CalendarRange = (args: CalendarProps) => {
         selected={dateRange}
         onSelect={setDateRange}
         showOutsideDays={args.showOutsideDays}
-        className="rounded-large border"
+        className="rounded-lg border"
         unstyled={args.unstyled}
       />
-      <p className="text-muted-foreground text-small mt-2 w-64">
+      <p className="text-muted-foreground text-sm mt-2 w-64">
         Selected Date Range: <br />
         {dateRange && renderDateRange(dateRange)}
       </p>
@@ -98,7 +98,7 @@ const CalendarUnstyled = (args: CalendarProps) => {
         selected={date}
         onSelect={setDate}
         showOutsideDays={args.showOutsideDays}
-        className="rounded-large border-small p-4"
+        className="rounded-lg borderp-4"
         classNames={{
           button_previous: "absolute left-1 top-0 z-10",
           button_next: "absolute right-1 top-0 z-10",
@@ -111,7 +111,7 @@ const CalendarUnstyled = (args: CalendarProps) => {
         }}
         unstyled={args.unstyled}
       />
-      <p className="text-muted-foreground text-small mt-2">
+      <p className="text-muted-foreground text-sm mt-2">
         Selected Date: {renderDate(date)}
       </p>
     </div>

@@ -23,13 +23,9 @@ const LabelTemplate = (args: LabelProps) => {
         Feedback
       </Label>
       <textarea
+        className="focus-visible:ring-offset-background bg-secondary placeholder:text-muted-foreground focus-visible:ring-primary flex min-h-32 w-80 rounded-md border px-3 py-2 text-sm outline-none transition duration-300 focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         id="comment"
         name="comment"
-        className={
-          args.unstyled
-            ? "indent-2"
-            : "border-input placeholder:text-muted-foreground focus-visible:ring-ring rounded-medium border-small text-small flex min-h-[80px] w-full bg-transparent px-3 py-2 focus-visible:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50"
-        }
         placeholder="Enter your feedback ..."
       ></textarea>
       <Button

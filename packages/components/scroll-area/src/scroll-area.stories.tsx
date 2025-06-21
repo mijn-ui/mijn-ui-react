@@ -24,14 +24,14 @@ const tags = Array.from({ length: 50 }).map(
 const ScrollAreaTemplate = (args: ScrollAreaProps) => {
   return (
     <ScrollArea
-      className="bg-card rounded-medium h-72 w-48 overflow-y-auto border"
+      className="bg-background-alt h-72 w-48 overflow-y-auto rounded-md border"
       {...args}
     >
       <div className="p-4">
-        <h4 className="text-small mb-4 font-medium leading-none">Tags</h4>
+        <h4 className="mb-4 text-sm font-medium leading-none">Tags</h4>
         {tags.map((tag) => (
           <React.Fragment key={tag}>
-            <div key={tag} className="text-small">
+            <div key={tag} className="text-sm">
               {tag}
             </div>
             <Separator className="my-2" />

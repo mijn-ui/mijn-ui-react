@@ -21,7 +21,7 @@ import {
 
 const CommandExample = () => {
   return (
-    <Command className="rounded-large border-small border-border shadow-medium md:w-[450px]">
+    <Command className="rounded-lg borderborder-border shadow-md md:w-[450px]">
       <CommandInput asChild>
         <Input
           startIcon={<Search />}

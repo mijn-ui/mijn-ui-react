@@ -8,9 +8,9 @@ import { ResponsiveContainer, Tooltip } from "recharts"
 
 export const tooltipStyles = tv({
   slots: {
-    base: "flex aspect-video flex-col justify-center rounded-medium border bg-card text-xs shadow-large",
+    base: "flex aspect-video flex-col justify-center rounded-md border bg-card text-xs shadow-lg",
     label: "block font-medium",
-    separator: "my-1.5 h-divider bg-border",
+    separator: "my-1.5 h-px bg-border",
     content: "space-y-1",
     entry: "flex items-center justify-between gap-4",
     entryValue: "",
@@ -33,8 +33,7 @@ export const tooltipStyles = tv({
           "size-2.5 rounded-full bg-[var(--entry-indicator-color)]",
       },
       square: {
-        entryIndicator:
-          "size-2.5 rounded-small bg-[var(--entry-indicator-color)]",
+        entryIndicator: "size-2.5 rounded-sm bg-[var(--entry-indicator-color)]",
       },
       line: {
         entryIndicator: "h-3 w-1 bg-[var(--entry-indicator-color)]",

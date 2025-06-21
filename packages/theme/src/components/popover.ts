@@ -1,5 +1,4 @@
 import { VariantProps } from "tailwind-variants"
-import { popupAnimationClasses } from "../utils/classes"
 import { tv } from "../utils/tv"
 import { buttonStyles } from "./button"
 
@@ -9,8 +8,10 @@ const popoverStyles = tv({
     trigger: "",
     close: buttonStyles({ variant: "ghost" }).base(),
     content: [
-      popupAnimationClasses,
-      "border-border bg-popover text-popover-foreground z-50 w-full rounded-large border-small p-4 shadow-medium outline-none !duration-300",
+      "data-[state=open]:zoom-in-95 data-[state=open]:animate-in data-[state=open]:fade-in-0",
+      "data-[state=closed]:zoom-out-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
+      "data-[side=bottom]:slide-in-from-bottom-6 data-[side=left]:slide-in-from-left-6 data-[side=right]:slide-in-from-right-6 data-[side=top]:slide-in-from-top-6",
+      "border-border-secondary bg-background-alt text-foreground z-50 w-full rounded-md border p-4 shadow-md outline-none !duration-300",
     ],
   },
 })

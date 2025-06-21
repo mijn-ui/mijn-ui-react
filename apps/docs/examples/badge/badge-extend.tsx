@@ -16,9 +16,9 @@ export const MyBadge = extendVariants(Badge, {
         "bg-gradient-to-r from-[#8b5cf6]/20 via-[#8b5cf6]/70 to-[#8b5cf6]/20 text-[#fff]",
     },
     size: {
-      xs: "px-1 h-4 text-tiny",
-      md: "px-3 h-6 text-small",
-      xl: "px-5 h-10 text-large",
+      xs: "px-1 h-4 text-xs",
+      md: "px-3 h-6 text-sm",
+      xl: "px-5 h-10 text-lg",
     },
   },
   defaultVariants: {
