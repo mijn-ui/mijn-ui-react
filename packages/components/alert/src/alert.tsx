@@ -50,13 +50,12 @@ export type AlertProps = React.ComponentProps<"div"> &
 
 const Alert = ({
   variant,
-  color,
   unstyled = false,
   className,
   classNames,
   ...props
 }: AlertProps) => {
-  const styles = alertStyles({ variant, color })
+  const styles = alertStyles({ variant })
   const { base } = createTVUnstyledSlots({ base: styles.base }, unstyled)
 
   return (

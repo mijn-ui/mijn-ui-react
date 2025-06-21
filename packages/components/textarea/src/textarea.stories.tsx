@@ -20,11 +20,11 @@ type Story = StoryObj<typeof Textarea>
 
 const TextareaTemplate = (args: TextareaProps) => {
   return (
-    <div className="flex w-full max-w-80 flex-col gap-1">
+    <div className="flex w-full max-w-80 flex-col gap-2">
       <Label htmlFor="message" unstyled={args.unstyled}>
         Text Area
       </Label>
-      <Textarea name="message" id="message" {...args} />
+      <Textarea name="message" className="w-80" id="message" {...args} />
     </div>
   )
 }

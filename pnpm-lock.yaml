@@ -1684,7 +1684,7 @@ importers:
         specifier: ^8.4.49
         version: 8.5.3
       storybook:
-        specifier: ^8.4.7
+        specifier: ^8.4.1
         version: 8.6.12(prettier@3.5.3)
       tailwindcss:
         specifier: ^3.4.15

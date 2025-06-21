@@ -38,15 +38,14 @@ type Story = StoryObj<typeof Command>
 const CommandTemplate = (args: CommandProps) => {
   return (
     <Command
-      className="border-border rounded-large border-small shadow-medium md:w-[450px]"
+      className="border-border bordershadow-md rounded-lg md:w-[450px]"
       {...args}
     >
       <CommandInput asChild>
         <Input
-          startIcon={<Search />}
+          startIcon={<Search className="!size-4" />}
           variant="underline"
           placeholder="Type a command or search..."
-          className="bg-card"
         />
       </CommandInput>
       <CommandList>
@@ -91,12 +90,12 @@ const CommandTemplate = (args: CommandProps) => {
 const CommandUnstyled = (args: CommandProps) => {
   return (
     <Command
-      className="border-border rounded-large border-small shadow-medium p-3 md:w-[300px]"
+      className="border-border bordershadow-md rounded-lg p-3 md:w-[300px]"
       classNames={{
         item: "flex items-center pointer-events-none",
         shortcut: "ml-auto",
         separator: "border-b-2",
-        group: "flex flex-col gap-1 py-2 [&_[cmdk-group-heading]]:text-small",
+        group: "flex flex-col gap-1 py-2 [&_[cmdk-group-heading]]:text-sm",
       }}
       {...args}
     >

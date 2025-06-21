@@ -5,9 +5,135 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-border;
+  :root {
+    --background: 0 0 100%;
+    --background-alt: 0 0 100%;
+    --foreground: 240 10% 4%;
+    --border: 240 5% 84%;
+
+    --muted: 240 6% 90%;
+    --muted-alt: 240 6% 90%;
+    --muted-foreground: 240 4% 46%;
+    --border-muted: 240 5% 96%;
+
+    --inverse: 240 10% 4%;
+    --inverse-foreground: 0 0 98%;
+    --border-inverse: 240 5% 26%;
+
+    --primary: 21 90% 48%;
+    --primary-foreground: 20 100% 96%;
+    --primary-subtle: 20 100% 92%;
+    --primary-foreground-subtle: 20 75% 28%;
+    --primary-emphasis: 20 88% 40%;
+    --border-primary: 20 88% 40%;
+    --border-primary-subtle: 21 98% 83%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 5% 26%;
+    --border-secondary: 240 6% 90%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 143 76% 97%;
+    --success-subtle: 143 84% 93%;
+    --success-foreground-subtle: 142 61% 20%;
+    --success-emphasis: 142 72% 29%;
+    --border-success: 142 72% 29%;
+    --border-success-subtle: 142 79% 85%;
+
+    --warning: 41 96% 40%;
+    --warning-foreground: 41 92% 95%;
+    --warning-subtle: 41 97% 88%;
+    --warning-foreground-subtle: 40 73% 26%;
+    --warning-emphasis: 41 92% 33%;
+    --border-warning: 41 92% 33%;
+    --border-warning-subtle: 41 98% 77%;
+
+    --danger: 0 72% 51%;
+    --danger-foreground: 0 86% 97%;
+    --danger-subtle: 0 93% 94%;
+    --danger-foreground-subtle: 0 63% 31%;
+    --danger-emphasis: 0 74% 42%;
+    --border-danger: 0 74% 42%;
+    --border-danger-subtle: 0 96% 89%;
+
+    --radius-2xs: 0.125rem; /* 2px */
+    --radius-xs: 0.25rem; /* 4px */
+    --radius-sm: 0.375rem; /* 6px */
+    --radius-base: 0.5rem; /* 8px */
+    --radius-lg: 0.75rem; /* 12px */
+    --radius-xl: 1rem; /* 16px */
+    --radius-2xl: 1.25rem; /* 20px */
+    --radius-full: 9999px;
+
+    --shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.05);
+    --shadow-sm:
+      0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06);
+    --shadow-md:
+      0 4px 8px rgba(16, 24, 40, 0.1), 0 2px 4px rgba(16, 24, 40, 0.06);
+    --shadow-lg:
+      0 12px 16px rgba(16, 24, 40, 0.08), 0 4px 6px rgba(16, 24, 40, 0.03);
+    --shadow-xl:
+      0 20px 24px rgba(16, 24, 40, 0.08), 0 8px 8px rgba(16, 24, 40, 0.03);
+    --shadow-2xl: 0 24px 48px rgba(16, 24, 40, 0.18);
+    --shadow-3xl: 0 32px 64px rgba(16, 24, 40, 0.14);
   }
+
+  .dark {
+    --background: 240 10% 4%;
+    --background-alt: 240 4% 16%;
+    --foreground: 0 0 100%;
+    --border: 240 5% 26%;
+
+    --muted: 240 4% 16%;
+    --muted-alt: 240 10% 4%;
+    --muted-foreground: 240 4% 46%;
+    --border-muted: 240 6% 10%;
+
+    --inverse: 0 0 100%;
+    --inverse-foreground: 240 10% 4%;
+    --border-inverse: 240 5% 84%;
+
+    --primary: 20 96% 61%;
+    --primary-foreground: 21 81% 15%;
+    --primary-subtle: 20 75% 28%;
+    --primary-foreground-subtle: 20 100% 92%;
+    --primary-emphasis: 20 96% 61%;
+    --border-primary: 20 96% 61%;
+    --border-primary-subtle: 21 79% 34%;
+
+    --secondary: 240 6% 10%;
+    --secondary-foreground: 240 5% 84%;
+    --border-secondary: 240 4% 16%;
+
+    --success: 142 69% 58%;
+    --success-foreground: 142 80% 10%;
+    --success-subtle: 142 61% 20%;
+    --success-foreground-subtle: 143 84% 93%;
+    --success-emphasis: 142 69% 58%;
+    --border-success: 142 69% 58%;
+    --border-success-subtle: 142 64% 24%;
+
+    --warning: 41 96% 53%;
+    --warning-foreground: 41 83% 14%;
+    --warning-subtle: 40 73% 26%;
+    --warning-foreground-subtle: 41 97% 88%;
+    --warning-emphasis: 41 96% 53%;
+    --border-warning: 41 96% 53%;
+    --border-warning-subtle: 41 81% 29%;
+
+    --danger: 0 91% 71%;
+    --danger-foreground: 0 75% 15%;
+    --danger-subtle: 0 63% 31%;
+    --danger-foreground-subtle: 0 93% 94%;
+    --danger-emphasis: 0 91% 71%;
+    --border-danger: 0 91% 71%;
+    --border-danger-subtle: 0 70% 35%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
   body {
     /* font-family: "Inter", serif; */
     @apply antialiased bg-background text-foreground;

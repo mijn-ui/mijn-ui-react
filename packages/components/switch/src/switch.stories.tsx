@@ -18,18 +18,29 @@ type Story = StoryObj<typeof Switch>
 
 const SwitchTemplate = (args: SwitchProps) => {
   return (
-    <Switch
-      {...args}
-      classNames={
-        args.unstyled
-          ? {
-              base: "bg-accent h-6 w-11 data-[state=checked]:bg-muted",
-              thumb:
-                "bg-surface block size-5 data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-1",
-            }
-          : {}
-      }
-    />
+    <div className="flex flex-col gap-4">
+      <div className="flex gap-2">
+        <Switch {...args} />
+        <div className="py-1">
+          <h5 className="text-foreground text-sm font-medium">
+            Email Notifications
+          </h5>
+          <p className="text-secondary-foreground text-sm font-normal">
+            Receive notifications for new messages and updates.
+          </p>
+        </div>
+      </div>
+
+      <div className="flex gap-2">
+        <Switch {...args} />
+        <div className="py-1">
+          <h5 className="text-foreground text-sm font-medium">Dark Mode</h5>
+          <p className="text-secondary-foreground text-sm font-normal">
+            Enable a dark theme to reduce eye strain in low light.
+          </p>
+        </div>
+      </div>
+    </div>
   )
 }
 

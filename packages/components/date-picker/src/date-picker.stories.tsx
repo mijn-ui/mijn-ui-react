@@ -62,8 +62,8 @@ const DatePickerTemplate = (args: CalendarDatePickerProps) => {
         closeOnSelect={args.closeOnSelect}
       />
       <div className="mt-4">
-        <h2 className="text-medium font-semibold">Selected Date Range:</h2>
-        <p className="text-small">
+        <h2 className="text-base font-semibold">Selected Date Range:</h2>
+        <p className="text-sm">
           {selectedDateRange.from?.toDateString()} -{" "}
           {selectedDateRange.to?.toDateString()}
         </p>

@@ -36,6 +36,7 @@ export const Calendar = ({
         [UI.MonthGrid]: styles.month_grid(),
         [UI.Weekdays]: styles.weekdays(),
         [UI.Weekday]: styles.weekday(),
+        [UI.Weeks]: styles.weeks(),
         [UI.Week]: styles.week(),
         [UI.Day]: styles.day(),
         [UI.DayButton]: styles.day_button(),
@@ -46,6 +47,7 @@ export const Calendar = ({
         [DayFlag.outside]: styles.outside(),
         [DayFlag.disabled]: styles.disabled(),
         [DayFlag.hidden]: styles.hidden(),
+
         ...classNames,
       }}
       components={{

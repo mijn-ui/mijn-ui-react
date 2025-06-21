@@ -48,16 +48,18 @@ const PaginationTemplate = (args: PaginationProps) => {
       unstyled={args.unstyled}
     >
       <PaginationContent>
-        <PaginationPreviousButton className="h-9 sm:h-10">
-          <ChevronLeft className="size-4" />
-          <span className="hidden sm:inline">Previous</span>
+        <PaginationPreviousButton>
+          <ChevronLeft className="text-secondary-foreground size-4" />
+          <span className="px-1">Previous</span>
         </PaginationPreviousButton>
-        <PaginationPreviousEllipsis />
-        <PaginationList className="[&>li>button]:size-9 sm:[&>li>button]:size-10" />
-        <PaginationNextEllipsis className="[&>svg]:size-3.5 sm:[&>svg]:size-4" />
-        <PaginationNextButton className="h-9 sm:h-10">
-          <span className="hidden sm:inline">Next</span>
-          <ChevronRight className="size-4" />
+        <div className="flex items-center">
+          <PaginationPreviousEllipsis />
+          <PaginationList />
+          <PaginationNextEllipsis className="[&>svg]:size-3.5 sm:[&>svg]:size-4" />
+        </div>
+        <PaginationNextButton>
+          <span className="px-1">Next</span>
+          <ChevronRight className="text-secondary-foreground size-4" />
         </PaginationNextButton>
       </PaginationContent>
     </Pagination>

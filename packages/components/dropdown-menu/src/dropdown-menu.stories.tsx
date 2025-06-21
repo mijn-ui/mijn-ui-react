@@ -36,7 +36,9 @@ type Story = StoryObj<typeof DropdownMenu>
 const DropdownMenuTemplate = (args: DropdownMenuProps) => {
   return (
     <DropdownMenu {...args}>
-      <DropdownMenuTrigger>Edit</DropdownMenuTrigger>
+      <DropdownMenuTrigger asChild>
+        <Button>Edit</Button>
+      </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>Undo</DropdownMenuItem>
         <DropdownMenuItem disabled>Redo</DropdownMenuItem>
@@ -116,7 +118,9 @@ const DropdownMenuCheckBoxes = (args: DropdownMenuProps) => {
 
   return (
     <DropdownMenu {...args}>
-      <DropdownMenuTrigger>Manage Permissions</DropdownMenuTrigger>
+      <DropdownMenuTrigger asChild>
+        <Button>Manage Permissions</Button>
+      </DropdownMenuTrigger>
       <DropdownMenuContent className="w-[var(--radix-dropdown-menu-trigger-width)]">
         {permissions.map((permission) => (
           <DropdownMenuCheckboxItem
@@ -154,14 +158,12 @@ const DropdownMenuRadioGroups = (args: DropdownMenuProps) => {
     <DropdownMenu {...args}>
       <DropdownMenuTrigger asChild unstyled>
         <Button color="primary">
-          <Filter />
-          Filters
+          <Filter className="size-4" />
+          <span className="px-1">Filters</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-60">
-        <DropdownMenuLabel className="text-muted-foreground">
-          {BRANDS.label}
-        </DropdownMenuLabel>
+        <DropdownMenuLabel>{BRANDS.label}</DropdownMenuLabel>
         <DropdownMenuRadioGroup
           value={brand}
           onValueChange={(v) => setBrand(v)}
@@ -177,9 +179,7 @@ const DropdownMenuRadioGroups = (args: DropdownMenuProps) => {
           ))}
         </DropdownMenuRadioGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuLabel className="text-muted-foreground">
-          {PRICE_RANGES.label}
-        </DropdownMenuLabel>
+        <DropdownMenuLabel>{PRICE_RANGES.label}</DropdownMenuLabel>
         <DropdownMenuRadioGroup
           value={priceRange}
           onValueChange={(v) => setPriceRange(v)}
@@ -205,10 +205,10 @@ const DropdownMenuUnstyled = (args: DropdownMenuProps) => {
       {...args}
       classNames={{
         trigger: "bg-accent p-2",
-        content: "bg-accent p-4 shadow-medium flex flex-col gap-2",
-        item: "pointer-events-none data-[disabled]:opacity-disabled",
+        content: "bg-accent p-4 shadow-md flex flex-col gap-2",
+        item: "pointer-events-none data-[disabled]:opacity-50",
         subTrigger: "flex items-center",
-        subContent: "bg-accent px-4 py-2 flex flex-col gap-2 shadow-medium",
+        subContent: "bg-accent px-4 py-2 flex flex-col gap-2 shadow-md",
       }}
     >
       <DropdownMenuTrigger>Edit</DropdownMenuTrigger>

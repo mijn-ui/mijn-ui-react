@@ -1,4 +1,4 @@
-import { ChevronDownIcon, IconSvgProps } from "@mijn-ui/shared-icons"
+import { ChevronDownIcon } from "@mijn-ui/shared-icons"
 import { StoryObj } from "@storybook/react"
 import {
   Accordion,
@@ -26,37 +26,26 @@ const meta = {
       control: "select",
       options: ["single", "multiple"],
     },
-    variant: {
-      type: "string",
-      control: "select",
-      options: ["default", "outlined", "filled"],
-    },
   },
 }
 
 export default meta
 
 const AccordionTemplate = (args: AccordionProps) => (
-  <Accordion className="md:w-xl w-60" {...args}>
+  <Accordion className="w-80" {...args}>
     <AccordionItem value="item-1">
-      <AccordionTrigger>Is it accessible</AccordionTrigger>
+      <AccordionTrigger>What is your return policy?</AccordionTrigger>
       <AccordionContent>
-        Yes. It adheres to the WAI-ARIA design pattern.
+        You can return unused items within 30 days for a full refund or
+        exchange.
       </AccordionContent>
     </AccordionItem>
+
     <AccordionItem value="item-2">
-      <AccordionTrigger>Is it unstyled</AccordionTrigger>
+      <AccordionTrigger>How do I track my order?</AccordionTrigger>
       <AccordionContent>
-        Yes, you can make the components unstyled by setting the{" "}
-        <span className="font-semibold">unstyled</span> prop to{" "}
-        <span className="font-semibold">true</span> on either a single component
-        or a parent component.
-      </AccordionContent>
-    </AccordionItem>
-    <AccordionItem value="item-3">
-      <AccordionTrigger>Is it animated?</AccordionTrigger>
-      <AccordionContent>
-        Yes! You can animate the Accordion with CSS or JavaScript.
+        You can track your order by logging into your account and clicking on
+        &apos;Order History&apos;.{" "}
       </AccordionContent>
     </AccordionItem>
   </Accordion>
@@ -118,7 +107,7 @@ const AccordionWithCustomIcons = (args: AccordionProps) => (
 const AccordionUnstyled = (args: AccordionProps) => (
   <Accordion
     {...args}
-    className="md:w-xl border-small w-60 rounded-2xl border-orange-500 p-4"
+    className="md:w-xl borderw-60 rounded-2xl border-orange-500 p-4"
   >
     <AccordionItem className="my-2" value="item-1">
       <AccordionTrigger
@@ -129,7 +118,7 @@ const AccordionUnstyled = (args: AccordionProps) => (
       >
         Is it accessible
       </AccordionTrigger>
-      <AccordionContent className="text-small bg-neutral-300 px-4 py-2 dark:bg-neutral-700">
+      <AccordionContent className="text-sm bg-neutral-300 px-4 py-2 dark:bg-neutral-700">
         Yes. It adheres to the WAI-ARIA design pattern.
       </AccordionContent>
     </AccordionItem>
@@ -143,7 +132,7 @@ const AccordionUnstyled = (args: AccordionProps) => (
       >
         Is it unstyled
       </AccordionTrigger>
-      <AccordionContent className="text-small bg-neutral-300 px-4 py-2 dark:bg-neutral-700">
+      <AccordionContent className="text-sm bg-neutral-300 px-4 py-2 dark:bg-neutral-700">
         Yes, you can make the components unstyled by setting the{" "}
         <span className="font-semibold">unstyled</span> prop to{" "}
         <span className="font-semibold">true</span> on either a single component
@@ -160,7 +149,7 @@ const AccordionUnstyled = (args: AccordionProps) => (
       >
         Is it animated?
       </AccordionTrigger>
-      <AccordionContent className="text-small bg-neutral-300 px-4 py-2 dark:bg-neutral-700">
+      <AccordionContent className="text-sm bg-neutral-300 px-4 py-2 dark:bg-neutral-700">
         Yes! You can animate the Accordion with CSS or JavaScript.
       </AccordionContent>
     </AccordionItem>
@@ -201,33 +190,6 @@ export const Default: Story = {
   render: AccordionTemplate,
 }
 
-export const Variants: Story = {
-  render: (args) => {
-    return (
-      <div className="flex flex-col items-center gap-8">
-        <div className="space-y-2">
-          <h3 className="text-muted-foreground w-full text-start font-semibold">
-            Default
-          </h3>
-          <AccordionTemplate {...args} />
-        </div>
-        <div className="space-y-2">
-          <h3 className="text-muted-foreground w-full text-start font-semibold">
-            Filled
-          </h3>
-          <AccordionTemplate {...args} variant="filled" />
-        </div>
-        <div className="space-y-2">
-          <h3 className="text-muted-foreground w-full text-start font-semibold">
-            Outlined
-          </h3>
-          <AccordionTemplate {...args} variant="outlined" />
-        </div>
-      </div>
-    )
-  },
-}
-
 export const SingleExpand: Story = {
   render: AccordionTemplate,
   args: {
@@ -251,11 +213,11 @@ export const CustomStyles: Story = {
   args: {
     classNames: {
       base: "md:w-xl w-60 rounded-2xl p-4 bg-gradient-to-tr from-primary/20 to-primary/50 dark:from-primary/10 dark:to-primary/30",
-      item: "border-none bg-white/50 dark:bg-white/20 my-2 backdrop-blur rounded-large px-4",
+      item: "border-none bg-white/50 dark:bg-white/20 my-2 backdrop-blur rounded-lg px-4",
       contentWrapper: "",
       content: "",
       triggerWrapper: "",
-      trigger: "rounded-large text-primary",
+      trigger: "rounded-lg text-primary",
       icon: "",
     },
   },
@@ -266,42 +228,4 @@ export const Unstyled: Story = {
   args: {
     unstyled: true,
   },
-}
-
-function PlusIcon(props: IconSvgProps) {
-  return (
-    <svg
-      stroke="currentColor"
-      fill="none"
-      strokeWidth={2}
-      viewBox="0 0 24 24"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      height="1em"
-      width="1em"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path d="M5 12h14M12 5v14" />
-    </svg>
-  )
-}
-
-function MinusIcon(props: IconSvgProps) {
-  return (
-    <svg
-      stroke="currentColor"
-      fill="none"
-      strokeWidth={2}
-      viewBox="0 0 24 24"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      height="1em"
-      width="1em"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path d="M5 12h14" />
-    </svg>
-  )
 }

@@ -5,7 +5,7 @@ import { createTVUnstyledSlots } from "../src/tv-unstyled-slots"
 describe("createTVUnstyledSlots", () => {
   // Constants for default classes
   const DEFAULT_CLASSES = {
-    base: "rounded-medium",
+    base: "rounded-md",
     icon: "p-4",
     indicator: "border-solid",
   }

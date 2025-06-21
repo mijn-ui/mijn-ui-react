@@ -1,107 +1,111 @@
-import { ThemeColors } from "./colors"
+import type { ThemeColors as ImportedThemeColors } from "./colors"
 
 export type DefaultThemeType = "light" | "dark"
 
-export type BaseThemeUnit = {
-  small?: string
-  medium?: string
-  large?: string
+export type RadiusThemeUnit = {
+  "2xs"?: string
+  xs?: string
+  sm?: string
+  md?: string
+  lg?: string
+  xl?: string
+  "2xl"?: string
+  full?: string
 }
 
-export type FontThemeUnit = BaseThemeUnit & {
-  tiny?: string
+export type ShadowThemeUnit = {
+  xs?: string
+  sm?: string
+  md?: string
+  lg?: string
+  xl?: string
+  "2xl"?: string
+  "3xl"?: string
+}
+
+export type ColorSchema =
+  | Partial<{ foreground: string; DEFAULT: string }>
+  | string
+
+export type ExtendedColorSchema = ColorSchema & {
+  "foreground-subtle"?: string
+  subtle?: string
+  emphasis?: string
+  alt?: string
+}
+
+export type ActionSchema = ExtendedColorSchema & {
+  "foreground-filled"?: string
+}
+
+export type BorderSchema = {
+  DEFAULT: string
+  muted?: string
+  inverse?: string
+  primary?: string
+  "primary-subtle"?: string
+  secondary?: string
+  success?: string
+  "success-subtle"?: string
+  warning?: string
+  "warning-subtle"?: string
+  danger?: string
+  "danger-subtle"?: string
+}
+
+export type BaseColors = {
+  background: ExtendedColorSchema
+  foreground: ColorSchema
+  border: BorderSchema
+  overlay: ColorSchema
+  ring: ColorSchema
+  input: ColorSchema
+}
+
+export type DefaultBaseColors = {
+  light: BaseColors
+  dark: BaseColors
 }
 
 export interface LayoutTheme {
-  /**
-   * The default font size applied across the components.
-   *
-   * @default
-   * {
-   *    tiny: "0.75rem",
-   *    small: "0.875rem",
-   *    medium: "1rem",
-   *    large: "1.125rem",
-   *    DEFAULT: "1rem",
-   * }
-   */
-  fontSize?: FontThemeUnit
-  /**
-   * The default line height applied across the components.
-   *
-   * @default
-   * {
-   *    tiny: "1rem",
-   *    small: "1.25rem",
-   *    medium: "1.5rem",
-   *    large: "1.75rem",
-   *    DEFAULT: "1.5rem",
-   * }
-   */
-  lineHeight?: FontThemeUnit
   /**
    * The default radius applied across the components.
    * we recommend to use `rem` units.
    *
    * @default
    * {
-   *   small: "4px",
-   *   medium: "8px",
-   *   large: "12px",
+   *   "2xs": "0.125rem", // 2px
+   *   xs: "0.25rem", // 4px
+   *   sm: "0.375rem", // 6px
+   *   md: "0.5rem", // 8px
+   *   lg: "0.75rem", // 12px
+   *   xl: "1rem", // 16px
+   *   "2xl": "1.25rem", // 20px
+   *   full: "9999px",
    * }
    */
-  radius?: BaseThemeUnit
-  /**
-   * A number between 0 and 1 that is applied as opacity-[value] when the component is disabled.
-   *
-   * format: ".[value]"
-   *
-   * @default .5
-   */
-  disabledOpacity?: string | number
-  /**
-   * A number between 0 and 1 that is applied as opacity-[value] when the component is hovered.
-   *
-   * format: ".[value]"
-   *
-   * @default .8
-   */
-  hoverOpacity?: string | number
-  /**
-   * The default height applied to the divider component.
-   * we recommend to use `px` units.
-   *
-   * @default 1px
-   */
-  dividerWeight?: string
-  /**
-   * The border-small width applied across the components.
-   * @default
-   * {
-   *    small: "1px",
-   *    medium: "2px",
-   *    large: "3px",
-   * }
-   *
-   */
-  borderWidth?: BaseThemeUnit
+  radius?: RadiusThemeUnit
   /**
    * The box shadow applied across the components.
    *
    * @default
    * {
-   *  small: "0px 0px 5px 0px rgb(0 0 0 / 0.1)",
-   *  medium: "0px 0px 15px 0px rgb(0 0 0 / 0.15)",
-   *  large: "0px 0px 30px 0px rgb(0 0 0 / 0.2)",
+   *   xs: "0 1px 2px rgba(16, 24, 40, 0.05)",
+   *   sm: "0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06)",
+   *   md: "0 4px 8px rgba(16, 24, 40, 0.1), 0 2px 4px rgba(16, 24, 40, 0.06)",
+   *   lg: "0 12px 16px rgba(16, 24, 40, 0.08), 0 4px 6px rgba(16, 24, 40, 0.03)",
+   *   xl: "0 20px 24px rgba(16, 24, 40, 0.08), 0 8px 8px rgba(16, 24, 40, 0.03)",
+   *   "2xl": "0 24px 48px rgba(16, 24, 40, 0.18)",
+   *   "3xl": "0 32px 64px rgba(16, 24, 40, 0.14)",
    * }
    */
-  boxShadow?: BaseThemeUnit
+  boxShadow?: ShadowThemeUnit
 }
 
 export type ConfigTheme = {
   extend?: "light" | "dark"
   layout?: LayoutTheme
-  colors?: Partial<ThemeColors>
+  colors?: Partial<ImportedThemeColors>
 }
 
 export type ConfigThemes = Record<string, ConfigTheme>

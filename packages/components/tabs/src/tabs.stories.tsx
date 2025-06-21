@@ -29,21 +29,17 @@ const TabsTemplate = (args: TabsProps) => {
   return (
     <Tabs defaultValue="account" className="w-[400px]" {...args}>
       <TabsList className="grid h-fit w-full grid-cols-2">
-        <TabsTrigger
-          className="h-10 data-[state=active]:shadow-sm"
-          value="account"
-        >
+        <TabsTrigger value="account">
+          <AccountIcon />
           Account
         </TabsTrigger>
-        <TabsTrigger
-          className="h-10 data-[state=active]:shadow-sm"
-          value="password"
-        >
+        <TabsTrigger value="password">
+          <LockIcon />
           Password
         </TabsTrigger>
       </TabsList>
       <TabsContent value="account">
-        <Card>
+        <Card className="border-none bg-transparent shadow-none">
           <CardHeader>
             <CardTitle>Account</CardTitle>
             <CardDescription>
@@ -52,24 +48,8 @@ const TabsTemplate = (args: TabsProps) => {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <Input
-              id="name"
-              className="bg-card"
-              classNames={{
-                label: "bg-card peer-focus:bg-card",
-              }}
-              label="Name"
-              defaultValue="Pedro Duarte"
-            />
-            <Input
-              id="username"
-              className="bg-card"
-              classNames={{
-                label: "bg-card peer-focus:bg-card",
-              }}
-              label="Username"
-              defaultValue="@peduarte"
-            />
+            <Input id="name" label="Name" defaultValue="Pedro Duarte" />
+            <Input id="username" label="Username" defaultValue="@peduarte" />
           </CardContent>
           <CardFooter>
             <Button>Save changes</Button>
@@ -77,7 +57,7 @@ const TabsTemplate = (args: TabsProps) => {
         </Card>
       </TabsContent>
       <TabsContent value="password">
-        <Card>
+        <Card className="border-none bg-transparent shadow-none">
           <CardHeader>
             <CardTitle>Password</CardTitle>
             <CardDescription>
@@ -86,18 +66,8 @@ const TabsTemplate = (args: TabsProps) => {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <Input
-              id="current"
-              classNames={{ label: "bg-surface" }}
-              label="Current password"
-              type="password"
-            />
-            <Input
-              id="new"
-              classNames={{ label: "bg-surface" }}
-              label="New password"
-              type="password"
-            />
+            <Input id="current" label="Current password" type="password" />
+            <Input id="new" label="New password" type="password" />
           </CardContent>
           <CardFooter>
             <Button>Save password</Button>
@@ -112,17 +82,8 @@ const TabsDisabled = (args: TabsProps) => {
   return (
     <Tabs defaultValue="account" className="w-[400px]" {...args}>
       <TabsList className="grid h-fit w-full grid-cols-2">
-        <TabsTrigger
-          className="h-10 data-[state=active]:shadow-sm"
-          value="account"
-        >
-          Account
-        </TabsTrigger>
-        <TabsTrigger
-          className="h-10 data-[state=active]:shadow-sm"
-          value="password"
-          disabled
-        >
+        <TabsTrigger value="account">Account</TabsTrigger>
+        <TabsTrigger value="password" disabled>
           Password
         </TabsTrigger>
       </TabsList>
@@ -136,18 +97,8 @@ const TabsDisabled = (args: TabsProps) => {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <Input
-              id="name"
-              classNames={{ label: "bg-surface" }}
-              label="Name"
-              defaultValue="Pedro Duarte"
-            />
-            <Input
-              id="username"
-              classNames={{ label: "bg-surface" }}
-              label="Username"
-              defaultValue="@peduarte"
-            />
+            <Input id="name" label="Name" defaultValue="Pedro Duarte" />
+            <Input id="username" label="Username" defaultValue="@peduarte" />
           </CardContent>
           <CardFooter>
             <Button>Save changes</Button>
@@ -164,18 +115,8 @@ const TabsDisabled = (args: TabsProps) => {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <Input
-              id="current"
-              classNames={{ label: "bg-surface" }}
-              label="Current password"
-              type="password"
-            />
-            <Input
-              id="new"
-              classNames={{ label: "bg-surface" }}
-              label="New password"
-              type="password"
-            />
+            <Input id="current" label="Current password" type="password" />
+            <Input id="new" label="New password" type="password" />
           </CardContent>
           <CardFooter>
             <Button>Save password</Button>
@@ -190,18 +131,8 @@ const TabsUnstyled = (args: TabsProps) => {
   return (
     <Tabs defaultValue="account" className="w-[400px]" {...args}>
       <TabsList className="grid h-fit w-full grid-cols-2">
-        <TabsTrigger
-          className="data-[state=active]:bg-accent h-10 data-[state=active]:shadow-sm"
-          value="account"
-        >
-          Account
-        </TabsTrigger>
-        <TabsTrigger
-          className="data-[state=active]:bg-accent h-10 data-[state=active]:shadow-sm"
-          value="password"
-        >
-          Password
-        </TabsTrigger>
+        <TabsTrigger value="account">Account</TabsTrigger>
+        <TabsTrigger value="password">Password</TabsTrigger>
       </TabsList>
       <TabsContent value="account">
         <Card
@@ -219,9 +150,6 @@ const TabsUnstyled = (args: TabsProps) => {
             <Input
               id="name"
               className="w-full py-1 indent-2"
-              classNames={{
-                label: "bg-surface",
-              }}
               placeholder="Name"
               defaultValue="Pedro Duarte"
               unstyled={args.unstyled}
@@ -229,9 +157,6 @@ const TabsUnstyled = (args: TabsProps) => {
             <Input
               id="username"
               className="w-full py-1 indent-2"
-              classNames={{
-                label: "bg-surface",
-              }}
               placeholder="Username"
               defaultValue="@peduarte"
               unstyled={args.unstyled}
@@ -263,9 +188,6 @@ const TabsUnstyled = (args: TabsProps) => {
             <Input
               id="current"
               className="w-full py-1 indent-2"
-              classNames={{
-                label: "bg-surface",
-              }}
               placeholder="Current password"
               type="password"
               unstyled={args.unstyled}
@@ -273,9 +195,6 @@ const TabsUnstyled = (args: TabsProps) => {
             <Input
               id="new"
               className="w-full py-1 indent-2"
-              classNames={{
-                label: "bg-surface",
-              }}
               placeholder="New password"
               type="password"
               unstyled={args.unstyled}
@@ -309,3 +228,56 @@ export const Unstyled: Story = {
     unstyled: true,
   },
 }
+
+const AccountIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="10.5"
+      cy="10.0003"
+      r="8.33333"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    />
+    <path
+      d="M6.75 14.1663C8.69308 12.1312 12.286 12.0354 14.25 14.1663M12.5792 7.91634C12.5792 9.06693 11.6452 9.99967 10.4929 9.99967C9.34071 9.99967 8.40664 9.06693 8.40664 7.91634C8.40664 6.76575 9.34071 5.83301 10.4929 5.83301C11.6452 5.83301 12.5792 6.76575 12.5792 7.91634Z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+  </svg>
+)
+
+const LockIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.5 13.7497V12.083"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+    <path
+      d="M4.05655 15.704C4.24395 17.0958 5.39681 18.1863 6.79975 18.2508C7.98027 18.305 9.17946 18.3333 10.5 18.3333C11.8206 18.3333 13.0198 18.305 14.2003 18.2508C15.6033 18.1863 16.7561 17.0958 16.9435 15.704C17.0658 14.7956 17.1667 13.8647 17.1667 12.9167C17.1667 11.9686 17.0658 11.0378 16.9435 10.1294C16.7561 8.73752 15.6033 7.64707 14.2003 7.58258C13.0198 7.52831 11.8206 7.5 10.5 7.5C9.17946 7.5 7.98027 7.52831 6.79975 7.58258C5.39681 7.64707 4.24395 8.73752 4.05655 10.1294C3.93424 11.0378 3.83337 11.9686 3.83337 12.9167C3.83337 13.8647 3.93424 14.7956 4.05655 15.704Z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    />
+    <path
+      d="M6.75 7.50033V5.41699C6.75 3.34592 8.42893 1.66699 10.5 1.66699C12.5711 1.66699 14.25 3.34592 14.25 5.41699V7.50033"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)

@@ -45,6 +45,16 @@ const InputTemplate = (args: InputProps) => {
   return <Input className="w-80" {...args} />
 }
 
+const InputVariants = (args: InputProps) => {
+  return (
+    <div className="flex flex-col gap-2">
+      <Input className="w-80" {...args} variant="default" />
+      <Input className="w-80" {...args} variant="underline" />
+      <Input className="w-80" {...args} variant="danger" />
+    </div>
+  )
+}
+
 const InputWithIcons = (args: InputProps) => {
   return (
     <div className="flex flex-col gap-2">
@@ -57,6 +67,10 @@ const InputWithIcons = (args: InputProps) => {
 
 export const Default: Story = {
   render: InputTemplate,
+}
+
+export const Variants: Story = {
+  render: InputVariants,
 }
 
 export const WithIcon: Story = {

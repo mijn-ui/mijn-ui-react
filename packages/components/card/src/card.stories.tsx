@@ -31,8 +31,7 @@ const CardTemplate = (args: CardProps) => {
         <Button
           variant="ghost"
           iconOnly
-          radius={"lg"}
-          className="bg-accent text-muted-foreground p-0 sm:size-12"
+          className="bg-secondary text-muted-foreground rounded-full p-0 sm:size-12"
           unstyled={args.unstyled}
           asChild
         >
@@ -46,7 +45,7 @@ const CardTemplate = (args: CardProps) => {
         </div>
       </CardHeader>
       <CardContent>
-        <CardTitle className="text-medium">Users</CardTitle>
+        <CardTitle className="text-base">Users</CardTitle>
         <CardDescription>Manage user accounts and permissions.</CardDescription>
       </CardContent>
     </Card>
@@ -71,7 +70,7 @@ const CardStats = (args: CardProps) => {
         <CardTitle className="text-xl font-medium sm:text-2xl">
           $75,890.75
         </CardTitle>
-        <p className="text-muted-foreground text-tiny font-normal">
+        <p className="text-muted-foreground text-xs font-normal">
           <span className="text-success">+128%</span> from June
         </p>
       </CardContent>
@@ -81,7 +80,7 @@ const CardStats = (args: CardProps) => {
 
 const CardCustom = (args: CardProps) => {
   return (
-    <Card className="shadow-large max-w-72 rounded-xl" {...args}>
+    <Card className="max-w-72 rounded-xl shadow-lg" {...args}>
       <CardHeader className="relative py-12">
         <div className="absolute -top-32 left-0 w-full">
           <img
@@ -100,9 +99,8 @@ const CardCustom = (args: CardProps) => {
       </CardContent>
       <CardFooter className="overflow-hidden rounded-b-xl p-0">
         <Button
-          radius="none"
-          color="primary"
-          className="w-full gap-2 py-5 font-bold tracking-wider"
+          variant="primary"
+          className="w-full gap-2 rounded-none py-5 font-semibold tracking-wider"
           unstyled={args.unstyled}
         >
           ADD TO BAG
@@ -117,10 +115,9 @@ const CardUnstyled = (args: CardProps) => {
     <Card className="bg-accent relative max-w-60 p-4" {...args}>
       <CardHeader>
         <Button
-          variant={"outlined"}
+          variant={"ghost"}
           iconOnly
-          radius={"lg"}
-          className="text-muted-foreground p-0 sm:size-12"
+          className="text-muted-foreground bg-secondary rounded-lg p-0 sm:size-12"
           asChild
         >
           <span>
@@ -133,7 +130,7 @@ const CardUnstyled = (args: CardProps) => {
         </div>
       </CardHeader>
       <CardContent>
-        <CardTitle className="text-medium font-bold">Users</CardTitle>
+        <CardTitle className="text-base font-bold">Users</CardTitle>
         <CardDescription>Manage user accounts and permissions.</CardDescription>
       </CardContent>
     </Card>

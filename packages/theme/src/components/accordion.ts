@@ -5,26 +5,13 @@ const accordionStyles = tv({
   slots: {
     base: "",
     item: "border-b-border border-b",
-    triggerWrapper: "flex",
-    trigger: "group flex w-full items-center justify-between py-3",
-    icon: "text-muted-foreground duration-400 size-4 shrink-0 ease-in-out group-data-[state=open]:rotate-180",
+    triggerWrapper: "",
+    trigger:
+      "group flex w-full items-center justify-between py-4 text-sm font-medium leading-none hover:underline",
+    icon: "text-secondary-foreground size-4 shrink-0 duration-300 ease-in-out group-data-[state=open]:rotate-180",
     contentWrapper:
-      "data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open overflow-hidden text-small transition-[height]",
-    content: "pb-3 pt-0",
-  },
-  variants: {
-    variant: {
-      default: {},
-      filled: {
-        base: "bg-card rounded-xl px-4 pb-4 pt-2 shadow-small",
-      },
-      outlined: {
-        base: "border-border rounded-xl border-small px-4 pb-4 pt-2",
-      },
-    },
-  },
-  defaultVariants: {
-    variant: "default",
+      "data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open text-secondary-foreground overflow-hidden text-sm transition-[height]",
+    content: "pb-4 pt-0 text-sm leading-tight",
   },
 })
 

@@ -55,12 +55,14 @@ const DATA = [
 const PopoverTemplate = (args: PopoverProps) => {
   return (
     <Popover {...args}>
-      <PopoverTrigger className="rounded-full">
-        <Icons.mixerHorizontal className="text-lg" />
+      <PopoverTrigger asChild className="rounded-full">
+        <Button iconOnly>
+          <Icons.mixerHorizontal className="text-lg" />
+        </Button>
       </PopoverTrigger>
       <PopoverContent className="relative w-72 ">
         <div className="flex flex-col justify-center gap-2.5">
-          <p className="text-medium font-medium">Dimensions</p>
+          <p className="text-base font-medium">Dimensions</p>
           {DATA.map((field) => {
             return (
               <fieldset
@@ -92,7 +94,6 @@ const PopoverTemplate = (args: PopoverProps) => {
           <Button
             variant="ghost"
             iconOnly
-            radius={"full"}
             className="absolute right-0 top-0 hover:bg-transparent"
             unstyled={args.unstyled}
           >
@@ -113,7 +114,7 @@ const PopoverUnstyled = (args: PopoverProps) => {
       </PopoverTrigger>
       <PopoverContent className="bg-accent relative w-72 p-4">
         <div className="flex flex-col justify-center gap-2.5">
-          <p className="text-medium font-semibold">Dimensions</p>
+          <p className="text-base font-semibold">Dimensions</p>
           {DATA.map((field) => {
             return (
               <fieldset
@@ -142,7 +143,6 @@ const PopoverUnstyled = (args: PopoverProps) => {
           <Button
             variant="ghost"
             iconOnly
-            radius={"full"}
             className="absolute right-4 top-4 hover:bg-transparent"
             unstyled={args.unstyled}
           >
@@ -168,7 +168,7 @@ export const Unstyled: Story = {
 
 type IconProps = React.HTMLAttributes<SVGElement>
 
-export const Icons = {
+const Icons = {
   cross: (props: IconProps) => (
     <svg
       stroke="currentColor"

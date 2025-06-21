@@ -1,169 +1,155 @@
-import { DefaultBaseColors, ThemeColors } from "./types"
+import type { DefaultBaseColors, ThemeColors } from "./types"
 
 const base: DefaultBaseColors = {
   light: {
     background: {
-      DEFAULT: "220 14% 96%",
+      DEFAULT: "0 0 100%",
+      alt: "0 0 100%",
     },
     foreground: {
-      DEFAULT: "0 0% 0%",
+      DEFAULT: "240 10% 4%",
     },
     border: {
-      DEFAULT: "0 0% 83%",
-    },
-    input: {
-      DEFAULT: "0 0% 73%",
-    },
-    ring: {
-      DEFAULT: "0 0% 15%",
-    },
-    overlay: {
-      DEFAULT: "0 0% 0%",
+      DEFAULT: "240 5% 84%",
+      muted: "240 5% 96%",
+      inverse: "240 5% 26%",
+      primary: "20 88% 40%",
+      "primary-subtle": "21 98% 83%",
+      secondary: "240 6% 90%",
+      success: "142 72% 29%",
+      "success-subtle": "142 79% 85%",
+      warning: "41 92% 33%",
+      "warning-subtle": "41 98% 77%",
+      danger: "0 74% 42%",
+      "danger-subtle": "0 96% 89%",
     },
   },
   dark: {
     background: {
-      DEFAULT: "0 0% 4%",
+      DEFAULT: "240 10% 4%",
+      alt: "240 4% 16%",
     },
     foreground: {
-      DEFAULT: "0 0% 96%",
+      DEFAULT: "0 0 100%",
     },
     border: {
-      DEFAULT: "0 0% 15%",
-    },
-    input: {
-      DEFAULT: "0 0% 15%",
-    },
-    ring: {
-      DEFAULT: "0 0% 96%",
-    },
-    overlay: {
-      DEFAULT: "0 0% 0%",
+      DEFAULT: "240 5% 26%",
+      muted: "240 6% 10%",
+      inverse: "240 5% 84%",
+      primary: "20 96% 61%",
+      "primary-subtle": "21 79% 34%",
+      secondary: "240 4% 16%",
+      success: "142 69% 58%",
+      "success-subtle": "142 64% 24%",
+      warning: "41 96% 53%",
+      "warning-subtle": "41 81% 29%",
+      danger: "0 91% 71%",
+      "danger-subtle": "0 70% 35%",
     },
   },
 }
 
 export const themeColorsLight: ThemeColors = {
   ...base.light,
-  card: {
-    DEFAULT: "0 0% 98%",
-    foreground: "0 0% 0%",
-  },
-
-  popover: {
-    DEFAULT: "0 0% 98%",
-    foreground: "0 0% 0%",
-  },
-
-  default: {
-    DEFAULT: "216 12.2% 83.9%",
-    foreground: "240 5.9% 10%",
-  },
 
   muted: {
-    DEFAULT: "0 0% 83%",
-    foreground: "0 0% 25%",
+    DEFAULT: "240 6% 90%",
+    alt: "240 6% 90%",
+    foreground: "240 4% 46%",
   },
 
-  accent: {
-    DEFAULT: "0 0% 90%",
-    foreground: "0 0% 0%",
+  inverse: {
+    DEFAULT: "240 10% 4%",
+    foreground: "0 0 98%",
   },
 
   primary: {
-    DEFAULT: "29 100% 52%",
-    foreground: "0 0% 100%",
+    DEFAULT: "21 90% 48%",
+    foreground: "20 100% 96%",
+    subtle: "20 100% 92%",
+    "foreground-subtle": "20 75% 28%",
+    emphasis: "20 88% 40%",
   },
 
   secondary: {
-    DEFAULT: "33 35% 50%",
-    foreground: "0 0% 100%",
-  },
-
-  info: {
-    DEFAULT: "216 76% 52%",
-    foreground: "219 64% 43%",
-    "foreground-filled": "0 0% 100%",
-  },
-
-  warning: {
-    DEFAULT: "45 92% 47%",
-    foreground: "28 73% 26%",
-    "foreground-filled": "0 0% 0%",
-  },
-
-  danger: {
-    DEFAULT: "0 72% 43%",
-    foreground: "0 82% 31%",
-    "foreground-filled": "0 0% 100%",
+    DEFAULT: "240 5% 96%",
+    foreground: "240 5% 26%",
   },
 
   success: {
-    DEFAULT: "140 76% 38%",
-    foreground: "140 49% 20%",
-    "foreground-filled": "0 0% 100%",
+    DEFAULT: "142 76% 36%",
+    foreground: "143 76% 97%",
+    subtle: "143 84% 93%",
+    "foreground-subtle": "142 61% 20%",
+    emphasis: "142 72% 29%",
+  },
+
+  warning: {
+    DEFAULT: "41 96% 40%",
+    foreground: "41 92% 95%",
+    subtle: "41 97% 88%",
+    "foreground-subtle": "40 73% 26%",
+    emphasis: "41 92% 33%",
+  },
+
+  danger: {
+    DEFAULT: "0 72% 51%",
+    foreground: "0 86% 97%",
+    subtle: "0 93% 94%",
+    "foreground-subtle": "0 63% 31%",
+    emphasis: "0 74% 42%",
   },
 }
 
 export const themeColorsDark: ThemeColors = {
   ...base.dark,
-  card: {
-    DEFAULT: "0 0% 7%",
-    foreground: "0 0% 96%",
-  },
-
-  popover: {
-    DEFAULT: "0 0% 7%",
-    foreground: "0 0% 96%",
-  },
-
-  default: {
-    DEFAULT: "240 3.7% 15.9%",
-    foreground: "0 0% 98%",
-  },
 
   muted: {
-    DEFAULT: "0 0% 15%",
-    foreground: "0 0% 64%",
+    DEFAULT: "240 4% 16%",
+    alt: "240 10% 4%",
+    foreground: "240 4% 46%",
   },
 
-  accent: {
-    DEFAULT: "0 0% 12%",
-    foreground: "0 0% 96%",
+  inverse: {
+    DEFAULT: "0 0 100%",
+    foreground: "240 10% 4%",
   },
 
   primary: {
-    DEFAULT: "29 100% 52%",
-    foreground: "0 0% 100%",
+    DEFAULT: "20 96% 61%",
+    foreground: "21 81% 15%",
+    subtle: "20 75% 28%",
+    "foreground-subtle": "20 100% 92%",
+    emphasis: "20 96% 61%",
   },
 
   secondary: {
-    DEFAULT: "33 35% 50%",
-    foreground: "0 0% 100%",
-  },
-
-  info: {
-    DEFAULT: "216 76% 52%",
-    foreground: "207 70% 80%",
-    "foreground-filled": "0 0% 100%",
-  },
-
-  danger: {
-    DEFAULT: "0 72% 43%",
-    foreground: "0 79% 79%",
-    "foreground-filled": "0 0% 100%",
-  },
-
-  warning: {
-    DEFAULT: "45 92% 47%",
-    foreground: "53 98% 77%",
-    "foreground-filled": "0 0% 0%",
+    DEFAULT: "240 6% 10%",
+    foreground: "240 5% 84%",
   },
 
   success: {
-    DEFAULT: "140 76% 38%",
-    foreground: "140 71% 82%",
-    "foreground-filled": "0 0% 100%",
+    DEFAULT: "142 69% 58%",
+    foreground: "142 80% 10%",
+    subtle: "142 61% 20%",
+    "foreground-subtle": "143 84% 93%",
+    emphasis: "142 69% 58%",
+  },
+
+  warning: {
+    DEFAULT: "41 96% 53%",
+    foreground: "41 83% 14%",
+    subtle: "40 73% 26%",
+    "foreground-subtle": "41 97% 88%",
+    emphasis: "41 96% 53%",
+  },
+
+  danger: {
+    DEFAULT: "0 91% 71%",
+    foreground: "0 75% 15%",
+    subtle: "0 63% 31%",
+    "foreground-subtle": "0 93% 94%",
+    emphasis: "0 91% 71%",
   },
 }
 
