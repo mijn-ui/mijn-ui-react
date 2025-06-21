@@ -1,5 +1,11 @@
 # @mijn-ui/shared-icons
 
+## 0.0.5
+
+### Patch Changes
+
+- f0a82b7: Integrate new design.
+
 ## 0.0.4
 
 ### Patch Changes

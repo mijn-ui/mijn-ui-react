@@ -1,5 +1,17 @@
 # @mijn-ui-react/autocomplete
 
+## 0.0.23
+
+### Patch Changes
+
+- f0a82b7: Integrate new design.
+- Updated dependencies [f0a82b7]
+  - @mijn-ui/react-command@0.1.2
+  - @mijn-ui/react-popover@0.1.2
+  - @mijn-ui/react-skeleton@0.1.1
+  - @mijn-ui/react-hooks@0.0.19
+  - @mijn-ui/shared-icons@0.0.5
+
 ## 0.0.22
 
 ### Patch Changes

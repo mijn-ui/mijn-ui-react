@@ -1,5 +1,11 @@
 # @mijn-ui-react/badge
 
+## 0.1.1
+
+### Patch Changes
+
+- f0a82b7: Integrate new design.
+
 ## 0.1.0
 
 ### Minor Changes

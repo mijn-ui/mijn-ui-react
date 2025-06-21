@@ -1,5 +1,13 @@
 # @mijn-ui-react/input
 
+## 0.1.1
+
+### Patch Changes
+
+- f0a82b7: Integrate new design.
+- Updated dependencies [f0a82b7]
+  - @mijn-ui/react-label@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
