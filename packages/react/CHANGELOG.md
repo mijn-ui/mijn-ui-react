@@ -1,5 +1,11 @@
 # @mijn-ui/react
 
+## 0.2.1
+
+### Patch Changes
+
+- 62d4024: Fix react-core version mismatch.
+
 ## 0.2.0
 
 ### Minor Changes
