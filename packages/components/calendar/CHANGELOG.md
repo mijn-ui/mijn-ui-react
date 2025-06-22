@@ -1,5 +1,16 @@
 # @mijn-ui-react/calendar
 
+## 0.2.0
+
+### Minor Changes
+
+- 30f66d5: Integrate new design
+
+### Patch Changes
+
+- Updated dependencies [30f66d5]
+  - @mijn-ui/shared-icons@0.1.0
+
 ## 0.1.0
 
 ### Minor Changes

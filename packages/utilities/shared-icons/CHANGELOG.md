@@ -1,5 +1,11 @@
 # @mijn-ui/shared-icons
 
+## 0.1.0
+
+### Minor Changes
+
+- 30f66d5: Integrate new design
+
 ## 0.0.4
 
 ### Patch Changes
