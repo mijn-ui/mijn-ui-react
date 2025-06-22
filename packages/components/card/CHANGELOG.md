@@ -1,5 +1,15 @@
 # @mijn-ui-react/card
 
+## 0.2.0
+
+### Minor Changes
+
+- 30f66d5: Integrate new design
+
+### Patch Changes
+
+- @mijn-ui/react-hooks@0.0.18
+
 ## 0.1.1
 
 ### Patch Changes

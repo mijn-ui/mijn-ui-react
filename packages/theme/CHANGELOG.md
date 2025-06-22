@@ -1,5 +1,11 @@
 # @mijn-ui/react-theme
 
+## 0.2.0
+
+### Minor Changes
+
+- 21f75ac: Integrate new design system.
+
 ## 0.1.0
 
 ### Minor Changes
