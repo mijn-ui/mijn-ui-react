@@ -1,5 +1,11 @@
 # @mijn-ui/react
 
+## 0.2.0
+
+### Minor Changes
+
+- 959c0f7: Integrate new design system.
+
 ## 0.1.2
 
 ### Patch Changes
