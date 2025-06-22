@@ -1,5 +1,12 @@
 # @mijn-ui-react/accordion
 
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies [82f9206]
+  - @mijn-ui/react-hooks@0.0.19
+
 ## 0.2.0
 
 ### Minor Changes

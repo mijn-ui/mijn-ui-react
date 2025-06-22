@@ -1,5 +1,11 @@
 # @mijn-ui-react/hooks
 
+## 0.0.19
+
+### Patch Changes
+
+- 82f9206: update peerdeps.
+
 ## 0.0.18
 
 ### Patch Changes
