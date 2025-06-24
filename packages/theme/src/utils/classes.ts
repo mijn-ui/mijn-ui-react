@@ -5,7 +5,7 @@
 export const baseStyles = (prefix: string) => ({
   color: `hsl(var(--${prefix}-foreground))`,
   backgroundColor: `hsl(var(--${prefix}-background))`,
-  borderColor: `hsl(var(${prefix}-border))`,
+  borderColor: `hsl(var(--${prefix}-border))`,
 })
 
 export const disabledClasses = [
