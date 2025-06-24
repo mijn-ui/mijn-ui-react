@@ -1,5 +1,11 @@
 # @mijn-ui/react-theme
 
+## 0.2.1
+
+### Patch Changes
+
+- e360033: Fix base style issues
+
 ## 0.2.0
 
 ### Minor Changes
