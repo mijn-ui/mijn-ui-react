@@ -40,7 +40,7 @@ importers:
         version: 5.1.0(eslint@9.25.1(jiti@1.21.7))
       eslint-plugin-tailwindcss:
         specifier: ^3.17.5
-        version: 3.18.0(tailwindcss@3.4.17)
+        version: 3.18.0(tailwindcss@4.1.17)
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
@@ -52,7 +52,7 @@ importers:
         version: 6.0.1
       tailwind-variants:
         specifier: ^0.3.0
-        version: 0.3.1(tailwindcss@3.4.17)
+        version: 0.3.1(tailwindcss@4.1.17)
       tsup:
         specifier: 8.4.0
         version: 8.4.0(jiti@1.21.7)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.6.3)(yaml@2.7.1)
@@ -1485,7 +1485,7 @@ importers:
         version: 19.0.0(react@19.0.0)
       tailwind-variants:
         specifier: ^0.3.0
-        version: 0.3.1(tailwindcss@3.4.17)
+        version: 0.3.1(tailwindcss@4.1.17)
       tsconfig:
         specifier: workspace:*
         version: link:../configs/ts-config
@@ -1633,7 +1633,7 @@ importers:
         version: 19.0.0(react@19.0.0)
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.17)
+        version: 1.0.7(tailwindcss@4.1.17)
     devDependencies:
       '@chromatic-com/storybook':
         specifier: ^3.2.2
@@ -1687,8 +1687,8 @@ importers:
         specifier: ^8.4.1
         version: 8.6.12(prettier@3.5.3)
       tailwindcss:
-        specifier: ^3.4.15
-        version: 3.4.17
+        specifier: ^4.0.0
+        version: 4.1.17
       tsconfig:
         specifier: workspace:*
         version: link:../configs/ts-config
@@ -1718,17 +1718,17 @@ importers:
         version: 2.6.0
       tailwind-variants:
         specifier: ^0.3.0
-        version: 0.3.1(tailwindcss@3.4.17)
+        version: 0.3.1(tailwindcss@4.1.17)
       tailwindcss-animate:
         specifier: '>=1.0.0'
-        version: 1.0.7(tailwindcss@3.4.17)
+        version: 1.0.7(tailwindcss@4.1.17)
     devDependencies:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../configs/eslint-config-custom
       tailwindcss:
-        specifier: ^3.4.15
-        version: 3.4.17
+        specifier: ^4.0.0
+        version: 4.1.17
       tsconfig:
         specifier: workspace:*
         version: link:../configs/ts-config
@@ -4871,6 +4871,7 @@ packages:
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
+    deprecated: The work that was done in this beta branch won't be included in future versions
 
   spawndamnit@3.0.1:
     resolution: {integrity: sha512-MmnduQUuHCoFckZoWnXsTg7JaiLBJrKFj9UI2MbRPGaJeVpsLcVBu6P/IGZovziM/YBsellCmsprgNA+w0CzVg==}
@@ -4981,6 +4982,9 @@ packages:
     resolution: {integrity: sha512-w33E2aCvSDP0tW9RZuNXadXlkHXqFzSkQew/aIa2i/Sj8fThxwovwlXHSPXTbAHwEIhBFXAedUhP2tueAKP8Og==}
     engines: {node: '>=14.0.0'}
     hasBin: true
+
+  tailwindcss@4.1.17:
+    resolution: {integrity: sha512-j9Ee2YjuQqYT9bbRTfTZht9W/ytp5H+jJpZKiYdP/bpnXARAuELt9ofP0lPnmHjbga7SNQIxdTAXCmtKVYjN+Q==}
 
   term-size@2.2.1:
     resolution: {integrity: sha512-wK0Ri4fOGjv/XPy8SBHZChl8CM7uMc5VML7SqiQ0zG7+J5Vr+RMQDoHa2CNT6KHUnTGIXH34UDMkPzAUyapBZg==}
@@ -7577,11 +7581,11 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-tailwindcss@3.18.0(tailwindcss@3.4.17):
+  eslint-plugin-tailwindcss@3.18.0(tailwindcss@4.1.17):
     dependencies:
       fast-glob: 3.3.3
       postcss: 8.5.3
-      tailwindcss: 3.4.17
+      tailwindcss: 4.1.17
 
   eslint-scope@8.3.0:
     dependencies:
@@ -8893,9 +8897,18 @@ snapshots:
       tailwind-merge: 2.5.4
       tailwindcss: 3.4.17
 
+  tailwind-variants@0.3.1(tailwindcss@4.1.17):
+    dependencies:
+      tailwind-merge: 2.5.4
+      tailwindcss: 4.1.17
+
   tailwindcss-animate@1.0.7(tailwindcss@3.4.17):
     dependencies:
       tailwindcss: 3.4.17
+
+  tailwindcss-animate@1.0.7(tailwindcss@4.1.17):
+    dependencies:
+      tailwindcss: 4.1.17
 
   tailwindcss@3.4.17:
     dependencies:
@@ -8923,6 +8936,8 @@ snapshots:
       sucrase: 3.35.0
     transitivePeerDependencies:
       - ts-node
+
+  tailwindcss@4.1.17: {}
 
   term-size@2.2.1: {}
 
