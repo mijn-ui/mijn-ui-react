@@ -1,5 +1,44 @@
 # @mijn-ui/react
 
+## 0.3.0
+
+### Minor Changes
+
+- a9b1337: Tailwind v4 integration and reorganize packages theme structure
+
+### Patch Changes
+
+- Updated dependencies [a9b1337]
+  - @mijn-ui/react-accordion@0.3.0
+  - @mijn-ui/react-alert@0.3.0
+  - @mijn-ui/react-alert-dialog@0.3.0
+  - @mijn-ui/react-autocomplete@0.2.0
+  - @mijn-ui/react-avatar@0.3.0
+  - @mijn-ui/react-badge@0.3.0
+  - @mijn-ui/react-button@0.3.0
+  - @mijn-ui/react-calendar@0.3.0
+  - @mijn-ui/react-card@0.3.0
+  - @mijn-ui/react-checkbox@0.3.0
+  - @mijn-ui/react-collapsible@0.3.0
+  - @mijn-ui/react-command@0.3.0
+  - @mijn-ui/react-dialog@0.3.0
+  - @mijn-ui/react-dropdown-menu@0.3.0
+  - @mijn-ui/react-input@0.3.0
+  - @mijn-ui/react-label@0.3.0
+  - @mijn-ui/react-pagination@0.3.0
+  - @mijn-ui/react-popover@0.3.0
+  - @mijn-ui/react-progress@0.3.0
+  - @mijn-ui/react-radio-group@0.3.0
+  - @mijn-ui/react-scroll-area@0.3.0
+  - @mijn-ui/react-select@0.3.0
+  - @mijn-ui/react-separator@0.3.0
+  - @mijn-ui/react-skeleton@0.3.0
+  - @mijn-ui/react-switch@0.3.0
+  - @mijn-ui/react-table@0.3.0
+  - @mijn-ui/react-tabs@0.3.0
+  - @mijn-ui/react-textarea@0.3.0
+  - @mijn-ui/react-core@0.3.0
+
 ## 0.2.3
 
 ### Patch Changes

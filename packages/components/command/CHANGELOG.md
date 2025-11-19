@@ -1,5 +1,16 @@
 # @mijn-ui-react/command
 
+## 0.3.0
+
+### Minor Changes
+
+- a9b1337: Tailwind v4 integration and reorganize packages theme structure
+
+### Patch Changes
+
+- Updated dependencies [a9b1337]
+  - @mijn-ui/react-dialog@0.3.0
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @mijn-ui/react-core
 
+## 0.3.0
+
+### Minor Changes
+
+- a9b1337: Tailwind v4 integration and reorganize packages theme structure
+
 ## 0.1.0
 
 ### Minor Changes
