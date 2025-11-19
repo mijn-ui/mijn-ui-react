@@ -1456,9 +1456,6 @@ importers:
       tailwindcss:
         specifier: ^4.0.0
         version: 4.1.17
-      tw-animate-css:
-        specifier: ^1.0.0
-        version: 1.4.0
     devDependencies:
       tsconfig:
         specifier: workspace:*

@@ -42,7 +42,7 @@
     "@mijn-ui/shared-icons": "workspace:*"
   },
   "peerDependencies": {
-    "@mijn-ui/react-core": "^0.2.0",
+    "@mijn-ui/react-core": "^0.3.0",
     "tailwind-merge": "^3.0.0",
     "tailwind-variants": "^3.0.0",
     "react": "^19.0",
