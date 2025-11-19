@@ -31,7 +31,7 @@ const CardTemplate = (args: CardProps) => {
         <Button
           variant="ghost"
           iconOnly
-          className="bg-secondary text-muted-foreground rounded-full p-0 sm:size-12"
+          className="bg-bg-secondary text-fg-tertiary rounded-full p-0 sm:size-12"
           unstyled={args.unstyled}
           asChild
         >
@@ -40,7 +40,7 @@ const CardTemplate = (args: CardProps) => {
           </span>
         </Button>
 
-        <div className="text-muted-foreground absolute right-4 top-4">
+        <div className="text-fg-tertiary absolute right-4 top-4">
           <Icons.arrowUpRight className="size-5 sm:size-6" />
         </div>
       </CardHeader>
@@ -70,8 +70,8 @@ const CardStats = (args: CardProps) => {
         <CardTitle className="text-xl font-medium sm:text-2xl">
           $75,890.75
         </CardTitle>
-        <p className="text-muted-foreground text-xs font-normal">
-          <span className="text-success">+128%</span> from June
+        <p className="text-fg-tertiary text-xs font-normal">
+          <span className="text-fg-success">+128%</span> from June
         </p>
       </CardContent>
     </Card>
@@ -117,7 +117,7 @@ const CardUnstyled = (args: CardProps) => {
         <Button
           variant={"ghost"}
           iconOnly
-          className="text-muted-foreground bg-secondary rounded-lg p-0 sm:size-12"
+          className="text-fg-tertiary bg-bg-secondary rounded-lg p-0 sm:size-12"
           asChild
         >
           <span>
@@ -125,7 +125,7 @@ const CardUnstyled = (args: CardProps) => {
           </span>
         </Button>
 
-        <div className="text-muted-foreground absolute right-4 top-4">
+        <div className="text-fg-tertiary absolute right-4 top-4">
           <Icons.arrowUpRight className="size-5 sm:size-6" />
         </div>
       </CardHeader>

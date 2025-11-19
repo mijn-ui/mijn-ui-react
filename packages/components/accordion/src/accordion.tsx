@@ -1,19 +1,33 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots } from "@mijn-ui/react-core"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  AccordionSlots,
-  AccordionVariantProps,
-  UnstyledComponentWithSlots,
-  UnstyledProps,
-  accordionStyles,
-  cn,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  createTVUnstyledSlots,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
+import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import { ChevronDownIcon } from "@mijn-ui/shared-icons"
 import * as RadixAccordion from "@radix-ui/react-accordion"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const accordionStyles = tv({
+  slots: {
+    base: "",
+    item: "border-b-outline-default border-b",
+    triggerWrapper: "",
+    trigger:
+      "group flex w-full items-center justify-between py-4 text-sm font-medium leading-none hover:underline",
+    icon: "text-fg-secondary size-4 shrink-0 duration-300 ease-in-out group-data-[state=open]:rotate-180",
+    contentWrapper:
+      "data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open text-fg-secondary overflow-hidden text-sm transition-[height]",
+    content: "pb-4 pt-0 text-sm leading-tight",
+  },
+})
+
+export type AccordionVariantProps = VariantProps<typeof accordionStyles>
+export type AccordionSlots = keyof ReturnType<typeof accordionStyles>
+export { accordionStyles }
 
 /* -------------------------------------------------------------------------- */
 /*                              AccordionContext                              */
@@ -64,7 +78,7 @@ const Accordion = ({
   return (
     <AccordionProvider value={{ classNames, unstyled, styles }}>
       <RadixAccordion.Root
-        className={base({ className: cn(classNames?.base, className) })}
+        className={base({ className: cnBase(classNames?.base, className) })}
         {...props}
       />
     </AccordionProvider>
@@ -77,8 +91,7 @@ const Accordion = ({
 
 export type AccordionItemProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Item
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AccordionItem = ({
   className,
@@ -89,7 +102,7 @@ const AccordionItem = ({
 
   return (
     <RadixAccordion.Item
-      className={item({ className: cn(classNames?.item, className) })}
+      className={item({ className: cnBase(classNames?.item, className) })}
       {...props}
     />
   )
@@ -101,10 +114,9 @@ const AccordionItem = ({
 
 export type AccordionTriggerProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Trigger
-> &
-  UnstyledProps & {
-    icon?: React.ReactNode
-  }
+> & { unstyled?: boolean } & {
+  icon?: React.ReactNode
+}
 
 const AccordionTrigger = ({
   className,
@@ -125,7 +137,9 @@ const AccordionTrigger = ({
       className={triggerWrapper({ className: classNames?.triggerWrapper })}
     >
       <RadixAccordion.Trigger
-        className={trigger({ className: cn(classNames?.trigger, className) })}
+        className={trigger({
+          className: cnBase(classNames?.trigger, className),
+        })}
         {...props}
       >
         {children}
@@ -147,8 +161,7 @@ const AccordionTrigger = ({
 
 export type AccordionContentProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Content
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AccordionContent = ({
   className,
@@ -164,17 +177,15 @@ const AccordionContent = ({
       {...props}
     >
       <div
-        className={content({ className: cn(classNames?.content, className) })}
+        className={content({
+          className: cnBase(classNames?.content, className),
+        })}
       >
         {children}
       </div>
     </RadixAccordion.Content>
   )
 }
-
-/* -------------------------------------------------------------------------- */
-/*                                Exports                                     */
-/* -------------------------------------------------------------------------- */
 
 export {
   Accordion,

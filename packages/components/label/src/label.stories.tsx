@@ -23,7 +23,7 @@ const LabelTemplate = (args: LabelProps) => {
         Feedback
       </Label>
       <textarea
-        className="focus-visible:ring-offset-background bg-secondary placeholder:text-muted-foreground focus-visible:ring-primary flex min-h-32 w-80 rounded-md border px-3 py-2 text-sm outline-none transition duration-300 focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        className="focus-visible:ring-offset-bg-default bg-bg-secondary placeholder:text-fg-tertiary focus-visible:ring-outline-brand flex min-h-32 w-80 rounded-md border px-3 py-2 text-sm outline-none transition duration-300 focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         id="comment"
         name="comment"
         placeholder="Enter your feedback ..."

@@ -1,16 +1,31 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots } from "@mijn-ui/react-core"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  TableSlots,
-  UnstyledComponentWithSlots,
-  UnstyledProps,
-  cn,
-  tableStyles,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  createTVUnstyledSlots,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
+import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const tableStyles = tv({
+  slots: {
+    base: "relative text-sm",
+    header: "h-11 bg-bg-secondary",
+    body: "bg-bg-default-alt divide-outline-default [&>tr:hover]:bg-bg-secondary divide-y",
+    footer: "border-t-outline-default border-t font-medium",
+    row: "border-outline-default border-b text-left",
+    headerCell: "px-4 py-3 font-semibold",
+    cell: "px-4 py-2 align-middle",
+    caption: "text-fg-tertiary mt-4 text-sm",
+  },
+})
+
+export type TableVariantProps = VariantProps<typeof tableStyles>
+export type TableSlots = keyof ReturnType<typeof tableStyles>
+
+export { tableStyles }
 
 /* -------------------------------------------------------------------------- */
 /*                                TableContext                                */
@@ -57,7 +72,7 @@ const Table = ({
   return (
     <TableProvider value={{ unstyled, styles, classNames }}>
       <table
-        className={base({ className: cn(classNames?.base, className) })}
+        className={base({ className: cnBase(classNames?.base, className) })}
         {...props}
       />
     </TableProvider>
@@ -67,8 +82,9 @@ const Table = ({
 /* -------------------------------------------------------------------------- */
 /*                                 TableHeader                                */
 /* -------------------------------------------------------------------------- */
-export type TableHeaderProps = React.ComponentPropsWithRef<"thead"> &
-  UnstyledProps
+export type TableHeaderProps = React.ComponentPropsWithRef<"thead"> & {
+  unstyled?: boolean
+}
 
 const TableHeader = ({ className, unstyled, ...props }: TableHeaderProps) => {
   const { header, classNames } = useTableStyles(unstyled)
@@ -76,7 +92,7 @@ const TableHeader = ({ className, unstyled, ...props }: TableHeaderProps) => {
   return (
     <thead
       className={header({
-        className: cn(classNames?.header, className),
+        className: cnBase(classNames?.header, className),
       })}
       {...props}
     />
@@ -87,8 +103,9 @@ const TableHeader = ({ className, unstyled, ...props }: TableHeaderProps) => {
 /*                                  TableBody                                 */
 /* -------------------------------------------------------------------------- */
 
-export type TableBodyProps = React.ComponentPropsWithRef<"tbody"> &
-  UnstyledProps
+export type TableBodyProps = React.ComponentPropsWithRef<"tbody"> & {
+  unstyled?: boolean
+}
 
 const TableBody = ({ className, unstyled, ...props }: TableBodyProps) => {
   const { body, classNames } = useTableStyles(unstyled)
@@ -96,7 +113,7 @@ const TableBody = ({ className, unstyled, ...props }: TableBodyProps) => {
   return (
     <tbody
       className={body({
-        className: cn(classNames?.body, className),
+        className: cnBase(classNames?.body, className),
       })}
       {...props}
     />
@@ -107,8 +124,9 @@ const TableBody = ({ className, unstyled, ...props }: TableBodyProps) => {
 /*                                 TableFooter                                */
 /* -------------------------------------------------------------------------- */
 
-export type TableFooterProps = React.ComponentPropsWithRef<"tfoot"> &
-  UnstyledProps
+export type TableFooterProps = React.ComponentPropsWithRef<"tfoot"> & {
+  unstyled?: boolean
+}
 
 const TableFooter = ({ className, unstyled, ...props }: TableFooterProps) => {
   const { footer, classNames } = useTableStyles(unstyled)
@@ -116,7 +134,7 @@ const TableFooter = ({ className, unstyled, ...props }: TableFooterProps) => {
   return (
     <tfoot
       className={footer({
-        className: cn(classNames?.footer, className),
+        className: cnBase(classNames?.footer, className),
       })}
       {...props}
     />
@@ -127,7 +145,9 @@ const TableFooter = ({ className, unstyled, ...props }: TableFooterProps) => {
 /*                                  TableRow                                  */
 /* -------------------------------------------------------------------------- */
 
-export type TableRowProps = React.ComponentPropsWithRef<"tr"> & UnstyledProps
+export type TableRowProps = React.ComponentPropsWithRef<"tr"> & {
+  unstyled?: boolean
+}
 
 const TableRow = ({ className, unstyled, ...props }: TableRowProps) => {
   const { row, classNames } = useTableStyles(unstyled)
@@ -135,7 +155,7 @@ const TableRow = ({ className, unstyled, ...props }: TableRowProps) => {
   return (
     <tr
       className={row({
-        className: cn(classNames?.row, className),
+        className: cnBase(classNames?.row, className),
       })}
       {...props}
     />
@@ -146,8 +166,9 @@ const TableRow = ({ className, unstyled, ...props }: TableRowProps) => {
 /*                               TableHeaderCell                              */
 /* -------------------------------------------------------------------------- */
 
-export type TableHeaderCellProps = React.ComponentPropsWithRef<"th"> &
-  UnstyledProps
+export type TableHeaderCellProps = React.ComponentPropsWithRef<"th"> & {
+  unstyled?: boolean
+}
 
 const TableHeaderCell = ({
   className,
@@ -159,7 +180,7 @@ const TableHeaderCell = ({
   return (
     <th
       className={headerCell({
-        className: cn(classNames?.headerCell, className),
+        className: cnBase(classNames?.headerCell, className),
       })}
       {...props}
     />
@@ -170,7 +191,9 @@ const TableHeaderCell = ({
 /*                                  TableCell                                 */
 /* -------------------------------------------------------------------------- */
 
-export type TableCellProps = React.ComponentPropsWithRef<"td"> & UnstyledProps
+export type TableCellProps = React.ComponentPropsWithRef<"td"> & {
+  unstyled?: boolean
+}
 
 const TableCell = ({ className, unstyled, ...props }: TableCellProps) => {
   const { cell, classNames } = useTableStyles(unstyled)
@@ -178,7 +201,7 @@ const TableCell = ({ className, unstyled, ...props }: TableCellProps) => {
   return (
     <td
       className={cell({
-        className: cn(classNames?.cell, className),
+        className: cnBase(classNames?.cell, className),
       })}
       {...props}
     />
@@ -189,8 +212,9 @@ const TableCell = ({ className, unstyled, ...props }: TableCellProps) => {
 /*                                TableCaption                                */
 /* -------------------------------------------------------------------------- */
 
-export type TableCaptionProps = React.ComponentPropsWithRef<"caption"> &
-  UnstyledProps
+export type TableCaptionProps = React.ComponentPropsWithRef<"caption"> & {
+  unstyled?: boolean
+}
 
 const TableCaption = ({ className, unstyled, ...props }: TableCaptionProps) => {
   const { caption, classNames } = useTableStyles(unstyled)
@@ -198,7 +222,7 @@ const TableCaption = ({ className, unstyled, ...props }: TableCaptionProps) => {
   return (
     <caption
       className={caption({
-        className: cn(classNames?.caption, className),
+        className: cnBase(classNames?.caption, className),
       })}
       {...props}
     />

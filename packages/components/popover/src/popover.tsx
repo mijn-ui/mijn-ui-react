@@ -1,16 +1,38 @@
 "use client"
 
 import * as React from "react"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  PopoverSlots,
   UnstyledComponentWithSlots,
-  UnstyledProps,
-  cn,
-  popoverStyles,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
 import * as RadixPopover from "@radix-ui/react-popover"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const popoverStyles = tv({
+  slots: {
+    base: "",
+    trigger: "",
+    close: [
+      "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+      "text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 focus-visible:ring-offset-2",
+      "h-9 rounded-md px-3",
+    ],
+    content: [
+      "data-[state=open]:zoom-in-95 data-[state=open]:animate-in data-[state=open]:fade-in-0",
+      "data-[state=closed]:zoom-out-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
+      "data-[side=bottom]:slide-in-from-bottom-6 data-[side=left]:slide-in-from-left-6 data-[side=right]:slide-in-from-right-6 data-[side=top]:slide-in-from-top-6",
+      "border-outline-secondary bg-bg-default-alt text-fg-default z-50 w-full rounded-md border p-4 shadow-md outline-none !duration-300",
+    ],
+  },
+})
+
+export type PopoverlVariantProps = VariantProps<typeof popoverStyles>
+export type PopoverSlots = keyof ReturnType<typeof popoverStyles>
+
+export { popoverStyles }
+
+/* -------------------------------------------------------------------------- */
 
 const PopoverArrow = RadixPopover.Arrow
 
@@ -68,8 +90,7 @@ const Popover = ({ unstyled = false, classNames, ...props }: PopoverProps) => {
 
 export type PopoverTriggerProps = React.ComponentPropsWithRef<
   typeof RadixPopover.Trigger
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const PopoverTrigger = ({
   unstyled,
@@ -80,7 +101,7 @@ const PopoverTrigger = ({
 
   return (
     <RadixPopover.Trigger
-      className={trigger({ className: cn(classNames?.trigger, className) })}
+      className={trigger({ className: cnBase(classNames?.trigger, className) })}
       {...props}
     />
   )
@@ -92,15 +113,14 @@ const PopoverTrigger = ({
 
 export type PopoverCloseProps = React.ComponentPropsWithRef<
   typeof RadixPopover.Close
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const PopoverClose = ({ unstyled, className, ...props }: PopoverCloseProps) => {
   const { close, classNames } = usePopoverStyles(unstyled)
 
   return (
     <RadixPopover.Close
-      className={close({ className: cn(classNames?.close, className) })}
+      className={close({ className: cnBase(classNames?.close, className) })}
       {...props}
     />
   )
@@ -112,8 +132,7 @@ const PopoverClose = ({ unstyled, className, ...props }: PopoverCloseProps) => {
 
 type PopoverContentProps = React.ComponentPropsWithRef<
   typeof RadixPopover.Content
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const PopoverContent = ({
   unstyled,
@@ -131,7 +150,9 @@ const PopoverContent = ({
         side={side}
         align={align}
         sideOffset={sideOffset}
-        className={content({ className: cn(classNames?.content, className) })}
+        className={content({
+          className: cnBase(classNames?.content, className),
+        })}
         {...props}
       />
     </RadixPopover.Portal>

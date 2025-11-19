@@ -1,17 +1,18 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"); */
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@mijn-ui/react-core/theme.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source "../../components";
 
 @layer base {
   * {
-    border-color: hsl(var(--mijnui-border));
+    @apply border-outline-default;
   }
 
   body {
-    background-color: hsl(var(--mijnui-background));
-    color: hsl(var(--mijnui-foreground));
+    @apply bg-bg-default text-fg-default;
     font-family: "Inter", sans-serif;
   }
 }

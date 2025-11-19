@@ -1,17 +1,30 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots } from "@mijn-ui/react-core"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  TabsSlots,
-  UnstyledComponentWithSlots,
-  UnstyledProps,
-  cn,
-  tabsStyles,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  createTVUnstyledSlots,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
+import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import * as TabsPrimitive from "@radix-ui/react-tabs"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const tabsStyles = tv({
+  slots: {
+    base: "",
+    list: "flex flex-col items-stretch sm:flex-row sm:items-center",
+    trigger: [
+      "text-fg-secondary hover:bg-bg-secondary focus-visible:bg-bg-secondary active:bg-bg-secondary/70 data-[state=active]:border-b-outline-brand data-[state=active]:text-fg-brand-emphasis data-[state=active]:hover:text-fg-brand-emphasis inline-flex h-9 items-center justify-center gap-1.5 border-b px-3 text-sm font-normal leading-none outline-none duration-300 ease-in-out disabled:pointer-events-none disabled:opacity-50 data-[state=active]:border-b-2 data-[state=active]:font-medium data-[state=active]:hover:bg-transparent",
+    ],
+    content:
+      "focus-visible:ring-outline-brand mt-2 focus-visible:outline-none focus-visible:ring-1",
+  },
+})
+export type TabsVariantProps = VariantProps<typeof tabsStyles>
+export type TabsSlots = keyof ReturnType<typeof tabsStyles>
+
+export { tabsStyles }
 
 /* -------------------------------------------------------------------------- */
 /*                                 TabsContext                                */
@@ -58,7 +71,7 @@ const Tabs = ({
   return (
     <TabsProvider value={{ unstyled, styles, classNames }}>
       <TabsPrimitive.Root
-        className={base({ className: cn(classNames?.base, className) })}
+        className={base({ className: cnBase(classNames?.base, className) })}
         {...props}
       >
         {children}
@@ -72,8 +85,7 @@ const Tabs = ({
 /* -------------------------------------------------------------------------- */
 export type TabsListProps = React.ComponentPropsWithRef<
   typeof TabsPrimitive.List
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const TabsList = ({ className, unstyled, ...props }: TabsListProps) => {
   const { list, classNames } = useTabsStyles(unstyled)
@@ -81,7 +93,7 @@ const TabsList = ({ className, unstyled, ...props }: TabsListProps) => {
   return (
     <TabsPrimitive.List
       className={list({
-        className: cn(classNames?.list, className),
+        className: cnBase(classNames?.list, className),
       })}
       {...props}
     />
@@ -94,8 +106,7 @@ const TabsList = ({ className, unstyled, ...props }: TabsListProps) => {
 
 export type TabsTriggerProps = React.ComponentPropsWithRef<
   typeof TabsPrimitive.Trigger
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const TabsTrigger = ({ className, unstyled, ...props }: TabsTriggerProps) => {
   const { trigger, classNames } = useTabsStyles(unstyled)
@@ -103,7 +114,7 @@ const TabsTrigger = ({ className, unstyled, ...props }: TabsTriggerProps) => {
   return (
     <TabsPrimitive.Trigger
       className={trigger({
-        className: cn(classNames?.trigger, className),
+        className: cnBase(classNames?.trigger, className),
       })}
       {...props}
     />
@@ -116,8 +127,7 @@ const TabsTrigger = ({ className, unstyled, ...props }: TabsTriggerProps) => {
 
 export type TabsContentProps = React.ComponentPropsWithRef<
   typeof TabsPrimitive.Content
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const TabsContent = ({ className, unstyled, ...props }: TabsContentProps) => {
   const { content, classNames } = useTabsStyles(unstyled)
@@ -125,7 +135,7 @@ const TabsContent = ({ className, unstyled, ...props }: TabsContentProps) => {
   return (
     <TabsPrimitive.Content
       className={content({
-        className: cn(classNames?.content, className),
+        className: cnBase(classNames?.content, className),
       })}
       {...props}
     />

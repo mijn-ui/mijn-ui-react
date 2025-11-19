@@ -164,7 +164,7 @@ const TabsUnstyled = (args: TabsProps) => {
           </CardContent>
           <CardFooter>
             <Button
-              className="bg-muted flex gap-2 px-4 py-2 disabled:pointer-events-none disabled:opacity-80 disabled:brightness-75"
+              className="bg-bg-tertiary flex gap-2 px-4 py-2 disabled:pointer-events-none disabled:opacity-80 disabled:brightness-75"
               unstyled={args.unstyled}
             >
               Save changes
@@ -202,7 +202,7 @@ const TabsUnstyled = (args: TabsProps) => {
           </CardContent>
           <CardFooter>
             <Button
-              className="bg-muted flex gap-2 px-4 py-2 disabled:pointer-events-none disabled:opacity-80 disabled:brightness-75"
+              className="bg-bg-tertiary flex gap-2 px-4 py-2 disabled:pointer-events-none disabled:opacity-80 disabled:brightness-75"
               unstyled={args.unstyled}
             >
               Save password

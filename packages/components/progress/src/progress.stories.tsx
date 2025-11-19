@@ -44,12 +44,12 @@ const ProgressTemplate = (args: ProgressProps) => {
 
   return (
     <div className="w-80 space-y-1">
-      <h5 className="text-foreground flex items-center justify-between text-sm font-medium leading-none">
+      <h5 className="text-fg-default flex items-center justify-between text-sm font-medium leading-none">
         Downloading
       </h5>
       <div className="flex items-center gap-2">
         <Progress value={value} {...args} />
-        <p className="text-foreground text-xs font-medium">{value}%</p>
+        <p className="text-fg-default text-xs font-medium">{value}%</p>
       </div>
     </div>
   )

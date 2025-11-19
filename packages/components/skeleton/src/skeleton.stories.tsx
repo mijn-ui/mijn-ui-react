@@ -30,10 +30,10 @@ const SkeletonTemplate = (args: SkeletonProps) => {
 const SkeletonUnstyled = (args: SkeletonProps) => {
   return (
     <div className="flex items-center space-x-4">
-      <Skeleton className="bg-muted size-12 rounded-full" {...args} />
+      <Skeleton className="bg-bg-tertiary size-12 rounded-full" {...args} />
       <div className="space-y-2">
-        <Skeleton className="bg-muted h-4 w-[250px]" {...args} />
-        <Skeleton className="bg-muted h-4 w-[200px]" {...args} />
+        <Skeleton className="bg-bg-tertiary h-4 w-[250px]" {...args} />
+        <Skeleton className="bg-bg-tertiary h-4 w-[200px]" {...args} />
       </div>
     </div>
   )

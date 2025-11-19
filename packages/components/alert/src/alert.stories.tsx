@@ -67,14 +67,14 @@ export const Variants: Story = {
   render: (args: AlertProps) => (
     <div className="flex flex-col items-center gap-8">
       <div className="space-y-2">
-        <h3 className="text-muted-foreground w-full text-start font-semibold">
+        <h3 className="text-fg-tertiary w-full text-start font-semibold">
           Filled
         </h3>
         <AlertTemplate {...args} />
       </div>
 
       <div className="space-y-2">
-        <h3 className="text-muted-foreground w-full text-start font-semibold">
+        <h3 className="text-fg-tertiary w-full text-start font-semibold">
           Danger
         </h3>
         <AlertTemplate {...args} variant="danger" />

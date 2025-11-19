@@ -1,17 +1,38 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots } from "@mijn-ui/react-core"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  ScrollAreaSlots,
-  UnstyledComponentWithSlots,
-  UnstyledProps,
-  cn,
-  scrollAreaStyles,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  createTVUnstyledSlots,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
+import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const scrollAreaStyles = tv({
+  slots: {
+    base: "relative overflow-hidden",
+    viewport: "size-full rounded-[inherit]",
+    scrollbar: "flex touch-none select-none transition-colors",
+    scrollThumb: "bg-outline-default relative flex-1 rounded-full",
+  },
+  variants: {
+    orientation: {
+      vertical: {
+        scrollbar: "h-full w-2.5 border-l border-l-transparent p-px",
+      },
+      horizontal: {
+        scrollbar: "h-2.5 flex-col border-t border-t-transparent p-px",
+      },
+    },
+  },
+})
+
+export type ScrollAreaVariantProps = VariantProps<typeof scrollAreaStyles>
+export type ScrollAreaSlots = keyof ReturnType<typeof scrollAreaStyles>
+
+export { scrollAreaStyles }
 
 /* -------------------------------------------------------------------------- */
 /*                              ScrollAreaContext                             */
@@ -63,7 +84,7 @@ const ScrollArea = ({
   return (
     <ScrollAreaProvider value={{ unstyled, styles }}>
       <ScrollAreaPrimitive.Root
-        className={base({ className: cn(classNames?.base, className) })}
+        className={base({ className: cnBase(classNames?.base, className) })}
         {...props}
       >
         <ScrollAreaPrimitive.Viewport
@@ -84,8 +105,7 @@ const ScrollArea = ({
 
 type ScrollBarProps = React.ComponentPropsWithRef<
   typeof ScrollAreaPrimitive.ScrollAreaScrollbar
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const ScrollBar = ({
   unstyled,
@@ -100,7 +120,7 @@ const ScrollBar = ({
       orientation={orientation}
       className={scrollbar({
         orientation,
-        className: cn(classNames?.scrollbar, className),
+        className: cnBase(classNames?.scrollbar, className),
       })}
       {...props}
     >

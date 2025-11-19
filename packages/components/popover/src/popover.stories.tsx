@@ -77,9 +77,9 @@ const PopoverTemplate = (args: PopoverProps) => {
                   {field.label}
                 </Label>
                 <Input
-                  className="bg-card"
+                  className="bg-bg-default"
                   classNames={{
-                    label: "bg-card peer-focus:bg-card",
+                    label: "bg-bg-default peer-focus:bg-bg-default",
                   }}
                   id={field.id}
                   name={field.name}
@@ -109,7 +109,7 @@ const PopoverTemplate = (args: PopoverProps) => {
 const PopoverUnstyled = (args: PopoverProps) => {
   return (
     <Popover {...args}>
-      <PopoverTrigger className="bg-muted p-2">
+      <PopoverTrigger className="bg-bg-tertiary p-2">
         <Icons.mixerHorizontal className="text-lg" />
       </PopoverTrigger>
       <PopoverContent className="bg-accent relative w-72 p-4">

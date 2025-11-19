@@ -1,20 +1,32 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots } from "@mijn-ui/react-core"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  CardSlots,
-  UnstyledComponentWithSlots,
-  UnstyledProps,
-  cardStyles,
-  cn,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  createTVUnstyledSlots,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
+import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
 
 /* -------------------------------------------------------------------------- */
 /*                              CardContext                                   */
 /* -------------------------------------------------------------------------- */
+
+const cardStyles = tv({
+  slots: {
+    base: "bg-bg-default text-fg-default border border-outline-secondary rounded-lg shadow-sm",
+    header: "flex flex-col space-y-1.5 p-4",
+    content: "p-4 pt-0",
+    footer: "flex items-center p-4 pt-0",
+    title: "text-2xl font-semibold leading-none tracking-tight",
+    description: "text-fg-secondary text-sm",
+  },
+})
+
+export type CardVariantProps = VariantProps<typeof cardStyles>
+export type CardSlots = keyof ReturnType<typeof cardStyles>
+export { cardStyles }
 
 type CardBaseProps = UnstyledComponentWithSlots<CardSlots>
 
@@ -58,7 +70,7 @@ const Card = ({
     <CardProvider value={{ unstyled, styles, classNames }}>
       <div
         className={base({
-          className: cn(classNames?.base, className),
+          className: cnBase(classNames?.base, className),
         })}
         {...props}
       />
@@ -70,7 +82,9 @@ const Card = ({
 /*                                 CardHeader                                 */
 /* -------------------------------------------------------------------------- */
 
-export type CardHeaderProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
+export type CardHeaderProps = React.ComponentPropsWithRef<"div"> & {
+  unstyled?: boolean
+}
 
 const CardHeader = ({ className, unstyled, ...props }: CardHeaderProps) => {
   const { header, classNames } = useCardStyles(unstyled)
@@ -78,7 +92,7 @@ const CardHeader = ({ className, unstyled, ...props }: CardHeaderProps) => {
   return (
     <div
       className={header({
-        className: cn(classNames?.header, className),
+        className: cnBase(classNames?.header, className),
       })}
       {...props}
     />
@@ -89,7 +103,9 @@ const CardHeader = ({ className, unstyled, ...props }: CardHeaderProps) => {
 /*                                  CardTitle                                 */
 /* -------------------------------------------------------------------------- */
 
-export type CardTitleProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
+export type CardTitleProps = React.ComponentPropsWithRef<"div"> & {
+  unstyled?: boolean
+}
 
 const CardTitle = ({ className, unstyled, ...props }: CardTitleProps) => {
   const { title, classNames } = useCardStyles(unstyled)
@@ -97,7 +113,7 @@ const CardTitle = ({ className, unstyled, ...props }: CardTitleProps) => {
   return (
     <div
       className={title({
-        className: cn(classNames?.title, className),
+        className: cnBase(classNames?.title, className),
       })}
       {...props}
     />
@@ -108,8 +124,9 @@ const CardTitle = ({ className, unstyled, ...props }: CardTitleProps) => {
 /*                               CardDescription                              */
 /* -------------------------------------------------------------------------- */
 
-export type CardDescriptionProps = React.ComponentPropsWithRef<"div"> &
-  UnstyledProps
+export type CardDescriptionProps = React.ComponentPropsWithRef<"div"> & {
+  unstyled?: boolean
+}
 
 const CardDescription = ({
   className,
@@ -121,7 +138,7 @@ const CardDescription = ({
   return (
     <div
       className={description({
-        className: cn(classNames?.description, className),
+        className: cnBase(classNames?.description, className),
       })}
       {...props}
     />
@@ -132,8 +149,9 @@ const CardDescription = ({
 /*                                 CardContent                                */
 /* -------------------------------------------------------------------------- */
 
-export type CardContentProps = React.ComponentPropsWithRef<"div"> &
-  UnstyledProps
+export type CardContentProps = React.ComponentPropsWithRef<"div"> & {
+  unstyled?: boolean
+}
 
 const CardContent = ({ className, unstyled, ...props }: CardContentProps) => {
   const { content, classNames } = useCardStyles(unstyled)
@@ -141,7 +159,7 @@ const CardContent = ({ className, unstyled, ...props }: CardContentProps) => {
   return (
     <div
       className={content({
-        className: cn(classNames?.content, className),
+        className: cnBase(classNames?.content, className),
       })}
       {...props}
     />
@@ -152,7 +170,9 @@ const CardContent = ({ className, unstyled, ...props }: CardContentProps) => {
 /*                                 CardFooter                                 */
 /* -------------------------------------------------------------------------- */
 
-export type CardFooterProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
+export type CardFooterProps = React.ComponentPropsWithRef<"div"> & {
+  unstyled?: boolean
+}
 
 const CardFooter = ({ className, unstyled, ...props }: CardFooterProps) => {
   const { footer, classNames } = useCardStyles(unstyled)
@@ -160,7 +180,7 @@ const CardFooter = ({ className, unstyled, ...props }: CardFooterProps) => {
   return (
     <div
       className={footer({
-        className: cn(classNames?.footer, className),
+        className: cnBase(classNames?.footer, className),
       })}
       {...props}
     />

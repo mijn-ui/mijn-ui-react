@@ -182,7 +182,7 @@ const BadgeRadius = (args: BadgeProps) => {
 
 const BadgeUnstyled = (args: BadgeProps) => {
   return (
-    <Badge {...args} className="bg-muted px-3">
+    <Badge {...args} className="bg-bg-tertiary px-3">
       Badge
     </Badge>
   )

@@ -1,21 +1,77 @@
 "use client"
 
 import * as React from "react"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  SelectSlots,
   UnstyledComponentWithSlots,
-  UnstyledProps,
-  cn,
-  selectStyles,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
 import {
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
 } from "@mijn-ui/shared-icons"
 import * as SelectPrimitive from "@radix-ui/react-select"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const selectStyles = tv({
+  slots: {
+    base: "",
+    trigger: [
+      "border-outline-default min-w-44 bg-bg-default-alt placeholder:text-fg-tertiary hover:bg-bg-secondary flex h-10 w-full items-center justify-between rounded-md border px-3 py-2 text-sm [&>span]:line-clamp-1 gap-4",
+      "[&_svg]:size-4 [&_svg]:opacity-50",
+      "disabled:pointer-events-none",
+      "disabled:opacity-50",
+      "focus-visible:outline-none",
+      "focus-visible:ring-2",
+      "focus-visible:ring-outline-brand",
+      "focus-visible:ring-outline-brand",
+      "focus-visible:ring-offset-2",
+      "focus-visible:ring-offset-bg-default",
+    ],
+    scrollUpBtn: "",
+    scrollDownBtn: "",
+    content: [
+      "data-[state=open]:zoom-in-95 data-[state=open]:animate-in data-[state=open]:fade-in-0",
+      "data-[state=closed]:zoom-out-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
+      "data-[side=bottom]:slide-in-from-bottom-6 data-[side=left]:slide-in-from-left-6 data-[side=right]:slide-in-from-right-6 data-[side=top]:slide-in-from-top-6",
+      "border-outline-default bg-bg-default-alt text-fg-default relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border shadow-sm !duration-300 w-60",
+    ],
+    viewport: "",
+    label: "py-1.5 pl-2 pr-8 text-sm font-semibold",
+    item: [
+      "data-disabled:pointer-events-none group",
+      "data-disabled:opacity-50",
+      "focus:bg-bg-secondary relative flex w-full cursor-default select-none items-center h-9 pl-4 pr-8 text-sm outline-none",
+    ],
+    itemIndicator:
+      "absolute right-4 flex size-3.5 items-center justify-center [&_svg]:size-4 group-data-[state=checked]:text-fg-brand",
+    separator: "bg-outline-default -mx-1 my-1 h-px",
+  },
+  compoundSlots: [
+    {
+      slots: ["scrollUpBtn", "scrollDownBtn"],
+      class:
+        "flex cursor-default items-center justify-center py-1 [&_svg]:size-4",
+    },
+  ],
+  variants: {
+    position: {
+      popper: {
+        content:
+          "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
+        viewport:
+          "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]",
+      },
+      "item-aligned": {},
+    },
+  },
+})
+
+export type SelectVariantProps = VariantProps<typeof selectStyles>
+export type SelectSlots = keyof ReturnType<typeof selectStyles>
+
+export { selectStyles }
 
 /* -------------------------------------------------------------------------- */
 /*                                SelectContext                               */
@@ -70,8 +126,7 @@ const Select = ({ classNames, unstyled = false, ...props }: SelectProps) => {
 /* -------------------------------------------------------------------------- */
 export type SelectTriggerProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Trigger
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const SelectTrigger = ({
   unstyled,
@@ -84,7 +139,7 @@ const SelectTrigger = ({
   return (
     <SelectPrimitive.Trigger
       className={trigger({
-        className: cn(classNames?.trigger, className),
+        className: cnBase(classNames?.trigger, className),
       })}
       {...props}
     >
@@ -102,8 +157,7 @@ const SelectTrigger = ({
 
 export type SelectScrollUpButtonProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.ScrollUpButton
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const SelectScrollUpButton = ({
   unstyled,
@@ -115,7 +169,7 @@ const SelectScrollUpButton = ({
   return (
     <SelectPrimitive.ScrollUpButton
       className={scrollUpBtn({
-        className: cn(classNames?.scrollUpBtn, className),
+        className: cnBase(classNames?.scrollUpBtn, className),
       })}
       {...props}
     >
@@ -130,8 +184,7 @@ const SelectScrollUpButton = ({
 
 export type SelectScrollDownButtonProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.ScrollDownButton
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const SelectScrollDownButton = ({
   unstyled,
@@ -143,7 +196,7 @@ const SelectScrollDownButton = ({
   return (
     <SelectPrimitive.ScrollDownButton
       className={scrollDownBtn({
-        className: cn(classNames?.scrollDownBtn, className),
+        className: cnBase(classNames?.scrollDownBtn, className),
       })}
       {...props}
     >
@@ -158,8 +211,7 @@ const SelectScrollDownButton = ({
 
 export type SelectContentProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Content
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const SelectContent = ({
   unstyled,
@@ -174,7 +226,7 @@ const SelectContent = ({
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
         className={content({
-          className: cn(classNames?.content, className),
+          className: cnBase(classNames?.content, className),
           position,
         })}
         position={position}
@@ -201,8 +253,7 @@ const SelectContent = ({
 
 export type SelectLabelProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Label
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const SelectLabel = ({ unstyled, className, ...props }: SelectLabelProps) => {
   const { label, classNames } = useSelectStyles(unstyled)
@@ -210,7 +261,7 @@ const SelectLabel = ({ unstyled, className, ...props }: SelectLabelProps) => {
   return (
     <SelectPrimitive.Label
       className={label({
-        className: cn(classNames?.label, className),
+        className: cnBase(classNames?.label, className),
       })}
       {...props}
     />
@@ -223,8 +274,7 @@ const SelectLabel = ({ unstyled, className, ...props }: SelectLabelProps) => {
 
 export type SelectItemProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Item
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const SelectItem = ({
   unstyled,
@@ -237,7 +287,7 @@ const SelectItem = ({
   return (
     <SelectPrimitive.Item
       className={item({
-        className: cn(classNames?.item, className),
+        className: cnBase(classNames?.item, className),
       })}
       {...props}
     >
@@ -262,8 +312,7 @@ const SelectItem = ({
 
 export type SelectSeparatorProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Separator
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const SelectSeparator = ({
   unstyled,
@@ -275,7 +324,7 @@ const SelectSeparator = ({
   return (
     <SelectPrimitive.Separator
       className={separator({
-        className: cn(classNames?.separator, className),
+        className: cnBase(classNames?.separator, className),
       })}
       {...props}
     />

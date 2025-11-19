@@ -1,14 +1,28 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots } from "@mijn-ui/react-core"
 import {
-  ProgressSlots,
-  UnstyledComponentWithSlots,
-  cn,
-  progressStyles,
-} from "@mijn-ui/react-theme"
+  createContext,
+  createTVUnstyledSlots,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
+import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import * as ProgressPrimitive from "@radix-ui/react-progress"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const progressStyles = tv({
+  slots: {
+    base: "bg-bg-tertiary relative h-2 w-full overflow-hidden rounded-full",
+    indicator: "bg-bg-brandsize-full flex-1 transition-all",
+  },
+})
+
+export type ProgressVariantProps = VariantProps<typeof progressStyles>
+export type ProgressSlots = keyof ReturnType<typeof progressStyles>
+
+export { progressStyles }
+
+/* -------------------------------------------------------------------------- */
 
 export type ProgressProps = UnstyledComponentWithSlots<ProgressSlots> &
   React.ComponentPropsWithRef<typeof ProgressPrimitive.Root>
@@ -26,7 +40,7 @@ const Progress = ({
   return (
     <ProgressPrimitive.Root
       ref={ref}
-      className={base({ className: cn(classNames?.base, className) })}
+      className={base({ className: cnBase(classNames?.base, className) })}
       {...props}
     >
       <ProgressPrimitive.Indicator

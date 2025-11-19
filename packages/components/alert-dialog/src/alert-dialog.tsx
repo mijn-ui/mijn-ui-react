@@ -1,17 +1,49 @@
 "use client"
 
 import * as React from "react"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  AlertDialogSlots,
-  AlertDialogVariantProps,
   UnstyledComponentWithSlots,
-  UnstyledProps,
-  alertDialogStyles,
-  cn,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const alertDialogStyles = tv({
+  slots: {
+    base: "",
+    trigger: "",
+    overlay: [
+      "fixed inset-0 z-50 bg-black/80",
+      "data-[state=open]:animate-in data-[state=open]:fade-in-0",
+      "data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
+    ],
+    contentWrapper: "fixed inset-0 z-50 flex items-center justify-center",
+    content: [
+      "border-outline-default bg-bg-default-alt flex w-full max-w-lg flex-col gap-2 rounded-xl border p-6 shadow-lg",
+      "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-90",
+      "data-[state=closed]:animate-out data-[state=closed]:fade-out-0  data-[state=closed]:zoom-out-90",
+    ],
+    header: "flex flex-col gap-2 text-center sm:text-left",
+    footer: "flex flex-col-reverse sm:flex-row sm:justify-end sm:gap-2",
+    title: "text-base font-semibold",
+    description: "text-fg-secondary text-sm",
+    action: [
+      "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3",
+      "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-xs",
+    ],
+    cancel: [
+      "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3",
+      "text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 focus-visible:ring-offset-2",
+    ],
+  },
+})
+
+export type AlertDialogVariantProps = VariantProps<typeof alertDialogStyles>
+export type AlertDialogSlots = keyof ReturnType<typeof alertDialogStyles>
+export { alertDialogStyles }
+
+/* -------------------------------------------------------------------------- */
 
 const AlertDialogPortal = AlertDialogPrimitive.Portal
 
@@ -73,8 +105,7 @@ const AlertDialog = ({
 
 export type AlertDialogTriggerProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Trigger
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AlertDialogTrigger = ({
   unstyled,
@@ -85,7 +116,7 @@ const AlertDialogTrigger = ({
 
   return (
     <AlertDialogPrimitive.Trigger
-      className={trigger({ className: cn(classNames?.trigger, className) })}
+      className={trigger({ className: cnBase(classNames?.trigger, className) })}
       {...props}
     />
   )
@@ -97,8 +128,7 @@ const AlertDialogTrigger = ({
 
 export type AlertDialogOverlayProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Overlay
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AlertDialogOverlay = ({
   className,
@@ -109,7 +139,7 @@ const AlertDialogOverlay = ({
 
   return (
     <AlertDialogPrimitive.Overlay
-      className={overlay({ className: cn(classNames?.overlay, className) })}
+      className={overlay({ className: cnBase(classNames?.overlay, className) })}
       {...props}
     />
   )
@@ -121,8 +151,7 @@ const AlertDialogOverlay = ({
 
 export type AlertDialogContentProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Content
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AlertDialogContent = ({
   unstyled,
@@ -147,7 +176,9 @@ const AlertDialogContent = ({
         })}
       >
         <AlertDialogPrimitive.Content
-          className={content({ className: cn(classNames?.content, className) })}
+          className={content({
+            className: cnBase(classNames?.content, className),
+          })}
           {...props}
         />
       </div>
@@ -159,8 +190,9 @@ const AlertDialogContent = ({
 /*                              AlertDialogHeader                             */
 /* -------------------------------------------------------------------------- */
 
-export type AlertDialogHeaderProps = React.ComponentPropsWithRef<"div"> &
-  UnstyledProps
+export type AlertDialogHeaderProps = React.ComponentPropsWithRef<"div"> & {
+  unstyled?: boolean
+}
 
 const AlertDialogHeader = ({
   unstyled,
@@ -171,7 +203,7 @@ const AlertDialogHeader = ({
 
   return (
     <div
-      className={header({ className: cn(classNames?.header, className) })}
+      className={header({ className: cnBase(classNames?.header, className) })}
       {...props}
     />
   )
@@ -182,8 +214,9 @@ AlertDialogHeader.displayName = "AlertDialogHeader"
 /*                              AlertDialogFooter                             */
 /* -------------------------------------------------------------------------- */
 
-export type AlertDialogFooterProps = React.ComponentPropsWithRef<"div"> &
-  UnstyledProps
+export type AlertDialogFooterProps = React.ComponentPropsWithRef<"div"> & {
+  unstyled?: boolean
+}
 
 const AlertDialogFooter = ({
   className,
@@ -194,7 +227,7 @@ const AlertDialogFooter = ({
 
   return (
     <div
-      className={footer({ className: cn(classNames?.footer, className) })}
+      className={footer({ className: cnBase(classNames?.footer, className) })}
       {...props}
     />
   )
@@ -207,8 +240,7 @@ AlertDialogFooter.displayName = "AlertDialogFooter"
 
 export type AlertDialogTitleProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Title
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AlertDialogTitle = ({
   unstyled,
@@ -219,7 +251,7 @@ const AlertDialogTitle = ({
 
   return (
     <AlertDialogPrimitive.Title
-      className={title({ className: cn(classNames?.title, className) })}
+      className={title({ className: cnBase(classNames?.title, className) })}
       {...props}
     />
   )
@@ -231,8 +263,7 @@ const AlertDialogTitle = ({
 
 type AlertDialogDescriptionProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Description
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AlertDialogDescription = ({
   unstyled,
@@ -244,7 +275,7 @@ const AlertDialogDescription = ({
   return (
     <AlertDialogPrimitive.Description
       className={description({
-        className: cn(classNames?.description, className),
+        className: cnBase(classNames?.description, className),
       })}
       {...props}
     />
@@ -257,8 +288,7 @@ const AlertDialogDescription = ({
 
 type AlertDialogActionProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Action
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AlertDialogAction = ({
   unstyled,
@@ -269,7 +299,7 @@ const AlertDialogAction = ({
 
   return (
     <AlertDialogPrimitive.Action
-      className={action({ className: cn(classNames?.action, className) })}
+      className={action({ className: cnBase(classNames?.action, className) })}
       {...props}
     />
   )
@@ -281,8 +311,7 @@ const AlertDialogAction = ({
 
 export type AlertDialogCancelProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Cancel
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AlertDialogCancel = ({
   unstyled,
@@ -293,7 +322,7 @@ const AlertDialogCancel = ({
 
   return (
     <AlertDialogPrimitive.Cancel
-      className={cancel({ className: cn(classNames?.cancel, className) })}
+      className={cancel({ className: cnBase(classNames?.cancel, className) })}
       {...props}
     />
   )

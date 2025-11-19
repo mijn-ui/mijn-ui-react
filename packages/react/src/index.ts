@@ -1,5 +1,4 @@
 export * from "@mijn-ui/react-core"
-export * from "@mijn-ui/react-theme"
 
 // components
 export * from "@mijn-ui/react-accordion"
@@ -14,7 +13,6 @@ export * from "@mijn-ui/react-card"
 export * from "@mijn-ui/react-checkbox"
 export * from "@mijn-ui/react-collapsible"
 export * from "@mijn-ui/react-command"
-export * from "@mijn-ui/react-date-picker"
 export * from "@mijn-ui/react-dialog"
 export * from "@mijn-ui/react-dropdown-menu"
 export * from "@mijn-ui/react-input"

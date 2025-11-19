@@ -30,7 +30,6 @@
     "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/react-input": "workspace:*",
     "@mijn-ui/react-label": "workspace:*",
-    "@mijn-ui/react-theme": "workspace:*",
     "@next/eslint-plugin-next": "^15.0.3",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
@@ -43,13 +42,12 @@
   },
   "dependencies": {
     "@mijn-ui/react-button": "workspace:*",
-    "@mijn-ui/react-hooks": "workspace:*",
-    "@mijn-ui/react-utilities": "workspace:*",
     "@radix-ui/react-dialog": "^1.1.3"
   },
   "peerDependencies": {
     "@mijn-ui/react-core": "^0.2.0",
-    "@mijn-ui/react-theme": "^0.2.0",
+    "tailwind-merge": "^3.0.0",
+    "tailwind-variants": "^3.0.0",
     "react": "^19.0",
     "react-dom": "^19.0"
   },

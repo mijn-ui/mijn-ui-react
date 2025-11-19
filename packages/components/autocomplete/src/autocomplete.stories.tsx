@@ -77,7 +77,7 @@ const AutocompleteTemplate = (args: AutocompleteProps) => {
     >
       <AutocompleteTrigger asChild>
         <Input
-          className="bg-card"
+          className="bg-bg-default"
           placeholder={"Search for a framework"}
           startIcon={<SearchIcon />}
           unstyled={args.unstyled}
@@ -106,7 +106,7 @@ const AutocompleteWithScrollArea = (args: AutocompleteProps) => {
       <AutocompleteTrigger asChild>
         <Input
           unstyled={args.unstyled}
-          className="bg-card"
+          className="bg-bg-default"
           placeholder={"Search for a framework"}
           startIcon={<SearchIcon />}
         />
@@ -136,8 +136,8 @@ const AutocompleteWithDialog = (args: AutocompleteProps) => {
         <div className="flex flex-col space-y-2 text-center sm:text-left">
           <DialogTitle>User Information</DialogTitle>
         </div>
-        <Input placeholder="Username" className="bg-card" />
-        <Input placeholder="Email" className="bg-card" />
+        <Input placeholder="Username" className="bg-bg-default" />
+        <Input placeholder="Email" className="bg-bg-default" />
         <Autocomplete
           value={value}
           onValueChange={setValue}
@@ -146,7 +146,7 @@ const AutocompleteWithDialog = (args: AutocompleteProps) => {
           <AutocompleteTrigger asChild>
             <Input
               unstyled={args.unstyled}
-              className="bg-card"
+              className="bg-bg-default"
               placeholder={"Search for a framework"}
               endIcon={<ChevronDownIcon />}
             />
@@ -188,9 +188,9 @@ const AutocompleteUnstyled = (args: AutocompleteProps) => {
     >
       <AutocompleteTrigger asChild>
         <Input
-          className="bg-muted border-0 focus-visible:outline-none focus-visible:ring-0"
+          className="bg-bg-tertiary border-0 focus-visible:outline-none focus-visible:ring-0"
           classNames={{
-            wrapper: "bg-muted flex items-center gap-2 p-2",
+            wrapper: "bg-bg-tertiary flex items-center gap-2 p-2",
           }}
           placeholder={"Search for a framework"}
           startIcon={<SearchIcon />}
@@ -206,7 +206,7 @@ const AutocompleteUnstyled = (args: AutocompleteProps) => {
           <AutocompleteItem
             key={framework}
             value={framework}
-            className="data-[selected=true]:bg-muted flex items-center justify-between p-1"
+            className="data-[selected=true]:bg-bg-tertiary flex items-center justify-between p-1"
           >
             {framework}
           </AutocompleteItem>

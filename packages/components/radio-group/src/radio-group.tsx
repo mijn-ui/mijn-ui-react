@@ -1,18 +1,29 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots } from "@mijn-ui/react-core"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  RadioGroupSlots,
-  UnstyledComponentWithSlots,
-  UnstyledProps,
-  cn,
-  radioGroupStyles,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  createTVUnstyledSlots,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
+import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import { CircleIcon } from "@mijn-ui/shared-icons"
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const radioGroupStyles = tv({
+  slots: {
+    base: "grid gap-2",
+    item: "border-outline-brand text-fg-brand ring-offset-bg-default focus-visible:ring-outline-brand aspect-square size-4 rounded-full border focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+    indicator: "flex items-center justify-center",
+    icon: "size-2.5 fill-current text-current",
+  },
+})
+
+export type RadioGroupVariantProps = VariantProps<typeof radioGroupStyles>
+export type RadioGroupSlots = keyof ReturnType<typeof radioGroupStyles>
+
+export { radioGroupStyles }
 
 /* -------------------------------------------------------------------------- */
 /*                              RadioGroupContext                             */
@@ -63,7 +74,7 @@ const RadioGroup = ({
   return (
     <RadioGroupProvider value={{ unstyled, styles, classNames }}>
       <RadioGroupPrimitive.Root
-        className={base({ className: cn(classNames?.base, className) })}
+        className={base({ className: cnBase(classNames?.base, className) })}
         {...props}
       />
     </RadioGroupProvider>
@@ -76,8 +87,7 @@ const RadioGroup = ({
 
 export type RadioGroupItemProps = React.ComponentPropsWithRef<
   typeof RadioGroupPrimitive.Item
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const RadioGroupItem = ({
   unstyled,
@@ -88,7 +98,7 @@ const RadioGroupItem = ({
 
   return (
     <RadioGroupPrimitive.Item
-      className={item({ className: cn(classNames?.item, className) })}
+      className={item({ className: cnBase(classNames?.item, className) })}
       {...props}
     >
       <RadioGroupPrimitive.Indicator

@@ -1,20 +1,50 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots } from "@mijn-ui/react-core"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  AvatarGroupSlots,
-  AvatarSlots,
-  AvatarVariantProps,
-  UnstyledComponentWithSlots,
-  UnstyledProps,
-  avatarGroupStyles,
-  avatarStyles,
-  cn,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  createTVUnstyledSlots,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
+import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import * as AvatarPrimitive from "@radix-ui/react-avatar"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const avatarGroupStyles = tv({
+  slots: {
+    group: "flex items-center justify-center -space-x-2",
+    groupRemainChildren:
+      "text-secondary-foreground ml-1.5! flex items-center justify-center text-xs",
+  },
+})
+
+const avatarStyles = tv({
+  slots: {
+    base: "relative flex shrink-0 items-center justify-center",
+    image: "aspect-square size-full rounded-full object-cover",
+    fallback:
+      "border-outline-brand-subtle bg-bg-brand-subtle text-on-bg-brand-subtle flex size-full items-center justify-center rounded-full border font-medium leading-none",
+  },
+  variants: {
+    size: {
+      xl: "size-20 text-3xl",
+      lg: "size-16 text-2xl",
+      md: "size-14 text-xl",
+      sm: "size-12 text-base",
+      xs: "size-10 text-sm",
+      "2xs": "size-8 text-xs",
+    },
+  },
+  defaultVariants: {
+    size: "md",
+  },
+})
+
+export type AvatarVariantProps = VariantProps<typeof avatarStyles>
+export type AvatarGroupVariantProps = VariantProps<typeof avatarGroupStyles>
+export type AvatarGroupSlots = keyof ReturnType<typeof avatarGroupStyles>
+export type AvatarSlots = keyof ReturnType<typeof avatarStyles>
+export { avatarGroupStyles, avatarStyles }
 
 /* -------------------------------------------------------------------------- */
 /*                              AvatarContext                                  */
@@ -71,7 +101,7 @@ const AvatarGroup = ({
 
   return (
     <div
-      className={group({ className: cn(classNames?.group, className) })}
+      className={group({ className: cnBase(classNames?.group, className) })}
       {...props}
     >
       {visibleChildren}
@@ -111,7 +141,7 @@ const Avatar = ({
   return (
     <AvatarProvider value={{ unstyled, styles, classNames }}>
       <AvatarPrimitive.Root
-        className={base({ className: cn(classNames?.base, className) })}
+        className={base({ className: cnBase(classNames?.base, className) })}
         {...props}
       />
     </AvatarProvider>
@@ -124,8 +154,7 @@ const Avatar = ({
 
 type AvatarImageProps = React.ComponentPropsWithRef<
   typeof AvatarPrimitive.Image
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AvatarImage = ({ unstyled, className, ...props }: AvatarImageProps) => {
   const { image, classNames } = useAvatarStyles(unstyled)
@@ -133,7 +162,7 @@ const AvatarImage = ({ unstyled, className, ...props }: AvatarImageProps) => {
   return (
     <AvatarPrimitive.Image
       className={image({
-        className: cn(classNames?.image, className),
+        className: cnBase(classNames?.image, className),
       })}
       {...props}
     />
@@ -146,8 +175,7 @@ const AvatarImage = ({ unstyled, className, ...props }: AvatarImageProps) => {
 
 export type AvatarFallbackProps = React.ComponentPropsWithRef<
   typeof AvatarPrimitive.Fallback
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AvatarFallback = ({
   unstyled,
@@ -159,7 +187,7 @@ const AvatarFallback = ({
   return (
     <AvatarPrimitive.Fallback
       className={fallback({
-        className: cn(classNames?.fallback, className),
+        className: cnBase(classNames?.fallback, className),
       })}
       {...props}
     />

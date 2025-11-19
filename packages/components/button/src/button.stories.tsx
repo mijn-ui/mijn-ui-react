@@ -112,7 +112,7 @@ const ButtonUnstyled = (args: ButtonProps) => {
   return (
     <ButtonTemplate
       {...args}
-      className="bg-muted flex items-center gap-2 px-4 py-2 disabled:pointer-events-none disabled:opacity-80 disabled:brightness-75"
+      className="bg-bg-tertiary flex items-center gap-2 px-4 py-2 disabled:pointer-events-none disabled:opacity-80 disabled:brightness-75"
     />
   )
 }

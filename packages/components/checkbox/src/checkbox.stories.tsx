@@ -30,12 +30,12 @@ const CheckboxTemplate = (args: CheckboxProps) => {
         <Label
           htmlFor="subscribe"
           unstyled={args.unstyled}
-          className="text-foreground text-sm font-medium leading-none"
+          className="text-fg-default text-sm font-medium leading-none"
         >
           Subscribe
         </Label>
       </div>
-      <p className="text-secondary-foreground pl-7 text-sm">
+      <p className="text-fg-secondary pl-7 text-sm">
         Receive weekly updates and offers.
       </p>
     </div>
@@ -54,12 +54,12 @@ const CheckboxUnstyled = (args: CheckboxProps) => {
         <Label
           htmlFor="subscribe-2"
           unstyled={args.unstyled}
-          className="text-foreground text-sm font-medium leading-none"
+          className="text-fg-default text-sm font-medium leading-none"
         >
           Subscribe
         </Label>
       </div>
-      <p className="text-secondary-foreground pl-7 text-sm">
+      <p className="text-fg-secondary pl-7 text-sm">
         Receive weekly updates and offers.
       </p>
     </div>

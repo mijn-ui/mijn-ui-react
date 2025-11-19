@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "@mijn-ui/react-core": "workspace:*",
-    "@mijn-ui/react-theme": "workspace:*",
     "@mijn-ui/react-dialog": "workspace:*",
     "@mijn-ui/react-button": "workspace:*",
     "@mijn-ui/react-scroll-area": "workspace:*",
@@ -44,8 +43,6 @@
   },
   "dependencies": {
     "@mijn-ui/shared-icons": "workspace:*",
-    "@mijn-ui/react-utilities": "workspace:*",
-    "@mijn-ui/react-hooks": "workspace:*",
     "@mijn-ui/react-command": "workspace:*",
     "@mijn-ui/react-popover": "workspace:*",
     "@mijn-ui/react-skeleton": "workspace:*",
@@ -55,8 +52,9 @@
   "peerDependencies": {
     "react": "^19.0",
     "react-dom": "^19.0",
-    "@mijn-ui/react-theme": "^0.2.0",
-    "@mijn-ui/react-core": "^0.2.0"
+    "@mijn-ui/react-core": "^0.2.0",
+    "tailwind-merge": "^3.0.0",
+    "tailwind-variants": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"

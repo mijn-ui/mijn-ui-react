@@ -43,7 +43,7 @@ const CalendarTemplate = (args: CalendarProps) => {
         className="rounded-lg border"
         unstyled={args.unstyled}
       />
-      <p className="text-muted-foreground text-sm mt-2">
+      <p className="text-fg-tertiary text-sm mt-2">
         Selected Date: {renderDate(date)}
       </p>
     </div>
@@ -62,7 +62,7 @@ const CalendarMultiple = (args: CalendarProps) => {
         className="rounded-lg border"
         unstyled={args.unstyled}
       />
-      <p className="text-muted-foreground text-sm mt-2 w-64 leading-6">
+      <p className="text-fg-tertiary text-sm mt-2 w-64 leading-6">
         Selected Dates: {dates?.map((date) => renderDate(date))}
       </p>
     </div>
@@ -81,7 +81,7 @@ const CalendarRange = (args: CalendarProps) => {
         className="rounded-lg border"
         unstyled={args.unstyled}
       />
-      <p className="text-muted-foreground text-sm mt-2 w-64">
+      <p className="text-fg-tertiary text-sm mt-2 w-64">
         Selected Date Range: <br />
         {dateRange && renderDateRange(dateRange)}
       </p>
@@ -102,16 +102,16 @@ const CalendarUnstyled = (args: CalendarProps) => {
         classNames={{
           button_previous: "absolute left-1 top-0 z-10",
           button_next: "absolute right-1 top-0 z-10",
-          day: "aria-selected:bg-muted text-center",
+          day: "aria-selected:bg-bg-tertiary text-center",
           day_button: "p-2",
           months: "relative",
           month_caption: "flex justify-center",
-          outside: "text-muted-foreground opacity-50",
+          outside: "text-fg-tertiary opacity-50",
           today: "bg-accent",
         }}
         unstyled={args.unstyled}
       />
-      <p className="text-muted-foreground text-sm mt-2">
+      <p className="text-fg-tertiary text-sm mt-2">
         Selected Date: {renderDate(date)}
       </p>
     </div>

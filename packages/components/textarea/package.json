@@ -27,9 +27,8 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
-    "@mijn-ui/react-label": "workspace:*",
     "@mijn-ui/react-core": "workspace:*",
-    "@mijn-ui/react-theme": "workspace:*",
+    "@mijn-ui/react-label": "workspace:*",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "@next/eslint-plugin-next": "^15.0.3",
@@ -42,8 +41,9 @@
   "peerDependencies": {
     "react": "^19.0",
     "react-dom": "^19.0",
-    "@mijn-ui/react-theme": "^0.2.0",
-    "@mijn-ui/react-core": "^0.2.0"
+    "@mijn-ui/react-core": "^0.2.0",
+    "tailwind-merge": "^3.0.0",
+    "tailwind-variants": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"

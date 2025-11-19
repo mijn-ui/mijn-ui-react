@@ -1,17 +1,91 @@
 "use client"
 
 import * as React from "react"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  DropdownMenuSlots,
   UnstyledComponentWithSlots,
-  UnstyledProps,
-  cn,
-  dropdownMenuStyles,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "@mijn-ui/shared-icons"
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const itemFocusClasses = ["focus:bg-bg-secondary"]
+
+const commonContentClasses = [
+  "z-50 min-w-[8rem] overflow-hidden rounded-md border border-outline-default bg-bg-default-alt text-fg-default shadow-lg",
+]
+
+const commonItemClasses = [
+  "relative flex cursor-default select-none items-center py-1.5 pl-8 pr-2 text-sm outline-none transition-colors",
+]
+
+const commonIconWrapperClasses =
+  "absolute left-2 flex h-3.5 w-3.5 items-center justify-center"
+
+const dropdownMenuStyles = tv({
+  slots: {
+    base: "",
+    trigger: "",
+    subTrigger:
+      "focus-visible:bg-bg-secondary data-[state=open]:bg-bg-secondary flex cursor-default select-none items-center gap-2 px-2 py-1.5 text-sm outline-none",
+    subTriggerIcon: "pointer-events-none ml-auto size-4 shrink-0",
+    subContent: [
+      "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
+      "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
+      "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+      ...commonContentClasses,
+    ],
+    content: [
+      "data-[state=open]:zoom-in-95 data-[state=open]:animate-in data-[state=open]:fade-in-0",
+      "data-[state=closed]:zoom-out-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
+      "data-[side=bottom]:slide-in-from-bottom-6 data-[side=left]:slide-in-from-left-6 data-[side=right]:slide-in-from-right-6 data-[side=top]:slide-in-from-top-6",
+      ...commonContentClasses,
+      "!duration-300",
+    ],
+    item: [
+      ...itemFocusClasses,
+      "data-[disabled]:pointer-events-none",
+      "data-[disabled]:opacity-50",
+      "relative flex h-9 cursor-default select-none items-center gap-2 px-2 text-sm outline-none transition-colors [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+    ],
+    checkboxItem: [
+      ...itemFocusClasses,
+      "data-[disabled]:pointer-events-none",
+      "data-[disabled]:opacity-50",
+      ...commonItemClasses,
+    ],
+    checkboxItemIconWrapper: commonIconWrapperClasses,
+    checkboxItemIcon: "size-4",
+    radioItem: [
+      ...itemFocusClasses,
+      "data-[disabled]:pointer-events-none",
+      "data-[disabled]:opacity-50",
+      ...commonItemClasses,
+    ],
+    radioItemIconWrapper: commonIconWrapperClasses,
+    radioItemIcon: "size-2 fill-current",
+    label: "px-2 py-1.5 text-sm font-semibold",
+    separator: "bg-bg-tertiary h-px -mx-1 my-1",
+    shortcut: "ml-auto text-xs tracking-widest opacity-60",
+  },
+  variants: {
+    inset: {
+      true: {
+        item: "pl-8",
+        label: "pl-8",
+        subTrigger: "pl-8",
+      },
+    },
+  },
+})
+
+export type DropdownMenuVariantProps = VariantProps<typeof dropdownMenuStyles>
+export type DropdownMenuSlots = keyof ReturnType<typeof dropdownMenuStyles>
+
+export { dropdownMenuStyles }
+
+/* -------------------------------------------------------------------------- */
 
 const DropdownMenuGroup = DropdownMenuPrimitive.Group
 
@@ -76,8 +150,7 @@ const DropdownMenu = ({
 
 export type DropdownTriggerProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Trigger
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const DropdownMenuTrigger = ({
   unstyled,
@@ -88,7 +161,7 @@ const DropdownMenuTrigger = ({
   return (
     <DropdownMenuPrimitive.Trigger
       className={trigger({
-        className: cn(classNames?.trigger, className),
+        className: cnBase(classNames?.trigger, className),
       })}
       {...props}
     />
@@ -101,10 +174,9 @@ const DropdownMenuTrigger = ({
 
 export type DropdownMenuSubTriggerProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.SubTrigger
-> &
-  UnstyledProps & {
-    inset?: boolean
-  }
+> & { unstyled?: boolean } & {
+  inset?: boolean
+}
 
 const DropdownMenuSubTrigger = ({
   unstyled,
@@ -118,7 +190,7 @@ const DropdownMenuSubTrigger = ({
   return (
     <DropdownMenuPrimitive.SubTrigger
       className={subTrigger({
-        className: cn(classNames?.subTrigger, className),
+        className: cnBase(classNames?.subTrigger, className),
         inset,
       })}
       {...props}
@@ -137,8 +209,7 @@ const DropdownMenuSubTrigger = ({
 
 export type DropdownMenuSubContentProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.SubContent
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const DropdownMenuSubContent = ({
   unstyled,
@@ -150,7 +221,7 @@ const DropdownMenuSubContent = ({
   return (
     <DropdownMenuPrimitive.SubContent
       className={subContent({
-        className: cn(classNames?.subContent, className),
+        className: cnBase(classNames?.subContent, className),
       })}
       {...props}
     />
@@ -163,8 +234,7 @@ const DropdownMenuSubContent = ({
 
 export type DropdownMenuContentProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Content
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const DropdownMenuContent = ({
   className,
@@ -178,7 +248,7 @@ const DropdownMenuContent = ({
       <DropdownMenuPrimitive.Content
         sideOffset={sideOffset}
         className={content({
-          className: cn(classNames?.content, className),
+          className: cnBase(classNames?.content, className),
         })}
         {...props}
       />
@@ -194,7 +264,7 @@ export type DropdownMenuItemProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Item
 > & {
   inset?: boolean
-} & UnstyledProps
+} & { unstyled?: boolean }
 
 const DropdownMenuItem = ({
   unstyled,
@@ -207,7 +277,7 @@ const DropdownMenuItem = ({
   return (
     <DropdownMenuPrimitive.Item
       className={item({
-        className: cn(classNames?.item, className),
+        className: cnBase(classNames?.item, className),
         inset,
       })}
       {...props}
@@ -221,8 +291,7 @@ const DropdownMenuItem = ({
 
 export type DropdownMenuCheckboxItemProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.CheckboxItem
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const DropdownMenuCheckboxItem = ({
   className,
@@ -240,7 +309,7 @@ const DropdownMenuCheckboxItem = ({
   return (
     <DropdownMenuPrimitive.CheckboxItem
       className={checkboxItem({
-        className: cn(classNames?.checkboxItem, className),
+        className: cnBase(classNames?.checkboxItem, className),
       })}
       checked={checked}
       {...props}
@@ -269,8 +338,7 @@ const DropdownMenuCheckboxItem = ({
 
 export type DropdownMenuRadioItemProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.RadioItem
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const DropdownMenuRadioItem = ({
   className,
@@ -283,7 +351,7 @@ const DropdownMenuRadioItem = ({
   return (
     <DropdownMenuPrimitive.RadioItem
       className={radioItem({
-        className: cn(classNames?.radioItem, className),
+        className: cnBase(classNames?.radioItem, className),
       })}
       {...props}
     >
@@ -312,7 +380,7 @@ type DropdownMenuLabelProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Label
 > & {
   inset?: boolean
-} & UnstyledProps
+} & { unstyled?: boolean }
 
 const DropdownMenuLabel = ({
   className,
@@ -324,7 +392,7 @@ const DropdownMenuLabel = ({
   return (
     <DropdownMenuPrimitive.Label
       className={label({
-        className: cn(classNames?.label, className),
+        className: cnBase(classNames?.label, className),
         inset,
       })}
       {...props}
@@ -338,8 +406,7 @@ const DropdownMenuLabel = ({
 
 export type DropdownMenuSeparatorProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Separator
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const DropdownMenuSeparator = ({
   className,
@@ -351,7 +418,7 @@ const DropdownMenuSeparator = ({
   return (
     <DropdownMenuPrimitive.Separator
       className={separator({
-        className: cn(classNames?.separator, className),
+        className: cnBase(classNames?.separator, className),
       })}
       {...props}
     />
@@ -362,8 +429,9 @@ const DropdownMenuSeparator = ({
 /*                            DropdownMenuShortcut                            */
 /* -------------------------------------------------------------------------- */
 
-type DropdownMenuShortcutProps = React.ComponentPropsWithRef<"span"> &
-  UnstyledProps
+type DropdownMenuShortcutProps = React.ComponentPropsWithRef<"span"> & {
+  unstyled?: boolean
+}
 
 const DropdownMenuShortcut = ({
   className,
@@ -375,7 +443,7 @@ const DropdownMenuShortcut = ({
   return (
     <span
       className={shortcut({
-        className: cn(classNames?.shortcut, className),
+        className: cnBase(classNames?.shortcut, className),
       })}
       {...props}
     />

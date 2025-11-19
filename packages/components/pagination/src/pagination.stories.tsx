@@ -49,7 +49,7 @@ const PaginationTemplate = (args: PaginationProps) => {
     >
       <PaginationContent>
         <PaginationPreviousButton>
-          <ChevronLeft className="text-secondary-foreground size-4" />
+          <ChevronLeft className="text-fg-secondary size-4" />
           <span className="px-1">Previous</span>
         </PaginationPreviousButton>
         <div className="flex items-center">
@@ -59,7 +59,7 @@ const PaginationTemplate = (args: PaginationProps) => {
         </div>
         <PaginationNextButton>
           <span className="px-1">Next</span>
-          <ChevronRight className="text-secondary-foreground size-4" />
+          <ChevronRight className="text-fg-secondary size-4" />
         </PaginationNextButton>
       </PaginationContent>
     </Pagination>

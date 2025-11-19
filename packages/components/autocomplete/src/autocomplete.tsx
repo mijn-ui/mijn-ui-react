@@ -1,19 +1,40 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots } from "@mijn-ui/react-core"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
-import { Popover, PopoverAnchor, PopoverContent } from "@mijn-ui/react-popover"
 import {
-  AutocompleteSlots,
-  UnstyledComponentWithSlots,
-  UnstyledProps,
-  autocompleteStyles,
-  cn,
-} from "@mijn-ui/react-theme"
-import { createContext, mergeRefs } from "@mijn-ui/react-utilities"
+  createContext,
+  createTVUnstyledSlots,
+  mergeRefs,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
+import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
+import { Popover, PopoverAnchor, PopoverContent } from "@mijn-ui/react-popover"
 import { CheckIcon } from "@mijn-ui/shared-icons"
 import { Command as CommandPrimitive } from "cmdk"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const autocompleteStyles = tv({
+  slots: {
+    base: "",
+    trigger: "",
+    content: "w-[var(--radix-popover-trigger-width)] overflow-y-auto",
+    contentEmpty: "py-6 text-center text-sm",
+    skeleton: "bg-bg-tertiary h-7 w-full animate-pulse",
+    group: "",
+    item: "data-[selected=true]:bg-bg-secondary relative flex w-full cursor-default select-none items-center justify-between gap-2 px-2 py-1.5 text-sm outline-none data-disabled:pointer-events-auto data-[disabled=true]:opacity-50",
+  },
+  variants: {
+    selected: {
+      true: {
+        item: "[&_svg]:text-fg-brand [&_svg]:size-4",
+      },
+    },
+  },
+})
+
+export type AutocompleteVariantProps = VariantProps<typeof autocompleteStyles>
+export type AutocompleteSlots = keyof ReturnType<typeof autocompleteStyles>
+export { autocompleteStyles }
 
 /* -------------------------------------------------------------------------- */
 
@@ -148,7 +169,7 @@ const Autocomplete = ({
         <CommandPrimitive
           shouldFilter={shouldFilter}
           onKeyDown={handleKeyDown}
-          className={base({ className: cn(classNames?.base, className) })}
+          className={base({ className: cnBase(classNames?.base, className) })}
           {...props}
         >
           {children}
@@ -164,8 +185,7 @@ const Autocomplete = ({
 
 export type AutocompleteTriggerProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Input
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AutocompleteTrigger = ({
   unstyled,
@@ -210,7 +230,7 @@ type AutocompleteContentProps = React.ComponentPropsWithRef<
 > & {
   emptyMessage?: string
   loading?: boolean
-} & UnstyledProps
+} & { unstyled?: boolean }
 
 const AutocompleteContent = ({
   unstyled,
@@ -235,7 +255,7 @@ const AutocompleteContent = ({
           e.preventDefault()
         }
       }}
-      className={content({ className: cn(classNames?.content, className) })}
+      className={content({ className: cnBase(classNames?.content, className) })}
       unstyled={isUnstyled}
       // you can set this to true if you want to flip the content to flip when there isn't enough space for the comboBox content
       avoidCollisions={false}
@@ -272,8 +292,7 @@ const AutocompleteContent = ({
 
 export type AutocompleteGroupProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Group
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AutocompleteGroup = ({
   unstyled,
@@ -285,7 +304,7 @@ const AutocompleteGroup = ({
 
   return (
     <CommandPrimitive.Group
-      className={group({ className: cn(classNames?.group, className) })}
+      className={group({ className: cnBase(classNames?.group, className) })}
       {...props}
     >
       {children}
@@ -299,8 +318,7 @@ const AutocompleteGroup = ({
 
 export type AutocompleteItemProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Item
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const AutocompleteItem = ({
   unstyled,
@@ -323,7 +341,7 @@ const AutocompleteItem = ({
       }}
       onSelect={handleSelectOption}
       className={item({
-        className: cn(classNames?.item, className),
+        className: cnBase(classNames?.item, className),
         selected: isSelected,
       })}
       {...props}

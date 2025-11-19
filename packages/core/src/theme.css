@@ -1,0 +1,289 @@
+@theme {
+  /* Default */
+  --color-bg-default: hsl(0 0 100%);
+  --color-bg-default-alt: hsl(0 0 100%);
+  --color-fg-default: hsl(240 10% 4%);
+  --color-outline-default: hsl(240 5% 84%);
+
+  /* Secondary */
+  --color-bg-secondary: hsl(240 5% 96%);
+  --color-fg-secondary: hsl(240 5% 26%);
+  --color-outline-secondary: hsl(240 6% 90%);
+
+  /* Tertiary */
+  --color-bg-tertiary: hsl(240 6% 90%);
+  --color-bg-tertiary-alt: hsl(240 6% 90%);
+  --color-outline-tertiary: hsl(240 5% 96%);
+  --color-fg-tertiary: hsl(240 4% 46%);
+
+  /* Inverse */
+  --color-bg-inverse: hsl(240 10% 4%);
+  --color-fg-inverse: hsl(0 0 98%);
+  --color-outline-inverse: hsl(240 5% 26%);
+
+  /* Brand (Button and Action Colors) */
+  --color-bg-brand: hsl(21 90% 48%);
+  --color-on-bg-brand: hsl(20 100% 96%);
+  --color-outline-brand: hsl(20 88% 40%);
+  --color-bg-brand-subtle: hsl(20 100% 92%);
+  --color-on-bg-brand-subtle: hsl(20 75% 28%);
+  --color-outline-brand-subtle: hsl(21 98% 83%);
+  --color-fg-brand: hsl(20 88% 40%);
+
+  /* Success */
+  --color-bg-success: hsl(142 76% 36%);
+  --color-on-bg-success: hsl(143 76% 97%);
+  --color-outline-success: hsl(142 72% 29%);
+  --color-bg-success-subtle: hsl(143 84% 93%);
+  --color-on-bg-success-subtle: hsl(142 61% 20%);
+  --color-outline-success-subtle: hsl(142 79% 85%);
+  --color-fg-success: hsl(142 72% 29%);
+
+  /* Warning */
+  --color-bg-warning: hsl(41 96% 40%);
+  --color-on-bg-warning: hsl(41 92% 95%);
+  --color-outline-warning: hsl(41 92% 33%);
+  --color-bg-warning-subtle: hsl(41 97% 88%);
+  --color-on-bg-warning-subtle: hsl(40 73% 26%);
+  --color-outline-warning-subtle: hsl(41 98% 77%);
+  --color-fg-warning: hsl(41 92% 33%);
+
+  /* Danger */
+  --color-bg-danger: hsl(0 72% 51%);
+  --color-on-bg-danger: hsl(0 86% 97%);
+  --color-outline-danger: hsl(0 74% 42%);
+  --color-bg-danger-subtle: hsl(0 93% 94%);
+  --color-on-bg-danger-subtle: hsl(0 63% 31%);
+  --color-outline-danger-subtle: hsl(0 96% 89%);
+  --color-fg-danger: hsl(0 74% 42%);
+
+  /* Radius */
+  --radius-2xs: 0.125rem; /* 2px */
+  --radius-xs: 0.25rem; /* 4px */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-base: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-2xl: 1.25rem; /* 20px */
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-sm:
+    0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md:
+    0 4px 8px rgba(16, 24, 40, 0.1), 0 2px 4px rgba(16, 24, 40, 0.06);
+  --shadow-lg:
+    0 12px 16px rgba(16, 24, 40, 0.08), 0 4px 6px rgba(16, 24, 40, 0.03);
+  --shadow-xl:
+    0 20px 24px rgba(16, 24, 40, 0.08), 0 8px 8px rgba(16, 24, 40, 0.03);
+  --shadow-2xl: 0 24px 48px rgba(16, 24, 40, 0.18);
+  --shadow-3xl: 0 32px 64px rgba(16, 24, 40, 0.14);
+}
+
+.dark {
+  /* Default */
+  --color-bg-default: hsl(240 10% 4%);
+  --color-bg-default-alt: hsl(240 4% 16%);
+  --color-outline-default: hsl(240 5% 26%);
+  --color-fg-default: hsl(0 0 100%);
+
+  /* Tertiary */
+  --color-bg-tertiary: hsl(240 4% 16%);
+  --color-bg-tertiary-alt: hsl(240 10% 4%);
+  --color-outline-tertiary: hsl(240 6% 10%);
+  --color-fg-tertiary: hsl(240 4% 46%);
+
+  /* Inverse */
+  --color-bg-inverse: hsl(0 0 100%);
+  --color-outline-inverse: hsl(240 5% 84%);
+  --color-fg-inverse: hsl(240 10% 4%);
+
+  /* Brand (Button and Action Colors) */
+  --color-bg-brand: hsl(20 96% 61%);
+  --color-on-bg-brand: hsl(21 81% 15%);
+  --color-outline-brand: hsl(20 96% 61%);
+  --color-bg-brand-subtle: hsl(20 75% 28%);
+  --color-on-bg-brand-subtle: hsl(20 100% 92%);
+  --color-outline-brand-subtle: hsl(21 79% 34%);
+  --color-fg-brand: hsl(20 96% 61%);
+
+  /* Secondary */
+  --color-bg-secondary: hsl(240 6% 10%);
+  --color-outline-secondary: hsl(240 4% 16%);
+  --color-fg-secondary: hsl(240 5% 84%);
+
+  /* Success */
+  --color-bg-success: hsl(142 69% 58%);
+  --color-on-bg-success: hsl(142 80% 10%);
+  --color-outline-success: hsl(142 69% 58%);
+  --color-bg-success-subtle: hsl(142 61% 20%);
+  --color-on-bg-success-subtle: hsl(143 84% 93%);
+  --color-outline-success-subtle: hsl(142 64% 24%);
+  --color-fg-success: hsl(142 69% 58%);
+
+  /* Warning */
+  --color-bg-warning: hsl(41 96% 53%);
+  --color-on-bg-warning: hsl(41 83% 14%);
+  --color-outline-warning: hsl(41 96% 53%);
+  --color-bg-warning-subtle: hsl(40 73% 26%);
+  --color-on-bg-warning-subtle: hsl(41 97% 88%);
+  --color-outline-warning-subtle: hsl(41 81% 29%);
+  --color-fg-warning: hsl(41 96% 53%);
+
+  /* Danger */
+  --color-bg-danger: hsl(0 91% 71%);
+  --color-on-bg-danger: hsl(0 75% 15%);
+  --color-outline-danger: hsl(0 91% 71%);
+  --color-bg-danger-subtle: hsl(0 63% 31%);
+  --color-on-bg-danger-subtle: hsl(0 93% 94%);
+  --color-outline-danger-subtle: hsl(0 70% 35%);
+  --color-fg-danger: hsl(0 91% 71%);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Animations                                 */
+/* -------------------------------------------------------------------------- */
+@theme {
+  --animate-fade-in: fade-in 300ms ease;
+  --animate-fade-out: fade-out 300ms ease;
+  --animate-scale-in: scale-in 300ms ease;
+  --animate-scale-out: scale-out 300ms ease;
+  --animate-accordion-open:
+    accordion-open 0.2s ease-in-out, fade-in 0.4s ease-in-out;
+  --animate-accordion-close:
+    accordion-close 0.2s ease-in-out, fade-out 0.4s ease-in-out;
+  --animate-collapsible-open:
+    collapsible-open 0.2s ease-in-out, fade-in 0.4s ease-in-out;
+  --animate-collapsible-close:
+    collapsible-close 0.2s ease-in-out, fade-out 0.4s ease-in-out;
+  --animate-dialog-open: dialog-open 300ms ease;
+  --animate-dialog-close: dialog-close 300ms ease;
+  --animate-popover-open: popover-open 300ms ease;
+  --animate-popover-close: popover-close 300ms ease;
+
+  /* Keyframes */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      transform: scale(0.5);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes scale-out {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(0.5);
+    }
+  }
+
+  @keyframes accordion-open {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-close {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes collapsible-open {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-collapsible-content-height);
+    }
+  }
+
+  @keyframes collapsible-close {
+    from {
+      height: var(--radix-collapsible-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes dialog-open {
+    from {
+      transform: scale(0.95) translate(-50%, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translate(-50%, 0);
+    }
+  }
+
+  @keyframes dialog-close {
+    from {
+      transform: scale(1) translate(-50%, 0);
+    }
+    to {
+      transform: scale(0.95) translate(-50%, 0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes popover-open {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes popover-close {
+    from {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.95) translateY(-10px);
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-outline-default;
+  }
+
+  body {
+    @apply bg-bg-default text-fg-default;
+  }
+}

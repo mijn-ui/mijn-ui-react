@@ -59,7 +59,7 @@ const DialogTemplate = (args: DialogProps) => {
             <Button className="w-full">😍 Good</Button>
           </div>
           <textarea
-            className="focus-visible:ring-offset-background bg-secondary placeholder:text-muted-foreground focus-visible:ring-primary flex min-h-32 w-full resize-none rounded-md border px-3 py-2 text-sm outline-none transition duration-300 focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            className="focus-visible:ring-offset-bg-default bg-bg-secondary placeholder:text-fg-tertiary focus-visible:ring-outline-brand flex min-h-32 w-full resize-none rounded-md border px-3 py-2 text-sm outline-none transition duration-300 focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             placeholder="Tell us your story"
           ></textarea>
         </div>
@@ -79,8 +79,8 @@ const DialogUnstyled = (args: DialogProps) => {
   return (
     <Dialog {...args}>
       <DialogTrigger className="bg-accent p-2">Sign In</DialogTrigger>
-      <DialogContent className="bg-background border-medium relative  p-4">
-        <DialogClose className="text-muted-foreground hover:text-foreground absolute right-4 top-4 border-none p-2 text-lg">
+      <DialogContent className="bg-bg-default border-medium relative  p-4">
+        <DialogClose className="text-fg-tertiary hover:text-fg-default absolute right-4 top-4 border-none p-2 text-lg">
           <X />
         </DialogClose>
         <div>
@@ -109,7 +109,7 @@ const DialogUnstyled = (args: DialogProps) => {
         <div className="mt-4 flex items-center justify-end gap-2">
           <DialogClose className="p-2">Close</DialogClose>
           <DialogClose asChild unstyled>
-            <Button unstyled={args.unstyled} className="bg-muted p-2">
+            <Button unstyled={args.unstyled} className="bg-bg-tertiary p-2">
               Submit
             </Button>
           </DialogClose>

@@ -1,17 +1,42 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots } from "@mijn-ui/react-core"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  AlertSlots,
-  AlertVariantProps,
-  UnstyledComponentWithSlots,
-  UnstyledProps,
-  alertStyles,
-  cn,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  createTVUnstyledSlots,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
+import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const alertStyles = tv({
+  slots: {
+    base: "group relative w-full rounded-lg px-3 py-4 [&>span~*]:pl-8",
+    iconWrapper:
+      "translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:size-5 [&>svg]:text-current",
+    title: "w-full font-semibold leading-none",
+    description: "mt-1 text-sm",
+  },
+  variants: {
+    variant: {
+      danger: {
+        base: "border-outline-danger text-fg-danger border",
+      },
+      default: {
+        base: "border-outline-default text-fg-default border",
+        description: "text-fg-secondary",
+      },
+    },
+  },
+
+  defaultVariants: {
+    variant: "default",
+  },
+})
+
+export type AlertVariantProps = VariantProps<typeof alertStyles>
+export type AlertSlots = keyof ReturnType<typeof alertStyles>
+export { alertStyles }
 
 /* -------------------------------------------------------------------------- */
 /*                              AlertContext                                  */
@@ -61,7 +86,7 @@ const Alert = ({
   return (
     <AlertProvider value={{ styles, unstyled, classNames }}>
       <div
-        className={base({ className: cn(classNames?.base, className) })}
+        className={base({ className: cnBase(classNames?.base, className) })}
         {...props}
       />
     </AlertProvider>
@@ -72,7 +97,9 @@ const Alert = ({
 /*                                  AlertIcon                                 */
 /* -------------------------------------------------------------------------- */
 
-export type AlertIconProps = React.ComponentProps<"span"> & UnstyledProps
+export type AlertIconProps = React.ComponentProps<"span"> & {
+  unstyled?: boolean
+}
 
 const AlertIcon = ({ unstyled, className, ...props }: AlertIconProps) => {
   const { iconWrapper, classNames } = useAlertStyles(unstyled)
@@ -80,7 +107,7 @@ const AlertIcon = ({ unstyled, className, ...props }: AlertIconProps) => {
   return (
     <span
       className={iconWrapper({
-        className: cn(classNames?.iconWrapper, className),
+        className: cnBase(classNames?.iconWrapper, className),
       })}
       {...props}
     />
@@ -91,14 +118,16 @@ const AlertIcon = ({ unstyled, className, ...props }: AlertIconProps) => {
 /*                                 AlertTitle                                 */
 /* -------------------------------------------------------------------------- */
 
-export type AlertTitleProps = React.ComponentProps<"h5"> & UnstyledProps
+export type AlertTitleProps = React.ComponentProps<"h5"> & {
+  unstyled?: boolean
+}
 
 const AlertTitle = ({ unstyled, className, ...props }: AlertTitleProps) => {
   const { title, classNames } = useAlertStyles(unstyled)
 
   return (
     <h5
-      className={title({ className: cn(classNames?.title, className) })}
+      className={title({ className: cnBase(classNames?.title, className) })}
       {...props}
     />
   )
@@ -108,7 +137,9 @@ const AlertTitle = ({ unstyled, className, ...props }: AlertTitleProps) => {
 /*                              AlertDescription                              */
 /* -------------------------------------------------------------------------- */
 
-export type AlertDescriptionProps = React.ComponentProps<"p"> & UnstyledProps
+export type AlertDescriptionProps = React.ComponentProps<"p"> & {
+  unstyled?: boolean
+}
 
 const AlertDescription = ({
   unstyled,
@@ -120,7 +151,7 @@ const AlertDescription = ({
   return (
     <p
       className={description({
-        className: cn(classNames?.description, className),
+        className: cnBase(classNames?.description, className),
       })}
       {...props}
     />

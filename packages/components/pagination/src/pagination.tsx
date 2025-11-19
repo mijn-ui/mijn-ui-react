@@ -1,16 +1,68 @@
 "use client"
 
 import * as React from "react"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  PaginationSlots,
   UnstyledComponentWithSlots,
-  UnstyledProps,
-  cn,
-  paginationStyles,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
 import { EllipsisIcon } from "@mijn-ui/shared-icons"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const paginationStyles = tv({
+  slots: {
+    base: "",
+    content: "flex w-full items-center gap-4",
+    list: "flex flex-row items-center",
+    listItem: "",
+    previousBtn: "",
+    previousElipsis: "",
+    nextBtn: "",
+    nextElipsis: "",
+  },
+  variants: {
+    active: {
+      true: {
+        listItem: [
+          "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          "text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 focus-visible:ring-offset-2",
+          "gap-0 px-0",
+          "size-9",
+
+          "bg-bg-secondary",
+        ],
+      },
+      false: {
+        listItem: [
+          "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          "text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 focus-visible:ring-offset-2",
+          "gap-0 px-0",
+          "size-9",
+          "text-fg-tertiary",
+        ],
+      },
+    },
+  },
+  compoundSlots: [
+    {
+      slots: ["previousBtn", "nextBtn"],
+      class: [
+        "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+        "bg-bg-default-alt text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 shadow-xs border focus-visible:ring-offset-2",
+        "h-8 rounded-md px-3",
+      ],
+    },
+    {
+      slots: ["previousElipsis", "nextElipsis"],
+      class:
+        "text-fg-tertiary flex size-8 items-center justify-center [&_svg]:size-4",
+    },
+  ],
+})
+
+export type PaginationVariantProps = VariantProps<typeof paginationStyles>
+export type PaginationSlots = keyof ReturnType<typeof paginationStyles>
+export { paginationStyles }
 
 /* -------------------------------------------------------------------------- */
 /*                              PaginationContext                             */
@@ -181,8 +233,9 @@ const Pagination: React.FC<PaginationProps> = ({
 /*                              PaginationContent                             */
 /* -------------------------------------------------------------------------- */
 
-export type PaginationContentProps = React.ComponentPropsWithRef<"nav"> &
-  UnstyledProps
+export type PaginationContentProps = React.ComponentPropsWithRef<"nav"> & {
+  unstyled?: boolean
+}
 
 const PaginationContent = ({
   className,
@@ -193,13 +246,15 @@ const PaginationContent = ({
 
   return (
     <nav
-      className={content({ className: cn(classNames?.content, className) })}
+      className={content({ className: cnBase(classNames?.content, className) })}
       {...props}
     />
   )
 }
 
-export type PaginationListProps = React.ComponentProps<"ul"> & UnstyledProps
+export type PaginationListProps = React.ComponentProps<"ul"> & {
+  unstyled?: boolean
+}
 
 /* -------------------------------------------------------------------------- */
 /*                               PaginationList                               */
@@ -215,7 +270,7 @@ const PaginationList = ({
 
   return (
     <ul
-      className={list({ className: cn(classNames?.list, className) })}
+      className={list({ className: cnBase(classNames?.list, className) })}
       {...props}
     >
       {paginationRange.map((page, index) => (
@@ -238,8 +293,9 @@ const PaginationList = ({
 /*                          PaginationPreviousButton                          */
 /* -------------------------------------------------------------------------- */
 
-type PaginationPreviousButtonProps = React.ComponentProps<"button"> &
-  UnstyledProps
+type PaginationPreviousButtonProps = React.ComponentProps<"button"> & {
+  unstyled?: boolean
+}
 
 const PaginationPreviousButton = ({
   className,
@@ -253,7 +309,7 @@ const PaginationPreviousButton = ({
     <button
       onClick={goToPreviousPage}
       className={previousBtn({
-        className: cn(classNames?.previousBtn, className),
+        className: cnBase(classNames?.previousBtn, className),
       })}
       {...props}
     />
@@ -264,8 +320,9 @@ const PaginationPreviousButton = ({
 /*                            PaginationNextButton                            */
 /* -------------------------------------------------------------------------- */
 
-export type PaginationNextButtonProps = React.ComponentProps<"button"> &
-  UnstyledProps
+export type PaginationNextButtonProps = React.ComponentProps<"button"> & {
+  unstyled?: boolean
+}
 
 const PaginationNextButton = ({
   className,
@@ -278,7 +335,7 @@ const PaginationNextButton = ({
   return (
     <button
       onClick={goToNextPage}
-      className={nextBtn({ className: cn(classNames?.nextBtn, className) })}
+      className={nextBtn({ className: cnBase(classNames?.nextBtn, className) })}
       {...props}
     />
   )
@@ -288,8 +345,9 @@ const PaginationNextButton = ({
 /*                         PaginationPreviousEllipsis                         */
 /* -------------------------------------------------------------------------- */
 
-type PaginationPreviousEllipsisProps = React.ComponentProps<"span"> &
-  UnstyledProps
+type PaginationPreviousEllipsisProps = React.ComponentProps<"span"> & {
+  unstyled?: boolean
+}
 
 const PaginationPreviousEllipsis = ({
   className,
@@ -305,7 +363,7 @@ const PaginationPreviousEllipsis = ({
     <span
       aria-hidden
       className={previousElipsis({
-        className: cn(classNames?.previousElipsis, className),
+        className: cnBase(classNames?.previousElipsis, className),
       })}
       {...props}
     >
@@ -318,8 +376,9 @@ const PaginationPreviousEllipsis = ({
 /*                           PaginationNextEllipsis                           */
 /* -------------------------------------------------------------------------- */
 
-export type PaginationNextEllipsisProps = React.ComponentProps<"span"> &
-  UnstyledProps
+export type PaginationNextEllipsisProps = React.ComponentProps<"span"> & {
+  unstyled?: boolean
+}
 
 const PaginationNextEllipsis = ({
   className,
@@ -335,7 +394,7 @@ const PaginationNextEllipsis = ({
     <span
       aria-hidden
       className={nextElipsis({
-        className: cn(classNames?.nextElipsis, className),
+        className: cnBase(classNames?.nextElipsis, className),
       })}
       {...props}
     >

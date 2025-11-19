@@ -1,17 +1,43 @@
 "use client"
 
 import * as React from "react"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  DialogSlots,
-  DialogVariantProps,
   UnstyledComponentWithSlots,
-  UnstyledProps,
-  cn,
-  dialogStyles,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const dialogStyles = tv({
+  slots: {
+    base: "",
+    trigger: "",
+    overlay: [
+      "fixed inset-0 z-50 bg-black/80",
+      "data-[state=open]:animate-in data-[state=open]:fade-in-0",
+      "data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
+    ],
+    contentWrapper: "fixed inset-0 z-50 flex items-center justify-center",
+    content: [
+      "border-outline-secondary bg-bg-default-alt m-4 flex w-full max-w-120 flex-col gap-4 rounded-md border p-6 shadow-lg",
+      "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-90",
+      "data-[state=closed]:animate-out data-[state=closed]:fade-out-0  data-[state=closed]:zoom-out-90",
+    ],
+    header: "flex flex-col space-y-2 text-center sm:text-left",
+    footer: "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
+    title: "text-base font-semibold leading-none",
+    description: "text-fg-secondary text-sm",
+    close: [
+      "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+      "h-9 rounded-md px-3",
+      "text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 focus-visible:ring-offset-2",
+    ],
+  },
+})
+export type DialogVariantProps = VariantProps<typeof dialogStyles>
+export type DialogSlots = keyof ReturnType<typeof dialogStyles>
+export { dialogStyles }
 
 /* -------------------------------------------------------------------------- */
 /*                                DialogContext                               */
@@ -67,8 +93,7 @@ const Dialog = ({ classNames, unstyled = false, ...props }: DialogProps) => {
 
 export type DialogTriggerProps = React.ComponentPropsWithRef<
   typeof DialogPrimitive.Trigger
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const DialogTrigger = ({
   unstyled,
@@ -80,7 +105,7 @@ const DialogTrigger = ({
   return (
     <DialogPrimitive.Trigger
       className={trigger({
-        className: cn(classNames?.trigger, className),
+        className: cnBase(classNames?.trigger, className),
       })}
       {...props}
     />
@@ -93,8 +118,7 @@ const DialogTrigger = ({
 
 export type DialogCloseProps = React.ComponentPropsWithRef<
   typeof DialogPrimitive.Close
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const DialogClose = ({ unstyled, className, ...props }: DialogCloseProps) => {
   const { close, classNames } = useDialogStyles(unstyled)
@@ -102,7 +126,7 @@ const DialogClose = ({ unstyled, className, ...props }: DialogCloseProps) => {
   return (
     <DialogPrimitive.Close
       className={close({
-        className: cn(classNames?.close, className),
+        className: cnBase(classNames?.close, className),
       })}
       {...props}
     />
@@ -115,8 +139,7 @@ const DialogClose = ({ unstyled, className, ...props }: DialogCloseProps) => {
 
 export type DialogOverlayProps = React.ComponentPropsWithRef<
   typeof DialogPrimitive.Overlay
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const DialogOverlay = ({
   unstyled,
@@ -128,7 +151,7 @@ const DialogOverlay = ({
   return (
     <DialogPrimitive.Overlay
       className={overlay({
-        className: cn(classNames?.overlay, className),
+        className: cnBase(classNames?.overlay, className),
       })}
       {...props}
     />
@@ -141,8 +164,7 @@ const DialogOverlay = ({
 
 export type DialogContentProps = React.ComponentPropsWithRef<
   typeof DialogPrimitive.Content
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const DialogContent = ({
   unstyled,
@@ -168,7 +190,7 @@ const DialogContent = ({
       >
         <DialogPrimitive.Content
           className={content({
-            className: cn(classNames?.content, className),
+            className: cnBase(classNames?.content, className),
           })}
           {...props}
         >
@@ -183,7 +205,9 @@ const DialogContent = ({
 /*                                DialogHeader                                */
 /* -------------------------------------------------------------------------- */
 
-type DialogHeaderProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
+type DialogHeaderProps = React.ComponentPropsWithRef<"div"> & {
+  unstyled?: boolean
+}
 
 const DialogHeader = ({ unstyled, className, ...props }: DialogHeaderProps) => {
   const { header, classNames } = useDialogStyles(unstyled)
@@ -191,7 +215,7 @@ const DialogHeader = ({ unstyled, className, ...props }: DialogHeaderProps) => {
   return (
     <div
       className={header({
-        className: cn(classNames?.header, className),
+        className: cnBase(classNames?.header, className),
       })}
       {...props}
     />
@@ -202,8 +226,9 @@ const DialogHeader = ({ unstyled, className, ...props }: DialogHeaderProps) => {
 /*                                DialogFooter                                */
 /* -------------------------------------------------------------------------- */
 
-export type DialogFooterProps = React.ComponentPropsWithRef<"div"> &
-  UnstyledProps
+export type DialogFooterProps = React.ComponentPropsWithRef<"div"> & {
+  unstyled?: boolean
+}
 
 const DialogFooter = ({ unstyled, className, ...props }: DialogFooterProps) => {
   const { footer, classNames } = useDialogStyles(unstyled)
@@ -211,7 +236,7 @@ const DialogFooter = ({ unstyled, className, ...props }: DialogFooterProps) => {
   return (
     <div
       className={footer({
-        className: cn(classNames?.footer, className),
+        className: cnBase(classNames?.footer, className),
       })}
       {...props}
     />
@@ -224,8 +249,7 @@ const DialogFooter = ({ unstyled, className, ...props }: DialogFooterProps) => {
 
 export type DialogTitleProps = React.ComponentPropsWithRef<
   typeof DialogPrimitive.Title
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const DialogTitle = ({ unstyled, className, ...props }: DialogTitleProps) => {
   const { title, classNames } = useDialogStyles(unstyled)
@@ -233,7 +257,7 @@ const DialogTitle = ({ unstyled, className, ...props }: DialogTitleProps) => {
   return (
     <DialogPrimitive.Title
       className={title({
-        className: cn(classNames?.title, className),
+        className: cnBase(classNames?.title, className),
       })}
       {...props}
     />
@@ -246,8 +270,7 @@ const DialogTitle = ({ unstyled, className, ...props }: DialogTitleProps) => {
 
 export type DialogDescriptionProps = React.ComponentPropsWithRef<
   typeof DialogPrimitive.Description
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const DialogDescription = ({
   unstyled,
@@ -259,7 +282,7 @@ const DialogDescription = ({
   return (
     <DialogPrimitive.Description
       className={description({
-        className: cn(classNames?.description, className),
+        className: cnBase(classNames?.description, className),
       })}
       {...props}
     />

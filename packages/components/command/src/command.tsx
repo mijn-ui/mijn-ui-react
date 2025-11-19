@@ -1,18 +1,37 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots } from "@mijn-ui/react-core"
-import { Dialog, DialogContent, type DialogProps } from "@mijn-ui/react-dialog"
-import { useTVUnstyled } from "@mijn-ui/react-hooks"
 import {
-  CommandSlots,
-  UnstyledComponentWithSlots,
-  UnstyledProps,
-  cn,
-  commandStyles,
-} from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities"
+  createContext,
+  createTVUnstyledSlots,
+  useTVUnstyled,
+} from "@mijn-ui/react-core"
+import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
+import { Dialog, DialogContent, type DialogProps } from "@mijn-ui/react-dialog"
 import { Command as CommandPrimitive } from "cmdk"
+import { VariantProps, cnBase, tv } from "tailwind-variants"
+
+const commandStyles = tv({
+  slots: {
+    base: "border-outline-default bg-bg-default-alt text-fg-default flex size-full flex-col overflow-hidden rounded-md border",
+    dialogWrapper: "overflow-hidden p-0 shadow-lg",
+    dialog:
+      "[&_[cmdk-group-heading]]:text-fg-tertiary [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5",
+    list: "max-h-[300px] overflow-y-auto overflow-x-hidden",
+    group:
+      "text-fg-default [&_[cmdk-group-heading]]:text-fg-tertiary overflow-hidden [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium",
+    separator: "bg-outline-default h-px -mx-1",
+    item: "data-[selected='true']:bg-bg-secondary relative flex cursor-default select-none items-center px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-auto data-[disabled=true]:opacity-50",
+    input: "",
+    empty: "py-6 text-center text-sm",
+    shortcut: "text-fg-tertiary ml-auto text-xs tracking-widest",
+  },
+})
+
+export type CommandVariantProps = VariantProps<typeof commandStyles>
+export type CommandSlots = keyof ReturnType<typeof commandStyles>
+
+export { commandStyles }
 
 /* -------------------------------------------------------------------------- */
 /*                               CommandContext                               */
@@ -62,7 +81,7 @@ const Command = ({
   return (
     <CommandProvider value={{ unstyled, styles, classNames }}>
       <CommandPrimitive
-        className={base({ className: cn(classNames?.base, className) })}
+        className={base({ className: cnBase(classNames?.base, className) })}
         {...props}
       />
     </CommandProvider>
@@ -98,12 +117,12 @@ const CommandDialog = ({
       <Dialog {...props}>
         <DialogContent
           className={dialogWrapper({
-            className: cn(classNames?.dialogWrapper),
+            className: cnBase(classNames?.dialogWrapper),
           })}
         >
           <Command
             className={dialog({
-              className: cn(classNames?.dialog, className),
+              className: cnBase(classNames?.dialog, className),
             })}
           >
             {children}
@@ -120,8 +139,7 @@ const CommandDialog = ({
 
 export type CommandInputProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Input
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
   const { input, classNames } = useCommandStyles(unstyled)
@@ -129,7 +147,7 @@ const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
   return (
     <CommandPrimitive.Input
       className={input({
-        className: cn(classNames?.input, className),
+        className: cnBase(classNames?.input, className),
       })}
       {...props}
     />
@@ -142,8 +160,7 @@ const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
 
 export type CommandListProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.List
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const CommandList = ({ className, unstyled, ...props }: CommandListProps) => {
   const { list, classNames } = useCommandStyles(unstyled)
@@ -151,7 +168,7 @@ const CommandList = ({ className, unstyled, ...props }: CommandListProps) => {
   return (
     <CommandPrimitive.List
       className={list({
-        className: cn(classNames?.list, className),
+        className: cnBase(classNames?.list, className),
       })}
       {...props}
     />
@@ -164,8 +181,7 @@ const CommandList = ({ className, unstyled, ...props }: CommandListProps) => {
 
 export type CommandEmptyProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Empty
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const CommandEmpty = ({ unstyled, className, ...props }: CommandEmptyProps) => {
   const { empty, classNames } = useCommandStyles(unstyled)
@@ -173,7 +189,7 @@ const CommandEmpty = ({ unstyled, className, ...props }: CommandEmptyProps) => {
   return (
     <CommandPrimitive.Empty
       className={empty({
-        className: cn(classNames?.empty, className),
+        className: cnBase(classNames?.empty, className),
       })}
       {...props}
     />
@@ -186,8 +202,7 @@ const CommandEmpty = ({ unstyled, className, ...props }: CommandEmptyProps) => {
 
 export type CommandGroupProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Group
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const CommandGroup = ({ className, unstyled, ...props }: CommandGroupProps) => {
   const { group, classNames } = useCommandStyles(unstyled)
@@ -195,7 +210,7 @@ const CommandGroup = ({ className, unstyled, ...props }: CommandGroupProps) => {
   return (
     <CommandPrimitive.Group
       className={group({
-        className: cn(classNames?.group, className),
+        className: cnBase(classNames?.group, className),
       })}
       {...props}
     />
@@ -208,8 +223,7 @@ const CommandGroup = ({ className, unstyled, ...props }: CommandGroupProps) => {
 
 export type CommandSeparatorProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Separator
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const CommandSeparator = ({
   className,
@@ -221,7 +235,7 @@ const CommandSeparator = ({
   return (
     <CommandPrimitive.Separator
       className={separator({
-        className: cn(classNames?.separator, className),
+        className: cnBase(classNames?.separator, className),
       })}
       {...props}
     />
@@ -233,8 +247,7 @@ const CommandSeparator = ({
 
 export type CommandItemProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Item
-> &
-  UnstyledProps
+> & { unstyled?: boolean }
 
 const CommandItem = ({ className, unstyled, ...props }: CommandItemProps) => {
   const { item, classNames } = useCommandStyles(unstyled)
@@ -242,7 +255,7 @@ const CommandItem = ({ className, unstyled, ...props }: CommandItemProps) => {
   return (
     <CommandPrimitive.Item
       className={item({
-        className: cn(classNames?.item, className),
+        className: cnBase(classNames?.item, className),
       })}
       {...props}
     />
@@ -252,8 +265,9 @@ const CommandItem = ({ className, unstyled, ...props }: CommandItemProps) => {
 /*                               CommandShortcut                              */
 /* -------------------------------------------------------------------------- */
 
-export type CommandShortcutProps = React.HTMLAttributes<HTMLSpanElement> &
-  UnstyledProps
+export type CommandShortcutProps = React.HTMLAttributes<HTMLSpanElement> & {
+  unstyled?: boolean
+}
 
 const CommandShortcut = ({
   className,
@@ -265,7 +279,7 @@ const CommandShortcut = ({
   return (
     <span
       className={shortcut({
-        className: cn(classNames?.shortcut, className),
+        className: cnBase(classNames?.shortcut, className),
       })}
       {...props}
     />
