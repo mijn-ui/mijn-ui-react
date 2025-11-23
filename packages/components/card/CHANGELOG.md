@@ -1,5 +1,11 @@
 # @mijn-ui-react/card
 
+## 0.4.0
+
+### Minor Changes
+
+- 3cb12cf: Fix class merging issuing
+
 ## 0.3.0
 
 ### Minor Changes
