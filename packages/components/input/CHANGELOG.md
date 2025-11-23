@@ -1,5 +1,16 @@
 # @mijn-ui-react/input
 
+## 0.4.0
+
+### Minor Changes
+
+- 3cb12cf: Fix class merging issuing
+
+### Patch Changes
+
+- Updated dependencies [3cb12cf]
+  - @mijn-ui/react-label@0.4.0
+
 ## 0.3.0
 
 ### Minor Changes

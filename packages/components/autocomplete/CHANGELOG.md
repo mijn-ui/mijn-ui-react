@@ -1,5 +1,18 @@
 # @mijn-ui-react/autocomplete
 
+## 0.3.0
+
+### Minor Changes
+
+- 3cb12cf: Fix class merging issuing
+
+### Patch Changes
+
+- Updated dependencies [3cb12cf]
+  - @mijn-ui/react-command@0.4.0
+  - @mijn-ui/react-popover@0.4.0
+  - @mijn-ui/react-skeleton@0.4.0
+
 ## 0.2.0
 
 ### Minor Changes
