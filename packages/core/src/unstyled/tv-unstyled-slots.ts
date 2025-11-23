@@ -1,6 +1,5 @@
-import { cnBase } from "tailwind-variants"
-
 /* -------------------------------------------------------------------------- */
+import { cn } from "../utils"
 
 /**
  * Creates unstyled slot functions that dynamically adapt to the arguments
@@ -67,5 +66,5 @@ export const applyUnstyled = (
   defaultClasses: string,
   userClasses?: string,
 ): string | undefined => {
-  return unstyled ? userClasses : cnBase(defaultClasses, userClasses)
+  return unstyled ? userClasses : cn(defaultClasses, userClasses)
 }

@@ -3,10 +3,11 @@
 import * as React from "react"
 import {
   UnstyledComponentWithSlots,
+  cn,
   createTVUnstyledSlots,
 } from "@mijn-ui/react-core"
 import { Label } from "@mijn-ui/react-label"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const labelClasses = [
   "peer-focus:bg-bg-default peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:start-2 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4",
@@ -150,7 +151,7 @@ const Input = ({
       )}
       <input
         type={type}
-        className={base({ className: cnBase(classNames?.base, className) })}
+        className={base({ className: cn(classNames?.base, className) })}
         id={userId || id}
         disabled={disabled}
         // Adding an empty space by default ensures the floating label moves correctly on focus or when input is present.

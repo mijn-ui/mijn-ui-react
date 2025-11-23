@@ -3,11 +3,12 @@
 import * as React from "react"
 import {
   UnstyledComponentWithSlots,
+  cn,
   createContext,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const alertDialogStyles = tv({
   slots: {
@@ -116,7 +117,7 @@ const AlertDialogTrigger = ({
 
   return (
     <AlertDialogPrimitive.Trigger
-      className={trigger({ className: cnBase(classNames?.trigger, className) })}
+      className={trigger({ className: cn(classNames?.trigger, className) })}
       {...props}
     />
   )
@@ -139,7 +140,7 @@ const AlertDialogOverlay = ({
 
   return (
     <AlertDialogPrimitive.Overlay
-      className={overlay({ className: cnBase(classNames?.overlay, className) })}
+      className={overlay({ className: cn(classNames?.overlay, className) })}
       {...props}
     />
   )
@@ -177,7 +178,7 @@ const AlertDialogContent = ({
       >
         <AlertDialogPrimitive.Content
           className={content({
-            className: cnBase(classNames?.content, className),
+            className: cn(classNames?.content, className),
           })}
           {...props}
         />
@@ -203,7 +204,7 @@ const AlertDialogHeader = ({
 
   return (
     <div
-      className={header({ className: cnBase(classNames?.header, className) })}
+      className={header({ className: cn(classNames?.header, className) })}
       {...props}
     />
   )
@@ -227,7 +228,7 @@ const AlertDialogFooter = ({
 
   return (
     <div
-      className={footer({ className: cnBase(classNames?.footer, className) })}
+      className={footer({ className: cn(classNames?.footer, className) })}
       {...props}
     />
   )
@@ -251,7 +252,7 @@ const AlertDialogTitle = ({
 
   return (
     <AlertDialogPrimitive.Title
-      className={title({ className: cnBase(classNames?.title, className) })}
+      className={title({ className: cn(classNames?.title, className) })}
       {...props}
     />
   )
@@ -275,7 +276,7 @@ const AlertDialogDescription = ({
   return (
     <AlertDialogPrimitive.Description
       className={description({
-        className: cnBase(classNames?.description, className),
+        className: cn(classNames?.description, className),
       })}
       {...props}
     />
@@ -299,7 +300,7 @@ const AlertDialogAction = ({
 
   return (
     <AlertDialogPrimitive.Action
-      className={action({ className: cnBase(classNames?.action, className) })}
+      className={action({ className: cn(classNames?.action, className) })}
       {...props}
     />
   )
@@ -322,7 +323,7 @@ const AlertDialogCancel = ({
 
   return (
     <AlertDialogPrimitive.Cancel
-      className={cancel({ className: cnBase(classNames?.cancel, className) })}
+      className={cancel({ className: cn(classNames?.cancel, className) })}
       {...props}
     />
   )

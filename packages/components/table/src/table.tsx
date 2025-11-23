@@ -2,12 +2,13 @@
 
 import * as React from "react"
 import {
+  UnstyledComponentWithSlots,
+  cn,
   createContext,
   createTVUnstyledSlots,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const tableStyles = tv({
   slots: {
@@ -72,7 +73,7 @@ const Table = ({
   return (
     <TableProvider value={{ unstyled, styles, classNames }}>
       <table
-        className={base({ className: cnBase(classNames?.base, className) })}
+        className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
     </TableProvider>
@@ -92,7 +93,7 @@ const TableHeader = ({ className, unstyled, ...props }: TableHeaderProps) => {
   return (
     <thead
       className={header({
-        className: cnBase(classNames?.header, className),
+        className: cn(classNames?.header, className),
       })}
       {...props}
     />
@@ -113,7 +114,7 @@ const TableBody = ({ className, unstyled, ...props }: TableBodyProps) => {
   return (
     <tbody
       className={body({
-        className: cnBase(classNames?.body, className),
+        className: cn(classNames?.body, className),
       })}
       {...props}
     />
@@ -134,7 +135,7 @@ const TableFooter = ({ className, unstyled, ...props }: TableFooterProps) => {
   return (
     <tfoot
       className={footer({
-        className: cnBase(classNames?.footer, className),
+        className: cn(classNames?.footer, className),
       })}
       {...props}
     />
@@ -155,7 +156,7 @@ const TableRow = ({ className, unstyled, ...props }: TableRowProps) => {
   return (
     <tr
       className={row({
-        className: cnBase(classNames?.row, className),
+        className: cn(classNames?.row, className),
       })}
       {...props}
     />
@@ -180,7 +181,7 @@ const TableHeaderCell = ({
   return (
     <th
       className={headerCell({
-        className: cnBase(classNames?.headerCell, className),
+        className: cn(classNames?.headerCell, className),
       })}
       {...props}
     />
@@ -201,7 +202,7 @@ const TableCell = ({ className, unstyled, ...props }: TableCellProps) => {
   return (
     <td
       className={cell({
-        className: cnBase(classNames?.cell, className),
+        className: cn(classNames?.cell, className),
       })}
       {...props}
     />
@@ -222,7 +223,7 @@ const TableCaption = ({ className, unstyled, ...props }: TableCaptionProps) => {
   return (
     <caption
       className={caption({
-        className: cnBase(classNames?.caption, className),
+        className: cn(classNames?.caption, className),
       })}
       {...props}
     />

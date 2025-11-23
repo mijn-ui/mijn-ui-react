@@ -3,12 +3,13 @@
 import * as React from "react"
 import {
   UnstyledComponentWithSlots,
+  cn,
   createContext,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "@mijn-ui/shared-icons"
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const itemFocusClasses = ["focus:bg-bg-secondary"]
 
@@ -161,7 +162,7 @@ const DropdownMenuTrigger = ({
   return (
     <DropdownMenuPrimitive.Trigger
       className={trigger({
-        className: cnBase(classNames?.trigger, className),
+        className: cn(classNames?.trigger, className),
       })}
       {...props}
     />
@@ -190,7 +191,7 @@ const DropdownMenuSubTrigger = ({
   return (
     <DropdownMenuPrimitive.SubTrigger
       className={subTrigger({
-        className: cnBase(classNames?.subTrigger, className),
+        className: cn(classNames?.subTrigger, className),
         inset,
       })}
       {...props}
@@ -221,7 +222,7 @@ const DropdownMenuSubContent = ({
   return (
     <DropdownMenuPrimitive.SubContent
       className={subContent({
-        className: cnBase(classNames?.subContent, className),
+        className: cn(classNames?.subContent, className),
       })}
       {...props}
     />
@@ -248,7 +249,7 @@ const DropdownMenuContent = ({
       <DropdownMenuPrimitive.Content
         sideOffset={sideOffset}
         className={content({
-          className: cnBase(classNames?.content, className),
+          className: cn(classNames?.content, className),
         })}
         {...props}
       />
@@ -277,7 +278,7 @@ const DropdownMenuItem = ({
   return (
     <DropdownMenuPrimitive.Item
       className={item({
-        className: cnBase(classNames?.item, className),
+        className: cn(classNames?.item, className),
         inset,
       })}
       {...props}
@@ -309,7 +310,7 @@ const DropdownMenuCheckboxItem = ({
   return (
     <DropdownMenuPrimitive.CheckboxItem
       className={checkboxItem({
-        className: cnBase(classNames?.checkboxItem, className),
+        className: cn(classNames?.checkboxItem, className),
       })}
       checked={checked}
       {...props}
@@ -351,7 +352,7 @@ const DropdownMenuRadioItem = ({
   return (
     <DropdownMenuPrimitive.RadioItem
       className={radioItem({
-        className: cnBase(classNames?.radioItem, className),
+        className: cn(classNames?.radioItem, className),
       })}
       {...props}
     >
@@ -392,7 +393,7 @@ const DropdownMenuLabel = ({
   return (
     <DropdownMenuPrimitive.Label
       className={label({
-        className: cnBase(classNames?.label, className),
+        className: cn(classNames?.label, className),
         inset,
       })}
       {...props}
@@ -418,7 +419,7 @@ const DropdownMenuSeparator = ({
   return (
     <DropdownMenuPrimitive.Separator
       className={separator({
-        className: cnBase(classNames?.separator, className),
+        className: cn(classNames?.separator, className),
       })}
       {...props}
     />
@@ -443,7 +444,7 @@ const DropdownMenuShortcut = ({
   return (
     <span
       className={shortcut({
-        className: cnBase(classNames?.shortcut, className),
+        className: cn(classNames?.shortcut, className),
       })}
       {...props}
     />

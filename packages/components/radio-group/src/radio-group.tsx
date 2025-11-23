@@ -2,14 +2,15 @@
 
 import * as React from "react"
 import {
+  UnstyledComponentWithSlots,
+  cn,
   createContext,
   createTVUnstyledSlots,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import { CircleIcon } from "@mijn-ui/shared-icons"
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const radioGroupStyles = tv({
   slots: {
@@ -74,7 +75,7 @@ const RadioGroup = ({
   return (
     <RadioGroupProvider value={{ unstyled, styles, classNames }}>
       <RadioGroupPrimitive.Root
-        className={base({ className: cnBase(classNames?.base, className) })}
+        className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
     </RadioGroupProvider>
@@ -98,7 +99,7 @@ const RadioGroupItem = ({
 
   return (
     <RadioGroupPrimitive.Item
-      className={item({ className: cnBase(classNames?.item, className) })}
+      className={item({ className: cn(classNames?.item, className) })}
       {...props}
     >
       <RadioGroupPrimitive.Indicator

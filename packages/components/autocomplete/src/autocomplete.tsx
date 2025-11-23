@@ -2,16 +2,17 @@
 
 import * as React from "react"
 import {
+  UnstyledComponentWithSlots,
+  cn,
   createContext,
   createTVUnstyledSlots,
   mergeRefs,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import { Popover, PopoverAnchor, PopoverContent } from "@mijn-ui/react-popover"
 import { CheckIcon } from "@mijn-ui/shared-icons"
 import { Command as CommandPrimitive } from "cmdk"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const autocompleteStyles = tv({
   slots: {
@@ -169,7 +170,7 @@ const Autocomplete = ({
         <CommandPrimitive
           shouldFilter={shouldFilter}
           onKeyDown={handleKeyDown}
-          className={base({ className: cnBase(classNames?.base, className) })}
+          className={base({ className: cn(classNames?.base, className) })}
           {...props}
         >
           {children}
@@ -255,7 +256,7 @@ const AutocompleteContent = ({
           e.preventDefault()
         }
       }}
-      className={content({ className: cnBase(classNames?.content, className) })}
+      className={content({ className: cn(classNames?.content, className) })}
       unstyled={isUnstyled}
       // you can set this to true if you want to flip the content to flip when there isn't enough space for the comboBox content
       avoidCollisions={false}
@@ -304,7 +305,7 @@ const AutocompleteGroup = ({
 
   return (
     <CommandPrimitive.Group
-      className={group({ className: cnBase(classNames?.group, className) })}
+      className={group({ className: cn(classNames?.group, className) })}
       {...props}
     >
       {children}
@@ -341,7 +342,7 @@ const AutocompleteItem = ({
       }}
       onSelect={handleSelectOption}
       className={item({
-        className: cnBase(classNames?.item, className),
+        className: cn(classNames?.item, className),
         selected: isSelected,
       })}
       {...props}

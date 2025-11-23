@@ -2,12 +2,13 @@
 
 import * as React from "react"
 import {
+  UnstyledComponentWithSlots,
+  cn,
   createContext,
   createTVUnstyledSlots,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 /* -------------------------------------------------------------------------- */
 /*                              CardContext                                   */
@@ -70,7 +71,7 @@ const Card = ({
     <CardProvider value={{ unstyled, styles, classNames }}>
       <div
         className={base({
-          className: cnBase(classNames?.base, className),
+          className: cn(classNames?.base, className),
         })}
         {...props}
       />
@@ -92,7 +93,7 @@ const CardHeader = ({ className, unstyled, ...props }: CardHeaderProps) => {
   return (
     <div
       className={header({
-        className: cnBase(classNames?.header, className),
+        className: cn(classNames?.header, className),
       })}
       {...props}
     />
@@ -113,7 +114,7 @@ const CardTitle = ({ className, unstyled, ...props }: CardTitleProps) => {
   return (
     <div
       className={title({
-        className: cnBase(classNames?.title, className),
+        className: cn(classNames?.title, className),
       })}
       {...props}
     />
@@ -138,7 +139,7 @@ const CardDescription = ({
   return (
     <div
       className={description({
-        className: cnBase(classNames?.description, className),
+        className: cn(classNames?.description, className),
       })}
       {...props}
     />
@@ -159,7 +160,7 @@ const CardContent = ({ className, unstyled, ...props }: CardContentProps) => {
   return (
     <div
       className={content({
-        className: cnBase(classNames?.content, className),
+        className: cn(classNames?.content, className),
       })}
       {...props}
     />
@@ -180,7 +181,7 @@ const CardFooter = ({ className, unstyled, ...props }: CardFooterProps) => {
   return (
     <div
       className={footer({
-        className: cnBase(classNames?.footer, className),
+        className: cn(classNames?.footer, className),
       })}
       {...props}
     />

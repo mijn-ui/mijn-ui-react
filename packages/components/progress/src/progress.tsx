@@ -2,13 +2,12 @@
 
 import * as React from "react"
 import {
-  createContext,
+  UnstyledComponentWithSlots,
+  cn,
   createTVUnstyledSlots,
-  useTVUnstyled,
 } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import * as ProgressPrimitive from "@radix-ui/react-progress"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const progressStyles = tv({
   slots: {
@@ -40,7 +39,7 @@ const Progress = ({
   return (
     <ProgressPrimitive.Root
       ref={ref}
-      className={base({ className: cnBase(classNames?.base, className) })}
+      className={base({ className: cn(classNames?.base, className) })}
       {...props}
     >
       <ProgressPrimitive.Indicator

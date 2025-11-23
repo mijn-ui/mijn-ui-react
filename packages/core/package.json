@@ -1,7 +1,7 @@
 {
   "name": "@mijn-ui/react-core",
   "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "homepage": "https://mijn-ui.vercel.app",
   "license": "MIT",
   "type": "module",
@@ -34,15 +34,16 @@
     "@types/react": "^19.0.0",
     "eslint-config-custom": "workspace:*",
     "react": "19.0.0",
+    "tailwind-merge": "^3.0.0",
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.0",
     "react-dom": "^19.0",
-    "tailwindcss": "^4.0.0",
     "tailwind-merge": "^3.0.0",
-    "tailwind-variants": "^3.0.0"
+    "tailwind-variants": "^3.0.0",
+    "tailwindcss": "^4.0.0"
   },
   "publishConfig": {
     "access": "public"

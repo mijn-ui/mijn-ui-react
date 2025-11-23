@@ -3,11 +3,12 @@
 import * as React from "react"
 import {
   UnstyledComponentWithSlots,
+  cn,
   createContext,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
 import * as RadixPopover from "@radix-ui/react-popover"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const popoverStyles = tv({
   slots: {
@@ -101,7 +102,7 @@ const PopoverTrigger = ({
 
   return (
     <RadixPopover.Trigger
-      className={trigger({ className: cnBase(classNames?.trigger, className) })}
+      className={trigger({ className: cn(classNames?.trigger, className) })}
       {...props}
     />
   )
@@ -120,7 +121,7 @@ const PopoverClose = ({ unstyled, className, ...props }: PopoverCloseProps) => {
 
   return (
     <RadixPopover.Close
-      className={close({ className: cnBase(classNames?.close, className) })}
+      className={close({ className: cn(classNames?.close, className) })}
       {...props}
     />
   )
@@ -151,7 +152,7 @@ const PopoverContent = ({
         align={align}
         sideOffset={sideOffset}
         className={content({
-          className: cnBase(classNames?.content, className),
+          className: cn(classNames?.content, className),
         })}
         {...props}
       />

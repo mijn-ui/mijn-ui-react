@@ -2,13 +2,14 @@
 
 import * as React from "react"
 import {
+  UnstyledComponentWithSlots,
+  cn,
   createContext,
   createTVUnstyledSlots,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const scrollAreaStyles = tv({
   slots: {
@@ -84,7 +85,7 @@ const ScrollArea = ({
   return (
     <ScrollAreaProvider value={{ unstyled, styles }}>
       <ScrollAreaPrimitive.Root
-        className={base({ className: cnBase(classNames?.base, className) })}
+        className={base({ className: cn(classNames?.base, className) })}
         {...props}
       >
         <ScrollAreaPrimitive.Viewport
@@ -120,7 +121,7 @@ const ScrollBar = ({
       orientation={orientation}
       className={scrollbar({
         orientation,
-        className: cnBase(classNames?.scrollbar, className),
+        className: cn(classNames?.scrollbar, className),
       })}
       {...props}
     >

@@ -2,13 +2,12 @@
 
 import * as React from "react"
 import {
-  createContext,
+  UnstyledComponentWithSlots,
+  cn,
   createTVUnstyledSlots,
-  useTVUnstyled,
 } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import * as SwitchPrimitives from "@radix-ui/react-switch"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const switchStyles = tv({
   slots: {
@@ -42,7 +41,7 @@ const Switch = ({ className, classNames, unstyled, ...props }: SwitchProps) => {
 
   return (
     <SwitchPrimitives.Root
-      className={base({ className: cnBase(classNames?.base, className) })}
+      className={base({ className: cn(classNames?.base, className) })}
       {...props}
     >
       <SwitchPrimitives.Thumb

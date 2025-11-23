@@ -2,13 +2,14 @@
 
 import * as React from "react"
 import {
+  UnstyledComponentWithSlots,
+  cn,
   createContext,
   createTVUnstyledSlots,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import * as AvatarPrimitive from "@radix-ui/react-avatar"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const avatarGroupStyles = tv({
   slots: {
@@ -101,7 +102,7 @@ const AvatarGroup = ({
 
   return (
     <div
-      className={group({ className: cnBase(classNames?.group, className) })}
+      className={group({ className: cn(classNames?.group, className) })}
       {...props}
     >
       {visibleChildren}
@@ -141,7 +142,7 @@ const Avatar = ({
   return (
     <AvatarProvider value={{ unstyled, styles, classNames }}>
       <AvatarPrimitive.Root
-        className={base({ className: cnBase(classNames?.base, className) })}
+        className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
     </AvatarProvider>
@@ -162,7 +163,7 @@ const AvatarImage = ({ unstyled, className, ...props }: AvatarImageProps) => {
   return (
     <AvatarPrimitive.Image
       className={image({
-        className: cnBase(classNames?.image, className),
+        className: cn(classNames?.image, className),
       })}
       {...props}
     />
@@ -187,7 +188,7 @@ const AvatarFallback = ({
   return (
     <AvatarPrimitive.Fallback
       className={fallback({
-        className: cnBase(classNames?.fallback, className),
+        className: cn(classNames?.fallback, className),
       })}
       {...props}
     />

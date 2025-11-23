@@ -3,11 +3,12 @@
 import * as React from "react"
 import {
   UnstyledComponentWithSlots,
+  cn,
   createContext,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
 import { EllipsisIcon } from "@mijn-ui/shared-icons"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const paginationStyles = tv({
   slots: {
@@ -246,7 +247,7 @@ const PaginationContent = ({
 
   return (
     <nav
-      className={content({ className: cnBase(classNames?.content, className) })}
+      className={content({ className: cn(classNames?.content, className) })}
       {...props}
     />
   )
@@ -270,7 +271,7 @@ const PaginationList = ({
 
   return (
     <ul
-      className={list({ className: cnBase(classNames?.list, className) })}
+      className={list({ className: cn(classNames?.list, className) })}
       {...props}
     >
       {paginationRange.map((page, index) => (
@@ -309,7 +310,7 @@ const PaginationPreviousButton = ({
     <button
       onClick={goToPreviousPage}
       className={previousBtn({
-        className: cnBase(classNames?.previousBtn, className),
+        className: cn(classNames?.previousBtn, className),
       })}
       {...props}
     />
@@ -335,7 +336,7 @@ const PaginationNextButton = ({
   return (
     <button
       onClick={goToNextPage}
-      className={nextBtn({ className: cnBase(classNames?.nextBtn, className) })}
+      className={nextBtn({ className: cn(classNames?.nextBtn, className) })}
       {...props}
     />
   )
@@ -363,7 +364,7 @@ const PaginationPreviousEllipsis = ({
     <span
       aria-hidden
       className={previousElipsis({
-        className: cnBase(classNames?.previousElipsis, className),
+        className: cn(classNames?.previousElipsis, className),
       })}
       {...props}
     >
@@ -394,7 +395,7 @@ const PaginationNextEllipsis = ({
     <span
       aria-hidden
       className={nextElipsis({
-        className: cnBase(classNames?.nextElipsis, className),
+        className: cn(classNames?.nextElipsis, className),
       })}
       {...props}
     >

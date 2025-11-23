@@ -1,13 +1,12 @@
 import * as React from "react"
 import {
-  createContext,
+  UnstyledComponentWithSlots,
+  cn,
   createTVUnstyledSlots,
-  useTVUnstyled,
 } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import { LoaderCircleIcon } from "@mijn-ui/shared-icons"
 import { Slot, Slottable } from "@radix-ui/react-slot"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const buttonStyles = tv({
   slots: {
@@ -98,7 +97,7 @@ const Button = ({
 
   return (
     <Component
-      className={base({ className: cnBase(classNames?.base, className) })}
+      className={base({ className: cn(classNames?.base, className) })}
       disabled={loading || disabled}
       {...props}
     >

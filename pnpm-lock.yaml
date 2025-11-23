@@ -1320,9 +1320,6 @@ importers:
       react-dom:
         specifier: ^19.0
         version: 19.0.0(react@19.0.0)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
         specifier: ^3.0.0
         version: 3.1.1(tailwind-merge@3.4.0)(tailwindcss@4.1.17)
@@ -1342,6 +1339,9 @@ importers:
       react:
         specifier: 19.0.0
         version: 19.0.0
+      tailwind-merge:
+        specifier: ^3.0.0
+        version: 3.4.0
       tsconfig:
         specifier: workspace:*
         version: link:../configs/ts-config

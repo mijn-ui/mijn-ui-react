@@ -2,13 +2,14 @@
 
 import * as React from "react"
 import {
+  UnstyledComponentWithSlots,
+  cn,
   createContext,
   createTVUnstyledSlots,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import * as TabsPrimitive from "@radix-ui/react-tabs"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const tabsStyles = tv({
   slots: {
@@ -71,7 +72,7 @@ const Tabs = ({
   return (
     <TabsProvider value={{ unstyled, styles, classNames }}>
       <TabsPrimitive.Root
-        className={base({ className: cnBase(classNames?.base, className) })}
+        className={base({ className: cn(classNames?.base, className) })}
         {...props}
       >
         {children}
@@ -93,7 +94,7 @@ const TabsList = ({ className, unstyled, ...props }: TabsListProps) => {
   return (
     <TabsPrimitive.List
       className={list({
-        className: cnBase(classNames?.list, className),
+        className: cn(classNames?.list, className),
       })}
       {...props}
     />
@@ -114,7 +115,7 @@ const TabsTrigger = ({ className, unstyled, ...props }: TabsTriggerProps) => {
   return (
     <TabsPrimitive.Trigger
       className={trigger({
-        className: cnBase(classNames?.trigger, className),
+        className: cn(classNames?.trigger, className),
       })}
       {...props}
     />
@@ -135,7 +136,7 @@ const TabsContent = ({ className, unstyled, ...props }: TabsContentProps) => {
   return (
     <TabsPrimitive.Content
       className={content({
-        className: cnBase(classNames?.content, className),
+        className: cn(classNames?.content, className),
       })}
       {...props}
     />

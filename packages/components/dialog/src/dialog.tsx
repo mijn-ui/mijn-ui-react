@@ -3,11 +3,12 @@
 import * as React from "react"
 import {
   UnstyledComponentWithSlots,
+  cn,
   createContext,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const dialogStyles = tv({
   slots: {
@@ -105,7 +106,7 @@ const DialogTrigger = ({
   return (
     <DialogPrimitive.Trigger
       className={trigger({
-        className: cnBase(classNames?.trigger, className),
+        className: cn(classNames?.trigger, className),
       })}
       {...props}
     />
@@ -126,7 +127,7 @@ const DialogClose = ({ unstyled, className, ...props }: DialogCloseProps) => {
   return (
     <DialogPrimitive.Close
       className={close({
-        className: cnBase(classNames?.close, className),
+        className: cn(classNames?.close, className),
       })}
       {...props}
     />
@@ -151,7 +152,7 @@ const DialogOverlay = ({
   return (
     <DialogPrimitive.Overlay
       className={overlay({
-        className: cnBase(classNames?.overlay, className),
+        className: cn(classNames?.overlay, className),
       })}
       {...props}
     />
@@ -190,7 +191,7 @@ const DialogContent = ({
       >
         <DialogPrimitive.Content
           className={content({
-            className: cnBase(classNames?.content, className),
+            className: cn(classNames?.content, className),
           })}
           {...props}
         >
@@ -215,7 +216,7 @@ const DialogHeader = ({ unstyled, className, ...props }: DialogHeaderProps) => {
   return (
     <div
       className={header({
-        className: cnBase(classNames?.header, className),
+        className: cn(classNames?.header, className),
       })}
       {...props}
     />
@@ -236,7 +237,7 @@ const DialogFooter = ({ unstyled, className, ...props }: DialogFooterProps) => {
   return (
     <div
       className={footer({
-        className: cnBase(classNames?.footer, className),
+        className: cn(classNames?.footer, className),
       })}
       {...props}
     />
@@ -257,7 +258,7 @@ const DialogTitle = ({ unstyled, className, ...props }: DialogTitleProps) => {
   return (
     <DialogPrimitive.Title
       className={title({
-        className: cnBase(classNames?.title, className),
+        className: cn(classNames?.title, className),
       })}
       {...props}
     />
@@ -282,7 +283,7 @@ const DialogDescription = ({
   return (
     <DialogPrimitive.Description
       className={description({
-        className: cnBase(classNames?.description, className),
+        className: cn(classNames?.description, className),
       })}
       {...props}
     />

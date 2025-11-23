@@ -2,12 +2,13 @@
 
 import * as React from "react"
 import {
+  UnstyledComponentWithSlots,
+  cn,
   createContext,
   createTVUnstyledSlots,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const alertStyles = tv({
   slots: {
@@ -86,7 +87,7 @@ const Alert = ({
   return (
     <AlertProvider value={{ styles, unstyled, classNames }}>
       <div
-        className={base({ className: cnBase(classNames?.base, className) })}
+        className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
     </AlertProvider>
@@ -107,7 +108,7 @@ const AlertIcon = ({ unstyled, className, ...props }: AlertIconProps) => {
   return (
     <span
       className={iconWrapper({
-        className: cnBase(classNames?.iconWrapper, className),
+        className: cn(classNames?.iconWrapper, className),
       })}
       {...props}
     />
@@ -127,7 +128,7 @@ const AlertTitle = ({ unstyled, className, ...props }: AlertTitleProps) => {
 
   return (
     <h5
-      className={title({ className: cnBase(classNames?.title, className) })}
+      className={title({ className: cn(classNames?.title, className) })}
       {...props}
     />
   )
@@ -151,7 +152,7 @@ const AlertDescription = ({
   return (
     <p
       className={description({
-        className: cnBase(classNames?.description, className),
+        className: cn(classNames?.description, className),
       })}
       {...props}
     />

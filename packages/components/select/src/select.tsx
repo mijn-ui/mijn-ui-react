@@ -3,6 +3,7 @@
 import * as React from "react"
 import {
   UnstyledComponentWithSlots,
+  cn,
   createContext,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
@@ -12,7 +13,7 @@ import {
   ChevronUpIcon,
 } from "@mijn-ui/shared-icons"
 import * as SelectPrimitive from "@radix-ui/react-select"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const selectStyles = tv({
   slots: {
@@ -139,7 +140,7 @@ const SelectTrigger = ({
   return (
     <SelectPrimitive.Trigger
       className={trigger({
-        className: cnBase(classNames?.trigger, className),
+        className: cn(classNames?.trigger, className),
       })}
       {...props}
     >
@@ -169,7 +170,7 @@ const SelectScrollUpButton = ({
   return (
     <SelectPrimitive.ScrollUpButton
       className={scrollUpBtn({
-        className: cnBase(classNames?.scrollUpBtn, className),
+        className: cn(classNames?.scrollUpBtn, className),
       })}
       {...props}
     >
@@ -196,7 +197,7 @@ const SelectScrollDownButton = ({
   return (
     <SelectPrimitive.ScrollDownButton
       className={scrollDownBtn({
-        className: cnBase(classNames?.scrollDownBtn, className),
+        className: cn(classNames?.scrollDownBtn, className),
       })}
       {...props}
     >
@@ -226,7 +227,7 @@ const SelectContent = ({
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
         className={content({
-          className: cnBase(classNames?.content, className),
+          className: cn(classNames?.content, className),
           position,
         })}
         position={position}
@@ -261,7 +262,7 @@ const SelectLabel = ({ unstyled, className, ...props }: SelectLabelProps) => {
   return (
     <SelectPrimitive.Label
       className={label({
-        className: cnBase(classNames?.label, className),
+        className: cn(classNames?.label, className),
       })}
       {...props}
     />
@@ -287,7 +288,7 @@ const SelectItem = ({
   return (
     <SelectPrimitive.Item
       className={item({
-        className: cnBase(classNames?.item, className),
+        className: cn(classNames?.item, className),
       })}
       {...props}
     >
@@ -324,7 +325,7 @@ const SelectSeparator = ({
   return (
     <SelectPrimitive.Separator
       className={separator({
-        className: cnBase(classNames?.separator, className),
+        className: cn(classNames?.separator, className),
       })}
       {...props}
     />

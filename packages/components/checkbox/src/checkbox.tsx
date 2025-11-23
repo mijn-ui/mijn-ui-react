@@ -1,11 +1,15 @@
 "use client"
 
 import * as React from "react"
-import { createTVUnstyledSlots, useControlledState } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
+import {
+  UnstyledComponentWithSlots,
+  cn,
+  createTVUnstyledSlots,
+  useControlledState,
+} from "@mijn-ui/react-core"
 import { CheckIcon, DividerHorizontalIcon } from "@mijn-ui/shared-icons"
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 /* -------------------------------------------------------------------------- */
 /*                                  Checkbox                                  */
@@ -57,7 +61,7 @@ const Checkbox = ({
 
   return (
     <CheckboxPrimitive.Root
-      className={base({ className: cnBase(classNames?.base, className) })}
+      className={base({ className: cn(classNames?.base, className) })}
       {...props}
       checked={checked}
       onCheckedChange={setChecked}

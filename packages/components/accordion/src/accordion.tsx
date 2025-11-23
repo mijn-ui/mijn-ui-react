@@ -2,14 +2,15 @@
 
 import * as React from "react"
 import {
+  UnstyledComponentWithSlots,
+  cn,
   createContext,
   createTVUnstyledSlots,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import { ChevronDownIcon } from "@mijn-ui/shared-icons"
 import * as RadixAccordion from "@radix-ui/react-accordion"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const accordionStyles = tv({
   slots: {
@@ -78,7 +79,7 @@ const Accordion = ({
   return (
     <AccordionProvider value={{ classNames, unstyled, styles }}>
       <RadixAccordion.Root
-        className={base({ className: cnBase(classNames?.base, className) })}
+        className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
     </AccordionProvider>
@@ -102,7 +103,7 @@ const AccordionItem = ({
 
   return (
     <RadixAccordion.Item
-      className={item({ className: cnBase(classNames?.item, className) })}
+      className={item({ className: cn(classNames?.item, className) })}
       {...props}
     />
   )
@@ -138,7 +139,7 @@ const AccordionTrigger = ({
     >
       <RadixAccordion.Trigger
         className={trigger({
-          className: cnBase(classNames?.trigger, className),
+          className: cn(classNames?.trigger, className),
         })}
         {...props}
       >
@@ -178,7 +179,7 @@ const AccordionContent = ({
     >
       <div
         className={content({
-          className: cnBase(classNames?.content, className),
+          className: cn(classNames?.content, className),
         })}
       >
         {children}

@@ -2,14 +2,15 @@
 
 import * as React from "react"
 import {
+  UnstyledComponentWithSlots,
+  cn,
   createContext,
   createTVUnstyledSlots,
   useTVUnstyled,
 } from "@mijn-ui/react-core"
-import { UnstyledComponentWithSlots } from "@mijn-ui/react-core"
 import { Dialog, DialogContent, type DialogProps } from "@mijn-ui/react-dialog"
 import { Command as CommandPrimitive } from "cmdk"
-import { VariantProps, cnBase, tv } from "tailwind-variants"
+import { VariantProps, tv } from "tailwind-variants"
 
 const commandStyles = tv({
   slots: {
@@ -81,7 +82,7 @@ const Command = ({
   return (
     <CommandProvider value={{ unstyled, styles, classNames }}>
       <CommandPrimitive
-        className={base({ className: cnBase(classNames?.base, className) })}
+        className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
     </CommandProvider>
@@ -117,12 +118,12 @@ const CommandDialog = ({
       <Dialog {...props}>
         <DialogContent
           className={dialogWrapper({
-            className: cnBase(classNames?.dialogWrapper),
+            className: cn(classNames?.dialogWrapper),
           })}
         >
           <Command
             className={dialog({
-              className: cnBase(classNames?.dialog, className),
+              className: cn(classNames?.dialog, className),
             })}
           >
             {children}
@@ -147,7 +148,7 @@ const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
   return (
     <CommandPrimitive.Input
       className={input({
-        className: cnBase(classNames?.input, className),
+        className: cn(classNames?.input, className),
       })}
       {...props}
     />
@@ -168,7 +169,7 @@ const CommandList = ({ className, unstyled, ...props }: CommandListProps) => {
   return (
     <CommandPrimitive.List
       className={list({
-        className: cnBase(classNames?.list, className),
+        className: cn(classNames?.list, className),
       })}
       {...props}
     />
@@ -189,7 +190,7 @@ const CommandEmpty = ({ unstyled, className, ...props }: CommandEmptyProps) => {
   return (
     <CommandPrimitive.Empty
       className={empty({
-        className: cnBase(classNames?.empty, className),
+        className: cn(classNames?.empty, className),
       })}
       {...props}
     />
@@ -210,7 +211,7 @@ const CommandGroup = ({ className, unstyled, ...props }: CommandGroupProps) => {
   return (
     <CommandPrimitive.Group
       className={group({
-        className: cnBase(classNames?.group, className),
+        className: cn(classNames?.group, className),
       })}
       {...props}
     />
@@ -235,7 +236,7 @@ const CommandSeparator = ({
   return (
     <CommandPrimitive.Separator
       className={separator({
-        className: cnBase(classNames?.separator, className),
+        className: cn(classNames?.separator, className),
       })}
       {...props}
     />
@@ -255,7 +256,7 @@ const CommandItem = ({ className, unstyled, ...props }: CommandItemProps) => {
   return (
     <CommandPrimitive.Item
       className={item({
-        className: cnBase(classNames?.item, className),
+        className: cn(classNames?.item, className),
       })}
       {...props}
     />
@@ -279,7 +280,7 @@ const CommandShortcut = ({
   return (
     <span
       className={shortcut({
-        className: cnBase(classNames?.shortcut, className),
+        className: cn(classNames?.shortcut, className),
       })}
       {...props}
     />
