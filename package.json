@@ -30,7 +30,6 @@
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "5.1.0",
     "eslint-plugin-tailwindcss": "^3.17.5",
-    "jsdom": "^25.0.1",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "tailwind-merge": "^3.0.0",
@@ -42,8 +41,7 @@
     "typescript-eslint": "^8.13.0",
     "vitest": "^3.1.2"
   },
-  "packageManager": "pnpm@9.15.0",
   "engines": {
-    "node": ">= 18.17.0"
+    "node": ">=22.x"
   }
 }
