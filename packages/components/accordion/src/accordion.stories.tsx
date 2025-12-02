@@ -51,6 +51,82 @@ const AccordionTemplate = (args: AccordionProps) => (
   </Accordion>
 )
 
+const AccordionVariants = (args: AccordionProps) => {
+  return (
+    <div className="flex flex-col w-96 items-center gap-8">
+      <Accordion className="w-full" {...args} variant="default">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>What is your return policy?</AccordionTrigger>
+          <AccordionContent>
+            You can return unused items within 30 days for a full refund or
+            exchange.
+          </AccordionContent>
+        </AccordionItem>
+
+        <AccordionItem value="item-2">
+          <AccordionTrigger>How do I track my order?</AccordionTrigger>
+          <AccordionContent>
+            You can track your order by logging into your account and clicking
+            on &apos;Order History&apos;.{" "}
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+
+      <Accordion className="w-full" {...args} variant="contained">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>What is your return policy?</AccordionTrigger>
+          <AccordionContent>
+            You can return unused items within 30 days for a full refund or
+            exchange.
+          </AccordionContent>
+        </AccordionItem>
+
+        <AccordionItem value="item-2">
+          <AccordionTrigger>How do I track my order?</AccordionTrigger>
+          <AccordionContent>
+            You can track your order by logging into your account and clicking
+            on &apos;Order History&apos;.{" "}
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+      <Accordion className="w-full" {...args} variant="splitted">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>What is your return policy?</AccordionTrigger>
+          <AccordionContent>
+            You can return unused items within 30 days for a full refund or
+            exchange.
+          </AccordionContent>
+        </AccordionItem>
+
+        <AccordionItem value="item-2">
+          <AccordionTrigger>How do I track my order?</AccordionTrigger>
+          <AccordionContent>
+            You can track your order by logging into your account and clicking
+            on &apos;Order History&apos;.{" "}
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+      <Accordion className="w-full" {...args} variant="subtle">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>What is your return policy?</AccordionTrigger>
+          <AccordionContent>
+            You can return unused items within 30 days for a full refund or
+            exchange.
+          </AccordionContent>
+        </AccordionItem>
+
+        <AccordionItem value="item-2">
+          <AccordionTrigger>How do I track my order?</AccordionTrigger>
+          <AccordionContent>
+            You can track your order by logging into your account and clicking
+            on &apos;Order History&apos;.{" "}
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </div>
+  )
+}
+
 const AccordionWithCustomIcons = (args: AccordionProps) => (
   <Accordion className="md:w-xl w-60" {...args}>
     <AccordionItem value="item-1">
@@ -185,6 +261,10 @@ const AccordionCustomStyles = (args: AccordionProps) => {
 }
 
 type Story = StoryObj<typeof meta>
+
+export const Variants: Story = {
+  render: AccordionVariants,
+}
 
 export const Default: Story = {
   render: AccordionTemplate,

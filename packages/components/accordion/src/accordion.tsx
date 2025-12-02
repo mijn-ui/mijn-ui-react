@@ -15,7 +15,7 @@ import { VariantProps, tv } from "tailwind-variants"
 const accordionStyles = tv({
   slots: {
     base: "",
-    item: "border-b-outline-default border-b",
+    item: "border-outline-default",
     triggerWrapper: "",
     trigger:
       "group flex w-full items-center justify-between py-4 text-sm font-medium leading-none hover:underline",
@@ -23,6 +23,29 @@ const accordionStyles = tv({
     contentWrapper:
       "data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open text-fg-secondary overflow-hidden text-sm transition-[height]",
     content: "pb-4 pt-0 text-sm leading-tight",
+  },
+  variants: {
+    variant: {
+      default: {
+        item: "border-b",
+      },
+      contained: {
+        base: "py-2 px-4 bg-bg-secondary rounded-lg border divide-y divide-y-outline-default",
+      },
+      splitted: {
+        base: "space-y-1.5",
+        item: "bg-bg-secondary px-4 rounded-lg border border-outline-default",
+      },
+      subtle: {
+        base: "rounded-lg overflow-hidden divide-y",
+        item: "border-outline-secondary",
+        trigger: "bg-bg-secondary px-4",
+        content: "p-4 bg-bg-tertiary",
+      },
+    },
+  },
+  defaultVariants: {
+    variant: "default",
   },
 })
 
@@ -71,9 +94,10 @@ const Accordion = ({
   className,
   classNames,
   unstyled = false,
+  variant,
   ...props
 }: AccordionProps) => {
-  const styles = accordionStyles()
+  const styles = accordionStyles({ variant })
   const { base } = createTVUnstyledSlots({ base: styles.base }, unstyled)
 
   return (
