@@ -10,19 +10,25 @@ import { VariantProps, tv } from "tailwind-variants"
 
 const buttonStyles = tv({
   slots: {
-    base: "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer",
-    icon: "size-5 animate-spin text-current",
+    base: "inline-flex items-center justify-center gap-1.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer",
+    loadingIcon: "size-5 animate-spin text-current",
   },
   variants: {
     variant: {
       default:
-        "bg-bg-default-alt text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 shadow-xs border focus-visible:ring-offset-2 ",
+        "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-xs border focus-visible:ring-offset-2 ",
       primary:
         "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-xs",
+      secondary:
+        "bg-bg-secondary text-fg-secondary shadow-xs hover:bg-bg-accent focus-visible:ring-outline-brand focus-visible:ring-offset-2 active:bg-bg-accent/70",
       danger:
         "bg-bg-danger text-on-bg-danger hover:bg-bg-danger/80 focus-visible:ring-outline-danger shadow-xs active:bg-bg-danger/70",
       ghost:
-        "text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 focus-visible:ring-offset-2",
+        "text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 focus-visible:ring-offset-2",
+      outlined:
+        "border bg-transparent text-fg-default shadow-xs hover:bg-bg-accent focus-visible:ring-outline-brand focus-visible:ring-offset-2 active:bg-bg-accent/70",
+      inverse:
+        "bg-bg-inverse text-fg-inverse shadow-xs hover:bg-bg-inverse/80 focus-visible:ring-outline-inverse active:bg-bg-inverse/70",
     },
     size: {
       sm: "h-8 rounded-md px-3",
@@ -74,6 +80,7 @@ export type ButtonBaseProps = UnstyledComponentWithSlots<ButtonSlots> &
   React.ComponentPropsWithRef<"button"> & {
     asChild?: boolean
     loading?: boolean
+    loadingText?: React.ReactNode
   }
 
 export type ButtonProps = ButtonBaseProps & ButtonVariantProps
@@ -89,11 +96,12 @@ const Button = ({
   disabled,
   asChild = false,
   children,
+  loadingText,
   ...props
 }: ButtonProps) => {
   const Component = asChild ? Slot : "button"
   const styles = buttonStyles({ variant, size, iconOnly })
-  const { base, icon } = createTVUnstyledSlots(styles, unstyled)
+  const { base, loadingIcon } = createTVUnstyledSlots(styles, unstyled)
 
   return (
     <Component
@@ -102,9 +110,13 @@ const Button = ({
       {...props}
     >
       {loading && (
-        <LoaderCircleIcon className={icon({ className: classNames?.icon })} />
+        <LoaderCircleIcon
+          className={loadingIcon({ className: classNames?.loadingIcon })}
+        />
       )}
-      <Slottable>{loading ? "Loading..." : children}</Slottable>
+      <Slottable>
+        {loading ? (loadingText ? loadingText : "Loading...") : children}
+      </Slottable>
     </Component>
   )
 }

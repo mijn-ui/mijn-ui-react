@@ -35,8 +35,8 @@ const selectStyles = tv({
     content: [
       "data-[state=open]:zoom-in-95 data-[state=open]:animate-in data-[state=open]:fade-in-0",
       "data-[state=closed]:zoom-out-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
-      "data-[side=bottom]:slide-in-from-bottom-6 data-[side=left]:slide-in-from-left-6 data-[side=right]:slide-in-from-right-6 data-[side=top]:slide-in-from-top-6",
-      "border-outline-default bg-bg-default-alt text-fg-default relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border shadow-sm !duration-300 w-60",
+      "data-[side=bottom]:slide-in-from-bottom-6 data-[side=left]:slide-in-from-left-6 data-[side=right]:slide-in-from-right-6 data-[side=top]:slide-in-from-top-6 duration-300",
+      "border-outline-default bg-bg-default-alt text-fg-default relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border shadow-sm w-60",
     ],
     viewport: "",
     label: "py-1.5 pl-2 pr-8 text-sm font-semibold",
@@ -127,9 +127,11 @@ const Select = ({ classNames, unstyled = false, ...props }: SelectProps) => {
 /* -------------------------------------------------------------------------- */
 export type SelectTriggerProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Trigger
-> & { unstyled?: boolean }
+> & { unstyled?: boolean; hideIcon?: boolean; icon?: React.ReactNode }
 
 const SelectTrigger = ({
+  hideIcon,
+  icon,
   unstyled,
   className,
   children,
@@ -145,10 +147,27 @@ const SelectTrigger = ({
       {...props}
     >
       {children}
-      <SelectPrimitive.Icon asChild>
-        <ChevronDownIcon />
-      </SelectPrimitive.Icon>
+
+      {!hideIcon && <SelectTriggerIcon>{icon}</SelectTriggerIcon>}
     </SelectPrimitive.Trigger>
+  )
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              SelectTriggerIcon                             */
+/* -------------------------------------------------------------------------- */
+
+const SelectTriggerIcon = ({
+  children,
+  asChild = true,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Icon> & {
+  children?: React.ReactNode
+}) => {
+  return (
+    <SelectPrimitive.Icon asChild={asChild} {...props}>
+      {children ? children : <ChevronDownIcon />}
+    </SelectPrimitive.Icon>
   )
 }
 
@@ -342,6 +361,7 @@ export {
   SelectScrollUpButton,
   SelectSeparator,
   SelectTrigger,
+  SelectTriggerIcon,
   SelectValue,
   useSelectStyles,
 }

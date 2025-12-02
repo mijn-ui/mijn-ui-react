@@ -16,6 +16,10 @@
   --color-outline-tertiary: hsl(240 5% 96%);
   --color-fg-tertiary: hsl(240 4% 46%);
 
+  --color-bg-accent: hsl(240 5% 92%);
+  --color-fg-accent: hsl(240 4% 46%);
+  --color-outline-accent: hsl(240 5% 88%);
+
   /* Inverse */
   --color-bg-inverse: hsl(240 10% 4%);
   --color-fg-inverse: hsl(0 0 98%);
@@ -93,6 +97,10 @@
   --color-bg-tertiary-alt: hsl(240 10% 4%);
   --color-outline-tertiary: hsl(240 6% 10%);
   --color-fg-tertiary: hsl(240 4% 46%);
+
+  --color-bg-accent: hsl(240 6% 20%);
+  --color-fg-accent: hsl(0 0% 100%);
+  --color-outline-accent: hsl(240 5% 10%);
 
   /* Inverse */
   --color-bg-inverse: hsl(0 0 100%);
