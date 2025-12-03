@@ -61,6 +61,16 @@ const ButtonVariants = (args: ButtonProps) => {
         <p className="px-1">Secondary</p>
         <CircleIcon />
       </Button>
+      <Button {...args} variant="success">
+        <CircleIcon />
+        <p className="px-1">Success</p>
+        <CircleIcon />
+      </Button>
+      <Button {...args} variant="warning">
+        <CircleIcon />
+        <p className="px-1">Warning</p>
+        <CircleIcon />
+      </Button>
       <Button {...args} variant="danger">
         <CircleIcon />
         <p className="px-1">Danger</p>
