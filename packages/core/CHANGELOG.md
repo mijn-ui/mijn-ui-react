@@ -1,5 +1,15 @@
 # @mijn-ui/react-core
 
+## 0.5.0
+
+### Minor Changes
+
+- 910e03f: Add accent color in css theme.
+
+### Patch Changes
+
+- 4881375: Update theme subtle colors
+
 ## 0.4.0
 
 ### Minor Changes

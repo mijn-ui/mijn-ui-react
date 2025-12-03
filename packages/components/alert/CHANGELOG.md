@@ -1,5 +1,12 @@
 # @mijn-ui-react/alert
 
+## 0.4.1
+
+### Patch Changes
+
+- 4881375: Add alert variants
+- 910e03f: update dependencies
+
 ## 0.4.0
 
 ### Minor Changes

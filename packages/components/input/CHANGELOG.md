@@ -1,5 +1,13 @@
 # @mijn-ui-react/input
 
+## 0.4.1
+
+### Patch Changes
+
+- 910e03f: update dependencies
+- Updated dependencies [910e03f]
+  - @mijn-ui/react-label@0.4.1
+
 ## 0.4.0
 
 ### Minor Changes
