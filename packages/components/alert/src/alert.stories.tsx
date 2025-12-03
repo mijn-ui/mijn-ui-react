@@ -32,13 +32,79 @@ const AlertTemplate = (args: AlertProps) => {
   return (
     <Alert className="md:w-xl w-60" {...args}>
       <AlertIcon>
-        <RocketIcon />
+        <RocketIcon className="text-current" />
       </AlertIcon>
       <AlertTitle>New Feature Added</AlertTitle>
       <AlertDescription>
         A new feature has been added to the project.
       </AlertDescription>
     </Alert>
+  )
+}
+
+const AlertVariants = (args: AlertProps) => {
+  return (
+    <div className="gap-4 flex flex-col">
+      <Alert className="md:w-xl w-60" {...args} variant="default">
+        <AlertIcon>
+          <RocketIcon />
+        </AlertIcon>
+        <AlertTitle>New Feature Added</AlertTitle>
+        <AlertDescription>
+          A new feature has been added to the project.
+        </AlertDescription>
+      </Alert>
+
+      <Alert className="md:w-xl w-60" {...args} variant="brand">
+        <AlertIcon>
+          <RocketIcon />
+        </AlertIcon>
+        <AlertTitle>New Feature Added</AlertTitle>
+        <AlertDescription>
+          A new feature has been added to the project.
+        </AlertDescription>
+      </Alert>
+
+      <Alert className="md:w-xl w-60" {...args} variant="secondary">
+        <AlertIcon>
+          <RocketIcon />
+        </AlertIcon>
+        <AlertTitle>New Feature Added</AlertTitle>
+        <AlertDescription>
+          A new feature has been added to the project.
+        </AlertDescription>
+      </Alert>
+
+      <Alert className="md:w-xl w-60" {...args} variant="success">
+        <AlertIcon>
+          <RocketIcon className="text-current" />
+        </AlertIcon>
+        <AlertTitle>New Feature Added</AlertTitle>
+        <AlertDescription>
+          A new feature has been added to the project.
+        </AlertDescription>
+      </Alert>
+
+      <Alert className="md:w-xl w-60" {...args} variant="warning">
+        <AlertIcon>
+          <RocketIcon className="text-current" />
+        </AlertIcon>
+        <AlertTitle>New Feature Added</AlertTitle>
+        <AlertDescription>
+          A new feature has been added to the project.
+        </AlertDescription>
+      </Alert>
+
+      <Alert className="md:w-xl w-60" {...args} variant="danger">
+        <AlertIcon>
+          <RocketIcon className="text-current" />
+        </AlertIcon>
+        <AlertTitle>New Feature Added</AlertTitle>
+        <AlertDescription>
+          A new feature has been added to the project.
+        </AlertDescription>
+      </Alert>
+    </div>
   )
 }
 
@@ -64,26 +130,7 @@ export const Default: Story = {
 }
 
 export const Variants: Story = {
-  render: (args: AlertProps) => (
-    <div className="flex flex-col items-center gap-8">
-      <div className="space-y-2">
-        <h3 className="text-fg-tertiary w-full text-start font-semibold">
-          Filled
-        </h3>
-        <AlertTemplate {...args} />
-      </div>
-
-      <div className="space-y-2">
-        <h3 className="text-fg-tertiary w-full text-start font-semibold">
-          Danger
-        </h3>
-        <AlertTemplate {...args} variant="danger" />
-      </div>
-    </div>
-  ),
-  args: {
-    variant: "default",
-  },
+  render: AlertVariants,
 }
 
 export const Unstyled: Story = {

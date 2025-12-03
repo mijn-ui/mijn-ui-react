@@ -12,24 +12,26 @@ import { VariantProps, tv } from "tailwind-variants"
 
 const alertStyles = tv({
   slots: {
-    base: "group relative w-full rounded-lg px-3 py-4 [&>span~*]:pl-8",
+    base: "group relative w-full rounded-lg px-3 py-4 [&>span~*]:pl-8 border",
     iconWrapper:
-      "translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:size-5 [&>svg]:text-current",
+      "translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:size-5 [&_svg]:text-current",
     title: "w-full font-semibold leading-none",
     description: "mt-1 text-sm",
   },
   variants: {
     variant: {
-      danger: {
-        base: "border-outline-danger text-fg-danger border",
-      },
-      default: {
-        base: "border-outline-default text-fg-default border",
-        description: "text-fg-secondary",
-      },
+      default: "border-outline-default bg-bg-default text-fg-default",
+      brand:
+        "border-outline-brand-subtle bg-bg-brand-subtle text-on-bg-brand-subtle",
+      secondary: "border-outline-secondary bg-bg-secondary text-fg-secondary",
+      success:
+        "border-outline-success-subtle bg-bg-success-subtle text-on-bg-success-subtle",
+      warning:
+        "border-outline-warning-subtle bg-bg-warning-subtle text-on-bg-warning-subtle",
+      danger:
+        "border-outline-danger-subtle bg-bg-danger-subtle text-on-bg-danger-subtle",
     },
   },
-
   defaultVariants: {
     variant: "default",
   },

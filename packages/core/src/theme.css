@@ -111,8 +111,8 @@
   --color-bg-brand: hsl(20 96% 61%);
   --color-on-bg-brand: hsl(21 81% 15%);
   --color-outline-brand: hsl(20 96% 61%);
-  --color-bg-brand-subtle: hsl(20 75% 28%);
-  --color-on-bg-brand-subtle: hsl(20 100% 92%);
+  --color-bg-brand-subtle: hsl(20 75% 20%);
+  --color-on-bg-brand-subtle: hsl(20 100% 84%);
   --color-outline-brand-subtle: hsl(21 79% 34%);
   --color-fg-brand: hsl(20 96% 61%);
 
@@ -125,8 +125,8 @@
   --color-bg-success: hsl(142 69% 58%);
   --color-on-bg-success: hsl(142 80% 10%);
   --color-outline-success: hsl(142 69% 58%);
-  --color-bg-success-subtle: hsl(142 61% 20%);
-  --color-on-bg-success-subtle: hsl(143 84% 93%);
+  --color-bg-success-subtle: hsl(142 61% 16%);
+  --color-on-bg-success-subtle: hsl(143 84% 84%);
   --color-outline-success-subtle: hsl(142 64% 24%);
   --color-fg-success: hsl(142 69% 58%);
 
@@ -134,8 +134,8 @@
   --color-bg-warning: hsl(41 96% 53%);
   --color-on-bg-warning: hsl(41 83% 14%);
   --color-outline-warning: hsl(41 96% 53%);
-  --color-bg-warning-subtle: hsl(40 73% 26%);
-  --color-on-bg-warning-subtle: hsl(41 97% 88%);
+  --color-bg-warning-subtle: hsl(40 73% 16%);
+  --color-on-bg-warning-subtle: hsl(41 97% 84%);
   --color-outline-warning-subtle: hsl(41 81% 29%);
   --color-fg-warning: hsl(41 96% 53%);
 
@@ -143,8 +143,8 @@
   --color-bg-danger: hsl(0 91% 71%);
   --color-on-bg-danger: hsl(0 75% 15%);
   --color-outline-danger: hsl(0 91% 71%);
-  --color-bg-danger-subtle: hsl(0 63% 31%);
-  --color-on-bg-danger-subtle: hsl(0 93% 94%);
+  --color-bg-danger-subtle: hsl(0 63% 16%);
+  --color-on-bg-danger-subtle: hsl(0 93% 84%);
   --color-outline-danger-subtle: hsl(0 70% 35%);
   --color-fg-danger: hsl(0 91% 71%);
 }
