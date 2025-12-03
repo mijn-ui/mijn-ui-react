@@ -1,5 +1,12 @@
 # @mijn-ui-react/accordion
 
+## 0.4.1
+
+### Patch Changes
+
+- 910e03f: update dependencies
+- 4881375: Add more variants
+
 ## 0.4.0
 
 ### Minor Changes

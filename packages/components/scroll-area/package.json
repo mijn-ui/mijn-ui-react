@@ -1,7 +1,7 @@
 {
   "name": "@mijn-ui/react-scroll-area",
   "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "homepage": "https://mijn-ui.vercel.app",
   "license": "MIT",
   "type": "module",

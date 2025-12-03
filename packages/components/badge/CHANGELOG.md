@@ -1,5 +1,11 @@
 # @mijn-ui-react/badge
 
+## 0.4.1
+
+### Patch Changes
+
+- 910e03f: update dependencies
+
 ## 0.4.0
 
 ### Minor Changes

@@ -1,5 +1,15 @@
 # @mijn-ui-react/button
 
+## 0.5.0
+
+### Minor Changes
+
+- 910e03f: Add more variants and update styles
+
+### Patch Changes
+
+- ef4a704: Add variants
+
 ## 0.4.0
 
 ### Minor Changes
