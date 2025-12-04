@@ -29,8 +29,8 @@
   "devDependencies": {
     "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/react-button": "workspace:*",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "react": "19.0.1",
+    "react-dom": "19.0.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@next/eslint-plugin-next": "^15.0.3",
