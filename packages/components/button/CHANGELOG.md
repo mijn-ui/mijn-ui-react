@@ -1,5 +1,11 @@
 # @mijn-ui-react/button
 
+## 0.5.1
+
+### Patch Changes
+
+- beaaa6e: Add loadingIcon customization option
+
 ## 0.5.0
 
 ### Minor Changes

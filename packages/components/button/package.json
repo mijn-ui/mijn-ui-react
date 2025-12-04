@@ -1,7 +1,7 @@
 {
   "name": "@mijn-ui/react-button",
   "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "homepage": "https://mijn-ui.vercel.app",
   "license": "MIT",
   "type": "module",
