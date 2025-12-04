@@ -85,6 +85,7 @@ export type ButtonBaseProps = UnstyledComponentWithSlots<ButtonSlots> &
     asChild?: boolean
     loading?: boolean
     loadingText?: React.ReactNode
+    loadingIcon?: React.ReactNode
   }
 
 export type ButtonProps = ButtonBaseProps & ButtonVariantProps
@@ -96,16 +97,20 @@ const Button = ({
   variant,
   size,
   iconOnly,
-  loading,
-  disabled,
+  loading = false,
+  disabled = false,
   asChild = false,
+  loadingText = "Loading...",
+  loadingIcon,
   children,
-  loadingText,
   ...props
 }: ButtonProps) => {
   const Component = asChild ? Slot : "button"
   const styles = buttonStyles({ variant, size, iconOnly })
-  const { base, loadingIcon } = createTVUnstyledSlots(styles, unstyled)
+  const { base, loadingIcon: loadingIconStyle } = createTVUnstyledSlots(
+    styles,
+    unstyled,
+  )
 
   return (
     <Component
@@ -113,14 +118,13 @@ const Button = ({
       disabled={loading || disabled}
       {...props}
     >
-      {loading && (
-        <LoaderCircleIcon
-          className={loadingIcon({ className: classNames?.loadingIcon })}
-        />
-      )}
-      <Slottable>
-        {loading ? (loadingText ? loadingText : "Loading...") : children}
-      </Slottable>
+      {loading &&
+        (loadingIcon || (
+          <LoaderCircleIcon
+            className={loadingIconStyle({ className: classNames?.loadingIcon })}
+          />
+        ))}
+      <Slottable>{loading ? loadingText : children}</Slottable>
     </Component>
   )
 }
