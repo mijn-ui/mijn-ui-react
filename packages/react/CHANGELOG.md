@@ -1,5 +1,13 @@
 # @mijn-ui/react
 
+## 0.4.3
+
+### Patch Changes
+
+- 2625e63: Fix switch component styling issue
+- Updated dependencies [2625e63]
+  - @mijn-ui/react-switch@0.4.2
+
 ## 0.4.2
 
 ### Patch Changes
