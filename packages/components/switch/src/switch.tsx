@@ -12,7 +12,7 @@ import { VariantProps, tv } from "tailwind-variants"
 const switchStyles = tv({
   slots: {
     base: [
-      "data-[state=checked]:bg-bg-branddata-[state=unchecked]:bg-bg-tertiary border-medium peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-transparent transition-colors",
+      "data-[state=checked]:bg-bg-brand data-[state=unchecked]:bg-bg-tertiary border-2 peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-transparent transition-colors",
       "disabled:pointer-events-none",
       "disabled:opacity-50",
       "focus-visible:outline-none",
