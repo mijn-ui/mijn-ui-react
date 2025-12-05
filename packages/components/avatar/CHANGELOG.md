@@ -1,5 +1,11 @@
 # @mijn-ui-react/avatar
 
+## 0.4.2
+
+### Patch Changes
+
+- 81fcba6: modify avatar styles
+
 ## 0.4.1
 
 ### Patch Changes
