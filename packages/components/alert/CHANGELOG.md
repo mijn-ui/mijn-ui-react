@@ -1,5 +1,11 @@
 # @mijn-ui-react/alert
 
+## 0.4.3
+
+### Patch Changes
+
+- cde99cb: Add variant and adjust title font weight
+
 ## 0.4.2
 
 ### Patch Changes
