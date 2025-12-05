@@ -1,5 +1,11 @@
 # @mijn-ui-react/alert
 
+## 0.4.2
+
+### Patch Changes
+
+- b2c9bfc: Adjust margin styles
+
 ## 0.4.1
 
 ### Patch Changes
