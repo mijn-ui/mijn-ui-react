@@ -1,5 +1,12 @@
 # @mijn-ui/react
 
+## 0.4.9
+
+### Patch Changes
+
+- Updated dependencies [b735ecf]
+  - @mijn-ui/react-avatar@0.4.4
+
 ## 0.4.8
 
 ### Patch Changes
