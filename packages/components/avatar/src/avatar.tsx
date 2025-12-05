@@ -13,9 +13,9 @@ import { VariantProps, tv } from "tailwind-variants"
 
 const avatarGroupStyles = tv({
   slots: {
-    group: "flex items-center justify-center -space-x-2",
+    group: "flex items-center justify-center -space-x-[8%]",
     groupRemainChildren:
-      "text-secondary-foreground ml-1.5! flex items-center justify-center text-xs",
+      "text-fg-secondary ml-3 flex items-center justify-center text-xs",
   },
 })
 
