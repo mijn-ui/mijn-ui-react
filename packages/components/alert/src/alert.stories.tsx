@@ -104,6 +104,16 @@ const AlertVariants = (args: AlertProps) => {
           A new feature has been added to the project.
         </AlertDescription>
       </Alert>
+
+      <Alert className="md:w-xl w-60" {...args} variant="inverse">
+        <AlertIcon>
+          <RocketIcon className="text-current" />
+        </AlertIcon>
+        <AlertTitle>New Feature Added</AlertTitle>
+        <AlertDescription>
+          A new feature has been added to the project.
+        </AlertDescription>
+      </Alert>
     </div>
   )
 }
