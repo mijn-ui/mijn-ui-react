@@ -1,5 +1,11 @@
 # @mijn-ui-react/avatar
 
+## 0.4.3
+
+### Patch Changes
+
+- feb210a: add data slot prop
+
 ## 0.4.2
 
 ### Patch Changes

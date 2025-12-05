@@ -1,5 +1,38 @@
 # @mijn-ui/react
 
+## 0.4.8
+
+### Patch Changes
+
+- Updated dependencies [feb210a]
+  - @mijn-ui/react-dropdown-menu@0.4.2
+  - @mijn-ui/react-alert-dialog@0.4.2
+  - @mijn-ui/react-radio-group@0.4.2
+  - @mijn-ui/react-scroll-area@0.4.2
+  - @mijn-ui/react-pagination@0.4.2
+  - @mijn-ui/react-accordion@0.4.2
+  - @mijn-ui/react-separator@0.4.2
+  - @mijn-ui/react-calendar@0.4.2
+  - @mijn-ui/react-checkbox@0.4.2
+  - @mijn-ui/react-progress@0.4.2
+  - @mijn-ui/react-skeleton@0.4.2
+  - @mijn-ui/react-textarea@0.4.2
+  - @mijn-ui/react-command@0.4.3
+  - @mijn-ui/react-popover@0.4.2
+  - @mijn-ui/react-avatar@0.4.3
+  - @mijn-ui/react-button@0.5.2
+  - @mijn-ui/react-dialog@0.4.3
+  - @mijn-ui/react-select@0.4.2
+  - @mijn-ui/react-switch@0.4.3
+  - @mijn-ui/react-alert@0.4.5
+  - @mijn-ui/react-badge@0.4.2
+  - @mijn-ui/react-input@0.4.2
+  - @mijn-ui/react-label@0.4.2
+  - @mijn-ui/react-table@0.4.2
+  - @mijn-ui/react-card@0.4.2
+  - @mijn-ui/react-tabs@0.4.2
+  - @mijn-ui/react-autocomplete@0.3.3
+
 ## 0.4.7
 
 ### Patch Changes
