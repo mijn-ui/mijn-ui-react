@@ -1,5 +1,11 @@
 # @mijn-ui-react/alert
 
+## 0.4.5
+
+### Patch Changes
+
+- feb210a: add data slot prop
+
 ## 0.4.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @mijn-ui-react/dialog
 
+## 0.4.3
+
+### Patch Changes
+
+- feb210a: add data slot prop
+- Updated dependencies [feb210a]
+  - @mijn-ui/react-button@0.5.2
+
 ## 0.4.2
 
 ### Patch Changes

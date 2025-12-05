@@ -1,5 +1,11 @@
 # @mijn-ui/react-tabs
 
+## 0.4.2
+
+### Patch Changes
+
+- feb210a: add data slot prop
+
 ## 0.4.1
 
 ### Patch Changes

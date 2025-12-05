@@ -1,5 +1,13 @@
 # @mijn-ui-react/input
 
+## 0.4.2
+
+### Patch Changes
+
+- feb210a: add data slot prop
+- Updated dependencies [feb210a]
+  - @mijn-ui/react-label@0.4.2
+
 ## 0.4.1
 
 ### Patch Changes
