@@ -1,5 +1,11 @@
 # @mijn-ui-react/avatar
 
+## 0.4.4
+
+### Patch Changes
+
+- b735ecf: Add ring for grouped avatars
+
 ## 0.4.3
 
 ### Patch Changes
