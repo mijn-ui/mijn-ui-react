@@ -12,11 +12,11 @@ import { VariantProps, tv } from "tailwind-variants"
 
 const alertStyles = tv({
   slots: {
-    base: "group relative w-full rounded-lg px-3 py-4 [&>span~*]:pl-8 border",
+    base: "group space-y-1 relative w-full rounded-lg px-3 py-4 [&>span~*]:pl-8 border",
     iconWrapper:
       "translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:size-5 [&_svg]:text-current",
     title: "w-full font-semibold leading-none",
-    description: "mt-1 text-sm",
+    description: "text-sm",
   },
   variants: {
     variant: {
