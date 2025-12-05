@@ -13,7 +13,8 @@ import { VariantProps, tv } from "tailwind-variants"
 
 const avatarGroupStyles = tv({
   slots: {
-    group: "flex items-center justify-center -space-x-[8%]",
+    group:
+      "flex items-center justify-center -space-x-[8%] [&_[data-slot=avatar-image]]:ring-2 [&_[data-slot=avatar-image]]:ring-bg-default",
     groupRemainChildren:
       "text-fg-secondary ml-3 flex items-center justify-center text-xs",
   },
