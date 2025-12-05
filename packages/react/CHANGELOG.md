@@ -1,5 +1,12 @@
 # @mijn-ui/react
 
+## 0.4.6
+
+### Patch Changes
+
+- Updated dependencies [643b6f0]
+  - @mijn-ui/react-alert@0.4.4
+
 ## 0.4.5
 
 ### Patch Changes

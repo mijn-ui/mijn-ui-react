@@ -1,5 +1,11 @@
 # @mijn-ui-react/alert
 
+## 0.4.4
+
+### Patch Changes
+
+- 643b6f0: Adjust styles
+
 ## 0.4.3
 
 ### Patch Changes
