@@ -14,7 +14,7 @@ import { VariantProps, tv } from "tailwind-variants"
 const itemFocusClasses = ["focus:bg-bg-secondary"]
 
 const commonContentClasses = [
-  "z-50 min-w-[8rem] overflow-hidden rounded-md border border-outline-default bg-bg-default-alt text-fg-default shadow-lg",
+  "z-50 min-w-32 overflow-hidden rounded-md border border-outline-default bg-bg-default-alt text-fg-default shadow-lg",
 ]
 
 const commonItemClasses = [
@@ -42,26 +42,26 @@ const dropdownMenuStyles = tv({
       "data-[state=closed]:zoom-out-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
       "data-[side=bottom]:slide-in-from-bottom-6 data-[side=left]:slide-in-from-left-6 data-[side=right]:slide-in-from-right-6 data-[side=top]:slide-in-from-top-6",
       ...commonContentClasses,
-      "!duration-300",
+      "duration-300",
     ],
     item: [
       ...itemFocusClasses,
-      "data-[disabled]:pointer-events-none",
-      "data-[disabled]:opacity-50",
+      "data-disabled:pointer-events-none",
+      "data-disabled:opacity-50",
       "relative flex h-9 cursor-default select-none items-center gap-2 px-2 text-sm outline-none transition-colors [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
     ],
     checkboxItem: [
       ...itemFocusClasses,
-      "data-[disabled]:pointer-events-none",
-      "data-[disabled]:opacity-50",
+      "data-disabled:pointer-events-none",
+      "data-disabled:opacity-50",
       ...commonItemClasses,
     ],
     checkboxItemIconWrapper: commonIconWrapperClasses,
     checkboxItemIcon: "size-4",
     radioItem: [
       ...itemFocusClasses,
-      "data-[disabled]:pointer-events-none",
-      "data-[disabled]:opacity-50",
+      "data-disabled:pointer-events-none",
+      "data-disabled:opacity-50",
       ...commonItemClasses,
     ],
     radioItemIconWrapper: commonIconWrapperClasses,
@@ -140,7 +140,7 @@ const DropdownMenu = ({
 
   return (
     <DropdownProvider value={{ unstyled, styles, classNames }}>
-      <DropdownMenuPrimitive.Root {...props} />
+      <DropdownMenuPrimitive.Root data-slot="dropdown-menu" {...props} />
     </DropdownProvider>
   )
 }
@@ -161,6 +161,7 @@ const DropdownMenuTrigger = ({
   const { trigger, classNames } = useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.Trigger
+      data-slot="dropdown-menu-trigger"
       className={trigger({
         className: cn(classNames?.trigger, className),
       })}
@@ -190,6 +191,7 @@ const DropdownMenuSubTrigger = ({
 
   return (
     <DropdownMenuPrimitive.SubTrigger
+      data-slot="dropdown-menu-sub-trigger"
       className={subTrigger({
         className: cn(classNames?.subTrigger, className),
         inset,
@@ -221,6 +223,7 @@ const DropdownMenuSubContent = ({
 
   return (
     <DropdownMenuPrimitive.SubContent
+      data-slot="dropdown-menu-sub-content"
       className={subContent({
         className: cn(classNames?.subContent, className),
       })}
@@ -245,8 +248,9 @@ const DropdownMenuContent = ({
 }: DropdownMenuContentProps) => {
   const { content, classNames } = useDropdownStyles(unstyled)
   return (
-    <DropdownMenuPrimitive.Portal>
+    <DropdownMenuPrimitive.Portal data-slot="dropdown-menu-portal">
       <DropdownMenuPrimitive.Content
+        data-slot="dropdown-menu-content"
         sideOffset={sideOffset}
         className={content({
           className: cn(classNames?.content, className),
@@ -277,6 +281,7 @@ const DropdownMenuItem = ({
 
   return (
     <DropdownMenuPrimitive.Item
+      data-slot="dropdown-menu-item"
       className={item({
         className: cn(classNames?.item, className),
         inset,
@@ -309,6 +314,7 @@ const DropdownMenuCheckboxItem = ({
   } = useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.CheckboxItem
+      data-slot="dropdown-menu-checkbox-item"
       className={checkboxItem({
         className: cn(classNames?.checkboxItem, className),
       })}
@@ -320,7 +326,7 @@ const DropdownMenuCheckboxItem = ({
           className: classNames?.checkboxItemIconWrapper,
         })}
       >
-        <DropdownMenuPrimitive.ItemIndicator>
+        <DropdownMenuPrimitive.ItemIndicator data-slot="dropdown-menu-item-indicator">
           <CheckIcon
             className={checkboxItemIcon({
               className: classNames?.checkboxItemIcon,
@@ -351,6 +357,7 @@ const DropdownMenuRadioItem = ({
     useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.RadioItem
+      data-slot="dropdown-menu-radio-item"
       className={radioItem({
         className: cn(classNames?.radioItem, className),
       })}
@@ -361,7 +368,7 @@ const DropdownMenuRadioItem = ({
           className: classNames?.radioItemIconWrapper,
         })}
       >
-        <DropdownMenuPrimitive.ItemIndicator>
+        <DropdownMenuPrimitive.ItemIndicator data-slot="dropdown-menu-item-indicator">
           <CircleIcon
             className={radioItemIcon({
               className: classNames?.radioItemIcon,
@@ -392,6 +399,7 @@ const DropdownMenuLabel = ({
   const { label, classNames } = useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.Label
+      data-slot="dropdown-menu-label"
       className={label({
         className: cn(classNames?.label, className),
         inset,
@@ -418,6 +426,7 @@ const DropdownMenuSeparator = ({
 
   return (
     <DropdownMenuPrimitive.Separator
+      data-slot="dropdown-menu-separator"
       className={separator({
         className: cn(classNames?.separator, className),
       })}
@@ -443,6 +452,7 @@ const DropdownMenuShortcut = ({
 
   return (
     <span
+      data-slot="dropdown-menu-shortcut"
       className={shortcut({
         className: cn(classNames?.shortcut, className),
       })}

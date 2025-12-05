@@ -41,10 +41,12 @@ const Switch = ({ className, classNames, unstyled, ...props }: SwitchProps) => {
 
   return (
     <SwitchPrimitives.Root
+      data-slot="switch"
       className={base({ className: cn(classNames?.base, className) })}
       {...props}
     >
       <SwitchPrimitives.Thumb
+        data-slot="switch-thumb"
         className={thumb({ className: classNames?.thumb })}
       />
     </SwitchPrimitives.Root>

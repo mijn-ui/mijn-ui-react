@@ -85,10 +85,12 @@ const ScrollArea = ({
   return (
     <ScrollAreaProvider value={{ unstyled, styles }}>
       <ScrollAreaPrimitive.Root
+        data-slot="scroll-area"
         className={base({ className: cn(classNames?.base, className) })}
         {...props}
       >
         <ScrollAreaPrimitive.Viewport
+          data-slot="scroll-area-viewport"
           className={viewport({ className: classNames?.viewport })}
         >
           {children}
@@ -118,6 +120,7 @@ const ScrollBar = ({
 
   return (
     <ScrollAreaPrimitive.ScrollAreaScrollbar
+      data-slot="scroll-area-scrollbar"
       orientation={orientation}
       className={scrollbar({
         orientation,
@@ -126,6 +129,7 @@ const ScrollBar = ({
       {...props}
     >
       <ScrollAreaPrimitive.ScrollAreaThumb
+        data-slot="scroll-area-thumb"
         className={scrollThumb({ className: classNames?.scrollThumb })}
       />
     </ScrollAreaPrimitive.ScrollAreaScrollbar>

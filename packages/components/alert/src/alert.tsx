@@ -90,6 +90,7 @@ const Alert = ({
   return (
     <AlertProvider value={{ styles, unstyled, classNames }}>
       <div
+        data-slot="alert"
         className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
@@ -110,6 +111,7 @@ const AlertIcon = ({ unstyled, className, ...props }: AlertIconProps) => {
 
   return (
     <span
+      data-slot="alert-icon"
       className={iconWrapper({
         className: cn(classNames?.iconWrapper, className),
       })}
@@ -131,6 +133,7 @@ const AlertTitle = ({ unstyled, className, ...props }: AlertTitleProps) => {
 
   return (
     <h5
+      data-slot="alert-title"
       className={title({ className: cn(classNames?.title, className) })}
       {...props}
     />
@@ -154,6 +157,7 @@ const AlertDescription = ({
 
   return (
     <p
+      data-slot="alert-description"
       className={description({
         className: cn(classNames?.description, className),
       })}

@@ -75,6 +75,7 @@ export const Calendar = ({
 
   return (
     <DayPicker
+      data-slot="calendar"
       showOutsideDays={showOutsideDays}
       className={styles.base({ className })}
       classNames={{

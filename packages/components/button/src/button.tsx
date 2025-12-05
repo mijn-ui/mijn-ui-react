@@ -114,6 +114,7 @@ const Button = ({
 
   return (
     <Component
+      data-slot="button"
       className={base({ className: cn(classNames?.base, className) })}
       disabled={loading || disabled}
       {...props}
@@ -121,6 +122,7 @@ const Button = ({
       {loading &&
         (loadingIcon || (
           <LoaderCircleIcon
+            data-slot="button-loading-icon"
             className={loadingIconStyle({ className: classNames?.loadingIcon })}
           />
         ))}

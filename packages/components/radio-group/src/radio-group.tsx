@@ -75,6 +75,7 @@ const RadioGroup = ({
   return (
     <RadioGroupProvider value={{ unstyled, styles, classNames }}>
       <RadioGroupPrimitive.Root
+        data-slot="radio-group"
         className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
@@ -99,10 +100,12 @@ const RadioGroupItem = ({
 
   return (
     <RadioGroupPrimitive.Item
+      data-slot="radio-group-item"
       className={item({ className: cn(classNames?.item, className) })}
       {...props}
     >
       <RadioGroupPrimitive.Indicator
+        data-slot="radio-group-indicator"
         className={indicator({ className: classNames?.indicator })}
       >
         <CircleIcon className={icon({ className: classNames?.icon })} />

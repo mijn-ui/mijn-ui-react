@@ -38,11 +38,13 @@ const Progress = ({
 
   return (
     <ProgressPrimitive.Root
+      data-slot="progress"
       ref={ref}
       className={base({ className: cn(classNames?.base, className) })}
       {...props}
     >
       <ProgressPrimitive.Indicator
+        data-slot="progress-indicator"
         className={indicator({ className: classNames?.indicator })}
         style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
       />

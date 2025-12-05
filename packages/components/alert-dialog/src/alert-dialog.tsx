@@ -95,7 +95,7 @@ const AlertDialog = ({
 
   return (
     <AlertDialogProvider value={{ unstyled, styles, classNames }}>
-      <AlertDialogPrimitive.Root {...props} />
+      <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />
     </AlertDialogProvider>
   )
 }
@@ -117,6 +117,7 @@ const AlertDialogTrigger = ({
 
   return (
     <AlertDialogPrimitive.Trigger
+      data-slot="alert-dialog-trigger"
       className={trigger({ className: cn(classNames?.trigger, className) })}
       {...props}
     />
@@ -140,6 +141,7 @@ const AlertDialogOverlay = ({
 
   return (
     <AlertDialogPrimitive.Overlay
+      data-slot="alert-dialog-overlay"
       className={overlay({ className: cn(classNames?.overlay, className) })}
       {...props}
     />
@@ -163,7 +165,7 @@ const AlertDialogContent = ({
   const { styles } = useAlertDialogContext()
 
   return (
-    <AlertDialogPortal>
+    <AlertDialogPortal data-slot="alert-dialog-portal">
       <AlertDialogOverlay />
       {/* The outer wrapper (div) is intentionally not unstyled.
           This prevents the dialog from being rendered out of the viewport, which could occur
@@ -177,6 +179,7 @@ const AlertDialogContent = ({
         })}
       >
         <AlertDialogPrimitive.Content
+          data-slot="alert-dialog-content"
           className={content({
             className: cn(classNames?.content, className),
           })}
@@ -204,6 +207,7 @@ const AlertDialogHeader = ({
 
   return (
     <div
+      data-slot="alert-dialog-header"
       className={header({ className: cn(classNames?.header, className) })}
       {...props}
     />
@@ -228,6 +232,7 @@ const AlertDialogFooter = ({
 
   return (
     <div
+      data-slot="alert-dialog-footer"
       className={footer({ className: cn(classNames?.footer, className) })}
       {...props}
     />
@@ -252,6 +257,7 @@ const AlertDialogTitle = ({
 
   return (
     <AlertDialogPrimitive.Title
+      data-slot="alert-dialog-title"
       className={title({ className: cn(classNames?.title, className) })}
       {...props}
     />
@@ -275,6 +281,7 @@ const AlertDialogDescription = ({
 
   return (
     <AlertDialogPrimitive.Description
+      data-slot="alert-dialog-description"
       className={description({
         className: cn(classNames?.description, className),
       })}
@@ -300,6 +307,7 @@ const AlertDialogAction = ({
 
   return (
     <AlertDialogPrimitive.Action
+      data-slot="alert-dialog-action"
       className={action({ className: cn(classNames?.action, className) })}
       {...props}
     />
@@ -323,6 +331,7 @@ const AlertDialogCancel = ({
 
   return (
     <AlertDialogPrimitive.Cancel
+      data-slot="alert-dialog-cancel"
       className={cancel({ className: cn(classNames?.cancel, className) })}
       {...props}
     />

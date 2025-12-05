@@ -48,6 +48,7 @@ const Separator = ({
 
   return (
     <SeparatorPrimitive.Root
+      data-slot="separator"
       decorative={decorative}
       orientation={orientation}
       className={base({ className })}

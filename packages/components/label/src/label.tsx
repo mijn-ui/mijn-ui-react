@@ -27,7 +27,13 @@ export type LabelProps = React.ComponentPropsWithRef<
 const Label = ({ unstyled, className, ...props }: LabelProps) => {
   const { base } = createTVUnstyledSlots(labelStyles(), unstyled)
 
-  return <LabelPrimitive.Root className={base({ className })} {...props} />
+  return (
+    <LabelPrimitive.Root
+      data-slot="label"
+      className={base({ className })}
+      {...props}
+    />
+  )
 }
 
 export { Label }

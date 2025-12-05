@@ -23,7 +23,7 @@ export type SkeletonProps = React.ComponentPropsWithRef<"div"> & {
 const Skeleton = ({ unstyled, className, ...props }: SkeletonProps) => {
   const { base } = createTVUnstyledSlots(skeletonStyles(), unstyled)
 
-  return <div className={base({ className })} {...props} />
+  return <div data-slot="skeleton" className={base({ className })} {...props} />
 }
 
 export { Skeleton }

@@ -247,6 +247,7 @@ const PaginationContent = ({
 
   return (
     <nav
+      data-slot="pagination-content"
       className={content({ className: cn(classNames?.content, className) })}
       {...props}
     />
@@ -271,11 +272,16 @@ const PaginationList = ({
 
   return (
     <ul
+      data-slot="pagination-list"
       className={list({ className: cn(classNames?.list, className) })}
       {...props}
     >
       {paginationRange.map((page, index) => (
-        <li key={index} onClick={() => setPage(page)}>
+        <li
+          data-slot="pagination-list-item"
+          key={index}
+          onClick={() => setPage(page)}
+        >
           <button
             className={listItem({
               active: currentPage === page,
@@ -308,6 +314,7 @@ const PaginationPreviousButton = ({
 
   return (
     <button
+      data-slot="pagination-previous-button"
       onClick={goToPreviousPage}
       className={previousBtn({
         className: cn(classNames?.previousBtn, className),
@@ -335,6 +342,7 @@ const PaginationNextButton = ({
 
   return (
     <button
+      data-slot="pagination-next-button"
       onClick={goToNextPage}
       className={nextBtn({ className: cn(classNames?.nextBtn, className) })}
       {...props}
@@ -362,6 +370,7 @@ const PaginationPreviousEllipsis = ({
 
   return (
     <span
+      data-slot="pagination-previous-ellipsis"
       aria-hidden
       className={previousElipsis({
         className: cn(classNames?.previousElipsis, className),
@@ -393,6 +402,7 @@ const PaginationNextEllipsis = ({
 
   return (
     <span
+      data-slot="pagination-next-ellipsis"
       aria-hidden
       className={nextElipsis({
         className: cn(classNames?.nextElipsis, className),

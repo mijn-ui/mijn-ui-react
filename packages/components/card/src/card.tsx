@@ -70,6 +70,7 @@ const Card = ({
   return (
     <CardProvider value={{ unstyled, styles, classNames }}>
       <div
+        data-slot="card"
         className={base({
           className: cn(classNames?.base, className),
         })}
@@ -92,6 +93,7 @@ const CardHeader = ({ className, unstyled, ...props }: CardHeaderProps) => {
 
   return (
     <div
+      data-slot="card-header"
       className={header({
         className: cn(classNames?.header, className),
       })}
@@ -113,6 +115,7 @@ const CardTitle = ({ className, unstyled, ...props }: CardTitleProps) => {
 
   return (
     <div
+      data-slot="card-title"
       className={title({
         className: cn(classNames?.title, className),
       })}
@@ -138,6 +141,7 @@ const CardDescription = ({
 
   return (
     <div
+      data-slot="card-description"
       className={description({
         className: cn(classNames?.description, className),
       })}
@@ -159,6 +163,7 @@ const CardContent = ({ className, unstyled, ...props }: CardContentProps) => {
 
   return (
     <div
+      data-slot="card-content"
       className={content({
         className: cn(classNames?.content, className),
       })}
@@ -180,6 +185,7 @@ const CardFooter = ({ className, unstyled, ...props }: CardFooterProps) => {
 
   return (
     <div
+      data-slot="card-footer"
       className={footer({
         className: cn(classNames?.footer, className),
       })}

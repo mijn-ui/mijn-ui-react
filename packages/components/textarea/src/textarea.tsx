@@ -21,7 +21,14 @@ export type TextareaProps =
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ unstyled, className, ...props }, ref) => {
     const { base } = createTVUnstyledSlots(textareaStyles(), unstyled)
-    return <textarea className={base({ className })} ref={ref} {...props} />
+    return (
+      <textarea
+        data-slot="textarea"
+        className={base({ className })}
+        ref={ref}
+        {...props}
+      />
+    )
   },
 )
 Textarea.displayName = "Textarea"

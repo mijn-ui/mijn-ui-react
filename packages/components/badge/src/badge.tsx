@@ -65,7 +65,7 @@ const Badge = ({
   const styles = badgeStyles({ variant, radius })
   const { base } = createTVUnstyledSlots(styles, unstyled)
 
-  return <div className={base({ className })} {...props} />
+  return <div data-slot="badge" className={base({ className })} {...props} />
 }
 
 export { Badge }

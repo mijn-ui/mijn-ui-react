@@ -154,6 +154,7 @@ const Input = ({
         className={base({ className: cn(classNames?.base, className) })}
         id={userId || id}
         disabled={disabled}
+        data-slot="input"
         // Adding an empty space by default ensures the floating label moves correctly on focus or when input is present.
         placeholder=""
         {...props}

@@ -65,8 +65,10 @@ const Checkbox = ({
       {...props}
       checked={checked}
       onCheckedChange={setChecked}
+      data-slot="checkbox"
     >
       <CheckboxPrimitive.Indicator
+        data-slot="checkbox-indicator"
         className={indicator({ className: classNames?.indicator })}
       >
         {checked === "indeterminate" && (

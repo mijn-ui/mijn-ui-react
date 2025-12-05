@@ -102,6 +102,7 @@ const AvatarGroup = ({
 
   return (
     <div
+      data-slot="avatar-group"
       className={group({ className: cn(classNames?.group, className) })}
       {...props}
     >
@@ -142,6 +143,7 @@ const Avatar = ({
   return (
     <AvatarProvider value={{ unstyled, styles, classNames }}>
       <AvatarPrimitive.Root
+        data-slot="avatar"
         className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
@@ -162,6 +164,7 @@ const AvatarImage = ({ unstyled, className, ...props }: AvatarImageProps) => {
 
   return (
     <AvatarPrimitive.Image
+      data-slot="avatar-image"
       className={image({
         className: cn(classNames?.image, className),
       })}
@@ -187,6 +190,7 @@ const AvatarFallback = ({
 
   return (
     <AvatarPrimitive.Fallback
+      data-slot="avatar-fallback"
       className={fallback({
         className: cn(classNames?.fallback, className),
       })}

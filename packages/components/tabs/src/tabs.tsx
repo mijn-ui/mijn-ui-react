@@ -72,6 +72,7 @@ const Tabs = ({
   return (
     <TabsProvider value={{ unstyled, styles, classNames }}>
       <TabsPrimitive.Root
+        data-slot="tabs"
         className={base({ className: cn(classNames?.base, className) })}
         {...props}
       >
@@ -93,6 +94,7 @@ const TabsList = ({ className, unstyled, ...props }: TabsListProps) => {
 
   return (
     <TabsPrimitive.List
+      data-slot="tabs-list"
       className={list({
         className: cn(classNames?.list, className),
       })}
@@ -114,6 +116,7 @@ const TabsTrigger = ({ className, unstyled, ...props }: TabsTriggerProps) => {
 
   return (
     <TabsPrimitive.Trigger
+      data-slot="tabs-trigger"
       className={trigger({
         className: cn(classNames?.trigger, className),
       })}
@@ -135,6 +138,7 @@ const TabsContent = ({ className, unstyled, ...props }: TabsContentProps) => {
 
   return (
     <TabsPrimitive.Content
+      data-slot="tabs-content"
       className={content({
         className: cn(classNames?.content, className),
       })}

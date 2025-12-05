@@ -103,6 +103,7 @@ const Accordion = ({
   return (
     <AccordionProvider value={{ classNames, unstyled, styles }}>
       <RadixAccordion.Root
+        data-slot="accordion"
         className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
@@ -127,6 +128,7 @@ const AccordionItem = ({
 
   return (
     <RadixAccordion.Item
+      data-slot="accordion-item"
       className={item({ className: cn(classNames?.item, className) })}
       {...props}
     />
@@ -159,9 +161,11 @@ const AccordionTrigger = ({
 
   return (
     <RadixAccordion.Header
+      data-slot="accordion-header"
       className={triggerWrapper({ className: classNames?.triggerWrapper })}
     >
       <RadixAccordion.Trigger
+        data-slot="accordion-trigger"
         className={trigger({
           className: cn(classNames?.trigger, className),
         })}
@@ -198,6 +202,7 @@ const AccordionContent = ({
 
   return (
     <RadixAccordion.Content
+      data-slot="accordion-content"
       className={contentWrapper({ className: classNames?.contentWrapper })}
       {...props}
     >

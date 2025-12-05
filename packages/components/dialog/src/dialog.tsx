@@ -83,7 +83,7 @@ const Dialog = ({ classNames, unstyled = false, ...props }: DialogProps) => {
 
   return (
     <DialogProvider value={{ unstyled, styles, classNames }}>
-      <DialogPrimitive.Root {...props} />
+      <DialogPrimitive.Root data-slot="dialog" {...props} />
     </DialogProvider>
   )
 }
@@ -105,6 +105,7 @@ const DialogTrigger = ({
 
   return (
     <DialogPrimitive.Trigger
+      data-slot="dialog-trigger"
       className={trigger({
         className: cn(classNames?.trigger, className),
       })}
@@ -126,6 +127,7 @@ const DialogClose = ({ unstyled, className, ...props }: DialogCloseProps) => {
 
   return (
     <DialogPrimitive.Close
+      data-slot="dialog-close"
       className={close({
         className: cn(classNames?.close, className),
       })}
@@ -151,6 +153,7 @@ const DialogOverlay = ({
 
   return (
     <DialogPrimitive.Overlay
+      data-slot="dialog-overlay"
       className={overlay({
         className: cn(classNames?.overlay, className),
       })}
@@ -177,7 +180,7 @@ const DialogContent = ({
   const { styles } = useDialogContext()
 
   return (
-    <DialogPortal>
+    <DialogPortal data-slot="dialog-portal">
       <DialogOverlay />
       {/* The outer wrapper (div) is intentionally not unstyled.
           This prevents the dialog from being rendered out of the viewport, which could occur
@@ -190,6 +193,7 @@ const DialogContent = ({
         })}
       >
         <DialogPrimitive.Content
+          data-slot="dialog-content"
           className={content({
             className: cn(classNames?.content, className),
           })}
@@ -215,6 +219,7 @@ const DialogHeader = ({ unstyled, className, ...props }: DialogHeaderProps) => {
 
   return (
     <div
+      data-slot="dialog-header"
       className={header({
         className: cn(classNames?.header, className),
       })}
@@ -236,6 +241,7 @@ const DialogFooter = ({ unstyled, className, ...props }: DialogFooterProps) => {
 
   return (
     <div
+      data-slot="dialog-footer"
       className={footer({
         className: cn(classNames?.footer, className),
       })}
@@ -257,6 +263,7 @@ const DialogTitle = ({ unstyled, className, ...props }: DialogTitleProps) => {
 
   return (
     <DialogPrimitive.Title
+      data-slot="dialog-title"
       className={title({
         className: cn(classNames?.title, className),
       })}
@@ -282,6 +289,7 @@ const DialogDescription = ({
 
   return (
     <DialogPrimitive.Description
+      data-slot="dialog-description"
       className={description({
         className: cn(classNames?.description, className),
       })}

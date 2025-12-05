@@ -117,7 +117,7 @@ const Select = ({ classNames, unstyled = false, ...props }: SelectProps) => {
 
   return (
     <SelectProvider value={{ unstyled, styles, classNames }}>
-      <SelectPrimitive.Root {...props} />
+      <SelectPrimitive.Root data-slot="select" {...props} />
     </SelectProvider>
   )
 }
@@ -141,6 +141,7 @@ const SelectTrigger = ({
 
   return (
     <SelectPrimitive.Trigger
+      data-slot="select-trigger"
       className={trigger({
         className: cn(classNames?.trigger, className),
       })}
@@ -165,7 +166,11 @@ const SelectTriggerIcon = ({
   children?: React.ReactNode
 }) => {
   return (
-    <SelectPrimitive.Icon asChild={asChild} {...props}>
+    <SelectPrimitive.Icon
+      data-slot="select-trigger-icon"
+      asChild={asChild}
+      {...props}
+    >
       {children ? children : <ChevronDownIcon />}
     </SelectPrimitive.Icon>
   )
@@ -188,6 +193,7 @@ const SelectScrollUpButton = ({
 
   return (
     <SelectPrimitive.ScrollUpButton
+      data-slot="select-scroll-up-button"
       className={scrollUpBtn({
         className: cn(classNames?.scrollUpBtn, className),
       })}
@@ -215,6 +221,7 @@ const SelectScrollDownButton = ({
 
   return (
     <SelectPrimitive.ScrollDownButton
+      data-slot="select-scroll-down-button"
       className={scrollDownBtn({
         className: cn(classNames?.scrollDownBtn, className),
       })}
@@ -243,8 +250,9 @@ const SelectContent = ({
   const { content, viewport, classNames } = useSelectStyles(unstyled)
 
   return (
-    <SelectPrimitive.Portal>
+    <SelectPrimitive.Portal data-slot="select-portal">
       <SelectPrimitive.Content
+        data-slot="select-content"
         className={content({
           className: cn(classNames?.content, className),
           position,
@@ -254,6 +262,7 @@ const SelectContent = ({
       >
         <SelectScrollUpButton />
         <SelectPrimitive.Viewport
+          data-slot="select-viewport"
           className={viewport({
             className: classNames?.viewport,
             position,
@@ -280,6 +289,7 @@ const SelectLabel = ({ unstyled, className, ...props }: SelectLabelProps) => {
 
   return (
     <SelectPrimitive.Label
+      data-slot="select-label"
       className={label({
         className: cn(classNames?.label, className),
       })}
@@ -306,19 +316,22 @@ const SelectItem = ({
 
   return (
     <SelectPrimitive.Item
+      data-slot="select-item"
       className={item({
         className: cn(classNames?.item, className),
       })}
       {...props}
     >
-      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+      <SelectPrimitive.ItemText data-slot="select-item-text">
+        {children}
+      </SelectPrimitive.ItemText>
 
       <span
         className={itemIndicator({
           className: classNames?.itemIndicator,
         })}
       >
-        <SelectPrimitive.ItemIndicator>
+        <SelectPrimitive.ItemIndicator data-slot="select-item-indicator">
           <CheckIcon />
         </SelectPrimitive.ItemIndicator>
       </span>
@@ -343,6 +356,7 @@ const SelectSeparator = ({
 
   return (
     <SelectPrimitive.Separator
+      data-slot="select-separator"
       className={separator({
         className: cn(classNames?.separator, className),
       })}

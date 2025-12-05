@@ -73,6 +73,7 @@ const Table = ({
   return (
     <TableProvider value={{ unstyled, styles, classNames }}>
       <table
+        data-slot="table"
         className={base({ className: cn(classNames?.base, className) })}
         {...props}
       />
@@ -92,6 +93,7 @@ const TableHeader = ({ className, unstyled, ...props }: TableHeaderProps) => {
 
   return (
     <thead
+      data-slot="table-header"
       className={header({
         className: cn(classNames?.header, className),
       })}
@@ -113,6 +115,7 @@ const TableBody = ({ className, unstyled, ...props }: TableBodyProps) => {
 
   return (
     <tbody
+      data-slot="table-body"
       className={body({
         className: cn(classNames?.body, className),
       })}
@@ -134,6 +137,7 @@ const TableFooter = ({ className, unstyled, ...props }: TableFooterProps) => {
 
   return (
     <tfoot
+      data-slot="table-footer"
       className={footer({
         className: cn(classNames?.footer, className),
       })}
@@ -155,6 +159,7 @@ const TableRow = ({ className, unstyled, ...props }: TableRowProps) => {
 
   return (
     <tr
+      data-slot="table-row"
       className={row({
         className: cn(classNames?.row, className),
       })}
@@ -180,6 +185,7 @@ const TableHeaderCell = ({
 
   return (
     <th
+      data-slot="table-header-cell"
       className={headerCell({
         className: cn(classNames?.headerCell, className),
       })}
@@ -201,6 +207,7 @@ const TableCell = ({ className, unstyled, ...props }: TableCellProps) => {
 
   return (
     <td
+      data-slot="table-cell"
       className={cell({
         className: cn(classNames?.cell, className),
       })}
@@ -222,6 +229,7 @@ const TableCaption = ({ className, unstyled, ...props }: TableCaptionProps) => {
 
   return (
     <caption
+      data-slot="table-caption"
       className={caption({
         className: cn(classNames?.caption, className),
       })}
