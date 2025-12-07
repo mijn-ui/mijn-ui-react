@@ -58,6 +58,7 @@ const badgeStyles = tv({
   defaultVariants: {
     size: "md",
     variant: "filled",
+    color: "default",
     radius: "default",
   },
   compoundVariants: [
