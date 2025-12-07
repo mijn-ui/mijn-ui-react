@@ -1,5 +1,12 @@
 # @mijn-ui-react/dialog
 
+## 0.4.4
+
+### Patch Changes
+
+- Updated dependencies [c3692d0]
+  - @mijn-ui/react-button@0.5.3
+
 ## 0.4.3
 
 ### Patch Changes

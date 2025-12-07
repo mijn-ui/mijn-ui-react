@@ -1,5 +1,11 @@
 # @mijn-ui-react/button
 
+## 0.5.3
+
+### Patch Changes
+
+- c3692d0: Modify and more variants
+
 ## 0.5.2
 
 ### Patch Changes

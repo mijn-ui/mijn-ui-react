@@ -1,5 +1,11 @@
 # @mijn-ui-react/badge
 
+## 0.4.3
+
+### Patch Changes
+
+- c3692d0: Modify and more variants
+
 ## 0.4.2
 
 ### Patch Changes

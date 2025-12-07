@@ -1,5 +1,12 @@
 # @mijn-ui-react/autocomplete
 
+## 0.3.4
+
+### Patch Changes
+
+- @mijn-ui/react-popover@0.4.2
+- @mijn-ui/react-command@0.4.4
+
 ## 0.3.3
 
 ### Patch Changes
