@@ -37,6 +37,19 @@ const meta: Meta<typeof Badge> = {
 export default meta
 type Story = StoryObj<typeof Badge>
 
+const VARIANTS = ["filled", "outlined", "subtle", "ghost", "light"] as const
+const COLORS = [
+  "default",
+  "secondary",
+  "brand",
+  "success",
+  "warning",
+  "danger",
+  "inverse",
+] as const
+const SIZES = ["sm", "md", "lg"] as const
+const RADII = ["default", "full"] as const
+
 const BadgeTemplate = (args: BadgeProps) => {
   return (
     <Badge {...args} variant="filled" color="default">
@@ -51,225 +64,17 @@ const BadgeTemplate = (args: BadgeProps) => {
 const BadgeVariants = (args: BadgeProps) => {
   return (
     <div className="flex flex-col gap-16">
-      <div className="flex flex-wrap items-center gap-4">
-        <Badge {...args}>
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="filled" color="secondary">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="filled" color="brand">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="filled" color="success">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="filled" color="warning">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="filled" color="danger">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="filled" color="inverse">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-      </div>
-
-      <div className="flex flex-wrap items-center gap-4">
-        <Badge {...args} variant="outlined">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="outlined" color="secondary">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="outlined" color="brand">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="outlined" color="success">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="outlined" color="warning">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="outlined" color="danger">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="outlined" color="inverse">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-      </div>
-
-      <div className="flex flex-wrap items-center gap-4">
-        <Badge {...args} variant="subtle">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="subtle" color="secondary">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="subtle" color="brand">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="subtle" color="success">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="subtle" color="warning">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="subtle" color="danger">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="subtle" color="inverse">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-      </div>
-
-      <div className="flex flex-wrap items-center gap-4">
-        <Badge {...args} variant="ghost">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="ghost" color="secondary">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="ghost" color="brand">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="ghost" color="success">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="ghost" color="warning">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="ghost" color="danger">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="ghost" color="inverse">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-      </div>
-
-      <div className="flex flex-wrap items-center gap-4">
-        <Badge {...args} variant="light">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="light" color="secondary">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="light" color="brand">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="light" color="success">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="light" color="warning">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="light" color="danger">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-
-        <Badge {...args} variant="light" color="inverse">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
-      </div>
+      {VARIANTS.map((variant) => (
+        <div key={variant} className="flex flex-wrap items-center gap-4">
+          {COLORS.map((color) => (
+            <Badge key={color} {...args} variant={variant} color={color}>
+              <CheckIcon />
+              Badge
+              <XIcon />
+            </Badge>
+          ))}
+        </div>
+      ))}
     </div>
   )
 }
@@ -278,17 +83,29 @@ const BadgeRadius = (args: BadgeProps) => {
   return (
     <div className="flex flex-col gap-12">
       <div className="flex flex-wrap items-center gap-4">
-        <Badge {...args} radius="full">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
+        {RADII.map((radius) => (
+          <Badge key={radius} {...args} radius={radius}>
+            <CheckIcon />
+            Badge
+            <XIcon />
+          </Badge>
+        ))}
+      </div>
+    </div>
+  )
+}
 
-        <Badge {...args} variant="filled">
-          <CheckIcon />
-          Badge
-          <XIcon />
-        </Badge>
+const BadgeSize = (args: BadgeProps) => {
+  return (
+    <div className="flex flex-col gap-12">
+      <div className="flex flex-wrap items-center gap-4">
+        {SIZES.map((size) => (
+          <Badge key={size} {...args} size={size}>
+            <CheckIcon />
+            Badge
+            <XIcon />
+          </Badge>
+        ))}
       </div>
     </div>
   )
@@ -308,6 +125,13 @@ export const Default: Story = {
 
 export const Radius: Story = {
   render: BadgeRadius,
+  args: {
+    radius: "default",
+  },
+}
+
+export const Size: Story = {
+  render: BadgeSize,
   args: {
     radius: "default",
   },
