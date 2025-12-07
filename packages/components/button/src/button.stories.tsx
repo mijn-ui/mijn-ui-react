@@ -8,7 +8,8 @@ const meta: Meta<typeof Button> = {
     layout: "centered",
   },
   args: {
-    variant: "default",
+    variant: "filled",
+    color: "default",
     size: "md",
     iconOnly: false,
     loading: false,
@@ -20,7 +21,19 @@ const meta: Meta<typeof Button> = {
     variant: {
       type: "string",
       control: "select",
-      options: ["default", "primary", "danger", "ghost"],
+      options: ["filled", "outlined", "subtle", "ghost", "light"],
+    },
+    color: {
+      type: "string",
+      control: "select",
+      options: [
+        "default",
+        "brand",
+        "secondary",
+        "success",
+        "warning",
+        "danger",
+      ],
     },
     size: {
       type: "string",
@@ -32,6 +45,18 @@ const meta: Meta<typeof Button> = {
 
 export default meta
 type Story = StoryObj<typeof Button>
+
+const VARIANTS = ["filled", "outlined", "subtle", "ghost", "light"] as const
+const COLORS = [
+  "default",
+  "secondary",
+  "brand",
+  "success",
+  "warning",
+  "danger",
+  "inverse",
+] as const
+const SIZES = ["sm", "md", "lg"] as const
 
 const ButtonTemplate = (args: ButtonProps) => {
   return (
@@ -45,47 +70,21 @@ const ButtonTemplate = (args: ButtonProps) => {
 
 const ButtonVariants = (args: ButtonProps) => {
   return (
-    <div className="flex flex-col items-center gap-8 sm:flex-row">
-      <Button {...args}>
-        <CircleIcon />
-        <p className="px-1">Default</p>
-        <CircleIcon />
-      </Button>
-      <Button {...args} variant="primary">
-        <CircleIcon />
-        <p className="px-1">Primary</p>
-        <CircleIcon />
-      </Button>
-      <Button {...args} variant="secondary">
-        <CircleIcon />
-        <p className="px-1">Secondary</p>
-        <CircleIcon />
-      </Button>
-      <Button {...args} variant="success">
-        <CircleIcon />
-        <p className="px-1">Success</p>
-        <CircleIcon />
-      </Button>
-      <Button {...args} variant="warning">
-        <CircleIcon />
-        <p className="px-1">Warning</p>
-        <CircleIcon />
-      </Button>
-      <Button {...args} variant="danger">
-        <CircleIcon />
-        <p className="px-1">Danger</p>
-        <CircleIcon />
-      </Button>
-      <Button {...args} variant="outlined">
-        <CircleIcon />
-        <p className="px-1">Outlined</p>
-        <CircleIcon />
-      </Button>
-      <Button {...args} variant="ghost">
-        <CircleIcon />
-        <p className="px-1">Ghost</p>
-        <CircleIcon />
-      </Button>
+    <div className="flex flex-col gap-16">
+      {VARIANTS.map((variant) => (
+        <div
+          key={variant}
+          className="flex flex-col items-center gap-8 sm:flex-row"
+        >
+          {COLORS.map((color) => (
+            <Button key={color} {...args} variant={variant} color={color}>
+              <CircleIcon />
+              <p className="px-1 capitalize">{color}</p>
+              <CircleIcon />
+            </Button>
+          ))}
+        </div>
+      ))}
     </div>
   )
 }
@@ -93,21 +92,13 @@ const ButtonVariants = (args: ButtonProps) => {
 const ButtonSizes = (args: ButtonProps) => {
   return (
     <div className="flex items-center gap-8">
-      <Button {...args} size="sm">
-        <CircleIcon />
-        <p className="px-1">Button</p>
-        <CircleIcon />
-      </Button>
-      <Button {...args} size="md">
-        <CircleIcon />
-        <p className="px-1">Button</p>
-        <CircleIcon />
-      </Button>
-      <Button {...args} size="lg">
-        <CircleIcon />
-        <p className="px-1">Button</p>
-        <CircleIcon />
-      </Button>
+      {SIZES.map((size) => (
+        <Button key={size} {...args} size={size}>
+          <CircleIcon />
+          <p className="px-1">Button</p>
+          <CircleIcon />
+        </Button>
+      ))}
     </div>
   )
 }
@@ -115,15 +106,11 @@ const ButtonSizes = (args: ButtonProps) => {
 const ButtonIconOnly = (args: ButtonProps) => {
   return (
     <div className="flex items-center gap-8">
-      <Button {...args} size="sm">
-        <CircleIcon />
-      </Button>
-      <Button {...args} size="md">
-        <CircleIcon />
-      </Button>
-      <Button {...args} size="lg">
-        <CircleIcon />
-      </Button>
+      {SIZES.map((size) => (
+        <Button key={size} {...args} size={size}>
+          <CircleIcon />
+        </Button>
+      ))}
     </div>
   )
 }
