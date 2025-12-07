@@ -1,5 +1,11 @@
 # @mijn-ui-react/badge
 
+## 0.4.4
+
+### Patch Changes
+
+- 87cddd9: Add default color variant
+
 ## 0.4.3
 
 ### Patch Changes
