@@ -1,5 +1,11 @@
 # @mijn-ui-react/badge
 
+## 0.4.5
+
+### Patch Changes
+
+- 58a2391: Add badge size variants
+
 ## 0.4.4
 
 ### Patch Changes
