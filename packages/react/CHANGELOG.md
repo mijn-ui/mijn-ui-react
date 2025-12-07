@@ -1,5 +1,13 @@
 # @mijn-ui/react
 
+## 0.4.12
+
+### Patch Changes
+
+- Updated dependencies [58a2391]
+  - @mijn-ui/react-badge@0.4.5
+  - @mijn-ui/react-calendar@0.4.2
+
 ## 0.4.11
 
 ### Patch Changes
