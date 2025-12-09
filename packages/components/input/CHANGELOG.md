@@ -1,5 +1,11 @@
 # @mijn-ui-react/input
 
+## 0.4.3
+
+### Patch Changes
+
+- 38a28af: Fix some styling issue
+
 ## 0.4.2
 
 ### Patch Changes
