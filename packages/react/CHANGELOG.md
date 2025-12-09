@@ -1,5 +1,18 @@
 # @mijn-ui/react
 
+## 0.4.13
+
+### Patch Changes
+
+- Updated dependencies [38a28af]
+  - @mijn-ui/react-switch@0.4.4
+  - @mijn-ui/react-input@0.4.3
+  - @mijn-ui/react-autocomplete@0.3.4
+  - @mijn-ui/react-command@0.4.4
+  - @mijn-ui/react-dialog@0.4.4
+  - @mijn-ui/react-popover@0.4.2
+  - @mijn-ui/react-tabs@0.4.2
+
 ## 0.4.12
 
 ### Patch Changes
