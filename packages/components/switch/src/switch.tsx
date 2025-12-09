@@ -21,8 +21,9 @@ const switchStyles = tv({
       "focus-visible:ring-offset-2",
       "focus-visible:ring-offset-bg-default",
     ],
+    //   "bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform  data-[state=unchecked]:translate-x-0
     thumb:
-      "bg-bg-default data-[state=checked]:bg-bg-default-alt pointer-events-none block size-5 rounded-full shadow-sm ring-0 transition-transform data-[state=checked]:translate-x-[22px] data-[state=unchecked]:translate-x-0.5",
+      "bg-bg-default data-[state=checked]:bg-bg-default-alt pointer-events-none block size-5 rounded-full shadow-sm ring-0 transition-transform data-[state=checked]:translate-x-[100%] data-[state=unchecked]:translate-x-0",
   },
 })
 

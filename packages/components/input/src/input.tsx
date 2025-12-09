@@ -48,7 +48,7 @@ const inputStyles = tv({
         ],
       },
       underline: {
-        base: "border-b-sm focus-visible:border-b-brand border-b outline-none",
+        base: "border-b-sm focus-visible:border-b-outline-brand border-b outline-none",
       },
       danger: {
         base: [
