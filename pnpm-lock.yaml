@@ -91,8 +91,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -131,8 +131,8 @@ importers:
         specifier: workspace:*
         version: link:../../utilities/shared-icons
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -174,8 +174,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -241,8 +241,8 @@ importers:
         specifier: workspace:*
         version: link:../scroll-area
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -281,8 +281,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -318,8 +318,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -361,8 +361,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -407,8 +407,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -447,8 +447,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -493,8 +493,8 @@ importers:
         specifier: workspace:*
         version: link:../label
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -527,8 +527,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -576,8 +576,8 @@ importers:
         specifier: workspace:*
         version: link:../input
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -628,8 +628,8 @@ importers:
         specifier: workspace:*
         version: link:../label
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -677,8 +677,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -720,8 +720,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -766,8 +766,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -806,8 +806,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -858,8 +858,8 @@ importers:
         specifier: workspace:*
         version: link:../label
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -898,8 +898,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/node':
         specifier: 22.9.0
         version: 22.9.0
@@ -947,8 +947,8 @@ importers:
         specifier: workspace:*
         version: link:../label
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -990,8 +990,8 @@ importers:
         specifier: workspace:*
         version: link:../separator
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -1033,8 +1033,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -1073,8 +1073,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -1110,8 +1110,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -1150,8 +1150,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -1187,8 +1187,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -1239,8 +1239,8 @@ importers:
         specifier: workspace:*
         version: link:../input
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -1279,8 +1279,8 @@ importers:
         specifier: workspace:*
         version: link:../label
       '@next/eslint-plugin-next':
-        specifier: ^15.0.3
-        version: 15.5.6
+        specifier: ^16.0.0
+        version: 16.1.1
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -2000,8 +2000,8 @@ packages:
       '@types/react': '>=16'
       react: '>=16'
 
-  '@next/eslint-plugin-next@15.5.6':
-    resolution: {integrity: sha512-YxDvsT2fwy1j5gMqk3ppXlsgDopHnkM4BoxSVASbvvgh5zgsK8lvWerDzPip8k3WVzsTZ1O7A7si1KNfN4OZfQ==}
+  '@next/eslint-plugin-next@16.1.1':
+    resolution: {integrity: sha512-Ovb/6TuLKbE1UiPcg0p39Ke3puyTCIKN9hGbNItmpQsp+WX3qrjO3WaMVSi6JHr9X1NrmthqIguVHodMJbh/dw==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -5682,7 +5682,7 @@ snapshots:
       '@types/react': 18.3.27
       react: 19.0.1
 
-  '@next/eslint-plugin-next@15.5.6':
+  '@next/eslint-plugin-next@16.1.1':
     dependencies:
       fast-glob: 3.3.1
 
