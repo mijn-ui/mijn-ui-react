@@ -32,9 +32,9 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "eslint-config-custom": "workspace:*",
-    "lucide-react": "^0.479.0",
-    "react": "19.0.1",
-    "react-dom": "19.0.1",
+    "lucide-react": "^0.562.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"
   },
