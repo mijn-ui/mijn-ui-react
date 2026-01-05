@@ -1522,8 +1522,8 @@ importers:
         specifier: ^10.4.20
         version: 10.4.22(postcss@8.5.6)
       chromatic:
-        specifier: ^11.20.2
-        version: 11.29.0
+        specifier: ^13.0.0
+        version: 13.3.5
       postcss:
         specifier: ^8.4.49
         version: 8.5.6
@@ -3361,6 +3361,18 @@ packages:
 
   chromatic@11.29.0:
     resolution: {integrity: sha512-yisBlntp9hHVj19lIQdpTlcYIXuU9H/DbFuu6tyWHmj6hWT2EtukCCcxYXL78XdQt1vm2GfIrtgtKpj/Rzmo4A==}
+    hasBin: true
+    peerDependencies:
+      '@chromatic-com/cypress': ^0.*.* || ^1.0.0
+      '@chromatic-com/playwright': ^0.*.* || ^1.0.0
+    peerDependenciesMeta:
+      '@chromatic-com/cypress':
+        optional: true
+      '@chromatic-com/playwright':
+        optional: true
+
+  chromatic@13.3.5:
+    resolution: {integrity: sha512-MzPhxpl838qJUo0A55osCF2ifwPbjcIPeElr1d4SHcjnHoIcg7l1syJDrAYK/a+PcCBrOGi06jPNpQAln5hWgw==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
@@ -7150,6 +7162,8 @@ snapshots:
       readdirp: 4.1.2
 
   chromatic@11.29.0: {}
+
+  chromatic@13.3.5: {}
 
   ci-info@3.9.0: {}
 
