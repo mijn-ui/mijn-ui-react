@@ -24,7 +24,7 @@
     "build": "tsup"
   },
   "devDependencies": {
-    "react": "19.0.1",
+    "react": "19.2.3",
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*",
     "@types/react": "^19.0.0"
