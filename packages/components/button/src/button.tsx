@@ -24,6 +24,15 @@ const buttonStyles = tv({
       inverse: "",
     },
     variant: {
+      // Figma-aligned composite types (color encoded in the variant name)
+      default: "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-xs border focus-visible:ring-offset-2",
+      "default-plain": "text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
+      brand: "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-xs",
+      "brand-plain": "text-fg-brand hover:bg-bg-brand hover:text-on-bg-brand focus-visible:ring-outline-brand active:bg-bg-brand/70",
+      "brand-outline": "border border-outline-brand bg-transparent text-fg-brand hover:bg-bg-brand hover:text-on-bg-brand focus-visible:ring-outline-brand active:bg-bg-brand/70",
+      error: "bg-bg-danger text-on-bg-danger hover:bg-bg-danger/80 focus-visible:ring-outline-danger active:bg-bg-danger/70 shadow-xs",
+      "error-plain": "text-fg-danger hover:bg-bg-danger hover:text-on-bg-danger focus-visible:ring-outline-danger active:bg-bg-danger/70",
+      // Generic variants (combined with color prop)
       filled: "",
       outlined: "",
       ghost: "",
@@ -32,6 +41,7 @@ const buttonStyles = tv({
     },
     size: {
       sm: "h-8 rounded-md px-3",
+      default: "h-9 rounded-md px-3",
       md: "h-9 rounded-md px-3",
       lg: "h-12 rounded-lg px-4",
     },
@@ -41,9 +51,8 @@ const buttonStyles = tv({
     },
   },
   defaultVariants: {
-    variant: "filled",
-    color: "default",
-    size: "md",
+    variant: "default",
+    size: "default",
     iconOnly: false,
   },
   compoundVariants: [
@@ -270,23 +279,22 @@ const buttonStyles = tv({
     {
       iconOnly: true,
       size: "sm",
-      class: {
-        base: "size-8",
-      },
+      class: { base: "size-8" },
+    },
+    {
+      iconOnly: true,
+      size: "default",
+      class: { base: "size-9" },
     },
     {
       iconOnly: true,
       size: "md",
-      class: {
-        base: "size-9",
-      },
+      class: { base: "size-9" },
     },
     {
       iconOnly: true,
       size: "lg",
-      class: {
-        base: "size-12",
-      },
+      class: { base: "size-12" },
     },
   ],
 })

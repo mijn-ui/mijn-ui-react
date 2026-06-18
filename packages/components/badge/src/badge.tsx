@@ -21,6 +21,11 @@ const badgeStyles = tv({
       inverse: "",
     },
     variant: {
+      // Figma-aligned types
+      solid: "",
+      tonal: "",
+      modern: "",
+      // Additional variants
       filled: "",
       outlined: "",
       ghost: "",
@@ -29,6 +34,7 @@ const badgeStyles = tv({
     },
     radius: {
       default: "rounded-sm",
+      pill: "rounded-full",
       full: "rounded-full",
     },
     size: {
@@ -40,11 +46,38 @@ const badgeStyles = tv({
 
   defaultVariants: {
     size: "md",
-    variant: "filled",
+    variant: "solid",
     color: "default",
     radius: "default",
   },
   compoundVariants: [
+    // solid (Figma) = filled
+    { variant: "solid", color: "default", className: "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-xs border focus-visible:ring-offset-2" },
+    { variant: "solid", color: "brand", className: "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-xs" },
+    { variant: "solid", color: "secondary", className: "bg-bg-secondary text-fg-secondary shadow-xs hover:bg-bg-accent focus-visible:ring-outline-brand focus-visible:ring-offset-2 active:bg-bg-accent/70" },
+    { variant: "solid", color: "success", className: "bg-bg-success text-on-bg-success hover:bg-bg-success/80 focus-visible:ring-outline-success shadow-xs active:bg-bg-success/70" },
+    { variant: "solid", color: "warning", className: "bg-bg-warning text-on-bg-warning hover:bg-bg-warning/80 focus-visible:ring-outline-warning shadow-xs active:bg-bg-warning/70" },
+    { variant: "solid", color: "danger", className: "bg-bg-danger text-on-bg-danger hover:bg-bg-danger/80 focus-visible:ring-outline-danger shadow-xs active:bg-bg-danger/70" },
+    { variant: "solid", color: "inverse", className: "bg-bg-inverse text-fg-inverse shadow-xs hover:bg-bg-inverse/80 focus-visible:ring-outline-inverse active:bg-bg-inverse/70" },
+
+    // tonal (Figma) = subtle
+    { variant: "tonal", color: "default", className: "border border-outline-default text-fg-default shadow-sm bg-bg-accent/20 hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70" },
+    { variant: "tonal", color: "brand", className: "border border-outline-brand-subtle text-on-bg-brand-subtle bg-bg-brand-subtle hover:bg-bg-brand hover:text-on-bg-brand focus-visible:ring-outline-brand" },
+    { variant: "tonal", color: "secondary", className: "border border-outline-secondary text-fg-secondary shadow-sm bg-bg-secondary/40 hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70" },
+    { variant: "tonal", color: "success", className: "border border-outline-success-subtle text-on-bg-success-subtle bg-bg-success-subtle hover:bg-bg-success hover:text-on-bg-success focus-visible:ring-outline-success" },
+    { variant: "tonal", color: "warning", className: "border border-outline-warning-subtle text-on-bg-warning-subtle bg-bg-warning-subtle hover:bg-bg-warning hover:text-on-bg-warning focus-visible:ring-outline-warning" },
+    { variant: "tonal", color: "danger", className: "border border-outline-danger-subtle text-on-bg-danger-subtle bg-bg-danger-subtle hover:bg-bg-danger hover:text-on-bg-danger focus-visible:ring-outline-danger" },
+    { variant: "tonal", color: "inverse", className: "border border-outline-inverse text-bg-inverse bg-bg-inverse/20 hover:bg-bg-inverse hover:text-fg-inverse focus-visible:ring-outline-inverse" },
+
+    // modern (Figma) = outlined
+    { variant: "modern", color: "default", className: "border bg-transparent text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70" },
+    { variant: "modern", color: "brand", className: "border border-outline-brand bg-transparent text-fg-brand hover:bg-bg-brand hover:text-on-bg-brand focus-visible:ring-outline-brand active:bg-bg-brand/70" },
+    { variant: "modern", color: "secondary", className: "border border-outline-secondary bg-transparent text-fg-secondary hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70" },
+    { variant: "modern", color: "success", className: "border border-outline-success bg-transparent text-fg-success hover:bg-bg-success hover:text-on-bg-success focus-visible:ring-outline-success active:bg-bg-success/70" },
+    { variant: "modern", color: "warning", className: "border border-outline-warning bg-transparent text-fg-warning hover:bg-bg-warning hover:text-on-bg-warning focus-visible:ring-outline-warning active:bg-bg-warning/70" },
+    { variant: "modern", color: "danger", className: "border border-outline-danger bg-transparent text-fg-danger hover:bg-bg-danger hover:text-on-bg-danger focus-visible:ring-outline-danger active:bg-bg-danger/70" },
+    { variant: "modern", color: "inverse", className: "bg-transparent border border-outline-inverse text-bg-inverse shadow-xs hover:bg-bg-inverse focus-visible:ring-outline-inverse active:bg-bg-inverse/70 hover:text-fg-inverse" },
+
     // filled / colors
     {
       variant: "filled",

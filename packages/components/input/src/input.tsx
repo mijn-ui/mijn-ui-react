@@ -29,6 +29,7 @@ const inputStyles = tv({
       "bg-bg-secondary flex h-10 w-full px-3 py-2 text-sm",
       "placeholder:text-fg-tertiary",
       "file:bg-bg-secondary transition duration-300 file:border-0 file:text-sm file:font-medium",
+      "aria-[invalid=true]:border-outline-danger aria-[invalid=true]:ring-outline-danger",
     ],
     label: [
       "text-fg-tertiary bg-bg-secondary absolute start-2 top-2 z-10 max-w-fit origin-[0] -translate-y-4 scale-75 cursor-text px-2 text-sm duration-300",
@@ -62,6 +63,14 @@ const inputStyles = tv({
         ],
       },
     },
+    size: {
+      default: {
+        base: "h-10 text-sm px-3",
+      },
+      lg: {
+        base: "h-12 text-base px-4",
+      },
+    },
     disabled: {
       true: {
         wrapper: "pointer-events-none cursor-not-allowed opacity-50",
@@ -91,6 +100,7 @@ const inputStyles = tv({
   ],
   defaultVariants: {
     variant: "default",
+    size: "default",
   },
 })
 
@@ -112,6 +122,7 @@ export type InputProps = InputBaseProps &
 
 const Input = ({
   variant,
+  size,
   unstyled,
   className,
   classNames,
@@ -125,6 +136,7 @@ const Input = ({
 }: InputProps) => {
   const styles = inputStyles({
     variant,
+    size,
     disabled,
     startIcon: !!startIcon,
     endIcon: !!endIcon,

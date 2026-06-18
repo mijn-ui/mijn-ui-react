@@ -26,12 +26,15 @@ const accordionStyles = tv({
   },
   variants: {
     variant: {
-      default: {
+      // Figma-aligned intents
+      outline: {
         item: "border-b",
       },
-      contained: {
+      plain: {},
+      solid: {
         base: "py-2 px-4 bg-bg-secondary rounded-lg border divide-y divide-y-outline-default",
       },
+      // Additional variants
       splitted: {
         base: "space-y-1.5",
         item: "bg-bg-secondary px-4 rounded-lg border border-outline-default",
@@ -43,9 +46,27 @@ const accordionStyles = tv({
         content: "p-4 bg-bg-tertiary",
       },
     },
+    size: {
+      sm: {
+        trigger: "py-2 text-xs",
+        content: "text-xs",
+        contentWrapper: "text-xs",
+      },
+      md: {
+        trigger: "py-4 text-sm",
+        content: "text-sm",
+        contentWrapper: "text-sm",
+      },
+      lg: {
+        trigger: "py-5 text-base",
+        content: "text-base",
+        contentWrapper: "text-base",
+      },
+    },
   },
   defaultVariants: {
-    variant: "default",
+    variant: "outline",
+    size: "md",
   },
 })
 
@@ -95,9 +116,10 @@ const Accordion = ({
   classNames,
   unstyled = false,
   variant,
+  size,
   ...props
 }: AccordionProps) => {
-  const styles = accordionStyles({ variant })
+  const styles = accordionStyles({ variant, size })
   const { base } = createTVUnstyledSlots({ base: styles.base }, unstyled)
 
   return (

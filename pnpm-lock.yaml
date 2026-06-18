@@ -342,6 +342,43 @@ importers:
         specifier: workspace:*
         version: link:../../configs/tsup-config
 
+  packages/components/breadcrumb:
+    dependencies:
+      tailwind-merge:
+        specifier: ^3.0.0
+        version: 3.4.0
+      tailwind-variants:
+        specifier: ^3.0.0
+        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.1.17)
+    devDependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.5.6
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.7
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.2.3(@types/react@19.2.7)
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../configs/eslint-config-custom
+      react:
+        specifier: 19.0.1
+        version: 19.0.1
+      react-dom:
+        specifier: 19.0.1
+        version: 19.0.1(react@19.0.1)
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../configs/ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../configs/tsup-config
+
   packages/components/button:
     dependencies:
       '@mijn-ui/shared-icons':
@@ -1278,6 +1315,43 @@ importers:
       '@mijn-ui/react-label':
         specifier: workspace:*
         version: link:../label
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.5.6
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.7
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.2.3(@types/react@19.2.7)
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../configs/eslint-config-custom
+      react:
+        specifier: 19.0.1
+        version: 19.0.1
+      react-dom:
+        specifier: 19.0.1
+        version: 19.0.1(react@19.0.1)
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../configs/ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../configs/tsup-config
+
+  packages/components/toast:
+    dependencies:
+      tailwind-merge:
+        specifier: ^3.0.0
+        version: 3.4.0
+      tailwind-variants:
+        specifier: ^3.0.0
+        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.1.17)
+    devDependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.5.6
