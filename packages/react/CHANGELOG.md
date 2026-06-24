@@ -1,5 +1,25 @@
 # @mijn-ui/react
 
+## 0.4.14
+
+### Patch Changes
+
+- Updated dependencies [19ac9d1]
+  - @mijn-ui/react-accordion@0.5.0
+  - @mijn-ui/react-badge@0.5.0
+  - @mijn-ui/react-button@0.6.0
+  - @mijn-ui/react-input@0.5.0
+  - @mijn-ui/react-calendar@0.4.2
+  - @mijn-ui/react-alert-dialog@0.4.2
+  - @mijn-ui/react-autocomplete@0.3.5
+  - @mijn-ui/react-card@0.4.2
+  - @mijn-ui/react-dialog@0.4.5
+  - @mijn-ui/react-dropdown-menu@0.4.2
+  - @mijn-ui/react-label@0.4.2
+  - @mijn-ui/react-popover@0.4.2
+  - @mijn-ui/react-tabs@0.4.2
+  - @mijn-ui/react-command@0.4.5
+
 ## 0.4.13
 
 ### Patch Changes
