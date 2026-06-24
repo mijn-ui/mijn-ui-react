@@ -1,5 +1,11 @@
 # @mijn-ui-react/command
 
+## 0.4.5
+
+### Patch Changes
+
+- @mijn-ui/react-dialog@0.4.5
+
 ## 0.4.4
 
 ### Patch Changes
