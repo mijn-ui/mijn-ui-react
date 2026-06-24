@@ -1,0 +1,57 @@
+{
+  "name": "@mijn-ui/react-toast",
+  "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
+  "version": "0.1.0",
+  "homepage": "https://mijn-ui.vercel.app",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mijn-ui/mijn-ui-react.git",
+    "directory": "packages/components/toast"
+  },
+  "bugs": {
+    "url": "https://github.com/mijn-ui/mijn-ui-react/issues"
+  },
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist .turbo",
+    "build": "tsup",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "types:check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@mijn-ui/react-core": "workspace:*",
+    "react": "19.0.1",
+    "react-dom": "19.0.1",
+    "@next/eslint-plugin-next": "^15.0.3",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "tsup-config": "workspace:*"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^19.0",
+    "react-dom": "^19.0",
+    "@mijn-ui/react-core": "^0.5.0",
+    "tailwind-merge": "^3.0.0",
+    "tailwind-variants": "^3.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "toast",
+    "notification",
+    "react",
+    "nextjs"
+  ]
+}
