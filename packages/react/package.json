@@ -36,6 +36,7 @@
     "@mijn-ui/shared-icons": "workspace:*",
     "@mijn-ui/react-accordion": "workspace:*",
     "@mijn-ui/react-alert": "workspace:*",
+    "@mijn-ui/react-breadcrumb": "workspace:*",
     "@mijn-ui/react-alert-dialog": "workspace:*",
     "@mijn-ui/react-autocomplete": "workspace:*",
     "@mijn-ui/react-avatar": "workspace:*",
@@ -62,7 +63,8 @@
     "@mijn-ui/react-switch": "workspace:*",
     "@mijn-ui/react-table": "workspace:*",
     "@mijn-ui/react-tabs": "workspace:*",
-    "@mijn-ui/react-textarea": "workspace:*"
+    "@mijn-ui/react-textarea": "workspace:*",
+    "@mijn-ui/react-toast": "workspace:*"
   },
   "devDependencies": {
     "tsconfig": "workspace:*",
