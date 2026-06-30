@@ -1437,6 +1437,9 @@ importers:
       '@mijn-ui/react-badge':
         specifier: workspace:*
         version: link:../components/badge
+      '@mijn-ui/react-breadcrumb':
+        specifier: workspace:*
+        version: link:../components/breadcrumb
       '@mijn-ui/react-button':
         specifier: workspace:*
         version: link:../components/button
@@ -1506,6 +1509,9 @@ importers:
       '@mijn-ui/react-textarea':
         specifier: workspace:*
         version: link:../components/textarea
+      '@mijn-ui/react-toast':
+        specifier: workspace:*
+        version: link:../components/toast
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../utilities/shared-icons
