@@ -1,5 +1,11 @@
 # @mijn-ui/react
 
+## 0.5.0
+
+### Minor Changes
+
+- d44e61a: Add `@mijn-ui/react-breadcrumb` and `@mijn-ui/react-toast` to the umbrella package exports.
+
 ## 0.4.14
 
 ### Patch Changes
