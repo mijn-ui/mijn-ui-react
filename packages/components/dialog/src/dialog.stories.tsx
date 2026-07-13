@@ -67,7 +67,7 @@ const DialogTemplate = (args: DialogProps) => {
         <DialogFooter>
           <DialogClose>Cancel</DialogClose>
           <DialogClose asChild unstyled>
-            <Button variant="primary">Confirm</Button>
+            <Button variant="brand">Confirm</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>

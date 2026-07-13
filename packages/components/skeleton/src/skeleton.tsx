@@ -1,8 +1,4 @@
-import {
-  createContext,
-  createTVUnstyledSlots,
-  useTVUnstyled,
-} from "@mijn-ui/react-core"
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
 import { VariantProps, tv } from "tailwind-variants"
 
 const skeletonStyles = tv({

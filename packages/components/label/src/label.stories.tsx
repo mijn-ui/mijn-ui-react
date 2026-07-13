@@ -29,7 +29,7 @@ const LabelTemplate = (args: LabelProps) => {
         placeholder="Enter your feedback ..."
       ></textarea>
       <Button
-        color="primary"
+        color="brand"
         unstyled={args.unstyled}
         className={args.unstyled ? "bg-accent w-full py-2" : ""}
       >

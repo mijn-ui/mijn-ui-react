@@ -99,7 +99,7 @@ const CardCustom = (args: CardProps) => {
       </CardContent>
       <CardFooter className="overflow-hidden rounded-b-xl p-0">
         <Button
-          variant="primary"
+          variant="brand"
           className="w-full gap-2 rounded-none py-5 font-semibold tracking-wider"
           unstyled={args.unstyled}
         >

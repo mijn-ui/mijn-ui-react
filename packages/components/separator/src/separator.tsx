@@ -1,11 +1,7 @@
 "use client"
 
 import * as React from "react"
-import {
-  createContext,
-  createTVUnstyledSlots,
-  useTVUnstyled,
-} from "@mijn-ui/react-core"
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
 import * as SeparatorPrimitive from "@radix-ui/react-separator"
 import { VariantProps, tv } from "tailwind-variants"
 
