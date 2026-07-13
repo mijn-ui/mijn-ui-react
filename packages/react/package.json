@@ -44,6 +44,7 @@
     "@mijn-ui/react-button": "workspace:*",
     "@mijn-ui/react-calendar": "workspace:*",
     "@mijn-ui/react-card": "workspace:*",
+    "@mijn-ui/react-charts": "workspace:*",
     "@mijn-ui/react-checkbox": "workspace:*",
     "@mijn-ui/react-collapsible": "workspace:*",
     "@mijn-ui/react-command": "workspace:*",

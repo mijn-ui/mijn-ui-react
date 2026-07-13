@@ -21,6 +21,7 @@ the [Foundation tokens](../foundation/README.md) (color, spacing, radius, etc.).
 | [Breadcrumb](./breadcrumb.md) | State | — _(Figma only)_ |
 | [Button](./button.md) | Type, Size, State, Icon Only | `@mijn-ui/react-button` |
 | [Calendar](./calendar.md) | Type, State, isEnabled | `@mijn-ui/react-calendar` |
+| [Charts](./charts.md) | — _(code only)_ | `@mijn-ui/react-charts` |
 | [Checkbox](./checkbox.md) | Type (Check/Indeterminate/Radio), isChecked, isEnabled | `@mijn-ui/react-checkbox` (+ `react-radio-group`) |
 | [Date Picker](./date-picker.md) | Type, Active, Alignment, isOpened | — _(composed)_ |
 | [Dialog](./dialog.md) | (compound) | `@mijn-ui/react-dialog` |
