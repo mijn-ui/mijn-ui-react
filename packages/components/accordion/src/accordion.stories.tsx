@@ -54,7 +54,7 @@ const AccordionTemplate = (args: AccordionProps) => (
 const AccordionVariants = (args: AccordionProps) => {
   return (
     <div className="flex flex-col w-96 items-center gap-8">
-      <Accordion className="w-full" {...args} variant="default">
+      <Accordion className="w-full" {...args} variant="outline">
         <AccordionItem value="item-1">
           <AccordionTrigger>What is your return policy?</AccordionTrigger>
           <AccordionContent>
@@ -72,7 +72,7 @@ const AccordionVariants = (args: AccordionProps) => {
         </AccordionItem>
       </Accordion>
 
-      <Accordion className="w-full" {...args} variant="contained">
+      <Accordion className="w-full" {...args} variant="solid">
         <AccordionItem value="item-1">
           <AccordionTrigger>What is your return policy?</AccordionTrigger>
           <AccordionContent>

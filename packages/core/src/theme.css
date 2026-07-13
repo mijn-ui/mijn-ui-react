@@ -61,6 +61,170 @@
   --color-outline-danger-subtle: hsl(0 96% 89%);
   --color-fg-danger: hsl(0 74% 42%);
 
+  /* Categorical (charts, tags, category coding) */
+
+  /* Red */
+  --color-bg-red: hsl(0 84% 60%);
+  --color-on-bg-red: hsl(0 86% 97%);
+  --color-outline-red: hsl(0 84% 60%);
+  --color-bg-red-subtle: hsl(0 93% 94%);
+  --color-on-bg-red-subtle: hsl(0 63% 31%);
+  --color-outline-red-subtle: hsl(0 96% 89%);
+  --color-fg-red: hsl(0 72% 51%);
+
+  /* Orange */
+  --color-bg-orange: hsl(25 95% 53%);
+  --color-on-bg-orange: hsl(33 100% 96%);
+  --color-outline-orange: hsl(25 95% 53%);
+  --color-bg-orange-subtle: hsl(34 100% 92%);
+  --color-on-bg-orange-subtle: hsl(15 75% 28%);
+  --color-outline-orange-subtle: hsl(32 98% 83%);
+  --color-fg-orange: hsl(21 90% 48%);
+
+  /* Amber */
+  --color-bg-amber: hsl(38 92% 50%);
+  --color-on-bg-amber: hsl(48 100% 96%);
+  --color-outline-amber: hsl(38 92% 50%);
+  --color-bg-amber-subtle: hsl(48 96% 89%);
+  --color-on-bg-amber-subtle: hsl(22 78% 26%);
+  --color-outline-amber-subtle: hsl(48 97% 77%);
+  --color-fg-amber: hsl(32 95% 44%);
+
+  /* Yellow */
+  --color-bg-yellow: hsl(45 93% 47%);
+  --color-on-bg-yellow: hsl(55 92% 95%);
+  --color-outline-yellow: hsl(45 93% 47%);
+  --color-bg-yellow-subtle: hsl(55 97% 88%);
+  --color-on-bg-yellow-subtle: hsl(28 73% 26%);
+  --color-outline-yellow-subtle: hsl(53 98% 77%);
+  --color-fg-yellow: hsl(41 96% 40%);
+
+  /* Lime */
+  --color-bg-lime: hsl(84 81% 44%);
+  --color-on-bg-lime: hsl(78 92% 95%);
+  --color-outline-lime: hsl(84 81% 44%);
+  --color-bg-lime-subtle: hsl(80 89% 89%);
+  --color-on-bg-lime-subtle: hsl(88 61% 20%);
+  --color-outline-lime-subtle: hsl(81 88% 80%);
+  --color-fg-lime: hsl(85 85% 35%);
+
+  /* Green */
+  --color-bg-green: hsl(142 71% 45%);
+  --color-on-bg-green: hsl(138 76% 97%);
+  --color-outline-green: hsl(142 71% 45%);
+  --color-bg-green-subtle: hsl(141 84% 93%);
+  --color-on-bg-green-subtle: hsl(144 61% 20%);
+  --color-outline-green-subtle: hsl(141 79% 85%);
+  --color-fg-green: hsl(142 76% 36%);
+
+  /* Emerald */
+  --color-bg-emerald: hsl(160 84% 39%);
+  --color-on-bg-emerald: hsl(152 81% 96%);
+  --color-outline-emerald: hsl(160 84% 39%);
+  --color-bg-emerald-subtle: hsl(149 80% 90%);
+  --color-on-bg-emerald-subtle: hsl(164 86% 16%);
+  --color-outline-emerald-subtle: hsl(152 76% 80%);
+  --color-fg-emerald: hsl(161 94% 30%);
+
+  /* Teal */
+  --color-bg-teal: hsl(173 80% 40%);
+  --color-on-bg-teal: hsl(166 76% 97%);
+  --color-outline-teal: hsl(173 80% 40%);
+  --color-bg-teal-subtle: hsl(167 85% 89%);
+  --color-on-bg-teal-subtle: hsl(176 61% 19%);
+  --color-outline-teal-subtle: hsl(168 84% 78%);
+  --color-fg-teal: hsl(175 84% 32%);
+
+  /* Cyan */
+  --color-bg-cyan: hsl(189 94% 43%);
+  --color-on-bg-cyan: hsl(183 100% 96%);
+  --color-outline-cyan: hsl(189 94% 43%);
+  --color-bg-cyan-subtle: hsl(185 96% 90%);
+  --color-on-bg-cyan-subtle: hsl(196 64% 24%);
+  --color-outline-cyan-subtle: hsl(186 94% 82%);
+  --color-fg-cyan: hsl(192 91% 36%);
+
+  /* Sky */
+  --color-bg-sky: hsl(199 89% 48%);
+  --color-on-bg-sky: hsl(204 100% 97%);
+  --color-outline-sky: hsl(199 89% 48%);
+  --color-bg-sky-subtle: hsl(204 94% 94%);
+  --color-on-bg-sky-subtle: hsl(202 80% 24%);
+  --color-outline-sky-subtle: hsl(201 94% 86%);
+  --color-fg-sky: hsl(200 98% 39%);
+
+  /* Blue */
+  --color-bg-blue: hsl(217 91% 60%);
+  --color-on-bg-blue: hsl(214 100% 97%);
+  --color-outline-blue: hsl(217 91% 60%);
+  --color-bg-blue-subtle: hsl(214 95% 93%);
+  --color-on-bg-blue-subtle: hsl(224 64% 33%);
+  --color-outline-blue-subtle: hsl(213 97% 87%);
+  --color-fg-blue: hsl(221 83% 53%);
+
+  /* Indigo */
+  --color-bg-indigo: hsl(239 84% 67%);
+  --color-on-bg-indigo: hsl(226 100% 97%);
+  --color-outline-indigo: hsl(239 84% 67%);
+  --color-bg-indigo-subtle: hsl(226 100% 94%);
+  --color-on-bg-indigo-subtle: hsl(242 47% 34%);
+  --color-outline-indigo-subtle: hsl(228 96% 89%);
+  --color-fg-indigo: hsl(243 75% 59%);
+
+  /* Violet */
+  --color-bg-violet: hsl(258 90% 66%);
+  --color-on-bg-violet: hsl(250 100% 98%);
+  --color-outline-violet: hsl(258 90% 66%);
+  --color-bg-violet-subtle: hsl(251 91% 95%);
+  --color-on-bg-violet-subtle: hsl(264 67% 35%);
+  --color-outline-violet-subtle: hsl(251 95% 92%);
+  --color-fg-violet: hsl(262 83% 58%);
+
+  /* Purple */
+  --color-bg-purple: hsl(271 91% 65%);
+  --color-on-bg-purple: hsl(270 100% 98%);
+  --color-outline-purple: hsl(271 91% 65%);
+  --color-bg-purple-subtle: hsl(269 100% 95%);
+  --color-on-bg-purple-subtle: hsl(274 66% 32%);
+  --color-outline-purple-subtle: hsl(269 100% 92%);
+  --color-fg-purple: hsl(271 81% 56%);
+
+  /* Fuchsia */
+  --color-bg-fuchsia: hsl(292 84% 61%);
+  --color-on-bg-fuchsia: hsl(289 100% 98%);
+  --color-outline-fuchsia: hsl(292 84% 61%);
+  --color-bg-fuchsia-subtle: hsl(287 100% 95%);
+  --color-on-bg-fuchsia-subtle: hsl(297 64% 28%);
+  --color-outline-fuchsia-subtle: hsl(288 96% 91%);
+  --color-fg-fuchsia: hsl(293 69% 49%);
+
+  /* Pink */
+  --color-bg-pink: hsl(330 81% 60%);
+  --color-on-bg-pink: hsl(327 73% 97%);
+  --color-outline-pink: hsl(330 81% 60%);
+  --color-bg-pink-subtle: hsl(326 78% 95%);
+  --color-on-bg-pink-subtle: hsl(336 69% 30%);
+  --color-outline-pink-subtle: hsl(326 85% 90%);
+  --color-fg-pink: hsl(333 71% 51%);
+
+  /* Rose */
+  --color-bg-rose: hsl(350 89% 60%);
+  --color-on-bg-rose: hsl(356 100% 97%);
+  --color-outline-rose: hsl(350 89% 60%);
+  --color-bg-rose-subtle: hsl(356 100% 95%);
+  --color-on-bg-rose-subtle: hsl(342 75% 30%);
+  --color-outline-rose-subtle: hsl(353 96% 90%);
+  --color-fg-rose: hsl(347 77% 50%);
+
+  /* Gray */
+  --color-bg-gray: hsl(220 9% 46%);
+  --color-on-bg-gray: hsl(210 20% 98%);
+  --color-outline-gray: hsl(220 9% 46%);
+  --color-bg-gray-subtle: hsl(220 14% 96%);
+  --color-on-bg-gray-subtle: hsl(221 39% 11%);
+  --color-outline-gray-subtle: hsl(220 13% 91%);
+  --color-fg-gray: hsl(215 14% 34%);
+
   /* Radius */
   --radius-2xs: 0.125rem; /* 2px */
   --radius-xs: 0.25rem; /* 4px */
@@ -147,6 +311,170 @@
   --color-on-bg-danger-subtle: hsl(0 93% 84%);
   --color-outline-danger-subtle: hsl(0 70% 35%);
   --color-fg-danger: hsl(0 91% 71%);
+
+  /* Categorical (charts, tags, category coding) */
+
+  /* Red */
+  --color-bg-red: hsl(0 91% 71%);
+  --color-on-bg-red: hsl(0 75% 15%);
+  --color-outline-red: hsl(0 91% 71%);
+  --color-bg-red-subtle: hsl(0 63% 16%);
+  --color-on-bg-red-subtle: hsl(0 93% 84%);
+  --color-outline-red-subtle: hsl(0 70% 35%);
+  --color-fg-red: hsl(0 91% 71%);
+
+  /* Orange */
+  --color-bg-orange: hsl(27 96% 61%);
+  --color-on-bg-orange: hsl(13 81% 15%);
+  --color-outline-orange: hsl(27 96% 61%);
+  --color-bg-orange-subtle: hsl(15 75% 16%);
+  --color-on-bg-orange-subtle: hsl(34 100% 84%);
+  --color-outline-orange-subtle: hsl(15 79% 34%);
+  --color-fg-orange: hsl(27 96% 61%);
+
+  /* Amber */
+  --color-bg-amber: hsl(43 96% 56%);
+  --color-on-bg-amber: hsl(21 92% 14%);
+  --color-outline-amber: hsl(43 96% 56%);
+  --color-bg-amber-subtle: hsl(22 78% 16%);
+  --color-on-bg-amber-subtle: hsl(48 96% 84%);
+  --color-outline-amber-subtle: hsl(23 83% 31%);
+  --color-fg-amber: hsl(43 96% 56%);
+
+  /* Yellow */
+  --color-bg-yellow: hsl(48 96% 53%);
+  --color-on-bg-yellow: hsl(26 83% 14%);
+  --color-outline-yellow: hsl(48 96% 53%);
+  --color-bg-yellow-subtle: hsl(28 73% 16%);
+  --color-on-bg-yellow-subtle: hsl(55 97% 84%);
+  --color-outline-yellow-subtle: hsl(32 81% 29%);
+  --color-fg-yellow: hsl(48 96% 53%);
+
+  /* Lime */
+  --color-bg-lime: hsl(83 78% 55%);
+  --color-on-bg-lime: hsl(89 80% 10%);
+  --color-outline-lime: hsl(83 78% 55%);
+  --color-bg-lime-subtle: hsl(88 61% 16%);
+  --color-on-bg-lime-subtle: hsl(80 89% 84%);
+  --color-outline-lime-subtle: hsl(86 69% 23%);
+  --color-fg-lime: hsl(83 78% 55%);
+
+  /* Green */
+  --color-bg-green: hsl(142 69% 58%);
+  --color-on-bg-green: hsl(145 80% 10%);
+  --color-outline-green: hsl(142 69% 58%);
+  --color-bg-green-subtle: hsl(144 61% 16%);
+  --color-on-bg-green-subtle: hsl(141 84% 84%);
+  --color-outline-green-subtle: hsl(143 64% 24%);
+  --color-fg-green: hsl(142 69% 58%);
+
+  /* Emerald */
+  --color-bg-emerald: hsl(158 64% 52%);
+  --color-on-bg-emerald: hsl(166 91% 9%);
+  --color-outline-emerald: hsl(158 64% 52%);
+  --color-bg-emerald-subtle: hsl(164 86% 16%);
+  --color-on-bg-emerald-subtle: hsl(149 80% 84%);
+  --color-outline-emerald-subtle: hsl(163 88% 20%);
+  --color-fg-emerald: hsl(158 64% 52%);
+
+  /* Teal */
+  --color-bg-teal: hsl(172 66% 50%);
+  --color-on-bg-teal: hsl(179 84% 10%);
+  --color-outline-teal: hsl(172 66% 50%);
+  --color-bg-teal-subtle: hsl(176 61% 16%);
+  --color-on-bg-teal-subtle: hsl(167 85% 84%);
+  --color-outline-teal-subtle: hsl(176 69% 22%);
+  --color-fg-teal: hsl(172 66% 50%);
+
+  /* Cyan */
+  --color-bg-cyan: hsl(188 86% 53%);
+  --color-on-bg-cyan: hsl(197 79% 15%);
+  --color-outline-cyan: hsl(188 86% 53%);
+  --color-bg-cyan-subtle: hsl(196 64% 16%);
+  --color-on-bg-cyan-subtle: hsl(185 96% 84%);
+  --color-outline-cyan-subtle: hsl(194 70% 27%);
+  --color-fg-cyan: hsl(188 86% 53%);
+
+  /* Sky */
+  --color-bg-sky: hsl(198 93% 60%);
+  --color-on-bg-sky: hsl(204 80% 16%);
+  --color-outline-sky: hsl(198 93% 60%);
+  --color-bg-sky-subtle: hsl(202 80% 16%);
+  --color-on-bg-sky-subtle: hsl(204 94% 84%);
+  --color-outline-sky-subtle: hsl(201 90% 27%);
+  --color-fg-sky: hsl(198 93% 60%);
+
+  /* Blue */
+  --color-bg-blue: hsl(213 94% 68%);
+  --color-on-bg-blue: hsl(226 57% 21%);
+  --color-outline-blue: hsl(213 94% 68%);
+  --color-bg-blue-subtle: hsl(224 64% 16%);
+  --color-on-bg-blue-subtle: hsl(214 95% 84%);
+  --color-outline-blue-subtle: hsl(226 71% 40%);
+  --color-fg-blue: hsl(213 94% 68%);
+
+  /* Indigo */
+  --color-bg-indigo: hsl(234 89% 74%);
+  --color-on-bg-indigo: hsl(244 47% 20%);
+  --color-outline-indigo: hsl(234 89% 74%);
+  --color-bg-indigo-subtle: hsl(242 47% 16%);
+  --color-on-bg-indigo-subtle: hsl(226 100% 84%);
+  --color-outline-indigo-subtle: hsl(244 55% 41%);
+  --color-fg-indigo: hsl(234 89% 74%);
+
+  /* Violet */
+  --color-bg-violet: hsl(255 92% 76%);
+  --color-on-bg-violet: hsl(261 73% 23%);
+  --color-outline-violet: hsl(255 92% 76%);
+  --color-bg-violet-subtle: hsl(264 67% 16%);
+  --color-on-bg-violet-subtle: hsl(251 91% 84%);
+  --color-outline-violet-subtle: hsl(263 69% 42%);
+  --color-fg-violet: hsl(255 92% 76%);
+
+  /* Purple */
+  --color-bg-purple: hsl(270 95% 75%);
+  --color-on-bg-purple: hsl(274 87% 21%);
+  --color-outline-purple: hsl(270 95% 75%);
+  --color-bg-purple-subtle: hsl(274 66% 16%);
+  --color-on-bg-purple-subtle: hsl(269 100% 84%);
+  --color-outline-purple-subtle: hsl(273 67% 39%);
+  --color-fg-purple: hsl(270 95% 75%);
+
+  /* Fuchsia */
+  --color-bg-fuchsia: hsl(292 91% 73%);
+  --color-on-bg-fuchsia: hsl(297 90% 16%);
+  --color-outline-fuchsia: hsl(292 91% 73%);
+  --color-bg-fuchsia-subtle: hsl(297 64% 16%);
+  --color-on-bg-fuchsia-subtle: hsl(287 100% 84%);
+  --color-outline-fuchsia-subtle: hsl(295 70% 33%);
+  --color-fg-fuchsia: hsl(292 91% 73%);
+
+  /* Pink */
+  --color-bg-pink: hsl(329 86% 70%);
+  --color-on-bg-pink: hsl(336 84% 17%);
+  --color-outline-pink: hsl(329 86% 70%);
+  --color-bg-pink-subtle: hsl(336 69% 16%);
+  --color-on-bg-pink-subtle: hsl(326 78% 84%);
+  --color-outline-pink-subtle: hsl(336 74% 35%);
+  --color-fg-pink: hsl(329 86% 70%);
+
+  /* Rose */
+  --color-bg-rose: hsl(351 95% 71%);
+  --color-on-bg-rose: hsl(343 88% 16%);
+  --color-outline-rose: hsl(351 95% 71%);
+  --color-bg-rose-subtle: hsl(342 75% 16%);
+  --color-on-bg-rose-subtle: hsl(356 100% 84%);
+  --color-outline-rose-subtle: hsl(343 80% 35%);
+  --color-fg-rose: hsl(351 95% 71%);
+
+  /* Gray */
+  --color-bg-gray: hsl(218 11% 65%);
+  --color-on-bg-gray: hsl(224 71% 4%);
+  --color-outline-gray: hsl(218 11% 65%);
+  --color-bg-gray-subtle: hsl(221 39% 16%);
+  --color-on-bg-gray-subtle: hsl(220 14% 84%);
+  --color-outline-gray-subtle: hsl(215 28% 17%);
+  --color-fg-gray: hsl(218 11% 65%);
 }
 
 /* -------------------------------------------------------------------------- */

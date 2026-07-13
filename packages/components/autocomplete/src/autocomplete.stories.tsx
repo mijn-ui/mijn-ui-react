@@ -169,7 +169,7 @@ const AutocompleteWithDialog = (args: AutocompleteProps) => {
         <div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
           <DialogClose>Cancel</DialogClose>
           <DialogClose unstyled asChild>
-            <Button color="primary">Add User</Button>
+            <Button color="brand">Add User</Button>
           </DialogClose>
         </div>
       </DialogContent>

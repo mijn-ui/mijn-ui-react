@@ -1,9 +1,5 @@
 import * as React from "react"
-import {
-  createContext,
-  createTVUnstyledSlots,
-  useTVUnstyled,
-} from "@mijn-ui/react-core"
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
 import { VariantProps, tv } from "tailwind-variants"
 
 const badgeStyles = tv({

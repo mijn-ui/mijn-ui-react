@@ -157,7 +157,7 @@ const DropdownMenuRadioGroups = (args: DropdownMenuProps) => {
   return (
     <DropdownMenu {...args}>
       <DropdownMenuTrigger asChild unstyled>
-        <Button color="primary">
+        <Button color="brand">
           <Filter className="size-4" />
           <span className="px-1">Filters</span>
         </Button>
