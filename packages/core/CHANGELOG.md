@@ -1,5 +1,11 @@
 # @mijn-ui/react-core
 
+## 0.5.1
+
+### Patch Changes
+
+- 445df5b: Add `@mijn-ui/react-charts` — `BarChart`, `GroupedBarChart`, `DonutChart`, `Sparkline`, and `ChartLegend` — plus categorical hue tokens in the core theme, and export the new package from the umbrella.
+
 ## 0.5.0
 
 ### Minor Changes

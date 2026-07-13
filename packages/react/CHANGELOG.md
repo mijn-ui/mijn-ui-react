@@ -1,5 +1,47 @@
 # @mijn-ui/react
 
+## 0.6.0
+
+### Minor Changes
+
+- 445df5b: Add `@mijn-ui/react-charts` — `BarChart`, `GroupedBarChart`, `DonutChart`, `Sparkline`, and `ChartLegend` — plus categorical hue tokens in the core theme, and export the new package from the umbrella.
+
+### Patch Changes
+
+- Updated dependencies [445df5b]
+  - @mijn-ui/react-charts@0.1.0
+  - @mijn-ui/react-core@0.5.1
+  - @mijn-ui/react-accordion@0.5.0
+  - @mijn-ui/react-alert@0.4.5
+  - @mijn-ui/react-alert-dialog@0.4.2
+  - @mijn-ui/react-autocomplete@0.3.5
+  - @mijn-ui/react-avatar@0.4.4
+  - @mijn-ui/react-badge@0.5.0
+  - @mijn-ui/react-breadcrumb@0.2.0
+  - @mijn-ui/react-button@0.6.0
+  - @mijn-ui/react-calendar@0.4.2
+  - @mijn-ui/react-card@0.4.2
+  - @mijn-ui/react-checkbox@0.4.2
+  - @mijn-ui/react-collapsible@0.4.0
+  - @mijn-ui/react-command@0.4.5
+  - @mijn-ui/react-dialog@0.4.5
+  - @mijn-ui/react-dropdown-menu@0.4.2
+  - @mijn-ui/react-input@0.5.0
+  - @mijn-ui/react-label@0.4.2
+  - @mijn-ui/react-pagination@0.4.2
+  - @mijn-ui/react-popover@0.4.2
+  - @mijn-ui/react-progress@0.4.2
+  - @mijn-ui/react-radio-group@0.4.2
+  - @mijn-ui/react-scroll-area@0.4.2
+  - @mijn-ui/react-select@0.4.2
+  - @mijn-ui/react-separator@0.4.2
+  - @mijn-ui/react-skeleton@0.4.2
+  - @mijn-ui/react-switch@0.4.4
+  - @mijn-ui/react-table@0.4.2
+  - @mijn-ui/react-tabs@0.4.2
+  - @mijn-ui/react-textarea@0.4.2
+  - @mijn-ui/react-toast@0.2.0
+
 ## 0.5.0
 
 ### Minor Changes
