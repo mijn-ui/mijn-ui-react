@@ -1,2 +1,6 @@
 packages:
   - "packages/**/**"
+
+# Supply-chain guard: don't resolve a dependency version until it has been on
+# the registry for a day, so a compromised release is usually caught first.
+minimumReleaseAge: 1440
