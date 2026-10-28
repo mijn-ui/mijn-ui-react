@@ -2,7 +2,7 @@
 
 A component for displaying critical information or notifications.
 
-[Documentation](https://mijn-ui.vercel.app/react/docs/components/alert)
+[Documentation](https://mijnui.vercel.app/docs/react/components/alert)
 
 ## Installation
 

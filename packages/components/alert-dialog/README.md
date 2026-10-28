@@ -2,7 +2,7 @@
 
 A modal dialog for alerting users about important actions or decisions.
 
-[Documentation](https://mijn-ui.vercel.app/react/docs/components/alert-dialog)
+[Documentation](https://mijnui.vercel.app/docs/react/components/alert-dialog)
 
 ## Installation
 

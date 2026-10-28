@@ -2,7 +2,7 @@
 
 A text label for form controls.
 
-[Documentation](https://mijn-ui.vercel.app/react/docs/components/label)
+[Documentation](https://mijnui.vercel.app/docs/react/components/label)
 
 ## Installation
 

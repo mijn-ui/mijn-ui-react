@@ -2,7 +2,7 @@
 
 A toggleable area for showing or hiding content.
 
-[Documentation](https://mijn-ui.vercel.app/react/docs/components/collapsible)
+[Documentation](https://mijnui.vercel.app/docs/react)
 
 ## Installation
 

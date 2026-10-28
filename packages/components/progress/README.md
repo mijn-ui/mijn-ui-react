@@ -2,7 +2,7 @@
 
 A visual indicator of task completion or status.
 
-[Documentation](https://mijn-ui.vercel.app/react/docs/components/progress)
+[Documentation](https://mijnui.vercel.app/docs/react/components/progress)
 
 ## Installation
 

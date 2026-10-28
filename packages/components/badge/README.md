@@ -2,7 +2,7 @@
 
 Displays a badge or a component that looks like a badge.
 
-[Documentation](https://mijn-ui.vercel.app/react/docs/components/badge)
+[Documentation](https://mijnui.vercel.app/docs/react/components/badge)
 
 ## Installation
 

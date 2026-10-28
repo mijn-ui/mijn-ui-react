@@ -2,7 +2,7 @@
 
 A dropdown selector for single or multiple options.
 
-[Documentation](https://mijn-ui.vercel.app/react/docs/components/select)
+[Documentation](https://mijnui.vercel.app/docs/react/components/select)
 
 ## Installation
 

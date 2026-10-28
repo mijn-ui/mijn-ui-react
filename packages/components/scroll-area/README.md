@@ -2,7 +2,7 @@
 
 A custom scrollable container for overflowing content.
 
-[Documentation](https://mijn-ui.vercel.app/react/docs/components/scroll-area)
+[Documentation](https://mijnui.vercel.app/docs/react/components/scroll-area)
 
 ## Installation
 

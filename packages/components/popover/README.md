@@ -2,7 +2,7 @@
 
 A floating panel for contextual information or actions.
 
-[Documentation](https://mijn-ui.vercel.app/react/docs/components/popover)
+[Documentation](https://mijnui.vercel.app/docs/react/components/popover)
 
 ## Installation
 

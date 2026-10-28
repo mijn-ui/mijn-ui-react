@@ -2,7 +2,7 @@
 
 A structured layout for displaying tabular data.
 
-[Documentation](https://mijn-ui.vercel.app/react/docs/components/table)
+[Documentation](https://mijnui.vercel.app/docs/react/components/table)
 
 ## Installation
 

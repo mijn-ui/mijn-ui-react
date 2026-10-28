@@ -2,7 +2,7 @@
 
 A basic input field for user text entry.
 
-[Documentation](https://mijn-ui.vercel.app/react/docs/components/input)
+[Documentation](https://mijnui.vercel.app/docs/react/components/input)
 
 ## Installation
 

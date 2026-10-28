@@ -2,7 +2,7 @@
 
 Lightweight, token-driven charts: bar, grouped bar, donut, sparkline, and legend.
 
-[Documentation](https://mijn-ui.vercel.app/react/docs/components/charts)
+[Documentation](https://mijnui.vercel.app/docs/react)
 
 ## Installation
 

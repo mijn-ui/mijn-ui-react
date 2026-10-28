@@ -2,7 +2,7 @@
   "name": "@mijn-ui/react-switch",
   "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
   "version": "0.4.4",
-  "homepage": "https://mijn-ui.vercel.app",
+  "homepage": "https://mijnui.vercel.app/docs/react",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
