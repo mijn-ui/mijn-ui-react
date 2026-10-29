@@ -16,7 +16,8 @@
     "prettier": "prettier --cache --write --list-different --ignore-path .gitignore --ignore-path .prettierignore .",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "check:security-sinks": "node scripts/check-security-sinks.mjs"
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.1",

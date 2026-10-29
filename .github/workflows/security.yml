@@ -1,0 +1,84 @@
+name: Security
+
+# Runs on every PR and push to main, and weekly: new advisories are published
+# against code nobody touched, and the only way to see them is to look again.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 3 * * 1" # Mondays 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dependencies:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
+
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
+        with:
+          node-version: 24
+
+      # The lockfile, dev tooling included — the release job installs and runs
+      # it with the npm token in reach. Fails on high or critical.
+      - run: pnpm audit --audit-level high
+
+  code:
+    name: Security sinks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
+        with:
+          node-version: 24
+
+      # Dependency-free: HTML injection, eval, iframes, window.open, message
+      # listeners, javascript: URLs, tokens in web storage. Reviewed occurrences
+      # live in security-sinks.json with their reason. Every package's src/.
+      - run: node scripts/check-security-sinks.mjs
+
+  workflows:
+    name: Workflow audit (zizmor)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          persist-credentials: false
+
+      # Unpinned actions, broad permissions, template injection, persisted
+      # credentials, cache poisoning. Fails the job; no SARIF upload needed.
+      - uses: zizmorcore/zizmor-action@53290badfa369cb0bf7ad16342cb62c2fa47ac7b # v0.8.0
+        with:
+          version: 1.31.1
+          advanced-security: false
+
+  secrets:
+    name: Secret scan (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-depth: 0 # the whole history — a secret removed later is still published
+          persist-credentials: false
+
+      # The binary, pinned by checksum — not the action, which needs a licence
+      # for organisation repos.
+      - name: Install gitleaks 8.30.1
+        run: |
+          curl -sSfL -o gitleaks.tar.gz https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz
+          echo "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  gitleaks.tar.gz" | sha256sum -c -
+          tar -xzf gitleaks.tar.gz gitleaks
+
+      - run: ./gitleaks git --no-banner --redact --exit-code 1 .
