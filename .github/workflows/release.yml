@@ -20,6 +20,10 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          # changesets/action pushes through the GitHub API (commitMode below),
+          # so no git credential needs to sit on disk while dev tooling runs.
+          persist-credentials: false
 
       - name: Setup pnpm
         uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
@@ -45,6 +49,7 @@ jobs:
           title: "chore(release): version packages"
           publish: pnpm run release
           version: pnpm run version
+          commitMode: github-api
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Remove once a Trusted Publisher is configured for every package on
