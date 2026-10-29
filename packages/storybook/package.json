@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "pnpm storybook dev -p 6006",
     "build": "pnpm storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_e58a37660285fbc -b build"
+    "chromatic": "npx chromatic -b build"
   },
   "dependencies": {
     "@mijn-ui/react-core": "workspace:*",

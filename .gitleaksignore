@@ -1,0 +1,11 @@
+# gitleaks findings reviewed and accepted. One fingerprint per line; history
+# cannot be rewritten on a public repo, so a leaked secret is handled by ROTATING
+# it, and only then silenced here.
+#
+# Chromatic project token, committed in packages/storybook/package.json on
+# 2024-12-18 (7211eebb) and public since. Removed from the code 2026-10-29;
+# `npm run chromatic` now reads CHROMATIC_PROJECT_TOKEN from the environment.
+# The token itself MUST be rotated at chromatic.com (project -> Manage ->
+# Configure -> regenerate) — this entry silences the history, it does not undo
+# the exposure.
+7211eebb2d67c7b1acfc81b9acfcc3c5fa4f51a4:packages/storybook/package.json:generic-api-key:13
