@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { BarChart, BarChartProps } from "./bar-chart"
 import { DonutChart } from "./donut-chart"
 import { GroupedBarChart } from "./grouped-bar-chart"
@@ -9,6 +9,12 @@ const meta: Meta<typeof BarChart> = {
   component: BarChart,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "Lightweight, token-driven charts: bar, grouped bar, donut, sparkline, and legend.",
+      },
+    },
   },
   args: {
     unstyled: false,
@@ -145,7 +151,15 @@ export const ColorVariations: Story = {
       {/* Palette cycled per bar */}
       <BarChart
         unstyled={args.unstyled}
-        colors={["blue", "emerald", "amber", "violet", "rose", "cyan", "orange"]}
+        colors={[
+          "blue",
+          "emerald",
+          "amber",
+          "violet",
+          "rose",
+          "cyan",
+          "orange",
+        ]}
         valueFormatter={(value) => `$${value.toLocaleString()}`}
         data={revenueData}
       />
@@ -162,9 +176,22 @@ export const ColorVariations: Story = {
         ]}
       />
       <div className="flex items-center gap-6">
-        <SparklineChart unstyled={args.unstyled} color="fuchsia" data={[4, 6, 5, 8, 7, 10]} />
-        <SparklineChart unstyled={args.unstyled} color="teal" showArea data={[10, 7, 8, 5, 6, 3]} />
-        <SparklineChart unstyled={args.unstyled} color="orange" data={[2, 5, 4, 7, 6, 9]} />
+        <SparklineChart
+          unstyled={args.unstyled}
+          color="fuchsia"
+          data={[4, 6, 5, 8, 7, 10]}
+        />
+        <SparklineChart
+          unstyled={args.unstyled}
+          color="teal"
+          showArea
+          data={[10, 7, 8, 5, 6, 3]}
+        />
+        <SparklineChart
+          unstyled={args.unstyled}
+          color="orange"
+          data={[2, 5, 4, 7, 6, 9]}
+        />
       </div>
     </div>
   ),

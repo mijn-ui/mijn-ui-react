@@ -1,5 +1,5 @@
 import { Button } from "@mijn-ui/react-button"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Label, LabelProps } from "./label"
 
 const meta: Meta<typeof Label> = {
@@ -7,6 +7,7 @@ const meta: Meta<typeof Label> = {
   component: Label,
   parameters: {
     layout: "centered",
+    docs: { description: { component: "A text label for form controls." } },
   },
   args: {
     unstyled: false,

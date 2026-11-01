@@ -1,6 +1,6 @@
 import React from "react"
 import { Badge } from "@mijn-ui/react-badge"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { DateRange } from "react-day-picker"
 import { Calendar, CalendarProps } from "./calendar"
 
@@ -9,6 +9,12 @@ const meta: Meta<typeof Calendar> = {
   component: Calendar,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A date field component that allows users to enter and edit date.",
+      },
+    },
   },
   args: {
     showOutsideDays: true,

@@ -1,5 +1,5 @@
 import React from "react"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Progress, ProgressProps } from "./progress"
 
 const meta: Meta<typeof Progress> = {
@@ -7,6 +7,11 @@ const meta: Meta<typeof Progress> = {
   component: Progress,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A visual indicator of task completion or status.",
+      },
+    },
   },
   args: {
     unstyled: false,

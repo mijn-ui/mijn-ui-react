@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Ellipsis } from "lucide-react"
 import {
   Table,
@@ -15,6 +15,11 @@ const meta: Meta<typeof Table> = {
   component: Table,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A structured layout for displaying tabular data.",
+      },
+    },
   },
   args: {
     unstyled: false,

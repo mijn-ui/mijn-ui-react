@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Plus } from "lucide-react"
 import { Input, InputProps } from "./input"
 
@@ -7,6 +7,9 @@ const meta: Meta<typeof Input> = {
   component: Input,
   parameters: {
     layout: "centered",
+    docs: {
+      description: { component: "A basic input field for user text entry." },
+    },
   },
   args: {
     placeholder: "Username...",

@@ -1,5 +1,5 @@
 import { Label } from "@mijn-ui/react-label"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Textarea, TextareaProps } from "./textarea"
 
 const meta: Meta<typeof Textarea> = {
@@ -7,6 +7,11 @@ const meta: Meta<typeof Textarea> = {
   component: Textarea,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A multi-line input field for larger text entry.",
+      },
+    },
   },
   args: {
     placeholder: "Type your message here...",

@@ -1,5 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-vite"
 import { createRequire } from "node:module"
+import { fileURLToPath } from "node:url"
 import { dirname, join } from "path"
 
 const require = createRequire(import.meta.url)
@@ -11,17 +12,21 @@ const require = createRequire(import.meta.url)
 // eslint-disable-next-line
 
 const config: StorybookConfig = {
-  stories: ["../../components/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: [
+    "../src/**/*.mdx",
+    "../../components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+  ],
   addons: [
-    "@storybook/addon-onboarding",
-    "@storybook/addon-essentials",
-    "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
-    "@storybook/addon-themes",
+    getAbsolutePath("@storybook/addon-docs"),
+    getAbsolutePath("@storybook/addon-themes"),
   ],
   framework: {
-    name: "@storybook/react-vite",
+    name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
 }
 export default config
+
+function getAbsolutePath(value: string): any {
+  return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)))
+}

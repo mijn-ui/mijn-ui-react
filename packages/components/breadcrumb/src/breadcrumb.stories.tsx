@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,6 +13,12 @@ const meta: Meta<typeof Breadcrumb> = {
   component: Breadcrumb,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A breadcrumb trail that shows where the current page sits in a hierarchy, with links back to its parents.",
+      },
+    },
   },
 }
 
