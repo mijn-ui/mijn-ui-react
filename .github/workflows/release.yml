@@ -35,8 +35,10 @@ jobs:
         with:
           node-version: 24
 
+      # Storybook is not released and `pnpm build` already skips it; leaving it
+      # out keeps its ~120 packages away from the job that holds the npm token.
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --filter '!@mijn-ui/storybook'
 
       - name: Build Packages
         run: pnpm build

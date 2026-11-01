@@ -1,0 +1,62 @@
+name: Storybook
+
+# Publishes the component Storybook — live examples, docs pages with props and
+# source, a link to each component's code — to GitHub Pages on every push to
+# main. Replaces Chromatic hosting: no project token, nothing hosted elsewhere.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+# One deployment at a time; a newer push supersedes a queued one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    # Read-only and secret-free: the whole dev tree installs here (the stories
+    # compile component sources), so it must not sit next to anything that can
+    # publish. No npm token exists in this workflow.
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
+
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: 24
+
+      - run: pnpm install --frozen-lockfile
+
+      # Components import the built @mijn-ui/react-core, so the packages first.
+      - run: pnpm build
+
+      - run: pnpm --filter @mijn-ui/storybook build
+
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: packages/storybook/storybook-static
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    # The only job that can publish the site, and it runs no project code.
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
