@@ -1,4 +1,4 @@
-import { create } from "@storybook/theming/create"
+import { create } from "storybook/theming/create"
 /* eslint-disable */
 // @ts-expect-error
 import logoUrl from "../public/logo.png"

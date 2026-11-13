@@ -1,5 +1,5 @@
 import { IconSvgProps } from "@mijn-ui/shared-icons"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import {
   Alert,
   AlertDescription,
@@ -13,6 +13,12 @@ const meta: Meta<typeof Alert> = {
   component: Alert,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A component for displaying critical information or notifications.",
+      },
+    },
   },
   args: {
     unstyled: false,

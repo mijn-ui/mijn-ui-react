@@ -12,7 +12,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mijn-ui/mijn-ui-react.git",
-    "directory": "packages/react/src"
+    "directory": "packages/react"
   },
   "bugs": {
     "url": "https://github.com/mijn-ui/mijn-ui-react/issues"
@@ -61,11 +61,13 @@
     "@mijn-ui/react-select": "workspace:*",
     "@mijn-ui/react-separator": "workspace:*",
     "@mijn-ui/react-skeleton": "workspace:*",
+    "@mijn-ui/react-slider": "workspace:*",
     "@mijn-ui/react-switch": "workspace:*",
     "@mijn-ui/react-table": "workspace:*",
     "@mijn-ui/react-tabs": "workspace:*",
     "@mijn-ui/react-textarea": "workspace:*",
-    "@mijn-ui/react-toast": "workspace:*"
+    "@mijn-ui/react-toast": "workspace:*",
+    "@mijn-ui/react-tooltip": "workspace:*"
   },
   "devDependencies": {
     "tsconfig": "workspace:*",

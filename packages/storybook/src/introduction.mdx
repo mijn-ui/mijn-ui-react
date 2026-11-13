@@ -1,0 +1,42 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+
+<Meta title="Introduction" />
+
+# MijnUI React
+
+Reusable React components for clean, responsive interfaces, built with Tailwind CSS v4 and
+Radix UI. Every component here is live: switch the theme in the toolbar, change props in
+**Controls**, and open **Show code** under any example for its source.
+
+- **Source:** [github.com/mijn-ui/mijn-ui-react](https://github.com/mijn-ui/mijn-ui-react) —
+  each component's docs page links to its own folder
+- **Guides** (installation, theming, migration): [mijnui.vercel.app/docs/react](https://mijnui.vercel.app/docs/react)
+- **Packages:** [`@mijn-ui/react`](https://www.npmjs.com/package/@mijn-ui/react) on npm, or
+  one component at a time as `@mijn-ui/react-<component>`
+
+## Install
+
+```sh
+npm install @mijn-ui/react @mijn-ui/react-core tailwind-variants tailwind-merge tw-animate-css
+```
+
+```css
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@mijn-ui/react-core/theme.css";
+
+@source "../../node_modules/@mijn-ui";
+
+@custom-variant dark (&:where(.dark, .dark *));
+```
+
+```tsx
+import { Button } from "@mijn-ui/react"
+
+export default function App() {
+  return <Button variant="brand">Get started</Button>
+}
+```
+
+Upgrading from Tailwind CSS v3? Follow the
+[migration guide](https://github.com/mijn-ui/mijn-ui-react/blob/main/docs/tailwind-v4-migration.md).

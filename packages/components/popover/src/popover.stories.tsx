@@ -1,7 +1,7 @@
 import { Button } from "@mijn-ui/react-button"
 import { Input } from "@mijn-ui/react-input"
 import { Label } from "@mijn-ui/react-label"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import {
   Popover,
   PopoverArrow,
@@ -16,6 +16,11 @@ const meta: Meta<typeof Popover> = {
   component: Popover,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A floating panel for contextual information or actions.",
+      },
+    },
   },
   args: {
     unstyled: false,

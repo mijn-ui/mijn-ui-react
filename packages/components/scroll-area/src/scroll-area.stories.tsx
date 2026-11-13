@@ -1,6 +1,6 @@
 import React from "react"
 import { Separator } from "@mijn-ui/react-separator"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { ScrollArea, ScrollAreaProps } from "./scroll-area"
 
 const meta: Meta<typeof ScrollArea> = {
@@ -8,6 +8,11 @@ const meta: Meta<typeof ScrollArea> = {
   component: ScrollArea,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A custom scrollable container for overflowing content.",
+      },
+    },
   },
   args: {
     unstyled: false,

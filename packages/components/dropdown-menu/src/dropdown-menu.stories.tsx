@@ -1,6 +1,6 @@
 import React from "react"
 import { Button } from "@mijn-ui/react-button"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Filter } from "lucide-react"
 import {
   DropdownMenu,
@@ -24,6 +24,12 @@ const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A contextual menu for displaying a list of actions or options.",
+      },
+    },
   },
   args: {
     unstyled: false,

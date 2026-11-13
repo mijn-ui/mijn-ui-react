@@ -10,35 +10,35 @@ import { VariantProps, tv } from "tailwind-variants"
 
 const toastStyles = tv({
   slots: {
-    base: "group pointer-events-auto relative flex w-full items-start gap-3 overflow-hidden rounded-lg border bg-bg-primary p-4 shadow-lg transition-all",
+    base: "group pointer-events-auto relative flex w-full items-start gap-3 overflow-hidden rounded-lg border bg-bg-default-alt p-4 shadow-lg transition-all",
     icon: "mt-0.5 size-5 shrink-0",
     body: "flex flex-1 flex-col gap-1",
-    title: "text-sm font-semibold text-fg-primary",
+    title: "text-sm font-semibold text-fg-default",
     description: "text-sm text-fg-secondary",
     action: "mt-2",
     close:
-      "absolute right-2 top-2 rounded-md p-1 text-fg-tertiary opacity-0 transition-opacity hover:text-fg-primary focus:opacity-100 focus:outline-none focus:ring-1 group-hover:opacity-100",
+      "absolute right-2 top-2 rounded-md p-1 text-fg-tertiary opacity-0 transition-opacity hover:text-fg-default focus:opacity-100 focus:outline-none focus:ring-1 group-hover:opacity-100",
   },
   variants: {
     intent: {
       default: {
-        base: "border-outline-default bg-bg-primary",
+        base: "border-outline-default bg-bg-default-alt",
         icon: "text-fg-secondary",
       },
       brand: {
-        base: "border-outline-brand-subtle bg-bg-primary",
+        base: "border-outline-brand-subtle bg-bg-default-alt",
         icon: "text-fg-brand",
       },
       success: {
-        base: "border-outline-success-subtle bg-bg-primary",
+        base: "border-outline-success-subtle bg-bg-default-alt",
         icon: "text-fg-success",
       },
       warning: {
-        base: "border-outline-warning-subtle bg-bg-primary",
+        base: "border-outline-warning-subtle bg-bg-default-alt",
         icon: "text-fg-warning",
       },
       danger: {
-        base: "border-outline-danger-subtle bg-bg-primary",
+        base: "border-outline-danger-subtle bg-bg-default-alt",
         icon: "text-fg-danger",
       },
     },

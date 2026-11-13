@@ -1,0 +1,9 @@
+{
+  "roots": [
+    "packages/components",
+    "packages/core/src",
+    "packages/react/src",
+    "packages/utilities"
+  ],
+  "allow": []
+}
