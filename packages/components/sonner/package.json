@@ -1,0 +1,64 @@
+{
+  "name": "@mijn-ui/react-sonner",
+  "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
+  "version": "0.0.0",
+  "homepage": "https://mijn-ui.vercel.app",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mijn-ui/mijn-ui-react.git",
+    "directory": "packages/components/sonner"
+  },
+  "bugs": {
+    "url": "https://github.com/mijn-ui/mijn-ui-react/issues"
+  },
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist .turbo",
+    "build": "tsup",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "types:check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@mijn-ui/react-button": "workspace:*",
+    "@mijn-ui/react-core": "workspace:*",
+    "@next/eslint-plugin-next": "^15.0.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint-config-custom": "workspace:*",
+    "jsdom": "^30.1.3",
+    "react": "19.0.1",
+    "react-dom": "19.0.1",
+    "sonner": "^2.0.7",
+    "tsconfig": "workspace:*",
+    "tsup-config": "workspace:*"
+  },
+  "peerDependencies": {
+    "@mijn-ui/react-core": "^0.5.0",
+    "react": "^19.0",
+    "react-dom": "^19.0",
+    "sonner": "^2.0.0",
+    "tailwind-merge": "^3.0.0",
+    "tailwind-variants": "^3.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "sonner",
+    "toast",
+    "toaster",
+    "notification",
+    "react",
+    "nextjs"
+  ]
+}

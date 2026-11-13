@@ -27,8 +27,15 @@ export * from "@mijn-ui/react-scroll-area"
 export * from "@mijn-ui/react-select"
 export * from "@mijn-ui/react-separator"
 export * from "@mijn-ui/react-skeleton"
+export * from "@mijn-ui/react-slider"
 export * from "@mijn-ui/react-switch"
 export * from "@mijn-ui/react-table"
 export * from "@mijn-ui/react-tabs"
 export * from "@mijn-ui/react-textarea"
 export * from "@mijn-ui/react-toast"
+export * from "@mijn-ui/react-tooltip"
+
+// @mijn-ui/react-sonner is deliberately NOT re-exported here. It has a peer
+// dependency on `sonner`, and this barrel is a single entry with no subpaths —
+// re-exporting it would pull sonner's bytes, and its peer requirement, into
+// every app that imports anything from `@mijn-ui/react`. Install it directly.
