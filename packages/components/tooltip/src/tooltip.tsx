@@ -21,7 +21,7 @@ const tooltipStyles = tv({
       "data-[side=bottom]:slide-in-from-bottom-1 data-[side=left]:slide-in-from-left-1 data-[side=right]:slide-in-from-right-1 data-[side=top]:slide-in-from-top-1",
       "bg-bg-inverse text-fg-inverse z-50 max-w-xs text-balance rounded-md px-2.5 py-1.5 text-xs font-medium shadow-md duration-150",
     ],
-    arrow: "bg-bg-inverse fill-bg-inverse",
+    arrow: "fill-bg-inverse",
   },
 })
 

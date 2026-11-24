@@ -27,7 +27,7 @@ const sonnerStyles = tv({
     toast:
       "group border-outline-secondary bg-bg-default-alt text-fg-default rounded-lg border shadow-lg",
     title: "text-fg-default text-sm font-semibold",
-    description: "text-fg-secondary text-sm",
+    description: "text-fg-secondary! text-sm",
     actionButton:
       "bg-bg-brand text-on-bg-brand rounded-md px-2.5 py-1 text-xs font-medium",
     cancelButton:
