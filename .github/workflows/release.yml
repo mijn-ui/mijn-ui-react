@@ -7,36 +7,54 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+permissions: {}
+
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # push the version commit and tags
+      pull-requests: write # open the "Version Packages" PR
+      id-token: write # npm provenance / Trusted Publishing (OIDC)
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          # changesets/action pushes through the GitHub API (commitMode below),
+          # so no git credential needs to sit on disk while dev tooling runs.
+          persist-credentials: false
 
       - name: Setup pnpm
         uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
 
-      - name: Setup Node.js 20.x
-        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
+      # Node 24 bundles npm 11 — Trusted Publishing needs npm >= 11.5.1, and
+      # pnpm 10 delegates `pnpm publish` to the npm CLI.
+      - name: Setup Node.js 24.x
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
         with:
-          node-version: 20
+          node-version: 24
 
+      # Storybook is not released and `pnpm build` already skips it; leaving it
+      # out keeps its ~120 packages away from the job that holds the npm token.
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --filter '!@mijn-ui/storybook'
 
       - name: Build Packages
         run: pnpm build
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
-        uses: changesets/action@v1
+        uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d # v1.9.0
         with:
           commit: "chore(release): version packages"
           title: "chore(release): version packages"
           publish: pnpm run release
           version: pnpm run version
+          commitMode: github-api
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Remove once a Trusted Publisher is configured for every package on
+          # npmjs.com — without NPM_TOKEN the action publishes via OIDC.
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: "true"

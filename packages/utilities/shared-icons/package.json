@@ -12,7 +12,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mijn-ui/mijn-ui-react.git",
-    "directory": "packages/shared-icons/src"
+    "directory": "packages/utilities/shared-icons"
   },
   "bugs": {
     "url": "https://github.com/mijn-ui/mijn-ui-react/issues"

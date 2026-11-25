@@ -54,7 +54,7 @@ const BreadcrumbLink = ({ className, ...props }: BreadcrumbLinkProps) => (
   <a
     data-slot="breadcrumb-link"
     className={cn(
-      "text-fg-secondary transition-colors duration-200 hover:text-fg-primary",
+      "text-fg-secondary transition-colors duration-200 hover:text-fg-default",
       className,
     )}
     {...props}
@@ -73,7 +73,7 @@ const BreadcrumbPage = ({ className, ...props }: BreadcrumbPageProps) => (
     role="link"
     aria-current="page"
     aria-disabled="true"
-    className={cn("font-medium text-fg-primary", className)}
+    className={cn("font-medium text-fg-default", className)}
     {...props}
   />
 )

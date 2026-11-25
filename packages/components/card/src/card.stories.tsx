@@ -1,5 +1,5 @@
 import { Button } from "@mijn-ui/react-button"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import {
   Card,
   CardContent,
@@ -15,6 +15,12 @@ const meta: Meta<typeof Card> = {
   component: Card,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A container for grouping and displaying related content or actions.",
+      },
+    },
   },
   args: {
     unstyled: false,

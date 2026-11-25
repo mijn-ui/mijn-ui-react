@@ -1,5 +1,5 @@
 import { Input } from "@mijn-ui/react-input"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import {
   Calculator,
   Calendar,
@@ -26,6 +26,12 @@ const meta: Meta<typeof Command> = {
   component: Command,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A command palette for quick access to actions and navigation, often used for keyboard shortcuts.",
+      },
+    },
   },
   args: {
     unstyled: false,

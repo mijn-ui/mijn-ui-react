@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@mijn-ui/react-card"
 import { Input } from "@mijn-ui/react-input"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Tabs, TabsContent, TabsList, TabsProps, TabsTrigger } from "./tabs"
 
 const meta: Meta<typeof Tabs> = {
@@ -16,6 +16,12 @@ const meta: Meta<typeof Tabs> = {
   component: Tabs,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A navigation component for organizing content into separate panels.",
+      },
+    },
   },
   args: {
     unstyled: false,

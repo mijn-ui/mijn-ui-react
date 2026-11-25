@@ -1,5 +1,5 @@
 import { AvatarProps } from "@radix-ui/react-avatar"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import {
   Avatar,
   AvatarFallback,
@@ -12,6 +12,11 @@ const meta: Meta<typeof Avatar> = {
   component: Avatar,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A graphical representation of a user or profile.",
+      },
+    },
   },
   args: {
     size: "md",

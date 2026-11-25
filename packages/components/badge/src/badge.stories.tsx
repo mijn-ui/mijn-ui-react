@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Badge, BadgeProps } from "./badge"
 
 const meta: Meta<typeof Badge> = {
@@ -6,6 +6,11 @@ const meta: Meta<typeof Badge> = {
   component: Badge,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "Displays a badge or a component that looks like a badge.",
+      },
+    },
   },
   args: {
     radius: "full",

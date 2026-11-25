@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from "@mijn-ui/shared-icons"
-import { StoryObj } from "@storybook/react"
+import { StoryObj } from "@storybook/react-vite"
 import {
   Accordion,
   AccordionContent,
@@ -13,6 +13,12 @@ const meta = {
   component: Accordion,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A vertically stacked list of expandable items, perfect for organizing content.",
+      },
+    },
   },
   args: {
     type: "single",

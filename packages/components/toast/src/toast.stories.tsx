@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Toast, ToastProps } from "./toast"
 
 const meta: Meta<typeof Toast> = {
@@ -6,6 +6,12 @@ const meta: Meta<typeof Toast> = {
   component: Toast,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A toast for brief notifications, with intents, an optional icon, action and close button.",
+      },
+    },
   },
   args: {
     title: "Notification",

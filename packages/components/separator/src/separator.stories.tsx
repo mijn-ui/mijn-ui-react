@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Separator, SeparatorProps } from "./separator"
 
 const meta: Meta<typeof Separator> = {
@@ -6,6 +6,9 @@ const meta: Meta<typeof Separator> = {
   component: Separator,
   parameters: {
     layout: "centered",
+    docs: {
+      description: { component: "A divider for grouping content or sections." },
+    },
   },
   args: {
     orientation: "horizontal",

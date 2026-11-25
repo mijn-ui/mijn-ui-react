@@ -1,5 +1,5 @@
 import { Label } from "@mijn-ui/react-label"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Checkbox, CheckboxProps } from "./checkbox"
 
 const meta: Meta<typeof Checkbox> = {
@@ -7,6 +7,11 @@ const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A control for selecting one or multiple options.",
+      },
+    },
   },
   args: {
     unstyled: false,

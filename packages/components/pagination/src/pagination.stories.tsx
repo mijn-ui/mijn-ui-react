@@ -1,5 +1,5 @@
 import React from "react"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import {
   Pagination,
@@ -17,6 +17,11 @@ const meta: Meta<typeof Pagination> = {
   component: Pagination,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A navigation control for traversing paginated content.",
+      },
+    },
   },
   args: {
     currentPage: 7,

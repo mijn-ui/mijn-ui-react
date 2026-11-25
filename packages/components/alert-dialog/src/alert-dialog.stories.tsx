@@ -1,5 +1,5 @@
 import { Button } from "@mijn-ui/react-button"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -18,6 +18,12 @@ const meta: Meta<typeof AlertDialog> = {
   component: AlertDialog,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A modal dialog for alerting users about important actions or decisions.",
+      },
+    },
   },
   args: {
     unstyled: false,

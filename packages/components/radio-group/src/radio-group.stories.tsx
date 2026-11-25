@@ -1,5 +1,5 @@
 import { Label } from "@mijn-ui/react-label"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { RadioGroup, RadioGroupItem, RadioGroupProps } from "./radio-group"
 
 const meta: Meta<typeof RadioGroup> = {
@@ -7,6 +7,11 @@ const meta: Meta<typeof RadioGroup> = {
   component: RadioGroup,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A group of radio buttons for single-option selection.",
+      },
+    },
   },
   args: {
     unstyled: false,

@@ -12,7 +12,7 @@ import { VariantProps, tv } from "tailwind-variants"
 const progressStyles = tv({
   slots: {
     base: "bg-bg-tertiary relative h-2 w-full overflow-hidden rounded-full",
-    indicator: "bg-bg-brandsize-full flex-1 transition-all",
+    indicator: "bg-bg-brand size-full flex-1 transition-all",
   },
 })
 

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import {
   Select,
   SelectContent,
@@ -16,6 +16,11 @@ const meta: Meta<typeof Select> = {
   component: Select,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A dropdown selector for single or multiple options.",
+      },
+    },
   },
   args: {
     disabled: false,

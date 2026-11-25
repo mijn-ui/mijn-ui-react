@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Switch, SwitchProps } from "./switch"
 
 const meta: Meta<typeof Switch> = {
@@ -6,6 +6,11 @@ const meta: Meta<typeof Switch> = {
   component: Switch,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A toggle control for enabling or disabling settings.",
+      },
+    },
   },
   args: {
     disabled: false,

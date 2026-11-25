@@ -1,6 +1,6 @@
 import { Button } from "@mijn-ui/react-button"
 import { Input } from "@mijn-ui/react-input"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { X } from "lucide-react"
 import {
   Dialog,
@@ -19,6 +19,12 @@ const meta: Meta<typeof Dialog> = {
   component: Dialog,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A modal window for displaying additional content or actions.",
+      },
+    },
   },
   args: {
     unstyled: false,

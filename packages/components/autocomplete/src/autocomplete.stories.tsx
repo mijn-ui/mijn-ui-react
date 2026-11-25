@@ -10,7 +10,7 @@ import {
 import { Input } from "@mijn-ui/react-input"
 import { ScrollArea } from "@mijn-ui/react-scroll-area"
 import { ChevronDownIcon, SearchIcon } from "@mijn-ui/shared-icons"
-import { Meta, StoryObj } from "@storybook/react"
+import { Meta, StoryObj } from "@storybook/react-vite"
 import {
   Autocomplete,
   AutocompleteContent,
@@ -25,6 +25,9 @@ const meta: Meta<typeof Autocomplete> = {
   component: Autocomplete,
   parameters: {
     layout: "centered",
+    docs: {
+      description: { component: "An input field with suggestions dropdown." },
+    },
   },
   args: {
     unstyled: false,

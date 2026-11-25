@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Skeleton, SkeletonProps } from "./skeleton"
 
 const meta: Meta<typeof Skeleton> = {
@@ -6,6 +6,11 @@ const meta: Meta<typeof Skeleton> = {
   component: Skeleton,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A placeholder for loading states or empty content.",
+      },
+    },
   },
   args: {
     unstyled: false,
