@@ -33,17 +33,22 @@ const calendarStyles = tv({
       "text-fg-tertiary mb-1.5 flex size-8 items-center justify-center text-[0.8rem] font-normal",
     weeks: "space-y-1.5",
     week: "flex w-full",
+    // The day cell never takes focus itself — its button does — so the focus
+    // ring keys off `has-focus-visible`; a plain `focus-visible` never matched
+    // and keyboard focus on a day was invisible.
     day: [
-      "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:mijn-focus-ring disabled:pointer-events-none disabled:opacity-50",
-      "text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70",
+      "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out has-focus-visible:mijn-focus-ring disabled:pointer-events-none disabled:opacity-50",
+      "text-fg-default hover:bg-bg-secondary has-focus-visible:ring-outline-brand active:bg-bg-secondary/70",
       "h-8 rounded-md px-3",
       "p-0 font-normal aria-selected:opacity-100",
     ],
     day_button:
       "[&:has([aria-selected].day-outside)]:bg-bg-brand/50 [&:has([aria-selected])]:bg-bg-brand relative size-8 p-0 text-center text-sm outline-none focus-within:relative focus-within:z-20 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md [&:has([aria-selected].day-range-end)]:rounded-r-md",
     range_end: "day-range-end",
+    // `focus-within`, not `focus`: this class lands on the day cell, and focus
+    // lands on the button inside it.
     selected:
-      "bg-bg-brand! text-on-bg-brand! hover:bg-bg-brand! hover:text-on-bg-brand! focus:!bg-bg-brandfocus:!text-on-bg-brand",
+      "bg-bg-brand! text-on-bg-brand! hover:bg-bg-brand! hover:text-on-bg-brand! focus-within:bg-bg-brand! focus-within:text-on-bg-brand!",
     range_middle:
       "aria-selected:bg-bg-secondary/75 aria-selected:text-fg-secondary",
     today:
