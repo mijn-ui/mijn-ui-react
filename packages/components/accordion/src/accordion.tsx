@@ -28,11 +28,11 @@ const accordionStyles = tv({
     variant: {
       // Figma-aligned intents
       outline: {
-        item: "border-b",
+        item: "border-b border-outline-default",
       },
       plain: {},
       solid: {
-        base: "py-2 px-4 bg-bg-secondary rounded-(--mijn-radius-lg) border divide-y divide-y-outline-default",
+        base: "py-2 px-4 bg-bg-secondary rounded-(--mijn-radius-lg) border border-outline-default divide-y divide-outline-default",
       },
       // Additional variants
       splitted: {

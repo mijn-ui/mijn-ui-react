@@ -39,7 +39,7 @@ const inputStyles = tv({
     variant: {
       default: {
         base: [
-          "rounded-md border",
+          "rounded-md border border-outline-default",
           "focus-visible:border-outline-brand-subtle",
           "focus-visible:outline-none",
           "focus-visible:ring-2",
@@ -49,7 +49,7 @@ const inputStyles = tv({
         ],
       },
       underline: {
-        base: "border-b-sm focus-visible:border-b-outline-brand border-b outline-none",
+        base: "border-b-sm focus-visible:border-b-outline-brand border-b border-outline-default outline-none",
       },
       danger: {
         base: [

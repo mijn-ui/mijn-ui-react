@@ -19,12 +19,12 @@ const calendarStyles = tv({
     month_caption: "relative flex h-8 items-center justify-center font-normal",
     button_previous: [
       "inline-flex items-center justify-center  text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 size-8 gap-0 px-0 rounded-md",
-      "bg-bg-default-alt text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 shadow-(--mijn-shadow-xs) border focus-visible:ring-offset-2",
+      "bg-bg-default-alt text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 shadow-(--mijn-shadow-xs) border border-outline-default focus-visible:ring-offset-2",
       "absolute left-1 top-0 z-10",
     ],
     button_next: [
       "inline-flex items-center justify-center text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 size-8 gap-0 px-0 rounded-md",
-      "bg-bg-default-alt text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 shadow-(--mijn-shadow-xs) border focus-visible:ring-offset-2",
+      "bg-bg-default-alt text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 shadow-(--mijn-shadow-xs) border border-outline-default focus-visible:ring-offset-2",
       "border-outline-default absolute right-1 top-0 z-10",
     ],
     month_grid: "w-full border-collapse",

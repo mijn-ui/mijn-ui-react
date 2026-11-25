@@ -48,7 +48,7 @@ const badgeStyles = tv({
   },
   compoundVariants: [
     // solid (Figma) = filled
-    { variant: "solid", color: "default", className: "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border focus-visible:ring-offset-2" },
+    { variant: "solid", color: "default", className: "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default focus-visible:ring-offset-2" },
     { variant: "solid", color: "brand", className: "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-(--mijn-shadow-xs)" },
     { variant: "solid", color: "secondary", className: "bg-bg-secondary text-fg-secondary shadow-(--mijn-shadow-xs) hover:bg-bg-accent focus-visible:ring-outline-brand focus-visible:ring-offset-2 active:bg-bg-accent/70" },
     { variant: "solid", color: "success", className: "bg-bg-success text-on-bg-success hover:bg-bg-success/80 focus-visible:ring-outline-success shadow-(--mijn-shadow-xs) active:bg-bg-success/70" },
@@ -66,7 +66,7 @@ const badgeStyles = tv({
     { variant: "tonal", color: "inverse", className: "border border-outline-inverse text-bg-inverse bg-bg-inverse/20 hover:bg-bg-inverse hover:text-fg-inverse focus-visible:ring-outline-inverse" },
 
     // modern (Figma) = outlined
-    { variant: "modern", color: "default", className: "border bg-transparent text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70" },
+    { variant: "modern", color: "default", className: "border border-outline-default bg-transparent text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70" },
     { variant: "modern", color: "brand", className: "border border-outline-brand bg-transparent text-fg-brand hover:bg-bg-brand hover:text-on-bg-brand focus-visible:ring-outline-brand active:bg-bg-brand/70" },
     { variant: "modern", color: "secondary", className: "border border-outline-secondary bg-transparent text-fg-secondary hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70" },
     { variant: "modern", color: "success", className: "border border-outline-success bg-transparent text-fg-success hover:bg-bg-success hover:text-on-bg-success focus-visible:ring-outline-success active:bg-bg-success/70" },
@@ -79,7 +79,7 @@ const badgeStyles = tv({
       variant: "filled",
       color: "default",
       className:
-        "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border focus-visible:ring-offset-2 ",
+        "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default focus-visible:ring-offset-2 ",
     },
     {
       variant: "filled",
@@ -123,7 +123,7 @@ const badgeStyles = tv({
       variant: "outlined",
       color: "default",
       className:
-        "border bg-transparent text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
+        "border border-outline-default bg-transparent text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
     },
     {
       variant: "outlined",

@@ -25,7 +25,7 @@ const buttonStyles = tv({
     },
     variant: {
       // Figma-aligned composite types (color encoded in the variant name)
-      default: "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border focus-visible:ring-offset-2",
+      default: "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default focus-visible:ring-offset-2",
       "default-plain": "text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
       brand: "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-(--mijn-shadow-xs)",
       "brand-plain": "text-fg-brand hover:bg-bg-brand hover:text-on-bg-brand focus-visible:ring-outline-brand active:bg-bg-brand/70",
@@ -61,7 +61,7 @@ const buttonStyles = tv({
       variant: "filled",
       color: "default",
       className:
-        "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border focus-visible:ring-offset-2 ",
+        "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default focus-visible:ring-offset-2 ",
     },
     {
       variant: "filled",
@@ -105,7 +105,7 @@ const buttonStyles = tv({
       variant: "outlined",
       color: "default",
       className:
-        "border bg-transparent text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
+        "border border-outline-default bg-transparent text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
     },
     {
       variant: "outlined",
