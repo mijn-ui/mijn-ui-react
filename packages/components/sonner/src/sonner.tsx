@@ -22,19 +22,37 @@ import { VariantProps, tv } from "tailwind-variants"
 export { toast, useSonner } from "sonner"
 export type { ToasterProps }
 
+/**
+ * Why so many `!`: sonner injects its own stylesheet at runtime, outside any
+ * cascade layer, and unlayered rules beat everything in Tailwind's
+ * `@layer utilities` whatever their specificity. So a class here only applies
+ * if sonner does not set the same property — or if it is `!important`. Every
+ * class below that competes with a sonner property carries `!`; the rest
+ * (`py-1`, `group`) do not need it. `sonner.test.tsx` checks this against
+ * sonner's actual stylesheet.
+ *
+ * The same goes for your own `classNames`: to override a property sonner
+ * sets, add `!` (`title: "font-bold!"`).
+ */
 const sonnerStyles = tv({
   slots: {
+    // The toast's colours are the exception: they reach sonner through its
+    // --normal-* variables (TOASTER_THEME below), not through `!`, so that
+    // `richColors` can still recolour a success or error toast. These three
+    // classes are the fallback for a toast sonner leaves unstyled.
     toast:
-      "group border-outline-secondary bg-bg-default-alt text-fg-default rounded-(--mijn-radius-lg) border shadow-(--mijn-shadow-lg)",
-    title: "text-fg-default text-sm font-semibold",
-    description: "text-fg-secondary! text-sm",
+      "group border-outline-secondary bg-bg-default-alt text-fg-default rounded-(--mijn-radius-lg)! border! shadow-(--mijn-shadow-lg)! focus-visible:ring-outline-brand focus-visible:mijn-focus-ring!",
+    // No colour: sonner makes the title inherit the toast's, which is what
+    // lets `richColors` tint it.
+    title: "text-sm! font-semibold!",
+    description: "text-fg-secondary! text-sm!",
     actionButton:
-      "bg-bg-brand text-on-bg-brand rounded-md px-2.5 py-1 text-xs font-medium",
+      "bg-bg-brand! text-on-bg-brand! rounded-md! px-2.5! py-1 text-xs! font-medium!",
     cancelButton:
-      "bg-bg-secondary text-fg-secondary rounded-md px-2.5 py-1 text-xs font-medium",
+      "bg-bg-secondary! text-fg-secondary! rounded-md! px-2.5! py-1 text-xs! font-medium!",
     closeButton:
-      "border-outline-secondary bg-bg-default-alt text-fg-tertiary hover:text-fg-default",
-    icon: "shrink-0",
+      "border-outline-secondary! bg-bg-default-alt! text-fg-tertiary! hover:bg-bg-secondary! hover:text-fg-default!",
+    icon: "shrink-0!",
   },
 })
 
@@ -67,9 +85,12 @@ const TOASTER_THEME = {
   "--warning-text": "var(--color-on-bg-warning-subtle)",
   "--warning-border": "var(--color-outline-warning-subtle)",
 
-  "--info-bg": "var(--color-bg-brand-subtle)",
-  "--info-text": "var(--color-on-bg-brand-subtle)",
-  "--info-border": "var(--color-outline-brand-subtle)",
+  // Info gets the categorical blue tier, not brand: with a green brand (as in
+  // PicoAI) brand-subtle is success-subtle, and info toasts looked like
+  // success ones.
+  "--info-bg": "var(--color-bg-blue-subtle)",
+  "--info-text": "var(--color-on-bg-blue-subtle)",
+  "--info-border": "var(--color-outline-blue-subtle)",
 } as React.CSSProperties
 
 export type MijnToasterProps = UnstyledComponentWithSlots<SonnerSlots> &

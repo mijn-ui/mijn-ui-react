@@ -26,27 +26,44 @@ export { progressStyles }
 export type ProgressProps = UnstyledComponentWithSlots<ProgressSlots> &
   React.ComponentPropsWithRef<typeof ProgressPrimitive.Root>
 
+/** Radix's own fallback for a missing or invalid `max`. */
+const DEFAULT_MAX = 100
+
 const Progress = ({
   className,
   classNames,
   unstyled,
   value,
+  max,
   ref,
   ...props
 }: ProgressProps) => {
   const { base, indicator } = createTVUnstyledSlots(progressStyles(), unstyled)
 
+  // Same rule Radix applies to `max`, so the bar and aria-valuemax agree.
+  const maxValue =
+    typeof max === "number" && max > 0 && !Number.isNaN(max) ? max : DEFAULT_MAX
+  // No value means indeterminate: an empty bar. An out-of-range value is
+  // clamped for the bar (Radix reports it as indeterminate and logs why).
+  const percent =
+    typeof value === "number" && !Number.isNaN(value)
+      ? Math.min(Math.max(value / maxValue, 0), 1) * 100
+      : 0
+
   return (
     <ProgressPrimitive.Root
       data-slot="progress"
       ref={ref}
+      // Radix derives aria-valuenow / aria-valuemax / data-state from these.
+      value={value}
+      max={max}
       className={base({ className: cn(classNames?.base, className) })}
       {...props}
     >
       <ProgressPrimitive.Indicator
         data-slot="progress-indicator"
         className={indicator({ className: classNames?.indicator })}
-        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+        style={{ transform: `translateX(-${100 - percent}%)` }}
       />
     </ProgressPrimitive.Root>
   )
