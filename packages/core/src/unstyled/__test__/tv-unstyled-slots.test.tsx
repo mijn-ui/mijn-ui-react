@@ -159,4 +159,89 @@ describe("createTVUnstyledSlots", () => {
       })
     })
   })
+
+  // Regression: slot functions are usually called with variant props *and* a
+  // `className` in the same object, e.g. Select's `content({ position, className })`
+  // or DropdownMenu's `item({ inset, className })`. The variant props used to be
+  // dropped whenever `className` was non-empty.
+  describe("if variant props are passed to the slot function", () => {
+    const POPPER = "translate-y-1"
+    const INSET = "pl-8"
+
+    const componentStyles = tv({
+      slots: {
+        content: "w-60 rounded-md",
+        item: "flex px-2",
+      },
+      variants: {
+        position: {
+          popper: { content: POPPER },
+          "item-aligned": {},
+        },
+        inset: {
+          true: { item: INSET },
+        },
+      },
+    })
+
+    const styles = componentStyles()
+
+    it("should keep variant classes when className is passed", () => {
+      const { content, item } = createTVUnstyledSlots(styles)
+
+      expect(content({ position: "popper", className: USER_CLASS })).toBe(
+        `w-60 rounded-md ${POPPER} ${USER_CLASS}`,
+      )
+      expect(item({ inset: true, className: USER_CLASS })).toBe(
+        `flex px-2 ${INSET} ${USER_CLASS}`,
+      )
+    })
+
+    it("should keep variant classes regardless of key order", () => {
+      const { content } = createTVUnstyledSlots(styles, false)
+
+      expect(content({ className: USER_CLASS, position: "popper" })).toBe(
+        `w-60 rounded-md ${POPPER} ${USER_CLASS}`,
+      )
+    })
+
+    it("should produce the same variant classes with and without className", () => {
+      const { content, item } = createTVUnstyledSlots(styles)
+
+      expect(content({ position: "popper" })).toBe(`w-60 rounded-md ${POPPER}`)
+      expect(content({ position: "popper", className: "" })).toBe(
+        `w-60 rounded-md ${POPPER}`,
+      )
+      expect(item({ inset: true, className: undefined })).toBe(
+        `flex px-2 ${INSET}`,
+      )
+    })
+
+    it("should let className override a conflicting variant class", () => {
+      const { item } = createTVUnstyledSlots(styles)
+
+      expect(item({ inset: true, className: "pl-2" })).toBe("flex px-2 pl-2")
+    })
+
+    it("should treat `class` like `className`", () => {
+      const { content } = createTVUnstyledSlots(styles)
+
+      expect(content({ position: "popper", class: USER_CLASS })).toBe(
+        `w-60 rounded-md ${POPPER} ${USER_CLASS}`,
+      )
+    })
+
+    it("should strip default and variant classes if unstyled is true", () => {
+      const { content, item } = createTVUnstyledSlots(styles, true)
+
+      expect(content({ position: "popper", className: USER_CLASS })).toBe(
+        USER_CLASS,
+      )
+      expect(item({ inset: true, className: USER_CLASS })).toBe(USER_CLASS)
+      expect(content({ position: "popper", class: USER_CLASS })).toBe(
+        USER_CLASS,
+      )
+      expect(item({ inset: true })).toBe(undefined)
+    })
+  })
 })
