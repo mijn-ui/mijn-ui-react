@@ -42,7 +42,7 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "@radix-ui/react-tooltip": "^1.2.12"
+    "@radix-ui/react-tooltip": "^1.4.1"
   },
   "peerDependencies": {
     "@mijn-ui/react-core": "^0.5.0",

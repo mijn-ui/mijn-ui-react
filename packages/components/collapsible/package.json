@@ -38,7 +38,7 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "@radix-ui/react-collapsible": "^1.1.2"
+    "@radix-ui/react-collapsible": "^1.2.1"
   },
   "peerDependencies": {
     "react": "^19.0",

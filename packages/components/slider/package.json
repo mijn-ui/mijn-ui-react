@@ -43,7 +43,7 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "@radix-ui/react-slider": "^1.4.7"
+    "@radix-ui/react-slider": "^1.6.1"
   },
   "peerDependencies": {
     "@mijn-ui/react-core": "^0.5.0",

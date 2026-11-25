@@ -38,7 +38,7 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "@radix-ui/react-separator": "^1.1.1"
+    "@radix-ui/react-separator": "^1.2.0"
   },
   "peerDependencies": {
     "react": "^19.0",
