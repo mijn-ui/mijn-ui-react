@@ -1,5 +1,46 @@
 # @mijn-ui-react/progress
 
+## 0.4.4
+
+### Patch Changes
+
+- 071215f: Align every `@radix-ui/*` dependency on one release set (the 2026-10-12 set:
+  Dialog 1.3.1, AlertDialog 1.2.1, Popover 1.3.1, Select 2.4.1, DropdownMenu
+  2.2.1, Tooltip 1.4.1, Tabs 1.2.1, RadioGroup 1.5.1, ...).
+
+  The packages declared floors from different Radix lines (`^1.1.x` for most,
+  `^1.2.12` for Tooltip, `^1.3.8` for SegmentedControl's RadioGroup), and Radix
+  pins its internal packages exactly. An app could therefore end up with
+  `@radix-ui/react-alert-dialog@1.2.1` (which pins `react-dialog@1.3.1`) next
+  to a locked `react-dialog@1.1.x`, i.e. two copies of DismissableLayer and
+  FocusScope and two independent layer stacks: a Select or DropdownMenu opened
+  inside a Dialog could close the Dialog. With every floor raised to the same
+  set, `@mijn-ui/react` now installs exactly one copy of each Radix internal.
+
+  If your app also depends on `@radix-ui/*` packages directly, update them to
+  the same set (or run `npm dedupe` / `pnpm dedupe`), otherwise you can still
+  end up with two copies.
+
+- 04f82a6: Forward `value` and `max` to the Radix root, so the progress bar is
+  announced, and fill the bar relative to `max`.
+  - `Progress` took `value` out of its props to size the indicator and never
+    passed it on, so Radix always saw no value: no `aria-valuenow`, no
+    `aria-valuetext`, and `data-state="indeterminate"` at every value. Both
+    `value` and `max` now reach the root. **Screen readers announce the value**
+    (e.g. "40%"), and **`data-state` is `loading` / `complete`** (still
+    `indeterminate` without a value); `data-value` / `data-max` are set too. If
+    you styled `data-[state=indeterminate]:` expecting it at every value, it now
+    only matches a progress bar without one.
+  - The indicator assumed `max` was 100. **With another `max` the bar now fills
+    to the right fraction** — `value={40} max={200}` fills 20%, not 40%. A value
+    outside `0..max` is clamped for the bar (Radix still logs it and reports it
+    as indeterminate).
+
+- b948a13: Require `@mijn-ui/react-core` `^0.6.0` (was `^0.5.0`). The components now
+  read the `--mijn-radius-*` / `--mijn-shadow-*` tokens and the
+  `mijn-focus-ring` utility, which only `theme.css` from 0.6 defines; with an
+  older `theme.css` they would lose their corner radius, shadow and focus ring.
+
 ## 0.4.3
 
 ### Patch Changes

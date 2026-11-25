@@ -1,5 +1,13 @@
 # @mijn-ui/shared-icons
 
+## 0.2.0
+
+### Minor Changes
+
+- e527d99: Add `MinusIcon`: a stroked horizontal bar on the same 24-unit grid, stroke
+  and round caps as `CheckIcon`, so the two read as one family (the checkbox
+  uses it for its indeterminate state). `DividerHorizontalIcon` is unchanged.
+
 ## 0.1.0
 
 ### Minor Changes

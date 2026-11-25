@@ -1,5 +1,48 @@
 # @mijn-ui-react/switch
 
+## 0.4.5
+
+### Patch Changes
+
+- 071215f: Align every `@radix-ui/*` dependency on one release set (the 2026-10-12 set:
+  Dialog 1.3.1, AlertDialog 1.2.1, Popover 1.3.1, Select 2.4.1, DropdownMenu
+  2.2.1, Tooltip 1.4.1, Tabs 1.2.1, RadioGroup 1.5.1, ...).
+
+  The packages declared floors from different Radix lines (`^1.1.x` for most,
+  `^1.2.12` for Tooltip, `^1.3.8` for SegmentedControl's RadioGroup), and Radix
+  pins its internal packages exactly. An app could therefore end up with
+  `@radix-ui/react-alert-dialog@1.2.1` (which pins `react-dialog@1.3.1`) next
+  to a locked `react-dialog@1.1.x`, i.e. two copies of DismissableLayer and
+  FocusScope and two independent layer stacks: a Select or DropdownMenu opened
+  inside a Dialog could close the Dialog. With every floor raised to the same
+  set, `@mijn-ui/react` now installs exactly one copy of each Radix internal.
+
+  If your app also depends on `@radix-ui/*` packages directly, update them to
+  the same set (or run `npm dedupe` / `pnpm dedupe`), otherwise you can still
+  end up with two copies.
+
+- c7459f4: Fix the disabled switch swallowing hover, and the thumb disappearing in dark
+  mode.
+  - **Disabled**: `disabled:pointer-events-none` meant a disabled switch never
+    received hover, so a `title` explaining why it is disabled never showed. It
+    now uses `disabled:cursor-not-allowed` instead. **A disabled switch shows a
+    not-allowed cursor and its `title` tooltip on hover**; it still cannot be
+    toggled (the native `disabled` attribute does that).
+  - **Dark mode**: the unchecked thumb was `bg-default`, which in dark mode is
+    near-black — about the darkness of the unchecked track (contrast ~1.3:1),
+    and the shadow that sets it off in light mode is invisible on a dark page.
+    Under `.dark` the unchecked thumb is now `fg-default` (white), ~15:1 against
+    the track. Light mode and the checked thumb are unchanged. The override keys
+    off a `.dark` ancestor, the same class theme.css switches its tokens on.
+  - The focus ring is now the theme's `mijn-focus-ring` (a 2px brand outline with
+    a transparent gap, as every control in 0.8), and the thumb's shadow reads
+    `--mijn-shadow-sm` (same value as before).
+
+- b948a13: Require `@mijn-ui/react-core` `^0.6.0` (was `^0.5.0`). The components now
+  read the `--mijn-radius-*` / `--mijn-shadow-*` tokens and the
+  `mijn-focus-ring` utility, which only `theme.css` from 0.6 defines; with an
+  older `theme.css` they would lose their corner radius, shadow and focus ring.
+
 ## 0.4.4
 
 ### Patch Changes

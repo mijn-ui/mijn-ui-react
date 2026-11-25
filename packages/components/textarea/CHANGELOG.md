@@ -1,5 +1,58 @@
 # @mijn-ui-react/textarea
 
+## 0.4.3
+
+### Patch Changes
+
+- 7978b2c: Components that draw a border now name its colour (`border-outline-default`)
+  instead of relying on the `* { border-color }` rule in `theme.css`'s base
+  layer: Button (`default` variant, `filled` + `default`, `outlined` +
+  `default`), Badge (the same three plus `modern` + `default`), Input
+  (`default` and `underline`), Textarea, Tabs (trigger underline), Pagination
+  (current page), Calendar (previous / next month buttons) and Accordion
+  (`outline` items, `solid` frame and dividers; the `solid` divider class was
+  misspelt `divide-y-outline-default` and generated nothing).
+
+  With `theme.css`'s base rule in place nothing looks different. Apps that
+  load the components without that rule used to get Tailwind v4's
+  `currentColor` borders (dark text-coloured outlines) on these components,
+  and apps whose own base rule sets a different border colour used to have it
+  show through on them; both now get the theme's `outline-default`.
+
+- c17e9a0: The focus ring no longer leaves a dark band around controls on raised
+  surfaces in dark mode.
+
+  It was a box-shadow ring with a 2px `ring-offset-bg-default` gap: a band
+  painted in the page background colour, so a focused button or input inside a
+  card, popover or dialog (`bg-default-alt`) got a near-black ring between
+  itself and the brand ring. The ring is now an outline from a new
+  `mijn-focus-ring` utility in `theme.css`: same geometry (2px wide, 2px away
+  from the control), same colours, but the gap is transparent and shows
+  whatever surface the control is on.
+
+  Used by Button, Badge, Input, Textarea, Select (trigger), Slider (thumb),
+  Radio Group (item), Pagination, Calendar (navigation and day buttons), and the
+  close / action buttons of Dialog, Alert Dialog and Popover.
+
+  What you may notice:
+  - **Dark mode, raised surfaces**: the black band around focused controls is
+    gone. On the page background nothing changes.
+  - **Light mode on a tinted surface** (e.g. `bg-bg-secondary`): the gap shows
+    the tint instead of a white band.
+  - **Forced-colours / Windows High Contrast**: the ring is now visible (browsers
+    drop box-shadow there, not outlines).
+  - **className overrides**: the ring colour still follows `focus-visible:ring-*`
+    colour classes. `focus-visible:ring-offset-*` and `focus-visible:ring-0` no
+    longer affect these components; use `focus-visible:outline-none` to remove
+    the ring.
+
+  Use `focus-visible:mijn-focus-ring` on your own controls to match.
+
+- b948a13: Require `@mijn-ui/react-core` `^0.6.0` (was `^0.5.0`). The components now
+  read the `--mijn-radius-*` / `--mijn-shadow-*` tokens and the
+  `mijn-focus-ring` utility, which only `theme.css` from 0.6 defines; with an
+  older `theme.css` they would lose their corner radius, shadow and focus ring.
+
 ## 0.4.2
 
 ### Patch Changes

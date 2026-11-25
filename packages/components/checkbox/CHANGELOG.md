@@ -1,5 +1,48 @@
 # @mijn-ui-react/checkbox
 
+## 0.4.3
+
+### Patch Changes
+
+- 071215f: Align every `@radix-ui/*` dependency on one release set (the 2026-10-12 set:
+  Dialog 1.3.1, AlertDialog 1.2.1, Popover 1.3.1, Select 2.4.1, DropdownMenu
+  2.2.1, Tooltip 1.4.1, Tabs 1.2.1, RadioGroup 1.5.1, ...).
+
+  The packages declared floors from different Radix lines (`^1.1.x` for most,
+  `^1.2.12` for Tooltip, `^1.3.8` for SegmentedControl's RadioGroup), and Radix
+  pins its internal packages exactly. An app could therefore end up with
+  `@radix-ui/react-alert-dialog@1.2.1` (which pins `react-dialog@1.3.1`) next
+  to a locked `react-dialog@1.1.x`, i.e. two copies of DismissableLayer and
+  FocusScope and two independent layer stacks: a Select or DropdownMenu opened
+  inside a Dialog could close the Dialog. With every floor raised to the same
+  set, `@mijn-ui/react` now installs exactly one copy of each Radix internal.
+
+  If your app also depends on `@radix-ui/*` packages directly, update them to
+  the same set (or run `npm dedupe` / `pnpm dedupe`), otherwise you can still
+  end up with two copies.
+
+- 322907a: Fix the checkbox's hairline indeterminate mark and its uncoloured focus ring.
+  - **Indeterminate**: the mark was `DividerHorizontalIcon`, a filled bar one
+    unit thick on a 15-unit grid — about 1px at the default 16px icon, a
+    hairline at smaller sizes. It is now `MinusIcon` with a 3-unit stroke on a
+    24-unit grid: 2px at 16px, 1.5px at 12px. **The indeterminate bar is
+    visibly bolder**, close to the check mark's weight. A `stroke-*` class in
+    `classNames.icon` overrides the stroke.
+  - **Focus ring**: the base had `focus-visible:ring-2` but no ring colour, so
+    Tailwind v4 used `currentColor` and the ring came out in the text colour
+    (black in light mode). It now uses the theme's `mijn-focus-ring` (a 2px
+    outline with a transparent 2px gap, as every control in 0.8) coloured by
+    `ring-outline-brand`. **The keyboard focus ring is brand-coloured.**
+  - Reads the theme's own radius (`rounded-(--mijn-radius-sm)`, the same 6px)
+    and gives its border an explicit `border-outline-default`. No visual change.
+
+- b948a13: Require `@mijn-ui/react-core` `^0.6.0` (was `^0.5.0`). The components now
+  read the `--mijn-radius-*` / `--mijn-shadow-*` tokens and the
+  `mijn-focus-ring` utility, which only `theme.css` from 0.6 defines; with an
+  older `theme.css` they would lose their corner radius, shadow and focus ring.
+- Updated dependencies [e527d99]
+  - @mijn-ui/shared-icons@0.2.0
+
 ## 0.4.2
 
 ### Patch Changes
