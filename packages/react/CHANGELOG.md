@@ -1,5 +1,34 @@
 # @mijn-ui/react
 
+## 0.7.0
+
+### Minor Changes
+
+- 630f091: Add `Tooltip` and `Slider`, two primitives the library did not ship.
+
+  Both are Radix-backed and follow the house pattern (`tv()` slots, the `unstyled`
+  / `classNames` escape hatches, `data-slot` attributes), so they theme and
+  override exactly like the rest of the set.
+  - **Tooltip** — `Tooltip`, `TooltipTrigger`, `TooltipContent`, `TooltipArrow`
+    and `TooltipProvider`. The provider is required and should be mounted once
+    near the root: it owns the shared hover delay, which is what lets a second
+    trigger open instantly instead of re-waiting the full delay.
+  - **Slider** — one thumb is rendered per value, so a range slider is just two
+    values. Each thumb is its own `role="slider"`, so `thumbAriaLabels` names them
+    individually; a single name on the root cannot tell two thumbs apart.
+
+  Both are re-exported from `@mijn-ui/react`.
+
+### Patch Changes
+
+- Updated dependencies [630f091]
+- Updated dependencies [39652e2]
+  - @mijn-ui/react-tooltip@0.1.0
+  - @mijn-ui/react-slider@0.1.0
+  - @mijn-ui/react-breadcrumb@0.2.1
+  - @mijn-ui/react-progress@0.4.3
+  - @mijn-ui/react-toast@0.2.1
+
 ## 0.6.0
 
 ### Minor Changes
