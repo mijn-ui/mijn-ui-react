@@ -34,7 +34,7 @@ system but use **two conventions you should know about**:
 | Secondary role | `color/*/secondary` | `--color-*-secondary` |
 | Color format | Hex (`#f05023`) | HSL (`hsl(21 90% 48%)`) |
 | Spacing token | `space/positive/*` (and numeric `number/positive/*`) | Tailwind spacing scale |
-| Radius / Shadow | `radius/*`, `shadow/drop/*` | `--radius-*`, `--shadow-*` (identical values) |
+| Radius / Shadow | `radius/*`, `shadow/drop/*` | `--mijn-radius-*`, `--mijn-shadow-*` (identical values; Tailwind's own `--radius-*` / `--shadow-*` are left alone) |
 
 So Figma's `color/bg/primary` (`#ffffff`) is the code's `--color-bg-default`
 (`hsl(0 0 100%)`). Radius and shadow values match exactly between the two.

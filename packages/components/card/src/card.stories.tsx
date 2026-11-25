@@ -86,7 +86,10 @@ const CardStats = (args: CardProps) => {
 
 const CardCustom = (args: CardProps) => {
   return (
-    <Card className="max-w-72 rounded-xl shadow-lg" {...args}>
+    <Card
+      className="max-w-72 rounded-(--mijn-radius-xl) shadow-(--mijn-shadow-lg)"
+      {...args}
+    >
       <CardHeader className="relative py-12">
         <div className="absolute -top-32 left-0 w-full">
           <img
@@ -103,7 +106,7 @@ const CardCustom = (args: CardProps) => {
           terrain.
         </CardDescription>
       </CardContent>
-      <CardFooter className="overflow-hidden rounded-b-xl p-0">
+      <CardFooter className="overflow-hidden rounded-b-(--mijn-radius-xl) p-0">
         <Button
           variant="brand"
           className="w-full gap-2 rounded-none py-5 font-semibold tracking-wider"
@@ -123,7 +126,7 @@ const CardUnstyled = (args: CardProps) => {
         <Button
           variant={"ghost"}
           iconOnly
-          className="text-fg-tertiary bg-bg-secondary rounded-lg p-0 sm:size-12"
+          className="text-fg-tertiary bg-bg-secondary rounded-(--mijn-radius-lg) p-0 sm:size-12"
           asChild
         >
           <span>

@@ -46,7 +46,7 @@ const CalendarTemplate = (args: CalendarProps) => {
         selected={date}
         onSelect={setDate}
         showOutsideDays={args.showOutsideDays}
-        className="rounded-lg border"
+        className="rounded-(--mijn-radius-lg) border"
         unstyled={args.unstyled}
       />
       <p className="text-fg-tertiary text-sm mt-2">
@@ -65,7 +65,7 @@ const CalendarMultiple = (args: CalendarProps) => {
         selected={dates}
         onSelect={setDates}
         showOutsideDays={args.showOutsideDays}
-        className="rounded-lg border"
+        className="rounded-(--mijn-radius-lg) border"
         unstyled={args.unstyled}
       />
       <p className="text-fg-tertiary text-sm mt-2 w-64 leading-6">
@@ -84,7 +84,7 @@ const CalendarRange = (args: CalendarProps) => {
         selected={dateRange}
         onSelect={setDateRange}
         showOutsideDays={args.showOutsideDays}
-        className="rounded-lg border"
+        className="rounded-(--mijn-radius-lg) border"
         unstyled={args.unstyled}
       />
       <p className="text-fg-tertiary text-sm mt-2 w-64">
@@ -104,7 +104,7 @@ const CalendarUnstyled = (args: CalendarProps) => {
         selected={date}
         onSelect={setDate}
         showOutsideDays={args.showOutsideDays}
-        className="rounded-lg borderp-4"
+        className="rounded-(--mijn-radius-lg) borderp-4"
         classNames={{
           button_previous: "absolute left-1 top-0 z-10",
           button_next: "absolute right-1 top-0 z-10",

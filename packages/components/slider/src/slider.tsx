@@ -26,7 +26,7 @@ const sliderStyles = tv({
       "data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full",
     ],
     thumb: [
-      "border-outline-brand bg-bg-default block size-4 shrink-0 rounded-full border shadow-sm transition-colors",
+      "border-outline-brand bg-bg-default block size-4 shrink-0 rounded-full border shadow-(--mijn-shadow-sm) transition-colors",
       "focus-visible:ring-outline-brand focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-default focus-visible:outline-none",
       "hover:bg-bg-secondary disabled:pointer-events-none disabled:opacity-50",
     ],

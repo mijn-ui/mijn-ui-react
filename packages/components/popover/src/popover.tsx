@@ -23,7 +23,7 @@ const popoverStyles = tv({
       "data-[state=open]:zoom-in-95 data-[state=open]:animate-in data-[state=open]:fade-in-0",
       "data-[state=closed]:zoom-out-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
       "data-[side=bottom]:slide-in-from-bottom-6 data-[side=left]:slide-in-from-left-6 data-[side=right]:slide-in-from-right-6 data-[side=top]:slide-in-from-top-6",
-      "border-outline-secondary bg-bg-default-alt text-fg-default z-50 w-full rounded-md border p-4 shadow-md outline-none duration-300",
+      "border-outline-secondary bg-bg-default-alt text-fg-default z-50 w-full rounded-md border p-4 shadow-(--mijn-shadow-md) outline-none duration-300",
     ],
   },
 })

@@ -21,7 +21,7 @@ const dialogStyles = tv({
     ],
     contentWrapper: "fixed inset-0 z-50 flex items-center justify-center",
     content: [
-      "border-outline-secondary bg-bg-default-alt m-4 flex w-full max-w-120 flex-col gap-4 rounded-md border p-6 shadow-lg",
+      "border-outline-secondary bg-bg-default-alt m-4 flex w-full max-w-120 flex-col gap-4 rounded-md border p-6 shadow-(--mijn-shadow-lg)",
       "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-90",
       "data-[state=closed]:animate-out data-[state=closed]:fade-out-0  data-[state=closed]:zoom-out-90",
     ],

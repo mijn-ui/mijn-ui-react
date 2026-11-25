@@ -11,10 +11,10 @@ import { ChartHue, HUE_BG_MAP } from "./chart-utils"
 
 const chartTooltipStyles = tv({
   slots: {
-    base: "bg-bg-default border-outline-secondary pointer-events-none absolute z-10 rounded-md border px-2 py-1 text-xs whitespace-nowrap shadow-md",
+    base: "bg-bg-default border-outline-secondary pointer-events-none absolute z-10 rounded-md border px-2 py-1 text-xs whitespace-nowrap shadow-(--mijn-shadow-md)",
     title: "text-fg-secondary font-medium",
     row: "flex items-center gap-1.5",
-    swatch: "rounded-2xs size-2 shrink-0",
+    swatch: "rounded-(--mijn-radius-2xs) size-2 shrink-0",
     label: "text-fg-secondary",
     value: "text-fg-default ml-auto pl-2 font-medium",
   },

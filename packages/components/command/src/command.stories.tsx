@@ -44,7 +44,7 @@ type Story = StoryObj<typeof Command>
 const CommandTemplate = (args: CommandProps) => {
   return (
     <Command
-      className="border-outline-default bordershadow-md rounded-lg md:w-[450px]"
+      className="border-outline-default bordershadow-md rounded-(--mijn-radius-lg) md:w-[450px]"
       {...args}
     >
       <CommandInput asChild>
@@ -96,7 +96,7 @@ const CommandTemplate = (args: CommandProps) => {
 const CommandUnstyled = (args: CommandProps) => {
   return (
     <Command
-      className="border-outline-default bordershadow-md rounded-lg p-3 md:w-[300px]"
+      className="border-outline-default bordershadow-md rounded-(--mijn-radius-lg) p-3 md:w-[300px]"
       classNames={{
         item: "flex items-center pointer-events-none",
         shortcut: "ml-auto",

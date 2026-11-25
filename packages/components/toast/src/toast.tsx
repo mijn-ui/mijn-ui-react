@@ -10,7 +10,7 @@ import { VariantProps, tv } from "tailwind-variants"
 
 const toastStyles = tv({
   slots: {
-    base: "group pointer-events-auto relative flex w-full items-start gap-3 overflow-hidden rounded-lg border bg-bg-default-alt p-4 shadow-lg transition-all",
+    base: "group pointer-events-auto relative flex w-full items-start gap-3 overflow-hidden rounded-(--mijn-radius-lg) border bg-bg-default-alt p-4 shadow-(--mijn-shadow-lg) transition-all",
     icon: "mt-0.5 size-5 shrink-0",
     body: "flex flex-1 flex-col gap-1",
     title: "text-sm font-semibold text-fg-default",

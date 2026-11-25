@@ -189,7 +189,7 @@ const AccordionWithCustomIcons = (args: AccordionProps) => (
 const AccordionUnstyled = (args: AccordionProps) => (
   <Accordion
     {...args}
-    className="md:w-xl border w-60 rounded-2xl border-orange-500 p-4"
+    className="md:w-xl border w-60 rounded-(--mijn-radius-2xl) border-orange-500 p-4"
   >
     <AccordionItem className="my-2" value="item-1">
       <AccordionTrigger
@@ -298,12 +298,12 @@ export const CustomStyles: Story = {
   render: AccordionCustomStyles,
   args: {
     classNames: {
-      base: "md:w-xl w-60 rounded-2xl p-4 bg-linear-to-tr from-bg-brand/20 to-bg-brand/50 dark:from-bg-brand/10 dark:to-bg-brand/30",
-      item: "border-none bg-white/50 dark:bg-white/20 my-2 backdrop-blur rounded-lg px-4",
+      base: "md:w-xl w-60 rounded-(--mijn-radius-2xl) p-4 bg-linear-to-tr from-bg-brand/20 to-bg-brand/50 dark:from-bg-brand/10 dark:to-bg-brand/30",
+      item: "border-none bg-white/50 dark:bg-white/20 my-2 backdrop-blur rounded-(--mijn-radius-lg) px-4",
       contentWrapper: "",
       content: "",
       triggerWrapper: "",
-      trigger: "rounded-lg text-fg-brand",
+      trigger: "rounded-(--mijn-radius-lg) text-fg-brand",
       icon: "",
     },
   },

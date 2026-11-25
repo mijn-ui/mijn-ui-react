@@ -25,7 +25,7 @@ export type { ToasterProps }
 const sonnerStyles = tv({
   slots: {
     toast:
-      "group border-outline-secondary bg-bg-default-alt text-fg-default rounded-lg border shadow-lg",
+      "group border-outline-secondary bg-bg-default-alt text-fg-default rounded-(--mijn-radius-lg) border shadow-(--mijn-shadow-lg)",
     title: "text-fg-default text-sm font-semibold",
     description: "text-fg-secondary! text-sm",
     actionButton:

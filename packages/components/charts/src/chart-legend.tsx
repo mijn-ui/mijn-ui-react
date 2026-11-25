@@ -13,7 +13,7 @@ const chartLegendStyles = tv({
   slots: {
     base: "flex gap-x-4 gap-y-1 text-xs",
     item: "flex min-w-0 items-center gap-1.5",
-    swatch: "rounded-2xs size-2.5 shrink-0",
+    swatch: "rounded-(--mijn-radius-2xs) size-2.5 shrink-0",
     label: "text-fg-secondary truncate",
     value: "text-fg-default font-medium",
   },

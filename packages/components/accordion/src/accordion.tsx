@@ -32,15 +32,15 @@ const accordionStyles = tv({
       },
       plain: {},
       solid: {
-        base: "py-2 px-4 bg-bg-secondary rounded-lg border divide-y divide-y-outline-default",
+        base: "py-2 px-4 bg-bg-secondary rounded-(--mijn-radius-lg) border divide-y divide-y-outline-default",
       },
       // Additional variants
       splitted: {
         base: "space-y-1.5",
-        item: "bg-bg-secondary px-4 rounded-lg border border-outline-default",
+        item: "bg-bg-secondary px-4 rounded-(--mijn-radius-lg) border border-outline-default",
       },
       subtle: {
-        base: "rounded-lg overflow-hidden divide-y",
+        base: "rounded-(--mijn-radius-lg) overflow-hidden divide-y",
         item: "border-outline-secondary",
         trigger: "bg-bg-secondary px-4",
         content: "p-4 bg-bg-tertiary",
