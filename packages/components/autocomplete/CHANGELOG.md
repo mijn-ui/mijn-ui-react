@@ -1,5 +1,40 @@
 # @mijn-ui-react/autocomplete
 
+## 0.3.6
+
+### Patch Changes
+
+- 071215f: Align every `@radix-ui/*` dependency on one release set (the 2026-10-12 set:
+  Dialog 1.3.1, AlertDialog 1.2.1, Popover 1.3.1, Select 2.4.1, DropdownMenu
+  2.2.1, Tooltip 1.4.1, Tabs 1.2.1, RadioGroup 1.5.1, ...).
+
+  The packages declared floors from different Radix lines (`^1.1.x` for most,
+  `^1.2.12` for Tooltip, `^1.3.8` for SegmentedControl's RadioGroup), and Radix
+  pins its internal packages exactly. An app could therefore end up with
+  `@radix-ui/react-alert-dialog@1.2.1` (which pins `react-dialog@1.3.1`) next
+  to a locked `react-dialog@1.1.x`, i.e. two copies of DismissableLayer and
+  FocusScope and two independent layer stacks: a Select or DropdownMenu opened
+  inside a Dialog could close the Dialog. With every floor raised to the same
+  set, `@mijn-ui/react` now installs exactly one copy of each Radix internal.
+
+  If your app also depends on `@radix-ui/*` packages directly, update them to
+  the same set (or run `npm dedupe` / `pnpm dedupe`), otherwise you can still
+  end up with two copies.
+
+- b948a13: Require `@mijn-ui/react-core` `^0.6.0` (was `^0.5.0`). The components now
+  read the `--mijn-radius-*` / `--mijn-shadow-*` tokens and the
+  `mijn-focus-ring` utility, which only `theme.css` from 0.6 defines; with an
+  older `theme.css` they would lose their corner radius, shadow and focus ring.
+- Updated dependencies [071215f]
+- Updated dependencies [e527d99]
+- Updated dependencies [c17e9a0]
+- Updated dependencies [b948a13]
+- Updated dependencies [1025439]
+  - @mijn-ui/react-popover@0.4.3
+  - @mijn-ui/shared-icons@0.2.0
+  - @mijn-ui/react-command@0.4.6
+  - @mijn-ui/react-skeleton@0.4.3
+
 ## 0.3.5
 
 ### Patch Changes

@@ -1,5 +1,55 @@
 # @mijn-ui/react-tabs
 
+## 0.4.3
+
+### Patch Changes
+
+- 071215f: Align every `@radix-ui/*` dependency on one release set (the 2026-10-12 set:
+  Dialog 1.3.1, AlertDialog 1.2.1, Popover 1.3.1, Select 2.4.1, DropdownMenu
+  2.2.1, Tooltip 1.4.1, Tabs 1.2.1, RadioGroup 1.5.1, ...).
+
+  The packages declared floors from different Radix lines (`^1.1.x` for most,
+  `^1.2.12` for Tooltip, `^1.3.8` for SegmentedControl's RadioGroup), and Radix
+  pins its internal packages exactly. An app could therefore end up with
+  `@radix-ui/react-alert-dialog@1.2.1` (which pins `react-dialog@1.3.1`) next
+  to a locked `react-dialog@1.1.x`, i.e. two copies of DismissableLayer and
+  FocusScope and two independent layer stacks: a Select or DropdownMenu opened
+  inside a Dialog could close the Dialog. With every floor raised to the same
+  set, `@mijn-ui/react` now installs exactly one copy of each Radix internal.
+
+  If your app also depends on `@radix-ui/*` packages directly, update them to
+  the same set (or run `npm dedupe` / `pnpm dedupe`), otherwise you can still
+  end up with two copies.
+
+- 7978b2c: Components that draw a border now name its colour (`border-outline-default`)
+  instead of relying on the `* { border-color }` rule in `theme.css`'s base
+  layer: Button (`default` variant, `filled` + `default`, `outlined` +
+  `default`), Badge (the same three plus `modern` + `default`), Input
+  (`default` and `underline`), Textarea, Tabs (trigger underline), Pagination
+  (current page), Calendar (previous / next month buttons) and Accordion
+  (`outline` items, `solid` frame and dividers; the `solid` divider class was
+  misspelt `divide-y-outline-default` and generated nothing).
+
+  With `theme.css`'s base rule in place nothing looks different. Apps that
+  load the components without that rule used to get Tailwind v4's
+  `currentColor` borders (dark text-coloured outlines) on these components,
+  and apps whose own base rule sets a different border colour used to have it
+  show through on them; both now get the theme's `outline-default`.
+
+- 9c8817b: Fix the active tab having no colour, and give triggers a visible focus ring.
+  - The active trigger used `text-fg-brand-emphasis`, a token `theme.css` never
+    defined, so the class compiled to nothing and the active tab kept the
+    inactive `text-fg-secondary` colour. It now uses `text-fg-brand` (also on
+    hover), so **the active tab renders in the brand colour** — a visible change.
+  - Triggers only changed background on keyboard focus. They now also draw the
+    theme's `mijn-focus-ring` (a 2px brand outline with a transparent 2px gap,
+    as every control in 0.8), coloured by `ring-outline-brand`.
+
+- b948a13: Require `@mijn-ui/react-core` `^0.6.0` (was `^0.5.0`). The components now
+  read the `--mijn-radius-*` / `--mijn-shadow-*` tokens and the
+  `mijn-focus-ring` utility, which only `theme.css` from 0.6 defines; with an
+  older `theme.css` they would lose their corner radius, shadow and focus ring.
+
 ## 0.4.2
 
 ### Patch Changes

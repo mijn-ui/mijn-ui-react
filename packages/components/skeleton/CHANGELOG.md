@@ -1,5 +1,14 @@
 # @mijn-ui-react/skeleton
 
+## 0.4.3
+
+### Patch Changes
+
+- b948a13: Require `@mijn-ui/react-core` `^0.6.0` (was `^0.5.0`). The components now
+  read the `--mijn-radius-*` / `--mijn-shadow-*` tokens and the
+  `mijn-focus-ring` utility, which only `theme.css` from 0.6 defines; with an
+  older `theme.css` they would lose their corner radius, shadow and focus ring.
+
 ## 0.4.2
 
 ### Patch Changes
