@@ -49,6 +49,23 @@ onto mijn-ui theme tokens, so toasts follow light/dark and any re-themed palette
 without per-app restyling. Pass `unstyled` to drop that mapping entirely and
 supply your own `classNames`.
 
+### Overriding a slot
+
+Sonner injects its own stylesheet at runtime, outside any CSS cascade layer.
+Unlayered rules beat every Tailwind utility (those live in `@layer utilities`)
+regardless of specificity, so the toaster's slot classes are `!important`
+wherever sonner sets the same property. Do the same in your own `classNames`
+when you override one of those properties:
+
+```tsx
+<Toaster classNames={{ title: "font-bold!", actionButton: "rounded-full!" }} />
+```
+
+Properties sonner leaves alone (`uppercase`, `py-2`, …) need no `!`. The
+toast's own background, text and border colours are the exception: they come
+from the variables above, so set those variables (or use `richColors`) rather
+than classes.
+
 ## License
 
 This project is licensed under the terms of the [MIT license.](https://github.com/mijn-ui/mijn-ui-react/blob/main/LICENSE)
