@@ -167,4 +167,32 @@ describe("useTVUnstyled", () => {
       })
     })
   })
+
+  describe("when variant props are passed to a slot alongside className", () => {
+    const listStyles = tv({
+      slots: { item: "flex px-2" },
+      variants: { inset: { true: { item: "pl-8" } } },
+    })
+
+    const renderListHook = (unstyledOverride?: boolean) =>
+      renderHook(() =>
+        useTVUnstyled({ styles: listStyles() }, unstyledOverride),
+      )
+
+    it("should keep the variant classes", () => {
+      const { result } = renderListHook()
+
+      expect(result.current.item({ inset: true, className: USER_CLASS })).toBe(
+        `flex px-2 pl-8 ${USER_CLASS}`,
+      )
+    })
+
+    it("should return only user classes if unstyled", () => {
+      const { result } = renderListHook(true)
+
+      expect(result.current.item({ inset: true, className: USER_CLASS })).toBe(
+        USER_CLASS,
+      )
+    })
+  })
 })

@@ -10,7 +10,9 @@ import { cn } from "../utils"
  * @param unstyled - A flag to determine whether to apply unstyled mode.
  *
  * @returns A record of functions with the same arguments as the originals,
- *          plus `className`, applying unstyled logic.
+ *          plus `className`, applying unstyled logic. Variant props passed
+ *          next to `className` (e.g. `content({ position, className })`)
+ *          are forwarded to the original slot function.
  */
 
 export const createTVUnstyledSlots = <
@@ -26,24 +28,60 @@ export const createTVUnstyledSlots = <
     (acc, key) => {
       //eslint-disable-next-line
       acc[key as keyof T] = (...args: any[]) => {
-        // Extract the last argument if it includes `className`
-        const lastArg = args[args.length - 1]
-        const className = lastArg?.className
+        const { slotArgs, userClasses } = splitUserClasses(args)
 
-        // Remove the `className` from the arguments to pass to the original function
-        const argsWithoutClassName = className ? args.slice(0, -1) : args
-
-        // Call the original function and merge styles
+        // Resolve the slot's own classes (base + variants) without the user
+        // classes, then merge them in - or, when unstyled, use only them.
         return applyUnstyled(
           unstyled,
-          styleSlots[key as keyof T]?.(...argsWithoutClassName) || "",
-          className,
+          styleSlots[key as keyof T]?.(...slotArgs) || "",
+          userClasses,
         )
       }
       return acc
     },
     {} as { [K in keyof T]: (...args: Parameters<T[K]>) => string | undefined },
   )
+}
+
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Splits the user classes (`className` and tailwind-variants' `class` alias)
+ * off a slot function's props object - its last argument - while keeping
+ * every other key, i.e. the slot-level variant props such as `position` or
+ * `inset`, so they still reach the tailwind-variants slot function.
+ *
+ * Arguments without a props object carrying `className`/`class` are returned
+ * untouched.
+ */
+const splitUserClasses = (
+  args: unknown[],
+): { slotArgs: unknown[]; userClasses: string | undefined } => {
+  const lastIndex = args.length - 1
+  const lastArg = args[lastIndex]
+
+  if (
+    lastArg === null ||
+    typeof lastArg !== "object" ||
+    !("className" in lastArg || "class" in lastArg)
+  ) {
+    return { slotArgs: args, userClasses: undefined }
+  }
+
+  const {
+    className,
+    class: classProp,
+    ...variantProps
+  } = lastArg as Record<string, unknown> & {
+    className?: string
+    class?: string
+  }
+
+  return {
+    slotArgs: [...args.slice(0, lastIndex), variantProps],
+    userClasses: classProp === undefined ? className : cn(classProp, className),
+  }
 }
 
 /* -------------------------------------------------------------------------- */
