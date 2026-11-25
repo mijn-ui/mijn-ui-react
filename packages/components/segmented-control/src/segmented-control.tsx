@@ -17,16 +17,16 @@ const segmentedControlStyles = tv({
     // The theme's 8px radius, spelled as its variable: tailwind-merge does not
     // know the theme-only `rounded-base`, so it would keep it alongside a
     // `rounded-*` override instead of replacing it.
-    base: "bg-bg-secondary rounded-(--radius-base) inline-flex max-w-full flex-wrap items-center p-0.5",
+    base: "bg-bg-secondary rounded-(--mijn-radius-base) inline-flex max-w-full flex-wrap items-center p-0.5",
     item: [
-      "text-fg-secondary inline-flex cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-sm font-medium transition-colors",
+      "text-fg-secondary inline-flex cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-(--mijn-radius-sm) font-medium transition-colors",
       "not-aria-disabled:hover:text-fg-default focus-visible:outline-hidden focus-visible:ring-outline-brand focus-visible:ring-2",
       // The selected segment is keyed on ARIA rather than `data-state`: a
       // <TooltipTrigger asChild> around an item writes its own `data-state`
       // (open/closed) over Radix's, while aria-checked / aria-selected are
       // only ever set by the radio or tab underneath.
-      "aria-checked:bg-bg-default-alt aria-checked:text-fg-default aria-checked:shadow-sm",
-      "aria-selected:bg-bg-default-alt aria-selected:text-fg-default aria-selected:shadow-sm",
+      "aria-checked:bg-bg-default-alt aria-checked:text-fg-default aria-checked:shadow-(--mijn-shadow-sm)",
+      "aria-selected:bg-bg-default-alt aria-selected:text-fg-default aria-selected:shadow-(--mijn-shadow-sm)",
       "aria-disabled:cursor-not-allowed aria-disabled:opacity-50",
     ],
     // fg-secondary, not fg-tertiary: tertiary is 4.43:1 on the light track and

@@ -15,15 +15,15 @@ const popoverStyles = tv({
     base: "",
     trigger: "",
     close: [
-      "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-      "text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 focus-visible:ring-offset-2",
+      "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:mijn-focus-ring disabled:pointer-events-none disabled:opacity-50",
+      "text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70",
       "h-9 rounded-md px-3",
     ],
     content: [
       "data-[state=open]:zoom-in-95 data-[state=open]:animate-in data-[state=open]:fade-in-0",
       "data-[state=closed]:zoom-out-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
       "data-[side=bottom]:slide-in-from-bottom-6 data-[side=left]:slide-in-from-left-6 data-[side=right]:slide-in-from-right-6 data-[side=top]:slide-in-from-top-6",
-      "border-outline-secondary bg-bg-default-alt text-fg-default z-50 w-full rounded-md border p-4 shadow-md outline-none duration-300",
+      "border-outline-secondary bg-bg-default-alt text-fg-default z-50 w-full rounded-md border p-4 shadow-(--mijn-shadow-md) outline-none duration-300",
     ],
   },
 })

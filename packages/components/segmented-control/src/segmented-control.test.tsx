@@ -457,7 +457,7 @@ describe("SegmentedControl — styling", () => {
         </SegmentedControlItem>
       </SegmentedControl>,
     )
-    expect(radio("A").className).toContain("rounded-sm")
+    expect(radio("A").className).toContain("rounded-(--mijn-radius-sm)")
   })
 
   it("merges per-slot classNames, and className last", () => {
@@ -478,10 +478,10 @@ describe("SegmentedControl — styling", () => {
     )
 
     expect(base()?.className).toContain("rounded-full")
-    expect(base()?.className).not.toContain("--radius-base")
+    expect(base()?.className).not.toContain("--mijn-radius-base")
     expect(base()?.className).toContain("w-full")
     expect(item()?.className).toContain("rounded-full")
-    expect(item()?.className).not.toContain("rounded-sm")
+    expect(item()?.className).not.toContain("rounded-(--mijn-radius-sm)")
     expect(item()?.className).toContain("flex-1")
     const count = document.querySelector(
       '[data-slot="segmented-control-count"]',

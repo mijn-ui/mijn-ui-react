@@ -22,7 +22,7 @@ import { VariantProps, tv } from "tailwind-variants"
 const commandStyles = tv({
   slots: {
     base: "border-outline-default bg-bg-default-alt text-fg-default flex size-full flex-col overflow-hidden rounded-md border",
-    dialogWrapper: "overflow-hidden p-0 shadow-lg",
+    dialogWrapper: "overflow-hidden p-0 shadow-(--mijn-shadow-lg)",
     dialog:
       "[&_[cmdk-group-heading]]:text-fg-tertiary [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5",
     list: "max-h-[300px] overflow-y-auto overflow-x-hidden",

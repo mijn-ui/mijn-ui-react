@@ -31,7 +31,7 @@ type Story = StoryObj<typeof Table>
 
 const TableTemplate = (args: TableProps) => {
   return (
-    <div className=" border-outline-default overflow-auto rounded-xl border">
+    <div className=" border-outline-default overflow-auto rounded-(--mijn-radius-xl) border">
       <Table {...args}>
         <TableHeader>
           <TableRow>

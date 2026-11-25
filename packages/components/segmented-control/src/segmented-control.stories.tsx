@@ -148,7 +148,10 @@ const FilterWithCountsExample = (args: SegmentedControlProps) => {
         className="text-fg-secondary w-full space-y-1 text-sm"
       >
         {shown.slice(0, 4).map((c) => (
-          <li key={c.id} className="bg-bg-secondary rounded-sm px-2 py-1">
+          <li
+            key={c.id}
+            className="bg-bg-secondary rounded-(--mijn-radius-sm) px-2 py-1"
+          >
             Conflict #{c.id}
           </li>
         ))}

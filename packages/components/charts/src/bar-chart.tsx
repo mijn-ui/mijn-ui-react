@@ -21,7 +21,7 @@ const barChartStyles = tv({
     base: "flex w-full flex-col gap-2",
     plot: "flex w-full items-end gap-2",
     barGroup: "relative flex h-full min-w-0 flex-1 items-end justify-center",
-    bar: "rounded-t-xs relative w-full max-w-10 transition-opacity duration-200",
+    bar: "rounded-t-(--mijn-radius-xs) relative w-full max-w-10 transition-opacity duration-200",
     valueLabel:
       "text-fg-secondary pointer-events-none absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] font-medium whitespace-nowrap",
     labelGroup: "flex w-full gap-2",

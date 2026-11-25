@@ -135,7 +135,7 @@ export const Unstyled: Story = {
         {...args}
         classNames={{
           toast:
-            "bg-bg-inverse text-fg-inverse flex items-center gap-2 rounded-full px-4 py-2 text-sm shadow-lg",
+            "bg-bg-inverse text-fg-inverse flex items-center gap-2 rounded-full px-4 py-2 text-sm shadow-(--mijn-shadow-lg)",
           title: "font-medium",
         }}
       />

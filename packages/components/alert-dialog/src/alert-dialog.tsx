@@ -21,7 +21,7 @@ const alertDialogStyles = tv({
     ],
     contentWrapper: "fixed inset-0 z-50 flex items-center justify-center",
     content: [
-      "border-outline-default bg-bg-default-alt flex w-full max-w-lg flex-col gap-2 rounded-xl border p-6 shadow-lg",
+      "border-outline-default bg-bg-default-alt flex w-full max-w-lg flex-col gap-2 rounded-(--mijn-radius-xl) border p-6 shadow-(--mijn-shadow-lg)",
       "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-90",
       "data-[state=closed]:animate-out data-[state=closed]:fade-out-0  data-[state=closed]:zoom-out-90",
     ],
@@ -30,12 +30,12 @@ const alertDialogStyles = tv({
     title: "text-base font-semibold",
     description: "text-fg-secondary text-sm",
     action: [
-      "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3",
-      "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-xs",
+      "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:mijn-focus-ring disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3",
+      "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-(--mijn-shadow-xs)",
     ],
     cancel: [
-      "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3",
-      "text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70 focus-visible:ring-offset-2",
+      "inline-flex items-center justify-center gap-0.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:mijn-focus-ring disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3",
+      "text-fg-default hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70",
     ],
   },
 })

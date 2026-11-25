@@ -14,7 +14,7 @@ import { VariantProps, tv } from "tailwind-variants"
 const itemFocusClasses = ["focus:bg-bg-secondary"]
 
 const commonContentClasses = [
-  "z-50 min-w-32 overflow-hidden rounded-md border border-outline-default bg-bg-default-alt text-fg-default shadow-lg",
+  "z-50 min-w-32 overflow-hidden rounded-md border border-outline-default bg-bg-default-alt text-fg-default shadow-(--mijn-shadow-lg)",
 ]
 
 const commonItemClasses = [

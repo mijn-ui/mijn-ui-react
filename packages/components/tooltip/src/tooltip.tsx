@@ -19,7 +19,7 @@ const tooltipStyles = tv({
       "data-[state=instant-open]:zoom-in-95 data-[state=instant-open]:animate-in data-[state=instant-open]:fade-in-0",
       "data-[state=closed]:zoom-out-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
       "data-[side=bottom]:slide-in-from-bottom-1 data-[side=left]:slide-in-from-left-1 data-[side=right]:slide-in-from-right-1 data-[side=top]:slide-in-from-top-1",
-      "bg-bg-inverse text-fg-inverse z-50 max-w-xs text-balance rounded-md px-2.5 py-1.5 text-xs font-medium shadow-md duration-150",
+      "bg-bg-inverse text-fg-inverse z-50 max-w-xs text-balance rounded-md px-2.5 py-1.5 text-xs font-medium shadow-(--mijn-shadow-md) duration-150",
     ],
     arrow: "fill-bg-inverse",
   },

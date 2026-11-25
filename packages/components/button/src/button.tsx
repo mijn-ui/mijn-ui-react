@@ -10,7 +10,7 @@ import { VariantProps, tv } from "tailwind-variants"
 
 const buttonStyles = tv({
   slots: {
-    base: "inline-flex items-center justify-center gap-1.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer",
+    base: "inline-flex items-center justify-center gap-1.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:mijn-focus-ring disabled:pointer-events-none disabled:opacity-50 cursor-pointer",
     loadingIcon: "size-5 animate-spin text-current",
   },
   variants: {
@@ -25,12 +25,12 @@ const buttonStyles = tv({
     },
     variant: {
       // Figma-aligned composite types (color encoded in the variant name)
-      default: "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-xs border focus-visible:ring-offset-2",
+      default: "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default",
       "default-plain": "text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
-      brand: "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-xs",
+      brand: "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-(--mijn-shadow-xs)",
       "brand-plain": "text-fg-brand hover:bg-bg-brand hover:text-on-bg-brand focus-visible:ring-outline-brand active:bg-bg-brand/70",
       "brand-outline": "border border-outline-brand bg-transparent text-fg-brand hover:bg-bg-brand hover:text-on-bg-brand focus-visible:ring-outline-brand active:bg-bg-brand/70",
-      error: "bg-bg-danger text-on-bg-danger hover:bg-bg-danger/80 focus-visible:ring-outline-danger active:bg-bg-danger/70 shadow-xs",
+      error: "bg-bg-danger text-on-bg-danger hover:bg-bg-danger/80 focus-visible:ring-outline-danger active:bg-bg-danger/70 shadow-(--mijn-shadow-xs)",
       "error-plain": "text-fg-danger hover:bg-bg-danger hover:text-on-bg-danger focus-visible:ring-outline-danger active:bg-bg-danger/70",
       // Generic variants (combined with color prop)
       filled: "",
@@ -43,7 +43,7 @@ const buttonStyles = tv({
       sm: "h-8 rounded-md px-3",
       default: "h-9 rounded-md px-3",
       md: "h-9 rounded-md px-3",
-      lg: "h-12 rounded-lg px-4",
+      lg: "h-12 rounded-(--mijn-radius-lg) px-4",
     },
     iconOnly: {
       true: "gap-0 px-0",
@@ -61,43 +61,43 @@ const buttonStyles = tv({
       variant: "filled",
       color: "default",
       className:
-        "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-xs border focus-visible:ring-offset-2 ",
+        "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default ",
     },
     {
       variant: "filled",
       color: "brand",
       className:
-        "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-xs",
+        "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-(--mijn-shadow-xs)",
     },
     {
       variant: "filled",
       color: "secondary",
       className:
-        "bg-bg-secondary text-fg-secondary shadow-xs hover:bg-bg-accent focus-visible:ring-outline-brand focus-visible:ring-offset-2 active:bg-bg-accent/70",
+        "bg-bg-secondary text-fg-secondary shadow-(--mijn-shadow-xs) hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
     },
     {
       variant: "filled",
       color: "success",
       className:
-        "bg-bg-success text-on-bg-success hover:bg-bg-success/80 focus-visible:ring-outline-success shadow-xs active:bg-bg-success/70",
+        "bg-bg-success text-on-bg-success hover:bg-bg-success/80 focus-visible:ring-outline-success shadow-(--mijn-shadow-xs) active:bg-bg-success/70",
     },
     {
       variant: "filled",
       color: "warning",
       className:
-        "bg-bg-warning text-on-bg-warning hover:bg-bg-warning/80 focus-visible:ring-outline-warning shadow-xs active:bg-bg-warning/70",
+        "bg-bg-warning text-on-bg-warning hover:bg-bg-warning/80 focus-visible:ring-outline-warning shadow-(--mijn-shadow-xs) active:bg-bg-warning/70",
     },
     {
       variant: "filled",
       color: "danger",
       className:
-        "bg-bg-danger text-on-bg-danger hover:bg-bg-danger/80 focus-visible:ring-outline-danger shadow-xs active:bg-bg-danger/70",
+        "bg-bg-danger text-on-bg-danger hover:bg-bg-danger/80 focus-visible:ring-outline-danger shadow-(--mijn-shadow-xs) active:bg-bg-danger/70",
     },
     {
       variant: "filled",
       color: "inverse",
       className:
-        "bg-bg-inverse text-fg-inverse shadow-xs hover:bg-bg-inverse/80 focus-visible:ring-outline-inverse active:bg-bg-inverse/70",
+        "bg-bg-inverse text-fg-inverse shadow-(--mijn-shadow-xs) hover:bg-bg-inverse/80 focus-visible:ring-outline-inverse active:bg-bg-inverse/70",
     },
 
     // outlined / colors
@@ -105,7 +105,7 @@ const buttonStyles = tv({
       variant: "outlined",
       color: "default",
       className:
-        "border bg-transparent text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
+        "border border-outline-default bg-transparent text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
     },
     {
       variant: "outlined",
@@ -141,7 +141,7 @@ const buttonStyles = tv({
       variant: "outlined",
       color: "inverse",
       className:
-        "bg-transparent border border-outline-inverse text-bg-inverse shadow-xs hover:bg-bg-inverse focus-visible:ring-outline-inverse active:bg-bg-inverse/70 hover:text-fg-inverse",
+        "bg-transparent border border-outline-inverse text-bg-inverse shadow-(--mijn-shadow-xs) hover:bg-bg-inverse focus-visible:ring-outline-inverse active:bg-bg-inverse/70 hover:text-fg-inverse",
     },
 
     // subtle / colors
@@ -149,7 +149,7 @@ const buttonStyles = tv({
       variant: "subtle",
       color: "default",
       className:
-        "text-fg-default shadow-sm bg-bg-accent/20 hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
+        "text-fg-default shadow-(--mijn-shadow-sm) bg-bg-accent/20 hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
     },
     {
       variant: "subtle",
@@ -161,7 +161,7 @@ const buttonStyles = tv({
       variant: "subtle",
       color: "secondary",
       className:
-        "text-fg-secondary shadow-sm bg-bg-secondary/40 hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70",
+        "text-fg-secondary shadow-(--mijn-shadow-sm) bg-bg-secondary/40 hover:bg-bg-secondary focus-visible:ring-outline-brand active:bg-bg-secondary/70",
     },
     {
       variant: "subtle",
@@ -237,7 +237,7 @@ const buttonStyles = tv({
       variant: "light",
       color: "default",
       className:
-        "text-fg-default hover:bg-bg-accent/20 focus-visible:ring-outline-brand hover:shadow-sm active:bg-bg-accent/10",
+        "text-fg-default hover:bg-bg-accent/20 focus-visible:ring-outline-brand hover:shadow-(--mijn-shadow-sm) active:bg-bg-accent/10",
     },
     {
       variant: "light",
@@ -249,7 +249,7 @@ const buttonStyles = tv({
       variant: "light",
       color: "secondary",
       className:
-        "text-fg-secondary hover:bg-bg-secondary/20 hover:shadow-sm focus-visible:ring-outline-brand active:bg-bg-secondary/10",
+        "text-fg-secondary hover:bg-bg-secondary/20 hover:shadow-(--mijn-shadow-sm) focus-visible:ring-outline-brand active:bg-bg-secondary/10",
     },
     {
       variant: "light",

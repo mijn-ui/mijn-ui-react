@@ -65,7 +65,7 @@ const DialogTemplate = (args: DialogProps) => {
             <Button className="w-full">😍 Good</Button>
           </div>
           <textarea
-            className="focus-visible:ring-offset-bg-default bg-bg-secondary placeholder:text-fg-tertiary focus-visible:ring-outline-brand flex min-h-32 w-full resize-none rounded-md border px-3 py-2 text-sm outline-none transition duration-300 focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            className="bg-bg-secondary placeholder:text-fg-tertiary focus-visible:ring-outline-brand flex min-h-32 w-full resize-none rounded-md border border-outline-default px-3 py-2 text-sm outline-none transition duration-300 focus-visible:mijn-focus-ring disabled:cursor-not-allowed disabled:opacity-50"
             placeholder="Tell us your story"
           ></textarea>
         </div>

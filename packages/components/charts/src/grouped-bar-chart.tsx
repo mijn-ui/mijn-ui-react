@@ -24,7 +24,7 @@ const groupedBarChartStyles = tv({
     plot: "flex w-full items-end gap-2",
     barGroup:
       "relative flex h-full min-w-0 flex-1 items-end justify-center gap-0.5",
-    bar: "rounded-t-xs relative w-full max-w-4 transition-opacity duration-200",
+    bar: "rounded-t-(--mijn-radius-xs) relative w-full max-w-4 transition-opacity duration-200",
     valueLabel:
       "text-fg-secondary pointer-events-none absolute -top-3.5 left-1/2 -translate-x-1/2 text-[9px] font-medium whitespace-nowrap",
     labelGroup: "flex w-full gap-2",

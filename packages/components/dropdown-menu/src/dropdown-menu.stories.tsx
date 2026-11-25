@@ -211,10 +211,11 @@ const DropdownMenuUnstyled = (args: DropdownMenuProps) => {
       {...args}
       classNames={{
         trigger: "bg-accent p-2",
-        content: "bg-accent p-4 shadow-md flex flex-col gap-2",
+        content: "bg-accent p-4 shadow-(--mijn-shadow-md) flex flex-col gap-2",
         item: "pointer-events-none data-[disabled]:opacity-50",
         subTrigger: "flex items-center",
-        subContent: "bg-accent px-4 py-2 flex flex-col gap-2 shadow-md",
+        subContent:
+          "bg-accent px-4 py-2 flex flex-col gap-2 shadow-(--mijn-shadow-md)",
       }}
     >
       <DropdownMenuTrigger>Edit</DropdownMenuTrigger>

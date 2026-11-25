@@ -172,6 +172,31 @@ Tailwind v4 maps CSS custom properties to utility classes automatically:
 - `--color-brand` → `bg-brand`, `text-brand`, `border-brand`, etc.
 - `--radius-xl` → `rounded-xl`
 
+### Re-theming Mijn UI's own tokens
+
+Mijn UI defines its tokens in Tailwind's `theme` layer, the lowest layer, so
+your values win wherever you write them. Override the light value in `@theme`
+and the dark value under `.dark`, in any layer or unlayered:
+
+```css
+@import "tailwindcss";
+@import "@mijn-ui/react-core/theme.css";
+
+@theme {
+  --color-bg-brand: hsl(142 76% 36%);
+}
+
+@layer base {
+  .dark {
+    --color-bg-brand: hsl(142 69% 58%);
+  }
+}
+```
+
+A token overridden on `:root` inside `@layer base` (or any layer above
+`theme`) applies in dark mode too unless you also override it under `.dark`.
+Overrides written in `@theme` keep Mijn UI's dark value.
+
 ---
 
 ## Step 6 — Fix renamed utility classes

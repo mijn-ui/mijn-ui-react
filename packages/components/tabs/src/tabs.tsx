@@ -16,7 +16,7 @@ const tabsStyles = tv({
     base: "",
     list: "flex flex-col items-stretch sm:flex-row sm:items-center",
     trigger: [
-      "text-fg-secondary hover:bg-bg-secondary focus-visible:bg-bg-secondary active:bg-bg-secondary/70 data-[state=active]:border-b-outline-brand data-[state=active]:text-fg-brand-emphasis data-[state=active]:hover:text-fg-brand-emphasis inline-flex h-9 items-center justify-center gap-1.5 border-b px-3 text-sm font-normal leading-none outline-none duration-300 ease-in-out disabled:pointer-events-none disabled:opacity-50 data-[state=active]:border-b-2 data-[state=active]:font-medium data-[state=active]:hover:bg-transparent",
+      "text-fg-secondary hover:bg-bg-secondary focus-visible:bg-bg-secondary active:bg-bg-secondary/70 data-[state=active]:border-b-outline-brand data-[state=active]:text-fg-brand-emphasis data-[state=active]:hover:text-fg-brand-emphasis inline-flex h-9 items-center justify-center gap-1.5 border-b border-outline-default px-3 text-sm font-normal leading-none outline-none duration-300 ease-in-out disabled:pointer-events-none disabled:opacity-50 data-[state=active]:border-b-2 data-[state=active]:font-medium data-[state=active]:hover:bg-transparent",
     ],
     content:
       "focus-visible:ring-outline-brand mt-2 focus-visible:outline-none focus-visible:ring-1",
