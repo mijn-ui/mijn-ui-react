@@ -41,11 +41,9 @@ const inputStyles = tv({
         base: [
           "rounded-md border border-outline-default",
           "focus-visible:border-outline-brand-subtle",
-          "focus-visible:outline-none",
-          "focus-visible:ring-2",
+          "focus-visible:mijn-focus-ring",
           "focus-visible:ring-outline-brand",
-          "focus-visible:ring-offset-2",
-          "focus-visible:ring-offset-bg-default ring-outline-brand",
+          "ring-outline-brand",
         ],
       },
       underline: {
@@ -55,11 +53,9 @@ const inputStyles = tv({
         base: [
           "border-outline-danger rounded-md border",
           "focus-visible:border-outline-danger-subtle",
-          "focus-visible:outline-none",
-          "focus-visible:ring-2",
+          "focus-visible:mijn-focus-ring",
           "focus-visible:ring-outline-brand",
-          "focus-visible:ring-offset-2",
-          "focus-visible:ring-offset-bg-default ring-outline-danger",
+          "ring-outline-danger",
         ],
       },
     },

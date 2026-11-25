@@ -645,6 +645,24 @@
   }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                 Focus ring                                 */
+/* -------------------------------------------------------------------------- */
+/*
+ * A 2px outline drawn 2px outside the control: `focus-visible:mijn-focus-ring`.
+ * The gap is transparent, so it shows the surface the control actually sits
+ * on (page, card, popover, dialog) instead of a fixed `ring-offset-*` colour,
+ * which left a dark band around controls on raised surfaces in dark mode.
+ * The colour follows the control's `ring-*` colour utility (for example
+ * `focus-visible:ring-outline-danger`) and defaults to `outline-brand`.
+ * Unlike a box-shadow ring, an outline also stays visible in forced-colours
+ * mode.
+ */
+@utility mijn-focus-ring {
+  outline: 2px solid var(--tw-ring-color, var(--color-outline-brand));
+  outline-offset: 2px;
+}
+
 @layer base {
   * {
     @apply border-outline-default;

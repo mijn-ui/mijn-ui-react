@@ -4,7 +4,7 @@ import { VariantProps, tv } from "tailwind-variants"
 
 const badgeStyles = tv({
   slots: {
-    base: "focus-visible:ring-offset-bg-default flex items-center font-semibold outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+    base: "flex items-center font-semibold outline-none duration-300 ease-in-out focus-visible:mijn-focus-ring disabled:pointer-events-none disabled:opacity-50",
   },
   variants: {
     color: {
@@ -48,9 +48,9 @@ const badgeStyles = tv({
   },
   compoundVariants: [
     // solid (Figma) = filled
-    { variant: "solid", color: "default", className: "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default focus-visible:ring-offset-2" },
+    { variant: "solid", color: "default", className: "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default" },
     { variant: "solid", color: "brand", className: "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-(--mijn-shadow-xs)" },
-    { variant: "solid", color: "secondary", className: "bg-bg-secondary text-fg-secondary shadow-(--mijn-shadow-xs) hover:bg-bg-accent focus-visible:ring-outline-brand focus-visible:ring-offset-2 active:bg-bg-accent/70" },
+    { variant: "solid", color: "secondary", className: "bg-bg-secondary text-fg-secondary shadow-(--mijn-shadow-xs) hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70" },
     { variant: "solid", color: "success", className: "bg-bg-success text-on-bg-success hover:bg-bg-success/80 focus-visible:ring-outline-success shadow-(--mijn-shadow-xs) active:bg-bg-success/70" },
     { variant: "solid", color: "warning", className: "bg-bg-warning text-on-bg-warning hover:bg-bg-warning/80 focus-visible:ring-outline-warning shadow-(--mijn-shadow-xs) active:bg-bg-warning/70" },
     { variant: "solid", color: "danger", className: "bg-bg-danger text-on-bg-danger hover:bg-bg-danger/80 focus-visible:ring-outline-danger shadow-(--mijn-shadow-xs) active:bg-bg-danger/70" },
@@ -79,7 +79,7 @@ const badgeStyles = tv({
       variant: "filled",
       color: "default",
       className:
-        "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default focus-visible:ring-offset-2 ",
+        "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default ",
     },
     {
       variant: "filled",
@@ -91,7 +91,7 @@ const badgeStyles = tv({
       variant: "filled",
       color: "secondary",
       className:
-        "bg-bg-secondary text-fg-secondary shadow-(--mijn-shadow-xs) hover:bg-bg-accent focus-visible:ring-outline-brand focus-visible:ring-offset-2 active:bg-bg-accent/70",
+        "bg-bg-secondary text-fg-secondary shadow-(--mijn-shadow-xs) hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
     },
     {
       variant: "filled",

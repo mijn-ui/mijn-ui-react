@@ -16,8 +16,8 @@ Each focus ring is a **two-layer shadow**:
 2. A **4px colored ring** in the contextual color, drawn outside the gap.
 
 In Figma these are drop-shadow effects with `offset (0,0)`, `radius 0`, and
-`spread 2` (gap) + `spread 4` (color). In CSS they map to stacked `box-shadow`
-rings.
+`spread 2` (gap) + `spread 4` (color). The code draws the same geometry as an
+outline with a transparent gap; see [Usage](#usage).
 
 ## Variants
 
@@ -32,18 +32,29 @@ rings.
 
 ## Usage
 
-Stack two rings — the gap first, then the color:
+In code the ring is an **outline** 2px wide, drawn 2px outside the control,
+from the `mijn-focus-ring` utility in `theme.css`. The 2px gap is transparent
+rather than painted `bg/secondary`: it shows whatever surface the control sits
+on, so the ring reads cleanly on the page, on a card, in a popover or in a
+dialog, in light and in dark mode. (A painted gap only matches one surface; on
+a raised surface in dark mode it showed as a dark band.) An outline also stays
+visible in forced-colours mode, where box-shadow rings are dropped.
 
 ```tsx
 // Brand focus ring on keyboard focus
-<button
-  className="rounded-base focus-visible:outline-none
-             focus-visible:shadow-[0_0_0_2px_var(--color-bg-secondary),0_0_0_4px_var(--color-bg-brand)]"
->
+<button className="rounded-md outline-none focus-visible:mijn-focus-ring">
   Save
+</button>
+
+// Contextual colour: the ring takes the element's ring-* colour
+<button className="outline-none focus-visible:mijn-focus-ring focus-visible:ring-outline-danger">
+  Delete
 </button>
 ```
 
-Swap the second color for `--color-bg-success` / `--color-bg-warning` /
-`--color-bg-danger` to signal the matching state. Prefer `:focus-visible` so the
-ring appears for keyboard users without firing on mouse clicks.
+Swap the colour for `ring-outline-success` / `ring-outline-warning` /
+`ring-outline-danger` to signal the matching state; without one the ring is
+`outline-brand`. Prefer `:focus-visible` so the ring appears for keyboard users
+without firing on mouse clicks. Do not combine it with
+`focus-visible:outline-none`, which Tailwind orders after it and which removes
+the ring.

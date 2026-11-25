@@ -10,7 +10,7 @@ import { VariantProps, tv } from "tailwind-variants"
 
 const buttonStyles = tv({
   slots: {
-    base: "inline-flex items-center justify-center gap-1.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-bg-default focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer",
+    base: "inline-flex items-center justify-center gap-1.5 text-sm font-medium outline-none duration-300 ease-in-out focus-visible:mijn-focus-ring disabled:pointer-events-none disabled:opacity-50 cursor-pointer",
     loadingIcon: "size-5 animate-spin text-current",
   },
   variants: {
@@ -25,7 +25,7 @@ const buttonStyles = tv({
     },
     variant: {
       // Figma-aligned composite types (color encoded in the variant name)
-      default: "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default focus-visible:ring-offset-2",
+      default: "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default",
       "default-plain": "text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
       brand: "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-(--mijn-shadow-xs)",
       "brand-plain": "text-fg-brand hover:bg-bg-brand hover:text-on-bg-brand focus-visible:ring-outline-brand active:bg-bg-brand/70",
@@ -61,7 +61,7 @@ const buttonStyles = tv({
       variant: "filled",
       color: "default",
       className:
-        "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default focus-visible:ring-offset-2 ",
+        "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default ",
     },
     {
       variant: "filled",
@@ -73,7 +73,7 @@ const buttonStyles = tv({
       variant: "filled",
       color: "secondary",
       className:
-        "bg-bg-secondary text-fg-secondary shadow-(--mijn-shadow-xs) hover:bg-bg-accent focus-visible:ring-outline-brand focus-visible:ring-offset-2 active:bg-bg-accent/70",
+        "bg-bg-secondary text-fg-secondary shadow-(--mijn-shadow-xs) hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
     },
     {
       variant: "filled",
