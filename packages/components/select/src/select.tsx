@@ -19,8 +19,11 @@ const selectStyles = tv({
   slots: {
     base: "",
     trigger: [
-      "border-outline-default min-w-44 bg-bg-default-alt placeholder:text-fg-tertiary hover:bg-bg-secondary flex h-10 w-full items-center justify-between rounded-md border px-3 py-2 text-sm [&>span]:line-clamp-1 gap-4",
-      "[&_svg]:size-4 [&_svg]:opacity-50",
+      "border-outline-default bg-bg-default-alt placeholder:text-fg-tertiary hover:bg-bg-secondary flex h-10 w-full items-center justify-between rounded-md border px-3 py-2 text-sm [&>span]:line-clamp-1 gap-4",
+      // Only the chevron is dimmed. An icon in the selected value (a status
+      // dot, a flag) keeps its colour, and any explicit `size-*` it carries;
+      // unsized icons still default to 16px.
+      "[&_svg:not([class*='size-'])]:size-4 [&_[data-slot=select-trigger-icon]]:opacity-50",
       "disabled:pointer-events-none",
       "disabled:opacity-50",
       "focus-visible:outline-none",
@@ -36,7 +39,7 @@ const selectStyles = tv({
       "data-[state=open]:zoom-in-95 data-[state=open]:animate-in data-[state=open]:fade-in-0",
       "data-[state=closed]:zoom-out-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
       "data-[side=bottom]:slide-in-from-bottom-6 data-[side=left]:slide-in-from-left-6 data-[side=right]:slide-in-from-right-6 data-[side=top]:slide-in-from-top-6 duration-300",
-      "border-outline-default bg-bg-default-alt text-fg-default relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border shadow-sm w-60",
+      "border-outline-default bg-bg-default-alt text-fg-default relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border shadow-sm",
     ],
     viewport: "",
     label: "py-1.5 pl-2 pr-8 text-sm font-semibold",
@@ -59,10 +62,13 @@ const selectStyles = tv({
   variants: {
     position: {
       popper: {
+        // At least as wide as the trigger, wider for a long option, never
+        // past the viewport edge. (Radix sets both variables in popper mode.)
         content:
-          "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
-        viewport:
-          "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]",
+          "min-w-(--radix-select-trigger-width) max-w-(--radix-select-content-available-width) data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
+        // No min-width here: the content already has the trigger's, and a
+        // second one inside its 1px border made the list 2px wider.
+        viewport: "h-[var(--radix-select-trigger-height)] w-full",
       },
       "item-aligned": {},
     },
@@ -253,20 +259,19 @@ const SelectContent = ({
     <SelectPrimitive.Portal data-slot="select-portal">
       <SelectPrimitive.Content
         data-slot="select-content"
-        className={content({
-          className: cn(classNames?.content, className),
-          position,
-        })}
+        // The className is merged outside the slot call on purpose:
+        // createTVUnstyledSlots in @mijn-ui/react-core <= 0.5.1 drops the
+        // variant props of a call that also carries a className, which lost
+        // `position` — and the popper sizing with it — whenever a className
+        // was passed. Equivalent output, and independent of the core version.
+        className={cn(content({ position }), classNames?.content, className)}
         position={position}
         {...props}
       >
         <SelectScrollUpButton />
         <SelectPrimitive.Viewport
           data-slot="select-viewport"
-          className={viewport({
-            className: classNames?.viewport,
-            position,
-          })}
+          className={cn(viewport({ position }), classNames?.viewport)}
         >
           {children}
         </SelectPrimitive.Viewport>
