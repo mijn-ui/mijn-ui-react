@@ -305,7 +305,7 @@ importers:
   packages/components/badge:
     dependencies:
       '@radix-ui/react-slot':
-        specifier: ^1.1.1
+        specifier: ^1.5.0
         version: 1.5.0(@types/react@19.2.7)(react@19.0.1)
       tailwind-merge:
         specifier: ^3.0.0

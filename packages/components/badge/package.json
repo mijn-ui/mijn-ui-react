@@ -42,7 +42,7 @@
     "test-utils": "workspace:*"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.1.1"
+    "@radix-ui/react-slot": "^1.5.0"
   },
   "peerDependencies": {
     "react": "^19.0",
