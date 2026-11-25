@@ -102,6 +102,21 @@ export const WithFloatingLabelAndIcon: Story = {
   },
 }
 
+export const Bare: Story = {
+  render: (args: InputProps) => (
+    <form className="grid w-80 grid-cols-[auto_1fr] items-center gap-2 text-sm">
+      <label htmlFor="bare-amount">Amount</label>
+      <Input {...args} id="bare-amount" />
+      <label htmlFor="bare-reference">Reference</label>
+      <Input {...args} id="bare-reference" placeholder="INV-0042" />
+    </form>
+  ),
+  args: {
+    bare: true,
+    placeholder: "0.00",
+  },
+}
+
 export const Unstyled: Story = {
   render: InputTemplate,
   args: {
