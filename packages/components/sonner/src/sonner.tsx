@@ -85,9 +85,12 @@ const TOASTER_THEME = {
   "--warning-text": "var(--color-on-bg-warning-subtle)",
   "--warning-border": "var(--color-outline-warning-subtle)",
 
-  "--info-bg": "var(--color-bg-brand-subtle)",
-  "--info-text": "var(--color-on-bg-brand-subtle)",
-  "--info-border": "var(--color-outline-brand-subtle)",
+  // Info gets the categorical blue tier, not brand: with a green brand (as in
+  // PicoAI) brand-subtle is success-subtle, and info toasts looked like
+  // success ones.
+  "--info-bg": "var(--color-bg-blue-subtle)",
+  "--info-text": "var(--color-on-bg-blue-subtle)",
+  "--info-border": "var(--color-outline-blue-subtle)",
 } as React.CSSProperties
 
 export type MijnToasterProps = UnstyledComponentWithSlots<SonnerSlots> &

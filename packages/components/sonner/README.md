@@ -46,7 +46,9 @@ anything from it would pull sonner's bytes in whether or not it shows a toast.
 
 The toaster maps sonner's surface variables (`--normal-bg`, `--success-bg`, …)
 onto mijn-ui theme tokens, so toasts follow light/dark and any re-themed palette
-without per-app restyling. Pass `unstyled` to drop that mapping entirely and
+without per-app restyling. With `richColors`, success, warning and error use
+their status tiers and info uses the categorical blue tier — not the brand, so
+info stays distinct from success whatever the brand colour is. Pass `unstyled` to drop that mapping entirely and
 supply your own `classNames`.
 
 ### Overriding a slot

@@ -33,5 +33,13 @@ What you will see change, matching what the classes always asked for:
   `richColors` the close button now stays neutral instead of taking the
   toast's tint.
 
+**Info colour.** With `richColors`, the `info` toast used the brand-subtle
+tier, so in an app whose brand is green it looked exactly like `success`. It
+now uses the categorical blue tier (`bg-blue-subtle` / `on-bg-blue-subtle` /
+`outline-blue-subtle`): **rich-colour info toasts are blue** in every theme
+(title contrast 8.5:1 light, 10.5:1 dark). Success, warning and error are
+unchanged. To keep the old look, set `--info-bg` / `--info-text` /
+`--info-border` on the toaster's `style`.
+
 To override one of these properties in your own `classNames`, add `!` too
 (`title: "font-bold!"`); see the README.

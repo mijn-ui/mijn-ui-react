@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs"
 import { createRequire } from "node:module"
 import { dirname, join } from "node:path"
 import * as sonner from "sonner"
-import { declarationsFor } from "test-utils"
+import { contrastRatio, declarationsFor, themeColors } from "test-utils"
 import { afterEach, describe, expect, it } from "vitest"
 import { type SonnerSlots, Toaster, sonnerStyles, toast } from "./sonner"
 
@@ -62,6 +62,42 @@ describe("Toaster", () => {
     expect(el.style.getPropertyValue("--error-bg")).toBe(
       "var(--color-bg-danger-subtle)",
     )
+  })
+
+  it("gives info toasts their own colour, not the brand's", async () => {
+    // With a green brand, brand-subtle is success-subtle: info toasts were
+    // indistinguishable from success ones.
+    render(<Toaster />)
+    const el = await showToast()
+    const info = el.style.getPropertyValue("--info-bg")
+    expect(info).toBe("var(--color-bg-blue-subtle)")
+    expect(info).not.toContain("brand")
+    expect(info).not.toBe(el.style.getPropertyValue("--success-bg"))
+  })
+
+  it("keeps every rich-colour title readable in light and dark", async () => {
+    // The title inherits the toast's --<type>-text on its --<type>-bg.
+    render(<Toaster />)
+    const el = await showToast()
+    const token = (variable: string) =>
+      el.style
+        .getPropertyValue(variable)
+        .match(/^var\(--color-([a-z0-9-]+)\)$/)?.[1] ?? ""
+    const { light, dark } = themeColors()
+
+    for (const type of ["success", "info", "warning", "error"]) {
+      const text = token(`--${type}-text`)
+      const bg = token(`--${type}-bg`)
+      for (const [mode, colors] of [
+        ["light", light],
+        ["dark", dark],
+      ] as const) {
+        expect(
+          contrastRatio(colors[text], colors[bg]),
+          `${type} title in ${mode}`,
+        ).toBeGreaterThanOrEqual(4.5)
+      }
+    }
   })
 
   it("drops the token mapping when unstyled", async () => {
