@@ -149,6 +149,31 @@ export const Variants: Story = {
   },
 }
 
+export const Inline: Story = {
+  render: (args: BadgeProps) => (
+    <p className="text-fg-default max-w-sm text-sm">
+      A badge is an inline <code>&lt;span&gt;</code>, so it can sit in a line of
+      text: invoice INV-0042 is <Badge {...args}>Overdue</Badge> since Monday.
+    </p>
+  ),
+  args: {
+    color: "danger",
+    variant: "subtle",
+  },
+}
+
+export const AsLink: Story = {
+  render: (args: BadgeProps) => (
+    <Badge {...args} asChild>
+      <a href="#invoice-42">INV-0042</a>
+    </Badge>
+  ),
+  args: {
+    color: "brand",
+    variant: "outlined",
+  },
+}
+
 export const Unstyled: Story = {
   render: BadgeUnstyled,
   args: {
