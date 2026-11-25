@@ -46,7 +46,7 @@
     "@mijn-ui/react-command": "workspace:*",
     "@mijn-ui/react-popover": "workspace:*",
     "@mijn-ui/react-skeleton": "workspace:*",
-    "@radix-ui/react-popover": "^1.1.3",
+    "@radix-ui/react-popover": "^1.3.1",
     "cmdk": "^1.0.4"
   },
   "peerDependencies": {

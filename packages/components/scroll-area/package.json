@@ -39,7 +39,7 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "@radix-ui/react-scroll-area": "^1.2.2"
+    "@radix-ui/react-scroll-area": "^1.4.0"
   },
   "peerDependencies": {
     "react": "^19.0",

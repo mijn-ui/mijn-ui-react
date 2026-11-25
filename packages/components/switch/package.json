@@ -38,7 +38,7 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "@radix-ui/react-switch": "^1.1.2"
+    "@radix-ui/react-switch": "^1.4.1"
   },
   "peerDependencies": {
     "react": "^19.0",

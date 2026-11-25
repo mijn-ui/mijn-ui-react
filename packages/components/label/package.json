@@ -39,7 +39,7 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "@radix-ui/react-label": "^2.1.1"
+    "@radix-ui/react-label": "^2.1.17"
   },
   "peerDependencies": {
     "react": "^19.0",
