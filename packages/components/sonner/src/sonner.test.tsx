@@ -1,7 +1,11 @@
 import { cleanup, render, screen, waitFor } from "@testing-library/react"
+import { readFileSync } from "node:fs"
+import { createRequire } from "node:module"
+import { dirname, join } from "node:path"
 import * as sonner from "sonner"
+import { declarationsFor } from "test-utils"
 import { afterEach, describe, expect, it } from "vitest"
-import { Toaster, toast } from "./sonner"
+import { type SonnerSlots, Toaster, sonnerStyles, toast } from "./sonner"
 
 // Not using `globals: true`, so testing-library's automatic cleanup never
 // registers — without this each render stacks onto the previous one's DOM.
@@ -85,5 +89,137 @@ describe("Toaster", () => {
       const el = document.querySelector("[data-sonner-toast]")
       expect(el?.className).toContain("custom-toast")
     })
+  })
+})
+
+/* -------------------------------------------------------------------------- */
+
+/**
+ * sonner injects its stylesheet outside any cascade layer, so its rules beat
+ * every Tailwind utility (those live in `@layer utilities`) no matter how
+ * specific. A slot class therefore only applies if sonner sets no property it
+ * sets — or if it is `!important`. 0.7's toast title stayed `font-weight: 500`
+ * under `font-semibold` for exactly this reason.
+ *
+ * This reads sonner's real stylesheet, collects the properties it sets on each
+ * slot's element, compiles each slot's classes with Tailwind, and requires
+ * every competing declaration to be `!important`.
+ */
+describe("slot classes against sonner's own stylesheet", () => {
+  const sonnerCss = readFileSync(
+    join(
+      dirname(createRequire(import.meta.url).resolve("sonner")),
+      "styles.css",
+    ),
+    "utf8",
+  ).replace(/\/\*[\s\S]*?\*\//g, "")
+
+  // The attribute sonner puts on each slot's element. The cancel button is
+  // also a [data-button], so it gets both sets of rules.
+  const SLOT_ELEMENT: Record<Exclude<SonnerSlots, "toast">, string[]> = {
+    title: ["[data-title]"],
+    description: ["[data-description]"],
+    actionButton: ["[data-button]"],
+    cancelButton: ["[data-button]", "[data-cancel]"],
+    closeButton: ["[data-close-button]"],
+    icon: ["[data-icon]"],
+  }
+
+  /** Shorthands and physical sides, reduced to what Tailwind emits. */
+  const families = (property: string): string[] => {
+    if (property === "background") return ["background-color"]
+    if (property === "border")
+      return ["border-width", "border-style", "border-color"]
+    if (property === "padding") return ["padding-inline", "padding-block"]
+    if (property === "margin") return ["margin-inline", "margin-block"]
+    const side = property.match(
+      /^(padding|margin)-(left|right|top|bottom|inline|block)(?:-start|-end)?$/,
+    )
+    if (side) {
+      const axis = /left|right|inline/.test(side[2]) ? "inline" : "block"
+      return [`${side[1]}-${axis}`]
+    }
+    const border = property.match(
+      /^border-[a-z]+(?:-start|-end)?-(width|style|color)$/,
+    )
+    if (border) return [`border-${border[1]}`]
+    return [property]
+  }
+
+  /** Every property sonner's stylesheet sets on a slot's element. */
+  const sonnerProperties = (slot: SonnerSlots): Set<string> => {
+    const found = new Set<string>()
+    for (const [, selectors, body] of sonnerCss.matchAll(
+      /([^{}]+)\{([^{}]*)\}/g,
+    )) {
+      const targets = selectors.split(",").some((selector) => {
+        // The element a selector styles is its last compound.
+        const last =
+          selector
+            .trim()
+            .split(/\s*[\s>+~]\s*/)
+            .pop() ?? ""
+        if (last.includes("::")) return false
+        if (slot === "toast")
+          return (
+            last.includes("[data-sonner-toast]") &&
+            !Object.values(SLOT_ELEMENT)
+              .flat()
+              .some((a) => last.includes(a))
+          )
+        return SLOT_ELEMENT[slot].some((attr) => last.includes(attr))
+      })
+      if (!targets) continue
+      for (const [, property] of body.matchAll(/([a-z-]+)\s*:/g))
+        if (!property.startsWith("--"))
+          families(property).forEach((f) => found.add(f))
+    }
+    return found
+  }
+
+  // The toast's colours deliberately stay un-important: they arrive through
+  // sonner's --normal-* variables, and `richColors` recolours a toast by
+  // overriding exactly these.
+  const ALLOWED: Partial<Record<SonnerSlots, string[]>> = {
+    toast: ["background-color", "color", "border-color"],
+  }
+
+  // At runtime tailwind-variants also returns an empty `base` slot, which the
+  // Toaster never uses and the SonnerSlots type does not list.
+  const slots = Object.keys(sonnerStyles()).filter(
+    (slot): slot is SonnerSlots => slot !== "base",
+  )
+
+  it("finds sonner's rules for every slot", () => {
+    // Guards the parser: an empty set would make the next test pass vacuously.
+    expect(sonnerProperties("toast").has("border-radius")).toBe(true)
+    expect(sonnerProperties("title").has("font-weight")).toBe(true)
+    expect(sonnerProperties("description").has("color")).toBe(true)
+    expect(sonnerProperties("actionButton").has("background-color")).toBe(true)
+    expect(sonnerProperties("cancelButton").has("background-color")).toBe(true)
+    expect(sonnerProperties("closeButton").has("color")).toBe(true)
+    expect(sonnerProperties("icon").has("flex-shrink")).toBe(true)
+  })
+
+  it.each(slots)(
+    "%s: every class competing with sonner is !important",
+    async (slot) => {
+      const contested = sonnerProperties(slot)
+      const classes = (sonnerStyles()[slot] as () => string)()
+      const losing = (await declarationsFor(classes))
+        .filter((d) => families(d.property).some((f) => contested.has(f)))
+        .filter((d) => !d.important && !ALLOWED[slot]?.includes(d.property))
+        .map((d) => d.property)
+
+      expect(losing).toEqual([])
+    },
+  )
+
+  it("renders the title's weight class on the title element", async () => {
+    render(<Toaster />)
+    toast("Weighted", { description: "And described" })
+    const title = await screen.findByText("Weighted")
+    expect(title.hasAttribute("data-title")).toBe(true)
+    expect(title.className).toContain("font-semibold!")
   })
 })

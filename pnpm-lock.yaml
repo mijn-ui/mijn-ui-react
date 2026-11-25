@@ -1375,6 +1375,9 @@ importers:
       sonner:
         specifier: ^2.0.7
         version: 2.0.8(@types/react@19.2.7)(react-dom@19.0.1(react@19.0.1))(react@19.0.1)
+      test-utils:
+        specifier: workspace:*
+        version: link:../../configs/test-utils
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/ts-config
