@@ -58,6 +58,7 @@
     "@mijn-ui/react-progress": "workspace:*",
     "@mijn-ui/react-radio-group": "workspace:*",
     "@mijn-ui/react-scroll-area": "workspace:*",
+    "@mijn-ui/react-segmented-control": "workspace:*",
     "@mijn-ui/react-select": "workspace:*",
     "@mijn-ui/react-separator": "workspace:*",
     "@mijn-ui/react-skeleton": "workspace:*",
