@@ -40,6 +40,9 @@ Exposed types: `ButtonProps`, `ButtonBaseProps`, `ButtonVariantProps`,
 `ButtonSlots`.
 
 - **`Type`** → `variant` prop. Figma `Error` ↔ code `danger` color role.
+- **`variant="link"`** (code only, not a Figma type) — brand text that
+  underlines on hover, with no fill or border; keeps the button's height and
+  padding so it lines up next to buttons. Use `asChild` to render an `<a>`.
 - **`Size`** → `size` prop (`sm` / `default` / `lg`).
 - Focus uses the brand [focus ring](../foundation/focus-ring.md); colors come
   from the `brand` / `danger` roles in [Colors](../foundation/colors.md).

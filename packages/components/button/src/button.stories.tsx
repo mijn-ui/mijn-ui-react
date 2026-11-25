@@ -153,6 +153,22 @@ export const IconOnly: Story = {
   },
 }
 
+export const Link: Story = {
+  render: (args: ButtonProps) => (
+    <div className="flex items-center gap-2">
+      <Button {...args} variant="brand">
+        Save
+      </Button>
+      <Button {...args} variant="link">
+        Cancel
+      </Button>
+      <Button {...args} variant="link" asChild>
+        <a href="#help">Read the guide</a>
+      </Button>
+    </div>
+  ),
+}
+
 export const Loading: Story = {
   render: ButtonTemplate,
   args: {

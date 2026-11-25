@@ -25,13 +25,23 @@ const buttonStyles = tv({
     },
     variant: {
       // Figma-aligned composite types (color encoded in the variant name)
-      default: "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default",
-      "default-plain": "text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
-      brand: "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-(--mijn-shadow-xs)",
-      "brand-plain": "text-fg-brand hover:bg-bg-brand hover:text-on-bg-brand focus-visible:ring-outline-brand active:bg-bg-brand/70",
-      "brand-outline": "border border-outline-brand bg-transparent text-fg-brand hover:bg-bg-brand hover:text-on-bg-brand focus-visible:ring-outline-brand active:bg-bg-brand/70",
-      error: "bg-bg-danger text-on-bg-danger hover:bg-bg-danger/80 focus-visible:ring-outline-danger active:bg-bg-danger/70 shadow-(--mijn-shadow-xs)",
-      "error-plain": "text-fg-danger hover:bg-bg-danger hover:text-on-bg-danger focus-visible:ring-outline-danger active:bg-bg-danger/70",
+      default:
+        "bg-bg-default-alt text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70 shadow-(--mijn-shadow-xs) border border-outline-default",
+      "default-plain":
+        "text-fg-default hover:bg-bg-accent focus-visible:ring-outline-brand active:bg-bg-accent/70",
+      brand:
+        "bg-bg-brand text-on-bg-brand hover:bg-bg-brand/80 focus-visible:ring-outline-brand active:bg-bg-brand/70 shadow-(--mijn-shadow-xs)",
+      "brand-plain":
+        "text-fg-brand hover:bg-bg-brand hover:text-on-bg-brand focus-visible:ring-outline-brand active:bg-bg-brand/70",
+      "brand-outline":
+        "border border-outline-brand bg-transparent text-fg-brand hover:bg-bg-brand hover:text-on-bg-brand focus-visible:ring-outline-brand active:bg-bg-brand/70",
+      error:
+        "bg-bg-danger text-on-bg-danger hover:bg-bg-danger/80 focus-visible:ring-outline-danger active:bg-bg-danger/70 shadow-(--mijn-shadow-xs)",
+      "error-plain":
+        "text-fg-danger hover:bg-bg-danger hover:text-on-bg-danger focus-visible:ring-outline-danger active:bg-bg-danger/70",
+      // Looks like a text link: no fill, no border, underline on hover. Keeps
+      // the button's height and padding, so it lines up with buttons beside it.
+      link: "text-fg-brand underline-offset-4 hover:underline focus-visible:ring-outline-brand active:text-fg-brand/70",
       // Generic variants (combined with color prop)
       filled: "",
       outlined: "",
