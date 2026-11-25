@@ -14,7 +14,7 @@ const labelClasses = [
 ]
 
 const labelWithIconClasses = [
-  "rtl:left bg-bg-default -translate-y-4 scale-75 rtl:translate-x-1/4",
+  "bg-bg-default -translate-y-4 scale-75 rtl:translate-x-1/4",
 ]
 
 const inputStyles = tv({
@@ -47,7 +47,7 @@ const inputStyles = tv({
         ],
       },
       underline: {
-        base: "border-b-sm focus-visible:border-b-outline-brand border-b border-outline-default outline-none",
+        base: "focus-visible:border-b-outline-brand border-b border-outline-default outline-none",
       },
       danger: {
         base: [
@@ -84,6 +84,13 @@ const inputStyles = tv({
         base: "pr-8",
       },
     },
+    // Without the wrapper, the disabled look the wrapper gives (`disabled`
+    // variant above) has to live on the input itself.
+    bare: {
+      true: {
+        base: "disabled:cursor-not-allowed disabled:opacity-50",
+      },
+    },
   },
   compoundVariants: [
     {
@@ -111,10 +118,22 @@ export type InputBaseProps = UnstyledComponentWithSlots<InputSlots> &
     startIcon?: React.ReactNode
     endIcon?: React.ReactNode
     label?: React.ReactNode
+    /**
+     * Render the `<input>` alone: no wrapper `<div>`, no generated `id`, no
+     * empty `placeholder` — a drop-in for a plain `<input>` in a form that
+     * already lays out and labels its own fields. The disabled look moves
+     * onto the input.
+     *
+     * Ignored when `startIcon`, `endIcon` or `label` is set: those are
+     * positioned against the wrapper, so they need it.
+     *
+     * @default false
+     */
+    bare?: boolean
   }
 
 export type InputProps = InputBaseProps &
-  Omit<InputVariantProps, "startIcon" | "endIcon" | "label">
+  Omit<InputVariantProps, "startIcon" | "endIcon" | "label" | "bare">
 
 const Input = ({
   variant,
@@ -126,16 +145,19 @@ const Input = ({
   startIcon,
   endIcon,
   label,
+  bare = false,
   id: userId,
   disabled,
   ...props
 }: InputProps) => {
+  const isBare = bare && !startIcon && !endIcon && !label
   const styles = inputStyles({
     variant,
     size,
     disabled,
     startIcon: !!startIcon,
     endIcon: !!endIcon,
+    bare: isBare,
   })
   const {
     wrapper,
@@ -144,7 +166,26 @@ const Input = ({
     endIcon: endIconStyle,
     label: labelStyles,
   } = createTVUnstyledSlots(styles, unstyled)
-  const id = React.useId()
+  const generatedId = React.useId()
+  // Only a label needs to point at the input, so only a label needs an id
+  // the caller did not give.
+  const id = userId || (label ? generatedId : undefined)
+
+  const input = (
+    <input
+      type={type}
+      className={base({ className: cn(classNames?.base, className) })}
+      id={id}
+      disabled={disabled}
+      data-slot="input"
+      // The floating label positions itself with `:placeholder-shown`, which
+      // only matches an input that has a placeholder — so give it an empty one.
+      placeholder={label ? "" : undefined}
+      {...props}
+    />
+  )
+
+  if (isBare) return input
 
   return (
     <div
@@ -157,21 +198,12 @@ const Input = ({
           {startIcon}
         </div>
       )}
-      <input
-        type={type}
-        className={base({ className: cn(classNames?.base, className) })}
-        id={userId || id}
-        disabled={disabled}
-        data-slot="input"
-        // Adding an empty space by default ensures the floating label moves correctly on focus or when input is present.
-        placeholder=""
-        {...props}
-      />
+      {input}
 
       {label && (
         <Label
           className={labelStyles({ className: classNames?.label })}
-          htmlFor={userId || id}
+          htmlFor={id}
         >
           {label}
         </Label>

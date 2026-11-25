@@ -443,6 +443,9 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.5.6
+      '@testing-library/react':
+        specifier: ^16.1.0
+        version: 16.3.0(@testing-library/dom@10.4.2)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.0.1(react@19.0.1))(react@19.0.1)
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -452,12 +455,18 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../configs/eslint-config-custom
+      jsdom:
+        specifier: ^30.1.3
+        version: 30.1.3
       react:
         specifier: 19.0.1
         version: 19.0.1
       react-dom:
         specifier: 19.0.1
         version: 19.0.1(react@19.0.1)
+      test-utils:
+        specifier: workspace:*
+        version: link:../../configs/test-utils
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/ts-config
@@ -566,6 +575,9 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.5.6
+      '@testing-library/react':
+        specifier: ^16.1.0
+        version: 16.3.0(@testing-library/dom@10.4.2)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.0.1(react@19.0.1))(react@19.0.1)
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -575,12 +587,18 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../configs/eslint-config-custom
+      jsdom:
+        specifier: ^30.1.3
+        version: 30.1.3
       react:
         specifier: 19.0.1
         version: 19.0.1
       react-dom:
         specifier: 19.0.1
         version: 19.0.1(react@19.0.1)
+      test-utils:
+        specifier: workspace:*
+        version: link:../../configs/test-utils
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/ts-config
@@ -793,6 +811,9 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.5.6
+      '@testing-library/react':
+        specifier: ^16.1.0
+        version: 16.3.0(@testing-library/dom@10.4.2)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.0.1(react@19.0.1))(react@19.0.1)
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -802,6 +823,9 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../configs/eslint-config-custom
+      jsdom:
+        specifier: ^30.1.3
+        version: 30.1.3
       lucide-react:
         specifier: ^0.479.0
         version: 0.479.0(react@19.0.1)
@@ -811,6 +835,9 @@ importers:
       react-dom:
         specifier: 19.0.1
         version: 19.0.1(react@19.0.1)
+      test-utils:
+        specifier: workspace:*
+        version: link:../../configs/test-utils
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/ts-config
@@ -1161,6 +1188,9 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.5.6
+      '@testing-library/react':
+        specifier: ^16.1.0
+        version: 16.3.0(@testing-library/dom@10.4.2)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.0.1(react@19.0.1))(react@19.0.1)
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -1170,12 +1200,18 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../configs/eslint-config-custom
+      jsdom:
+        specifier: ^30.1.3
+        version: 30.1.3
       react:
         specifier: 19.0.1
         version: 19.0.1
       react-dom:
         specifier: 19.0.1
         version: 19.0.1(react@19.0.1)
+      test-utils:
+        specifier: workspace:*
+        version: link:../../configs/test-utils
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/ts-config
@@ -1379,6 +1415,9 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.5.6
+      '@testing-library/react':
+        specifier: ^16.1.0
+        version: 16.3.0(@testing-library/dom@10.4.2)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.0.1(react@19.0.1))(react@19.0.1)
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.7
@@ -1388,12 +1427,18 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../configs/eslint-config-custom
+      jsdom:
+        specifier: ^30.1.3
+        version: 30.1.3
       react:
         specifier: 19.0.1
         version: 19.0.1
       react-dom:
         specifier: 19.0.1
         version: 19.0.1(react@19.0.1)
+      test-utils:
+        specifier: workspace:*
+        version: link:../../configs/test-utils
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/ts-config
@@ -1617,6 +1662,19 @@ importers:
         version: link:../../configs/tsup-config
 
   packages/configs/eslint-config-custom: {}
+
+  packages/configs/test-utils:
+    dependencies:
+      tailwindcss:
+        specifier: ^4.1.17
+        version: 4.3.3
+      tw-animate-css:
+        specifier: ^1.4.0
+        version: 1.4.0
+    devDependencies:
+      '@types/node':
+        specifier: 22.9.0
+        version: 22.9.0
 
   packages/configs/ts-config: {}
 

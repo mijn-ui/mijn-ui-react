@@ -7,7 +7,7 @@ import {
   createTVUnstyledSlots,
   useControlledState,
 } from "@mijn-ui/react-core"
-import { CheckIcon, DividerHorizontalIcon } from "@mijn-ui/shared-icons"
+import { CheckIcon, MinusIcon } from "@mijn-ui/shared-icons"
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
 import { VariantProps, tv } from "tailwind-variants"
 
@@ -18,9 +18,9 @@ import { VariantProps, tv } from "tailwind-variants"
 const checkboxStyles = tv({
   slots: {
     base: [
-      "peer size-5 shrink-0 rounded-sm border outline-none",
+      "peer size-5 shrink-0 rounded-(--mijn-radius-sm) border border-outline-default outline-none",
       "disabled:pointer-events-none disabled:opacity-50",
-      "focus-visible:ring-offset-bg-default focus-visible:ring-2 focus-visible:ring-offset-2",
+      "focus-visible:mijn-focus-ring focus-visible:ring-outline-brand",
       "data-[state=checked]:border-outline-brand data-[state=indeterminate]:border-outline-brand data-[state=checked]:bg-bg-brand data-[state=indeterminate]:bg-bg-brand data-[state=checked]:text-on-bg-brand data-[state=indeterminate]:text-on-bg-brand",
     ],
     indicator: "flex items-center justify-center text-current",
@@ -46,7 +46,9 @@ const Checkbox = ({
   onCheckedChange: ControlledOnCheckedChange,
   defaultChecked,
   unstyled,
-  color,
+  // Not a variant (the recipe has none) — taken out only so the HTML `color`
+  // attribute is not forwarded to the Radix root.
+  color: _color,
   className,
   classNames,
   ...props
@@ -56,7 +58,7 @@ const Checkbox = ({
     !!defaultChecked,
     ControlledOnCheckedChange,
   )
-  const styles = checkboxStyles({ color })
+  const styles = checkboxStyles()
   const { base, indicator, icon } = createTVUnstyledSlots(styles, unstyled)
 
   return (
@@ -72,7 +74,10 @@ const Checkbox = ({
         className={indicator({ className: classNames?.indicator })}
       >
         {checked === "indeterminate" && (
-          <DividerHorizontalIcon
+          // A 2px bar at the default 16px icon (1.5px at 12px). The old
+          // divider glyph was ~1px, a hairline once the box got small.
+          <MinusIcon
+            strokeWidth={3}
             className={icon({ className: classNames?.icon })}
           />
         )}

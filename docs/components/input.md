@@ -39,3 +39,7 @@ Exposed types: `InputProps`, `InputBaseProps`, `InputVariantProps`, `InputSlots`
 - **`Size`** → `size` prop; **`isError`** → invalid styling; focus uses the
   brand [focus ring](../foundation/focus-ring.md).
 - For multi-line, use [`react-textarea`](../../packages/components/textarea).
+- **`bare`** renders the `<input>` alone — no wrapper `<div>`, no generated
+  `id`, no empty `placeholder` — as a drop-in for a plain `<input>` where the
+  form already lays out and labels its fields. Ignored when `startIcon`,
+  `endIcon` or `label` is set, since those need the wrapper.
