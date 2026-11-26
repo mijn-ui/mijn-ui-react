@@ -3,6 +3,9 @@ name: Lint
 on:
   pull_request:
     branches: [main, dev]
+  # Started by the Release workflow for the "Version Packages" PR, which gets
+  # no pull_request events (see release.yml, version-pr-checks).
+  workflow_dispatch:
 
 permissions:
   contents: read
