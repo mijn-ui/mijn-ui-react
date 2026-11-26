@@ -4,3 +4,9 @@ packages:
 # Supply-chain guard: don't resolve a dependency version until it has been on
 # the registry for a day, so a compromised release is usually caught first.
 minimumReleaseAge: 1440
+
+overrides:
+  # @storybook/react-vite 10.6 still asks for ^0.7, whose glob/minimatch carry
+  # GHSA-3g3m-2fjr-6pw4 and GHSA-g3hv-75wg-m249. 0.9 replaced glob with
+  # tinyglobby. Drop this once Storybook depends on >=0.9 itself.
+  "@joshwooding/vite-plugin-react-docgen-typescript": "0.9.1"
