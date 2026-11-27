@@ -29,15 +29,38 @@ No dedicated `date-picker` package — compose it:
 
 ```tsx
 import { Popover, PopoverTrigger, PopoverContent } from "@mijn-ui/react-popover"
-import { Calendar } from "@mijn-ui/react-calendar"
+import { Calendar, DateRange } from "@mijn-ui/react-calendar"
 
-<Popover>
+const [open, setOpen] = React.useState(false)
+const [range, setRange] = React.useState<DateRange>()
+
+<Popover open={open} onOpenChange={setOpen}>
   <PopoverTrigger>{/* date input / button */}</PopoverTrigger>
   <PopoverContent align="start">
-    <Calendar mode="range" />
+    <Calendar
+      mode="range"
+      numberOfMonths={2}
+      selected={range}
+      onSelect={setRange}
+      autoFocus
+    />
   </PopoverContent>
 </Popover>
 ```
 
-Use `align="start"` / `"end"` for the `Left` / `Right` alignment variants and
-two `Calendar` instances for `Double Calendar`.
+- `Single Calendar` / `Double Calendar` — `numberOfMonths={1}` / `{2}`: one
+  `Calendar` showing two months shares one range, one tab stop and one pair of
+  previous / next buttons. (The months sit flush by default; add
+  `classNames={{ months: "gap-4" }}` to space them.)
+- `Custom Date Range` — `mode="range"`; `min` / `max` limit the nights, and
+  `disabled` / `startMonth` / `endMonth` limit the days.
+- `Preset` — buttons beside the calendar that set `range` (and `month`, if
+  the calendar is controlled) to "Last 7 days" and so on.
+- `align="start"` / `"end"` give the `Left` / `Right` alignment variants.
+- `autoFocus` puts focus on the selected day (or today) when the popover opens,
+  as the WAI-ARIA date-picker dialog pattern expects. For a single date, close
+  the popover from `onSelect`.
+
+The calendar formats in `"en-US"` unless given a `locale`; format the trigger's
+text with the same language (`date.toLocaleDateString(locale)` or
+`Intl.DateTimeFormat`) so the two agree.
