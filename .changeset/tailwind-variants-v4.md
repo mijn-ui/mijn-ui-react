@@ -37,8 +37,19 @@
 "@mijn-ui/react-tooltip": minor
 ---
 
-Move to tailwind-variants v4. The `tailwind-variants` peer dependency is now `^4.0.0`.
+Move to tailwind-variants v4, and use its class merging everywhere.
 
-**Migration:** run `pnpm add tailwind-variants@^4` in your app. Your own `tv()` recipes keep working, with two differences: v4 rejects unknown keys in `variants`, `compoundVariants`, `defaultVariants` and slot names at compile time, and an empty class list now returns `""` instead of `undefined`. `extendVariants` no longer accepts `twMergeConfig`; tailwind-variants v4 only takes a custom merge config from `tailwind-variants/config`.
+- The `tailwind-variants` peer dependency is now `^4.0.0`.
+- `tailwind-merge` is no longer a peer dependency. `cn` now merges classes with tailwind-variants' own engine, so an app ships one merge engine instead of two. `cn` gives the same result for every class mijn-ui uses. One difference for arbitrary font values without a label: they now follow Tailwind 4, so `font-[Inter]` is a font family and `font-[700]` a weight.
+- Components now require `@mijn-ui/react-core` `^0.7.0`.
+- `extendVariants` no longer accepts `twMergeConfig`, and throws if it is given one.
 
-`tailwind-merge` is still a peer dependency of `@mijn-ui/react-core`, whose `cn` uses it.
+**Migration**
+
+1. Run `pnpm add tailwind-variants@^4`. Until you do, pnpm warns about an unmet peer dependency.
+2. If your app doesn't import `tailwind-merge` itself, you can remove it. If it does, either keep it (your app then ships two merge engines) or alias it to `tailwind-variants` as the upstream guide describes.
+3. If your app has its own `tv()` recipes, check them against the [tailwind-variants v3 → v4 guide](https://github.com/heroui-inc/tailwind-variants/blob/main/.docs/migrations/v3-to-v4.md). The changes most likely to matter:
+   - `twMergeConfig` must be imported from `tailwind-variants/config`. Passing it through the default import throws when the recipe is defined.
+   - Unknown keys in `variants`, `compoundVariants`, `defaultVariants` and slot names are now compile errors.
+   - An empty class list returns `""` instead of `undefined`. This applies to `tv()`, `cn()`, `cx()` and mijn-ui's exported `*Styles` recipes.
+   - `cn("a", 0)` from tailwind-variants now returns `"a"`.

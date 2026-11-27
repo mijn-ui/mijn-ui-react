@@ -24,6 +24,7 @@
     "build": "tsup",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "test": "vitest run",
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
@@ -43,8 +44,7 @@
   "peerDependencies": {
     "react": "^19.0",
     "react-dom": "^19.0",
-    "@mijn-ui/react-core": "^0.6.0",
-    "tailwind-merge": "^3.0.0",
+    "@mijn-ui/react-core": "^0.7.0",
     "tailwind-variants": "^4.0.0"
   },
   "publishConfig": {

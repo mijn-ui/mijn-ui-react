@@ -32,7 +32,14 @@ describe("extendVariants", () => {
       expect(getByTestId("box").className).toBe("px-4 text-lg")
     })
 
-    // The caller's own `className` is joined with clsx, outside tailwind-merge.
+    // The caller's own `className` is joined with clsx, outside the merge.
+    it("joins the caller's className without merging it", () => {
+      const Padded = extend(Box, { variants: { size: { wide: "p-4" } } })
+      const { getByTestId } = render(<Padded size="wide" className="p-2" />)
+
+      expect(getByTestId("box").className).toBe("p-4 p-2")
+    })
+
     // Merging happens between the variant, default and compound classes.
     it("merges conflicting classes, the later one wins", () => {
       const Merged = extend(Box, {
@@ -66,19 +73,20 @@ describe("extendVariants", () => {
         <Extended tone="loud" classNames={{ base: "p-2" }} />,
       )
 
-      expect(getByTestId("base").className).toContain("font-bold")
+      // Joined with clsx, not merged: the caller's `p-2` sits next to `p-4`.
+      expect(getByTestId("base").className).toBe("p-4 font-bold p-2")
     })
   })
 
   describe("twMergeConfig", () => {
-    it("throws when a non-empty twMergeConfig is passed", () => {
-      const Extended = extend(
-        Box,
-        { variants: { size: { wide: "px-4" } } },
-        { twMergeConfig: { extend: { classGroups: {} } } },
-      )
-
-      expect(() => render(<Extended size="wide" />)).toThrow()
+    it("throws at definition time when twMergeConfig is passed", () => {
+      expect(() =>
+        extend(
+          Box,
+          { variants: { size: { wide: "px-4" } } },
+          { twMergeConfig: { extend: { classGroups: {} } } },
+        ),
+      ).toThrow(/twMergeConfig/)
     })
   })
 })

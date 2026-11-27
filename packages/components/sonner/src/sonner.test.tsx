@@ -4,7 +4,7 @@ import { createRequire } from "node:module"
 import { dirname, join } from "node:path"
 import * as sonner from "sonner"
 import { contrastRatio, declarationsFor, themeColors } from "test-utils"
-import { afterEach, describe, expect, it } from "vitest"
+import { afterEach, describe, expect, expectTypeOf, it } from "vitest"
 import { type SonnerSlots, Toaster, sonnerStyles, toast } from "./sonner"
 
 // Not using `globals: true`, so testing-library's automatic cleanup never
@@ -29,6 +29,20 @@ const showToast = async (message = "Settings saved") => {
   if (!el) throw new Error("toaster element never appeared")
   return el
 }
+
+describe("SonnerSlots", () => {
+  it("lists the seven slots and no base", () => {
+    expectTypeOf<SonnerSlots>().toEqualTypeOf<
+      | "toast"
+      | "title"
+      | "description"
+      | "actionButton"
+      | "cancelButton"
+      | "closeButton"
+      | "icon"
+    >()
+  })
+})
 
 describe("Toaster", () => {
   it("renders its live region", () => {
