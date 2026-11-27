@@ -1,5 +1,11 @@
 # @mijn-ui-react/avatar
 
+## 0.4.6
+
+### Patch Changes
+
+- e7050f8: Republished through npm trusted publishing from the GitHub `npm` environment. No code changes. This first publish validates the new trusted-publisher setting on every package.
+
 ## 0.4.5
 
 ### Patch Changes

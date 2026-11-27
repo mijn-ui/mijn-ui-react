@@ -1,5 +1,13 @@
 # @mijn-ui-react/input
 
+## 0.6.1
+
+### Patch Changes
+
+- e7050f8: Republished through npm trusted publishing from the GitHub `npm` environment. No code changes. This first publish validates the new trusted-publisher setting on every package.
+- Updated dependencies [e7050f8]
+  - @mijn-ui/react-label@0.4.4
+
 ## 0.6.0
 
 ### Minor Changes

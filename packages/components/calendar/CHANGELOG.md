@@ -1,5 +1,13 @@
 # @mijn-ui-react/calendar
 
+## 0.4.4
+
+### Patch Changes
+
+- e7050f8: Republished through npm trusted publishing from the GitHub `npm` environment. No code changes. This first publish validates the new trusted-publisher setting on every package.
+- Updated dependencies [e7050f8]
+  - @mijn-ui/shared-icons@0.2.1
+
 ## 0.4.3
 
 ### Patch Changes

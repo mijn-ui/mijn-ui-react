@@ -1,5 +1,48 @@
 # @mijn-ui/react
 
+## 0.8.1
+
+### Patch Changes
+
+- e7050f8: Republished through npm trusted publishing from the GitHub `npm` environment. No code changes. This first publish validates the new trusted-publisher setting on every package.
+- Updated dependencies [e7050f8]
+  - @mijn-ui/react-accordion@0.5.2
+  - @mijn-ui/react-alert@0.4.7
+  - @mijn-ui/react-alert-dialog@0.4.4
+  - @mijn-ui/react-autocomplete@0.3.7
+  - @mijn-ui/react-avatar@0.4.6
+  - @mijn-ui/react-badge@0.6.1
+  - @mijn-ui/react-breadcrumb@0.2.3
+  - @mijn-ui/react-button@0.7.1
+  - @mijn-ui/react-calendar@0.4.4
+  - @mijn-ui/react-card@0.5.1
+  - @mijn-ui/react-charts@0.1.2
+  - @mijn-ui/react-checkbox@0.4.4
+  - @mijn-ui/react-collapsible@0.4.2
+  - @mijn-ui/react-command@0.4.7
+  - @mijn-ui/react-core@0.6.1
+  - @mijn-ui/react-dialog@0.4.7
+  - @mijn-ui/react-dropdown-menu@0.4.4
+  - @mijn-ui/react-input@0.6.1
+  - @mijn-ui/react-label@0.4.4
+  - @mijn-ui/react-pagination@0.4.4
+  - @mijn-ui/react-popover@0.4.4
+  - @mijn-ui/react-progress@0.4.5
+  - @mijn-ui/react-radio-group@0.4.4
+  - @mijn-ui/react-scroll-area@0.4.4
+  - @mijn-ui/react-segmented-control@0.1.1
+  - @mijn-ui/react-select@0.4.4
+  - @mijn-ui/react-separator@0.4.4
+  - @mijn-ui/react-skeleton@0.4.4
+  - @mijn-ui/react-slider@0.1.2
+  - @mijn-ui/react-switch@0.4.6
+  - @mijn-ui/react-table@0.4.4
+  - @mijn-ui/react-tabs@0.4.4
+  - @mijn-ui/react-textarea@0.4.4
+  - @mijn-ui/react-toast@0.2.3
+  - @mijn-ui/react-tooltip@0.1.2
+  - @mijn-ui/shared-icons@0.2.1
+
 ## 0.8.0
 
 ### Minor Changes
