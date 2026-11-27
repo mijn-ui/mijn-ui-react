@@ -49,7 +49,7 @@
     "react-dom": "^19.0",
     "sonner": "^2.0.0",
     "tailwind-merge": "^3.0.0",
-    "tailwind-variants": "^3.0.0"
+    "tailwind-variants": "^4.0.0"
   },
   "publishConfig": {
     "access": "public"

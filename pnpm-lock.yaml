@@ -51,8 +51,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
       tsup:
         specifier: 8.5.1
         version: 8.5.1(jiti@2.7.0)(postcss@8.5.32)(tsx@4.20.6)(typescript@5.6.3)
@@ -84,8 +84,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -121,8 +121,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -164,8 +164,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -222,8 +222,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -274,8 +274,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -314,8 +314,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -360,8 +360,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -403,8 +403,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -455,8 +455,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-badge':
         specifier: workspace:*
@@ -504,8 +504,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -544,8 +544,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -587,8 +587,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -679,8 +679,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -728,8 +728,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -780,8 +780,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -826,8 +826,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -878,8 +878,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -921,8 +921,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -964,8 +964,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -1013,8 +1013,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1068,8 +1068,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1111,8 +1111,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1157,8 +1157,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1212,8 +1212,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1261,8 +1261,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1298,8 +1298,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1338,8 +1338,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1387,8 +1387,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -1442,8 +1442,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1488,8 +1488,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1531,8 +1531,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -1586,8 +1586,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1626,8 +1626,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1666,8 +1666,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -1734,8 +1734,8 @@ importers:
         specifier: ^19.0
         version: 19.0.1(react@19.3.1)
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
       tailwindcss:
         specifier: ^4.0.0
         version: 4.3.3
@@ -1885,8 +1885,8 @@ importers:
         specifier: ^3.0.0
         version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
       tailwindcss:
         specifier: ^4.0.0
         version: 4.3.3
@@ -5612,15 +5612,9 @@ packages:
   tailwind-merge@3.4.0:
     resolution: {integrity: sha512-uSaO4gnW+b3Y2aWoWfFpX62vn2sR3skfhbjsEnaBI81WD1wBLlHZe5sWf0AqjksNdYTbGBEd0UasQMT3SNV15g==}
 
-  tailwind-variants@3.2.2:
-    resolution: {integrity: sha512-Mi4kHeMTLvKlM98XPnK+7HoBPmf4gygdFmqQPaDivc3DpYS6aIY6KiG/PgThrGvii5YZJqRsPz0aPyhoFzmZgg==}
-    engines: {node: '>=16.x', pnpm: '>=7.x'}
-    peerDependencies:
-      tailwind-merge: '>=3.0.0'
-      tailwindcss: '*'
-    peerDependenciesMeta:
-      tailwind-merge:
-        optional: true
+  tailwind-variants@4.1.0:
+    resolution: {integrity: sha512-oAYpaB3eFFpitkhcaVD+q9Q+evW2L2AHC6uNuIMHqa8WZGVi17OanN4j5d1l99fGDYBWq9LYg0ew/458XVXWlQ==}
+    engines: {node: '>=16.9.x', pnpm: '>=7.x'}
 
   tailwindcss@4.3.3:
     resolution: {integrity: sha512-gOhV3P7ufE62QDGg1zVaTgCR+EtPv92k2nIhVcVKcLmxT1sUBsQGhnZj175j+MqRt4zLF7ic+sCYjfhxMxj7YQ==}
@@ -9821,11 +9815,7 @@ snapshots:
 
   tailwind-merge@3.4.0: {}
 
-  tailwind-variants@3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3):
-    dependencies:
-      tailwindcss: 4.3.3
-    optionalDependencies:
-      tailwind-merge: 3.4.0
+  tailwind-variants@4.1.0: {}
 
   tailwindcss@4.3.3: {}
 
