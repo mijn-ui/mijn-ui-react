@@ -26,7 +26,7 @@ jobs:
 
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: 24
+          node-version: 26
 
       # The lockfile, dev tooling included — the release job installs and runs
       # it with the npm token in reach. Fails on high or critical.
@@ -42,7 +42,7 @@ jobs:
 
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: 24
+          node-version: 26
 
       # Dependency-free: HTML injection, eval, iframes, window.open, message
       # listeners, javascript: URLs, tokens in web storage. Reviewed occurrences
