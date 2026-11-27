@@ -12,5 +12,7 @@
     "@types/react-dom",
     "@types/node",
     "typescript"
-  ]
+  ],
+  "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict"
 }

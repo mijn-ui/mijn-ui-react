@@ -13,10 +13,18 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    # npm accepts a publish only from this environment (every package's trusted
+    # publisher names it), and GitHub lets only main deploy to it - so a
+    # release.yml edited on another branch cannot publish.
+    environment: npm
     permissions:
       contents: write # push the version commit and tags
       pull-requests: write # open the "Version Packages" PR
       id-token: write # npm provenance / Trusted Publishing (OIDC)
+    outputs:
+      # "true" while unreleased changesets exist, i.e. the action has just
+      # created or updated the "Version Packages" PR instead of publishing.
+      has-changesets: ${{ steps.changesets.outputs.hasChangesets }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -54,7 +62,29 @@ jobs:
           commitMode: github-api
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Remove once a Trusted Publisher is configured for every package on
-          # npmjs.com — without NPM_TOKEN the action publishes via OIDC.
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # No NPM_TOKEN: without one the action publishes through npm trusted
+          # publishing (a short-lived OIDC token per run), and every @mijn-ui
+          # package refuses long-lived tokens ("require 2FA, disallow tokens").
           NPM_CONFIG_PROVENANCE: "true"
+
+  # The "Version Packages" PR is pushed with GITHUB_TOKEN, and GitHub starts no
+  # workflows for events that token causes - so the PR would never report the
+  # checks branch protection requires. workflow_dispatch is the exception to
+  # that rule, so start the PR's checks explicitly on the release branch; they
+  # report on the branch's head commit, which is the PR's head commit.
+  version-pr-checks:
+    name: Start checks on the version PR
+    needs: release
+    if: needs.release.outputs.has-changesets == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write # start workflow_dispatch runs; nothing else
+    steps:
+      - name: Dispatch Lint, Unit Tests and Security on changeset-release/main
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          for wf in lint.yml test.yml security.yml; do
+            gh workflow run "$wf" --ref changeset-release/main
+          done
