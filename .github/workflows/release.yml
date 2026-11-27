@@ -13,6 +13,10 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    # npm accepts a publish only from this environment (every package's trusted
+    # publisher names it), and GitHub lets only main deploy to it - so a
+    # release.yml edited on another branch cannot publish.
+    environment: npm
     permissions:
       contents: write # push the version commit and tags
       pull-requests: write # open the "Version Packages" PR
@@ -58,9 +62,9 @@ jobs:
           commitMode: github-api
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Remove once a Trusted Publisher is configured for every package on
-          # npmjs.com — without NPM_TOKEN the action publishes via OIDC.
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # No NPM_TOKEN: without one the action publishes through npm trusted
+          # publishing (a short-lived OIDC token per run), and every @mijn-ui
+          # package refuses long-lived tokens ("require 2FA, disallow tokens").
           NPM_CONFIG_PROVENANCE: "true"
 
   # The "Version Packages" PR is pushed with GITHUB_TOKEN, and GitHub starts no
