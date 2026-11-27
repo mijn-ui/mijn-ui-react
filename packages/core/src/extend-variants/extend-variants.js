@@ -68,7 +68,6 @@ function getClassNamesWithProps({
     },
     {
       twMerge: opts.twMerge ?? true,
-      twMergeConfig: opts.twMergeConfig ?? {},
     },
   )
 
@@ -112,6 +111,12 @@ function getClassNamesWithProps({
 }
 
 export function extendVariants(BaseComponent, styles = {}, opts = {}) {
+  if (opts.twMergeConfig !== undefined) {
+    throw new Error(
+      "extendVariants no longer accepts `twMergeConfig`: tailwind-variants v4 only takes a custom merge config from `tailwind-variants/config`.",
+    )
+  }
+
   const { variants, defaultVariants, compoundVariants } = styles || {}
 
   const slots = getSlots(variants)

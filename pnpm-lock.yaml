@@ -47,12 +47,9 @@ importers:
       rimraf:
         specifier: ^6.1.4
         version: 6.1.4
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
       tsup:
         specifier: 8.5.1
         version: 8.5.1(jiti@2.7.0)(postcss@8.5.32)(tsx@4.20.6)(typescript@5.6.3)
@@ -80,12 +77,9 @@ importers:
       '@radix-ui/react-accordion':
         specifier: ^1.3.1
         version: 1.3.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -117,12 +111,9 @@ importers:
 
   packages/components/alert:
     dependencies:
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -160,12 +151,9 @@ importers:
       '@radix-ui/react-alert-dialog':
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -218,12 +206,9 @@ importers:
       cmdk:
         specifier: ^1.0.4
         version: 1.1.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -270,12 +255,9 @@ importers:
       '@radix-ui/react-avatar':
         specifier: ^1.3.1
         version: 1.3.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -310,12 +292,9 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.5.0
         version: 1.5.0(@types/react@19.2.7)(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -356,12 +335,9 @@ importers:
 
   packages/components/breadcrumb:
     dependencies:
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -399,12 +375,9 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.5.0
         version: 1.5.0(@types/react@19.2.7)(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -451,12 +424,9 @@ importers:
       react-day-picker:
         specifier: ^9.3.0
         version: 9.11.3(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-badge':
         specifier: workspace:*
@@ -500,12 +470,9 @@ importers:
 
   packages/components/card:
     dependencies:
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -540,12 +507,9 @@ importers:
 
   packages/components/charts:
     dependencies:
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -583,12 +547,9 @@ importers:
       '@radix-ui/react-checkbox':
         specifier: ^1.4.1
         version: 1.4.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -675,12 +636,9 @@ importers:
       cmdk:
         specifier: ^1.0.4
         version: 1.1.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -724,12 +682,9 @@ importers:
       '@radix-ui/react-dialog':
         specifier: ^1.3.1
         version: 1.3.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -776,12 +731,9 @@ importers:
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.2.1
         version: 2.2.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -822,12 +774,9 @@ importers:
       '@mijn-ui/react-label':
         specifier: workspace:*
         version: link:../label
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -874,12 +823,9 @@ importers:
       '@radix-ui/react-label':
         specifier: ^2.1.17
         version: 2.1.17(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -917,12 +863,9 @@ importers:
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../utilities/shared-icons
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -960,12 +903,9 @@ importers:
       '@radix-ui/react-popover':
         specifier: ^1.3.1
         version: 1.3.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -1009,12 +949,9 @@ importers:
       '@radix-ui/react-progress':
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1064,12 +1001,9 @@ importers:
       '@radix-ui/react-radio-group':
         specifier: ^1.5.1
         version: 1.5.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1107,12 +1041,9 @@ importers:
       '@radix-ui/react-scroll-area':
         specifier: ^1.4.0
         version: 1.4.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1153,12 +1084,9 @@ importers:
       '@radix-ui/react-tabs':
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1208,12 +1136,9 @@ importers:
       '@radix-ui/react-select':
         specifier: ^2.4.1
         version: 2.4.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1257,12 +1182,9 @@ importers:
       '@radix-ui/react-separator':
         specifier: ^1.2.0
         version: 1.2.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1294,12 +1216,9 @@ importers:
 
   packages/components/skeleton:
     dependencies:
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1334,12 +1253,9 @@ importers:
       '@radix-ui/react-slider':
         specifier: ^1.6.1
         version: 1.6.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1383,12 +1299,9 @@ importers:
 
   packages/components/sonner:
     dependencies:
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -1438,12 +1351,9 @@ importers:
       '@radix-ui/react-switch':
         specifier: ^1.4.1
         version: 1.4.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1484,12 +1394,9 @@ importers:
 
   packages/components/table:
     dependencies:
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1527,12 +1434,9 @@ importers:
       '@radix-ui/react-tabs':
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -1582,12 +1486,9 @@ importers:
 
   packages/components/textarea:
     dependencies:
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1622,12 +1523,9 @@ importers:
 
   packages/components/toast:
     dependencies:
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-core':
         specifier: workspace:*
@@ -1662,12 +1560,9 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.4.1
         version: 1.4.1(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@mijn-ui/react-button':
         specifier: workspace:*
@@ -1734,8 +1629,8 @@ importers:
         specifier: ^19.0
         version: 19.0.1(react@19.3.1)
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
       tailwindcss:
         specifier: ^4.0.0
         version: 4.3.3
@@ -1755,9 +1650,6 @@ importers:
       react:
         specifier: 19.3.1
         version: 19.3.1
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tsconfig:
         specifier: workspace:*
         version: link:../configs/ts-config
@@ -1881,12 +1773,9 @@ importers:
       react-dom:
         specifier: ^19.0
         version: 19.0.1(react@19.0.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
       tailwind-variants:
-        specifier: ^3.0.0
-        version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3)
+        specifier: ^4.0.0
+        version: 4.1.0
       tailwindcss:
         specifier: ^4.0.0
         version: 4.3.3
@@ -1909,9 +1798,6 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.1(react@19.0.1)
-      tailwind-merge:
-        specifier: ^3.0.0
-        version: 3.4.0
     devDependencies:
       '@storybook/addon-docs':
         specifier: ^10.6.5
@@ -5609,18 +5495,9 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  tailwind-merge@3.4.0:
-    resolution: {integrity: sha512-uSaO4gnW+b3Y2aWoWfFpX62vn2sR3skfhbjsEnaBI81WD1wBLlHZe5sWf0AqjksNdYTbGBEd0UasQMT3SNV15g==}
-
-  tailwind-variants@3.2.2:
-    resolution: {integrity: sha512-Mi4kHeMTLvKlM98XPnK+7HoBPmf4gygdFmqQPaDivc3DpYS6aIY6KiG/PgThrGvii5YZJqRsPz0aPyhoFzmZgg==}
-    engines: {node: '>=16.x', pnpm: '>=7.x'}
-    peerDependencies:
-      tailwind-merge: '>=3.0.0'
-      tailwindcss: '*'
-    peerDependenciesMeta:
-      tailwind-merge:
-        optional: true
+  tailwind-variants@4.1.0:
+    resolution: {integrity: sha512-oAYpaB3eFFpitkhcaVD+q9Q+evW2L2AHC6uNuIMHqa8WZGVi17OanN4j5d1l99fGDYBWq9LYg0ew/458XVXWlQ==}
+    engines: {node: '>=16.9.x', pnpm: '>=7.x'}
 
   tailwindcss@4.3.3:
     resolution: {integrity: sha512-gOhV3P7ufE62QDGg1zVaTgCR+EtPv92k2nIhVcVKcLmxT1sUBsQGhnZj175j+MqRt4zLF7ic+sCYjfhxMxj7YQ==}
@@ -9819,13 +9696,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  tailwind-merge@3.4.0: {}
-
-  tailwind-variants@3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.3.3):
-    dependencies:
-      tailwindcss: 4.3.3
-    optionalDependencies:
-      tailwind-merge: 3.4.0
+  tailwind-variants@4.1.0: {}
 
   tailwindcss@4.3.3: {}
 
