@@ -1,3 +1,10 @@
-# Changes to these paths need a review from a code owner once branch
-# protection on main requires it.
-* @picoinno
+# Every change on main needs an approval from one of these code owners
+# (branch protection: "Require review from Code Owners").
+#
+# A bot's approval doesn't count. With "Allow GitHub Actions to create
+# pull requests" on (the release job needs it for the "Version Packages"
+# PR), a workflow could approve a PR. github-actions[bot] isn't listed here,
+# so its approval can't meet this rule.
+#
+# Keep at least two people here: nobody can approve their own PR.
+* @picoinno @waiyanphoneaant
