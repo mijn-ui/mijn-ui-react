@@ -35,7 +35,6 @@ export default [
       "import/namespace": "off",
       "import/no-unresolved": "off",
 
-      "@next/next/no-html-link-for-pages": "off",
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
