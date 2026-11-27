@@ -24,13 +24,14 @@ jobs:
     outputs:
       # "true" while unreleased changesets exist, i.e. the action has just
       # created or updated the "Version Packages" PR instead of publishing.
-      has-changesets: ${{ steps.changesets.outputs.hasChangesets }}
+      has-changesets: ${{ steps.changesets.outputs.has-changesets }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          # changesets/action pushes through the GitHub API (commitMode below),
-          # so no git credential needs to sit on disk while dev tooling runs.
+          # changesets/action pushes through the GitHub API (its default while
+          # push-with-git-cli is off), so no git credential needs to sit on disk
+          # while dev tooling runs.
           persist-credentials: false
 
       - name: Setup pnpm
@@ -53,15 +54,14 @@ jobs:
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
-        uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d # v1.9.0
+        uses: changesets/action@ae32849d5ba541f9ae29e40e22a623bc13562f51 # v2.1.2
         with:
-          commit: "chore(release): version packages"
-          title: "chore(release): version packages"
-          publish: pnpm run release
-          version: pnpm run version
-          commitMode: github-api
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(release): version packages"
+          pr-title: "chore(release): version packages"
+          publish-script: pnpm run release
+          version-script: pnpm run version
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # No NPM_TOKEN: without one the action publishes through npm trusted
           # publishing (a short-lived OIDC token per run), and every @mijn-ui
           # package refuses long-lived tokens ("require 2FA, disallow tokens").

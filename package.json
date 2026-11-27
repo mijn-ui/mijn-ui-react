@@ -20,7 +20,7 @@
     "check:security-sinks": "node scripts/check-security-sinks.mjs"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.31.1",
+    "@changesets/cli": "^3.0.0",
     "@eslint/js": "^9.14.0",
     "@storybook/react-vite": "^10.6.5",
     "@testing-library/react": "^16.1.0",
