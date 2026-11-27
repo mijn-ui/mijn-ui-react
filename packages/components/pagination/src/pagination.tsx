@@ -202,12 +202,6 @@ const Pagination: React.FC<PaginationProps> = ({
   const goToNextPage = () =>
     setPage(Math.min(currentPage + 1, Math.ceil(totalPages / itemsPerPage)))
 
-  React.useEffect(() => {
-    if (!isControlled && propsCurrentPage !== undefined) {
-      setInternalCurrentPage(propsCurrentPage)
-    }
-  }, [propsCurrentPage, isControlled])
-
   const styles = paginationStyles()
 
   return (
