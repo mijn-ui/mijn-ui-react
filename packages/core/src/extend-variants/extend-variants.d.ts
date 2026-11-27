@@ -66,11 +66,6 @@ type Options = {
    * @default true
    */
   twMerge?: boolean
-  /**
-   * The config object for `tailwind-merge` library.
-   * @see https://github.com/dcastil/tailwind-merge/blob/v1.8.1/docs/configuration.md
-   */
-  twMergeConfig?: any
 }
 
 export type ExtendVariantProps = {

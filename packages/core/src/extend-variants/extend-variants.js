@@ -68,7 +68,10 @@ function getClassNamesWithProps({
     },
     {
       twMerge: opts.twMerge ?? true,
-      twMergeConfig: opts.twMergeConfig ?? {},
+      // Only forwarded when given, so tailwind-variants v4 explains the error.
+      ...(opts.twMergeConfig !== undefined && {
+        twMergeConfig: opts.twMergeConfig,
+      }),
     },
   )
 

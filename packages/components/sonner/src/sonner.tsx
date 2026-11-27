@@ -57,7 +57,7 @@ const sonnerStyles = tv({
 })
 
 export type SonnerVariantProps = VariantProps<typeof sonnerStyles>
-export type SonnerSlots = keyof ReturnType<typeof sonnerStyles>
+export type SonnerSlots = Exclude<keyof ReturnType<typeof sonnerStyles>, "base">
 
 export { sonnerStyles }
 
