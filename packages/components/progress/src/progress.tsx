@@ -63,7 +63,7 @@ const Progress = ({
       <ProgressPrimitive.Indicator
         data-slot="progress-indicator"
         className={indicator({ className: classNames?.indicator })}
-        style={{ transform: `translateX(-${100 - percent}%)` }}
+        style={{ transform: `translateX(${percent - 100}%)` }}
       />
     </ProgressPrimitive.Root>
   )
