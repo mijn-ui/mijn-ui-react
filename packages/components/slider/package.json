@@ -30,7 +30,7 @@
   "devDependencies": {
     "@mijn-ui/react-core": "workspace:*",
     "@mijn-ui/react-label": "workspace:*",
-    "@next/eslint-plugin-next": "^15.0.3",
+    "@next/eslint-plugin-next": "^16.0.0",
     "@testing-library/react": "^16.1.0",
     "@types/node": "22.9.0",
     "@types/react": "^19.0.0",
