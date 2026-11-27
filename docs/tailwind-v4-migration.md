@@ -40,7 +40,7 @@ pnpm add -D tailwindcss@^4 @tailwindcss/postcss@^4
 
 Also update Mijn UI peer dependencies if not already on these versions:
 ```bash
-pnpm add tailwind-merge@^3 tailwind-variants@^3
+pnpm add tailwind-merge@^3 tailwind-variants@^4
 ```
 
 ---
