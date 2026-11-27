@@ -33,7 +33,7 @@ describe("Progress", () => {
   it("is complete at max", () => {
     render(<Progress value={5} max={5} aria-label="Steps" />)
     expect(bar().getAttribute("data-state")).toBe("complete")
-    expect(fill()).toBe("translateX(-0%)")
+    expect(fill()).toBe("translateX(0%)")
   })
 
   it("is indeterminate without a value, with an empty bar", () => {
@@ -47,7 +47,7 @@ describe("Progress", () => {
     // Radix logs an error for it and reports it as indeterminate.
     const spy = vi.spyOn(console, "error").mockImplementation(() => undefined)
     render(<Progress value={250} max={200} aria-label="Over" />)
-    expect(fill()).toBe("translateX(-0%)")
+    expect(fill()).toBe("translateX(0%)")
     spy.mockRestore()
   })
 
